@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2013-10-03T21:26:55-04:00</updated>
+<updated>2013-10-03T21:27:55-04:00</updated>
 <id>/</id>
 <author>
   <name>@xeoLabs</name>
@@ -721,8 +721,8 @@ bother doing this if you’re hotlinking to the SceneJS lib and just want to use
                     &lt;span class=&quot;c1&quot;&gt;// node type&amp;#39;s constructor above)&lt;/span&gt;
                     &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
 
-                    &lt;span class=&quot;c1&quot;&gt;// Teapot primitive, implemented by plugin at&lt;/span&gt;
-                    &lt;span class=&quot;c1&quot;&gt;// http://scenejs.org/api/latest/plugins/node/prims/teapot.js&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// Teapot primitive, implemented by plugin at&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// http://scenejs.org/api/latest/plugins/node/prims/teapot.js&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
                             &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/teapot&amp;quot;&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;

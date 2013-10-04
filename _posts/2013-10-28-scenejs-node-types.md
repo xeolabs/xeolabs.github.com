@@ -123,8 +123,8 @@ var scene = SceneJS.createScene({
                     // node type's constructor above)
                     nodes:[
 
-                    // Teapot primitive, implemented by plugin at
-                    // http://scenejs.org/api/latest/plugins/node/prims/teapot.js
+                        // Teapot primitive, implemented by plugin at
+                        // http://scenejs.org/api/latest/plugins/node/prims/teapot.js
                         {
                             type:"prims/teapot"
                         }
