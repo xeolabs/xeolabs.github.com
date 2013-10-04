@@ -1,0 +1,394 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>SceneJS Detail Culling &#8211; xeoLabs</title>
+<meta name="description" content="Optimising your scenes with detail culling">
+<meta name="keywords" content="scenejs, tutorial, culling">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/">
+<meta name="twitter:title" content="SceneJS Detail Culling">
+<meta name="twitter:description" content="Optimising your scenes with detail culling">
+<meta name="twitter:creator" content="@xeolabs">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SceneJS Detail Culling">
+<meta property="og:description" content="Optimising your scenes with detail culling">
+<meta property="og:url" content="/articles/scenejs-detail-culling">
+<meta property="og:site_name" content="xeoLabs">
+
+
+
+
+
+<link rel="canonical" href="/articles/scenejs-detail-culling">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="xeoLabs Feed">
+<link rel="author" href="https://plus.google.com/u/0/110983138227486752827/posts?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="article" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="">xeoLabs</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <ul>
+		        
+				<li><a href="/about" >About</a></li>
+		        
+				<li><a href="/articles" >Articles</a></li>
+		        
+				<li><a href="http://scenejs.org" target="_blank">SceneJS</a></li>
+		        
+				<li><a href="http://biodigitalhuman.com" target="_blank">BioDigital Human</a></li>
+		        
+		        <li><i class="icon-feed"></i> <a href="/feed.xml" title="Atom/RSS feed">Feed</a>
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <div class="article-author-top">
+    <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+<h3><a href="http://xeolabs.com">@xeoLabs</a></h3>
+<p>Lindsay Kay<br>3D Web developer</p>
+<a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+  </div>
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <div class="headline-wrap">
+      <h1 itemprop="name">SceneJS Detail Culling</h1>
+      <h2>Optimising your scenes with detail culling</h2>
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap" itemprop="text">
+      <section id="table-of-contents" class="toc">
+  <header>
+    <h3>Contents</h3>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#creating-a-detail-switched-object">Creating a Detail-Switched Object</a>    <ul>
+      <li><a href="#example">Example:</a></li>
+    </ul>
+  </li>
+  <li><a href="#implementation">Implementation</a></li>
+  <li><a href="#roadmap">Roadmap</a></li>
+</ul>
+
+  </div>
+</section>
+<!-- /#table-of-contents -->
+
+<table>
+  <thead>
+    <tr>
+      <th><a href="http://scenejs.org/examples.html?page=frustumDetailCulling"><img src="http://scenejs.org/images/lod1.png" alt="" /></a></th>
+      <th><a href="http://scenejs.org/examples.html?page=frustumDetailCulling"><img src="http://scenejs.org/images/lod2.png" alt="" /></a></th>
+      <th><a href="http://scenejs.org/examples.html?page=frustumDetailCulling"><img src="http://scenejs.org/images/lod3.png" alt="" /></a></th>
+      <th><a href="http://scenejs.org/examples.html?page=frustumDetailCulling"><img src="http://scenejs.org/images/lod4.png" alt="" /></a></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Distant bodies culled</td>
+      <td>Bodies come closer</td>
+      <td>Detail level increases</td>
+      <td>Further detail increase</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="http://scenejs.org/examples.html?page=frustumDetailCulling">Click here to run this example</a></p>
+
+<h1 id="overview">Overview</h1>
+<p>SceneJS supports detail culling via the <code>frustum/lod</code> node, which sets up an axis-aligned bounding box around its child nodes. Each child provides a different level of detail for the object within the boundary, and the <code>frustum/lod</code> enables one of its children at any instant in order to show the appropriate detail level for the current projected 2D canvas size of the boundary.</p>
+
+<p>The <code>frustum/body</code> node can be configured to disable all its children when the boundary falls outside the view frustum. This is an optional configuration because the node might potentially be used to switch detail for non-visible objects, such as sound sources, which could influence the scene even when they fall outside the frustum. Note that the node disables all children at the lowest level of detail, effectively working as a sort of distance culling.</p>
+
+<p>Internally, culling is distributed across multiple culling engines, each running in its own web worker. This attempts to make culling responsive, while preventing it from starving the main rendering thread.</p>
+
+<h1 id="creating-a-detail-switched-object">Creating a Detail-Switched Object</h1>
+
+<p>The <code>frustum/lod</code> node encloses its child nodes in an axis-aligned  World-space bounding box and enables the appropriate child for the box’s current projected 2D canvas size.</p>
+
+<p>As shown in the example below, we configure the node with a 2D size threshold for each child node, given in property <code>sizes</code>. When the boundary’s projected size falls below the first of these thresholds, then no child will be enabled. When the projected size is between the first and second thresholds, the first child is enabled, then when between the second and third thresholds, the second child is enabled, and so on.</p>
+
+<p>You can have an unlimited number of child nodes and size thresholds.</p>
+
+<p>By default, all of the children are disabled when the bounding box falls outside the view frustum, but as mentioned above, we can use the optional <code>frustumCull</code> property to disable that behaviour and cull the children solely on the projected box size, which actually works regardless of which direction the box is in with regard to the viewing direction. This is useful for disabling distant sound effects etc.</p>
+
+<h2 id="example">Example:</h2>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">someNode</span><span class="p">.</span><span class="nx">addNode</span><span class="p">({</span>
+   <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;frustum/lod&quot;</span><span class="p">,</span>
+
+   <span class="c1">// World-space axis-aligned bounding box</span>
+   <span class="nx">min</span><span class="o">:</span> <span class="p">[</span><span class="nx">xPos</span> <span class="o">-</span> <span class="mi">8</span><span class="p">,</span> <span class="nx">yPos</span> <span class="o">-</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">zPos</span> <span class="o">-</span> <span class="mi">5</span><span class="p">],</span>
+   <span class="nx">max</span><span class="o">:</span> <span class="p">[</span><span class="nx">xPos</span> <span class="o">+</span> <span class="mi">8</span><span class="p">,</span> <span class="nx">yPos</span> <span class="o">+</span> <span class="mi">6</span><span class="p">,</span> <span class="nx">zPos</span> <span class="o">+</span> <span class="mi">5</span><span class="p">],</span>
+
+   <span class="c1">// Size thresholds, one for each child node, in ascending</span>
+   <span class="c1">// order for size, unlimited number</span>
+   <span class="nx">sizes</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mi">50</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">350</span> <span class="c1">// More as required...</span>
+   <span class="p">],</span>
+
+   <span class="c1">// Option to show the boundary as a wireframe box for debugging - default false</span>
+   <span class="nx">showBoundary</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+
+   <span class="c1">// Option to disable all child nodes when the bounding box</span>
+   <span class="c1">// falls outside the view frustum - true by default</span>
+   <span class="nx">frustumCull</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+
+   <span class="c1">// A child node for each size, in ascending order of</span>
+   <span class="c1">// detail, unlimited number</span>
+   <span class="nx">nodes</span><span class="o">:</span> <span class="p">[</span>
+
+      <span class="c1">// Detail level #1 (lowest)</span>
+      <span class="c1">// A light blue box</span>
+
+      <span class="p">{</span>
+         <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;material&quot;</span><span class="p">,</span>
+         <span class="nx">color</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">r</span><span class="o">:</span> <span class="mf">0.6</span><span class="p">,</span>
+            <span class="nx">g</span><span class="o">:</span> <span class="mf">0.6</span><span class="p">,</span>
+            <span class="nx">b</span><span class="o">:</span> <span class="mf">1.0</span>
+         <span class="p">},</span>
+
+         <span class="nx">nodes</span><span class="o">:</span> <span class="p">[</span>
+
+            <span class="p">{</span>
+               <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;translate&quot;</span><span class="p">,</span>
+               <span class="nx">x</span><span class="o">:</span> <span class="nx">xPos</span><span class="p">,</span>
+               <span class="nx">y</span><span class="o">:</span> <span class="nx">yPos</span><span class="p">,</span>
+               <span class="nx">z</span><span class="o">:</span> <span class="nx">zPos</span><span class="p">,</span>
+
+               <span class="nx">nodes</span><span class="o">:</span> <span class="p">[{</span>
+                  <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;scale&quot;</span><span class="p">,</span>
+                  <span class="nx">x</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+                  <span class="nx">y</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+                  <span class="nx">z</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+                  <span class="nx">nodes</span><span class="o">:</span> <span class="p">[</span>
+
+                     <span class="c1">// Box primitive, implemented by plugin at</span>
+                     <span class="c1">// http://scenejs.org/api/latest/plugins/node/prims/box.js</span>
+                     <span class="p">{</span>
+                        <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;prims/box&quot;</span>
+                     <span class="p">}</span>
+                  <span class="p">]</span>
+               <span class="p">}]</span>
+            <span class="p">}</span>
+         <span class="p">]</span>
+      <span class="p">},</span>
+
+      <span class="c1">// Detail level #2 (middle)</span>
+      <span class="c1">// A medium-blue sphere</span>
+
+      <span class="p">{</span>
+         <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;material&quot;</span><span class="p">,</span>
+         <span class="nx">color</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">r</span><span class="o">:</span> <span class="mf">0.5</span><span class="p">,</span>
+            <span class="nx">g</span><span class="o">:</span> <span class="mf">0.5</span><span class="p">,</span>
+            <span class="nx">b</span><span class="o">:</span> <span class="mf">1.0</span>
+         <span class="p">},</span>
+
+         <span class="nx">nodes</span><span class="o">:</span> <span class="p">[{</span>
+            <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;translate&quot;</span><span class="p">,</span>
+            <span class="nx">x</span><span class="o">:</span> <span class="nx">xPos</span><span class="p">,</span>
+            <span class="nx">y</span><span class="o">:</span> <span class="nx">yPos</span><span class="p">,</span>
+            <span class="nx">z</span><span class="o">:</span> <span class="nx">zPos</span><span class="p">,</span>
+
+            <span class="nx">nodes</span><span class="o">:</span> <span class="p">[{</span>
+               <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;scale&quot;</span><span class="p">,</span>
+               <span class="nx">x</span><span class="o">:</span> <span class="mf">1.0</span><span class="p">,</span>
+               <span class="nx">y</span><span class="o">:</span> <span class="mf">0.7</span><span class="p">,</span>
+               <span class="nx">z</span><span class="o">:</span> <span class="mf">1.0</span><span class="p">,</span>
+
+               <span class="nx">nodes</span><span class="o">:</span> <span class="p">[</span>
+
+                  <span class="c1">// Sphere primitive, implemented by plugin at</span>
+                  <span class="c1">// http://scenejs.org/api/latest/plugins/node/prims/sphere.js</span>
+                  <span class="p">{</span>
+                     <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;prims/sphere&quot;</span><span class="p">,</span>
+                     <span class="nx">radius</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+                     <span class="nx">latitudeBands</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span> <span class="c1">// A fairly low-rez sphere</span>
+                     <span class="nx">longitudeBands</span><span class="o">:</span> <span class="mi">16</span>
+                  <span class="p">}</span>
+               <span class="p">]</span>
+            <span class="p">}]</span>
+         <span class="p">}]</span>
+      <span class="p">},</span>
+
+      <span class="c1">// Detail level #3 (highest)</span>
+      <span class="c1">// A dark blue teapot</span>
+
+      <span class="p">{</span>
+         <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;material&quot;</span><span class="p">,</span>
+         <span class="nx">color</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">r</span><span class="o">:</span> <span class="mf">0.3</span><span class="p">,</span>
+            <span class="nx">g</span><span class="o">:</span> <span class="mf">0.3</span><span class="p">,</span>
+            <span class="nx">b</span><span class="o">:</span> <span class="mf">1.0</span>
+         <span class="p">},</span>
+
+         <span class="nx">nodes</span><span class="o">:</span> <span class="p">[{</span>
+            <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;translate&quot;</span><span class="p">,</span>
+            <span class="nx">x</span><span class="o">:</span> <span class="nx">xPos</span><span class="p">,</span>
+            <span class="nx">y</span><span class="o">:</span> <span class="nx">yPos</span> <span class="o">-</span> <span class="mf">2.5</span><span class="p">,</span>
+            <span class="nx">z</span><span class="o">:</span> <span class="nx">zPos</span><span class="p">,</span>
+
+            <span class="nx">nodes</span><span class="o">:</span> <span class="p">[{</span>
+               <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;scale&quot;</span><span class="p">,</span>
+               <span class="nx">x</span><span class="o">:</span> <span class="mf">2.5</span><span class="p">,</span>
+               <span class="nx">y</span><span class="o">:</span> <span class="mf">2.5</span><span class="p">,</span>
+               <span class="nx">z</span><span class="o">:</span> <span class="mf">2.5</span><span class="p">,</span>
+
+               <span class="nx">nodes</span><span class="o">:</span> <span class="p">[</span>
+
+                  <span class="c1">// Teapot primitive, implemented by plugin at</span>
+                  <span class="c1">// http://scenejs.org/api/latest/plugins/node/prims/teapot.js</span>
+                  <span class="p">{</span>
+                     <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;prims/teapot&quot;</span>
+                  <span class="p">}</span>
+               <span class="p">]</span>
+            <span class="p">}]</span>
+         <span class="p">}]</span>
+      <span class="p">}</span>
+
+      <span class="c1">// Mode children as required..</span>
+   <span class="p">]</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<h1 id="implementation">Implementation</h1>
+
+<p>Here’s some details on the internals, just in case you’re curious how it works:
+<img src="http://scenejs.org/images/frustumCulling.png" alt="" /></p>
+
+<ul>
+  <li>The <code>frustum/lod</code> node is implementated by this <a href="http://scenejs.org/api/latest/plugins/node/frustum/lod.js">custom node plugin</a>.</li>
+  <li>For performance, culling is distributed across multiple <a href="http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullEngine.js">culling engines</a>, each running within its own <a href="http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullWorker.js">worker thread</a>. Each of those workers is proxied by a <a href="http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullSystem.js">system</a> in which the <code>frustum/lod</code> nodes create frustum collision bodies, and those systems are managed in a load-balanced <a href="http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullSystemPool.js">pool</a>.</li>
+  <li>The <code>frustum/lod</code> node actually wraps a more basic <a href="http://scenejs.org/api/latest/plugins/node/frustum/body.js"><code>frustum/body</code></a> node type, which creates the collision body and subscribes to its frustum intersection status and projected 2D boundary size. The <code>frustum/lod</code> node does the job of translating those updates into child node enables/disables. This strategy allows us to reuse the <code>frustum/body</code> for internal workings of new types of culling node in future.</li>
+</ul>
+
+<h1 id="roadmap">Roadmap</h1>
+
+<ul>
+  <li>Allow <code>frustum/cull</code> boundaries to be defined in Model-space, where they are transformed by parent transform nodes</li>
+  <li>Other types of boundary shape, such as spherical</li>
+  <li>Each culling engine simply iterates over a list of bodies - improve their performance by organising the bodies in KD-trees</li>
+  <li><a href="https://github.com/xeolabs/scenejs/issues?direction=desc&amp;labels=Culling&amp;page=1&amp;sort=created&amp;state=open">Issues tagged ‘culling’</a></li>
+</ul>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+<h3><a href="http://xeolabs.com">@xeoLabs</a></h3>
+<p>Lindsay Kay<br>3D Web developer</p>
+<a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+        </div>
+        <p class="byline"><strong>SceneJS Detail Culling</strong> was published on <time datetime="2013-10-28T00:00:00-04:00" itemprop="datePublished">October 28, 2013</time> and last modified on <time datetime="2013-05-31" itemprop="dateModified">May 31, 2013</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="/about" title="About @xeoLabs" itemprop="url">@xeoLabs</a></span></span>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/articles">View all articles</a>)</small></h4>
+    <ul>
+    
+      
+      
+      
+      <li><a href="/articles/scenejs-quick-start" title="SceneJS Quick Start">SceneJS Quick Start</a></li>
+      
+    
+      
+      
+      
+      <li><a href="/articles/scenejs-physics" title="SceneJS Physics">SceneJS Physics</a></li>
+      
+    
+      
+      
+      
+      <li><a href="/articles/scenejs-node-types" title="Extending SceneJS - Creating new Scene Node Types">Extending SceneJS - Creating new Scene Node Types</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2013 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+</body>
+</html>

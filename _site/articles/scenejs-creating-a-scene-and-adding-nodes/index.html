@@ -1,0 +1,313 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Adding and Removing Scene Nodes &#8211; xeoLabs</title>
+<meta name="description" content="How to create a scene then update, add and remove nodes">
+<meta name="keywords" content="scenejs, tutorial">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/">
+<meta name="twitter:title" content="Adding and Removing Scene Nodes">
+<meta name="twitter:description" content="How to create a scene then update, add and remove nodes">
+<meta name="twitter:creator" content="@xeolabs">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Adding and Removing Scene Nodes">
+<meta property="og:description" content="How to create a scene then update, add and remove nodes">
+<meta property="og:url" content="/articles/scenejs-creating-a-scene-and-adding-nodes">
+<meta property="og:site_name" content="xeoLabs">
+
+
+
+
+
+<link rel="canonical" href="/articles/scenejs-creating-a-scene-and-adding-nodes">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="xeoLabs Feed">
+<link rel="author" href="https://plus.google.com/u/0/110983138227486752827/posts?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="article" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="">xeoLabs</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <ul>
+		        
+				<li><a href="/about" >About</a></li>
+		        
+				<li><a href="/articles" >Articles</a></li>
+		        
+				<li><a href="http://scenejs.org" target="_blank">SceneJS</a></li>
+		        
+				<li><a href="http://biodigitalhuman.com" target="_blank">BioDigital Human</a></li>
+		        
+		        <li><i class="icon-feed"></i> <a href="/feed.xml" title="Atom/RSS feed">Feed</a>
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <div class="article-author-top">
+    <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+<h3><a href="http://xeolabs.com">@xeoLabs</a></h3>
+<p>Lindsay Kay<br>3D Web developer</p>
+<a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+  </div>
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <div class="headline-wrap">
+      <h1 itemprop="name">Adding and Removing Scene Nodes</h1>
+      <h2></h2>
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap" itemprop="text">
+      <section id="table-of-contents" class="toc">
+  <header>
+    <h3>Contents</h3>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#creating-a-scene-graph">Creating a Scene Graph</a></li>
+  <li><a href="#updating-nodes">Updating Nodes</a></li>
+  <li><a href="#adding-nodes">Adding Nodes</a></li>
+  <li><a href="#removing-nodes">Removing Nodes</a></li>
+</ul>
+
+  </div>
+</section>
+<!-- /#table-of-contents -->
+
+<p>In this article we’re going to go a little deeper than we did in the <a href="quick start">quick start</a> to demonstrate how to
+add and remove scene nodes. Although you can define a whole scene one chunk of JSON, SceneJS actually provides you with
+node objects that you can create, call methods on, destroy and rearrange.</p>
+
+<h1 id="overview">Overview</h1>
+<p>A scene graph is a data structure that arranges the logical and spatial representation of a graphical scene as a collection
+of nodes in a graph, typically a tree. Scene graphs can provide a convenient abstraction on top of low-level graphics APIs
+(such as WebGL) that encapsulates optimisations and API best practices, leaving the developer free to concentrate on scene content.</p>
+
+<p>A key feature of most scene graphs is state inheritance in which child nodes inherit the states set up by parents
+(e.g. coordinate spaces, appearance attributes etc).</p>
+
+<p>For SceneJS, a benefit of scene graphs is modularity, where JSON subtrees can be complete reusable components, and brevity,
+where state may be reused by wrapping it around many child nodes.</p>
+
+<h1 id="creating-a-scene-graph">Creating a Scene Graph</h1>
+<p>The snippet below is an example of a 3D scene created with SceneJS. The scene graph is a directed acyclic graph expressed
+in JSON, in this case defining a scene containing a blue teapot and two boxes sharing the same textured appearance.
+Geometry nodes are normally at the leaves, where they inherit the state defined by higher nodes, in this case the material
+and rotation transform.</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="nx">SceneJS</span><span class="p">.</span><span class="nx">createScene</span><span class="p">({</span>
+    <span class="nx">nodes</span><span class="o">:</span> <span class="p">[{</span>
+        <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;material&quot;</span><span class="p">,</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;myMaterial&quot;</span><span class="p">,</span>
+        <span class="nx">color</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">r</span><span class="o">:</span> <span class="mf">0.5</span><span class="p">,</span>
+            <span class="nx">g</span><span class="o">:</span> <span class="mf">0.5</span><span class="p">,</span>
+            <span class="nx">b</span><span class="o">:</span> <span class="mf">1.0</span>
+        <span class="p">},</span>
+
+        <span class="nx">nodes</span><span class="o">:</span> <span class="p">[{</span>
+            <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;texture&quot;</span><span class="p">,</span>
+            <span class="nx">layers</span><span class="o">:</span> <span class="p">[{</span>
+                <span class="nx">src</span><span class="o">:</span> <span class="s2">&quot;../../textures/superman.jpg&quot;</span>
+            <span class="p">}],</span>
+
+            <span class="nx">nodes</span><span class="o">:</span> <span class="p">[{</span>
+                <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;translate&quot;</span><span class="p">,</span>
+                <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;firstBoxPos&quot;</span><span class="p">,</span>
+                <span class="nx">x</span><span class="o">:</span> <span class="o">-</span><span class="mf">3.0</span><span class="p">,</span>
+                <span class="nx">y</span><span class="o">:</span> <span class="mf">1.0</span><span class="p">,</span>
+                <span class="nx">z</span><span class="o">:</span> <span class="mf">5.0</span><span class="p">,</span>
+
+                <span class="nx">nodes</span><span class="o">:</span> <span class="p">[{</span>
+                    <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;prims/box&quot;</span>
+                <span class="p">}]</span>
+            <span class="p">},</span> <span class="p">{</span>
+                <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;translate&quot;</span><span class="p">,</span>
+                <span class="nx">y</span><span class="o">:</span> <span class="mf">1.0</span><span class="p">,</span>
+                <span class="nx">z</span><span class="o">:</span> <span class="mf">5.0</span><span class="p">,</span>
+
+                <span class="nx">nodes</span><span class="o">:</span> <span class="p">[{</span>
+                    <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;prims/box&quot;</span>
+                <span class="p">}]</span>
+            <span class="p">}]</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;prims/teapot&quot;</span>
+        <span class="p">}]</span>
+    <span class="p">}]</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p>SceneJS parses that description to create the 3D scene shown below:
+<br /><br /></p>
+
+<p><a href="http://scenejs.org/examples.html?page=secondExample"><img src="http://scenejs.org/images/secondExample.jpg" alt="" /></a></p>
+
+<p><a href="http://scenejs.org/examples.html?page=secondExample">Run this example here</a>.</p>
+
+<h1 id="updating-nodes">Updating Nodes</h1>
+<p>We can animate one of those <code>translate</code> nodes like this:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">scene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">&quot;firstBoxPos&quot;</span><span class="p">,</span>
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">firstBoxPos</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">inc</span> <span class="o">=</span> <span class="mf">0.02</span><span class="p">;</span>
+
+        <span class="nx">scene</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;tick&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">firstBoxPos</span><span class="p">.</span><span class="nx">setY</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span>
+            <span class="nx">y</span> <span class="o">+=</span> <span class="nx">inc</span><span class="p">;</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="nx">y</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="o">||</span> <span class="nx">y</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">inc</span> <span class="o">*=</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+</code></pre></div>
+
+<h1 id="adding-nodes">Adding Nodes</h1>
+<p>Adding nodes to the scene is as simple as:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">scene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">&quot;myMaterial&quot;</span><span class="p">,</span>
+    <span class="kd">function</span><span class="p">(</span><span class="nx">myMaterial</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="nx">myMaterial</span><span class="p">.</span><span class="nx">addNode</span><span class="p">({</span>
+            <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;translate&quot;</span><span class="p">,</span>
+                <span class="nx">x</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+                <span class="nx">nodes</span><span class="o">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;prims/torus&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+</code></pre></div>
+
+<h1 id="removing-nodes">Removing Nodes</h1>
+<p>Remove nodes like this:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">scene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">&quot;myMaterial&quot;</span><span class="p">,</span>
+    <span class="kd">function</span><span class="p">(</span><span class="nx">myMaterial</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="nx">myMaterial</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+    <span class="p">});</span>
+</code></pre></div>
+
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+<h3><a href="http://xeolabs.com">@xeoLabs</a></h3>
+<p>Lindsay Kay<br>3D Web developer</p>
+<a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+        </div>
+        <p class="byline"><strong>Adding and Removing Scene Nodes</strong> was published on <time datetime="2013-10-28T00:00:00-04:00" itemprop="datePublished">October 28, 2013</time> and last modified on <time datetime="2013-05-31" itemprop="dateModified">May 31, 2013</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="/about" title="About @xeoLabs" itemprop="url">@xeoLabs</a></span></span>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/articles">View all articles</a>)</small></h4>
+    <ul>
+    
+      
+      
+      
+      <li><a href="/articles/scenejs-quick-start" title="SceneJS Quick Start">SceneJS Quick Start</a></li>
+      
+    
+      
+      
+      
+      <li><a href="/articles/scenejs-physics" title="SceneJS Physics">SceneJS Physics</a></li>
+      
+    
+      
+      
+      
+      <li><a href="/articles/scenejs-node-types" title="Extending SceneJS - Creating new Scene Node Types">Extending SceneJS - Creating new Scene Node Types</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2013 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+</body>
+</html>

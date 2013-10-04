@@ -1,0 +1,280 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>SceneJS Quick Start &#8211; xeoLabs</title>
+<meta name="description" content="Get cracking with SceneJS in two minutes">
+<meta name="keywords" content="scenejs, tutorial">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/">
+<meta name="twitter:title" content="SceneJS Quick Start">
+<meta name="twitter:description" content="Get cracking with SceneJS in two minutes">
+<meta name="twitter:creator" content="@xeolabs">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SceneJS Quick Start">
+<meta property="og:description" content="Get cracking with SceneJS in two minutes">
+<meta property="og:url" content="/articles/scenejs-quick-start">
+<meta property="og:site_name" content="xeoLabs">
+
+
+
+
+
+<link rel="canonical" href="/articles/scenejs-quick-start">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="xeoLabs Feed">
+<link rel="author" href="https://plus.google.com/u/0/110983138227486752827/posts?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="article" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="">xeoLabs</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <ul>
+		        
+				<li><a href="/about" >About</a></li>
+		        
+				<li><a href="/articles" >Articles</a></li>
+		        
+				<li><a href="http://scenejs.org" target="_blank">SceneJS</a></li>
+		        
+				<li><a href="http://biodigitalhuman.com" target="_blank">BioDigital Human</a></li>
+		        
+		        <li><i class="icon-feed"></i> <a href="/feed.xml" title="Atom/RSS feed">Feed</a>
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <div class="article-author-top">
+    <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+<h3><a href="http://xeolabs.com">@xeoLabs</a></h3>
+<p>Lindsay Kay<br>3D Web developer</p>
+<a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+  </div>
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <div class="headline-wrap">
+      <h1 itemprop="name">SceneJS Quick Start</h1>
+      <h2></h2>
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap" itemprop="text">
+      <section id="table-of-contents" class="toc">
+  <header>
+    <h3>Contents</h3>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#first-example">First example</a>    <ul>
+      <li><a href="#step-1-link-to-the-api">Step 1. Link to the API</a></li>
+      <li><a href="#step-2-create-a-scene">Step 2. Create a scene</a></li>
+      <li><a href="#step-3-spin-the-teapot">Step 3. Spin the teapot</a></li>
+    </ul>
+  </li>
+  <li><a href="#plugins">Plugins</a>    <ul>
+      <li><a href="#serving-your-own-plugins">Serving your own plugins</a></li>
+    </ul>
+  </li>
+</ul>
+
+  </div>
+</section>
+<!-- /#table-of-contents -->
+
+<p>SceneJS is super easy to get into, thanks to its succinct API with lots of defaults and
+   training wheels. But don’t let let that simplicity fool you - behind that friendly facade it’s optimised to death with
+   serious fu like scene compilation and GL state sorting, so will happily scale up to thousands of
+   objects, while eating draw calls for breakfast. Let’s start easy though, with an example that shows the basic idea
+   of this engine.</p>
+
+<h1 id="first-example">First example</h1>
+<p>Let’s create this spinning Newell teapot:
+<br /><br /></p>
+
+<p><a href="http://scenejs.org/examples.html?page=firstExample"><img src="/images/scenejs/firstExample.png" alt="SceneJS First Example" /></a></p>
+
+<p><a href="/examples.html?page=firstExample">Click here to run this example</a>.</p>
+
+<h3 id="step-1-link-to-the-api">Step 1. Link to the API</h3>
+<p>Include the <a href="http://scenejs.org/api/latest/scenejs.js">SceneJS library</a> in the &lt;head&gt; tag of your web page:</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://scenejs.org/api/latest/scenejs.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div>
+
+<h3 id="step-2-create-a-scene">Step 2. Create a scene</h3>
+<p>We’ll make a spinning blue teapot:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="nx">SceneJS</span><span class="p">.</span><span class="nx">createScene</span><span class="p">({</span>
+    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;material&quot;</span><span class="p">,</span>
+            <span class="nx">color</span><span class="o">:</span> <span class="p">{</span> <span class="nx">r</span><span class="o">:</span> <span class="mf">0.3</span><span class="p">,</span> <span class="nx">g</span><span class="o">:</span> <span class="mf">0.3</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span> <span class="mf">1.0</span> <span class="p">},</span>
+
+            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;rotate&quot;</span><span class="p">,</span>
+                    <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;myRotate&quot;</span><span class="p">,</span>
+                    <span class="nx">y</span><span class="o">:</span> <span class="mf">1.0</span><span class="p">,</span>
+                    <span class="nx">angle</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+
+                    <span class="nx">nodes</span><span class="o">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/teapot&quot;</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p>And voilà, there’s your blue teapot!</p>
+
+<h3 id="step-3-spin-the-teapot">Step 3. Spin the teapot</h3>
+<p>Now let’s start the teapot spinning:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">scene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">&quot;myRotate&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">myRotate</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">angle</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="nx">scene</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;tick&quot;</span><span class="p">,</span>
+        <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">myRotate</span><span class="p">.</span><span class="nx">setAngle</span><span class="p">(</span><span class="nx">angle</span> <span class="o">+=</span> <span class="mf">0.5</span><span class="p">);</span>
+        <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<h1 id="plugins">Plugins</h1>
+<p>To keep the core library small, SceneJS dynamically loads it’s non-core functionality from a directory of
+plugins. In the example above, the <code>prims/teapot</code> node is a custom node type instantiated
+from a <a href="https://github.com/xeolabs/scenejs/tree/V3.1/api/latest/plugins/node/prims/teapot.js">prims/teapot</a>
+plugin, which SceneJS loaded on-demand from <a href="https://github.com/xeolabs/scenejs/tree/V3.1/api/latest/plugins">the
+plugins directory</a> within its repository on GitHub.</p>
+
+<h2 id="serving-your-own-plugins">Serving your own plugins</h2>
+<p>If you’d rather serve the plugins yourself, then just copy that directory to your server and configure SceneJS to load
+them from there, like this:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">setConfigs</span><span class="p">({</span>
+    <span class="nx">pluginPath</span><span class="o">:</span> <span class="s2">&quot;./foo/myPluginsDir&quot;</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p>Want to write your own plugins? Sweet! Please <a href="/articles/scenejs-node-types">read more about the plugin API here</a></p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+<h3><a href="http://xeolabs.com">@xeoLabs</a></h3>
+<p>Lindsay Kay<br>3D Web developer</p>
+<a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+        </div>
+        <p class="byline"><strong>SceneJS Quick Start</strong> was published on <time datetime="2013-10-28T00:00:00-04:00" itemprop="datePublished">October 28, 2013</time> and last modified on <time datetime="2013-05-31" itemprop="dateModified">May 31, 2013</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="/about" title="About @xeoLabs" itemprop="url">@xeoLabs</a></span></span>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/articles">View all articles</a>)</small></h4>
+    <ul>
+    
+      
+      
+      
+      <li><a href="/articles/scenejs-physics" title="SceneJS Physics">SceneJS Physics</a></li>
+      
+    
+      
+      
+      
+      <li><a href="/articles/scenejs-node-types" title="Extending SceneJS - Creating new Scene Node Types">Extending SceneJS - Creating new Scene Node Types</a></li>
+      
+    
+      
+      
+      
+      <li><a href="/articles/scenejs-detail-culling" title="SceneJS Detail Culling">SceneJS Detail Culling</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2013 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+</body>
+</html>
