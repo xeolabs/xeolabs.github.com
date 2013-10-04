@@ -18,11 +18,11 @@ tags: [scenejs, tutorial]
 </div>
 </section><!-- /#table-of-contents -->
 
-SceneJS is super easy to get into, thanks to its succinct API with lots of defaults and
-   training wheels. But don't let let that simplicity fool you - behind that friendly facade it's optimised to death with
-   serious fu, such as scene compilation and GL state sorting, so will happily scale up to thousands of
-   objects while eating draw calls for breakfast. Let's start easy though, with an example that shows the basic idea
-   of this engine.
+SceneJS is an extensible WebGL-based engine for high-detail 3D visualisation. It's super easy to get into, thanks to its
+succinct API with lots of defaults and training wheels. But don't let let that simplicity fool you - behind that friendly
+facade it's optimised to death with serious fu, such as scene compilation and GL state sorting, so will happily scale up
+to thousands of objects while eating draw calls for breakfast. Let's start easy though, with an example that shows the basic idea
+of this engine.
 
 # First example
 Let's create this spinning Newell teapot:
