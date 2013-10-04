@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /about/index.html
-title: About xeoLabs
+title: About
 tagline: Minimal Mistakes, a Jekyll Theme
 tags: [about, Jekyll, theme, responsive]
 modified: 9-9-2013
