@@ -110,7 +110,7 @@ var scene = SceneJS.createScene({
 
             nodes:[
 
-                // Node type defined by plugin
+                // Node type defined by our new plugin, served from:
                 // http://scenejs.org/api/latest/plugins/node/demos/color.js
                 {
                     type:"demos/color",
