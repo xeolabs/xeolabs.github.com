@@ -11,7 +11,7 @@ image:
   creditlink: http://xeolabs.org
 ---
 
-I'm a software engineer based in Berlin who’s interested in abstracting high-performance 3D behind sweet JavaScript
+I'm Lindsay Kay, a software engineer based in Berlin who’s interested in abstracting high-performance 3D behind sweet JavaScript
 APIs, so that Web developers can have fun making virtual worlds.
 <br><br>
 In my day job, I'm the engine architect for the [BioDigital Human](http://biodigitalhuman.com), a 3D medical visualisation
