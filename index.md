@@ -1,7 +1,7 @@
 ---
 layout: home
-description: "A responsive Jekyll theme with editorial tendencies by designer Michael Rose."
-tags: [Jekyll, theme, responsive, blog, template]
+description: "xeoLabs - Lindsay Kay's 3D Web Development Blog"
+tags: [xeolabs, webgl, scenejs, biodigitalhuman]
 image:
   feature: grid.jpg
   credit: SceneJS
