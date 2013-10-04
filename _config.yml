@@ -31,10 +31,10 @@ links:
     url: /about
   - title: Articles
     url: /articles
-  - title: SceneJS
+  - title: SceneJS.org
     url: http://scenejs.org
     external: true
-  - title: BioDigital Human
+  - title: BioDigitalHuman.com
     url: http://biodigitalhuman.com
     external: true
 
