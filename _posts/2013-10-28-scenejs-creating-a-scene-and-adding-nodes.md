@@ -17,7 +17,7 @@ tags: [scenejs, tutorial]
 </div>
 </section><!-- /#table-of-contents -->
 
-In this article we're going to go a little deeper than we did in the [quick start](quick start) to demonstrate how to
+In this article we're going to go a little deeper than we did in the [quick start](/articles/scenejs-quick-start) to demonstrate how to
 add and remove scene nodes. Although you can define a whole scene one chunk of JSON, SceneJS actually provides you with
 node objects that you can create, call methods on, destroy and rearrange.
 
