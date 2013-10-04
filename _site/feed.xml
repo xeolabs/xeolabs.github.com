@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2013-10-03T21:29:20-04:00</updated>
+<updated>2013-10-03T21:32:13-04:00</updated>
 <id>/</id>
 <author>
   <name>@xeoLabs</name>
@@ -821,9 +821,9 @@ uses the 3rd-party &lt;code&gt;canvas2image&lt;/code&gt; library to capture the 
                     &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
                     &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
 
-                &lt;span class=&quot;c1&quot;&gt;// Teapot primitive,&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;// implemented by plugin at&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;// http://scenejs.org/api/latest/plugins/node/prims/teapot.js&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// Teapot primitive,&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// implemented by plugin at&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// http://scenejs.org/api/latest/plugins/node/prims/teapot.js&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
                             &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/teapot&amp;quot;&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -939,9 +939,9 @@ notifications to us as a count of tasks in progress, as we’ll see further down
                     &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
                     &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
 
-               &lt;span class=&quot;c1&quot;&gt;// Teapot primitive,&lt;/span&gt;
-               &lt;span class=&quot;c1&quot;&gt;// implemented by plugin at&lt;/span&gt;
-               &lt;span class=&quot;c1&quot;&gt;// http://scenejs.org/api/latest/plugins/node/prims/teapot.js&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// Teapot primitive,&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// implemented by plugin at&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// http://scenejs.org/api/latest/plugins/node/prims/teapot.js&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
                             &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/teapot&amp;quot;&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;

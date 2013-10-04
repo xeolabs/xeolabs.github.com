@@ -226,9 +226,9 @@ SceneJS.Types.addType("growingTeapot", {
                     color:{ r:0.6, g:0.6, b:1.0 },
                     nodes:[
 
-                // Teapot primitive,
-                // implemented by plugin at
-                // http://scenejs.org/api/latest/plugins/node/prims/teapot.js
+                        // Teapot primitive,
+                        // implemented by plugin at
+                        // http://scenejs.org/api/latest/plugins/node/prims/teapot.js
                         {
                             type:"prims/teapot"
                         }
@@ -347,9 +347,9 @@ SceneJS.Types.addType("myGrowingTeapot", {
                     },
                     nodes: [
 
-               // Teapot primitive,
-               // implemented by plugin at
-               // http://scenejs.org/api/latest/plugins/node/prims/teapot.js
+                        // Teapot primitive,
+                        // implemented by plugin at
+                        // http://scenejs.org/api/latest/plugins/node/prims/teapot.js
                         {
                             type: "prims/teapot"
                         }
