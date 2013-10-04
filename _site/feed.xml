@@ -3,27 +3,27 @@
 <title type="text">xeoLabs</title>
 <subtitle type="text">On the other side of the screen, it all looks so easy</subtitle>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
-<link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2013-10-03T20:21:05-04:00</updated>
-<id>http://xeolabs.com/</id>
+<link rel="self" type="application/atom+xml" href="/feed.xml" />
+<link rel="alternate" type="text/html" href="" />
+<updated>2013-10-03T20:55:10-04:00</updated>
+<id>/</id>
 <author>
   <name>@xeoLabs</name>
-  <uri>http://xeolabs.com/</uri>
+  <uri>/</uri>
   <email>lindsay.kay@xeolabs.com</email>
 </author>
 
 
 <entry>
   <title type="html"><![CDATA[SceneJS Quick Start]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-quick-start" />
-  <id>http://xeolabs.com/articles/scenejs-quick-start</id>
+  <link rel="alternate" type="text/html" href="/articles/scenejs-quick-start" />
+  <id>/articles/scenejs-quick-start</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -58,9 +58,9 @@
 &lt;p&gt;Let’s create this spinning Newell teapot:
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=firstExample&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/firstExample.png&quot; alt=&quot;SceneJS First Example&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=firstExample&quot;&gt;&lt;img src=&quot;/images/scenejs/firstExample.png&quot; alt=&quot;SceneJS First Example&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://xeolabs.com/examples.html?page=firstExample&quot;&gt;Click here to run this example&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/examples.html?page=firstExample&quot;&gt;Click here to run this example&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;step-1-link-to-the-api&quot;&gt;Step 1. Link to the API&lt;/h3&gt;
 &lt;p&gt;Include the &lt;a href=&quot;http://scenejs.org/api/latest/scenejs.js&quot;&gt;SceneJS library&lt;/a&gt; in the &amp;lt;head&amp;gt; tag of your web page:&lt;/p&gt;
@@ -128,22 +128,22 @@ them from there, like this:&lt;/p&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Want to write your own plugins? Sweet! Please &lt;a href=&quot;http://xeolabs.com/articles/scenejs-node-types&quot;&gt;read more about the plugin API here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Want to write your own plugins? Sweet! Please &lt;a href=&quot;/articles/scenejs-node-types&quot;&gt;read more about the plugin API here&lt;/a&gt;&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-quick-start&quot;&gt;SceneJS Quick Start&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-quick-start&quot;&gt;SceneJS Quick Start&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[SceneJS Physics]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-physics" />
-  <id>http://xeolabs.com/articles/scenejs-physics</id>
+  <link rel="alternate" type="text/html" href="/articles/scenejs-physics" />
+  <id>/articles/scenejs-physics</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -153,23 +153,23 @@ them from there, like this:&lt;/p&gt;
 &lt;div id=&quot;drawer&quot;&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#overview&quot;&gt;Overview&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#creating-a-physics-body&quot;&gt;Creating a Physics Body&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#box-shaped-body&quot;&gt;Box-shaped Body&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#sphere-shaped-body&quot;&gt;Sphere-shaped Body&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#plane-shaped-body&quot;&gt;Plane-shaped Body&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#creating-a-physics-body&quot;&gt;Creating a physics body&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#box-shaped-body&quot;&gt;Box-shaped body&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#sphere-shaped-body&quot;&gt;Sphere-shaped body&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#plane-shaped-body&quot;&gt;Plane-shaped body&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#body-extents&quot;&gt;Body Extents&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#physics-materials&quot;&gt;Physics Materials&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#configuring-a-physics-system&quot;&gt;Configuring a Physics System&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#physics-primitives&quot;&gt;Physics Primitives&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#teapot-primitive&quot;&gt;Teapot Primitive&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#box-primitive&quot;&gt;Box Primitive&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#sphere-primitive&quot;&gt;Sphere Primitive&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#plane-primitive&quot;&gt;Plane Primitive&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#body-extents&quot;&gt;Body extents&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#physics-materials&quot;&gt;Physics materials&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#configuring-a-physics-system&quot;&gt;Configuring a physics system&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#physics-primitives&quot;&gt;Physics primitives&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#teapot-primitive&quot;&gt;Teapot primitive&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#box-primitive&quot;&gt;Box primitive&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#sphere-primitive&quot;&gt;Sphere primitive&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#plane-primitive&quot;&gt;Plane primitive&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#switching-physics-engines&quot;&gt;Switching Physics Engines&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#switching-physics-engines&quot;&gt;Switching physics engines&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#roadmap&quot;&gt;Roadmap&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -199,12 +199,12 @@ them from there, like this:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://scenejs.org/images/physics.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;creating-a-physics-body&quot;&gt;Creating a Physics Body&lt;/h1&gt;
+&lt;h1 id=&quot;creating-a-physics-body&quot;&gt;Creating a physics body&lt;/h1&gt;
 
 &lt;p&gt;A &lt;code&gt;physics/body&lt;/code&gt; node creates a body in a physics system and causes its child nodes to translate and rotate  according to the body’s movements and interactions with other bodies.
 The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of the body boundary. We’ll describe the different shapes that are available, starting with the &lt;code&gt;box&lt;/code&gt; shape, with which we’ll introduce the general parameters of the node. Then we’ll describe the other shape types, describing only the parameters specific to each of those shape types.&lt;/p&gt;
 
-&lt;h2 id=&quot;box-shaped-body&quot;&gt;Box-shaped Body&lt;/h2&gt;
+&lt;h2 id=&quot;box-shaped-body&quot;&gt;Box-shaped body&lt;/h2&gt;
 
 &lt;p&gt;Example:&lt;/p&gt;
 
@@ -267,7 +267,7 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
   &lt;li&gt;&lt;a href=&quot;http://scenejs.org/api/latest/plugins/node/physics/body.js&quot;&gt;&lt;code&gt;physics/body&lt;/code&gt; node implementation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;sphere-shaped-body&quot;&gt;Sphere-shaped Body&lt;/h2&gt;
+&lt;h2 id=&quot;sphere-shaped-body&quot;&gt;Sphere-shaped body&lt;/h2&gt;
 
 &lt;p&gt;Example:&lt;/p&gt;
 
@@ -314,7 +314,7 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;plane-shaped-body&quot;&gt;Plane-shaped Body&lt;/h2&gt;
+&lt;h2 id=&quot;plane-shaped-body&quot;&gt;Plane-shaped body&lt;/h2&gt;
 
 &lt;p&gt;Example:&lt;/p&gt;
 
@@ -372,7 +372,7 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
 
 &lt;p&gt;More body types coming up.&lt;/p&gt;
 
-&lt;h1 id=&quot;body-extents&quot;&gt;Body Extents&lt;/h1&gt;
+&lt;h1 id=&quot;body-extents&quot;&gt;Body extents&lt;/h1&gt;
 &lt;p&gt;You must ensure that the extents of the &lt;code&gt;physics/body&lt;/code&gt; enclose the space occupied by its child nodes. Ideally, we would do that automatically, expanding and contracting the extents as child nodes are added and removed.&lt;/p&gt;
 
 &lt;p&gt;However, the reasons we don’t (re)calculated them automatically are:
@@ -380,7 +380,7 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
 * The child nodes might be moving, and thus the boundary would be specified for the extents of their movement, (which again, could be hard to compute in advance, or synchronise the body extents with)
 * Whatever creates the &lt;code&gt;physics/body&lt;/code&gt; node (eg. a loader, or another custom node type) is likely to be in a position of calculate the extents of child nodes anyway&lt;/p&gt;
 
-&lt;h1 id=&quot;physics-materials&quot;&gt;Physics Materials&lt;/h1&gt;
+&lt;h1 id=&quot;physics-materials&quot;&gt;Physics materials&lt;/h1&gt;
 &lt;p&gt;Although you can specify properties like &lt;code&gt;restitution&lt;/code&gt;, &lt;code&gt;friction&lt;/code&gt; and &lt;code&gt;mass&lt;/code&gt; on individual &lt;code&gt;physics/body&lt;/code&gt; nodes, sometimes you’ll want to share those properties among a group of &lt;code&gt;physics/body&lt;/code&gt; nodes.&lt;/p&gt;
 
 &lt;p&gt;Just as we can have a parent &lt;code&gt;material&lt;/code&gt; node wrapping multiple child &lt;code&gt;geometry&lt;/code&gt; nodes, we can have a &lt;code&gt;physics/material&lt;/code&gt; node wrapping multiple child &lt;code&gt;physics/body&lt;/code&gt; nodes, so that the children inherit properties from the parent:&lt;/p&gt;
@@ -414,7 +414,7 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
   &lt;li&gt;&lt;a href=&quot;http://scenejs.org/api/latest/plugins/node/physics/material.js&quot;&gt;&lt;code&gt;physics/material&lt;/code&gt; node implementation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;configuring-a-physics-system&quot;&gt;Configuring a Physics System&lt;/h1&gt;
+&lt;h1 id=&quot;configuring-a-physics-system&quot;&gt;Configuring a physics system&lt;/h1&gt;
 
 &lt;p&gt;The &lt;code&gt;physics/system&lt;/code&gt; node configures a physics system and may appear anywhere within the scene graph.&lt;/p&gt;
 
@@ -441,11 +441,11 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
   &lt;li&gt;&lt;a href=&quot;http://scenejs.org/api/latest/plugins/node/physics/system.js&quot;&gt;&lt;code&gt;physics/system&lt;/code&gt; node implementation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;physics-primitives&quot;&gt;Physics Primitives&lt;/h1&gt;
+&lt;h1 id=&quot;physics-primitives&quot;&gt;Physics primitives&lt;/h1&gt;
 
 &lt;p&gt;There is a collection of convenience nodes, each of which wraps a child &lt;code&gt;physics/body&lt;/code&gt;, which in turn wraps a child geometry primitive node, and configures the extents of the &lt;code&gt;physics/body&lt;/code&gt; to enclose the primitive.  These allow you to just create, for example, a teapot with physics behaviours, in one shot:&lt;/p&gt;
 
-&lt;h2 id=&quot;teapot-primitive&quot;&gt;Teapot Primitive&lt;/h2&gt;
+&lt;h2 id=&quot;teapot-primitive&quot;&gt;Teapot primitive&lt;/h2&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;someNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;physics/teapot&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -460,7 +460,7 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
   &lt;li&gt;&lt;a href=&quot;http://scenejs.org/api/latest/plugins/node/physics/teapot.js&quot;&gt;&lt;code&gt;physics/teapot&lt;/code&gt; node implementation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;box-primitive&quot;&gt;Box Primitive&lt;/h2&gt;
+&lt;h2 id=&quot;box-primitive&quot;&gt;Box primitive&lt;/h2&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;someNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;physics/box&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -476,7 +476,7 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
   &lt;li&gt;&lt;a href=&quot;http://scenejs.org/api/latest/plugins/node/physics/box.js&quot;&gt;&lt;code&gt;physics/box&lt;/code&gt; node implementation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;sphere-primitive&quot;&gt;Sphere Primitive&lt;/h2&gt;
+&lt;h2 id=&quot;sphere-primitive&quot;&gt;Sphere primitive&lt;/h2&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;someNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;physics/sphere&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -495,7 +495,7 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
   &lt;li&gt;&lt;a href=&quot;http://scenejs.org/api/latest/plugins/node/physics/sphere.js&quot;&gt;&lt;code&gt;physics/sphere&lt;/code&gt; node implementation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;plane-primitive&quot;&gt;Plane Primitive&lt;/h2&gt;
+&lt;h2 id=&quot;plane-primitive&quot;&gt;Plane primitive&lt;/h2&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;someNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;physics/plane&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -518,7 +518,7 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
 
 &lt;p&gt;[More to come..]&lt;/p&gt;
 
-&lt;h1 id=&quot;switching-physics-engines&quot;&gt;Switching Physics Engines&lt;/h1&gt;
+&lt;h1 id=&quot;switching-physics-engines&quot;&gt;Switching physics engines&lt;/h1&gt;
 
 &lt;p&gt;&lt;strong&gt;In development&lt;/strong&gt;&lt;/p&gt;
 
@@ -582,20 +582,20 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
   &lt;li&gt;&lt;a href=&quot;https://github.com/xeolabs/scenejs/issues?direction=desc&amp;amp;labels=Physics&amp;amp;page=1&amp;amp;sort=created&amp;amp;state=open&quot;&gt;Issues tagged ‘physics’&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-physics&quot;&gt;SceneJS Physics&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-physics&quot;&gt;SceneJS Physics&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
-  <title type="html"><![CDATA[Extending SceneJS - Creating new Scene Node Types]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-node-types" />
-  <id>http://xeolabs.com/articles/scenejs-node-types</id>
+  <title type="html"><![CDATA[Extending SceneJS]]></title>
+  <link rel="alternate" type="text/html" href="/articles/scenejs-node-types" />
+  <id>/articles/scenejs-node-types</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -604,12 +604,12 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
   &lt;/header&gt;
 &lt;div id=&quot;drawer&quot;&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#creating-a-new-node-type&quot;&gt;Creating a New Node Type&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#using-a-new-node-type&quot;&gt;Using a New Node Type&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#creating-a-new-node-type&quot;&gt;Creating a new node type&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#using-a-new-node-type&quot;&gt;Using a new node type&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#using-3rd-party-libraries-in-nodes&quot;&gt;Using 3rd-Party Libraries in Nodes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#publishing-data-from-nodes&quot;&gt;Publishing Data from Nodes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#task-tracking-on-nodes&quot;&gt;Task Tracking on Nodes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#scene-compilation-hooks&quot;&gt;Scene Compilation Hooks&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#publishing-data-from-nodes&quot;&gt;Publishing data from nodes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#task-tracking-on-nodes&quot;&gt;Task tracking on nodes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#scene-compilation-hooks&quot;&gt;Scene compilation hooks&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
   &lt;/div&gt;
@@ -625,7 +625,7 @@ you can create and update as usual via the JSON API.&lt;/p&gt;
 &lt;p&gt;The examples page also has &lt;a href=&quot;http://scenejs.org/examples.html?tags=customNodes&quot;&gt;several examples&lt;/a&gt; that show how to define
 and use node types.&lt;/p&gt;
 
-&lt;h1 id=&quot;creating-a-new-node-type&quot;&gt;Creating a New Node Type&lt;/h1&gt;
+&lt;h1 id=&quot;creating-a-new-node-type&quot;&gt;Creating a new node type&lt;/h1&gt;
 
 &lt;p&gt;A class definition for a node type is provided to SceneJS as plugin script, which it will dynamically load on-demand
 the first time you try to instantiate it within your scene graph.&lt;/p&gt;
@@ -685,7 +685,7 @@ subgraphs, while providing accessor methods which usually get or set state on th
 &lt;p&gt;Note that the plugin script installs the new node type as “demos/color”, and see how that type name maps to the
 script’s location within the &lt;code&gt;http://scenejs.org/api/latest/plugins/node&lt;/code&gt; directory.&lt;/p&gt;
 
-&lt;h1 id=&quot;using-a-new-node-type&quot;&gt;Using a New Node Type&lt;/h1&gt;
+&lt;h1 id=&quot;using-a-new-node-type&quot;&gt;Using a new node type&lt;/h1&gt;
 
 &lt;p&gt;Let’s assume that we’ve configured SceneJS to find our plugin (this is the default configuration by the way, so don’t
 bother doing this if you’re hotlinking to the SceneJS lib and just want to use the plugins from this repo):&lt;/p&gt;
@@ -796,7 +796,7 @@ using a callback (instead of synchronously, like we can with instances of core n
 uses the 3rd-party &lt;code&gt;canvas2image&lt;/code&gt; library to capture the canvas to an image. Run a demo of that node
 &lt;a href=&quot;http://scenejs.org/examples.html?page=canvasCapture&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h1 id=&quot;publishing-data-from-nodes&quot;&gt;Publishing Data from Nodes&lt;/h1&gt;
+&lt;h1 id=&quot;publishing-data-from-nodes&quot;&gt;Publishing data from nodes&lt;/h1&gt;
 
 &lt;p&gt;Sometimes we want our nodes to publish some data that we can subscribe to via the API.&lt;/p&gt;
 
@@ -908,7 +908,7 @@ uses the 3rd-party &lt;code&gt;canvas2image&lt;/code&gt; library to capture the 
 
 &lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=customNodeDefWithPublications&quot;&gt;Run this example&lt;/a&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;task-tracking-on-nodes&quot;&gt;Task Tracking on Nodes&lt;/h1&gt;
+&lt;h1 id=&quot;task-tracking-on-nodes&quot;&gt;Task tracking on nodes&lt;/h1&gt;
 
 &lt;p&gt;Sometimes our nodes will run tasks that we’ll want to monitor progress on.&lt;/p&gt;
 
@@ -1041,24 +1041,24 @@ notifications to us as a count of tasks in progress, as we’ll see further down
 
 &lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=customNodeDefWithTasks&quot;&gt;Run this example&lt;/a&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;scene-compilation-hooks&quot;&gt;Scene Compilation Hooks&lt;/h1&gt;
+&lt;h1 id=&quot;scene-compilation-hooks&quot;&gt;Scene compilation hooks&lt;/h1&gt;
 
 &lt;p&gt;TODO&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-node-types&quot;&gt;Extending SceneJS - Creating new Scene Node Types&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-node-types&quot;&gt;Extending SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[SceneJS Detail Culling]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-detail-culling" />
-  <id>http://xeolabs.com/articles/scenejs-detail-culling</id>
+  <link rel="alternate" type="text/html" href="/articles/scenejs-detail-culling" />
+  <id>/articles/scenejs-detail-culling</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -1068,7 +1068,7 @@ notifications to us as a count of tasks in progress, as we’ll see further down
 &lt;div id=&quot;drawer&quot;&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#overview&quot;&gt;Overview&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#creating-a-detail-switched-object&quot;&gt;Creating a Detail-Switched Object&lt;/a&gt;    &lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#creating-a-detail-switched-object&quot;&gt;Creating a detail-switched object&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#example&quot;&gt;Example:&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -1108,7 +1108,7 @@ notifications to us as a count of tasks in progress, as we’ll see further down
 
 &lt;p&gt;Internally, culling is distributed across multiple culling engines, each running in its own web worker. This attempts to make culling responsive, while preventing it from starving the main rendering thread.&lt;/p&gt;
 
-&lt;h1 id=&quot;creating-a-detail-switched-object&quot;&gt;Creating a Detail-Switched Object&lt;/h1&gt;
+&lt;h1 id=&quot;creating-a-detail-switched-object&quot;&gt;Creating a detail-switched object&lt;/h1&gt;
 
 &lt;p&gt;The &lt;code&gt;frustum/lod&lt;/code&gt; node encloses its child nodes in an axis-aligned  World-space bounding box and enables the appropriate child for the box’s current projected 2D canvas size.&lt;/p&gt;
 
@@ -1279,20 +1279,20 @@ notifications to us as a count of tasks in progress, as we’ll see further down
   &lt;li&gt;&lt;a href=&quot;https://github.com/xeolabs/scenejs/issues?direction=desc&amp;amp;labels=Culling&amp;amp;page=1&amp;amp;sort=created&amp;amp;state=open&quot;&gt;Issues tagged ‘culling’&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-detail-culling&quot;&gt;SceneJS Detail Culling&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-detail-culling&quot;&gt;SceneJS Detail Culling&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Using the SceneJS Depth Buffer]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-depthbuf" />
-  <id>http://xeolabs.com/articles/scenejs-depthbuf</id>
+  <link rel="alternate" type="text/html" href="/articles/scenejs-depthbuf" />
+  <id>/articles/scenejs-depthbuf</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -1383,7 +1383,7 @@ where a close object hides a farther one.&lt;/p&gt;
 
 &lt;p&gt;And there’s your teapot, with depth buffer working with default values:
 &lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;http://xeolabs.com/images/scenejs/depthbufDefaults.png&quot; alt=&quot;depthbuf Defaults&quot; /&gt;
+&lt;img src=&quot;/images/scenejs/depthbufDefaults.png&quot; alt=&quot;depthbuf Defaults&quot; /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;setting-cleardepth&quot;&gt;Setting clearDepth&lt;/h3&gt;
@@ -1399,7 +1399,7 @@ cuts through the teapot:&lt;/p&gt;
 
 &lt;p&gt;Now all pixels
 &lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;http://xeolabs.com/images/scenejs/depthbufEnabledWithClearDepth.png&quot; alt=&quot;depthbuf Defaults&quot; /&gt;
+&lt;img src=&quot;/images/scenejs/depthbufEnabledWithClearDepth.png&quot; alt=&quot;depthbuf Defaults&quot; /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;setting-depthfunc&quot;&gt;Setting depthFunc&lt;/h3&gt;
@@ -1416,23 +1416,23 @@ cuts through the teapot:&lt;/p&gt;
 
 &lt;p&gt;Now all pixels
 &lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;http://xeolabs.com/images/scenejs/depthbufEnabledWithClearDepth.png&quot; alt=&quot;depthbuf Defaults&quot; /&gt;
+&lt;img src=&quot;/images/scenejs/depthbufEnabledWithClearDepth.png&quot; alt=&quot;depthbuf Defaults&quot; /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-depthbuf&quot;&gt;Using the SceneJS Depth Buffer&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-depthbuf&quot;&gt;Using the SceneJS Depth Buffer&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Adding and Removing Scene Nodes]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-creating-a-scene-and-adding-nodes" />
-  <id>http://xeolabs.com/articles/scenejs-creating-a-scene-and-adding-nodes</id>
+  <link rel="alternate" type="text/html" href="/articles/scenejs-creating-a-scene-and-adding-nodes" />
+  <id>/articles/scenejs-creating-a-scene-and-adding-nodes</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -1442,10 +1442,10 @@ cuts through the teapot:&lt;/p&gt;
 &lt;div id=&quot;drawer&quot;&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#overview&quot;&gt;Overview&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#creating-a-scene-graph&quot;&gt;Creating a Scene Graph&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#updating-nodes&quot;&gt;Updating Nodes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#adding-nodes&quot;&gt;Adding Nodes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#removing-nodes&quot;&gt;Removing Nodes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#creating-a-scene-graph&quot;&gt;Creating a scene graph&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#updating-nodes&quot;&gt;Updating nodes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#adding-nodes&quot;&gt;Adding nodes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#removing-nodes&quot;&gt;Removing nodes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
   &lt;/div&gt;
@@ -1467,7 +1467,7 @@ of nodes in a graph, typically a tree. Scene graphs can provide a convenient abs
 &lt;p&gt;For SceneJS, a benefit of scene graphs is modularity, where JSON subtrees can be complete reusable components, and brevity,
 where state may be reused by wrapping it around many child nodes.&lt;/p&gt;
 
-&lt;h1 id=&quot;creating-a-scene-graph&quot;&gt;Creating a Scene Graph&lt;/h1&gt;
+&lt;h1 id=&quot;creating-a-scene-graph&quot;&gt;Creating a scene graph&lt;/h1&gt;
 &lt;p&gt;The snippet below is an example of a 3D scene created with SceneJS. The scene graph is a directed acyclic graph expressed
 in JSON, in this case defining a scene containing a blue teapot and two boxes sharing the same textured appearance.
 Geometry nodes are normally at the leaves, where they inherit the state defined by higher nodes, in this case the material
@@ -1522,7 +1522,7 @@ and rotation transform.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=secondExample&quot;&gt;Run this example here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h1 id=&quot;updating-nodes&quot;&gt;Updating Nodes&lt;/h1&gt;
+&lt;h1 id=&quot;updating-nodes&quot;&gt;Updating nodes&lt;/h1&gt;
 &lt;p&gt;We can animate one of those &lt;code&gt;translate&lt;/code&gt; nodes like this:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;firstBoxPos&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -1542,7 +1542,7 @@ and rotation transform.&lt;/p&gt;
     &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h1 id=&quot;adding-nodes&quot;&gt;Adding Nodes&lt;/h1&gt;
+&lt;h1 id=&quot;adding-nodes&quot;&gt;Adding nodes&lt;/h1&gt;
 &lt;p&gt;Adding nodes to the scene is as simple as:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;myMaterial&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -1561,7 +1561,7 @@ and rotation transform.&lt;/p&gt;
     &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h1 id=&quot;removing-nodes&quot;&gt;Removing Nodes&lt;/h1&gt;
+&lt;h1 id=&quot;removing-nodes&quot;&gt;Removing nodes&lt;/h1&gt;
 &lt;p&gt;Remove nodes like this:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;myMaterial&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -1572,7 +1572,7 @@ and rotation transform.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-creating-a-scene-and-adding-nodes&quot;&gt;Adding and Removing Scene Nodes&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-creating-a-scene-and-adding-nodes&quot;&gt;Adding and Removing Scene Nodes&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 </feed>

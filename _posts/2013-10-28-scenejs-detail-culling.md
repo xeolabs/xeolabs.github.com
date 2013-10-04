@@ -31,7 +31,7 @@ The ```frustum/body``` node can be configured to disable all its children when t
 
 Internally, culling is distributed across multiple culling engines, each running in its own web worker. This attempts to make culling responsive, while preventing it from starving the main rendering thread.
 
-# Creating a Detail-Switched Object
+# Creating a detail-switched object
 
 The ```frustum/lod``` node encloses its child nodes in an axis-aligned  World-space bounding box and enables the appropriate child for the box's current projected 2D canvas size.
 

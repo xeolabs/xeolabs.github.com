@@ -1,7 +1,8 @@
 ---
 layout: post
-title: Extending SceneJS - Creating new Scene Node Types
-description: "How to create your own scene node type plugins for SceneJS"
+title: Extending SceneJS
+description: "Creating your own scene graph node types"
+tagline: "Creating your own scene graph node types"
 modified: 2013-05-31
 category: articles
 tags: [scenejs, tutorial, plugins]
@@ -17,7 +18,6 @@ tags: [scenejs, tutorial, plugins]
 </div>
 </section><!-- /#table-of-contents -->
 
-
 New node types may provided for SceneJS via plugins. This is a powerful extension mechanism which
 allows you to create your own high-level scene components that just slot straight into your scene graphs as nodes which
 you can create and update as usual via the JSON API.
@@ -27,7 +27,7 @@ In this section we'll see how to provide a node type, and how to use the node ty
 The examples page also has [several examples](http://scenejs.org/examples.html?tags=customNodes) that show how to define
 and use node types.
 
-# Creating a New Node Type
+# Creating a new node type
 
 A class definition for a node type is provided to SceneJS as plugin script, which it will dynamically load on-demand
 the first time you try to instantiate it within your scene graph.
@@ -88,7 +88,7 @@ This plugin happens to be deployed within the SceneJS plugins directory in this 
 Note that the plugin script installs the new node type as "demos/color", and see how that type name maps to the
 script's location within the ```http://scenejs.org/api/latest/plugins/node``` directory.
 
-# Using a New Node Type
+# Using a new node type
 
 Let's assume that we've configured SceneJS to find our plugin (this is the default configuration by the way, so don't
 bother doing this if you're hotlinking to the SceneJS lib and just want to use the plugins from this repo):
@@ -203,7 +203,7 @@ As an example, the bundled [canvas/capture](https://github.com/xeolabs/scenejs/b
 uses the 3rd-party ```canvas2image``` library to capture the canvas to an image. Run a demo of that node
 [here](http://scenejs.org/examples.html?page=canvasCapture).
 
-# Publishing Data from Nodes
+# Publishing data from nodes
 
 Sometimes we want our nodes to publish some data that we can subscribe to via the API.
 
@@ -318,7 +318,7 @@ scene.getNode("myGrowingTeapot",
 
 [Run this example](http://scenejs.org/examples.html?page=customNodeDefWithPublications)
 
-# Task Tracking on Nodes
+# Task tracking on nodes
 
 Sometimes our nodes will run tasks that we'll want to monitor progress on.
 
@@ -454,6 +454,6 @@ setInterval(function () {
 
 [Run this example](http://scenejs.org/examples.html?page=customNodeDefWithTasks)
 
-# Scene Compilation Hooks
+# Scene compilation hooks
 
 TODO

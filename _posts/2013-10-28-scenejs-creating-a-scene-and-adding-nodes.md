@@ -32,7 +32,7 @@ A key feature of most scene graphs is state inheritance in which child nodes inh
 For SceneJS, a benefit of scene graphs is modularity, where JSON subtrees can be complete reusable components, and brevity,
 where state may be reused by wrapping it around many child nodes.
 
-# Creating a Scene Graph
+# Creating a scene graph
 The snippet below is an example of a 3D scene created with SceneJS. The scene graph is a directed acyclic graph expressed
 in JSON, in this case defining a scene containing a blue teapot and two boxes sharing the same textured appearance.
 Geometry nodes are normally at the leaves, where they inherit the state defined by higher nodes, in this case the material
@@ -88,7 +88,7 @@ SceneJS parses that description to create the 3D scene shown below:
 
 [Run this example here](http://scenejs.org/examples.html?page=secondExample).
 
-# Updating Nodes
+# Updating nodes
 We can animate one of those ```translate``` nodes like this:
 
 {% highlight javascript %}
@@ -109,7 +109,7 @@ scene.getNode("firstBoxPos",
     });
 {% endhighlight %}
 
-# Adding Nodes
+# Adding nodes
 Adding nodes to the scene is as simple as:
 
 {% highlight javascript %}
@@ -129,7 +129,7 @@ scene.getNode("myMaterial",
     });
 {% endhighlight %}
 
-# Removing Nodes
+# Removing nodes
 Remove nodes like this:
 
 {% highlight javascript %}

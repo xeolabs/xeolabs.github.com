@@ -28,12 +28,12 @@ SceneJS supports rigid-body physics through a collection of special node types w
 
 ![](http://scenejs.org/images/physics.png)
 
-# Creating a Physics Body
+# Creating a physics body
 
 A ```physics/body``` node creates a body in a physics system and causes its child nodes to translate and rotate  according to the body's movements and interactions with other bodies.
 The ```shape``` parameter on this node specifies the shape of the body boundary. We'll describe the different shapes that are available, starting with the ```box``` shape, with which we'll introduce the general parameters of the node. Then we'll describe the other shape types, describing only the parameters specific to each of those shape types.
 
-## Box-shaped Body
+## Box-shaped body
 
 Example:
 {% highlight javascript %}
@@ -94,7 +94,7 @@ someNode.addNode({
 * Note that vectors (size, pos, velocity) on the ```physics/body``` and ``prims/box``` are arrays - we're deprecating object formats for those sort of params.
 * [```physics/body``` node implementation](http://scenejs.org/api/latest/plugins/node/physics/body.js)
 
-## Sphere-shaped Body
+## Sphere-shaped body
 
 Example:
 {% highlight javascript %}
@@ -141,7 +141,7 @@ someNode.addNode({
 });
 {% endhighlight %}
 
-## Plane-shaped Body
+## Plane-shaped body
 
 Example:
 {% highlight javascript %}
@@ -199,7 +199,7 @@ someNode.addNode({
 
 More body types coming up.
 
-# Body Extents
+# Body extents
 You must ensure that the extents of the ```physics/body``` enclose the space occupied by its child nodes. Ideally, we would do that automatically, expanding and contracting the extents as child nodes are added and removed.
 
 However, the reasons we don't (re)calculated them automatically are:
@@ -207,7 +207,7 @@ However, the reasons we don't (re)calculated them automatically are:
 * The child nodes might be moving, and thus the boundary would be specified for the extents of their movement, (which again, could be hard to compute in advance, or synchronise the body extents with)
 * Whatever creates the ```physics/body``` node (eg. a loader, or another custom node type) is likely to be in a position of calculate the extents of child nodes anyway
 
-# Physics Materials
+# Physics materials
 Although you can specify properties like ```restitution```, ```friction``` and ```mass``` on individual ```physics/body``` nodes, sometimes you'll want to share those properties among a group of ```physics/body``` nodes.
 
 Just as we can have a parent ```material``` node wrapping multiple child ```geometry``` nodes, we can have a ```physics/material``` node wrapping multiple child ```physics/body``` nodes, so that the children inherit properties from the parent:
@@ -240,7 +240,7 @@ Note that spatial properties like ```pos```, ```dir```, ```velocity``` etc. are 
 
 * [```physics/material``` node implementation](http://scenejs.org/api/latest/plugins/node/physics/material.js)
 
-# Configuring a Physics System
+# Configuring a physics system
 
 The ```physics/system``` node configures a physics system and may appear anywhere within the scene graph.
 
@@ -264,11 +264,11 @@ physicsSystem.setConfigs({
  default system) for which no ```physics/system``` node exists in the scene, then that system will just use its default configuration.
 * [```physics/system``` node implementation](http://scenejs.org/api/latest/plugins/node/physics/system.js)
 
-# Physics Primitives
+# Physics primitives
 
 There is a collection of convenience nodes, each of which wraps a child ```physics/body```, which in turn wraps a child geometry primitive node, and configures the extents of the ```physics/body``` to enclose the primitive.  These allow you to just create, for example, a teapot with physics behaviours, in one shot:
 
-## Teapot Primitive
+## Teapot primitive
 {% highlight javascript %}
 someNode.addNode({
     type: "physics/teapot",
@@ -280,7 +280,7 @@ someNode.addNode({
 {% endhighlight %}
 * [```physics/teapot``` node implementation](http://scenejs.org/api/latest/plugins/node/physics/teapot.js)
 
-## Box Primitive
+## Box primitive
 {% highlight javascript %}
 someNode.addNode({
     type: "physics/box",
@@ -293,7 +293,7 @@ someNode.addNode({
 {% endhighlight %}
 * [```physics/box``` node implementation](http://scenejs.org/api/latest/plugins/node/physics/box.js)
 
-## Sphere Primitive
+## Sphere primitive
 {% highlight javascript %}
 someNode.addNode({
     type: "physics/sphere",
@@ -310,7 +310,7 @@ someNode.addNode({
 
 * [```physics/sphere``` node implementation](http://scenejs.org/api/latest/plugins/node/physics/sphere.js)
 
-## Plane Primitive
+## Plane primitive
 {% highlight javascript %}
 someNode.addNode({
     type: "physics/plane",
@@ -330,7 +330,7 @@ someNode.addNode({
 
 [More to come..]
 
-# Switching Physics Engines
+# Switching physics engines
 
 **In development**
 
