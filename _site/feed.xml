@@ -3,27 +3,27 @@
 <title type="text">xeoLabs</title>
 <subtitle type="text">On the other side of the screen, it all looks so easy</subtitle>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="/feed.xml" />
-<link rel="alternate" type="text/html" href="" />
-<updated>2013-10-03T20:04:07-04:00</updated>
-<id>/</id>
+<link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
+<link rel="alternate" type="text/html" href="http://xeolabs.com" />
+<updated>2013-10-03T20:21:05-04:00</updated>
+<id>http://xeolabs.com/</id>
 <author>
   <name>@xeoLabs</name>
-  <uri>/</uri>
+  <uri>http://xeolabs.com/</uri>
   <email>lindsay.kay@xeolabs.com</email>
 </author>
 
 
 <entry>
   <title type="html"><![CDATA[SceneJS Quick Start]]></title>
-  <link rel="alternate" type="text/html" href="/articles/scenejs-quick-start" />
-  <id>/articles/scenejs-quick-start</id>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-quick-start" />
+  <id>http://xeolabs.com/articles/scenejs-quick-start</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri></uri>
+    <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -58,9 +58,9 @@
 &lt;p&gt;Let’s create this spinning Newell teapot:
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=firstExample&quot;&gt;&lt;img src=&quot;/images/scenejs/firstExample.png&quot; alt=&quot;SceneJS First Example&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=firstExample&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/firstExample.png&quot; alt=&quot;SceneJS First Example&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/examples.html?page=firstExample&quot;&gt;Click here to run this example&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://xeolabs.com/examples.html?page=firstExample&quot;&gt;Click here to run this example&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;step-1-link-to-the-api&quot;&gt;Step 1. Link to the API&lt;/h3&gt;
 &lt;p&gt;Include the &lt;a href=&quot;http://scenejs.org/api/latest/scenejs.js&quot;&gt;SceneJS library&lt;/a&gt; in the &amp;lt;head&amp;gt; tag of your web page:&lt;/p&gt;
@@ -128,22 +128,22 @@ them from there, like this:&lt;/p&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Want to write your own plugins? Sweet! Please &lt;a href=&quot;/articles/scenejs-node-types&quot;&gt;read more about the plugin API here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Want to write your own plugins? Sweet! Please &lt;a href=&quot;http://xeolabs.com/articles/scenejs-node-types&quot;&gt;read more about the plugin API here&lt;/a&gt;&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-quick-start&quot;&gt;SceneJS Quick Start&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-quick-start&quot;&gt;SceneJS Quick Start&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[SceneJS Physics]]></title>
-  <link rel="alternate" type="text/html" href="/articles/scenejs-physics" />
-  <id>/articles/scenejs-physics</id>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-physics" />
+  <id>http://xeolabs.com/articles/scenejs-physics</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri></uri>
+    <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -582,20 +582,20 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
   &lt;li&gt;&lt;a href=&quot;https://github.com/xeolabs/scenejs/issues?direction=desc&amp;amp;labels=Physics&amp;amp;page=1&amp;amp;sort=created&amp;amp;state=open&quot;&gt;Issues tagged ‘physics’&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-physics&quot;&gt;SceneJS Physics&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-physics&quot;&gt;SceneJS Physics&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Extending SceneJS - Creating new Scene Node Types]]></title>
-  <link rel="alternate" type="text/html" href="/articles/scenejs-node-types" />
-  <id>/articles/scenejs-node-types</id>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-node-types" />
+  <id>http://xeolabs.com/articles/scenejs-node-types</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri></uri>
+    <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -1045,20 +1045,20 @@ notifications to us as a count of tasks in progress, as we’ll see further down
 
 &lt;p&gt;TODO&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-node-types&quot;&gt;Extending SceneJS - Creating new Scene Node Types&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-node-types&quot;&gt;Extending SceneJS - Creating new Scene Node Types&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[SceneJS Detail Culling]]></title>
-  <link rel="alternate" type="text/html" href="/articles/scenejs-detail-culling" />
-  <id>/articles/scenejs-detail-culling</id>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-detail-culling" />
+  <id>http://xeolabs.com/articles/scenejs-detail-culling</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri></uri>
+    <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -1279,20 +1279,20 @@ notifications to us as a count of tasks in progress, as we’ll see further down
   &lt;li&gt;&lt;a href=&quot;https://github.com/xeolabs/scenejs/issues?direction=desc&amp;amp;labels=Culling&amp;amp;page=1&amp;amp;sort=created&amp;amp;state=open&quot;&gt;Issues tagged ‘culling’&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-detail-culling&quot;&gt;SceneJS Detail Culling&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-detail-culling&quot;&gt;SceneJS Detail Culling&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Using the SceneJS Depth Buffer]]></title>
-  <link rel="alternate" type="text/html" href="/articles/scenejs-depthbuf" />
-  <id>/articles/scenejs-depthbuf</id>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-depthbuf" />
+  <id>http://xeolabs.com/articles/scenejs-depthbuf</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri></uri>
+    <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -1383,7 +1383,7 @@ where a close object hides a farther one.&lt;/p&gt;
 
 &lt;p&gt;And there’s your teapot, with depth buffer working with default values:
 &lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;/images/scenejs/depthbufDefaults.png&quot; alt=&quot;depthbuf Defaults&quot; /&gt;
+&lt;img src=&quot;http://xeolabs.com/images/scenejs/depthbufDefaults.png&quot; alt=&quot;depthbuf Defaults&quot; /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;setting-cleardepth&quot;&gt;Setting clearDepth&lt;/h3&gt;
@@ -1399,7 +1399,7 @@ cuts through the teapot:&lt;/p&gt;
 
 &lt;p&gt;Now all pixels
 &lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;/images/scenejs/depthbufEnabledWithClearDepth.png&quot; alt=&quot;depthbuf Defaults&quot; /&gt;
+&lt;img src=&quot;http://xeolabs.com/images/scenejs/depthbufEnabledWithClearDepth.png&quot; alt=&quot;depthbuf Defaults&quot; /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;setting-depthfunc&quot;&gt;Setting depthFunc&lt;/h3&gt;
@@ -1416,23 +1416,23 @@ cuts through the teapot:&lt;/p&gt;
 
 &lt;p&gt;Now all pixels
 &lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;/images/scenejs/depthbufEnabledWithClearDepth.png&quot; alt=&quot;depthbuf Defaults&quot; /&gt;
+&lt;img src=&quot;http://xeolabs.com/images/scenejs/depthbufEnabledWithClearDepth.png&quot; alt=&quot;depthbuf Defaults&quot; /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-depthbuf&quot;&gt;Using the SceneJS Depth Buffer&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-depthbuf&quot;&gt;Using the SceneJS Depth Buffer&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Adding and Removing Scene Nodes]]></title>
-  <link rel="alternate" type="text/html" href="/articles/scenejs-creating-a-scene-and-adding-nodes" />
-  <id>/articles/scenejs-creating-a-scene-and-adding-nodes</id>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-creating-a-scene-and-adding-nodes" />
+  <id>http://xeolabs.com/articles/scenejs-creating-a-scene-and-adding-nodes</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri></uri>
+    <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -1572,7 +1572,7 @@ and rotation transform.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-creating-a-scene-and-adding-nodes&quot;&gt;Adding and Removing Scene Nodes&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-creating-a-scene-and-adding-nodes&quot;&gt;Adding and Removing Scene Nodes&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 </feed>
