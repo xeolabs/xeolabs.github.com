@@ -123,13 +123,10 @@ var scene = SceneJS.createScene({
                     // node type's constructor above)
                     nodes:[
 
-                        // Geometry using a plugin loaded from
-                        // /geometry/teapot
+                    // Teapot primitive, implemented by plugin at
+                    // http://scenejs.org/api/latest/plugins/node/prims/teapot.js
                         {
-                            type:"geometry",
-                            source:{
-                                type:"teapot"
-                            }
+                            type:"prims/teapot"
                         }
                     ]
                 }

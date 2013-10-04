@@ -57,6 +57,9 @@ var scene = SceneJS.createScene({
                     angle: 0,
 
                     nodes: [
+
+                        // Teapot primitive, implemented by plugin at
+                        // http://scenejs.org/api/latest/plugins/node/prims/teapot.js
                         {
                             type:"prims/teapot"
                         }
