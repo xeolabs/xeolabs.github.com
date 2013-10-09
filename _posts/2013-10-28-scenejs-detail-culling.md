@@ -182,6 +182,13 @@ someNode.addNode({
 });
 {% endhighlight %}
 
+# Limitations
+
+* Boundaries can't be transformed yet - they are fixed in World-space.
+* Boundaries don't automatically fit their child nodes. That's because they might enclose things for which we might not be able
+to automatically determine the boundaries of, such as sound. It's up to the scene definer (human, generator or plugin) to
+  keep track of the boundaries of things, which seemed a reasonable tradeoff to reduce performance and complexity.
+
 # Implementation
 
 Here's some details on the internals, just in case you're curious how it works:
@@ -190,6 +197,7 @@ Here's some details on the internals, just in case you're curious how it works:
 * The ```frustum/lod``` node is implementated by this [custom node plugin](http://scenejs.org/api/latest/plugins/node/frustum/lod.js).
 * For performance, culling is distributed across multiple [culling engines](http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullEngine.js), each running within its own [worker thread](http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullWorker.js). Each of those workers is proxied by a [system](http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullSystem.js) in which the ```frustum/lod``` nodes create frustum collision bodies, and those systems are managed in a load-balanced [pool](http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullSystemPool.js).
 * The ```frustum/lod``` node actually wraps a more basic [```frustum/body```](http://scenejs.org/api/latest/plugins/node/frustum/body.js) node type, which creates the collision body and subscribes to its frustum intersection status and projected 2D boundary size. The ```frustum/lod``` node does the job of translating those updates into child node enables/disables. This strategy allows us to reuse the ```frustum/body``` for internal workings of new types of culling node in future.
+
 
 # Roadmap
 
