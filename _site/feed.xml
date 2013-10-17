@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2013-10-04T08:41:57-04:00</updated>
+<updated>2013-10-17T18:53:51-04:00</updated>
 <id>/</id>
 <author>
   <name>@xeoLabs</name>
@@ -50,7 +50,7 @@
 
 &lt;p&gt;&lt;a href=&quot;http://scenejs.org&quot;&gt;SceneJS&lt;/a&gt; is an extensible WebGL-based engine for high-detail 3D visualisation.&lt;br /&gt;&lt;br /&gt;It’s super easy to get into, thanks to its
 succinct API with lots of defaults and training wheels. But don’t let let that simplicity fool you - behind that friendly
-facade it’s optimised to death with serious fu, such as scene compilation and GL state sorting, so will happily scale up
+facade it’s optimised to death with serious tricks like scene compilation and GL state sorting, so will happily scale up
 to thousands of objects while eating draw calls for breakfast. Let’s start easy though, with an example that shows the basic idea
 of this engine.&lt;/p&gt;
 
@@ -60,7 +60,7 @@ of this engine.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=firstExample&quot;&gt;&lt;img src=&quot;/images/scenejs/firstExample.png&quot; alt=&quot;SceneJS First Example&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/examples.html?page=firstExample&quot;&gt;Click here to run this example&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=firstExample&quot;&gt;Click here to run this example&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;step-1-link-to-the-api&quot;&gt;Step 1. Link to the API&lt;/h3&gt;
 &lt;p&gt;Include the &lt;a href=&quot;http://scenejs.org/api/latest/scenejs.js&quot;&gt;SceneJS library&lt;/a&gt; in the &amp;lt;head&amp;gt; tag of your web page:&lt;/p&gt;
@@ -620,12 +620,12 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
 &lt;!-- /#table-of-contents --&gt;
 
 &lt;p&gt;New node types may provided for SceneJS via plugins. This is a powerful extension mechanism which
-allows you to create your own high-level scene components that just slot straight into your scene graphs as nodes which
+allows you to create your own higher-level scene components that just slot straight into your scene graphs as nodes which
 you can create and update as usual via the JSON API.&lt;/p&gt;
 
-&lt;p&gt;In this section we’ll see how to provide a node type, and how to use the node type within a scene graph.&lt;/p&gt;
+&lt;p&gt;In this article we’ll see how to provide a node type, and how to use the node type within a scene graph.&lt;/p&gt;
 
-&lt;p&gt;The examples page also has &lt;a href=&quot;http://scenejs.org/examples.html?tags=customNodes&quot;&gt;several examples&lt;/a&gt; that show how to define
+&lt;p&gt;The examples page also has &lt;a href=&quot;http://scenejs.org/examples.html?tags=plugins&quot;&gt;several examples&lt;/a&gt; that show how to define
 and use node types.&lt;/p&gt;
 
 &lt;h1 id=&quot;creating-a-new-node-type&quot;&gt;Creating a new node type&lt;/h1&gt;
@@ -1072,6 +1072,7 @@ notifications to us as a count of tasks in progress, as we’ll see further down
       &lt;li&gt;&lt;a href=&quot;#example&quot;&gt;Example:&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#limitations&quot;&gt;Limitations&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#implementation&quot;&gt;Implementation&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#roadmap&quot;&gt;Roadmap&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1258,6 +1259,15 @@ notifications to us as a count of tasks in progress, as we’ll see further down
    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;limitations&quot;&gt;Limitations&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Boundaries can’t be transformed yet - they are fixed in World-space.&lt;/li&gt;
+  &lt;li&gt;Boundaries don’t automatically fit their child nodes. That’s because they might enclose things for which we might not be able
+to automatically determine the boundaries of, such as sound. It’s up to the scene definer (human, generator or plugin) to
+keep track of the boundaries of things, which seemed a reasonable tradeoff to reduce performance and complexity.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h1 id=&quot;implementation&quot;&gt;Implementation&lt;/h1&gt;
 

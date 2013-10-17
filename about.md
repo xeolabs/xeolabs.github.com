@@ -19,5 +19,4 @@ platform, where I work on various bits ranging from WebGL-based graphics through
 I keep things fresh by authoring open source projects like [SceneJS](http://scenejs.org).
 <br>
 <br>
-Writing helps keeps me organised, and it's oddly satisfying. Stick around- occasionally I'll blog here about stuff my
-friends and I are building out there on the 3D Web.
+Grab me at <strong>lindsay.kay AT xeolabs.com</strong>

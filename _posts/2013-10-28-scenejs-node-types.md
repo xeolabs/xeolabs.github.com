@@ -19,12 +19,12 @@ tags: [scenejs, tutorial, plugins]
 </section><!-- /#table-of-contents -->
 
 New node types may provided for SceneJS via plugins. This is a powerful extension mechanism which
-allows you to create your own high-level scene components that just slot straight into your scene graphs as nodes which
+allows you to create your own higher-level scene components that just slot straight into your scene graphs as nodes which
 you can create and update as usual via the JSON API.
 
-In this section we'll see how to provide a node type, and how to use the node type within a scene graph.
+In this article we'll see how to provide a node type, and how to use the node type within a scene graph.
 
-The examples page also has [several examples](http://scenejs.org/examples.html?tags=customNodes) that show how to define
+The examples page also has [several examples](http://scenejs.org/examples.html?tags=plugins) that show how to define
 and use node types.
 
 # Creating a new node type

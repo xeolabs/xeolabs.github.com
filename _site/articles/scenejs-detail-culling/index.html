@@ -125,6 +125,7 @@
       <li><a href="#example">Example:</a></li>
     </ul>
   </li>
+  <li><a href="#limitations">Limitations</a></li>
   <li><a href="#implementation">Implementation</a></li>
   <li><a href="#roadmap">Roadmap</a></li>
 </ul>
@@ -311,6 +312,15 @@
    <span class="p">]</span>
 <span class="p">});</span>
 </code></pre></div>
+
+<h1 id="limitations">Limitations</h1>
+
+<ul>
+  <li>Boundaries can’t be transformed yet - they are fixed in World-space.</li>
+  <li>Boundaries don’t automatically fit their child nodes. That’s because they might enclose things for which we might not be able
+to automatically determine the boundaries of, such as sound. It’s up to the scene definer (human, generator or plugin) to
+keep track of the boundaries of things, which seemed a reasonable tradeoff to reduce performance and complexity.</li>
+</ul>
 
 <h1 id="implementation">Implementation</h1>
 

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: SceneJS Quick Start
-description: "Get cracking with SceneJS in two minutes"
+title: Importing a Mesh from .OBJ into SceneJS
+description: "Using the `import/obj` node to load a mesh from Wavefront OBJ into your scene"
 modified: 2013-05-31
 category: articles
 comments: true
@@ -18,19 +18,17 @@ tags: [scenejs, tutorial]
 </div>
 </section><!-- /#table-of-contents -->
 
-[SceneJS](http://scenejs.org) is an extensible WebGL-based engine for high-detail 3D visualisation.<br><br>It's super easy to get into, thanks to its
-succinct API with lots of defaults and training wheels. But don't let let that simplicity fool you - behind that friendly
-facade it's optimised to death with serious tricks like scene compilation and GL state sorting, so will happily scale up
-to thousands of objects while eating draw calls for breakfast. Let's start easy though, with an example that shows the basic idea
-of this engine.
+[SceneJS](http://scenejs.org) has a new ```import/obj``` node, which lets you import meshes into your scene from Wavefront OBJ files.
+In this tutorial I'll describe how I took a duck off the Web, conditioned it in Blender, then made this scene with it:
+
+[![SceneJS OBJ Duck Import]({{ site.url }}/images/scenejs/duckOBJ.jpg)](http://scenejs.org/examples.html?page=importObj)
+
+[Click here to run this example](http://scenejs.org/examples.html?page=importObj).
 
 # First example
-Let's create this spinning Newell teapot:
+We're going to create this duck:
 <br/><br/>
 
-[![SceneJS First Example]({{ site.url }}/images/scenejs/firstExample.png)](http://scenejs.org/examples.html?page=firstExample)
-
-[Click here to run this example](http://scenejs.org/examples.html?page=firstExample).
 
 ### Step 1. Link to the API
 Include the [SceneJS library](http://scenejs.org/api/latest/scenejs.js) in the &lt;head&gt; tag of your web page:
