@@ -18,11 +18,14 @@ tags: [scenejs, tutorial, migrating]
 </div>
 </section><!-- /#table-of-contents -->
 
+**UNDER CONSTRUCTION**
+<br><br>
 This will be a work-in-progress over the next few weeks, primarily to help out the [BIMSurfer](http://bimsurfer.org) crew migrate
 their IFC viewer over to the latest SceneJS API. When it's done, we should have a useful migration document. Check back soon.
 
-## Scene graph construction
+# Scene graph construction
 
+Create a scene graph like this:
 
 {% highlight javascript %}
 var myScene = SceneJS.createScene({
@@ -31,19 +34,13 @@ var myScene = SceneJS.createScene({
     nodes: [
     ]
 });
-{% highlight %}
+{% endhighlight %}
 
+* The scene starts immediately - no need to call ```myScene.start()```.
 * ```canvasId``` is optional - when you omit it, SceneJS will create a canvas for the scene, expanded to fit the browser window
+* [Basic scene example](http://scenejs.org/examples.html?page=firstExample)
 
-
-## Deprecations
-
-### ```renderer```
-This node configures misceleaneous WebGL capabilities for its subgraph, such as line width, color buffer, depth buffer etc.
-  It's going to be replaced by a collection of nodes, such as ```depthBuf``` and ```colorbuf```.
-
-
-### Materials`
+# Materials
 
 The ```material``` node's ```baseColor``` attribute has been deprecated - now use ```color``` instead, ie:
 
@@ -59,15 +56,17 @@ var myMaterial = myScene.addNode({
          //...
     ]
 });
-{% highlight %}
+{% endhighlight %}
 
-### Light sources
 
-#### V2.X
+# Lights
+
+### Previously in V2.X
 In V2.X, each light source was:
-* a separate node,
-* which you could nest,
-* and wrap in modelling transforms to move them around.
+
+ * a separate node,
+ * which you could nest,
+ * and wrap in modelling transforms to move them around.
 
 {% highlight javascript %}
 myScene.addNode({
@@ -113,14 +112,17 @@ myScene.addNode({
         //...
     ]
 });
-{% highlight %}
+{% endhighlight %}
 
-#### V3.X
+### Now in V3.X
 In V3.X, light nodes have been simplified as shown below, where a single ```lights``` node defines multiple light
 sources for its subgraph. The ```lights``` node:
+
 * cannot be nested - a child ```lights``` node overrides the effect of parent ```lights```
 * wrapping in modelling transforms has no effect
 
+
+{% highlight javascript %}
 myScene.addNode({
     type: "node",
     nodes: [
@@ -149,12 +151,19 @@ myScene.addNode({
         //...
     ]
 });
+{% endhighlight %}
 
 These restrictions greatly simplify the engine and provide improved performance.
 
- TODO: ambient
+* [Lighting examples](http://scenejs.org/examples.html?tags=lighting)
 
-## Node type plugins
+### Ambient lighting now supported
+
+If you define a light source of type "ambient" it will provide ambient lighting throughout the entire scene.
+
+* [Ambient lighting example](http://scenejs.org/examples.html?page=ambientLight&showCode=true)
+
+# Geometry
 
 All of the geometry primitive nodes are now provided as plugins. In V2.X, you would create a box primitive like this:
 
@@ -163,7 +172,7 @@ var myMaterial = myScene.addNode({
     type: "box",
     //...
 });
-{% highlight %}
+{% endhighlight %}
 
 Now in V3.X you create it using a plugin:
 
@@ -172,20 +181,27 @@ var myMaterial = myScene.addNode({
     type: "prims/box",
     //...
 });
-{% highlight %}
+{% endhighlight %}
 
 * [Read more about the plugin API here]({{ site.url}}/articles/scenejs-node-types)
 
-## Defaults
+# Defaults
 V3.X provides many more defaults and training wheelss You can leave out just about any kind of non-content node, such
 as ```lookAt```, ```camera```, ```lights```, ```material``` etc. and it will provide internal defaults for those.
 This means that you can create a scene containing nothing but a ```geometry``` node and that appear nicely aligned in the
  view volume, with perspective projection, illuminated with default light source and coloured white. This is good for examples,
     allowing us to specify only the nodes we want to demonstrate in those example scenes.
 
-## Attribute name changes
+# Attribute name changes
+TODO
 
-
-## Removed nodes
+# Removed nodes
 
 * ```billboard```
+* TODO
+
+# Deprecations
+
+### The 'renderer' node
+The ```renderer``` node configures misceleaneous WebGL capabilities for its subgraph, such as line width, color buffer, depth buffer etc.
+  It will be replaced by a collection of more specific nodes, eg. ```depthBuf``` and ```colorbuf```.
