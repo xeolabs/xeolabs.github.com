@@ -18,11 +18,11 @@ tags: [scenejs, tutorial, plugins]
 </div>
 </section><!-- /#table-of-contents -->
 
-New node types may provided for SceneJS via plugins. This is a powerful extension mechanism which
-allows you to create your own higher-level scene components that just slot straight into your scene graphs as nodes which
-you can create and update as usual via the JSON API.
+You can define new scene node types for [SceneJS](http://scenejs.org) via plugins. This extension mechanism lets you 
+create your own higher-level scene components that just slot straight into your scene graphs as nodes which
+you can create and update as usual via the JSON API. 
 
-In this article we'll see how to provide a node type, and how to use the node type within a scene graph.
+In this article we'll see how to define a new node type and how to use it within a scene graph.
 
 The examples page also has [several examples](http://scenejs.org/examples.html?tags=plugins) that show how to define
 and use node types.
@@ -41,7 +41,7 @@ SceneJS.Types.addType("demos/color", {
     // Constructor
     // The params are the attributes which are specified
     // for instances of this node type within scene definitions
-    init:function (params) {
+    construct:function (params) {
 
         this._material = this.addNode({
             type:"material",
@@ -186,7 +186,7 @@ Custom node types can then require the dependencies using a *scenejsPluginDeps* 
 
             SceneJS.Types.addType("foo/myCustomNodeType", {
 
-                init: function (params) {
+                construct: function (params) {
                     // Now we can use that library in our node
                     // ...
                 }
@@ -210,7 +210,7 @@ Here's a ```growingTeapot``` node, which grows in height along the Y-axis, then 
 SceneJS.Types.addType("growingTeapot", {
 
     // Node constructor.
-    init:function (params) {
+    construct:function (params) {
 
         // Our node will contain a teapot that grows in height on the Y-axis
         var scale = this.addNode({
@@ -257,9 +257,7 @@ SceneJS.Types.addType("growingTeapot", {
             });
     },
 
-    /**
-     * Node destructor, unsubscribes from scene tick
-     */
+    // Node destructor, unsubscribes from scene tick
     destroy:function () {
         this.getScene().off(this._tick);
     }
@@ -327,7 +325,7 @@ notifications to us as a count of tasks in progress, as we'll see further down.
 SceneJS.Types.addType("myGrowingTeapot", {
 
     // Node constructor.
-    init: function (params) {
+    construct: function (params) {
 
         // Our node will contain a teapot that grows in height on the Y-axis
         var scale = this.addNode({
@@ -392,11 +390,9 @@ SceneJS.Types.addType("myGrowingTeapot", {
         // this._taskId = this.taskFailed(this._taskId);
     },
 
-    /**
-     * Node destructor, unsubscribes from scene tick
-     * Aborts task if still running, ie. where the node
-     * is destroyed while the task is in process
-     */
+    // Node destructor, unsubscribes from scene tick
+    // Aborts task if still running, ie. where the node
+    // is destroyed while the task is in process
     destroy: function () {
         this.getScene().off(this._tick);
         if (this._taskId != null) {
