@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc></loc>
+        <loc>http://xeolabs.com</loc>
     </url>
     
     
     <url>
-        <loc>/articles/scenejs-quick-start</loc>
+        <loc>http://xeolabs.com/articles/scenejs-quick-start</loc>
     </url>
     
     <url>
-        <loc>/articles/scenejs-physics</loc>
+        <loc>http://xeolabs.com/articles/scenejs-physics</loc>
     </url>
     
     <url>
-        <loc>/articles/scenejs-node-types</loc>
+        <loc>http://xeolabs.com/articles/scenejs-node-types</loc>
     </url>
     
     <url>
-        <loc>/articles/scenejs-detail-culling</loc>
+        <loc>http://xeolabs.com/articles/scenejs-detail-culling</loc>
     </url>
     
     <url>
-        <loc>/articles/scenejs-creating-a-scene-and-adding-nodes</loc>
+        <loc>http://xeolabs.com/articles/scenejs-creating-a-scene-and-adding-nodes</loc>
     </url>
     
     <url>
-        <loc>/articles/migrating-scenejs-2-to-3</loc>
+        <loc>http://xeolabs.com/articles/migrating-scenejs-2-to-3</loc>
     </url>
     
 </urlset>

@@ -18,14 +18,12 @@ tags: [scenejs, tutorial, plugins]
 </div>
 </section><!-- /#table-of-contents -->
 
-You can define new scene node types for [SceneJS](http://scenejs.org) via plugins. This extension mechanism lets you 
+You can define new scene node types for [SceneJS](http://scenejs.org) via plugins. This extension mechanism lets you
 create your own higher-level scene components that just slot straight into your scene graphs as nodes which
 you can create and update as usual via the JSON API. 
 
-In this article we'll see how to define a new node type and how to use it within a scene graph.
-
-The examples page also has [several examples](http://scenejs.org/examples.html?tags=plugins) that show how to define
-and use node types.
+In this article we'll see how to define a new node type and how to use it within a scene graph. The examples page also
+has [several examples](http://scenejs.org/examples.html?tags=plugins) that show how to define and use node types.
 
 # Creating a new node type
 
