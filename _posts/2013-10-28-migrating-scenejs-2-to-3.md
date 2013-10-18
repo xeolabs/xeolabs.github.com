@@ -184,6 +184,7 @@ var myMaterial = myScene.addNode({
 {% endhighlight %}
 
 * [Read more about the plugin API here]({{ site.url}}/articles/scenejs-node-types)
+* [Live examples tagged "prims"](http://scenejs.org/examples.html?tags=prims)
 
 # Defaults
 V3.X provides many more defaults and training wheelss You can leave out just about any kind of non-content node, such
