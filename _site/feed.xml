@@ -3,27 +3,27 @@
 <title type="text">xeoLabs</title>
 <subtitle type="text">On the other side of the screen, it all looks so easy</subtitle>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="/feed.xml" />
-<link rel="alternate" type="text/html" href="" />
-<updated>2013-10-26T12:34:43-04:00</updated>
-<id>/</id>
+<link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
+<link rel="alternate" type="text/html" href="http://xeolabs.com" />
+<updated>2013-10-26T13:07:06-04:00</updated>
+<id>http://xeolabs.com/</id>
 <author>
   <name>@xeoLabs</name>
-  <uri>/</uri>
+  <uri>http://xeolabs.com/</uri>
   <email>lindsay.kay@xeolabs.com</email>
 </author>
 
 
 <entry>
   <title type="html"><![CDATA[Pssst...How Fast Ray Picking Works in SceneJS]]></title>
-  <link rel="alternate" type="text/html" href="/articles/scenejs-ray-picking-technique" />
-  <id>/articles/scenejs-ray-picking-technique</id>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-ray-picking-technique" />
+  <id>http://xeolabs.com/articles/scenejs-ray-picking-technique</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri></uri>
+    <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -50,8 +50,8 @@ SceneJS, however, uses a fast GPU-assisted technique that employs the depth buff
  avoids those sorts of computations altogether.&lt;/p&gt;
 
 &lt;h2 id=&quot;the-technique&quot;&gt;The technique&lt;/h2&gt;
-&lt;p&gt;I’ll assume that you’ve read about &lt;a href=&quot;/articles/scenejs-picking&quot;&gt;2D picking&lt;/a&gt;
-and &lt;a href=&quot;/articles/scenejs-ray-picking&quot;&gt;ray picking&lt;/a&gt;, which mention how you can wrap your objects with &lt;code&gt;name&lt;/code&gt;
+&lt;p&gt;I’ll assume that you’ve read about &lt;a href=&quot;http://xeolabs.com/articles/scenejs-picking&quot;&gt;2D picking&lt;/a&gt;
+and &lt;a href=&quot;http://xeolabs.com/articles/scenejs-ray-picking&quot;&gt;ray picking&lt;/a&gt;, which mention how you can wrap your objects with &lt;code&gt;name&lt;/code&gt;
 nodes to assign them logical pick names.
 &lt;br /&gt;&lt;br /&gt;
 The steps of my technique are:&lt;/p&gt;
@@ -107,20 +107,20 @@ uniquely maps to &lt;code&gt;name&lt;/code&gt;’s “name” value.&lt;/li&gt;
   &lt;li&gt;Another limitation is that this technique does not find any topological information on the pick hit: it only finds the name and a world-space coordinate. When picking a mesh for example, it does not report the actual face that was picked.&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-ray-picking-technique&quot;&gt;Pssst...How Fast Ray Picking Works in SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-ray-picking-technique&quot;&gt;Pssst...How Fast Ray Picking Works in SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Fast Ray Picking in SceneJS]]></title>
-  <link rel="alternate" type="text/html" href="/articles/scenejs-ray-picking" />
-  <id>/articles/scenejs-ray-picking</id>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-ray-picking" />
+  <id>http://xeolabs.com/articles/scenejs-ray-picking</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri></uri>
+    <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -146,9 +146,9 @@ computations. If you’re curious how it works, I did &lt;a href=&quot;/articles
 &lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=rayPicking&quot;&gt;&lt;img src=&quot;/images/scenejs/rayPicking.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples/pages/demos/pickFlyOrbitCity.html&quot;&gt;&lt;img src=&quot;/images/scenejs/pickFlyOrbitCity.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples/pages/demos/pickFlyOrbitTerrain.html&quot;&gt;&lt;img src=&quot;/images/scenejs/pickFlyOrbitTerrain.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=rayPicking&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/rayPicking.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples/pages/demos/pickFlyOrbitCity.html&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/pickFlyOrbitCity.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples/pages/demos/pickFlyOrbitTerrain.html&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/pickFlyOrbitTerrain.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
@@ -162,7 +162,7 @@ computations. If you’re curious how it works, I did &lt;a href=&quot;/articles
 
 &lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
 
-&lt;p&gt;I’ll assume that you know all about &lt;a href=&quot;/articles/scenejs-picking&quot;&gt;basic 2D picking&lt;/a&gt; in SceneJS. Ray picking
+&lt;p&gt;I’ll assume that you know all about &lt;a href=&quot;http://xeolabs.com/articles/scenejs-picking&quot;&gt;basic 2D picking&lt;/a&gt; in SceneJS. Ray picking
 is done in pretty much the same way, except that you supply an additional &lt;code&gt;rayPick&lt;/code&gt; flag when you do the pick, and get
 back an additional &lt;code&gt;worldPos&lt;/code&gt; property in the result, which gives you the intersection coordinates:&lt;/p&gt;
 
@@ -193,20 +193,20 @@ back an additional &lt;code&gt;worldPos&lt;/code&gt; property in the result, whi
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-ray-picking&quot;&gt;Fast Ray Picking in SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-ray-picking&quot;&gt;Fast Ray Picking in SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[SceneJS Quick Start]]></title>
-  <link rel="alternate" type="text/html" href="/articles/scenejs-quick-start" />
-  <id>/articles/scenejs-quick-start</id>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-quick-start" />
+  <id>http://xeolabs.com/articles/scenejs-quick-start</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri></uri>
+    <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -238,7 +238,7 @@ without using plugins.
 &lt;p&gt;We’re going to render this spinning Utah teapot:
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=firstExample&quot;&gt;&lt;img src=&quot;/images/scenejs/firstExample.png&quot; alt=&quot;SceneJS First Example&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=firstExample&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/firstExample.png&quot; alt=&quot;SceneJS First Example&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=firstExample&quot;&gt;Run this example&lt;/a&gt;.&lt;/p&gt;
 
@@ -325,20 +325,20 @@ Now let’s look at the essential bits of that &lt;code&gt;firstExample.html&lt;
   &lt;li&gt;&lt;a href=&quot;/articles/scenejs-creating-a-scene-and-adding-nodes&quot;&gt;Adding and Removing Nodes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-quick-start&quot;&gt;SceneJS Quick Start&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-quick-start&quot;&gt;SceneJS Quick Start&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Picking in SceneJS]]></title>
-  <link rel="alternate" type="text/html" href="/articles/scenejs-picking" />
-  <id>/articles/scenejs-picking</id>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-picking" />
+  <id>http://xeolabs.com/articles/scenejs-picking</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri></uri>
+    <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -375,7 +375,7 @@ Now let’s look at the essential bits of that &lt;code&gt;firstExample.html&lt;
   &lt;li&gt;organise things in named hierarchies, so that pick hits reflect the containment hierachy of the object you’ve picked.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Then you’ll be ready to do &lt;a href=&quot;/articles/scenejs-ray-picking&quot;&gt;ray picking&lt;/a&gt;, which builds on what you’ll learn in this tutorial.&lt;/p&gt;
+&lt;p&gt;Then you’ll be ready to do &lt;a href=&quot;http://xeolabs.com/articles/scenejs-ray-picking&quot;&gt;ray picking&lt;/a&gt;, which builds on what you’ll learn in this tutorial.&lt;/p&gt;
 
 &lt;h2 id=&quot;basic-picking&quot;&gt;Basic Picking&lt;/h2&gt;
 
@@ -389,7 +389,7 @@ Now let’s look at the essential bits of that &lt;code&gt;firstExample.html&lt;
 &lt;p&gt;Then we’ll create a scene containing the two teapots shown below. Each teapot is wrapped in a &lt;code&gt;name&lt;/code&gt; node, which enables it
 to be picked, and assigns it a symbolic name that will identify it in pick results whenever it is picked.
 &lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://scenejs.org/examples.html?page=picking&quot;&gt;&lt;img src=&quot;/images/scenejs/basicPicking.png&quot; alt=&quot;Picking Example 1&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=picking&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/basicPicking.png&quot; alt=&quot;Picking Example 1&quot; /&gt;&lt;/a&gt;
 &lt;a href=&quot;http://scenejs.org/examples.html?page=picking&quot;&gt;Run this demo&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;create-the-scene&quot;&gt;Create the scene&lt;/h3&gt;
@@ -522,7 +522,7 @@ Here’s a variation on the previous scene, in which I’ve made the green teapo
 with a &lt;code&gt;flags&lt;/code&gt; node which has a &lt;code&gt;picking&lt;/code&gt; flag set to &lt;code&gt;false&lt;/code&gt;. I’ve left the &lt;code&gt;name&lt;/code&gt; node around
 it just to emphasise that it’s the &lt;code&gt;flags&lt;/code&gt; node that causes picking to be disabled.
 &lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://scenejs.org/examples.html?page=disablePicking&quot;&gt;&lt;img src=&quot;/images/scenejs/disablePicking.png&quot; alt=&quot;Disable Picking&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=disablePicking&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/disablePicking.png&quot; alt=&quot;Disable Picking&quot; /&gt;&lt;/a&gt;
 &lt;a href=&quot;http://scenejs.org/examples.html?page=disablePicking&quot;&gt;Run this demo&lt;/a&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myScene&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
@@ -607,7 +607,7 @@ In this scene I’ve made the blue transparent box unpickable, just like in the 
 with a &lt;code&gt;flags&lt;/code&gt; node which has a &lt;code&gt;picking&lt;/code&gt; flag set to &lt;code&gt;false&lt;/code&gt;. As before, I’ve left a &lt;code&gt;name&lt;/code&gt; node around
 it just to emphasise that it’s the &lt;code&gt;flags&lt;/code&gt; node that causes picking to be disabled.
 &lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://scenejs.org/examples.html?page=pickThroughTransparentObject&quot;&gt;&lt;img src=&quot;/images/scenejs/pickThroughTransparentObject.png&quot; alt=&quot;Pick through transparent objects&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=pickThroughTransparentObject&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/pickThroughTransparentObject.png&quot; alt=&quot;Pick through transparent objects&quot; /&gt;&lt;/a&gt;
 &lt;a href=&quot;http://scenejs.org/examples.html?page=pickThroughTransparentObject&quot;&gt;Run this demo&lt;/a&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myScene&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
@@ -680,7 +680,7 @@ it just to emphasise that it’s the &lt;code&gt;flags&lt;/code&gt; node that ca
  The objects in the scene shown below are arranged within a hierarchy of ```name`` nodes so that when you pick them, the pick
   result will have name paths like “myScene.table.leg1”, and so on.
 &lt;br /&gt;&lt;br /&gt;
- &lt;a href=&quot;http://scenejs.org/examples.html?page=namePaths&quot;&gt;&lt;img src=&quot;/images/scenejs/pickNameHierarchy.png&quot; alt=&quot;Name paths&quot; /&gt;&lt;/a&gt;
+ &lt;a href=&quot;http://scenejs.org/examples.html?page=namePaths&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/pickNameHierarchy.png&quot; alt=&quot;Name paths&quot; /&gt;&lt;/a&gt;
  &lt;a href=&quot;http://scenejs.org/examples.html?page=namePaths&quot;&gt;Run this demo&lt;/a&gt;
 &lt;br /&gt;&lt;br /&gt;
 So for example, assuming that we picked one of the table
@@ -856,20 +856,20 @@ name “table”, while the table’s legs get the names “leg1”, “leg2”,
 flag that causes SceneJS to return the World-space coordinates of the point we’re picking on the surface of the object.&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-picking&quot;&gt;Picking in SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-picking&quot;&gt;Picking in SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[SceneJS Pick-Fly-Orbit Camera]]></title>
-  <link rel="alternate" type="text/html" href="/articles/scenejs-pickflyorbit-camera" />
-  <id>/articles/scenejs-pickflyorbit-camera</id>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-pickflyorbit-camera" />
+  <id>http://xeolabs.com/articles/scenejs-pickflyorbit-camera</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri></uri>
+    <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -893,8 +893,8 @@ flag that causes SceneJS to return the World-space coordinates of the point we�
 &lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples/pages/demos/pickFlyOrbitCity.html&quot;&gt;&lt;img src=&quot;/images/scenejs/pickFlyOrbitCity.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples/pages/demos/pickFlyOrbitTerrain.html&quot;&gt;&lt;img src=&quot;/images/scenejs/pickFlyOrbitTerrain.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples/pages/demos/pickFlyOrbitCity.html&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/pickFlyOrbitCity.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples/pages/demos/pickFlyOrbitTerrain.html&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/pickFlyOrbitTerrain.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
@@ -958,25 +958,25 @@ a point on the skybox, which would be rather a Truman Show moment!&lt;br /&gt;&l
 
 &lt;h3 id=&quot;read-more&quot;&gt;Read More&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/articles/scenejs-picking&quot;&gt;Picking in SceneJS&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/articles/scenejs-ray-picking&quot;&gt;Fast Ray Picking in SceneJS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-picking&quot;&gt;Picking in SceneJS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-ray-picking&quot;&gt;Fast Ray Picking in SceneJS&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/articles/scenejs-node-types&quot;&gt;Creating your own Scene Node Types&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-pickflyorbit-camera&quot;&gt;SceneJS Pick-Fly-Orbit Camera&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-pickflyorbit-camera&quot;&gt;SceneJS Pick-Fly-Orbit Camera&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Rigid-Body Physics in SceneJS]]></title>
-  <link rel="alternate" type="text/html" href="/articles/scenejs-physics" />
-  <id>/articles/scenejs-physics</id>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-physics" />
+  <id>http://xeolabs.com/articles/scenejs-physics</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri></uri>
+    <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -1415,20 +1415,20 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
   &lt;li&gt;&lt;a href=&quot;https://github.com/xeolabs/scenejs/issues?direction=desc&amp;amp;labels=Physics&amp;amp;page=1&amp;amp;sort=created&amp;amp;state=open&quot;&gt;Issues tagged ‘physics’&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-physics&quot;&gt;Rigid-Body Physics in SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-physics&quot;&gt;Rigid-Body Physics in SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Importing .OBJ, .MD2 and .3DS into SceneJS]]></title>
-  <link rel="alternate" type="text/html" href="/articles/scenejs-obj-md2-3ds" />
-  <id>/articles/scenejs-obj-md2-3ds</id>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-obj-md2-3ds" />
+  <id>http://xeolabs.com/articles/scenejs-obj-md2-3ds</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri></uri>
+    <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -1467,9 +1467,9 @@ become a de facto industry standard for transferring models between 3D programs,
 &lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=importObj&quot;&gt;&lt;img src=&quot;/images/scenejs/raptorOBJ.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=importMd2&quot;&gt;&lt;img src=&quot;/images/scenejs/lionMD5.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=import3ds&quot;&gt;&lt;img src=&quot;/images/scenejs/lexus3DS.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=importObj&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/raptorOBJ.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=importMd2&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/lionMD5.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=import3ds&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/lexus3DS.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
@@ -1541,20 +1541,20 @@ files into typed arrays, which it then parses.
 &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-obj-md2-3ds&quot;&gt;Importing .OBJ, .MD2 and .3DS into SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-obj-md2-3ds&quot;&gt;Importing .OBJ, .MD2 and .3DS into SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Creating your own Scene Node Types]]></title>
-  <link rel="alternate" type="text/html" href="/articles/scenejs-node-types" />
-  <id>/articles/scenejs-node-types</id>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-node-types" />
+  <id>http://xeolabs.com/articles/scenejs-node-types</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri></uri>
+    <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -2001,20 +2001,20 @@ notifications to us as a count of tasks in progress, as we’ll see further down
 
 &lt;p&gt;TODO&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-node-types&quot;&gt;Creating your own Scene Node Types&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-node-types&quot;&gt;Creating your own Scene Node Types&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[SceneJS Visibility and Detail Culling]]></title>
-  <link rel="alternate" type="text/html" href="/articles/scenejs-detail-culling" />
-  <id>/articles/scenejs-detail-culling</id>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-detail-culling" />
+  <id>http://xeolabs.com/articles/scenejs-detail-culling</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri></uri>
+    <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -2040,8 +2040,8 @@ notifications to us as a count of tasks in progress, as we’ll see further down
 &lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=frustumDetailCulling&quot;&gt;&lt;img src=&quot;/images/scenejs/frustumCulling.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=frustumVisibilityCulling&quot;&gt;&lt;img src=&quot;/images/scenejs/visibilityCulling.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=frustumDetailCulling&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/frustumCulling.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=frustumVisibilityCulling&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/visibilityCulling.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
@@ -2239,20 +2239,20 @@ keep track of the boundaries of things, which seemed a reasonable tradeoff to re
   &lt;li&gt;&lt;a href=&quot;https://github.com/xeolabs/scenejs/issues?direction=desc&amp;amp;labels=Culling&amp;amp;page=1&amp;amp;sort=created&amp;amp;state=open&quot;&gt;Issues tagged ‘culling’&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-detail-culling&quot;&gt;SceneJS Visibility and Detail Culling&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-detail-culling&quot;&gt;SceneJS Visibility and Detail Culling&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Adding and Removing Scene Nodes]]></title>
-  <link rel="alternate" type="text/html" href="/articles/scenejs-creating-a-scene-and-adding-nodes" />
-  <id>/articles/scenejs-creating-a-scene-and-adding-nodes</id>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-creating-a-scene-and-adding-nodes" />
+  <id>http://xeolabs.com/articles/scenejs-creating-a-scene-and-adding-nodes</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri></uri>
+    <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -2395,20 +2395,20 @@ of your scene asynchronously, as it waits for plugins to load. Always get your n
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-creating-a-scene-and-adding-nodes&quot;&gt;Adding and Removing Scene Nodes&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-creating-a-scene-and-adding-nodes&quot;&gt;Adding and Removing Scene Nodes&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Migrating from SceneJS 2.0 to 3.1]]></title>
-  <link rel="alternate" type="text/html" href="/articles/migrating-scenejs-2-to-3" />
-  <id>/articles/migrating-scenejs-2-to-3</id>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/migrating-scenejs-2-to-3" />
+  <id>http://xeolabs.com/articles/migrating-scenejs-2-to-3</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri></uri>
+    <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -2607,7 +2607,7 @@ sources for its subgraph. The &lt;code&gt;lights&lt;/code&gt; node:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/articles/scenejs-node-types&quot;&gt;Read more about the plugin API here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-node-types&quot;&gt;Read more about the plugin API here&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://scenejs.org/examples.html?tags=prims&quot;&gt;Live examples tagged “prims”&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -2634,20 +2634,20 @@ This means that you can create a scene containing nothing but a &lt;code&gt;geom
 &lt;p&gt;The &lt;code&gt;renderer&lt;/code&gt; node configures misceleaneous WebGL capabilities for its subgraph, such as line width, color buffer, depth buffer etc.
   It will be replaced by a collection of more specific nodes, eg. &lt;code&gt;depthBuf&lt;/code&gt; and &lt;code&gt;colorbuf&lt;/code&gt;.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/articles/migrating-scenejs-2-to-3&quot;&gt;Migrating from SceneJS 2.0 to 3.1&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/migrating-scenejs-2-to-3&quot;&gt;Migrating from SceneJS 2.0 to 3.1&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[SceneJS Tutorials]]></title>
-  <link rel="alternate" type="text/html" href="/articles/learning-scenejs" />
-  <id>/articles/learning-scenejs</id>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/learning-scenejs" />
+  <id>http://xeolabs.com/articles/learning-scenejs</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
-    <uri></uri>
+    <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -2677,7 +2677,7 @@ This means that you can create a scene containing nothing but a &lt;code&gt;geom
 &lt;/section&gt;
 &lt;!-- /#table-of-contents --&gt;
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;/images/scenejs/pickFlyOrbitTerrainSlim.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;http://xeolabs.com/images/scenejs/pickFlyOrbitTerrainSlim.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;http://scenejs.org&quot;&gt;SceneJS&lt;/a&gt; is an extensible WebGL-based engine for doing high-performance 3D visualisation in the browser,
@@ -2741,7 +2741,7 @@ Have fun!&lt;/p&gt;
 &lt;/ul&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;/articles/learning-scenejs&quot;&gt;SceneJS Tutorials&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/learning-scenejs&quot;&gt;SceneJS Tutorials&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 </feed>
