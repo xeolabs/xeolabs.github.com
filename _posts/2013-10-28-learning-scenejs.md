@@ -20,7 +20,7 @@ tags: [scenejs, tutorial, picking]
 </div>
 </section><!-- /#table-of-contents -->
 <br><br>
-![]({{ site.url }}/images/scenejs/pickFlyOrbitTerrainSlim.jpg)
+[![]({{ site.url }}/images/scenejs/pickFlyOrbitTerrainSlim.jpg)](http://scenejs.org/examples/pages/demos/pickFlyOrbitCity.html)
 
 ## Introduction
 [SceneJS](http://scenejs.org) is an extensible WebGL-based engine for doing high-performance 3D visualisation in the browser,
