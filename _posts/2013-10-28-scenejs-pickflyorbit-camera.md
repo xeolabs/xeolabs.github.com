@@ -47,7 +47,7 @@ SceneJS.createScene({
             yaw:-40,
             pitch:-20,
             zoom:800,
-            zoomSensitivity:20.0,
+            zoomSensitivity:-20.0,
             showCursor: true,
             cursorSize:6.0,
 
@@ -67,7 +67,7 @@ And then everything's pick-fly-orbitable.<br><br>The node's properties are:
 * ```look``` - initial point-of-interest (POI) in World-coordinates
 * ```yaw```, ```pitch``` - initial degrees of rotation of eye position about POI on Y and X axis, respectively
 * ```zoom``` - initial distance of eye from POI
-* ```zoomSensitivity``` - sensivity of mouse wheel when updating zoom
+* ```zoomSensitivity``` - sensivity of mouse wheel when updating zoom. The sign of this determines which direction the wheel drives the zoom.
 * ```showCursor``` - set true to show the POI with a sphere
 * ```cursorSize``` - radius of the cursor sphere
 
