@@ -1,11 +1,11 @@
 ---
 layout: post
-title: SceneJS Detail Culling
-description: "Optimising your scenes with detail culling"
-tagline: "Optimising your scenes with detail culling"
+title: SceneJS Visibility and Detail Culling
+description: "Optimising your scenes with frustum culling"
+tagline: "Optimising your scenes with frustum culling"
 modified: 2013-05-31
 category: articles
-tags: [scenejs, tutorial, culling]
+tags: [scenejs, tutorial, culling, optimisation]
 ---
 
 <section id="table-of-contents" class="toc">
@@ -18,11 +18,11 @@ tags: [scenejs, tutorial, culling]
 </div>
 </section><!-- /#table-of-contents -->
 
-[![](http://scenejs.org/images/lod1.png)](http://scenejs.org/examples.html?page=frustumDetailCulling) | [![](http://scenejs.org/images/lod2.png)](http://scenejs.org/examples.html?page=frustumDetailCulling) | [![](http://scenejs.org/images/lod3.png)](http://scenejs.org/examples.html?page=frustumDetailCulling) | [![](http://scenejs.org/images/lod4.png)](http://scenejs.org/examples.html?page=frustumDetailCulling)
-----|----|----|---
-Distant bodies culled | Bodies come closer | Detail level increases | Further detail increase
+[![]({{ site.url }}/images/scenejs/frustumCulling.jpg)](http://scenejs.org/examples.html?page=frustumDetailCulling) | [![]({{ site.url }}/images/scenejs/visibilityCulling.png)](http://scenejs.org/examples.html?page=frustumVisibilityCulling)
+----|----
+[Detail culling demo](http://scenejs.org/examples.html?page=frustumDetailCulling) | [Visibility culling demo](http://scenejs.org/examples.html?page=frustumVisibilityCulling)
 
-[Click here to run this example](http://scenejs.org/examples.html?page=frustumDetailCulling)
+
 
 # Overview
 SceneJS supports detail culling via the ```frustum/lod``` node, which sets up an axis-aligned bounding box around its child nodes. Each child provides a different level of detail for the object within the boundary, and the ```frustum/lod``` enables one of its children at any instant in order to show the appropriate detail level for the current projected 2D canvas size of the boundary.
@@ -94,7 +94,7 @@ someNode.addNode({
                   nodes: [
 
                      // Box primitive, implemented by plugin at
-                     // http://scenejs.org/api/latest/plugins/node/prims/box.js
+                     // ./plugins/node/prims/box.js
                      {
                         type: "prims/box"
                      }
@@ -130,7 +130,7 @@ someNode.addNode({
                nodes: [
 
                   // Sphere primitive, implemented by plugin at
-                  // http://scenejs.org/api/latest/plugins/node/prims/sphere.js
+                  // ./plugins/node/prims/sphere.js
                   {
                      type: "prims/sphere",
                      radius: 5,
@@ -168,7 +168,7 @@ someNode.addNode({
                nodes: [
 
                   // Teapot primitive, implemented by plugin at
-                  // http://scenejs.org/api/latest/plugins/node/prims/teapot.js
+                  // ./plugins/node/prims/teapot.js
                   {
                      type: "prims/teapot"
                   }

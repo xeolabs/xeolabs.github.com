@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Extending SceneJS
-description: "Creating your own scene graph node types"
-tagline: "Creating your own scene graph node types"
+title: Creating your own Scene Node Types
+description: "Extending the SceneJS API"
+tagline: "Extending the SceneJS API"
 modified: 2013-05-31
 category: articles
-tags: [scenejs, tutorial, plugins]
+tags: [scenejs, tutorial, extending]
 ---
 
 <section id="table-of-contents" class="toc">
@@ -18,20 +18,21 @@ tags: [scenejs, tutorial, plugins]
 </div>
 </section><!-- /#table-of-contents -->
 
-You can define new scene node types for [SceneJS](http://scenejs.org) via plugins. This extension mechanism lets you
+You can define new node types for SceneJS via plugins. This extension mechanism lets you
 create your own higher-level scene components that just slot straight into your scene graphs as nodes which
-you can create and update as usual via the JSON API. 
-
-In this article we'll see how to define a new node type and how to use it within a scene graph. The examples page also
+you can create and update as usual via the API, in the same way as for the core node types.
+<br><br>
+In this article I'll show you how to define a new node type and how to use it within a scene graph. The examples page also
 has [several examples](http://scenejs.org/examples.html?tags=plugins) that show how to define and use node types.
 
-# Creating a new node type
+## Creating a new node type
 
-A class definition for a node type is provided to SceneJS as plugin script, which it will dynamically load on-demand
+You provide a class definition for a new node type as a plugin, which SceneJS will automatically load on-demand
 the first time you try to instantiate it within your scene graph.
-
-As shown in the trivial example below, custom nodes often work as facades that can create additional nodes within their
-subgraphs, while providing accessor methods which usually get or set state on those nodes:
+<br><br>
+Our trivial example plugin shows how these custom node types are often a kind of actor/facade that creates additional
+scene nodes within its subgraph, while providing nice abstract accessor methods which update the state of those nodes
+in some way:
 
 {% highlight javascript %}
 SceneJS.Types.addType("demos/color", {
@@ -79,25 +80,24 @@ SceneJS.Types.addType("demos/color", {
 });
 {% endhighlight %}
 
-This plugin happens to be deployed within the SceneJS plugins directory in this repo, at this location:
-
+Our example plugin script is actually deployed within the SceneJS plugins bundle - find the original source code for it here:
 [http://scenejs.org/api/latest/plugins/node/demos/color.js](http://scenejs.org/api/latest/plugins/node/demos/color.js)
-
-Note that the plugin script installs the new node type as "demos/color", and see how that type name maps to the
+<br><br>
+Note that our plugin script installs the new node type as "demos/color". See how that type name maps to the
 script's location within the ```http://scenejs.org/api/latest/plugins/node``` directory.
 
-# Using a new node type
+## Using the new node type
 
-Let's assume that we've configured SceneJS to find our plugin (this is the default configuration by the way, so don't
-bother doing this if you're hotlinking to the SceneJS lib and just want to use the plugins from this repo):
+Let's assume that you've downloaded the SceneJS plugins bundle as described in the [Quick Start](/articles/scenejs-quick-start) tutorial, and
+ that you've pointed SceneJS at where you unzipped them:
 
 {% highlight javascript %}
 SceneJS.configure({
-    pluginPath: "http://scenejs.org/api/latest/plugins"
+    pluginPath: "./plugins"
 });
 {% endhighlight %}
 
-Now we can create a scene that includes an instance of our new node type.
+Now that SceneJS will be able to load the plugin listed above, you can create a scene that includes an instance of it (along with a teapot, which comes from another plugin):
 
 {% highlight javascript %}
 var scene = SceneJS.createScene({
@@ -109,7 +109,7 @@ var scene = SceneJS.createScene({
             nodes:[
 
                 // Node type defined by our new plugin, served from:
-                // http://scenejs.org/api/latest/plugins/node/demos/color.js
+                // ./plugins/node/demos/color.js
                 {
                     type:"demos/color",
                     id: "myColor",
@@ -122,7 +122,7 @@ var scene = SceneJS.createScene({
                     nodes:[
 
                         // Teapot primitive, implemented by plugin at
-                        // http://scenejs.org/api/latest/plugins/node/prims/teapot.js
+                        // ./plugins/node/prims/teapot.js
                         {
                             type:"prims/teapot"
                         }
@@ -134,15 +134,15 @@ var scene = SceneJS.createScene({
 });
 {% endhighlight %}
 
-When SceneJS parses that instance of our ```demos/color``` node type, it's going to dynamically load our plugin script,
+As mentioned, when SceneJS parses that instance of our ```demos/color``` node type, it's going to dynamically load our plugin script,
 which will install the plugin type, which SceneJS will then instantiate to create the node.
-
+<br><br>
 See how in the scene we are providing a child geometry for our node. Within its constructor (the ```init``` method in
 the node type definition plugin above) the custom node type is responsible for inserting  specified child node(s) into
 the subgraph it creates under itself. That's because only the node type knows exactly where the child nodes should be located within its subgraph.
-
+<br><br>
 Now lets get the node instance and use one of its accessor methods to periodically switch its color property.
-
+<br><br>
 Note that since our node originates from a plugin that will be loaded on-demand, we need to get the node asynchronously
 using a callback (instead of synchronously, like we can with instances of core node types):
 
@@ -163,16 +163,15 @@ using a callback (instead of synchronously, like we can with instances of core n
 
 See that setColor method, which is defined by our node type?
 
-[Run this example](http://scenejs.org/examples.html?page=customBundledNodeColor)
+* [Run this example](http://scenejs.org/examples.html?page=basicCustomNodeDef)
 
 # Using 3rd-Party Libraries in Nodes
 
 SceneJS bundles RequireJS, so that plugins can dynamically load support libraries, such as those from 3rd-party vendors.
-
+<br><br>
 Support libraries used by custom node types are kept in a [lib directory inside the plugins directory](https://github.com/xeolabs/scenejs/tree/V3.1/api/latest/plugins/lib).
-
+<br><br>
 Custom node types can then require the dependencies using a *scenejsPluginDeps* prefix:
-
 {% highlight javascript %}
     require([
 
@@ -193,7 +192,7 @@ Custom node types can then require the dependencies using a *scenejsPluginDeps* 
 {% endhighlight %}
 
 SceneJS synchronises that RequireJS ```scenejsPluginDeps``` path with the current [pluginPath configuration](#serving-plugins-yourself).
-
+<br><br>
 As an example, the bundled [canvas/capture](https://github.com/xeolabs/scenejs/blob/V3.1/api/latest/plugins/node/canvas/capture.js) node type
 uses the 3rd-party ```canvas2image``` library to capture the canvas to an image. Run a demo of that node
 [here](http://scenejs.org/examples.html?page=canvasCapture).
@@ -201,7 +200,7 @@ uses the 3rd-party ```canvas2image``` library to capture the canvas to an image.
 # Publishing data from nodes
 
 Sometimes we want our nodes to publish some data that we can subscribe to via the API.
-
+<br><br>
 Here's a ```growingTeapot``` node, which grows in height along the Y-axis, then publishes its height when it reaches a certain value:
 
 {% highlight javascript %}
@@ -309,12 +308,12 @@ scene.getNode("myGrowingTeapot",
     });
 {% endhighlight %}
 
-[Run this example](http://scenejs.org/examples.html?page=customNodeDefWithPublications)
+* [Run this example](http://scenejs.org/examples.html?page=customNodeDefWithPublications)
 
 # Task tracking on nodes
 
 Sometimes our nodes will run tasks that we'll want to monitor progress on.
-
+<br><br>
 Here's a defintion for that growing teapot node again, this time using ```taskStarted```, ```taskFinished```
 and ```taskFailed```  methods to notify SceneJS of its progress while it grows. SceneJS can relay those
 notifications to us as a count of tasks in progress, as we'll see further down.
@@ -443,7 +442,7 @@ setInterval(function () {
 }, 100);
 {% endhighlight %}
 
-[Run this example](http://scenejs.org/examples.html?page=customNodeDefWithTasks)
+* [Run this example](http://scenejs.org/examples.html?page=customNodeDefWithTasks)
 
 # Scene compilation hooks
 

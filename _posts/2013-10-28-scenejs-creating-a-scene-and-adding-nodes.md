@@ -4,7 +4,7 @@ title: Adding and Removing Scene Nodes
 description: "How to create a scene then update, add and remove nodes"
 modified: 2013-05-31
 category: articles
-tags: [scenejs, tutorial]
+tags: [scenejs, tutorial, definition]
 ---
 
 <section id="table-of-contents" class="toc">
@@ -17,11 +17,10 @@ tags: [scenejs, tutorial]
 </div>
 </section><!-- /#table-of-contents -->
 
-In this article we're going to go a little deeper than we did in the [quick start](/articles/scenejs-quick-start) to demonstrate how to
-add and remove scene nodes. Although you can define a whole scene one chunk of JSON, SceneJS actually provides you with
-node objects that you can create, call methods on, destroy and rearrange.
+We got started with SceneJS in the [quick start](/articles/scenejs-quick-start) tutorial, now I'll show you how add and
+remove nodes to and from your scene graph.
 
-# Overview
+## Overview
 A scene graph is a data structure that arranges the logical and spatial representation of a graphical scene as a collection
 of nodes in a graph, typically a tree. Scene graphs can provide a convenient abstraction on top of low-level graphics APIs
 (such as WebGL) that encapsulates optimisations and API best practices, leaving the developer free to concentrate on scene content.
@@ -32,7 +31,7 @@ A key feature of most scene graphs is state inheritance in which child nodes inh
 For SceneJS, a benefit of scene graphs is modularity, where JSON subtrees can be complete reusable components, and brevity,
 where state may be reused by wrapping it around many child nodes.
 
-# Creating a scene graph
+## Creating a scene graph
 The snippet below is an example of a 3D scene created with SceneJS. The scene graph is a directed acyclic graph expressed
 in JSON, in this case defining a scene containing a blue teapot and two boxes sharing the same textured appearance.
 Geometry nodes are normally at the leaves, where they inherit the state defined by higher nodes, in this case the material
@@ -88,8 +87,9 @@ SceneJS parses that description to create the 3D scene shown below:
 
 [Run this example here](http://scenejs.org/examples.html?page=secondExample).
 
-# Updating nodes
-We can animate one of those ```translate``` nodes like this:
+## Updating nodes
+As shown back in the [quick start](/articles/scenejs-quick-start) tutorial, we can animate one of those ```translate```
+nodes like this:
 
 {% highlight javascript %}
 scene.getNode("firstBoxPos",
@@ -109,7 +109,10 @@ scene.getNode("firstBoxPos",
     });
 {% endhighlight %}
 
-# Adding nodes
+See how we get the node with an asynchronous callback? That's because SceneJS may actually be creating bits
+of your scene asynchronously, as it waits for plugins to load. Always get your node objects this way.
+
+## Adding nodes
 Adding nodes to the scene is as simple as:
 
 {% highlight javascript %}
@@ -129,7 +132,7 @@ scene.getNode("myMaterial",
     });
 {% endhighlight %}
 
-# Removing nodes
+## Removing nodes
 Remove nodes like this:
 
 {% highlight javascript %}

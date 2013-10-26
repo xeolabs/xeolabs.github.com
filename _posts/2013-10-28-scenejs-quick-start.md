@@ -5,7 +5,7 @@ description: "Get cracking with SceneJS in two minutes"
 modified: 2013-05-31
 category: articles
 comments: true
-tags: [scenejs, tutorial]
+tags: [scenejs, tutorial, definition]
 ---
 
 <section id="table-of-contents" class="toc">
@@ -18,29 +18,54 @@ tags: [scenejs, tutorial]
 </div>
 </section><!-- /#table-of-contents -->
 
-[SceneJS](http://scenejs.org) is an extensible WebGL-based engine for high-detail 3D visualisation.<br><br>It's super easy to get into, thanks to its
-succinct API with lots of defaults and training wheels. But don't let let that simplicity fool you - behind that friendly
-facade it's optimised to death with serious tricks like scene compilation and GL state sorting, so will happily scale up
-to thousands of objects while eating draw calls for breakfast. Let's start easy though, with an example that shows the basic idea
-of this engine.
+[SceneJS](http://scenejs.org) is an extensible WebGL-based engine for doing high-performance 3D visualisation in the browser
+without using plugins.
+<br><br>Let's start easy, with an example that shows the essential concepts of this engine.
 
 # First example
-Let's create this spinning Newell teapot:
+We're going to render this spinning Utah teapot:
 <br/><br/>
 
 [![SceneJS First Example]({{ site.url }}/images/scenejs/firstExample.png)](http://scenejs.org/examples.html?page=firstExample)
 
-[Click here to run this example](http://scenejs.org/examples.html?page=firstExample).
+[Run this example](http://scenejs.org/examples.html?page=firstExample).
 
-### Step 1. Link to the API
-Include the [SceneJS library](http://scenejs.org/api/latest/scenejs.js) in the &lt;head&gt; tag of your web page:
+### Download and unzip SceneJS and plugins
+
+Download and unzip the [SceneJS ZIP archive](http://scenejs.org/api/latest/scenejs.zip). Then we'll have these files:
 
 {% highlight html %}
-<script src="http://scenejs.org/api/latest/scenejs.js"></script>
+.
+├── scenejs.js
+├── plugins
+└── firstExample.html
 {% endhighlight %}
 
-### Step 2. Create a scene
-We'll make a spinning blue teapot:
+We have the SceneJS library, the SceneJS plugins bundle, and an example HTML page which renders our teapot.
+  <br><br>
+Now let's look at the essential bits of that ```firstExample.html``` page.
+
+### Link to the SceneJS library
+
+Within the &lt;head&gt; tag of the page, we link to the SceneJS library:
+
+{% highlight html %}
+<script src="./scenejs.js"></script>
+{% endhighlight %}
+
+### Point SceneJS to the plugins
+
+Within the &lt;script&gt; tag, the first thing we do is configure SceneJS to find those plugins:
+
+{% highlight javascript %}
+SceneJS.setConfigs({
+    pluginPath: "./plugins"
+});
+{% endhighlight %}
+
+### Create a scene
+
+Then we go wild and create our spinning blue teapot:
 
 {% highlight javascript %}
 var scene = SceneJS.createScene({
@@ -58,8 +83,8 @@ var scene = SceneJS.createScene({
 
                     nodes: [
 
-                        // Teapot primitive, implemented by plugin at
-                        // http://scenejs.org/api/latest/plugins/node/prims/teapot.js
+                        // Teapot primitive, implemented by plugin file
+                        // ./plugins/node/prims/teapot.js
                         {
                             type:"prims/teapot"
                         }
@@ -71,10 +96,9 @@ var scene = SceneJS.createScene({
 });
 {% endhighlight %}
 
-And voilà, there's your blue teapot!
+### Spin the teapot
 
-### Step 3. Spin the teapot
-Now let's start the teapot spinning:
+Finally, we start the teapot spinning:
 
 {% highlight javascript %}
 scene.getNode("myRotate", function(myRotate) {
@@ -88,21 +112,6 @@ scene.getNode("myRotate", function(myRotate) {
 });
 {% endhighlight %}
 
-# Plugins
-To keep the core library small, SceneJS dynamically loads it's non-core functionality from a directory of
-plugins. In the example above, the <code>prims/teapot</code> node is a custom node type instantiated
-from a <a href="https://github.com/xeolabs/scenejs/tree/V3.1/api/latest/plugins/node/prims/teapot.js">prims/teapot</a>
-plugin, which SceneJS loaded on-demand from <a href="https://github.com/xeolabs/scenejs/tree/V3.1/api/latest/plugins">the
-plugins directory</a> within its repository on GitHub.
+# What's next?
 
-## Serving your own plugins
-If you'd rather serve the plugins yourself, then just copy that directory to your server and configure SceneJS to load
-them from there, like this:
-
-{% highlight javascript %}
-SceneJS.setConfigs({
-    pluginPath: "./foo/myPluginsDir"
-});
-{% endhighlight %}
-
-Want to write your own plugins? Sweet! Please [read more about the plugin API here]({{ site.url}}/articles/scenejs-node-types)
+* [Adding and Removing Nodes](/articles/scenejs-creating-a-scene-and-adding-nodes)

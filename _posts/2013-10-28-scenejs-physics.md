@@ -1,11 +1,11 @@
 ---
 layout: post
-title: SceneJS Physics
+title: Rigid-Body Physics in SceneJS
 description: "Creating rigid-body physical simulations"
-tagline: "Creating rigid-body physical simulations"
+tagline: "Creating multi-threaded physical simulations"
 modified: 2013-05-31
 category: articles
-tags: [scenejs, tutorial, physics, plugins]
+tags: [scenejs, tutorial, physics, simulation]
 ---
 
 <section id="table-of-contents" class="toc">

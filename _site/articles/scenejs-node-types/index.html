@@ -5,30 +5,30 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Extending SceneJS &#8211; xeoLabs</title>
-<meta name="description" content="Creating your own scene graph node types">
-<meta name="keywords" content="scenejs, tutorial, plugins">
+<title>Creating your own Scene Node Types &#8211; xeoLabs</title>
+<meta name="description" content="Extending the SceneJS API">
+<meta name="keywords" content="scenejs, tutorial, extending">
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://xeolabs.com/images/">
-<meta name="twitter:title" content="Extending SceneJS">
-<meta name="twitter:description" content="Creating your own scene graph node types">
+<meta name="twitter:image" content="/images/">
+<meta name="twitter:title" content="Creating your own Scene Node Types">
+<meta name="twitter:description" content="Extending the SceneJS API">
 <meta name="twitter:creator" content="@xeolabs">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Extending SceneJS">
-<meta property="og:description" content="Creating your own scene graph node types">
-<meta property="og:url" content="http://xeolabs.com/articles/scenejs-node-types">
+<meta property="og:title" content="Creating your own Scene Node Types">
+<meta property="og:description" content="Extending the SceneJS API">
+<meta property="og:url" content="/articles/scenejs-node-types">
 <meta property="og:site_name" content="xeoLabs">
 
 
 
 
 
-<link rel="canonical" href="http://xeolabs.com/articles/scenejs-node-types">
-<link href="http://xeolabs.com/feed.xml" type="application/atom+xml" rel="alternate" title="xeoLabs Feed">
+<link rel="canonical" href="/articles/scenejs-node-types">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="xeoLabs Feed">
 <link rel="author" href="https://plus.google.com/u/0/110983138227486752827/posts?rel=author">
 
 <!-- http://t.co/dKP3o1e -->
@@ -39,30 +39,30 @@
 <!-- Google Webfonts -->
 <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
 <!-- For all browsers -->
-<link rel="stylesheet" href="http://xeolabs.com/assets/css/main.min.css">
+<link rel="stylesheet" href="/assets/css/main.min.css">
 
 <!--[if (lt IE 9) & (!IEMobile)]>
-<link rel="stylesheet" href="http://xeolabs.com/assets/css/ie.min.css">
+<link rel="stylesheet" href="/assets/css/ie.min.css">
 <![endif]-->
 
 <meta http-equiv="cleartype" content="on">
 
 <!-- Load Modernizr -->
-<script src="http://xeolabs.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
 
 <!-- Icons -->
 <!-- 16x16 -->
-<link rel="shortcut icon" href="http://xeolabs.com/favicon.ico">
+<link rel="shortcut icon" href="/favicon.ico">
 <!-- 32x32 -->
-<link rel="shortcut icon" href="http://xeolabs.com/favicon.png">
+<link rel="shortcut icon" href="/favicon.png">
 <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="http://xeolabs.com/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
 <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://xeolabs.com/images/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
 <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://xeolabs.com/images/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://xeolabs.com/images/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
 
 </head>
 
@@ -72,21 +72,23 @@
 
 <div class="navigation-wrapper">
 	<div class="site-name">
-		<a href="http://xeolabs.com">xeoLabs</a>
+		<a href="">xeoLabs</a>
 	</div><!-- /.site-name -->
 	<div class="top-navigation">
 		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 		    <ul>
 		        
-				<li><a href="http://xeolabs.com/about" >About</a></li>
+				<li><a href="/about" >About</a></li>
 		        
-				<li><a href="http://xeolabs.com/articles" >Articles</a></li>
+				<li><a href="/articles" >Articles</a></li>
+		        
+				<li><a href="/articles/learning-scenejs" >SceneJS Tutorials</a></li>
 		        
 				<li><a href="http://scenejs.org" target="_blank">SceneJS.org</a></li>
 		        
 				<li><a href="http://biodigitalhuman.com" target="_blank">BioDigitalHuman.com</a></li>
 		        
-		        <li><i class="icon-feed"></i> <a href="http://xeolabs.com/feed.xml" title="Atom/RSS feed">Feed</a>
+		        <li><i class="icon-feed"></i> <a href="/feed.xml" title="Atom/RSS feed">Feed</a>
 		    </ul>
 		</nav>
 	</div><!-- /.top-navigation -->
@@ -96,8 +98,8 @@
 
 <div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
   <div class="article-author-top">
-    <img src="http://xeolabs.com/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
-<h3><a href="http://xeolabs.com">@xeoLabs</a></h3>
+    <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+<h3><a href="/about/">@xeoLabs</a></h3>
 <p>Lindsay Kay<br>3D Web developer</p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
 
@@ -110,8 +112,8 @@
   </div>
   <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
     <div class="headline-wrap">
-      <h1 itemprop="name">Extending SceneJS</h1>
-      <h2>Creating your own scene graph node types</h2>
+      <h1 itemprop="name">Creating your own Scene Node Types</h1>
+      <h2>Extending the SceneJS API</h2>
     </div><!--/ .headline-wrap -->
     <div class="article-wrap" itemprop="text">
       <section id="table-of-contents" class="toc">
@@ -121,7 +123,7 @@
 <div id="drawer">
 <ul id="markdown-toc">
   <li><a href="#creating-a-new-node-type">Creating a new node type</a></li>
-  <li><a href="#using-a-new-node-type">Using a new node type</a></li>
+  <li><a href="#using-the-new-node-type">Using the new node type</a></li>
   <li><a href="#using-3rd-party-libraries-in-nodes">Using 3rd-Party Libraries in Nodes</a></li>
   <li><a href="#publishing-data-from-nodes">Publishing data from nodes</a></li>
   <li><a href="#task-tracking-on-nodes">Task tracking on nodes</a></li>
@@ -132,20 +134,21 @@
 </section>
 <!-- /#table-of-contents -->
 
-<p>You can define new scene node types for <a href="http://scenejs.org">SceneJS</a> via plugins. This extension mechanism lets you
+<p>You can define new node types for SceneJS via plugins. This extension mechanism lets you
 create your own higher-level scene components that just slot straight into your scene graphs as nodes which
-you can create and update as usual via the JSON API. </p>
-
-<p>In this article we’ll see how to define a new node type and how to use it within a scene graph. The examples page also
+you can create and update as usual via the API, in the same way as for the core node types.
+<br /><br />
+In this article I’ll show you how to define a new node type and how to use it within a scene graph. The examples page also
 has <a href="http://scenejs.org/examples.html?tags=plugins">several examples</a> that show how to define and use node types.</p>
 
-<h1 id="creating-a-new-node-type">Creating a new node type</h1>
+<h2 id="creating-a-new-node-type">Creating a new node type</h2>
 
-<p>A class definition for a node type is provided to SceneJS as plugin script, which it will dynamically load on-demand
-the first time you try to instantiate it within your scene graph.</p>
-
-<p>As shown in the trivial example below, custom nodes often work as facades that can create additional nodes within their
-subgraphs, while providing accessor methods which usually get or set state on those nodes:</p>
+<p>You provide a class definition for a new node type as a plugin, which SceneJS will automatically load on-demand
+the first time you try to instantiate it within your scene graph.
+<br /><br />
+Our trivial example plugin shows how these custom node types are often a kind of actor/facade that creates additional
+scene nodes within its subgraph, while providing nice abstract accessor methods which update the state of those nodes
+in some way:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">addType</span><span class="p">(</span><span class="s2">&quot;demos/color&quot;</span><span class="p">,</span> <span class="p">{</span>
 
@@ -192,24 +195,23 @@ subgraphs, while providing accessor methods which usually get or set state on th
 <span class="p">});</span>
 </code></pre></div>
 
-<p>This plugin happens to be deployed within the SceneJS plugins directory in this repo, at this location:</p>
-
-<p><a href="http://scenejs.org/api/latest/plugins/node/demos/color.js">http://scenejs.org/api/latest/plugins/node/demos/color.js</a></p>
-
-<p>Note that the plugin script installs the new node type as “demos/color”, and see how that type name maps to the
+<p>Our example plugin script is actually deployed within the SceneJS plugins bundle - find the original source code for it here:
+<a href="http://scenejs.org/api/latest/plugins/node/demos/color.js">http://scenejs.org/api/latest/plugins/node/demos/color.js</a>
+<br /><br />
+Note that our plugin script installs the new node type as “demos/color”. See how that type name maps to the
 script’s location within the <code>http://scenejs.org/api/latest/plugins/node</code> directory.</p>
 
-<h1 id="using-a-new-node-type">Using a new node type</h1>
+<h2 id="using-the-new-node-type">Using the new node type</h2>
 
-<p>Let’s assume that we’ve configured SceneJS to find our plugin (this is the default configuration by the way, so don’t
-bother doing this if you’re hotlinking to the SceneJS lib and just want to use the plugins from this repo):</p>
+<p>Let’s assume that you’ve downloaded the SceneJS plugins bundle as described in the <a href="/articles/scenejs-quick-start">Quick Start</a> tutorial, and
+ that you’ve pointed SceneJS at where you unzipped them:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">configure</span><span class="p">({</span>
-    <span class="nx">pluginPath</span><span class="o">:</span> <span class="s2">&quot;http://scenejs.org/api/latest/plugins&quot;</span>
+    <span class="nx">pluginPath</span><span class="o">:</span> <span class="s2">&quot;./plugins&quot;</span>
 <span class="p">});</span>
 </code></pre></div>
 
-<p>Now we can create a scene that includes an instance of our new node type.</p>
+<p>Now that SceneJS will be able to load the plugin listed above, you can create a scene that includes an instance of it (along with a teapot, which comes from another plugin):</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="nx">SceneJS</span><span class="p">.</span><span class="nx">createScene</span><span class="p">({</span>
     <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
@@ -220,7 +222,7 @@ bother doing this if you’re hotlinking to the SceneJS lib and just want to use
             <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
 
                 <span class="c1">// Node type defined by our new plugin, served from:</span>
-                <span class="c1">// http://scenejs.org/api/latest/plugins/node/demos/color.js</span>
+                <span class="c1">// ./plugins/node/demos/color.js</span>
                 <span class="p">{</span>
                     <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;demos/color&quot;</span><span class="p">,</span>
                     <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;myColor&quot;</span><span class="p">,</span>
@@ -233,7 +235,7 @@ bother doing this if you’re hotlinking to the SceneJS lib and just want to use
                     <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
 
                         <span class="c1">// Teapot primitive, implemented by plugin at</span>
-                        <span class="c1">// http://scenejs.org/api/latest/plugins/node/prims/teapot.js</span>
+                        <span class="c1">// ./plugins/node/prims/teapot.js</span>
                         <span class="p">{</span>
                             <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/teapot&quot;</span>
                         <span class="p">}</span>
@@ -245,16 +247,16 @@ bother doing this if you’re hotlinking to the SceneJS lib and just want to use
 <span class="p">});</span>
 </code></pre></div>
 
-<p>When SceneJS parses that instance of our <code>demos/color</code> node type, it’s going to dynamically load our plugin script,
-which will install the plugin type, which SceneJS will then instantiate to create the node.</p>
-
-<p>See how in the scene we are providing a child geometry for our node. Within its constructor (the <code>init</code> method in
+<p>As mentioned, when SceneJS parses that instance of our <code>demos/color</code> node type, it’s going to dynamically load our plugin script,
+which will install the plugin type, which SceneJS will then instantiate to create the node.
+<br /><br />
+See how in the scene we are providing a child geometry for our node. Within its constructor (the <code>init</code> method in
 the node type definition plugin above) the custom node type is responsible for inserting  specified child node(s) into
-the subgraph it creates under itself. That’s because only the node type knows exactly where the child nodes should be located within its subgraph.</p>
-
-<p>Now lets get the node instance and use one of its accessor methods to periodically switch its color property.</p>
-
-<p>Note that since our node originates from a plugin that will be loaded on-demand, we need to get the node asynchronously
+the subgraph it creates under itself. That’s because only the node type knows exactly where the child nodes should be located within its subgraph.
+<br /><br />
+Now lets get the node instance and use one of its accessor methods to periodically switch its color property.
+<br /><br />
+Note that since our node originates from a plugin that will be loaded on-demand, we need to get the node asynchronously
 using a callback (instead of synchronously, like we can with instances of core node types):</p>
 
 <div class="highlight"><pre><code class="javascript">    <span class="nx">scene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">&quot;myColor&quot;</span><span class="p">,</span>
@@ -273,15 +275,17 @@ using a callback (instead of synchronously, like we can with instances of core n
 
 <p>See that setColor method, which is defined by our node type?</p>
 
-<p><a href="http://scenejs.org/examples.html?page=customBundledNodeColor">Run this example</a></p>
+<ul>
+  <li><a href="http://scenejs.org/examples.html?page=basicCustomNodeDef">Run this example</a></li>
+</ul>
 
 <h1 id="using-3rd-party-libraries-in-nodes">Using 3rd-Party Libraries in Nodes</h1>
 
-<p>SceneJS bundles RequireJS, so that plugins can dynamically load support libraries, such as those from 3rd-party vendors.</p>
-
-<p>Support libraries used by custom node types are kept in a <a href="https://github.com/xeolabs/scenejs/tree/V3.1/api/latest/plugins/lib">lib directory inside the plugins directory</a>.</p>
-
-<p>Custom node types can then require the dependencies using a <em>scenejsPluginDeps</em> prefix:</p>
+<p>SceneJS bundles RequireJS, so that plugins can dynamically load support libraries, such as those from 3rd-party vendors.
+<br /><br />
+Support libraries used by custom node types are kept in a <a href="https://github.com/xeolabs/scenejs/tree/V3.1/api/latest/plugins/lib">lib directory inside the plugins directory</a>.
+<br /><br />
+Custom node types can then require the dependencies using a <em>scenejsPluginDeps</em> prefix:</p>
 
 <div class="highlight"><pre><code class="javascript">    <span class="nx">require</span><span class="p">([</span>
 
@@ -301,17 +305,17 @@ using a callback (instead of synchronously, like we can with instances of core n
         <span class="p">});</span>
 </code></pre></div>
 
-<p>SceneJS synchronises that RequireJS <code>scenejsPluginDeps</code> path with the current <a href="#serving-plugins-yourself">pluginPath configuration</a>.</p>
-
-<p>As an example, the bundled <a href="https://github.com/xeolabs/scenejs/blob/V3.1/api/latest/plugins/node/canvas/capture.js">canvas/capture</a> node type
+<p>SceneJS synchronises that RequireJS <code>scenejsPluginDeps</code> path with the current <a href="#serving-plugins-yourself">pluginPath configuration</a>.
+<br /><br />
+As an example, the bundled <a href="https://github.com/xeolabs/scenejs/blob/V3.1/api/latest/plugins/node/canvas/capture.js">canvas/capture</a> node type
 uses the 3rd-party <code>canvas2image</code> library to capture the canvas to an image. Run a demo of that node
 <a href="http://scenejs.org/examples.html?page=canvasCapture">here</a>.</p>
 
 <h1 id="publishing-data-from-nodes">Publishing data from nodes</h1>
 
-<p>Sometimes we want our nodes to publish some data that we can subscribe to via the API.</p>
-
-<p>Here’s a <code>growingTeapot</code> node, which grows in height along the Y-axis, then publishes its height when it reaches a certain value:</p>
+<p>Sometimes we want our nodes to publish some data that we can subscribe to via the API.
+<br /><br />
+Here’s a <code>growingTeapot</code> node, which grows in height along the Y-axis, then publishes its height when it reaches a certain value:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">addType</span><span class="p">(</span><span class="s2">&quot;growingTeapot&quot;</span><span class="p">,</span> <span class="p">{</span>
 
@@ -415,13 +419,15 @@ uses the 3rd-party <code>canvas2image</code> library to capture the canvas to an
     <span class="p">});</span>
 </code></pre></div>
 
-<p><a href="http://scenejs.org/examples.html?page=customNodeDefWithPublications">Run this example</a></p>
+<ul>
+  <li><a href="http://scenejs.org/examples.html?page=customNodeDefWithPublications">Run this example</a></li>
+</ul>
 
 <h1 id="task-tracking-on-nodes">Task tracking on nodes</h1>
 
-<p>Sometimes our nodes will run tasks that we’ll want to monitor progress on.</p>
-
-<p>Here’s a defintion for that growing teapot node again, this time using <code>taskStarted</code>, <code>taskFinished</code>
+<p>Sometimes our nodes will run tasks that we’ll want to monitor progress on.
+<br /><br />
+Here’s a defintion for that growing teapot node again, this time using <code>taskStarted</code>, <code>taskFinished</code>
 and <code>taskFailed</code>  methods to notify SceneJS of its progress while it grows. SceneJS can relay those
 notifications to us as a count of tasks in progress, as we’ll see further down.</p>
 
@@ -546,7 +552,9 @@ notifications to us as a count of tasks in progress, as we’ll see further down
 <span class="p">},</span> <span class="mi">100</span><span class="p">);</span>
 </code></pre></div>
 
-<p><a href="http://scenejs.org/examples.html?page=customNodeDefWithTasks">Run this example</a></p>
+<ul>
+  <li><a href="http://scenejs.org/examples.html?page=customNodeDefWithTasks">Run this example</a></li>
+</ul>
 
 <h1 id="scene-compilation-hooks">Scene compilation hooks</h1>
 
@@ -555,8 +563,8 @@ notifications to us as a count of tasks in progress, as we’ll see further down
       <hr />
       <footer role="contentinfo">
         <div class="article-author-bottom">
-          <img src="http://xeolabs.com/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
-<h3><a href="http://xeolabs.com">@xeoLabs</a></h3>
+          <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+<h3><a href="/about/">@xeoLabs</a></h3>
 <p>Lindsay Kay<br>3D Web developer</p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
 
@@ -567,33 +575,54 @@ notifications to us as a count of tasks in progress, as we’ll see further down
 
 
         </div>
-        <p class="byline"><strong>Extending SceneJS</strong> was published on <time datetime="2013-10-28T00:00:00-04:00" itemprop="datePublished">October 28, 2013</time> and last modified on <time datetime="2013-05-31" itemprop="dateModified">May 31, 2013</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://xeolabs.com/about" title="About @xeoLabs" itemprop="url">@xeoLabs</a></span></span>.</p>
+        <p class="byline"><strong>Creating your own Scene Node Types</strong> was published on <time datetime="2013-10-28T00:00:00-04:00" itemprop="datePublished">October 28, 2013</time> and last modified on <time datetime="2013-05-31" itemprop="dateModified">May 31, 2013</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="/about" title="About @xeoLabs" itemprop="url">@xeoLabs</a></span></span>.</p>
       </footer>
+
+        
+        <br><br>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'xeolabs'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
     </div><!-- /.article-wrap -->
   </article>
+
 </div><!-- /#main -->
+
+
 
 <div class="footer-wrap">
   <div class="related-articles">
-  <h4>You might also enjoy <small class="pull-right">(<a href="http://xeolabs.com/articles">View all articles</a>)</small></h4>
+  <h4>You might also enjoy <small class="pull-right">(<a href="/articles">View all articles</a>)</small></h4>
     <ul>
     
       
       
       
-      <li><a href="http://xeolabs.com/articles/scenejs-quick-start" title="SceneJS Quick Start">SceneJS Quick Start</a></li>
+      <li><a href="/articles/scenejs-ray-picking-technique" title="Pssst...How Fast Ray Picking Works in SceneJS">Pssst...How Fast Ray Picking Works in SceneJS</a></li>
       
     
       
       
       
-      <li><a href="http://xeolabs.com/articles/scenejs-physics" title="SceneJS Physics">SceneJS Physics</a></li>
+      <li><a href="/articles/scenejs-ray-picking" title="Fast Ray Picking in SceneJS">Fast Ray Picking in SceneJS</a></li>
       
     
       
       
       
-      <li><a href="http://xeolabs.com/articles/scenejs-detail-culling" title="SceneJS Detail Culling">SceneJS Detail Culling</a></li>
+      <li><a href="/articles/scenejs-quick-start" title="SceneJS Quick Start">SceneJS Quick Start</a></li>
       
     
     </ul>
@@ -606,9 +635,22 @@ notifications to us as a count of tasks in progress, as we’ll see further down
 </div><!-- /.footer-wrap -->
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="http://xeolabs.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-<script src="http://xeolabs.com/assets/js/scripts.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
 
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'xeolabs'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
 
 </body>
 </html>

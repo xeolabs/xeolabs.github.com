@@ -1,0 +1,727 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Picking in SceneJS &#8211; xeoLabs</title>
+<meta name="description" content="How to click on things in the 3D view">
+<meta name="keywords" content="scenejs, tutorial, picking, interaction">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/">
+<meta name="twitter:title" content="Picking in SceneJS">
+<meta name="twitter:description" content="How to click on things in the 3D view">
+<meta name="twitter:creator" content="@xeolabs">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Picking in SceneJS">
+<meta property="og:description" content="How to click on things in the 3D view">
+<meta property="og:url" content="/articles/scenejs-picking">
+<meta property="og:site_name" content="xeoLabs">
+
+
+
+
+
+<link rel="canonical" href="/articles/scenejs-picking">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="xeoLabs Feed">
+<link rel="author" href="https://plus.google.com/u/0/110983138227486752827/posts?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="article" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="">xeoLabs</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <ul>
+		        
+				<li><a href="/about" >About</a></li>
+		        
+				<li><a href="/articles" >Articles</a></li>
+		        
+				<li><a href="/articles/learning-scenejs" >SceneJS Tutorials</a></li>
+		        
+				<li><a href="http://scenejs.org" target="_blank">SceneJS.org</a></li>
+		        
+				<li><a href="http://biodigitalhuman.com" target="_blank">BioDigitalHuman.com</a></li>
+		        
+		        <li><i class="icon-feed"></i> <a href="/feed.xml" title="Atom/RSS feed">Feed</a>
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <div class="article-author-top">
+    <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+<h3><a href="/about/">@xeoLabs</a></h3>
+<p>Lindsay Kay<br>3D Web developer</p>
+<a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+  </div>
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <div class="headline-wrap">
+      <h1 itemprop="name">Picking in SceneJS</h1>
+      <h2></h2>
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap" itemprop="text">
+      <section id="table-of-contents" class="toc">
+  <header>
+    <h3>Contents</h3>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#basic-picking">Basic Picking</a>    <ul>
+      <li><a href="#create-the-scene">Create the scene</a></li>
+      <li><a href="#register-a-pick-handler">Register a pick handler</a></li>
+      <li><a href="#now-pick-something">Now pick something</a></li>
+    </ul>
+  </li>
+  <li><a href="#disabling-picking-for-objects">Disabling picking for objects</a>    <ul>
+      <li><a href="#toggling-pickability-for-an-object">Toggling pickability for an object</a></li>
+    </ul>
+  </li>
+  <li><a href="#picking-through-transparent-objects">Picking through transparent objects</a></li>
+  <li><a href="#pick-name-hierarchies">Pick name hierarchies</a></li>
+  <li><a href="#whats-next">What’s next?</a></li>
+</ul>
+
+  </div>
+</section>
+<!-- /#table-of-contents -->
+
+<p>In this tutorial I’ll show you how to</p>
+
+<ul>
+  <li>pick things in your scenes,</li>
+  <li>make things unpickable,</li>
+  <li>allow picking through transparent objects, and</li>
+  <li>organise things in named hierarchies, so that pick hits reflect the containment hierachy of the object you’ve picked.</li>
+</ul>
+
+<p>Then you’ll be ready to do <a href="/articles/scenejs-ray-picking">ray picking</a>, which builds on what you’ll learn in this tutorial.</p>
+
+<h2 id="basic-picking">Basic Picking</h2>
+
+<p>As usual, we’ll point SceneJS at where you keep your plugins:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">setConfigs</span><span class="p">({</span>
+     <span class="nx">pluginPath</span><span class="o">:</span><span class="s2">&quot;./plugins&quot;</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p>Then we’ll create a scene containing the two teapots shown below. Each teapot is wrapped in a <code>name</code> node, which enables it
+to be picked, and assigns it a symbolic name that will identify it in pick results whenever it is picked.
+<br /><br />
+<a href="http://scenejs.org/examples.html?page=picking"><img src="/images/scenejs/basicPicking.png" alt="Picking Example 1" /></a>
+<a href="http://scenejs.org/examples.html?page=picking">Run this demo</a></p>
+
+<h3 id="create-the-scene">Create the scene</h3>
+
+<div class="highlight"><pre><code class="javascript"><span class="c1">// Define scene</span>
+<span class="kd">var</span> <span class="nx">myScene</span> <span class="o">=</span> <span class="nx">SceneJS</span><span class="p">.</span><span class="nx">createScene</span><span class="p">({</span>
+    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+
+        <span class="c1">// Viewing transform</span>
+        <span class="p">{</span>
+            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;lookAt&quot;</span><span class="p">,</span>
+            <span class="nx">eye</span><span class="o">:</span><span class="p">{</span> <span class="nx">x</span><span class="o">:</span><span class="mi">7</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">5</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mi">10</span> <span class="p">},</span> <span class="nx">look</span><span class="o">:</span><span class="p">{</span> <span class="nx">x</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mi">0</span> <span class="p">},</span>
+            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+
+                <span class="c1">// Pickable red teapot with name &quot;redTeapot&quot;</span>
+                <span class="p">{</span>
+                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;redTeapot&quot;</span><span class="p">,</span>
+                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;material&quot;</span><span class="p">,</span>
+                            <span class="nx">color</span><span class="o">:</span><span class="p">{</span> <span class="nx">r</span><span class="o">:</span><span class="mf">1.0</span><span class="p">,</span> <span class="nx">g</span><span class="o">:</span><span class="mf">0.3</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mf">0.3</span> <span class="p">},</span>
+                            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                                <span class="p">{</span>
+                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;translate&quot;</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span>
+                                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+
+                                        <span class="c1">// Teapot primitive</span>
+                                        <span class="p">{</span>
+                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/teapot&quot;</span>
+                                        <span class="p">}</span>
+                                    <span class="p">]</span>
+                                <span class="p">}</span>
+                            <span class="p">]</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">},</span>
+
+                <span class="c1">// Pickable blue teapot with name &quot;blueTeapot&quot;</span>
+                <span class="p">{</span>
+                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;blueTeapot&quot;</span><span class="p">,</span>
+                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;material&quot;</span><span class="p">,</span>
+                            <span class="nx">color</span><span class="o">:</span><span class="p">{</span> <span class="nx">r</span><span class="o">:</span><span class="mf">0.3</span><span class="p">,</span> <span class="nx">g</span><span class="o">:</span><span class="mf">0.3</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mf">1.0</span> <span class="p">},</span>
+                            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                                <span class="p">{</span>
+                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;translate&quot;</span><span class="p">,</span> <span class="nx">z</span><span class="o">:-</span><span class="mi">2</span><span class="p">,</span>
+                                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+
+                                        <span class="c1">// Teapot primitive</span>
+                                        <span class="p">{</span>
+                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/teapot&quot;</span>
+                                        <span class="p">}</span>
+                                    <span class="p">]</span>
+                                <span class="p">}</span>
+                            <span class="p">]</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p>A few things to note:</p>
+
+<ul>
+  <li>A <code>name</code> node will assign a symbolic name value to whatever is in its subgraph, which can include multiple geometries.</li>
+  <li>You can share the same name value across multiple <code>name</code> nodes. For example, a building model might have lots of windows
+scattered around the scene, each having a separate <code>name</code> node, but all with the value “window”.</li>
+  <li>Geometries not wrapped in <code>name</code> nodes will be unpickable. You’d be able to pick through those objects
+as if they were not there.</li>
+  <li>You can also wrap geometries with <code>flags</code> nodes to make them unpickable, even if they have <code>name</code> nodes around them.
+That’s  useful for switching their pickability on and off.</li>
+  <li>You can nest <code>name</code> nodes, which will give you name paths in your pick results.</li>
+</ul>
+
+<h3 id="register-a-pick-handler">Register a pick handler</h3>
+
+<p>Now we’ll register a pick handler on our scene, which will be called whenever something gets picked:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="c1">// Register a pick handler</span>
+<span class="nx">myScene</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;pick&quot;</span><span class="p">,</span>
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">hit</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="c1">// The &#39;name&#39; property on the first name node on the path</span>
+        <span class="c1">// from the picked teapot up to the scene root, eg &quot;blueTeapot&quot;</span>
+        <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+
+        <span class="c1">// Name path, a &#39;.&#39; delimited concatenation of the &#39;name&#39; properties</span>
+        <span class="c1">// of all name nodes on the path down from teh scene root to the</span>
+        <span class="c1">// picked teapot.</span>
+        <span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">path</span><span class="p">;</span>
+
+        <span class="c1">// Two-element array containing the X,Y canvas coordinates at which we picked</span>
+        <span class="kd">var</span> <span class="nx">canvasPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">canvasPos</span><span class="p">;</span>
+    <span class="p">});</span>
+</code></pre></div>
+
+<p>We’ll also register a handler that gets called when nothing is picked:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">myScene</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;nopick&quot;</span><span class="p">,</span>
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">hit</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Nothing picked.&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+</code></pre></div>
+
+<h3 id="now-pick-something">Now pick something</h3>
+
+<p>Now we can attempt to pick one of our teapots, at some given canvas X and Y coordinates:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">myScene</span><span class="p">.</span><span class="nx">pick</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="mi">150</span><span class="p">);</span> <span class="c1">// X, Y</span>
+</code></pre></div>
+
+<p>Assuming that we picked the blue teapot, the “pick” handler will then return:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="p">{</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;blueTeapot&quot;</span><span class="p">,</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;blueTeapot&quot;</span><span class="p">,</span>
+    <span class="nx">canvasPos</span><span class="o">:</span> <span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">150</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="disabling-picking-for-objects">Disabling picking for objects</h2>
+
+<p>As mentioned earlier, sometimes we don’t objects to be pickable, such as skies and backgrounds.
+<br /><br />
+Here’s a variation on the previous scene, in which I’ve made the green teapot unpickable by wrapping it
+with a <code>flags</code> node which has a <code>picking</code> flag set to <code>false</code>. I’ve left the <code>name</code> node around
+it just to emphasise that it’s the <code>flags</code> node that causes picking to be disabled.
+<br /><br />
+<a href="http://scenejs.org/examples.html?page=disablePicking"><img src="/images/scenejs/disablePicking.png" alt="Disable Picking" /></a>
+<a href="http://scenejs.org/examples.html?page=disablePicking">Run this demo</a></p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">myScene</span> <span class="o">=</span> <span class="nx">SceneJS</span><span class="p">.</span><span class="nx">createScene</span><span class="p">({</span>
+    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;lookAt&quot;</span><span class="p">,</span> <span class="nx">eye</span><span class="o">:</span><span class="p">{</span> <span class="nx">x</span><span class="o">:</span><span class="mi">7</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">5</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mi">10</span> <span class="p">},</span> <span class="nx">look</span><span class="o">:</span><span class="p">{</span> <span class="nx">x</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mi">0</span> <span class="p">},</span>
+            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+
+                <span class="c1">// Pickable red teapot with name &quot;redTeapot&quot;</span>
+                <span class="p">{</span>
+                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;redTeapot&quot;</span><span class="p">,</span>
+                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;material&quot;</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span><span class="p">{</span> <span class="nx">r</span><span class="o">:</span><span class="mf">1.0</span><span class="p">,</span> <span class="nx">g</span><span class="o">:</span><span class="mf">0.3</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mf">0.3</span> <span class="p">},</span>
+                            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                                <span class="p">{</span>
+                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;translate&quot;</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span>
+                                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+
+                                        <span class="c1">// Teapot primitive</span>
+                                        <span class="p">{</span>
+                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/teapot&quot;</span>
+                                        <span class="p">}</span>
+                                    <span class="p">]</span>
+                                <span class="p">}</span>
+                            <span class="p">]</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">},</span>
+
+                <span class="c1">// Non-pickable green teapot</span>
+                <span class="c1">// Though it&#39;s non-pickable, we&#39;ll give it name &quot;greenTeapot&quot;</span>
+                <span class="p">{</span>
+                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;greenTeapot&quot;</span><span class="p">,</span>
+                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+
+                        <span class="c1">// This &#39;picking&#39; flag disables picking for this teapot</span>
+                        <span class="p">{</span>
+                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;flags&quot;</span><span class="p">,</span>
+                            <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;myFlags&quot;</span><span class="p">,</span>
+                            <span class="nx">flags</span><span class="o">:</span><span class="p">{</span> <span class="nx">picking</span><span class="o">:</span><span class="kc">false</span> <span class="p">},</span>
+                            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                                <span class="p">{</span>
+                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;material&quot;</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span><span class="p">{</span> <span class="nx">r</span><span class="o">:</span><span class="mf">0.3</span><span class="p">,</span> <span class="nx">g</span><span class="o">:</span><span class="mf">1.0</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mf">0.3</span> <span class="p">},</span>
+                                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                                        <span class="p">{</span>
+                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;translate&quot;</span><span class="p">,</span> <span class="nx">z</span><span class="o">:-</span><span class="mi">2</span><span class="p">,</span>
+                                            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+
+                                                <span class="c1">// Teapot primitive</span>
+                                                <span class="p">{</span>
+                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/teapot&quot;</span>
+                                                <span class="p">}</span>
+                                            <span class="p">]</span>
+                                        <span class="p">}</span>
+                                    <span class="p">]</span>
+                                <span class="p">}</span>
+                            <span class="p">]</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<h3 id="toggling-pickability-for-an-object">Toggling pickability for an object</h3>
+<p>You can make the green teapot pickable by flipping the <code>picking</code> flag on that <code>flags</code> node:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">myScene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">&quot;myFlags&quot;</span><span class="p">,</span>
+    <span class="kd">function</span><span class="p">(</span><span class="nx">flags</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">flags</span><span class="p">.</span><span class="nx">setPicking</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+    <span class="p">});</span>
+</code></pre></div>
+
+<h2 id="picking-through-transparent-objects">Picking through transparent objects</h2>
+
+<p>Another situation where we’d want to disable picking is when we want to pick through transparent objects.
+<br /><br />
+In this scene I’ve made the blue transparent box unpickable, just like in the previous example, by wrapping it
+with a <code>flags</code> node which has a <code>picking</code> flag set to <code>false</code>. As before, I’ve left a <code>name</code> node around
+it just to emphasise that it’s the <code>flags</code> node that causes picking to be disabled.
+<br /><br />
+<a href="http://scenejs.org/examples.html?page=pickThroughTransparentObject"><img src="/images/scenejs/pickThroughTransparentObject.png" alt="Pick through transparent objects" /></a>
+<a href="http://scenejs.org/examples.html?page=pickThroughTransparentObject">Run this demo</a></p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">myScene</span> <span class="o">=</span> <span class="nx">SceneJS</span><span class="p">.</span><span class="nx">createScene</span><span class="p">({</span>
+    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;lookAt&quot;</span><span class="p">,</span> <span class="nx">eye</span><span class="o">:</span><span class="p">{</span> <span class="nx">x</span><span class="o">:</span><span class="mi">7</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">5</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mi">10</span> <span class="p">},</span> <span class="nx">look</span><span class="o">:</span><span class="p">{</span> <span class="nx">x</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mi">0</span> <span class="p">},</span>
+            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+
+                <span class="c1">// Pickable red teapot with name &quot;redTeapot&quot;</span>
+                <span class="p">{</span>
+                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;redTeapot&quot;</span><span class="p">,</span>
+                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;material&quot;</span><span class="p">,</span>
+                            <span class="nx">color</span><span class="o">:</span><span class="p">{</span> <span class="nx">r</span><span class="o">:</span><span class="mf">1.0</span><span class="p">,</span> <span class="nx">g</span><span class="o">:</span><span class="mf">0.3</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mf">0.3</span> <span class="p">},</span>
+                            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+
+                                <span class="c1">// Teapot primitive</span>
+                                <span class="p">{</span>
+                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/teapot&quot;</span>
+                                <span class="p">}</span>
+                            <span class="p">]</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">},</span>
+
+                <span class="c1">// Transparent blue box that you can pick through</span>
+                <span class="c1">// Flags make it transparent and unpickable, while</span>
+                <span class="c1">// material alpha sets degree of opacity</span>
+                <span class="p">{</span>
+                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;blueBox&quot;</span><span class="p">,</span>
+                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;flags&quot;</span><span class="p">,</span> <span class="nx">flags</span><span class="o">:</span><span class="p">{</span> <span class="nx">transparent</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span> <span class="nx">picking</span><span class="o">:</span><span class="kc">false</span> <span class="p">},</span>
+                            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+
+                                <span class="c1">// Transparent material - note the &#39;alpha&#39;</span>
+                                <span class="p">{</span>
+                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;material&quot;</span><span class="p">,</span>
+                                    <span class="nx">color</span><span class="o">:</span><span class="p">{</span> <span class="nx">r</span><span class="o">:</span><span class="mf">0.3</span><span class="p">,</span> <span class="nx">g</span><span class="o">:</span><span class="mf">0.3</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mf">1.0</span> <span class="p">},</span> <span class="nx">alpha</span><span class="o">:</span><span class="mf">0.4</span><span class="p">,</span>
+                                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                                        <span class="p">{</span>
+                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;translate&quot;</span><span class="p">,</span> <span class="nx">x</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span>
+                                            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+
+                                                <span class="c1">// Box primitive</span>
+                                                <span class="p">{</span>
+                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/box&quot;</span><span class="p">,</span>
+                                                    <span class="nx">xSize</span><span class="o">:</span><span class="mi">3</span><span class="p">,</span> <span class="nx">ySize</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span> <span class="nx">zSize</span><span class="o">:</span><span class="mi">3</span>
+                                                <span class="p">}</span>
+                                            <span class="p">]</span>
+                                        <span class="p">}</span>
+                                    <span class="p">]</span>
+                                <span class="p">}</span>
+                            <span class="p">]</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<h2 id="pick-name-hierarchies">Pick name hierarchies</h2>
+
+<p>As mentioned earlier, you can nest <code>name</code> nodes, so that when you pick on a geometry you’ll get the path of all the
+ <code>name</code> nodes above it, tracing down from the scene root.
+ <br /><br />
+ The objects in the scene shown below are arranged within a hierarchy of ```name`` nodes so that when you pick them, the pick
+  result will have name paths like “myScene.table.leg1”, and so on.
+<br /><br />
+ <a href="http://scenejs.org/examples.html?page=namePaths"><img src="/images/scenejs/pickNameHierarchy.png" alt="Name paths" /></a>
+ <a href="http://scenejs.org/examples.html?page=namePaths">Run this demo</a>
+<br /><br />
+So for example, assuming that we picked one of the table
+  legs, the pick result, returned through the “pick” handler we registered earlier, would look like this:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="p">{</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;leg1&quot;</span><span class="p">,</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;myScene.table.leg1&quot;</span><span class="p">,</span>
+    <span class="nx">canvasPos</span><span class="o">:</span> <span class="p">[</span><span class="mi">78</span><span class="p">,</span> <span class="mi">110</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Here’s a snippet of this scene that defines the table. The whole scene gets the name “myScene”, the table gets the
+name “table”, while the table’s legs get the names “leg1”, “leg2”, “leg3” and “leg4”.</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="c1">//...</span>
+
+<span class="c1">// Table</span>
+<span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;table&quot;</span><span class="p">,</span>
+
+    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;translate&quot;</span><span class="p">,</span> <span class="nx">x</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+
+                <span class="c1">// Table leg #1</span>
+                <span class="p">{</span>
+                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;leg1&quot;</span><span class="p">,</span>
+                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;translate&quot;</span><span class="p">,</span> <span class="nx">x</span><span class="o">:-</span><span class="mf">2.0</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mf">0.0</span><span class="p">,</span> <span class="nx">z</span><span class="o">:-</span><span class="mf">2.0</span><span class="p">,</span>
+                            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                                <span class="p">{</span>
+                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;scale&quot;</span><span class="p">,</span> <span class="nx">x</span><span class="o">:</span><span class="mf">0.2</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mf">1.0</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mf">0.2</span><span class="p">,</span>
+                                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                                        <span class="p">{</span>
+                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;material&quot;</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span><span class="p">{</span> <span class="nx">r</span><span class="o">:</span><span class="mf">1.0</span><span class="p">,</span> <span class="nx">g</span><span class="o">:</span><span class="mf">0.4</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mf">0.4</span> <span class="p">},</span>
+                                            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+
+                                                <span class="c1">// Box primitive</span>
+                                                <span class="p">{</span>
+                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/box&quot;</span>
+                                                <span class="p">}</span>
+                                            <span class="p">]</span>
+                                        <span class="p">}</span>
+                                    <span class="p">]</span>
+                                <span class="p">}</span>
+                            <span class="p">]</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">},</span>
+
+                <span class="c1">// Table leg #2</span>
+                <span class="p">{</span>
+                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;leg2&quot;</span><span class="p">,</span>
+                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;translate&quot;</span><span class="p">,</span> <span class="nx">x</span><span class="o">:</span><span class="mf">2.0</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mf">0.0</span><span class="p">,</span> <span class="nx">z</span><span class="o">:-</span><span class="mf">2.0</span><span class="p">,</span>
+                            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                                <span class="p">{</span>
+                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;scale&quot;</span><span class="p">,</span> <span class="nx">x</span><span class="o">:</span><span class="mf">0.2</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mf">1.0</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mf">0.2</span><span class="p">,</span>
+                                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                                        <span class="p">{</span>
+                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;material&quot;</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span><span class="p">{</span> <span class="nx">r</span><span class="o">:</span><span class="mf">0.4</span><span class="p">,</span> <span class="nx">g</span><span class="o">:</span><span class="mf">0.6</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mf">0.4</span> <span class="p">},</span>
+                                            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+
+                                                <span class="c1">// Box primitive</span>
+                                                <span class="p">{</span>
+                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/box&quot;</span>
+                                                <span class="p">}</span>
+                                            <span class="p">]</span>
+                                        <span class="p">}</span>
+                                    <span class="p">]</span>
+                                <span class="p">}</span>
+                            <span class="p">]</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">},</span>
+
+                <span class="c1">// Table leg #3</span>
+                <span class="p">{</span>
+                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;leg3&quot;</span><span class="p">,</span>
+                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;translate&quot;</span><span class="p">,</span> <span class="nx">x</span><span class="o">:</span><span class="mf">2.0</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mf">0.0</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mf">2.0</span><span class="p">,</span>
+                            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                                <span class="p">{</span>
+                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;scale&quot;</span><span class="p">,</span> <span class="nx">x</span><span class="o">:</span><span class="mf">0.2</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mf">1.0</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mf">0.2</span><span class="p">,</span>
+                                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                                        <span class="p">{</span>
+                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;material&quot;</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span><span class="p">{</span> <span class="nx">r</span><span class="o">:</span><span class="mf">0.4</span><span class="p">,</span> <span class="nx">g</span><span class="o">:</span><span class="mf">0.4</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mf">0.6</span> <span class="p">},</span>
+                                            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+
+                                                <span class="c1">// Box primitive</span>
+                                                <span class="p">{</span>
+                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/box&quot;</span>
+                                                <span class="p">}</span>
+                                            <span class="p">]</span>
+                                        <span class="p">}</span>
+                                    <span class="p">]</span>
+                                <span class="p">}</span>
+                            <span class="p">]</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">},</span>
+
+                <span class="c1">// Table leg #4</span>
+                <span class="p">{</span>
+                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;leg4&quot;</span><span class="p">,</span>
+                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;translate&quot;</span><span class="p">,</span> <span class="nx">x</span><span class="o">:-</span><span class="mf">2.0</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mf">0.0</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mf">2.0</span><span class="p">,</span>
+                            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                                <span class="p">{</span>
+                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;scale&quot;</span><span class="p">,</span> <span class="nx">x</span><span class="o">:</span><span class="mf">0.2</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mf">1.0</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mf">0.2</span><span class="p">,</span>
+                                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                                        <span class="p">{</span>
+                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;material&quot;</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span><span class="p">{</span> <span class="nx">r</span><span class="o">:</span><span class="mf">0.6</span><span class="p">,</span> <span class="nx">g</span><span class="o">:</span><span class="mf">0.4</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mf">0.6</span> <span class="p">},</span>
+                                            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+
+                                                <span class="c1">// Box primitive</span>
+                                                <span class="p">{</span>
+                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/box&quot;</span>
+                                                <span class="p">}</span>
+                                            <span class="p">]</span>
+                                        <span class="p">}</span>
+                                    <span class="p">]</span>
+                                <span class="p">}</span>
+                            <span class="p">]</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">},</span>
+
+                <span class="c1">// Table top</span>
+                <span class="p">{</span>
+                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;top&quot;</span><span class="p">,</span>
+                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;translate&quot;</span><span class="p">,</span> <span class="nx">x</span><span class="o">:</span><span class="mf">0.0</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mf">1.2</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mf">0.0</span><span class="p">,</span>
+                            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                                <span class="p">{</span>
+                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;scale&quot;</span><span class="p">,</span> <span class="nx">x</span><span class="o">:</span><span class="mf">2.7</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mf">0.2</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mf">2.7</span><span class="p">,</span>
+                                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                                        <span class="p">{</span>
+                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;material&quot;</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span><span class="p">{</span> <span class="nx">r</span><span class="o">:</span><span class="mf">0.6</span><span class="p">,</span> <span class="nx">g</span><span class="o">:</span><span class="mf">0.6</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mf">0.4</span> <span class="p">},</span>
+                                            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+
+                                                <span class="c1">// Box primitive</span>
+                                                <span class="p">{</span>
+                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/box&quot;</span>
+                                                <span class="p">}</span>
+                                            <span class="p">]</span>
+                                        <span class="p">}</span>
+                                    <span class="p">]</span>
+                                <span class="p">}</span>
+                            <span class="p">]</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+<span class="c1">//...</span>
+ 
+</code></pre></div>
+
+<h2 id="whats-next">What’s next?</h2>
+
+<ul>
+  <li>Check out <a href="/articles/scenejs-ray-picking">Ray Picking</a>, which is an extention of basic picking, where we provide a
+flag that causes SceneJS to return the World-space coordinates of the point we’re picking on the surface of the object.</li>
+</ul>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+<h3><a href="/about/">@xeoLabs</a></h3>
+<p>Lindsay Kay<br>3D Web developer</p>
+<a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+        </div>
+        <p class="byline"><strong>Picking in SceneJS</strong> was published on <time datetime="2013-10-28T00:00:00-04:00" itemprop="datePublished">October 28, 2013</time> and last modified on <time datetime="2013-05-31" itemprop="dateModified">May 31, 2013</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="/about" title="About @xeoLabs" itemprop="url">@xeoLabs</a></span></span>.</p>
+      </footer>
+
+        
+        <br><br>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'xeolabs'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+    </div><!-- /.article-wrap -->
+  </article>
+
+</div><!-- /#main -->
+
+
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/articles">View all articles</a>)</small></h4>
+    <ul>
+    
+      
+      
+      
+      <li><a href="/articles/scenejs-ray-picking-technique" title="Pssst...How Fast Ray Picking Works in SceneJS">Pssst...How Fast Ray Picking Works in SceneJS</a></li>
+      
+    
+      
+      
+      
+      <li><a href="/articles/scenejs-ray-picking" title="Fast Ray Picking in SceneJS">Fast Ray Picking in SceneJS</a></li>
+      
+    
+      
+      
+      
+      <li><a href="/articles/scenejs-quick-start" title="SceneJS Quick Start">SceneJS Quick Start</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2013 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'xeolabs'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+</body>
+</html>

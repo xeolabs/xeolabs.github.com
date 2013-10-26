@@ -1,0 +1,322 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Importing .OBJ, .MD2 and .3DS into SceneJS &#8211; xeoLabs</title>
+<meta name="description" content="Importing meshes from three popular formats">
+<meta name="keywords" content="scenejs, tutorial, importing">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/">
+<meta name="twitter:title" content="Importing .OBJ, .MD2 and .3DS into SceneJS">
+<meta name="twitter:description" content="Importing meshes from three popular formats">
+<meta name="twitter:creator" content="@xeolabs">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Importing .OBJ, .MD2 and .3DS into SceneJS">
+<meta property="og:description" content="Importing meshes from three popular formats">
+<meta property="og:url" content="/articles/scenejs-obj-md2-3ds">
+<meta property="og:site_name" content="xeoLabs">
+
+
+
+
+
+<link rel="canonical" href="/articles/scenejs-obj-md2-3ds">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="xeoLabs Feed">
+<link rel="author" href="https://plus.google.com/u/0/110983138227486752827/posts?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="article" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="">xeoLabs</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <ul>
+		        
+				<li><a href="/about" >About</a></li>
+		        
+				<li><a href="/articles" >Articles</a></li>
+		        
+				<li><a href="/articles/learning-scenejs" >SceneJS Tutorials</a></li>
+		        
+				<li><a href="http://scenejs.org" target="_blank">SceneJS.org</a></li>
+		        
+				<li><a href="http://biodigitalhuman.com" target="_blank">BioDigitalHuman.com</a></li>
+		        
+		        <li><i class="icon-feed"></i> <a href="/feed.xml" title="Atom/RSS feed">Feed</a>
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <div class="article-author-top">
+    <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+<h3><a href="/about/">@xeoLabs</a></h3>
+<p>Lindsay Kay<br>3D Web developer</p>
+<a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+  </div>
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <div class="headline-wrap">
+      <h1 itemprop="name">Importing .OBJ, .MD2 and .3DS into SceneJS</h1>
+      <h2></h2>
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap" itemprop="text">
+      <section id="table-of-contents" class="toc">
+  <header>
+    <h3>Contents</h3>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#usage">Usage</a></li>
+  <li><a href="#shouts-out-to">Shouts out to:</a></li>
+</ul>
+
+  </div>
+</section>
+<!-- /#table-of-contents -->
+
+<p>I’ve made three new plugins for SceneJS, to import mesh geometry from these file formats:</p>
+
+<ul>
+  <li>
+    <p><strong>OBJ</strong> - a lightweight geometry definition file format first developed by Wavefront Technologies which contains mesh
+ data — namely, the position of each vertex, the UV position of each texture coordinate vertex, normals, and the faces
+ that make each polygon defined as a list of vertices, and texture vertices.</p>
+  </li>
+  <li>
+    <p><strong>MD2</strong> - a model format used by id Software’s id Tech 2 engine in games such as Quake II and Soldier of Fortune.
+This format is primarily used for animated player models and uses keyframes for mesh positions, which SceneJS interpolates
+ within a vertex shader to create smooth animation.</p>
+  </li>
+  <li>
+    <p><strong>3DS</strong> - one of the file formats used by the Autodesk 3ds Max 3D modeling, animation and rendering software. This format has
+become a de facto industry standard for transferring models between 3D programs, or for storing models for 3D resource catalogs.</p>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th><a href="http://scenejs.org/examples.html?page=importObj"><img src="/images/scenejs/raptorOBJ.png" alt="" /></a></th>
+      <th><a href="http://scenejs.org/examples.html?page=importMd2"><img src="/images/scenejs/lionMD5.png" alt="" /></a></th>
+      <th><a href="http://scenejs.org/examples.html?page=import3ds"><img src="/images/scenejs/lexus3DS.png" alt="" /></a></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="http://scenejs.org/examples.html?page=importObj">Run .OBJ demo</a></td>
+      <td><a href="http://scenejs.org/examples.html?page=importMd2">Run .MD2 demo</a></td>
+      <td><a href="http://scenejs.org/examples.html?page=import3ds">Run .3DS demo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="usage">Usage</h3>
+<p>The plugins provide new scene node types, and like all plugins, are automatically loaded into the engine as you need them.
+<br /><br />As usual, we’ll start by pointing SceneJS at where you keep your plugins:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">setConfigs</span><span class="p">({</span>
+     <span class="nx">pluginPath</span><span class="o">:</span><span class="s2">&quot;./plugins&quot;</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p>..then importing an .OBJ is as easy as:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">createScene</span><span class="p">({</span>
+    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;translate&quot;</span><span class="p">,</span> <span class="nx">y</span><span class="o">:-</span><span class="mi">30</span><span class="p">,</span> <span class="nx">z</span><span class="o">:-</span><span class="mi">200</span><span class="p">,</span>
+
+            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;texture&quot;</span><span class="p">,</span>
+                    <span class="nx">layers</span><span class="o">:</span><span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="nx">src</span><span class="o">:</span> <span class="s2">&quot;foo/bar/raptor.jpg&quot;</span>
+                        <span class="p">}</span>
+                    <span class="p">],</span>
+                    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+
+                        <span class="c1">// Import Wavefront .OBJ mesh</span>
+                        <span class="p">{</span>
+                            <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;import/obj&quot;</span><span class="p">,</span> <span class="nx">src</span><span class="o">:</span> <span class="s2">&quot;foo/bar/raptor.obj&quot;</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p>Importing meshes from the other formats is similar. To import .MD2, your node would be:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;import/md2&quot;</span><span class="p">,</span> <span class="nx">src</span><span class="o">:</span> <span class="s2">&quot;foo/bar/lion.md2&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>And to import .3DS:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;import/3ds&quot;</span><span class="p">,</span> <span class="nx">src</span><span class="o">:</span> <span class="s2">&quot;foo/bar/lexus.3ds&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="shouts-out-to">Shouts out to:</h3>
+
+<ul>
+  <li><a href="http://k3d.ivank.net/">K3D.JS</a> - SceneJS uses this library for parsing. It’s nice and fast because it loads the
+files into typed arrays, which it then parses.
+<br /><br /></li>
+</ul>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+<h3><a href="/about/">@xeoLabs</a></h3>
+<p>Lindsay Kay<br>3D Web developer</p>
+<a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+        </div>
+        <p class="byline"><strong>Importing .OBJ, .MD2 and .3DS into SceneJS</strong> was published on <time datetime="2013-10-28T00:00:00-04:00" itemprop="datePublished">October 28, 2013</time> and last modified on <time datetime="2013-05-31" itemprop="dateModified">May 31, 2013</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="/about" title="About @xeoLabs" itemprop="url">@xeoLabs</a></span></span>.</p>
+      </footer>
+
+        
+        <br><br>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'xeolabs'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+    </div><!-- /.article-wrap -->
+  </article>
+
+</div><!-- /#main -->
+
+
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/articles">View all articles</a>)</small></h4>
+    <ul>
+    
+      
+      
+      
+      <li><a href="/articles/scenejs-ray-picking-technique" title="Pssst...How Fast Ray Picking Works in SceneJS">Pssst...How Fast Ray Picking Works in SceneJS</a></li>
+      
+    
+      
+      
+      
+      <li><a href="/articles/scenejs-ray-picking" title="Fast Ray Picking in SceneJS">Fast Ray Picking in SceneJS</a></li>
+      
+    
+      
+      
+      
+      <li><a href="/articles/scenejs-quick-start" title="SceneJS Quick Start">SceneJS Quick Start</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2013 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'xeolabs'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+</body>
+</html>
