@@ -35,35 +35,25 @@ Before we begin, do be sure that your browser [supports WebGL](http://get.webgl.
 <br><br>
 Have fun!
 
-### 1. Creating 3D Scenes
+### Creating 3D Scenes
 * [Quick Start](/articles/scenejs-quick-start)
 * [Adding and Removing Nodes](/articles/scenejs-creating-a-scene-and-adding-nodes)
 
-### 2. Rendering Control
-
-### 3. Geometry
-
-### 4. Appearance
-
-### 5. Lighting
-
-### 6. Transformation
-
-### 7. Interaction
+### Interaction
 * [Picking](/articles/scenejs-picking)
 * [Ray Picking](/articles/scenejs-ray-picking)
 * [Pick-Fly-Orbit Camera](/articles/scenejs-pickflyorbit-camera)
 
-### 8. Importing
+### Importing
 * [Importing .OBJ, .MD2 and .3DS](/articles/scenejs-obj-md2-3ds)
 
-### 9. Physics
+### Physics
 * [Rigid-Body Physics](/articles/scenejs-physics)
 
-### 10. Optimisation
+### Optimisation
 * [Visibility and Detail Culling](/articles/scenejs-detail-culling)
 
-### 11. Extending SceneJS
+### Extending SceneJS
 * [Creating your own Scene Node Types](/articles/scenejs-node-types)
 
 ### Appendix
