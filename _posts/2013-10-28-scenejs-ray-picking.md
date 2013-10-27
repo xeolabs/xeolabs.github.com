@@ -19,12 +19,12 @@ tags: [scenejs, tutorial, picking, interaction]
 </div>
 </section><!-- /#table-of-contents -->
 
-SceneJS ray-picking lets you pick a point on the canves and get the precise 3D World-space coordinates of whatever that intersects in the 3D
-view.
+SceneJS ray-picking lets you pick a point on the canves and get the precise 3D World-space coordinates of whatever that
+intersects within the 3D view.
 <br><br>
-It's very fast, even for really large numbers of objects. While it uses the standard pick-buffer technique to find the picked
-object, it also uses the depth buffer to help it find the 3D intersection coordinates, thus managing to avoid expensive ray-intersect
-computations. If you're curious how it works, I did [a writeup on the technique here](/articles/scenejs-ray-picking-technique).
+It's very fast, even for really large numbers of objects. While it uses the standard [colour coding approach](http://antongerdelan.net/opengl/colourpicking.html) to find the picked
+object, it also uses the depth buffer to help it find the 3D intersection coordinates, thus managing to avoid expensive
+ray-intersect computations. If you're curious how it works, I did [a writeup on the technique here](/articles/scenejs-ray-picking-technique).
 
 [![]({{ site.url }}/images/scenejs/rayPicking.jpg)](http://scenejs.org/examples.html?page=rayPicking) | [![]({{ site.url }}/images/scenejs/pickFlyOrbitCity.png)](http://scenejs.org/examples/pages/demos/pickFlyOrbitCity.html) | [![]({{ site.url }}/images/scenejs/pickFlyOrbitTerrain.png)](http://scenejs.org/examples/pages/demos/pickFlyOrbitTerrain.html)
 ----|----

@@ -21,21 +21,28 @@ tags: [scenejs, tutorial, picking, interaction]
 Normally a ray-pick is done with expensive computations to find intersections of rays with meshes and so forth.
 SceneJS, however, uses a fast GPU-assisted technique that employs the depth buffer to help find the ray-intersection point, which
  avoids those sorts of computations altogether.
+ <br><br>
+I couldn't find anybody else doing this in WebGL or OpenGL ES (maybe I should have looked harder?), so at first I thought
+it must be too good to be true. However, despite a small amount of numeric inaccuracy when the front and back clip planes
+are far apart, it seems work well enough, so I went with it.
 
 ## The technique
 I'll assume that you've read about [2D picking]({{site.url}}/articles/scenejs-picking)
-and [ray picking]({{site.url}}/articles/scenejs-ray-picking), which mention how you can wrap your objects with ```name```
+and [ray picking]({{site.url}}/articles/scenejs-ray-picking), which describe how you can wrap your objects with ```name```
 nodes to assign them logical pick names.
 <br><br>
 The steps of my technique are:
 
 1. User ray-picks canvas at coordinates (X, Y).
-2. Do a render pass to a hidden frame buffer, in which the objects within each name unique ```name``` are are rendered in a colour that
-uniquely maps to ```name```'s "name" value.
+2. Do a render pass to a hidden frame buffer, in which the objects within each ```name``` are rendered in a colour that
+uniquely maps to that ```name```'s value.
 3. Read the colour from the framebuffer at the canvas coordinates, map the colour back to the name value. Now we have the pick name.
-4. Do a second render pass to another hidden frame buffer, this time rendering just the picked geometry, with each pixel colour being the clip-space Z-value packed into an RGBA value.
-5. Read the colour from the framebuffer at the canvas coordinates and unpack it to the clip-space Z value. Now we have the clip-space Z, which will be in the range of [0..1], with near clip plane at 0 and far clip plane at 1.
-6. Transform the canvas coordinates to clip-space. Make a ray from clip space (X,Y,0) to (X,Y,1) and transform that ray into world-space by the inverse view and projection matrices.
+4. Do a second render pass to another hidden frame buffer, this time rendering just the picked geometry, with each pixel
+colour being the clip-space Z-value packed into an RGBA value.
+5. Read the colour from the framebuffer at the canvas coordinates and unpack it to the clip-space Z value. Now we have the
+clip-space Z, which will be in the range of [0..1], with near clip plane at 0 and far clip plane at 1.
+6. Transform the canvas coordinates to clip-space. Make a ray from clip space (X,Y,0) to (X,Y,1) and transform that ray
+into world-space by the inverse view and projection matrices.
 7. Linearly interpolate along ray by the value of our clip-space Z, to find the world-space coordinate (X,Y,Z).
 8. Voila, we have the picked name, canvas (X,Y) and world-space (X,Y,Z) for the pick hit.
 
