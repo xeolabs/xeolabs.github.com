@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2013-10-26T13:07:06-04:00</updated>
+<updated>2013-10-26T20:18:05-04:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>@xeoLabs</name>
@@ -924,7 +924,7 @@ pointed SceneJS to where you keep your plugins:&lt;/p&gt;
             &lt;span class=&quot;nx&quot;&gt;yaw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
             &lt;span class=&quot;nx&quot;&gt;pitch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
             &lt;span class=&quot;nx&quot;&gt;zoom&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;800&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;zoomSensitivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;20.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;zoomSensitivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;20.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
             &lt;span class=&quot;nx&quot;&gt;showCursor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
             &lt;span class=&quot;nx&quot;&gt;cursorSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;6.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
@@ -945,7 +945,7 @@ pointed SceneJS to where you keep your plugins:&lt;/p&gt;
   &lt;li&gt;&lt;code&gt;look&lt;/code&gt; - initial point-of-interest (POI) in World-coordinates&lt;/li&gt;
   &lt;li&gt;&lt;code&gt;yaw&lt;/code&gt;, &lt;code&gt;pitch&lt;/code&gt; - initial degrees of rotation of eye position about POI on Y and X axis, respectively&lt;/li&gt;
   &lt;li&gt;&lt;code&gt;zoom&lt;/code&gt; - initial distance of eye from POI&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;zoomSensitivity&lt;/code&gt; - sensivity of mouse wheel when updating zoom&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;zoomSensitivity&lt;/code&gt; - sensivity of mouse wheel when updating zoom. The sign of this determines which direction the wheel drives the zoom.&lt;/li&gt;
   &lt;li&gt;&lt;code&gt;showCursor&lt;/code&gt; - set true to show the POI with a sphere&lt;/li&gt;
   &lt;li&gt;&lt;code&gt;cursorSize&lt;/code&gt; - radius of the cursor sphere&lt;/li&gt;
 &lt;/ul&gt;
@@ -2657,17 +2657,12 @@ This means that you can create a scene containing nothing but a &lt;code&gt;geom
 &lt;div id=&quot;drawer&quot;&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#introduction&quot;&gt;Introduction&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#creating-3d-scenes&quot;&gt;1. Creating 3D Scenes&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#rendering-control&quot;&gt;2. Rendering Control&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#geometry&quot;&gt;3. Geometry&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#appearance&quot;&gt;4. Appearance&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#lighting&quot;&gt;5. Lighting&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#transformation&quot;&gt;6. Transformation&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#interaction&quot;&gt;7. Interaction&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#importing&quot;&gt;8. Importing&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#physics&quot;&gt;9. Physics&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#optimisation&quot;&gt;10. Optimisation&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#extending-scenejs&quot;&gt;11. Extending SceneJS&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#creating-3d-scenes&quot;&gt;Creating 3D Scenes&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#interaction&quot;&gt;Interaction&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#importing&quot;&gt;Importing&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#physics&quot;&gt;Physics&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#optimisation&quot;&gt;Optimisation&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#extending-scenejs&quot;&gt;Extending SceneJS&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#appendix&quot;&gt;Appendix&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -2677,7 +2672,7 @@ This means that you can create a scene containing nothing but a &lt;code&gt;geom
 &lt;/section&gt;
 &lt;!-- /#table-of-contents --&gt;
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;http://xeolabs.com/images/scenejs/pickFlyOrbitTerrainSlim.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;a href=&quot;http://scenejs.org/examples/pages/demos/pickFlyOrbitTerrain.html&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/pickFlyOrbitTerrainSlim.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;http://scenejs.org&quot;&gt;SceneJS&lt;/a&gt; is an extensible WebGL-based engine for doing high-performance 3D visualisation in the browser,
@@ -2692,45 +2687,35 @@ Before we begin, do be sure that your browser &lt;a href=&quot;http://get.webgl.
 &lt;br /&gt;&lt;br /&gt;
 Have fun!&lt;/p&gt;
 
-&lt;h3 id=&quot;creating-3d-scenes&quot;&gt;1. Creating 3D Scenes&lt;/h3&gt;
+&lt;h3 id=&quot;creating-3d-scenes&quot;&gt;Creating 3D Scenes&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;/articles/scenejs-quick-start&quot;&gt;Quick Start&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/articles/scenejs-creating-a-scene-and-adding-nodes&quot;&gt;Adding and Removing Nodes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;rendering-control&quot;&gt;2. Rendering Control&lt;/h3&gt;
-
-&lt;h3 id=&quot;geometry&quot;&gt;3. Geometry&lt;/h3&gt;
-
-&lt;h3 id=&quot;appearance&quot;&gt;4. Appearance&lt;/h3&gt;
-
-&lt;h3 id=&quot;lighting&quot;&gt;5. Lighting&lt;/h3&gt;
-
-&lt;h3 id=&quot;transformation&quot;&gt;6. Transformation&lt;/h3&gt;
-
-&lt;h3 id=&quot;interaction&quot;&gt;7. Interaction&lt;/h3&gt;
+&lt;h3 id=&quot;interaction&quot;&gt;Interaction&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;/articles/scenejs-picking&quot;&gt;Picking&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/articles/scenejs-ray-picking&quot;&gt;Ray Picking&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/articles/scenejs-pickflyorbit-camera&quot;&gt;Pick-Fly-Orbit Camera&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;importing&quot;&gt;8. Importing&lt;/h3&gt;
+&lt;h3 id=&quot;importing&quot;&gt;Importing&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;/articles/scenejs-obj-md2-3ds&quot;&gt;Importing .OBJ, .MD2 and .3DS&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;physics&quot;&gt;9. Physics&lt;/h3&gt;
+&lt;h3 id=&quot;physics&quot;&gt;Physics&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;/articles/scenejs-physics&quot;&gt;Rigid-Body Physics&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;optimisation&quot;&gt;10. Optimisation&lt;/h3&gt;
+&lt;h3 id=&quot;optimisation&quot;&gt;Optimisation&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;/articles/scenejs-detail-culling&quot;&gt;Visibility and Detail Culling&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;extending-scenejs&quot;&gt;11. Extending SceneJS&lt;/h3&gt;
+&lt;h3 id=&quot;extending-scenejs&quot;&gt;Extending SceneJS&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;/articles/scenejs-node-types&quot;&gt;Creating your own Scene Node Types&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
