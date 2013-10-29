@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2013-10-29T09:38:33-04:00</updated>
+<updated>2013-10-29T09:40:24-04:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>@xeoLabs</name>
@@ -62,9 +62,9 @@ long.
 In such cases the operating system or browser may decide to reset the GPU to regain control. There’s
 a &lt;a href=&quot;http://www.khronos.org/webgl/wiki/HandlingContextLost&quot;&gt;nice tutorial&lt;/a&gt; over at Khronos.org that describes how to handle
 this in our applications. It describes how application processes such as asset loads can be disrupted by context loss, and
-how an app will then need to reallocate its textures, VBOs, shaders etc. on a new context afterwards.&lt;/p&gt;
-
-&lt;p&gt;SceneJS retains all state and assets, such as matrices, geoemtry and textures etc in its scene graph. Then when the context
+how an app will then need to reallocate its textures, VBOs, shaders etc. on a new context afterwards.
+&lt;br /&gt;&lt;br /&gt;
+SceneJS retains all state and assets, such as matrices, geoemtry and textures etc in its scene graph. Then when the context
 is recovered after loss, it simply reallocates those assets on the new context.&lt;/p&gt;
 
   &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-webgl-context-lost&quot;&gt;Automatic WebGLContestLost Recovery in SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
