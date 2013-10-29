@@ -19,4 +19,4 @@ medical visualisation platform that brings to life thousands of medically accura
 <br><br>In my spare time I keep things edgy by authoring open source projects like [SceneJS](http://scenejs.org).
 <br>
 <br>
-Grab me at <strong>lindsay.kay AT xeolabs.com</strong>
+![Email]({{ site.url }}/images/email.png)
