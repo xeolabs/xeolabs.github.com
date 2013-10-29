@@ -5,29 +5,29 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>SceneJS Pick-Fly-Orbit Camera &#8211; xeoLabs</title>
-<meta name="description" content="Camera node which flies to whatever you pick and orbits it">
-<meta name="keywords" content="scenejs, tutorial, picking, camera">
+<title>Automatic WebGLContestLost Recovery in SceneJS &#8211; xeoLabs</title>
+<meta name="description" content="How SceneJS gets back on its feet when WebGL blows a fuse">
+<meta name="keywords" content="scenejs, tutorial">
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://xeolabs.com/images/">
-<meta name="twitter:title" content="SceneJS Pick-Fly-Orbit Camera">
-<meta name="twitter:description" content="Camera node which flies to whatever you pick and orbits it">
+<meta name="twitter:title" content="Automatic WebGLContestLost Recovery in SceneJS">
+<meta name="twitter:description" content="How SceneJS gets back on its feet when WebGL blows a fuse">
 <meta name="twitter:creator" content="@xeolabs">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SceneJS Pick-Fly-Orbit Camera">
-<meta property="og:description" content="Camera node which flies to whatever you pick and orbits it">
-<meta property="og:url" content="http://xeolabs.com/articles/scenejs-pickflyorbit-camera">
+<meta property="og:title" content="Automatic WebGLContestLost Recovery in SceneJS">
+<meta property="og:description" content="How SceneJS gets back on its feet when WebGL blows a fuse">
+<meta property="og:url" content="http://xeolabs.com/articles/scenejs-webgl-context-lost">
 <meta property="og:site_name" content="xeoLabs">
 
 
 
 
 
-<link rel="canonical" href="http://xeolabs.com/articles/scenejs-pickflyorbit-camera">
+<link rel="canonical" href="http://xeolabs.com/articles/scenejs-webgl-context-lost">
 <link href="http://xeolabs.com/feed.xml" type="application/atom+xml" rel="alternate" title="xeoLabs Feed">
 <link rel="author" href="https://plus.google.com/u/0/110983138227486752827/posts?rel=author">
 
@@ -112,7 +112,7 @@
   </div>
   <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
     <div class="headline-wrap">
-      <h1 itemprop="name">SceneJS Pick-Fly-Orbit Camera</h1>
+      <h1 itemprop="name">Automatic WebGLContestLost Recovery in SceneJS</h1>
       <h2></h2>
     </div><!--/ .headline-wrap -->
     <div class="article-wrap" itemprop="text">
@@ -122,90 +122,40 @@
   </header>
 <div id="drawer">
 <ul id="markdown-toc">
-  <li><a href="#usage">Usage</a></li>
-  <li><a href="#making-scene-objects-unpickable">Making scene objects unpickable</a></li>
-  <li><a href="#read-more">Read More</a></li>
+  <li><a href="#so-whats-webglcontextlost">So, what’s WebGLContextLost?</a></li>
 </ul>
 
   </div>
 </section>
 <!-- /#table-of-contents -->
 
-<p>The folks over at <a href="http://bimsurfer.org">BIMSurfer.org</a> needed a
- camera that flies to and orbits whatever you click on, so I made a plugin.<br /><br />Try a couple of demos:</p>
+<p><a href="http://scenejs.org">SceneJS</a> can automatically recover from lost WebGL context without disruption to your scene state, and
+most importantly, without needing to reload anything.<br /><br />
+SceneJS was the first to do this, but pretty soon this will be a standard feature of all retained-mode
+WebGL frameworks.
+<br /><br />
+Check out the example below, in which we blow the context away every five seconds while the bubbles rise and you
+orbit them with the camera:
+<br /><br />
+<a href="http://scenejs.org/examples.html?page=webglContextLost"><img src="http://xeolabs.com/images/scenejs/webglContextLost.jpg" alt="SceneJS First Example" /></a></p>
 
-<table>
-  <thead>
-    <tr>
-      <th><a href="http://scenejs.org/examples/pages/demos/pickFlyOrbitCity.html"><img src="http://xeolabs.com/images/scenejs/pickFlyOrbitCity.png" alt="" /></a></th>
-      <th><a href="http://scenejs.org/examples/pages/demos/pickFlyOrbitTerrain.html"><img src="http://xeolabs.com/images/scenejs/pickFlyOrbitTerrain.png" alt="" /></a></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="http://scenejs.org/examples/pages/demos/pickFlyOrbitCity.html">Click to run</a></td>
-      <td><a href="http://scenejs.org/examples/pages/demos/pickFlyOrbitTerrain.html">Click to run</a></td>
-    </tr>
-  </tbody>
-</table>
+<p><a href="http://scenejs.org/examples.html?page=webglContextLost">Run this example</a>.</p>
 
-<h3 id="usage">Usage</h3>
-<p>The plugin provides a new scene node type and gets loaded as you need it. So assuming that you’ve
-pointed SceneJS to where you keep your plugins:</p>
+<h2 id="so-whats-webglcontextlost">So, what’s WebGLContextLost?</h2>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">setConfigs</span><span class="p">({</span>
-    <span class="nx">pluginPath</span><span class="o">:</span> <span class="s2">&quot;./foo/myPluginsDir&quot;</span>
-<span class="p">});</span>
-</code></pre></div>
+<p>It’s the devil.
+<br /><br />
+The GPU is a shared resource, and there are times when it might be taken away from our WebGL applications, such as when
+there are too many applications holding them, or when another application does something that ties up the GPU too
+long.
+<br /><br />
+In such cases the operating system or browser may decide to reset the GPU to regain control. There’s
+a <a href="http://www.khronos.org/webgl/wiki/HandlingContextLost">nice tutorial</a> over at Khronos.org that describes how to handle
+this in our applications. It describes how application processes such as asset loads can be disrupted by context loss, and
+how an app will then need to reallocate its textures, VBOs, shaders etc. on a new context afterwards.</p>
 
-<p>Then just wrap the node around your scene:</p>
-
-<div class="highlight"><pre><code class="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">createScene</span><span class="p">({</span>
-    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;cameras/pickFlyOrbit&quot;</span><span class="p">,</span>
-            <span class="nx">look</span><span class="o">:</span><span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">150</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span> <span class="mi">0</span> <span class="p">},</span>
-            <span class="nx">yaw</span><span class="o">:-</span><span class="mi">40</span><span class="p">,</span>
-            <span class="nx">pitch</span><span class="o">:-</span><span class="mi">20</span><span class="p">,</span>
-            <span class="nx">zoom</span><span class="o">:</span><span class="mi">800</span><span class="p">,</span>
-            <span class="nx">zoomSensitivity</span><span class="o">:-</span><span class="mf">20.0</span><span class="p">,</span>
-            <span class="nx">showCursor</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nx">cursorSize</span><span class="o">:</span><span class="mf">6.0</span><span class="p">,</span>
-
-            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
-                <span class="p">{</span>
-                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;objects/buildings/city&quot;</span><span class="p">,</span>
-                    <span class="nx">width</span><span class="o">:</span><span class="mi">600</span>
-                <span class="p">}</span>
-            <span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">});</span>
-</code></pre></div>
-
-<p>And then everything’s pick-fly-orbitable.<br /><br />The node’s properties are:</p>
-
-<ul>
-  <li><code>look</code> - initial point-of-interest (POI) in World-coordinates</li>
-  <li><code>yaw</code>, <code>pitch</code> - initial degrees of rotation of eye position about POI on Y and X axis, respectively</li>
-  <li><code>zoom</code> - initial distance of eye from POI</li>
-  <li><code>zoomSensitivity</code> - sensivity of mouse wheel when updating zoom. The sign of this determines which direction the wheel drives the zoom.</li>
-  <li><code>showCursor</code> - set true to show the POI with a sphere</li>
-  <li><code>cursorSize</code> - radius of the cursor sphere</li>
-</ul>
-
-<h3 id="making-scene-objects-unpickable">Making scene objects unpickable</h3>
-
-<p>See how you can’t pick the sky in the live demos above? That’s a good thing, because otherwise you’d be able to orbit
-a point on the skybox, which would be rather a Truman Show moment!<br /><br />Learn how to make objects unpickable in
- <a href="http://scenejs.org/examples.html?page=disablePicking&amp;showCode=true">this API example</a>.</p>
-
-<h3 id="read-more">Read More</h3>
-<ul>
-  <li><a href="http://xeolabs.com/articles/scenejs-picking">Picking in SceneJS</a></li>
-  <li><a href="http://xeolabs.com/articles/scenejs-ray-picking">Fast Ray Picking in SceneJS</a></li>
-  <li><a href="/articles/scenejs-node-types">Creating your own Scene Node Types</a></li>
-</ul>
+<p>SceneJS retains all state and assets, such as matrices, geoemtry and textures etc in its scene graph. Then when the context
+is recovered after loss, it simply reallocates those assets on the new context.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -222,7 +172,7 @@ a point on the skybox, which would be rather a Truman Show moment!<br /><br />Le
 
 
         </div>
-        <p class="byline"><strong>SceneJS Pick-Fly-Orbit Camera</strong> was published on <time datetime="2013-10-28T00:00:00-04:00" itemprop="datePublished">October 28, 2013</time> and last modified on <time datetime="2013-05-31" itemprop="dateModified">May 31, 2013</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://xeolabs.com/about" title="About @xeoLabs" itemprop="url">@xeoLabs</a></span></span>.</p>
+        <p class="byline"><strong>Automatic WebGLContestLost Recovery in SceneJS</strong> was published on <time datetime="2013-10-28T00:00:00-04:00" itemprop="datePublished">October 28, 2013</time> and last modified on <time datetime="2013-05-31" itemprop="dateModified">May 31, 2013</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://xeolabs.com/about" title="About @xeoLabs" itemprop="url">@xeoLabs</a></span></span>.</p>
       </footer>
 
         
@@ -257,12 +207,6 @@ a point on the skybox, which would be rather a Truman Show moment!<br /><br />Le
       
       
       
-      <li><a href="http://xeolabs.com/articles/scenejs-webgl-context-lost" title="Automatic WebGLContestLost Recovery in SceneJS">Automatic WebGLContestLost Recovery in SceneJS</a></li>
-      
-    
-      
-      
-      
       <li><a href="http://xeolabs.com/articles/scenejs-ray-picking-technique" title="Pssst...How Fast Ray Picking Works in SceneJS">Pssst...How Fast Ray Picking Works in SceneJS</a></li>
       
     
@@ -270,6 +214,12 @@ a point on the skybox, which would be rather a Truman Show moment!<br /><br />Le
       
       
       <li><a href="http://xeolabs.com/articles/scenejs-ray-picking" title="Fast Ray Picking in SceneJS">Fast Ray Picking in SceneJS</a></li>
+      
+    
+      
+      
+      
+      <li><a href="http://xeolabs.com/articles/scenejs-quick-start" title="SceneJS Quick Start">SceneJS Quick Start</a></li>
       
     
     </ul>

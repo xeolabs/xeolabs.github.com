@@ -5,13 +5,70 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2013-10-26T20:18:05-04:00</updated>
+<updated>2013-10-29T09:38:33-04:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>@xeoLabs</name>
   <uri>http://xeolabs.com/</uri>
   <email>lindsay.kay@xeolabs.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Automatic WebGLContestLost Recovery in SceneJS]]></title>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-webgl-context-lost" />
+  <id>http://xeolabs.com/articles/scenejs-webgl-context-lost</id>
+  <updated>2013-05-31T00:00:00-00:00</updated>
+  <published>2013-10-28T00:00:00-04:00</published>
+  
+  <author>
+    <name>@xeoLabs</name>
+    <uri>http://xeolabs.com</uri>
+    <email>lindsay.kay@xeolabs.com</email>
+  </author>
+  <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
+  &lt;header&gt;
+    &lt;h3&gt;Contents&lt;/h3&gt;
+  &lt;/header&gt;
+&lt;div id=&quot;drawer&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#so-whats-webglcontextlost&quot;&gt;So, what’s WebGLContextLost?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- /#table-of-contents --&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://scenejs.org&quot;&gt;SceneJS&lt;/a&gt; can automatically recover from lost WebGL context without disruption to your scene state, and
+most importantly, without needing to reload anything.&lt;br /&gt;&lt;br /&gt;
+SceneJS was the first to do this, but pretty soon this will be a standard feature of all retained-mode
+WebGL frameworks.
+&lt;br /&gt;&lt;br /&gt;
+Check out the example below, in which we blow the context away every five seconds while the bubbles rise and you
+orbit them with the camera:
+&lt;br /&gt;&lt;br /&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=webglContextLost&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/webglContextLost.jpg&quot; alt=&quot;SceneJS First Example&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=webglContextLost&quot;&gt;Run this example&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;so-whats-webglcontextlost&quot;&gt;So, what’s WebGLContextLost?&lt;/h2&gt;
+
+&lt;p&gt;It’s the devil.
+&lt;br /&gt;&lt;br /&gt;
+The GPU is a shared resource, and there are times when it might be taken away from our WebGL applications, such as when
+there are too many applications holding them, or when another application does something that ties up the GPU too
+long.
+&lt;br /&gt;&lt;br /&gt;
+In such cases the operating system or browser may decide to reset the GPU to regain control. There’s
+a &lt;a href=&quot;http://www.khronos.org/webgl/wiki/HandlingContextLost&quot;&gt;nice tutorial&lt;/a&gt; over at Khronos.org that describes how to handle
+this in our applications. It describes how application processes such as asset loads can be disrupted by context loss, and
+how an app will then need to reallocate its textures, VBOs, shaders etc. on a new context afterwards.&lt;/p&gt;
+
+&lt;p&gt;SceneJS retains all state and assets, such as matrices, geoemtry and textures etc in its scene graph. Then when the context
+is recovered after loss, it simply reallocates those assets on the new context.&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-webgl-context-lost&quot;&gt;Automatic WebGLContestLost Recovery in SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -46,24 +103,31 @@
 &lt;!-- /#table-of-contents --&gt;
 
 &lt;p&gt;Normally a ray-pick is done with expensive computations to find intersections of rays with meshes and so forth.
-SceneJS, however, uses a fast GPU-assisted technique that employs the depth buffer to help find the ray-intersection point, which
- avoids those sorts of computations altogether.&lt;/p&gt;
+SceneJS, however, uses a fast GPU-assisted technique that employs the colour buffer to help find the ray-intersection point, which
+ avoids those sorts of computations altogether.
+ &lt;br /&gt;&lt;br /&gt;
+I couldn’t find anybody else doing this in WebGL or OpenGL ES (maybe I should have looked harder?), so at first I thought
+it must be too good to be true. However, despite a small amount of numeric inaccuracy when the front and back clip planes
+are far apart, it seems work well enough, so I went with it.&lt;/p&gt;
 
 &lt;h2 id=&quot;the-technique&quot;&gt;The technique&lt;/h2&gt;
 &lt;p&gt;I’ll assume that you’ve read about &lt;a href=&quot;http://xeolabs.com/articles/scenejs-picking&quot;&gt;2D picking&lt;/a&gt;
-and &lt;a href=&quot;http://xeolabs.com/articles/scenejs-ray-picking&quot;&gt;ray picking&lt;/a&gt;, which mention how you can wrap your objects with &lt;code&gt;name&lt;/code&gt;
+and &lt;a href=&quot;http://xeolabs.com/articles/scenejs-ray-picking&quot;&gt;ray picking&lt;/a&gt;, which describe how you can wrap your objects with &lt;code&gt;name&lt;/code&gt;
 nodes to assign them logical pick names.
 &lt;br /&gt;&lt;br /&gt;
 The steps of my technique are:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;User ray-picks canvas at coordinates (X, Y).&lt;/li&gt;
-  &lt;li&gt;Do a render pass to a hidden frame buffer, in which the objects within each name unique &lt;code&gt;name&lt;/code&gt; are are rendered in a colour that
-uniquely maps to &lt;code&gt;name&lt;/code&gt;’s “name” value.&lt;/li&gt;
+  &lt;li&gt;Do a render pass to a hidden frame buffer, in which the objects within each &lt;code&gt;name&lt;/code&gt; are rendered in a colour that
+uniquely maps to that &lt;code&gt;name&lt;/code&gt;’s value.&lt;/li&gt;
   &lt;li&gt;Read the colour from the framebuffer at the canvas coordinates, map the colour back to the name value. Now we have the pick name.&lt;/li&gt;
-  &lt;li&gt;Do a second render pass to another hidden frame buffer, this time rendering just the picked geometry, with each pixel colour being the clip-space Z-value packed into an RGBA value.&lt;/li&gt;
-  &lt;li&gt;Read the colour from the framebuffer at the canvas coordinates and unpack it to the clip-space Z value. Now we have the clip-space Z, which will be in the range of [0..1], with near clip plane at 0 and far clip plane at 1.&lt;/li&gt;
-  &lt;li&gt;Transform the canvas coordinates to clip-space. Make a ray from clip space (X,Y,0) to (X,Y,1) and transform that ray into world-space by the inverse view and projection matrices.&lt;/li&gt;
+  &lt;li&gt;Do a second render pass to another hidden frame buffer, this time rendering just the picked geometry, with each pixel
+colour being the clip-space Z-value packed into an RGBA value.&lt;/li&gt;
+  &lt;li&gt;Read the colour from the framebuffer at the canvas coordinates and unpack it to the clip-space Z value. Now we have the
+clip-space Z, which will be in the range of [0..1], with near clip plane at 0 and far clip plane at 1.&lt;/li&gt;
+  &lt;li&gt;Transform the canvas coordinates to clip-space. Make a ray from clip space (X,Y,0) to (X,Y,1) and transform that ray
+into world-space by the inverse view and projection matrices.&lt;/li&gt;
   &lt;li&gt;Linearly interpolate along ray by the value of our clip-space Z, to find the world-space coordinate (X,Y,Z).&lt;/li&gt;
   &lt;li&gt;Voila, we have the picked name, canvas (X,Y) and world-space (X,Y,Z) for the pick hit.&lt;/li&gt;
 &lt;/ol&gt;
@@ -136,12 +200,12 @@ uniquely maps to &lt;code&gt;name&lt;/code&gt;’s “name” value.&lt;/li&gt;
 &lt;/section&gt;
 &lt;!-- /#table-of-contents --&gt;
 
-&lt;p&gt;SceneJS ray-picking lets you pick a point on the canves and get the precise 3D World-space coordinates of whatever that intersects in the 3D
-view.
+&lt;p&gt;SceneJS ray-picking lets you pick a point on the canves and get the precise 3D World-space coordinates of whatever that
+intersects within the 3D view.
 &lt;br /&gt;&lt;br /&gt;
-It’s very fast, even for really large numbers of objects. While it uses the standard pick-buffer technique to find the picked
-object, it also uses the depth buffer to help it find the 3D intersection coordinates, thus managing to avoid expensive ray-intersect
-computations. If you’re curious how it works, I did &lt;a href=&quot;/articles/scenejs-ray-picking-technique&quot;&gt;a writeup on the technique here&lt;/a&gt;.&lt;/p&gt;
+It’s very fast, even for really large numbers of objects. While it uses the standard &lt;a href=&quot;http://antongerdelan.net/opengl/colourpicking.html&quot;&gt;colour coding approach&lt;/a&gt; to find the picked
+object, it also uses the depth buffer to help it find the 3D intersection coordinates, thus managing to avoid expensive
+ray-intersect computations. If you’re curious how it works, I did &lt;a href=&quot;/articles/scenejs-ray-picking-technique&quot;&gt;a writeup on the technique here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -1636,20 +1700,36 @@ in some way:&lt;/p&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Our example plugin script is actually deployed within the SceneJS plugins bundle - find the original source code for it here:
-&lt;a href=&quot;http://scenejs.org/api/latest/plugins/node/demos/color.js&quot;&gt;http://scenejs.org/api/latest/plugins/node/demos/color.js&lt;/a&gt;
-&lt;br /&gt;&lt;br /&gt;
-Note that our plugin script installs the new node type as “demos/color”. See how that type name maps to the
-script’s location within the &lt;code&gt;http://scenejs.org/api/latest/plugins/node&lt;/code&gt; directory.&lt;/p&gt;
-
 &lt;h2 id=&quot;using-the-new-node-type&quot;&gt;Using the new node type&lt;/h2&gt;
 
-&lt;p&gt;Let’s assume that you’ve downloaded the SceneJS plugins bundle as described in the &lt;a href=&quot;/articles/scenejs-quick-start&quot;&gt;Quick Start&lt;/a&gt; tutorial, and
+&lt;p&gt;Let’s assume that you’ve downloaded the SceneJS plugins bundle as described in the &lt;a href=&quot;/articles/scenejs-quick-start&quot;&gt;Quick Start&lt;/a&gt; tutorial,
+which means that we&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;.
+├── scenejs.js
+├── plugins
+└── firstExample.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We have the SceneJS library, the SceneJS plugins bundle, and an example HTML page which renders our teapot.
+  &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;and
  that you’ve pointed SceneJS at where you unzipped them:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;configure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;pluginPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;./plugins&amp;quot;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We’ll also assume that our new node type is saved as &lt;code&gt;color.js&lt;/code&gt; within the directory structure below:
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;.
+└── plugins
+    └── node
+        └── demos
+            └── color.js
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Now that SceneJS will be able to load the plugin listed above, you can create a scene that includes an instance of it (along with a teapot, which comes from another plugin):&lt;/p&gt;
@@ -1724,8 +1804,19 @@ using a callback (instead of synchronously, like we can with instances of core n
 
 &lt;p&gt;SceneJS bundles RequireJS, so that plugins can dynamically load support libraries, such as those from 3rd-party vendors.
 &lt;br /&gt;&lt;br /&gt;
-Support libraries used by custom node types are kept in a &lt;a href=&quot;https://github.com/xeolabs/scenejs/tree/V3.1/api/latest/plugins/lib&quot;&gt;lib directory inside the plugins directory&lt;/a&gt;.
-&lt;br /&gt;&lt;br /&gt;
+Support libraries used by custom node types are conventionally kept in a &lt;code&gt;lib&lt;/code&gt; subdirectory within your plugins directory:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;.
+├── scenejs.js
+├── plugins
+│   ├── lib
+│   │   ├── someLibrary.js
+│   │   └── someOtherLibrary.js
+│   └── node
+└── firstExample.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
 Custom node types can then require the dependencies using a &lt;em&gt;scenejsPluginDeps&lt;/em&gt; prefix:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;    &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;
@@ -2723,8 +2814,8 @@ Have fun!&lt;/p&gt;
 &lt;h3 id=&quot;appendix&quot;&gt;Appendix&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;/articles/scenejs-ray-picking-technique&quot;&gt;Pssst…How SceneJS Does Fast Ray Picking&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/articles/scenejs-ray-picking-technique&quot;&gt;How SceneJS Does Fast Ray Picking&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 
   &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/learning-scenejs&quot;&gt;SceneJS Tutorials&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
