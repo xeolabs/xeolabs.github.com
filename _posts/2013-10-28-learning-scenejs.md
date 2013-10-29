@@ -58,4 +58,4 @@ Have fun!
 
 ### Appendix
 * [Pssst...How SceneJS Does Fast Ray Picking](/articles/scenejs-ray-picking-technique)
-* [Automatic Recovery from Lost WebGL Context](/articles/scenejs-ray-picking-technique)
+* [Automatic Recovery from Lost WebGL Context](/articles/scenejs-webgl-context-lost)
