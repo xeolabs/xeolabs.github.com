@@ -6,20 +6,20 @@
 <head>
 <meta charset="utf-8">
 <title>Pssst...How Fast Ray Picking Works in SceneJS &#8211; xeoLabs</title>
-<meta name="description" content="A quick writeup on how I'm using the depth buffer to help find ray-intersects and avoid expensive intersection calculations">
+<meta name="description" content="A quick writeup on how I'm using the colour buffer to help find ray-intersects and avoid expensive intersection calculations">
 <meta name="keywords" content="scenejs, tutorial, picking, interaction">
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://xeolabs.com/images/">
 <meta name="twitter:title" content="Pssst...How Fast Ray Picking Works in SceneJS">
-<meta name="twitter:description" content="A quick writeup on how I'm using the depth buffer to help find ray-intersects and avoid expensive intersection calculations">
+<meta name="twitter:description" content="A quick writeup on how I'm using the colour buffer to help find ray-intersects and avoid expensive intersection calculations">
 <meta name="twitter:creator" content="@xeolabs">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pssst...How Fast Ray Picking Works in SceneJS">
-<meta property="og:description" content="A quick writeup on how I'm using the depth buffer to help find ray-intersects and avoid expensive intersection calculations">
+<meta property="og:description" content="A quick writeup on how I'm using the colour buffer to help find ray-intersects and avoid expensive intersection calculations">
 <meta property="og:url" content="http://xeolabs.com/articles/scenejs-ray-picking-technique">
 <meta property="og:site_name" content="xeoLabs">
 
@@ -98,7 +98,7 @@
 
 <div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
   <div class="article-author-top">
-    <img src="http://xeolabs.com/images/avatar.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+    <img src="http://xeolabs.com/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
 <h3><a href="http://xeolabs.com/about/">@xeoLabs</a></h3>
 <p>Lindsay Kay<br>3D Web developer</p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
@@ -136,24 +136,31 @@
 <!-- /#table-of-contents -->
 
 <p>Normally a ray-pick is done with expensive computations to find intersections of rays with meshes and so forth.
-SceneJS, however, uses a fast GPU-assisted technique that employs the depth buffer to help find the ray-intersection point, which
- avoids those sorts of computations altogether.</p>
+SceneJS, however, uses a fast GPU-assisted technique that employs the colour buffer to help find the ray-intersection point, which
+ avoids those sorts of computations altogether.
+ <br /><br />
+I couldn’t find anybody else doing this in WebGL or OpenGL ES (maybe I should have looked harder?), so at first I thought
+it must be too good to be true. However, despite a small amount of numeric inaccuracy when the front and back clip planes
+are far apart, it seems work well enough, so I went with it.</p>
 
 <h2 id="the-technique">The technique</h2>
 <p>I’ll assume that you’ve read about <a href="http://xeolabs.com/articles/scenejs-picking">2D picking</a>
-and <a href="http://xeolabs.com/articles/scenejs-ray-picking">ray picking</a>, which mention how you can wrap your objects with <code>name</code>
+and <a href="http://xeolabs.com/articles/scenejs-ray-picking">ray picking</a>, which describe how you can wrap your objects with <code>name</code>
 nodes to assign them logical pick names.
 <br /><br />
 The steps of my technique are:</p>
 
 <ol>
   <li>User ray-picks canvas at coordinates (X, Y).</li>
-  <li>Do a render pass to a hidden frame buffer, in which the objects within each name unique <code>name</code> are are rendered in a colour that
-uniquely maps to <code>name</code>’s “name” value.</li>
+  <li>Do a render pass to a hidden frame buffer, in which the objects within each <code>name</code> are rendered in a colour that
+uniquely maps to that <code>name</code>’s value.</li>
   <li>Read the colour from the framebuffer at the canvas coordinates, map the colour back to the name value. Now we have the pick name.</li>
-  <li>Do a second render pass to another hidden frame buffer, this time rendering just the picked geometry, with each pixel colour being the clip-space Z-value packed into an RGBA value.</li>
-  <li>Read the colour from the framebuffer at the canvas coordinates and unpack it to the clip-space Z value. Now we have the clip-space Z, which will be in the range of [0..1], with near clip plane at 0 and far clip plane at 1.</li>
-  <li>Transform the canvas coordinates to clip-space. Make a ray from clip space (X,Y,0) to (X,Y,1) and transform that ray into world-space by the inverse view and projection matrices.</li>
+  <li>Do a second render pass to another hidden frame buffer, this time rendering just the picked geometry, with each pixel
+colour being the clip-space Z-value packed into an RGBA value.</li>
+  <li>Read the colour from the framebuffer at the canvas coordinates and unpack it to the clip-space Z value. Now we have the
+clip-space Z, which will be in the range of [0..1], with near clip plane at 0 and far clip plane at 1.</li>
+  <li>Transform the canvas coordinates to clip-space. Make a ray from clip space (X,Y,0) to (X,Y,1) and transform that ray
+into world-space by the inverse view and projection matrices.</li>
   <li>Linearly interpolate along ray by the value of our clip-space Z, to find the world-space coordinate (X,Y,Z).</li>
   <li>Voila, we have the picked name, canvas (X,Y) and world-space (X,Y,Z) for the pick hit.</li>
 </ol>
@@ -200,7 +207,7 @@ uniquely maps to <code>name</code>’s “name” value.</li>
       <hr />
       <footer role="contentinfo">
         <div class="article-author-bottom">
-          <img src="http://xeolabs.com/images/avatar.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+          <img src="http://xeolabs.com/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
 <h3><a href="http://xeolabs.com/about/">@xeoLabs</a></h3>
 <p>Lindsay Kay<br>3D Web developer</p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
