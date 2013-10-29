@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Pssst...How Fast Ray Picking Works in SceneJS
-description: "A quick writeup on how I'm using the depth buffer to help find ray-intersects and avoid expensive intersection calculations"
+description: "A quick writeup on how I'm using the colour buffer to help find ray-intersects and avoid expensive intersection calculations"
 modified: 2013-05-31
 category: articles
 comments: true
@@ -19,7 +19,7 @@ tags: [scenejs, tutorial, picking, interaction]
 </section><!-- /#table-of-contents -->
 
 Normally a ray-pick is done with expensive computations to find intersections of rays with meshes and so forth.
-SceneJS, however, uses a fast GPU-assisted technique that employs the depth buffer to help find the ray-intersection point, which
+SceneJS, however, uses a fast GPU-assisted technique that employs the colour buffer to help find the ray-intersection point, which
  avoids those sorts of computations altogether.
  <br><br>
 I couldn't find anybody else doing this in WebGL or OpenGL ES (maybe I should have looked harder?), so at first I thought
