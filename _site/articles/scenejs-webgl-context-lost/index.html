@@ -152,9 +152,9 @@ long.
 In such cases the operating system or browser may decide to reset the GPU to regain control. There’s
 a <a href="http://www.khronos.org/webgl/wiki/HandlingContextLost">nice tutorial</a> over at Khronos.org that describes how to handle
 this in our applications. It describes how application processes such as asset loads can be disrupted by context loss, and
-how an app will then need to reallocate its textures, VBOs, shaders etc. on a new context afterwards.</p>
-
-<p>SceneJS retains all state and assets, such as matrices, geoemtry and textures etc in its scene graph. Then when the context
+how an app will then need to reallocate its textures, VBOs, shaders etc. on a new context afterwards.
+<br /><br />
+SceneJS retains all state and assets, such as matrices, geoemtry and textures etc in its scene graph. Then when the context
 is recovered after loss, it simply reallocates those assets on the new context.</p>
 
       <hr />
