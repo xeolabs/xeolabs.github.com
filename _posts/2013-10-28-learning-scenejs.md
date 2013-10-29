@@ -58,4 +58,4 @@ Have fun!
 
 ### Appendix
 * [Pssst...How SceneJS Does Fast Ray Picking](/articles/scenejs-ray-picking-technique)
-
+* [How SceneJS Does Fast Ray Picking](/articles/scenejs-ray-picking-technique)

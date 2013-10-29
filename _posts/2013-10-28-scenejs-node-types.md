@@ -80,21 +80,40 @@ SceneJS.Types.addType("demos/color", {
 });
 {% endhighlight %}
 
-Our example plugin script is actually deployed within the SceneJS plugins bundle - find the original source code for it here:
-[http://scenejs.org/api/latest/plugins/node/demos/color.js](http://scenejs.org/api/latest/plugins/node/demos/color.js)
-<br><br>
-Note that our plugin script installs the new node type as "demos/color". See how that type name maps to the
-script's location within the ```http://scenejs.org/api/latest/plugins/node``` directory.
-
 ## Using the new node type
 
-Let's assume that you've downloaded the SceneJS plugins bundle as described in the [Quick Start](/articles/scenejs-quick-start) tutorial, and
+Let's assume that you've downloaded the SceneJS plugins bundle as described in the [Quick Start](/articles/scenejs-quick-start) tutorial,
+which means that we
+
+{% highlight html %}
+.
+├── scenejs.js
+├── plugins
+└── firstExample.html
+{% endhighlight %}
+
+We have the SceneJS library, the SceneJS plugins bundle, and an example HTML page which renders our teapot.
+  <br><br>
+
+and
  that you've pointed SceneJS at where you unzipped them:
 
 {% highlight javascript %}
 SceneJS.configure({
     pluginPath: "./plugins"
 });
+{% endhighlight %}
+
+
+We'll also assume that our new node type is saved as ```color.js``` within the directory structure below:
+<br><br>
+
+{% highlight html %}
+.
+└── plugins
+    └── node
+        └── demos
+            └── color.js
 {% endhighlight %}
 
 Now that SceneJS will be able to load the plugin listed above, you can create a scene that includes an instance of it (along with a teapot, which comes from another plugin):
@@ -169,7 +188,19 @@ See that setColor method, which is defined by our node type?
 
 SceneJS bundles RequireJS, so that plugins can dynamically load support libraries, such as those from 3rd-party vendors.
 <br><br>
-Support libraries used by custom node types are kept in a [lib directory inside the plugins directory](https://github.com/xeolabs/scenejs/tree/V3.1/api/latest/plugins/lib).
+Support libraries used by custom node types are conventionally kept in a ```lib``` subdirectory within your plugins directory:
+
+{% highlight html %}
+.
+├── scenejs.js
+├── plugins
+│   ├── lib
+│   │   ├── someLibrary.js
+│   │   └── someOtherLibrary.js
+│   └── node
+└── firstExample.html
+{% endhighlight %}
+
 <br><br>
 Custom node types can then require the dependencies using a *scenejsPluginDeps* prefix:
 {% highlight javascript %}

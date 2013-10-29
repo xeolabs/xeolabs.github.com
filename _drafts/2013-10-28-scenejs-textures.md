@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SceneJS Textures
+title: Defining Surface Appearance in SceneJS
 description: "All about texturing in SceneJS"
 modified: 2013-05-31
 category: articles
@@ -18,15 +18,23 @@ tags: [scenejs, tutorial, texture]
 </div>
 </section><!-- /#table-of-contents -->
 
-[SceneJS](http://scenejs.org) is an extensible WebGL-based engine for high-detail 3D visualisation.<br><br>It's super easy to get into, thanks to its
-succinct API with lots of defaults and training wheels. But don't let let that simplicity fool you - behind that friendly
-facade it's optimised to death with serious fu, such as scene compilation and GL state sorting, so will happily scale up
-to thousands of objects while eating draw calls for breakfast. Let's start easy though, with an example that shows the basic idea
-of this engine.
+ In this tutorial I'll show you how define surface appearance for objects in SceneJS. Four types of node work to
+ together to define appearance for the objects in their subgraphs:
+   * ```lights``` nodes define light sources, which can be positional, directional and ambient, with specular and diffuse components
+   * ```material``` nodes specify how object surfaces reflect light
+   * ```texture``` nodes pattern the light or material color as it is applied to the surface, sourcing their patterns from images or video streams.
+   * ```flags``` configure SceneJS rendering modes for light and texture for the objects.
 
-A **texture** node is a [[node]] subtype that applies textures to [[geometry]] nodes within its subtree.
+SceneJS provides built-in defaults for all these nodes types except ```texture```, which makes it easy to play around with each of these
+node types by themselves.
 
-![Colour, specular, alpha and emission mapping layers](http://scenejs.org/images/earth2.jpg)
+### Lights
+
+### Material
+
+### Texture
+
+### Flags
 
 As will be shown below, texture nodes can have multiple layers, where each layer is a separate texture that may be independently transformed and applied to a different target.
 
