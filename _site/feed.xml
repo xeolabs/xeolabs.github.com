@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2013-10-29T09:53:54-04:00</updated>
+<updated>2013-10-29T10:11:14-04:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>@xeoLabs</name>
@@ -40,12 +40,11 @@
 &lt;!-- /#table-of-contents --&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://scenejs.org&quot;&gt;SceneJS&lt;/a&gt; can automatically recover from lost WebGL context without disruption to your scene state, and
-most importantly, without needing to reload anything.&lt;br /&gt;&lt;br /&gt;
+more importantly, without needing to reload anything.&lt;br /&gt;&lt;br /&gt;
 SceneJS was the first to do this, but pretty soon this will be a standard feature of all retained-mode
 WebGL frameworks.
 &lt;br /&gt;&lt;br /&gt;
-Check out the example below, in which we blow the context away every five seconds while the bubbles rise and you
-orbit them with the camera:
+Check out the example below, in which we blow the context away every five seconds while you orbit the rising bubbles using the mouse:
 &lt;br /&gt;&lt;br /&gt;
 &lt;a href=&quot;http://scenejs.org/examples.html?page=webglContextLost&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/webglContextLost.jpg&quot; alt=&quot;SceneJS First Example&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -65,7 +64,7 @@ this in our applications. It describes how application processes such as asset l
 how an app will then need to reallocate its textures, VBOs, shaders etc. on a new context afterwards.
 &lt;br /&gt;&lt;br /&gt;
 SceneJS retains all state and assets, such as matrices, geoemtry and textures etc in its scene graph. Then when the context
-is recovered after loss, it simply reallocates those assets on the new context.&lt;/p&gt;
+is recovered after loss, it simply reallocates those assets on the new context.  &lt;/p&gt;
 
   &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-webgl-context-lost&quot;&gt;Automatic WebGLContestLost Recovery in SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>

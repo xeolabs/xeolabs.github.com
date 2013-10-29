@@ -19,12 +19,11 @@ tags: [scenejs, tutorial]
 </section><!-- /#table-of-contents -->
 
 [SceneJS](http://scenejs.org) can automatically recover from lost WebGL context without disruption to your scene state, and
-most importantly, without needing to reload anything.<br><br>
+more importantly, without needing to reload anything.<br><br>
 SceneJS was the first to do this, but pretty soon this will be a standard feature of all retained-mode
 WebGL frameworks.
 <br><br>
-Check out the example below, in which we blow the context away every five seconds while the bubbles rise and you
-orbit them with the camera:
+Check out the example below, in which we blow the context away every five seconds while you orbit the rising bubbles using the mouse:
 <br><br>
 [![SceneJS First Example]({{ site.url }}/images/scenejs/webglContextLost.jpg)](http://scenejs.org/examples.html?page=webglContextLost)
 
