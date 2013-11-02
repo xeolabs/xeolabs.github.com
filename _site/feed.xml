@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2013-11-02T19:41:02-04:00</updated>
+<updated>2013-11-02T19:42:37-04:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>@xeoLabs</name>
@@ -15,67 +15,11 @@
 
 
 <entry>
-  <title type="html"><![CDATA[Automatic WebGLContestLost Recovery in SceneJS]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-webgl-context-lost" />
-  <id>http://xeolabs.com/articles/scenejs-webgl-context-lost</id>
-  <updated>2013-05-31T00:00:00-00:00</updated>
-  <published>2013-10-28T00:00:00-04:00</published>
-  
-  <author>
-    <name>@xeoLabs</name>
-    <uri>http://xeolabs.com</uri>
-    <email>lindsay.kay@xeolabs.com</email>
-  </author>
-  <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
-  &lt;header&gt;
-    &lt;h3&gt;Contents&lt;/h3&gt;
-  &lt;/header&gt;
-&lt;div id=&quot;drawer&quot;&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#so-whats-webglcontextlost&quot;&gt;So, what’s WebGLContextLost?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-  &lt;/div&gt;
-&lt;/section&gt;
-&lt;!-- /#table-of-contents --&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://scenejs.org&quot;&gt;SceneJS&lt;/a&gt; can automatically recover from lost WebGL context without disruption to your scene state, and
-more importantly, without needing to reload anything.&lt;br /&gt;&lt;br /&gt;
-SceneJS was the first to do this, but pretty soon this will be a standard feature of all retained-mode
-WebGL frameworks.
-&lt;br /&gt;&lt;br /&gt;
-Check out the example below, in which we blow the context away every five seconds while you orbit the rising bubbles using the mouse:
-&lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://scenejs.org/examples.html?page=webglContextLost&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/webglContextLost.jpg&quot; alt=&quot;SceneJS First Example&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=webglContextLost&quot;&gt;Run this example&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;so-whats-webglcontextlost&quot;&gt;So, what’s WebGLContextLost?&lt;/h2&gt;
-
-&lt;p&gt;It’s the devil.
-&lt;br /&gt;&lt;br /&gt;
-The GPU is a shared resource, and there are times when it might be taken away from our WebGL applications, such as when
-there are too many applications holding them, or when another application does something that ties up the GPU too
-long.
-&lt;br /&gt;&lt;br /&gt;
-In such cases the operating system or browser may decide to reset the GPU to regain control. There’s
-a &lt;a href=&quot;http://www.khronos.org/webgl/wiki/HandlingContextLost&quot;&gt;nice tutorial&lt;/a&gt; over at Khronos.org that describes how to handle
-this in our applications. It describes how application processes such as asset loads can be disrupted by context loss, and
-how an app will then need to reallocate its textures, VBOs, shaders etc. on a new context afterwards.
-&lt;br /&gt;&lt;br /&gt;
-SceneJS retains all state and assets, such as matrices, geoemtry and textures etc in its scene graph. Then when the context
-is recovered after loss, it simply reallocates those assets on the new context.&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-webgl-context-lost&quot;&gt;Automatic WebGLContestLost Recovery in SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
   <title type="html"><![CDATA[Transparency in SceneJS]]></title>
   <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-transparency" />
   <id>http://xeolabs.com/articles/scenejs-transparency</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
-  <published>2013-10-28T00:00:00-04:00</published>
+  <published>2013-11-03T00:00:00-04:00</published>
   
   <author>
     <name>@xeoLabs</name>
@@ -445,7 +389,275 @@ Here’s the scene that renders the nested boxes in the scene above.&lt;/p&gt;
   &lt;li&gt;Learn how to texture your transparency using &lt;a href=&quot;/articles/scenejs-alpha-mapping&quot;&gt;Alpha Maps&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-transparency&quot;&gt;Transparency in SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-transparency&quot;&gt;Transparency in SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on November 03, 2013.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Alpha Mapping in SceneJS]]></title>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-alpha-mapping" />
+  <id>http://xeolabs.com/articles/scenejs-alpha-mapping</id>
+  <updated>2013-05-31T00:00:00-00:00</updated>
+  <published>2013-11-03T00:00:00-04:00</published>
+  
+  <author>
+    <name>@xeoLabs</name>
+    <uri>http://xeolabs.com</uri>
+    <email>lindsay.kay@xeolabs.com</email>
+  </author>
+  <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
+  &lt;header&gt;
+    &lt;h3&gt;Contents&lt;/h3&gt;
+  &lt;/header&gt;
+&lt;div id=&quot;drawer&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#basic-alpha-map&quot;&gt;Basic alpha map&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#texture-blend-mode&quot;&gt;Texture blend mode&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#video-alpha-map&quot;&gt;Video alpha map&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- /#table-of-contents --&gt;
+
+&lt;p&gt;Alpha mapping is a technique where an image is mapped to a 3D object to designate certain areas of the object to be transparent or translucent.
+&lt;br /&gt;&lt;br /&gt;
+In this tutorial, I’ll build on techniques from the &lt;a href=&quot;/articles/scenejs-transparency&quot;&gt;Transparency&lt;/a&gt; tutorial to show you how to&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;apply a texture to an object make holes in it&lt;/li&gt;
+  &lt;li&gt;apply a video texture to make animated areas of transparency
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;basic-alpha-map&quot;&gt;Basic alpha map&lt;/h1&gt;
+
+&lt;p&gt;As usual, we’ll point SceneJS at where you keep your plugins:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setConfigs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;pluginPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;./plugins&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then we’ll create the scene below, in which the outer green box has an alpha texture which creates transparent areas through
+which you can see the inner blue box.
+&lt;br /&gt;&lt;br /&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=alphaMap&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/basicAlphaMap.png&quot; alt=&quot;Alpha map&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=alphaMap&quot;&gt;Run this demo&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;Shown below is the texture we’ll use for the alpha map. The white areas will be where the outer box will be opaque,
+while the black areas are where it will be transparent.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://xeolabs.com/images/scenejs/leavesAlphaMap.jpg&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/leavesAlphaMapSmall.jpg&quot; alt=&quot;Alpha map image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;Listed below is the code that defines our scene. It’s using &lt;code&gt;flags&lt;/code&gt; and &lt;code&gt;material&lt;/code&gt; nodes to set up
+transparency (which you learned about in the &lt;a href=&quot;/articles/scenejs-transparency&quot;&gt;Transparency&lt;/a&gt; tutorial), plus a &lt;code&gt;texture&lt;/code&gt; node, which
+  varies the transparency across the surface of the outer green box.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// Orbiting camera node, implemented by plugin at&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// http://scenejs.org/api/latest/plugins/node/cameras/orbit.js&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;cameras/orbit&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;yaw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;pitch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;zoom&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;zoomSensitivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+            &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+
+                &lt;span class=&quot;c1&quot;&gt;// Outer green box with alpha map&lt;/span&gt;
+
+                &lt;span class=&quot;c1&quot;&gt;// Flags node enables transparency for the box.&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;// This enables the material `alpha` to specify&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;// the degree of opacity.&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;flags&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                        &lt;span class=&quot;nx&quot;&gt;transparent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+
+                        &lt;span class=&quot;c1&quot;&gt;// Material node&amp;#39;s &amp;#39;alpha&amp;#39; property makes&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// the pixels of the box opaque by default.&lt;/span&gt;
+
+                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;material&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;
+                            &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;alpha&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+
+                                &lt;span class=&quot;c1&quot;&gt;// The alpha map is a texture that&amp;#39;s&lt;/span&gt;
+                                &lt;span class=&quot;c1&quot;&gt;// applied to the alpha channel of the&lt;/span&gt;
+                                &lt;span class=&quot;c1&quot;&gt;// material, to vary it according to&lt;/span&gt;
+                                &lt;span class=&quot;c1&quot;&gt;// the intensity of each texture pixel.&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;texture&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;theTexture&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;layers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                            &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;../../../textures/leavesAlphaMap.jpg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                            &lt;span class=&quot;nx&quot;&gt;applyTo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;alpha&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                            &lt;span class=&quot;nx&quot;&gt;blendMode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;mul&amp;quot;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Default&lt;/span&gt;
+                                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+
+                &lt;span class=&quot;c1&quot;&gt;// Inner blue box&lt;/span&gt;
+
+                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;material&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                        &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;scale&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Things to note:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The &lt;code&gt;transparent&lt;/code&gt; flag on that &lt;code&gt;flags&lt;/code&gt; node enables transparent rendering of the outer green box.&lt;/li&gt;
+  &lt;li&gt;The &lt;code&gt;material&lt;/code&gt; node around the outer green box has an &lt;code&gt;alpha&lt;/code&gt; property, which is set to &lt;code&gt;1.0&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;An &lt;code&gt;alpha&lt;/code&gt; value of 0.0 is completely transparent, while 1.0 is completely opaque.&lt;/li&gt;
+  &lt;li&gt;The &lt;code&gt;texture&lt;/code&gt; node applies a texture to the outer box.&lt;/li&gt;
+  &lt;li&gt;The &lt;code&gt;texture&lt;/code&gt; node’s &lt;code&gt;applyTo&lt;/code&gt; property causes the image to be applied to the &lt;code&gt;material&lt;/code&gt; node’s &lt;code&gt;alpha&lt;/code&gt; property,
+effectively modulating the alpha across the box’s surface.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;texture-blend-mode&quot;&gt;Texture blend mode&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code&gt;blendMode&lt;/code&gt; on our texture has the value &lt;code&gt;multiply&lt;/code&gt;, which causes it to multiply the colour of each image pixel
+with the material alpha value, causing the material alpha to be 0.0 where the pixels are black, and 1.0 where the pixels are white.
+&lt;br /&gt;&lt;br /&gt;
+The other supported value for that property is &lt;code&gt;add&lt;/code&gt;, which adds the value of each image pixel to the alpha. To
+achieve the same effect as shown in this example, you would then need an &lt;code&gt;alpha&lt;/code&gt; of 0.0 on the &lt;code&gt;material&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;video-alpha-map&quot;&gt;Video alpha map&lt;/h1&gt;
+
+&lt;p&gt;Now I’ll show you how to apply a video as an alpha map. This time, we’ll dynamically sample our texture from &lt;a href=&quot;http://xeolabs.com/images/scenejs/testVideo.ogv&quot;&gt;an .OGV file&lt;/a&gt;, to
+create a cool flowing gas pattern across the surface of the outer box.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=videoAlphaMap&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/videoAlphaMap.jpg&quot; alt=&quot;Alpha video map&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=videoAlphaMap&quot;&gt;Run this demo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;The code is identical to the previous example, except for the &lt;code&gt;texture&lt;/code&gt; node, which looks like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;texture&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;layers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;video&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;../../../movies/testVideo.ogv&amp;quot;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;applyTo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;alpha&amp;quot;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Things to note:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The &lt;code&gt;source&lt;/code&gt; on this &lt;code&gt;texture&lt;/code&gt; causes it to employ the core SceneJS “video” texture plugin to stream the video file into the texture&lt;/li&gt;
+  &lt;li&gt;Each of the video’s frames is a grayscale image, applied using the same principles as used for regular image textures
+&lt;br /&gt;
+# Conclusion&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In this tutorial I showed you how to use the &lt;code&gt;texture&lt;/code&gt; node, in conjunction with transparency techniques I described
+in the &lt;a href=&quot;/articles/scenejs-transparency&quot;&gt;Transparency&lt;/a&gt; tutorial, to make holes in things. I also showed you how it’s easy
+ to use a video, instead of the usual image, in order to make animated regions of transparancy.&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-alpha-mapping&quot;&gt;Alpha Mapping in SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on November 03, 2013.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Automatic WebGLContestLost Recovery in SceneJS]]></title>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-webgl-context-lost" />
+  <id>http://xeolabs.com/articles/scenejs-webgl-context-lost</id>
+  <updated>2013-05-31T00:00:00-00:00</updated>
+  <published>2013-10-28T00:00:00-04:00</published>
+  
+  <author>
+    <name>@xeoLabs</name>
+    <uri>http://xeolabs.com</uri>
+    <email>lindsay.kay@xeolabs.com</email>
+  </author>
+  <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
+  &lt;header&gt;
+    &lt;h3&gt;Contents&lt;/h3&gt;
+  &lt;/header&gt;
+&lt;div id=&quot;drawer&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#so-whats-webglcontextlost&quot;&gt;So, what’s WebGLContextLost?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- /#table-of-contents --&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://scenejs.org&quot;&gt;SceneJS&lt;/a&gt; can automatically recover from lost WebGL context without disruption to your scene state, and
+more importantly, without needing to reload anything.&lt;br /&gt;&lt;br /&gt;
+SceneJS was the first to do this, but pretty soon this will be a standard feature of all retained-mode
+WebGL frameworks.
+&lt;br /&gt;&lt;br /&gt;
+Check out the example below, in which we blow the context away every five seconds while you orbit the rising bubbles using the mouse:
+&lt;br /&gt;&lt;br /&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=webglContextLost&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/webglContextLost.jpg&quot; alt=&quot;SceneJS First Example&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=webglContextLost&quot;&gt;Run this example&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;so-whats-webglcontextlost&quot;&gt;So, what’s WebGLContextLost?&lt;/h2&gt;
+
+&lt;p&gt;It’s the devil.
+&lt;br /&gt;&lt;br /&gt;
+The GPU is a shared resource, and there are times when it might be taken away from our WebGL applications, such as when
+there are too many applications holding them, or when another application does something that ties up the GPU too
+long.
+&lt;br /&gt;&lt;br /&gt;
+In such cases the operating system or browser may decide to reset the GPU to regain control. There’s
+a &lt;a href=&quot;http://www.khronos.org/webgl/wiki/HandlingContextLost&quot;&gt;nice tutorial&lt;/a&gt; over at Khronos.org that describes how to handle
+this in our applications. It describes how application processes such as asset loads can be disrupted by context loss, and
+how an app will then need to reallocate its textures, VBOs, shaders etc. on a new context afterwards.
+&lt;br /&gt;&lt;br /&gt;
+SceneJS retains all state and assets, such as matrices, geoemtry and textures etc in its scene graph. Then when the context
+is recovered after loss, it simply reallocates those assets on the new context.&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-webgl-context-lost&quot;&gt;Automatic WebGLContestLost Recovery in SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
@@ -2882,218 +3094,6 @@ of your scene asynchronously, as it waits for plugins to load. Always get your n
 
 
   &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-creating-a-scene-and-adding-nodes&quot;&gt;Adding and Removing Scene Nodes&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Alpha Mapping in SceneJS]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-alpha-mapping" />
-  <id>http://xeolabs.com/articles/scenejs-alpha-mapping</id>
-  <updated>2013-05-31T00:00:00-00:00</updated>
-  <published>2013-10-28T00:00:00-04:00</published>
-  
-  <author>
-    <name>@xeoLabs</name>
-    <uri>http://xeolabs.com</uri>
-    <email>lindsay.kay@xeolabs.com</email>
-  </author>
-  <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
-  &lt;header&gt;
-    &lt;h3&gt;Contents&lt;/h3&gt;
-  &lt;/header&gt;
-&lt;div id=&quot;drawer&quot;&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#basic-alpha-map&quot;&gt;Basic alpha map&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#texture-blend-mode&quot;&gt;Texture blend mode&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#video-alpha-map&quot;&gt;Video alpha map&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-  &lt;/div&gt;
-&lt;/section&gt;
-&lt;!-- /#table-of-contents --&gt;
-
-&lt;p&gt;Alpha mapping is a technique where an image is mapped to a 3D object to designate certain areas of the object to be transparent or translucent.
-&lt;br /&gt;&lt;br /&gt;
-In this tutorial, I’ll build on techniques from the &lt;a href=&quot;/articles/scenejs-transparency&quot;&gt;Transparency&lt;/a&gt; tutorial to show you how to&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;apply a texture to an object make holes in it&lt;/li&gt;
-  &lt;li&gt;apply a video texture to make animated areas of transparency
-&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;basic-alpha-map&quot;&gt;Basic alpha map&lt;/h1&gt;
-
-&lt;p&gt;As usual, we’ll point SceneJS at where you keep your plugins:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setConfigs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-     &lt;span class=&quot;nx&quot;&gt;pluginPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;./plugins&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Then we’ll create the scene below, in which the outer green box has an alpha texture which creates transparent areas through
-which you can see the inner blue box.
-&lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://scenejs.org/examples.html?page=alphaMap&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/basicAlphaMap.png&quot; alt=&quot;Alpha map&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;http://scenejs.org/examples.html?page=alphaMap&quot;&gt;Run this demo&lt;/a&gt;
-&lt;br /&gt;&lt;br /&gt;Shown below is the texture we’ll use for the alpha map. The white areas will be where the outer box will be opaque,
-while the black areas are where it will be transparent.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://xeolabs.com/images/scenejs/leavesAlphaMap.jpg&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/leavesAlphaMapSmall.jpg&quot; alt=&quot;Alpha map image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;Listed below is the code that defines our scene. It’s using &lt;code&gt;flags&lt;/code&gt; and &lt;code&gt;material&lt;/code&gt; nodes to set up
-transparency (which you learned about in the &lt;a href=&quot;/articles/scenejs-transparency&quot;&gt;Transparency&lt;/a&gt; tutorial), plus a &lt;code&gt;texture&lt;/code&gt; node, which
-  varies the transparency across the surface of the outer green box.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Orbiting camera node, implemented by plugin at&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// http://scenejs.org/api/latest/plugins/node/cameras/orbit.js&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;cameras/orbit&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;yaw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;pitch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;zoom&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;zoomSensitivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-
-            &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-
-                &lt;span class=&quot;c1&quot;&gt;// Outer green box with alpha map&lt;/span&gt;
-
-                &lt;span class=&quot;c1&quot;&gt;// Flags node enables transparency for the box.&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;// This enables the material `alpha` to specify&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;// the degree of opacity.&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;flags&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                        &lt;span class=&quot;nx&quot;&gt;transparent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-
-                        &lt;span class=&quot;c1&quot;&gt;// Material node&amp;#39;s &amp;#39;alpha&amp;#39; property makes&lt;/span&gt;
-                        &lt;span class=&quot;c1&quot;&gt;// the pixels of the box opaque by default.&lt;/span&gt;
-
-                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;material&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                            &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;
-                            &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-                            &lt;span class=&quot;nx&quot;&gt;alpha&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                            &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-
-                                &lt;span class=&quot;c1&quot;&gt;// The alpha map is a texture that&amp;#39;s&lt;/span&gt;
-                                &lt;span class=&quot;c1&quot;&gt;// applied to the alpha channel of the&lt;/span&gt;
-                                &lt;span class=&quot;c1&quot;&gt;// material, to vary it according to&lt;/span&gt;
-                                &lt;span class=&quot;c1&quot;&gt;// the intensity of each texture pixel.&lt;/span&gt;
-                                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;texture&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                    &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;theTexture&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                    &lt;span class=&quot;nx&quot;&gt;layers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-                                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                            &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;../../../textures/leavesAlphaMap.jpg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                            &lt;span class=&quot;nx&quot;&gt;applyTo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;alpha&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                            &lt;span class=&quot;nx&quot;&gt;blendMode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;mul&amp;quot;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Default&lt;/span&gt;
-                                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-                                    &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-                                    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-                                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
-                                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-                                    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-                                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-                            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-
-                &lt;span class=&quot;c1&quot;&gt;// Inner blue box&lt;/span&gt;
-
-                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;material&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                        &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;scale&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                            &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-                                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
-                                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-                            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Things to note:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The &lt;code&gt;transparent&lt;/code&gt; flag on that &lt;code&gt;flags&lt;/code&gt; node enables transparent rendering of the outer green box.&lt;/li&gt;
-  &lt;li&gt;The &lt;code&gt;material&lt;/code&gt; node around the outer green box has an &lt;code&gt;alpha&lt;/code&gt; property, which is set to &lt;code&gt;1.0&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;An &lt;code&gt;alpha&lt;/code&gt; value of 0.0 is completely transparent, while 1.0 is completely opaque.&lt;/li&gt;
-  &lt;li&gt;The &lt;code&gt;texture&lt;/code&gt; node applies a texture to the outer box.&lt;/li&gt;
-  &lt;li&gt;The &lt;code&gt;texture&lt;/code&gt; node’s &lt;code&gt;applyTo&lt;/code&gt; property causes the image to be applied to the &lt;code&gt;material&lt;/code&gt; node’s &lt;code&gt;alpha&lt;/code&gt; property,
-effectively modulating the alpha across the box’s surface.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;texture-blend-mode&quot;&gt;Texture blend mode&lt;/h3&gt;
-
-&lt;p&gt;The &lt;code&gt;blendMode&lt;/code&gt; on our texture has the value &lt;code&gt;multiply&lt;/code&gt;, which causes it to multiply the colour of each image pixel
-with the material alpha value, causing the material alpha to be 0.0 where the pixels are black, and 1.0 where the pixels are white.
-&lt;br /&gt;&lt;br /&gt;
-The other supported value for that property is &lt;code&gt;add&lt;/code&gt;, which adds the value of each image pixel to the alpha. To
-achieve the same effect as shown in this example, you would then need an &lt;code&gt;alpha&lt;/code&gt; of 0.0 on the &lt;code&gt;material&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;video-alpha-map&quot;&gt;Video alpha map&lt;/h1&gt;
-
-&lt;p&gt;Now I’ll show you how to apply a video as an alpha map. This time, we’ll dynamically sample our texture from &lt;a href=&quot;http://xeolabs.com/images/scenejs/testVideo.ogv&quot;&gt;an .OGV file&lt;/a&gt;, to
-create a cool flowing gas pattern across the surface of the outer box.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://scenejs.org/examples.html?page=videoAlphaMap&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/videoAlphaMap.jpg&quot; alt=&quot;Alpha video map&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;http://scenejs.org/examples.html?page=videoAlphaMap&quot;&gt;Run this demo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;The code is identical to the previous example, except for the &lt;code&gt;texture&lt;/code&gt; node, which looks like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;texture&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;layers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;video&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;../../../movies/testVideo.ogv&amp;quot;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;applyTo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;alpha&amp;quot;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Things to note:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The &lt;code&gt;source&lt;/code&gt; on this &lt;code&gt;texture&lt;/code&gt; causes it to employ the core SceneJS “video” texture plugin to stream the video file into the texture&lt;/li&gt;
-  &lt;li&gt;Each of the video’s frames is a grayscale image, applied using the same principles as used for regular image textures
-&lt;br /&gt;
-# Conclusion&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In this tutorial I showed you how to use the &lt;code&gt;texture&lt;/code&gt; node, in conjunction with transparency techniques I described
-in the &lt;a href=&quot;/articles/scenejs-transparency&quot;&gt;Transparency&lt;/a&gt; tutorial, to make holes in things. I also showed you how it’s easy
- to use a video, instead of the usual image, in order to make animated regions of transparancy.&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-alpha-mapping&quot;&gt;Alpha Mapping in SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 

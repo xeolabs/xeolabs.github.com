@@ -6,11 +6,15 @@
     
     
     <url>
-        <loc>http://xeolabs.com/articles/scenejs-webgl-context-lost</loc>
+        <loc>http://xeolabs.com/articles/scenejs-transparency</loc>
     </url>
     
     <url>
-        <loc>http://xeolabs.com/articles/scenejs-transparency</loc>
+        <loc>http://xeolabs.com/articles/scenejs-alpha-mapping</loc>
+    </url>
+    
+    <url>
+        <loc>http://xeolabs.com/articles/scenejs-webgl-context-lost</loc>
     </url>
     
     <url>
@@ -51,10 +55,6 @@
     
     <url>
         <loc>http://xeolabs.com/articles/scenejs-creating-a-scene-and-adding-nodes</loc>
-    </url>
-    
-    <url>
-        <loc>http://xeolabs.com/articles/scenejs-alpha-mapping</loc>
     </url>
     
     <url>
