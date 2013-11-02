@@ -190,6 +190,7 @@ Things to note:
 * Each of the video's frames is a grayscale image, applied using the same principles as used for regular image textures
 <br>
 <br>
+
 # Conclusion
 
 In this tutorial I showed you how to use the ```texture``` node, in conjunction with transparency techniques I described
