@@ -189,6 +189,7 @@ Things to note:
 * The ```source``` on this ```texture``` causes it to employ the core SceneJS "video" texture plugin to stream the video file into the texture
 * Each of the video's frames is a grayscale image, applied using the same principles as used for regular image textures
 <br>
+
 # Conclusion
 
 In this tutorial I showed you how to use the ```texture``` node, in conjunction with transparency techniques I described
