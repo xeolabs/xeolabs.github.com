@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2013-10-29T10:11:30-04:00</updated>
+<updated>2013-11-02T19:41:02-04:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>@xeoLabs</name>
@@ -67,6 +67,385 @@ SceneJS retains all state and assets, such as matrices, geoemtry and textures et
 is recovered after loss, it simply reallocates those assets on the new context.&lt;/p&gt;
 
   &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-webgl-context-lost&quot;&gt;Automatic WebGLContestLost Recovery in SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Transparency in SceneJS]]></title>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-transparency" />
+  <id>http://xeolabs.com/articles/scenejs-transparency</id>
+  <updated>2013-05-31T00:00:00-00:00</updated>
+  <published>2013-10-28T00:00:00-04:00</published>
+  
+  <author>
+    <name>@xeoLabs</name>
+    <uri>http://xeolabs.com</uri>
+    <email>lindsay.kay@xeolabs.com</email>
+  </author>
+  <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
+  &lt;header&gt;
+    &lt;h3&gt;Contents&lt;/h3&gt;
+  &lt;/header&gt;
+&lt;div id=&quot;drawer&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#making-objects-transparent&quot;&gt;Making objects transparent&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#switching-transparency-on-and-off&quot;&gt;Switching transparency on and off&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#varying-opacity&quot;&gt;Varying opacity&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#picking-through-transparent-objects&quot;&gt;Picking through transparent objects&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#transparency-sorting&quot;&gt;Transparency sorting&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#the-problem&quot;&gt;The problem&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#solutions-that-dont-work-so-well-in-webgl&quot;&gt;Solutions that don’t work so well in WebGL&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#painters-algorithm-or-bsp-nope&quot;&gt;Painter’s Algorithm or BSP? Nope.&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#depth-peeling-nope&quot;&gt;Depth peeling? Nope.&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#solution-ordered-render-bins&quot;&gt;Solution: Ordered render bins&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#whats-next&quot;&gt;What’s next?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- /#table-of-contents --&gt;
+
+&lt;p&gt;In this tutorial I’ll show you how to&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;make objects transparent,&lt;/li&gt;
+  &lt;li&gt;switch transparency on and off&lt;/li&gt;
+  &lt;li&gt;vary the opacity of transparent objects&lt;/li&gt;
+  &lt;li&gt;pick through transparent objects, to pick objects behind them&lt;/li&gt;
+  &lt;li&gt;depth-sort transparent objects for correct alpha-blending order&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When you’ve read this tutorial, you might be interested to read about texturing your
+transparency with &lt;a href=&quot;/articles/scenejs-alpha-mapping&quot;&gt;Alpha Maps&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;making-objects-transparent&quot;&gt;Making objects transparent&lt;/h1&gt;
+
+&lt;p&gt;As usual, we’ll point SceneJS at where you keep your plugins:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setConfigs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;pluginPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;./plugins&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then we’ll create the scene below, in which the outer blue box has a transparent material which allows you to see the teapot within it.
+&lt;br /&gt;&lt;br /&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=basicTransparency&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/transparentObject.png&quot; alt=&quot;Basic transparency&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=basicTransparency&quot;&gt;Run this demo&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;
+The code for this example is shown below. Our outer blue box is wrapped with a &lt;code&gt;flags&lt;/code&gt; node, which works in conjunction with
+a &lt;code&gt;material&lt;/code&gt; node to make it transparent.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// Set up a nice camera angle&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;lookAt&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;eye&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;look&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+
+            &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+
+                &lt;span class=&quot;c1&quot;&gt;// Opaque red teapot&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;material&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.3&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+
+                    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/teapot&amp;quot;&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;                     &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+                &lt;span class=&quot;c1&quot;&gt;// Transparent blue box&lt;/span&gt;
+
+                &lt;span class=&quot;c1&quot;&gt;// Flags node enables transparency for our box.&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;// This enables the material `alpha` to specify&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;// the degree of opacity.&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;flags&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;transparent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+
+                    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+
+                        &lt;span class=&quot;c1&quot;&gt;// Material node&amp;#39;s &amp;#39;alpha&amp;#39; property makes&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// teapot 60% transparent.&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;material&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;alpha&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+                            &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;translate&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                            &lt;span class=&quot;nx&quot;&gt;xSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ySize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;zSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+                                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Things to note:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The &lt;code&gt;transparent&lt;/code&gt; flag on the &lt;code&gt;flags&lt;/code&gt; node around the outer blue box which enables it to be transparent.&lt;/li&gt;
+  &lt;li&gt;The &lt;code&gt;material&lt;/code&gt; node around the blue box has an &lt;code&gt;alpha&lt;/code&gt; of &lt;code&gt;0.4&lt;/code&gt;, which works in conjuction with the &lt;code&gt;flags&lt;/code&gt; node to
+make the box 60% transparent.&lt;/li&gt;
+  &lt;li&gt;The box would be invisible if &lt;code&gt;alpha&lt;/code&gt; was 0.0, and opaque if &lt;code&gt;alpha&lt;/code&gt; was 1.0.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;SceneJS automatically ensures that all transparent objects are rendered &lt;strong&gt;after&lt;/strong&gt; opaque objects. If the opaque teapot was
+rendered after the transparent box, then the teapot would not be visible because its fragments would have been rejected by the
+WebGL &lt;a href=&quot;http://en.wikipedia.org/wiki/Z-buffering&quot;&gt;depth test&lt;/a&gt; because the pixels for the box would already be in the depth buffer,
+with closer depth values. Graphics geeks will note that there may be a problem with depth buffer rejection if we have
+multiple transparent objects. I’ll address that in the following section on Transparency Sorting.&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;switching-transparency-on-and-off&quot;&gt;Switching transparency on and off&lt;/h3&gt;
+&lt;p&gt;You can make the box opaque by flipping the &lt;code&gt;transparent&lt;/code&gt; flag on that &lt;code&gt;flags&lt;/code&gt; node:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;myScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;myFlags&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setTransparent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;varying-opacity&quot;&gt;Varying opacity&lt;/h3&gt;
+&lt;p&gt;You can make the box less transparent my increasing the &lt;code&gt;alpha&lt;/code&gt; on its &lt;code&gt;material&lt;/code&gt; node:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;myScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;myMaterial&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myMaterial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;myMaterial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setAlpha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;picking-through-transparent-objects&quot;&gt;Picking through transparent objects&lt;/h3&gt;
+&lt;p&gt;Want to be able to pick the teapot through the box? That’s covered in the
+tutorial on &lt;a href=&quot;/articles/scenejs-picking/#picking-through-transparent-objects&quot;&gt;Picking in SceneJS&lt;/a&gt;.
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;transparency-sorting&quot;&gt;Transparency sorting&lt;/h1&gt;
+
+&lt;p&gt;It’s tricky making multiple overlapping transparent objects look good in WebGL. In this section I’ll describe
+the problem, some solutions that don’t work so well with WebGL, and a partial solution that SceneJS provides using
+prioritised render bins.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-problem&quot;&gt;The problem&lt;/h3&gt;
+
+&lt;p&gt;SceneJS renders transparent objects using the standard &lt;a href=&quot;http://en.wikipedia.org/wiki/Alpha_compositing&quot;&gt;alpha blending technique&lt;/a&gt;,
+where it combines each transparent object’s translucent colour with the colours of the objects behind it.
+&lt;br /&gt;&lt;br /&gt;
+As mentioned earlier, there’s one catch: SceneJS may also be using the depth
+buffer’s Z-test to solve visibility for overlapping objects, which works by ensuring that each pixel is written to the colour
+buffer only if its Z-depth is closer than any pixel already at the same location.&lt;br /&gt;&lt;br /&gt;The example below shows the
+problem. If we were to render the outer green box first, then when we try to render the inner yellow and blue boxes,
+the pixels of those boxes will not be rendered, because their Z-depths are greater than the pixels already rendered for
+the outer green box.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=transparencySorting&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/transparencySort.jpg&quot; alt=&quot;TransparencySort&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=transparencySorting&quot;&gt;Run this example&lt;/a&gt;.
+&lt;br /&gt;&lt;br /&gt;
+We therefore need to order the rendering of the boxes from the innermost box outwards, so that the
+pixels of each box don’t get rejected by the depth test, and thus get the chance to be blended with each other in
+the colour buffer - a technique called &lt;a href=&quot;http://www.opengl.org/wiki/Transparency_Sorting&quot;&gt;transparency sorting&lt;/a&gt;.
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;solutions-that-dont-work-so-well-in-webgl&quot;&gt;Solutions that don’t work so well in WebGL&lt;/h3&gt;
+
+&lt;p&gt;Algorithms to find that order automatically are simple enough, but not easy to do efficiently on WebGL.&lt;/p&gt;
+
+&lt;h4 id=&quot;painters-algorithm-or-bsp-nope&quot;&gt;Painter’s Algorithm or BSP? Nope.&lt;/h4&gt;
+
+&lt;p&gt;Ideally, I would have liked to use the &lt;a href=&quot;http://en.wikipedia.org/wiki/Painter's_algorithm&quot;&gt;painters algorithm&lt;/a&gt;, or a &lt;a href=&quot;http://en.wikipedia.org/wiki/Bsp_tree&quot;&gt;BSP tree&lt;/a&gt;,
+which would render all the faces in the scene in order from furthest face first, through to closest face last.
+ &lt;br /&gt;&lt;br /&gt;
+Two show stoppers exist with that though:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;In WebGL we don’t get that kind of granular access to individual faces. Rendering the faces of a mesh is a batch
+ operation, where we bind the vertex arrays for the mesh, then do a draw call to render them in one hit.&lt;/li&gt;
+  &lt;li&gt;If we &lt;strong&gt;were&lt;/strong&gt; able to draw each face individually (like we could back in the days of fixed-function OpenGL), then
+  the constant switching of colours and textures for each face would make for some horrendously inefficient GPU state changes.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;depth-peeling-nope&quot;&gt;Depth peeling? Nope.&lt;/h4&gt;
+
+&lt;p&gt;I had also considered &lt;a href=&quot;http://en.wikipedia.org/wiki/Depth_peeling&quot;&gt;depth peeling&lt;/a&gt;, which is essentially an order-independent
+technique in which you render the scene multiple times, each time clipping the objects to a min-max layer, which you
+ move forwards each time. Even though that’s awesome for solving our problem for nested objects, like our boxes, it requires multiple
+ passes on the draw list for each frame. That would severely impact SceneJS’ efficiency at rendering large quantities
+ of objects, which is a priority feature.
+ &lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;solution-ordered-render-bins&quot;&gt;Solution: Ordered render bins&lt;/h2&gt;
+
+&lt;p&gt;In the end I went for the lowest common denominator and simply allowed you to organise scene objects within &lt;code&gt;layer&lt;/code&gt; nodes.
+ These work by manually partitioning the objects into prioritised render bins, ordered so that the objects within the
+ &lt;code&gt;layer&lt;/code&gt; with the lowest priority are rendered first.&lt;br /&gt;&lt;br /&gt;Note that since the &lt;code&gt;layer&lt;/code&gt; node’s priorities can be
+ dynamically reassigned, the way is also open to support some sort of automatic object Z-sorting later if needed.
+&lt;br /&gt;&lt;br /&gt;
+Let’s have a look at how we use the &lt;code&gt;layer&lt;/code&gt; nodes to render our boxes in the correct order for transparency.
+&lt;br /&gt;&lt;br /&gt;
+Here’s the scene that renders the nested boxes in the scene above.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// Mouse-orbited camera&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;cameras/orbit&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;yaw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pitch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;zoom&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;zoomSensitivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+            &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+
+                &lt;span class=&quot;c1&quot;&gt;// Inner opaque blue box.&lt;/span&gt;
+
+                &lt;span class=&quot;c1&quot;&gt;// Rendered first, within layer at priority -1.&lt;/span&gt;
+
+                &lt;span class=&quot;c1&quot;&gt;// Box is opaque because material has default alpha of 1.0, and box&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;// is not wrapped with a flags node with a &amp;#39;transparent&amp;#39; flag set.&lt;/span&gt;
+
+                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;layer&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;priority&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;material&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;scale&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+
+                                        &lt;span class=&quot;c1&quot;&gt;// Box primitive&lt;/span&gt;
+                                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+
+
+                &lt;span class=&quot;c1&quot;&gt;// Flags around our transparent boxes&lt;/span&gt;
+
+                &lt;span class=&quot;c1&quot;&gt;// Enables to &amp;#39;alpha&amp;#39; values on the materials around&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;// our boxes to to cause them to be translucent.&lt;/span&gt;
+
+                &lt;span class=&quot;c1&quot;&gt;// Also cull backfaces on those boxes because we can&amp;#39;t&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;// control the order in which faces render. We don&amp;#39;t want&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;// front faces rendering before back faces, which would&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;// cause the back faces to be rejected by the depth buffer&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;// and deny the opportunity&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;// to blend the faces - easy fix is just to not render the backfaces.&lt;/span&gt;
+
+                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;flags&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;transparent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;backfaces&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+
+                    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+
+                        &lt;span class=&quot;c1&quot;&gt;// Middle transparent red box&lt;/span&gt;
+
+                        &lt;span class=&quot;c1&quot;&gt;// Rendered next, in implicit layer with priority 0&lt;/span&gt;
+
+                        &lt;span class=&quot;c1&quot;&gt;// This box is transparent because its wrapped with a&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// material having an alpha channel that&amp;#39;s less than&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// 1.0, which works with the &amp;#39;transparent&amp;#39; flag.&lt;/span&gt;
+
+                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;material&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;alpha&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+                            &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;scale&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+                                    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+
+                        &lt;span class=&quot;c1&quot;&gt;// Outer transparent green cube&lt;/span&gt;
+
+                        &lt;span class=&quot;c1&quot;&gt;// Rendered last, within layer with priority 1&lt;/span&gt;
+
+                        &lt;span class=&quot;c1&quot;&gt;// This box is also transparent because its wrapped&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// with a material having an alpha channel that&amp;#39;s&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// less than 1.0, which works with the&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// &amp;#39;transparent&amp;#39; flag.&lt;/span&gt;
+
+                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;layer&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;priority&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;material&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;alpha&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+                                    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;scale&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+                                            &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                                                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;In this tutorial I’ve shown you how to use the &lt;code&gt;material&lt;/code&gt; node in conjunction with &lt;code&gt;flags&lt;/code&gt; nodes to make geometry
+   appear transparent. I also touched on the classic problem of making multiple overlapping transparent objects look good,
+    and described the partial solutuion provided by SceneJS through its &lt;code&gt;layer&lt;/code&gt; nodes, which order the rendering of geometries
+     so that they alpha-blend nicely with one another.
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;whats-next&quot;&gt;What’s next?&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Learn how to texture your transparency using &lt;a href=&quot;/articles/scenejs-alpha-mapping&quot;&gt;Alpha Maps&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-transparency&quot;&gt;Transparency in SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
@@ -284,6 +663,7 @@ back an additional &lt;code&gt;worldPos&lt;/code&gt; property in the result, whi
       &lt;li&gt;&lt;a href=&quot;#point-scenejs-to-the-plugins&quot;&gt;Point SceneJS to the plugins&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#create-a-scene&quot;&gt;Create a scene&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#spin-the-teapot&quot;&gt;Spin the teapot&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#replace-the-teapot&quot;&gt;Replace the teapot&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#whats-next&quot;&gt;What’s next?&lt;/a&gt;&lt;/li&gt;
@@ -349,15 +729,15 @@ Now let’s look at the essential bits of that &lt;code&gt;firstExample.html&lt;
                 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
                     &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;rotate&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
                     &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;myRotate&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
                     &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
 
                         &lt;span class=&quot;c1&quot;&gt;// Teapot primitive, implemented by plugin file&lt;/span&gt;
                         &lt;span class=&quot;c1&quot;&gt;// ./plugins/node/prims/teapot.js&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/teapot&amp;quot;&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/teapot&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;myTeapot&amp;quot;&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -379,6 +759,22 @@ Now let’s look at the essential bits of that &lt;code&gt;firstExample.html&lt;
         &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
             &lt;span class=&quot;nx&quot;&gt;myRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;angle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;replace-the-teapot&quot;&gt;Replace the teapot&lt;/h3&gt;
+
+&lt;p&gt;Scenes can be build incrementally. Let’s add another teapot&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;myTeapot&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myTeapot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;teapot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;destroy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;myRotate&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;myRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/torus&amp;quot;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -2490,6 +2886,218 @@ of your scene asynchronously, as it waits for plugins to load. Always get your n
 
 
 <entry>
+  <title type="html"><![CDATA[Alpha Mapping in SceneJS]]></title>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-alpha-mapping" />
+  <id>http://xeolabs.com/articles/scenejs-alpha-mapping</id>
+  <updated>2013-05-31T00:00:00-00:00</updated>
+  <published>2013-10-28T00:00:00-04:00</published>
+  
+  <author>
+    <name>@xeoLabs</name>
+    <uri>http://xeolabs.com</uri>
+    <email>lindsay.kay@xeolabs.com</email>
+  </author>
+  <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
+  &lt;header&gt;
+    &lt;h3&gt;Contents&lt;/h3&gt;
+  &lt;/header&gt;
+&lt;div id=&quot;drawer&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#basic-alpha-map&quot;&gt;Basic alpha map&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#texture-blend-mode&quot;&gt;Texture blend mode&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#video-alpha-map&quot;&gt;Video alpha map&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- /#table-of-contents --&gt;
+
+&lt;p&gt;Alpha mapping is a technique where an image is mapped to a 3D object to designate certain areas of the object to be transparent or translucent.
+&lt;br /&gt;&lt;br /&gt;
+In this tutorial, I’ll build on techniques from the &lt;a href=&quot;/articles/scenejs-transparency&quot;&gt;Transparency&lt;/a&gt; tutorial to show you how to&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;apply a texture to an object make holes in it&lt;/li&gt;
+  &lt;li&gt;apply a video texture to make animated areas of transparency
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;basic-alpha-map&quot;&gt;Basic alpha map&lt;/h1&gt;
+
+&lt;p&gt;As usual, we’ll point SceneJS at where you keep your plugins:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setConfigs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;pluginPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;./plugins&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then we’ll create the scene below, in which the outer green box has an alpha texture which creates transparent areas through
+which you can see the inner blue box.
+&lt;br /&gt;&lt;br /&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=alphaMap&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/basicAlphaMap.png&quot; alt=&quot;Alpha map&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=alphaMap&quot;&gt;Run this demo&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;Shown below is the texture we’ll use for the alpha map. The white areas will be where the outer box will be opaque,
+while the black areas are where it will be transparent.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://xeolabs.com/images/scenejs/leavesAlphaMap.jpg&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/leavesAlphaMapSmall.jpg&quot; alt=&quot;Alpha map image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;Listed below is the code that defines our scene. It’s using &lt;code&gt;flags&lt;/code&gt; and &lt;code&gt;material&lt;/code&gt; nodes to set up
+transparency (which you learned about in the &lt;a href=&quot;/articles/scenejs-transparency&quot;&gt;Transparency&lt;/a&gt; tutorial), plus a &lt;code&gt;texture&lt;/code&gt; node, which
+  varies the transparency across the surface of the outer green box.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// Orbiting camera node, implemented by plugin at&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// http://scenejs.org/api/latest/plugins/node/cameras/orbit.js&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;cameras/orbit&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;yaw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;pitch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;zoom&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;zoomSensitivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+            &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+
+                &lt;span class=&quot;c1&quot;&gt;// Outer green box with alpha map&lt;/span&gt;
+
+                &lt;span class=&quot;c1&quot;&gt;// Flags node enables transparency for the box.&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;// This enables the material `alpha` to specify&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;// the degree of opacity.&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;flags&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                        &lt;span class=&quot;nx&quot;&gt;transparent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+
+                        &lt;span class=&quot;c1&quot;&gt;// Material node&amp;#39;s &amp;#39;alpha&amp;#39; property makes&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// the pixels of the box opaque by default.&lt;/span&gt;
+
+                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;material&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;
+                            &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;alpha&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+
+                                &lt;span class=&quot;c1&quot;&gt;// The alpha map is a texture that&amp;#39;s&lt;/span&gt;
+                                &lt;span class=&quot;c1&quot;&gt;// applied to the alpha channel of the&lt;/span&gt;
+                                &lt;span class=&quot;c1&quot;&gt;// material, to vary it according to&lt;/span&gt;
+                                &lt;span class=&quot;c1&quot;&gt;// the intensity of each texture pixel.&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;texture&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;theTexture&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;layers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                            &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;../../../textures/leavesAlphaMap.jpg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                            &lt;span class=&quot;nx&quot;&gt;applyTo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;alpha&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                            &lt;span class=&quot;nx&quot;&gt;blendMode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;mul&amp;quot;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Default&lt;/span&gt;
+                                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+
+                &lt;span class=&quot;c1&quot;&gt;// Inner blue box&lt;/span&gt;
+
+                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;material&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                        &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;scale&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Things to note:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The &lt;code&gt;transparent&lt;/code&gt; flag on that &lt;code&gt;flags&lt;/code&gt; node enables transparent rendering of the outer green box.&lt;/li&gt;
+  &lt;li&gt;The &lt;code&gt;material&lt;/code&gt; node around the outer green box has an &lt;code&gt;alpha&lt;/code&gt; property, which is set to &lt;code&gt;1.0&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;An &lt;code&gt;alpha&lt;/code&gt; value of 0.0 is completely transparent, while 1.0 is completely opaque.&lt;/li&gt;
+  &lt;li&gt;The &lt;code&gt;texture&lt;/code&gt; node applies a texture to the outer box.&lt;/li&gt;
+  &lt;li&gt;The &lt;code&gt;texture&lt;/code&gt; node’s &lt;code&gt;applyTo&lt;/code&gt; property causes the image to be applied to the &lt;code&gt;material&lt;/code&gt; node’s &lt;code&gt;alpha&lt;/code&gt; property,
+effectively modulating the alpha across the box’s surface.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;texture-blend-mode&quot;&gt;Texture blend mode&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code&gt;blendMode&lt;/code&gt; on our texture has the value &lt;code&gt;multiply&lt;/code&gt;, which causes it to multiply the colour of each image pixel
+with the material alpha value, causing the material alpha to be 0.0 where the pixels are black, and 1.0 where the pixels are white.
+&lt;br /&gt;&lt;br /&gt;
+The other supported value for that property is &lt;code&gt;add&lt;/code&gt;, which adds the value of each image pixel to the alpha. To
+achieve the same effect as shown in this example, you would then need an &lt;code&gt;alpha&lt;/code&gt; of 0.0 on the &lt;code&gt;material&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;video-alpha-map&quot;&gt;Video alpha map&lt;/h1&gt;
+
+&lt;p&gt;Now I’ll show you how to apply a video as an alpha map. This time, we’ll dynamically sample our texture from &lt;a href=&quot;http://xeolabs.com/images/scenejs/testVideo.ogv&quot;&gt;an .OGV file&lt;/a&gt;, to
+create a cool flowing gas pattern across the surface of the outer box.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=videoAlphaMap&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/videoAlphaMap.jpg&quot; alt=&quot;Alpha video map&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=videoAlphaMap&quot;&gt;Run this demo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;The code is identical to the previous example, except for the &lt;code&gt;texture&lt;/code&gt; node, which looks like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;texture&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;layers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;video&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;../../../movies/testVideo.ogv&amp;quot;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;applyTo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;alpha&amp;quot;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Things to note:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The &lt;code&gt;source&lt;/code&gt; on this &lt;code&gt;texture&lt;/code&gt; causes it to employ the core SceneJS “video” texture plugin to stream the video file into the texture&lt;/li&gt;
+  &lt;li&gt;Each of the video’s frames is a grayscale image, applied using the same principles as used for regular image textures
+&lt;br /&gt;
+# Conclusion&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In this tutorial I showed you how to use the &lt;code&gt;texture&lt;/code&gt; node, in conjunction with transparency techniques I described
+in the &lt;a href=&quot;/articles/scenejs-transparency&quot;&gt;Transparency&lt;/a&gt; tutorial, to make holes in things. I also showed you how it’s easy
+ to use a video, instead of the usual image, in order to make animated regions of transparancy.&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-alpha-mapping&quot;&gt;Alpha Mapping in SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[Migrating from SceneJS 2.0 to 3.1]]></title>
   <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/migrating-scenejs-2-to-3" />
   <id>http://xeolabs.com/articles/migrating-scenejs-2-to-3</id>
@@ -2749,6 +3357,8 @@ This means that you can create a scene containing nothing but a &lt;code&gt;geom
   &lt;li&gt;&lt;a href=&quot;#introduction&quot;&gt;Introduction&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#creating-3d-scenes&quot;&gt;Creating 3D Scenes&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#interaction&quot;&gt;Interaction&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#effects&quot;&gt;Effects&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#texturing&quot;&gt;Texturing&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#importing&quot;&gt;Importing&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#physics&quot;&gt;Physics&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#optimisation&quot;&gt;Optimisation&lt;/a&gt;&lt;/li&gt;
@@ -2788,6 +3398,16 @@ Have fun!&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/articles/scenejs-picking&quot;&gt;Picking&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/articles/scenejs-ray-picking&quot;&gt;Ray Picking&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/articles/scenejs-pickflyorbit-camera&quot;&gt;Pick-Fly-Orbit Camera&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;effects&quot;&gt;Effects&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/articles/scenejs-transparency&quot;&gt;Transparency&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;texturing&quot;&gt;Texturing&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/articles/scenejs-alpha-mapping&quot;&gt;Alpha Mapping&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;importing&quot;&gt;Importing&lt;/h3&gt;

@@ -44,6 +44,12 @@ Have fun!
 * [Ray Picking](/articles/scenejs-ray-picking)
 * [Pick-Fly-Orbit Camera](/articles/scenejs-pickflyorbit-camera)
 
+### Effects
+* [Transparency](/articles/scenejs-transparency)
+
+### Texturing
+* [Alpha Mapping](/articles/scenejs-alpha-mapping)
+
 ### Importing
 * [Importing .OBJ, .MD2 and .3DS](/articles/scenejs-obj-md2-3ds)
 

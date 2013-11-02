@@ -128,6 +128,7 @@
       <li><a href="#point-scenejs-to-the-plugins">Point SceneJS to the plugins</a></li>
       <li><a href="#create-a-scene">Create a scene</a></li>
       <li><a href="#spin-the-teapot">Spin the teapot</a></li>
+      <li><a href="#replace-the-teapot">Replace the teapot</a></li>
     </ul>
   </li>
   <li><a href="#whats-next">What’s next?</a></li>
@@ -193,15 +194,15 @@ Now let’s look at the essential bits of that <code>firstExample.html</code> pa
                 <span class="p">{</span>
                     <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;rotate&quot;</span><span class="p">,</span>
                     <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;myRotate&quot;</span><span class="p">,</span>
-                    <span class="nx">y</span><span class="o">:</span> <span class="mf">1.0</span><span class="p">,</span>
-                    <span class="nx">angle</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="nx">y</span><span class="o">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nx">angle</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
 
                     <span class="nx">nodes</span><span class="o">:</span> <span class="p">[</span>
 
                         <span class="c1">// Teapot primitive, implemented by plugin file</span>
                         <span class="c1">// ./plugins/node/prims/teapot.js</span>
                         <span class="p">{</span>
-                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/teapot&quot;</span>
+                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/teapot&quot;</span><span class="p">,</span>
+                            <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;myTeapot&quot;</span>
                         <span class="p">}</span>
                     <span class="p">]</span>
                 <span class="p">}</span>
@@ -223,6 +224,22 @@ Now let’s look at the essential bits of that <code>firstExample.html</code> pa
         <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
             <span class="nx">myRotate</span><span class="p">.</span><span class="nx">setAngle</span><span class="p">(</span><span class="nx">angle</span> <span class="o">+=</span> <span class="mf">0.5</span><span class="p">);</span>
         <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<h3 id="replace-the-teapot">Replace the teapot</h3>
+
+<p>Scenes can be build incrementally. Let’s add another teapot</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">scene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">&quot;myTeapot&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">myTeapot</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="nx">teapot</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+
+    <span class="nx">scene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">&quot;myRotate&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">myRotate</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">myRotate</span><span class="p">.</span><span class="nx">addNode</span><span class="p">({</span>
+            <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;prims/torus&quot;</span>
+        <span class="p">});</span>
+    <span class="p">})</span>
 <span class="p">});</span>
 </code></pre></div>
 
@@ -288,13 +305,13 @@ Now let’s look at the essential bits of that <code>firstExample.html</code> pa
       
       
       
-      <li><a href="http://xeolabs.com/articles/scenejs-ray-picking-technique" title="Pssst...How Fast Ray Picking Works in SceneJS">Pssst...How Fast Ray Picking Works in SceneJS</a></li>
+      <li><a href="http://xeolabs.com/articles/scenejs-transparency" title="Transparency in SceneJS">Transparency in SceneJS</a></li>
       
     
       
       
       
-      <li><a href="http://xeolabs.com/articles/scenejs-ray-picking" title="Fast Ray Picking in SceneJS">Fast Ray Picking in SceneJS</a></li>
+      <li><a href="http://xeolabs.com/articles/scenejs-ray-picking-technique" title="Pssst...How Fast Ray Picking Works in SceneJS">Pssst...How Fast Ray Picking Works in SceneJS</a></li>
       
     
     </ul>
