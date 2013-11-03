@@ -119,8 +119,8 @@ make the box 60% transparent.
 * The box would be invisible if ```alpha``` was 0.0, and opaque if ```alpha``` was 1.0.
 
 
-SceneJS automatically ensures that all transparent objects are rendered **after** opaque objects. If the opaque teapot was
-rendered after the transparent box, then the teapot would not be visible because its fragments would have been rejected by the
+SceneJS automatically ensures that all transparent objects are rendered **after** opaque objects. If the transparent box was
+rendered before the teapot, then the teapot would not be visible because its fragments would have been rejected by the
 WebGL [depth test](http://en.wikipedia.org/wiki/Z-buffering) because the pixels for the box would already be in the depth buffer,
 with closer depth values. Graphics geeks will note that there may be a problem with depth buffer rejection if we have
 multiple transparent objects. I'll address that in the following section on Transparency Sorting.<br>
@@ -231,7 +231,9 @@ var scene = SceneJS.createScene({
                 // is not wrapped with a flags node with a 'transparent' flag set.
 
                 {
-                    type:"layer", priority:-1,
+                    type:"layer",
+                    priority:-1,
+
                     nodes:[
                         {
                             type:"material", color:{ r:0.2, g:0.2, b:1.0 },
@@ -272,24 +274,35 @@ var scene = SceneJS.createScene({
 
                         // Middle transparent red box
 
-                        // Rendered next, in implicit layer with priority 0
+                        // Rendered next, in implicit layer at priority 0
+
+                        // We don't actually need this layer because anything
+                        // not within a Anything not in a layer is actually
+                        // at priority 0 implicitly.
 
                         // This box is transparent because its wrapped with a
                         // material having an alpha channel that's less than
                         // 1.0, which works with the 'transparent' flag.
 
                         {
-                            type:"material",
-                            color:{ r:1.0, g:0.2, b:0.2 },
-                            alpha:0.2,
+                            type:"layer",
+                            priority:0,
 
                             nodes:[
                                 {
-                                    type:"scale", x:6, y:6, z:6,
+                                    type:"material",
+                                    color:{ r:1.0, g:0.2, b:0.2 },
+                                    alpha:0.2,
 
                                     nodes:[
                                         {
-                                            type:"prims/box"
+                                            type:"scale", x:6, y:6, z:6,
+
+                                            nodes:[
+                                                {
+                                                    type:"prims/box"
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
@@ -306,7 +319,10 @@ var scene = SceneJS.createScene({
                         // 'transparent' flag.
 
                         {
-                            type:"layer", priority:1,
+                            type:"layer",
+                            priority:1,
+                            id: "greenBoxLayer",
+
                             nodes:[
                                 {
                                     type:"material",
@@ -334,6 +350,27 @@ var scene = SceneJS.createScene({
     ]
 });
 {% endhighlight %}
+
+Things to note:
+
+* The boxes are wrapped with ```layer``` nodes, with ```priority``` properties set to order their rendering so that the
+innermost box renders first
+* Anything not within a ```layer``` node is implicitly at priority 0. The ```layer``` around the middle box is therefore
+ actually redundant.
+
+### Changing layer priorities
+You can change the ```priority``` on the ```layer``` nodes at any time. Let's change the priority for the green box:
+{% highlight javascript %}
+myScene.getNode("greenBoxLayer",
+    function(layer) {
+        layer.setPriority(-2);
+    });
+{% endhighlight %}
+That's going to make the green outermost box render before the innermost blue box, which is actually going to wreck our
+ transparency sorting.
+ <br><br>
+**Performance tip**: changing those priorities causes SceneJS to re-sort its internal display list, so there will be a
+performance hit if you do that frequently.
 
 <br><br>
 
