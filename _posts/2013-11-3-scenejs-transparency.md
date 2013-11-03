@@ -372,7 +372,7 @@ That's going to make the green outermost box render before the innermost blue bo
 **Performance tip**: changing those priorities causes SceneJS to re-sort its internal display list, so there will be a
 performance hit if you do that frequently.
 
-<br><br>
+<br>
 
 # Conclusion
 
@@ -380,7 +380,7 @@ In this tutorial I've shown you how to use the ```material``` node in conjunctio
    appear transparent. I also touched on the classic problem of making multiple overlapping transparent objects look good,
     and described the partial solutuion provided by SceneJS through its ```layer``` nodes, which order the rendering of geometries
      so that they alpha-blend nicely with one another.
-<br>
+<br><br>
 
 # What's next?
 
