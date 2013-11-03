@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2013-11-02T19:58:59-04:00</updated>
+<updated>2013-11-02T20:43:49-04:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>@xeoLabs</name>
@@ -45,7 +45,10 @@
           &lt;li&gt;&lt;a href=&quot;#depth-peeling-nope&quot;&gt;Depth peeling? Nope.&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#solution-ordered-render-bins&quot;&gt;Solution: Ordered render bins&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#solution-ordered-render-bins&quot;&gt;Solution: Ordered render bins&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#changing-layer-priorities&quot;&gt;Changing layer priorities&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
@@ -157,8 +160,8 @@ make the box 60% transparent.&lt;/li&gt;
   &lt;li&gt;The box would be invisible if &lt;code&gt;alpha&lt;/code&gt; was 0.0, and opaque if &lt;code&gt;alpha&lt;/code&gt; was 1.0.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;SceneJS automatically ensures that all transparent objects are rendered &lt;strong&gt;after&lt;/strong&gt; opaque objects. If the opaque teapot was
-rendered after the transparent box, then the teapot would not be visible because its fragments would have been rejected by the
+&lt;p&gt;SceneJS automatically ensures that all transparent objects are rendered &lt;strong&gt;after&lt;/strong&gt; opaque objects. If the transparent box was
+rendered before the teapot, then the teapot would not be visible because its fragments would have been rejected by the
 WebGL &lt;a href=&quot;http://en.wikipedia.org/wiki/Z-buffering&quot;&gt;depth test&lt;/a&gt; because the pixels for the box would already be in the depth buffer,
 with closer depth values. Graphics geeks will note that there may be a problem with depth buffer rejection if we have
 multiple transparent objects. I’ll address that in the following section on Transparency Sorting.&lt;br /&gt;&lt;/p&gt;
@@ -269,7 +272,9 @@ Here’s the scene that renders the nested boxes in the scene above.&lt;/p&gt;
                 &lt;span class=&quot;c1&quot;&gt;// is not wrapped with a flags node with a &amp;#39;transparent&amp;#39; flag set.&lt;/span&gt;
 
                 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;layer&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;priority&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;layer&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;priority&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
                     &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
                             &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;material&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
@@ -310,24 +315,35 @@ Here’s the scene that renders the nested boxes in the scene above.&lt;/p&gt;
 
                         &lt;span class=&quot;c1&quot;&gt;// Middle transparent red box&lt;/span&gt;
 
-                        &lt;span class=&quot;c1&quot;&gt;// Rendered next, in implicit layer with priority 0&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// Rendered next, in implicit layer at priority 0&lt;/span&gt;
+
+                        &lt;span class=&quot;c1&quot;&gt;// We don&amp;#39;t actually need this layer because anything&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// not within a Anything not in a layer is actually&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// at priority 0 implicitly.&lt;/span&gt;
 
                         &lt;span class=&quot;c1&quot;&gt;// This box is transparent because its wrapped with a&lt;/span&gt;
                         &lt;span class=&quot;c1&quot;&gt;// material having an alpha channel that&amp;#39;s less than&lt;/span&gt;
                         &lt;span class=&quot;c1&quot;&gt;// 1.0, which works with the &amp;#39;transparent&amp;#39; flag.&lt;/span&gt;
 
                         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;material&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                            &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-                            &lt;span class=&quot;nx&quot;&gt;alpha&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;layer&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;priority&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
                             &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
                                 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;scale&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;material&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;alpha&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
                                     &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;scale&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+                                            &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                                                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                                     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -344,7 +360,10 @@ Here’s the scene that renders the nested boxes in the scene above.&lt;/p&gt;
                         &lt;span class=&quot;c1&quot;&gt;// &amp;#39;transparent&amp;#39; flag.&lt;/span&gt;
 
                         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;layer&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;priority&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;layer&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;priority&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;greenBoxLayer&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
                             &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
                                 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
                                     &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;material&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -372,6 +391,30 @@ Here’s the scene that renders the nested boxes in the scene above.&lt;/p&gt;
     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Things to note:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The boxes are wrapped with &lt;code&gt;layer&lt;/code&gt; nodes, with &lt;code&gt;priority&lt;/code&gt; properties set to order their rendering so that the
+innermost box renders first&lt;/li&gt;
+  &lt;li&gt;Anything not within a &lt;code&gt;layer&lt;/code&gt; node is implicitly at priority 0. The &lt;code&gt;layer&lt;/code&gt; around the middle box is therefore
+ actually redundant.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;changing-layer-priorities&quot;&gt;Changing layer priorities&lt;/h3&gt;
+&lt;p&gt;You can change the &lt;code&gt;priority&lt;/code&gt; on the &lt;code&gt;layer&lt;/code&gt; nodes at any time. Let’s change the priority for the green box:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;myScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;greenBoxLayer&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;layer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;layer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setPriority&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;That’s going to make the green outermost box render before the innermost blue box, which is actually going to wreck our
+ transparency sorting.
+ &lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;Performance tip&lt;/strong&gt;: changing those priorities causes SceneJS to re-sort its internal display list, so there will be a
+performance hit if you do that frequently.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 

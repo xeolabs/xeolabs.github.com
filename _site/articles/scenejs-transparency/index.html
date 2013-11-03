@@ -135,7 +135,10 @@
           <li><a href="#depth-peeling-nope">Depth peeling? Nope.</a></li>
         </ul>
       </li>
-      <li><a href="#solution-ordered-render-bins">Solution: Ordered render bins</a></li>
+      <li><a href="#solution-ordered-render-bins">Solution: Ordered render bins</a>        <ul>
+          <li><a href="#changing-layer-priorities">Changing layer priorities</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li><a href="#conclusion">Conclusion</a></li>
@@ -247,8 +250,8 @@ make the box 60% transparent.</li>
   <li>The box would be invisible if <code>alpha</code> was 0.0, and opaque if <code>alpha</code> was 1.0.</li>
 </ul>
 
-<p>SceneJS automatically ensures that all transparent objects are rendered <strong>after</strong> opaque objects. If the opaque teapot was
-rendered after the transparent box, then the teapot would not be visible because its fragments would have been rejected by the
+<p>SceneJS automatically ensures that all transparent objects are rendered <strong>after</strong> opaque objects. If the transparent box was
+rendered before the teapot, then the teapot would not be visible because its fragments would have been rejected by the
 WebGL <a href="http://en.wikipedia.org/wiki/Z-buffering">depth test</a> because the pixels for the box would already be in the depth buffer,
 with closer depth values. Graphics geeks will note that there may be a problem with depth buffer rejection if we have
 multiple transparent objects. I’ll address that in the following section on Transparency Sorting.<br /></p>
@@ -359,7 +362,9 @@ Here’s the scene that renders the nested boxes in the scene above.</p>
                 <span class="c1">// is not wrapped with a flags node with a &#39;transparent&#39; flag set.</span>
 
                 <span class="p">{</span>
-                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;layer&quot;</span><span class="p">,</span> <span class="nx">priority</span><span class="o">:-</span><span class="mi">1</span><span class="p">,</span>
+                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;layer&quot;</span><span class="p">,</span>
+                    <span class="nx">priority</span><span class="o">:-</span><span class="mi">1</span><span class="p">,</span>
+
                     <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
                         <span class="p">{</span>
                             <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;material&quot;</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span><span class="p">{</span> <span class="nx">r</span><span class="o">:</span><span class="mf">0.2</span><span class="p">,</span> <span class="nx">g</span><span class="o">:</span><span class="mf">0.2</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mf">1.0</span> <span class="p">},</span>
@@ -400,24 +405,35 @@ Here’s the scene that renders the nested boxes in the scene above.</p>
 
                         <span class="c1">// Middle transparent red box</span>
 
-                        <span class="c1">// Rendered next, in implicit layer with priority 0</span>
+                        <span class="c1">// Rendered next, in implicit layer at priority 0</span>
+
+                        <span class="c1">// We don&#39;t actually need this layer because anything</span>
+                        <span class="c1">// not within a Anything not in a layer is actually</span>
+                        <span class="c1">// at priority 0 implicitly.</span>
 
                         <span class="c1">// This box is transparent because its wrapped with a</span>
                         <span class="c1">// material having an alpha channel that&#39;s less than</span>
                         <span class="c1">// 1.0, which works with the &#39;transparent&#39; flag.</span>
 
                         <span class="p">{</span>
-                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;material&quot;</span><span class="p">,</span>
-                            <span class="nx">color</span><span class="o">:</span><span class="p">{</span> <span class="nx">r</span><span class="o">:</span><span class="mf">1.0</span><span class="p">,</span> <span class="nx">g</span><span class="o">:</span><span class="mf">0.2</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mf">0.2</span> <span class="p">},</span>
-                            <span class="nx">alpha</span><span class="o">:</span><span class="mf">0.2</span><span class="p">,</span>
+                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;layer&quot;</span><span class="p">,</span>
+                            <span class="nx">priority</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span>
 
                             <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
                                 <span class="p">{</span>
-                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;scale&quot;</span><span class="p">,</span> <span class="nx">x</span><span class="o">:</span><span class="mi">6</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">6</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mi">6</span><span class="p">,</span>
+                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;material&quot;</span><span class="p">,</span>
+                                    <span class="nx">color</span><span class="o">:</span><span class="p">{</span> <span class="nx">r</span><span class="o">:</span><span class="mf">1.0</span><span class="p">,</span> <span class="nx">g</span><span class="o">:</span><span class="mf">0.2</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mf">0.2</span> <span class="p">},</span>
+                                    <span class="nx">alpha</span><span class="o">:</span><span class="mf">0.2</span><span class="p">,</span>
 
                                     <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
                                         <span class="p">{</span>
-                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/box&quot;</span>
+                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;scale&quot;</span><span class="p">,</span> <span class="nx">x</span><span class="o">:</span><span class="mi">6</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">6</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mi">6</span><span class="p">,</span>
+
+                                            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                                                <span class="p">{</span>
+                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/box&quot;</span>
+                                                <span class="p">}</span>
+                                            <span class="p">]</span>
                                         <span class="p">}</span>
                                     <span class="p">]</span>
                                 <span class="p">}</span>
@@ -434,7 +450,10 @@ Here’s the scene that renders the nested boxes in the scene above.</p>
                         <span class="c1">// &#39;transparent&#39; flag.</span>
 
                         <span class="p">{</span>
-                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;layer&quot;</span><span class="p">,</span> <span class="nx">priority</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;layer&quot;</span><span class="p">,</span>
+                            <span class="nx">priority</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+                            <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;greenBoxLayer&quot;</span><span class="p">,</span>
+
                             <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
                                 <span class="p">{</span>
                                     <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;material&quot;</span><span class="p">,</span>
@@ -462,6 +481,30 @@ Here’s the scene that renders the nested boxes in the scene above.</p>
     <span class="p">]</span>
 <span class="p">});</span>
 </code></pre></div>
+
+<p>Things to note:</p>
+
+<ul>
+  <li>The boxes are wrapped with <code>layer</code> nodes, with <code>priority</code> properties set to order their rendering so that the
+innermost box renders first</li>
+  <li>Anything not within a <code>layer</code> node is implicitly at priority 0. The <code>layer</code> around the middle box is therefore
+ actually redundant.</li>
+</ul>
+
+<h3 id="changing-layer-priorities">Changing layer priorities</h3>
+<p>You can change the <code>priority</code> on the <code>layer</code> nodes at any time. Let’s change the priority for the green box:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">myScene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">&quot;greenBoxLayer&quot;</span><span class="p">,</span>
+    <span class="kd">function</span><span class="p">(</span><span class="nx">layer</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">layer</span><span class="p">.</span><span class="nx">setPriority</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+    <span class="p">});</span>
+</code></pre></div>
+
+<p>That’s going to make the green outermost box render before the innermost blue box, which is actually going to wreck our
+ transparency sorting.
+ <br /><br />
+<strong>Performance tip</strong>: changing those priorities causes SceneJS to re-sort its internal display list, so there will be a
+performance hit if you do that frequently.</p>
 
 <p><br /><br /></p>
 
