@@ -159,8 +159,8 @@ achieve the same effect as shown in this example, you would then need an ```alph
 #Video alpha map
 
 Now I'll show you how to apply a video as an alpha map. This time, we'll dynamically sample our texture from [an .OGV file]({{ site.url }}/images/scenejs/testVideo.ogv), to
-create a cool flowing gas pattern across the surface of the outer box.<br><br>
-
+create a cool flowing gas pattern across the surface of the outer box.
+<br><br>
 [![Alpha video map]({{ site.url }}/images/scenejs/videoAlphaMap.jpg)](http://scenejs.org/examples.html?page=videoAlphaMap)
 [Run this demo](http://scenejs.org/examples.html?page=videoAlphaMap)
 
