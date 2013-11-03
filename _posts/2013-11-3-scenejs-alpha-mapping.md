@@ -154,7 +154,7 @@ The ```blendMode``` on our texture has the value ```multiply```, which causes it
 with the material alpha value, causing the material alpha to be 0.0 where the pixels are black, and 1.0 where the pixels are white.
 <br><br>
 The other supported value for that property is ```add```, which adds the value of each image pixel to the alpha. To
-achieve the same effect as shown in this example, you would then need an ```alpha``` of 0.0 on the ```material```.
+achieve the same effect as shown in this example, you would then need an ```alpha``` of 0.0 on the ```material```.<br>
 
 #Video alpha map
 
