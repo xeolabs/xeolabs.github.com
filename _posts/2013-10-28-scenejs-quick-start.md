@@ -119,7 +119,7 @@ Scenes can be build incrementally. Let's add another teapot
 {% highlight javascript %}
 scene.getNode("myTeapot", function(myTeapot) {
 
-    teapot.destroy();
+    myTeapot.destroy();
 
     scene.getNode("myRotate", function(myRotate) {
         myRotate.addNode({

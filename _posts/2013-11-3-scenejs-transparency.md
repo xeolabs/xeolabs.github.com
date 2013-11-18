@@ -118,12 +118,18 @@ Things to note:
 make the box 60% transparent.
 * The box would be invisible if ```alpha``` was 0.0, and opaque if ```alpha``` was 1.0.
 
-
-SceneJS automatically ensures that all transparent objects are rendered **after** opaque objects. If the transparent box was
+SceneJS automatically ensures that all transparent objects are rendered *after* opaque objects. If the transparent box was
 rendered before the teapot, then the teapot would not be visible because its fragments would have been rejected by the
 WebGL [depth test](http://en.wikipedia.org/wiki/Z-buffering) because the pixels for the box would already be in the depth buffer,
 with closer depth values. Graphics geeks will note that there may be a problem with depth buffer rejection if we have
-multiple transparent objects. I'll address that in the following section on Transparency Sorting.<br>
+multiple transparent objects. I'll address that in the following section on Transparency Sorting.<br><br>
+
+When designing SceneJS, I had considered just making the ```transparent``` property on ```flags``` nodes true by default.
+That way, an ```alpha``` value less than 1.0 would be sufficient to make the box transparent, no ```flags``` node required. However,
+   that doesn't quite fit with alpha mapping (see tutorial on [Alpha Maps](/articles/scenejs-alpha-mapping)). We might have an ```alpha``` of 1.0, then
+   have an alpha map that modifies it for fragments within the shader, which fails to create transparency for those because SceneJS has already
+   determined that the geometry is opaque. That's one reason we have ```flags``` in the mix, other being that we can use them
+   to easily switch transparency on and off for chunks of our scenes.<br>
 
 ### Switching transparency on and off
 You can make the box opaque by flipping the ```transparent``` flag on that ```flags``` node:

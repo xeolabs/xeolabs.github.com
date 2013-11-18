@@ -25,14 +25,12 @@ tags: [scenejs, tutorial, texture]
    * ```texture``` nodes pattern the light or material color as it is applied to the surface, sourcing their patterns from images or video streams.
    * ```flags``` configure SceneJS rendering modes for light and texture for the objects.
 
-SceneJS provides built-in defaults for all these nodes types except ```texture```, which makes it easy to play around with each of these
-node types by themselves.
+In this tutorial we'll look at everything except for ```texture```, which is such a big topic that it's covered in several
+other tutorials.
 
 ### Lights
 
 ### Material
-
-### Texture
 
 ### Flags
 
