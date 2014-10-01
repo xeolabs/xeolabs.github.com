@@ -46,6 +46,7 @@ Have fun!
 
 ### Effects
 * [Transparency](/articles/scenejs-transparency)
+* [Reflections](/articles/scenejs-reflection)
 
 ### Texturing
 * [Alpha Mapping](/articles/scenejs-alpha-mapping)
