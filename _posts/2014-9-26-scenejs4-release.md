@@ -155,7 +155,6 @@ I've tidied up the names of a few plugins, which define non-core node types:
 
 v3.2 | | v4.0
 ----|----
-prims/boundary | -> | [geometry/boundary](http://scenejs.org/examples/index.html#geometry_boundary)
 prims/box | -> | [geometry/box](http://scenejs.org/examples/index.html#geometry_box)
 prims/cylinder | -> | [geometry/cylinder](http://scenejs.org/examples/index.html#geometry_cylinder)
 prims/grid | -> | [geometry/grid](http://scenejs.org/examples/index.html#geometry_grid)
