@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2014-10-01T04:58:33-04:00</updated>
+<updated>2014-10-01T05:24:34-04:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>@xeoLabs</name>
@@ -133,7 +133,7 @@ the previous version. Check out &lt;a href=&quot;/articles/scenejs-reflection&qu
 
 &lt;h2 id=&quot;texture-node-changes&quot;&gt;Texture node changes&lt;/h2&gt;
 
-&lt;p&gt;The only breakage in backward compatibility in this release (hence the major version change) is with the &lt;strong&gt;texture&lt;/strong&gt; node,
+&lt;p&gt;Besides some plugin renamings (see below), the only breakage in backward compatibility in this release (hence the major version change) is with the &lt;strong&gt;texture&lt;/strong&gt; node,
 as shown below. Previously, the texture node had a &lt;strong&gt;layers&lt;/strong&gt; property, in which we could specify one or more texture layers.
 Now in v4.0 we specify layers as individual nested texture nodes, which makes updating properties on the layers much cleaner.
 When we want to update a layer’s blend factor, for example, we get the texture for the layer and set that property on the node,

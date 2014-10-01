@@ -98,7 +98,7 @@ These are primarily aimed at making SceneJS render faster on mobile, GPU-bound d
 
 ## Texture node changes
 
-The only breakage in backward compatibility in this release (hence the major version change) is with the **texture** node,
+Besides some plugin renamings (see below), the only breakage in backward compatibility in this release (hence the major version change) is with the **texture** node,
 as shown below. Previously, the texture node had a **layers** property, in which we could specify one or more texture layers.
 Now in v4.0 we specify layers as individual nested texture nodes, which makes updating properties on the layers much cleaner.
 When we want to update a layer's blend factor, for example, we get the texture for the layer and set that property on the node,

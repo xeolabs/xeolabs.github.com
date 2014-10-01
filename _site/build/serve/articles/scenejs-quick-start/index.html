@@ -1,0 +1,363 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>SceneJS Quick Start &#8211; xeoLabs</title>
+<meta name="description" content="Get cracking with SceneJS in two minutes">
+<meta name="keywords" content="scenejs, tutorial, definition">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/">
+<meta name="twitter:title" content="SceneJS Quick Start">
+<meta name="twitter:description" content="Get cracking with SceneJS in two minutes">
+<meta name="twitter:creator" content="@xeolabs">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SceneJS Quick Start">
+<meta property="og:description" content="Get cracking with SceneJS in two minutes">
+<meta property="og:url" content="/articles/scenejs-quick-start">
+<meta property="og:site_name" content="xeoLabs">
+
+
+
+
+
+<link rel="canonical" href="/articles/scenejs-quick-start">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="xeoLabs Feed">
+<link rel="author" href="https://plus.google.com/u/0/110983138227486752827/posts?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="article" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="">xeoLabs</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <ul>
+		        
+				<li><a href="/about" >About</a></li>
+		        
+				<li><a href="/articles" >Articles</a></li>
+		        
+				<li><a href="/articles/learning-scenejs" >SceneJS Tutorials</a></li>
+		        
+				<li><a href="http://scenejs.org" target="_blank">SceneJS.org</a></li>
+		        
+				<li><a href="http://biodigitalhuman.com" target="_blank">BioDigitalHuman.com</a></li>
+		        
+		        <li><i class="icon-feed"></i> <a href="/feed.xml" title="Atom/RSS feed">Feed</a>
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <div class="article-author-top">
+    <img src="/images/avatar.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+<h3><a href="/about/">@xeoLabs</a></h3>
+<p>Lindsay Kay<br>3D Web developer</p>
+<a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+  </div>
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <div class="headline-wrap">
+      <h1 itemprop="name">SceneJS Quick Start</h1>
+      <h2></h2>
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap" itemprop="text">
+      <section id="table-of-contents" class="toc">
+  <header>
+    <h3>Contents</h3>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#first-example">First example</a>    <ul>
+      <li><a href="#download-and-unzip-scenejs-and-plugins">Download and unzip SceneJS and plugins</a></li>
+      <li><a href="#link-to-the-scenejs-library">Link to the SceneJS library</a></li>
+      <li><a href="#point-scenejs-to-the-plugins">Point SceneJS to the plugins</a></li>
+      <li><a href="#create-a-scene">Create a scene</a></li>
+      <li><a href="#spin-the-teapot">Spin the teapot</a></li>
+      <li><a href="#replace-the-teapot">Replace the teapot</a></li>
+    </ul>
+  </li>
+  <li><a href="#whats-next">What’s next?</a></li>
+</ul>
+
+  </div>
+</section>
+<!-- /#table-of-contents -->
+
+<p><a href="http://scenejs.org">SceneJS</a> is an extensible WebGL-based engine for doing high-performance 3D visualisation in the browser
+without using plugins.
+<br /><br />Let’s start easy, with an example that shows the essential concepts of this engine.</p>
+
+<h1 id="first-example">First example</h1>
+<p>We’re going to render this spinning Utah teapot:
+<br /><br /></p>
+
+<p><a href="http://scenejs.org/examples.html?page=firstExample"><img src="/images/scenejs/firstExample.png" alt="SceneJS First Example" /></a></p>
+
+<p><a href="http://scenejs.org/examples.html?page=firstExample">Run this example</a>.</p>
+
+<h3 id="download-and-unzip-scenejs-and-plugins">Download and unzip SceneJS and plugins</h3>
+
+<p>Download and unzip the <a href="http://scenejs.org/api/latest/scenejs.zip">SceneJS ZIP archive</a>. Then we’ll have these files:</p>
+
+<div class="highlight"><pre><code class="html">.
+├── scenejs.js
+├── plugins
+└── firstExample.html
+</code></pre>
+</div>
+
+<p>We have the SceneJS library, the SceneJS plugins bundle, and an example HTML page which renders our teapot.
+  <br /><br />
+Now let’s look at the essential bits of that <code>firstExample.html</code> page.</p>
+
+<h3 id="link-to-the-scenejs-library">Link to the SceneJS library</h3>
+
+<p>Within the &lt;head&gt; tag of the page, we link to the SceneJS library:</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;./scenejs.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre>
+</div>
+
+<h3 id="point-scenejs-to-the-plugins">Point SceneJS to the plugins</h3>
+
+<p>Within the &lt;script&gt; tag, the first thing we do is configure SceneJS to find those plugins:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">setConfigs</span><span class="p">({</span>
+    <span class="nx">pluginPath</span><span class="o">:</span> <span class="s2">&quot;./plugins&quot;</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<h3 id="create-a-scene">Create a scene</h3>
+
+<p>Then we go wild and create our spinning blue teapot:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="nx">SceneJS</span><span class="p">.</span><span class="nx">createScene</span><span class="p">({</span>
+    <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;material&quot;</span><span class="p">,</span>
+            <span class="nx">color</span><span class="o">:</span> <span class="p">{</span> <span class="nx">r</span><span class="o">:</span> <span class="mf">0.3</span><span class="p">,</span> <span class="nx">g</span><span class="o">:</span> <span class="mf">0.3</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span> <span class="mf">1.0</span> <span class="p">},</span>
+
+            <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;rotate&quot;</span><span class="p">,</span>
+                    <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;myRotate&quot;</span><span class="p">,</span>
+                    <span class="nx">y</span><span class="o">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nx">angle</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+
+                    <span class="nx">nodes</span><span class="o">:</span> <span class="p">[</span>
+
+                        <span class="c1">// Teapot primitive, implemented by plugin file</span>
+                        <span class="c1">// ./plugins/node/geometry/teapot.js</span>
+                        <span class="p">{</span>
+                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/teapot&quot;</span><span class="p">,</span>
+                            <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;myTeapot&quot;</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<h3 id="spin-the-teapot">Spin the teapot</h3>
+
+<p>Finally, we start the teapot spinning:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">scene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">&quot;myRotate&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">myRotate</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">angle</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="nx">scene</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;tick&quot;</span><span class="p">,</span>
+        <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">myRotate</span><span class="p">.</span><span class="nx">setAngle</span><span class="p">(</span><span class="nx">angle</span> <span class="o">+=</span> <span class="mf">0.5</span><span class="p">);</span>
+        <span class="p">});</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<h3 id="replace-the-teapot">Replace the teapot</h3>
+
+<p>Scenes can be build incrementally. Let’s add another teapot</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">scene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">&quot;myTeapot&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">myTeapot</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="nx">myTeapot</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+
+    <span class="nx">scene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">&quot;myRotate&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">myRotate</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">myRotate</span><span class="p">.</span><span class="nx">addNode</span><span class="p">({</span>
+            <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;geometry/torus&quot;</span>
+        <span class="p">});</span>
+    <span class="p">})</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<h1 id="whats-next">What’s next?</h1>
+
+<ul>
+  <li><a href="/articles/scenejs-creating-a-scene-and-adding-nodes">Adding and Removing Nodes</a></li>
+</ul>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="/images/avatar.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+<h3><a href="/about/">@xeoLabs</a></h3>
+<p>Lindsay Kay<br>3D Web developer</p>
+<a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+        </div>
+        <p class="byline"><strong>SceneJS Quick Start</strong> was published on <time datetime="2013-10-28T00:00:00+01:00" itemprop="datePublished">October 28, 2013</time> and last modified on <time datetime="2013-05-31" itemprop="dateModified">May 31, 2013</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="/about" title="About @xeoLabs" itemprop="url">@xeoLabs</a></span></span>.</p>
+      </footer>
+
+        
+        <br><br>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'xeolabs'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+    </div><!-- /.article-wrap -->
+  </article>
+
+</div><!-- /#main -->
+
+
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/articles">View all articles</a>)</small></h4>
+    <ul>
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="/articles/scenejs-transparency" title="Transparency in SceneJS">Transparency in SceneJS</a></li>
+      
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="/articles/scenejs-alpha-mapping" title="Alpha Mapping in SceneJS">Alpha Mapping in SceneJS</a></li>
+      
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="/articles/scenejs-webgl-context-lost" title="Automatic WebGLContestLost Recovery in SceneJS">Automatic WebGLContestLost Recovery in SceneJS</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2014 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'xeolabs'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+</body>
+</html>
