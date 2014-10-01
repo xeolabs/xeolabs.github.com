@@ -18,7 +18,7 @@ tags: [scenejs, tutorial, reflection]
 </div>
 </section><!-- /#table-of-contents -->
 
-**Reflection mapping** or **environment mapping** is an efficient image-based lighting technique for approximating the
+**Reflection mapping** or **environment mapping** is an efficient image-based lighting technique (introduced in [SceneJS v4.0](/articles/scenejs4-release)) for approximating the
 appearance of a reflective surface by means of a precomputed texture image.
 The texture image contains a view of the distant environment surrounding the rendered objects, and is projected onto the six
 faces of a cube, which we can imagine as surrounding our objects. For each point on the objects, SceneJS will then
@@ -29,8 +29,9 @@ In this tutorial I'll show you how to
  * make objects reflective,
  * control surface reflectivity
  * vary reflectivity across a surface using a **specular control map**,
- * control reflection map intensity, and
- * switch reflection on and off for objects, selectively.
+ * control reflection map intensity,
+ * switch reflection on and off for objects, selectively, and
+ * layer multiple reflections onto the same objects.
 
 ## Making objects reflective
 
@@ -130,7 +131,7 @@ The example below contain four objects, each wrapped with a ```reflect``` node w
 
 * From left to right, the ```intensity``` factors are 1.0, 0.4, 0.2 and 0.05, respectively.
 * Note how all the tanks have different amounts of relection, but the same amount of specularity.
-* Click *SHOW CODE* on the example for source code.
+* Click *Source code* on the example for source code.
 
 ## Material specularity
 
@@ -143,7 +144,7 @@ The example below shows three boxes that share the same ```reflect```, but each 
 
 * From left to right, the ```specular``` factors are 1.0, 0.5 and 0.0, respectively.
 * See how the specularity varies, along with the amount of reflection.
-* Click *SHOW CODE* on the example for source code.
+* Click *Source code* on the example for source code.
 
 ## Varying reflectivity across a surface
 
@@ -173,12 +174,12 @@ Shown below are the images we're using for the specular control maps for each bo
 ![]({{ site.url }}/images/scenejs/reflection/reflectionSpecularMap1.jpg) | ![]({{ site.url }}/images/scenejs/reflection/reflectionSpecularMap2.jpg) | ![]({{ site.url }}/images/scenejs/reflection/reflectionSpecularMap3.jpg)
 
 
-## Switching relection on and off
+## Switching reflection on and off
 
 Usually you'll want to apply reflection only to certain objects in your scene. Do that with a ```reflection``` flag
 on a ```flags``` node, as shown in the example below:
 <br><br>
-[![Reflection Example 3]({{ site.url }}/images/scenejs/reflection.jpg)](http://scenejs.org/examples.html?page=cubeMap)
+[![Reflection Example 3]({{ site.url }}/images/scenejs/reflection.jpg)](http://scenejs.org/examples.html?page=reflectionFlag)
 [Run this demo](http://scenejs.org/examples.html?page=reflectionFlag)
 
 {% highlight javascript %}
@@ -271,7 +272,86 @@ myScene.getNode("myFlags",
 
 ## Multiple reflections
 
-TODO
+Like ```texture``` nodes, multiple reflections can be layered onto the same object, as shown in the example below:
+<br><br>
+[![Reflection Example 4]({{ site.url }}/images/scenejs/reflectionLayered.jpg)](http://scenejs.org/examples/index.html#reflections_multipleCombined)
+[Run this demo](http://scenejs.org/examples/index.html#reflections_multipleCombined)
+
+{% highlight javascript %}
+SceneJS.createScene({
+    nodes: [
+
+        // Orbiting camera node, implemented by plugin at
+        // http://scenejs.org/api/latest/plugins/node/cameras/orbit.js
+        {
+            type: "cameras/orbit",
+            yaw: 30,
+            pitch: -30,
+            zoom: 10,
+            zoomSensitivity: 1.0,
+
+            nodes: [
+
+                // London reflection
+                // Images taken from: http://hristo.oskov.com/projects/cs418/mp3/
+                {
+                    type: "reflect",
+                    src: [
+                        "textures/reflection/london/pos-x.png",
+                        "textures/reflection/london/neg-x.png",
+                        "textures/reflection/london/pos-y.png",
+                        "textures/reflection/london/neg-y.png",
+                        "textures/reflection/london/pos-z.png",
+                        "textures/reflection/london/neg-z.png"
+                    ],
+                    intensity: 1.0,
+
+                    nodes: [
+
+                        // Cloudy sky reflection
+                        {
+                            type: "reflect",
+                            src: [
+                                "textures/reflection/clouds/a.png",
+                                "textures/reflection/clouds/b.png",
+                                "textures/reflection/clouds/top.png",
+                                "textures/reflection/clouds/bottom.png",
+                                "textures/reflection/clouds/c.png",
+                                "textures/reflection/clouds/d.png"
+                            ],
+                            intensity: 1.0,
+
+                            nodes: [
+
+                                // Specular material
+                                {
+                                    type: "material",
+                                    color: { r: 1, g: 1.0, b: 1.0 },
+
+                                    // Mirror-like reflection when specular == 1.0
+                                    // No reflection at all when specular == 0.0
+                                    specular: 0.5,
+
+                                    nodes: [
+
+                                        // Teapot primitive implemented by plugin at
+                                        // http://scenejs.org/api/latest/plugins/node/geometry/teapot.js
+                                        {
+                                            type: "geometry/teapot"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+});
+{% endhighlight %}
+
+* Each of the nested ```reflect``` nodes in our scene has the same value for ```intensity```, so they both contribute the same amount to the ```teapot```.
 
 ## Reflections on textured objects:
 
@@ -279,5 +359,15 @@ Finally, just to show how the ```reflect``` node is designed so that you can sla
 have in your scene, let's finish off with an example in which we've taken a raptor imported with an ```import/obj``` node
 and wrapped it with a ```reflect``` to make it shiny:
 <br><br>
-[![Reflection Example 3]({{ site.url }}/images/scenejs/reflection.jpg)](http://scenejs.org/examples.html?page=cubeMap)
+[![Reflection Example 3]({{ site.url }}/images/scenejs/reflectionToOBJ.jpg)](http://scenejs.org/examples.html?page=reflectionWithOBJImport)
 [Run this demo](http://scenejs.org/examples.html?page=reflectionWithOBJImport)
+
+# Conclusion
+
+In this tutorial I've shown you how to use the ```reflect``` node to make geometry
+   appear to reflect its environment. Reflections are designed so that you can wrap them around any subgraph to make objects
+    with specular materials reflective, without modifying the contents of the subgraph. The amount of reflectivity is governed by the
+    combination of the ```reflect``` node's ```intensity``` property with the ```specular``` property on the ```material``` nodes around the
+     geometries in the subgraph. You can vary the amount of reflection using the ```reflect``` node's ```intensity``` property,
+     which may avoid needing to adjust the ```specular``` properties on those ```material``` nodes.
+<br><br>
