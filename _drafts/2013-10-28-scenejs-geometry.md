@@ -208,12 +208,8 @@ indices arrays address different portions of the root geometry's position and co
             nodes: [
                 {
                     type: "texture",
-                    layers: [
-                        {
-                            uri:"images/BrickWall.jpg" ,
-                            applyTo:"baseColor"
-                        }
-                    ],
+                    src:"images/BrickWall.jpg",
+                    applyTo:"baseColor",
 
                     nodes: [
                         {
@@ -232,12 +228,8 @@ indices arrays address different portions of the root geometry's position and co
 
                 {
                     type: "texture",
-                    layers: [
-                        {
-                            uri:"images/general-zod.jpg",
-                            applyTo:"baseColor"
-                        }
-                    ],
+                    src:"images/general-zod.jpg",
+                    applyTo:"baseColor",
 
                     nodes: [
                         {

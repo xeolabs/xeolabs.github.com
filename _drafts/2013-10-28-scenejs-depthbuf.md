@@ -71,9 +71,9 @@ Let's create a teapot wrapped in a ```depthbuf``` that has default attribute val
                          nodes: [
 
                              // Teapot primitive, implemented by plugin at
-                             // http://scenejs.org/api/latest/plugins/node/prims/teapot.js
+                             // http://scenejs.org/api/latest/plugins/node/geometry/teapot.js
                              {
-                                 type: "prims/teapot"
+                                 type: "geometry/teapot"
                              }
                          ]
                      }

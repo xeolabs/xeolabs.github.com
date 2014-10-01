@@ -98,7 +98,7 @@
 
 <div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
   <div class="article-author-top">
-    <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+    <img src="/images/bio-photo.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
 <h3><a href="/about/">@xeoLabs</a></h3>
 <p>Lindsay Kay<br>3D Web developer</p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
@@ -172,8 +172,7 @@ become a de facto industry standard for transferring models between 3D programs,
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">setConfigs</span><span class="p">({</span>
      <span class="nx">pluginPath</span><span class="o">:</span><span class="s2">&quot;./plugins&quot;</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>..then importing an .OBJ is as easy as:</p>
 
@@ -185,38 +184,33 @@ become a de facto industry standard for transferring models between 3D programs,
             <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
                 <span class="p">{</span>
                     <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;texture&quot;</span><span class="p">,</span>
-                    <span class="nx">layers</span><span class="o">:</span><span class="p">[</span>
-                        <span class="p">{</span>
-                            <span class="nx">src</span><span class="o">:</span> <span class="s2">&quot;foo/bar/raptor.jpg&quot;</span>
-                        <span class="p">}</span>
-                    <span class="p">],</span>
+                    <span class="nx">src</span><span class="o">:</span> <span class="s2">&quot;foo/bar/raptor.jpg&quot;</span><span class="p">,</span>
+
                     <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
 
                         <span class="c1">// Import Wavefront .OBJ mesh</span>
                         <span class="p">{</span>
-                            <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;import/obj&quot;</span><span class="p">,</span> <span class="nx">src</span><span class="o">:</span> <span class="s2">&quot;foo/bar/raptor.obj&quot;</span>
+                            <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;import/obj&quot;</span><span class="p">,</span>
+                            <span class="nx">src</span><span class="o">:</span> <span class="s2">&quot;foo/bar/raptor.obj&quot;</span>
                         <span class="p">}</span>
                     <span class="p">]</span>
                 <span class="p">}</span>
             <span class="p">]</span>
         <span class="p">}</span>
     <span class="p">]</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>Importing meshes from the other formats is similar. To import .MD2, your node would be:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="p">{</span>
     <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;import/md2&quot;</span><span class="p">,</span> <span class="nx">src</span><span class="o">:</span> <span class="s2">&quot;foo/bar/lion.md2&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <p>And to import .3DS:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="p">{</span>
     <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;import/3ds&quot;</span><span class="p">,</span> <span class="nx">src</span><span class="o">:</span> <span class="s2">&quot;foo/bar/lexus.3ds&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <h3 id="shouts-out-to">Shouts out to:</h3>
 
@@ -229,7 +223,7 @@ files into typed arrays, which it then parses.
       <hr />
       <footer role="contentinfo">
         <div class="article-author-bottom">
-          <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+          <img src="/images/bio-photo.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
 <h3><a href="/about/">@xeoLabs</a></h3>
 <p>Lindsay Kay<br>3D Web developer</p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
@@ -275,17 +269,29 @@ files into typed arrays, which it then parses.
     
       
       
+        
+          
+        
+      
       
       <li><a href="/articles/scenejs-transparency" title="Transparency in SceneJS">Transparency in SceneJS</a></li>
       
     
       
       
+        
+          
+        
+      
       
       <li><a href="/articles/scenejs-alpha-mapping" title="Alpha Mapping in SceneJS">Alpha Mapping in SceneJS</a></li>
       
     
       
+      
+        
+          
+        
       
       
       <li><a href="/articles/scenejs-webgl-context-lost" title="Automatic WebGLContestLost Recovery in SceneJS">Automatic WebGLContestLost Recovery in SceneJS</a></li>
@@ -295,7 +301,7 @@ files into typed arrays, which it then parses.
     <hr />
   </div><!-- /.related-articles -->
   <footer>
-    <span>&copy; 2013 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+    <span>&copy; 2014 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

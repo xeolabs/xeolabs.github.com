@@ -98,7 +98,7 @@
 
 <div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
   <div class="article-author-top">
-    <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+    <img src="/images/bio-photo.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
 <h3><a href="/about/">@xeoLabs</a></h3>
 <p>Lindsay Kay<br>3D Web developer</p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
@@ -220,20 +220,19 @@ The <code>shape</code> parameter on this node specifies the shape of the body bo
       <span class="c1">// Child nodes can be anything, but must fit within the dimensions</span>
       <span class="c1">// of the physics body. In this case, we have a child box primitive,</span>
       <span class="c1">// implemented by the plugin at</span>
-      <span class="c1">// http://scenejs.org/api/latest/plugins/node/prims/box.js</span>
+      <span class="c1">// http://scenejs.org/api/latest/plugins/node/geometry/box.js</span>
       <span class="p">{</span>
-         <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;prims/box&quot;</span><span class="p">,</span>
+         <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;geometry/box&quot;</span><span class="p">,</span>
          <span class="nx">size</span><span class="o">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
       <span class="p">}</span>
    <span class="p">]</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <ul>
   <li>There is one default physics system per scene</li>
   <li>Each system has its own physics engine (eg. JigLibJS) that runs in its own Web worker</li>
   <li>Using an optional <code>systemId</code> property on the <code>physics/body</code> node, multiple physics systems may be created per scene</li>
-  <li>Note that vectors (size, pos, velocity) on the <code>physics/body</code> and <code>prims/box</code>` are arrays - we’re deprecating object formats for those sort of params.</li>
+  <li>Note that vectors (size, pos, velocity) on the <code>physics/body</code> and <code>geometry/box</code>` are arrays - we’re deprecating object formats for those sort of params.</li>
   <li><a href="http://scenejs.org/api/latest/plugins/node/physics/body.js"><code>physics/body</code> node implementation</a></li>
 </ul>
 
@@ -275,14 +274,13 @@ The <code>shape</code> parameter on this node specifies the shape of the body bo
    <span class="nx">nodes</span><span class="o">:</span> <span class="p">[</span>
 
       <span class="c1">// Child sphere primitive, implemented by the plugin at</span>
-      <span class="c1">// http://scenejs.org/api/latest/plugins/node/prims/sphere.js</span>
+      <span class="c1">// http://scenejs.org/api/latest/plugins/node/geometry/sphere.js</span>
       <span class="p">{</span>
-         <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;prims/sphere&quot;</span><span class="p">,</span>
+         <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;geometry/sphere&quot;</span><span class="p">,</span>
          <span class="nx">radius</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
    <span class="p">]</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <h2 id="plane-shaped-body">Plane-shaped body</h2>
 
@@ -327,9 +325,9 @@ The <code>shape</code> parameter on this node specifies the shape of the body bo
             <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
 
                 <span class="c1">// Grid ground plane geometry, implemented by plugin at</span>
-                <span class="c1">// http://scenejs.org/api/latest/plugins/node/prims/grid.js</span>
+                <span class="c1">// http://scenejs.org/api/latest/plugins/node/geometry/grid.js</span>
                 <span class="p">{</span>
-                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/grid&quot;</span><span class="p">,</span>
+                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/grid&quot;</span><span class="p">,</span>
                     <span class="nx">size</span><span class="o">:</span><span class="p">{</span> <span class="nx">x</span><span class="o">:</span><span class="mi">1000</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mi">1000</span> <span class="p">},</span>
                     <span class="nx">xSegments</span><span class="o">:</span><span class="mi">200</span><span class="p">,</span>
                     <span class="nx">zSegments</span><span class="o">:</span><span class="mi">200</span>
@@ -337,8 +335,7 @@ The <code>shape</code> parameter on this node specifies the shape of the body bo
             <span class="p">]</span>
         <span class="p">}</span>
     <span class="p">]</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>More body types coming up.</p>
 
@@ -375,8 +372,7 @@ The <code>shape</code> parameter on this node specifies the shape of the body bo
        <span class="p">},</span>
        <span class="c1">//...</span>
     <span class="p">]</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>Note that spatial properties like <code>pos</code>, <code>dir</code>, <code>velocity</code> etc. are not supported on a <code>physics/material</code> node, because those only make sense on an actual physical body.</p>
 
@@ -393,16 +389,14 @@ The <code>shape</code> parameter on this node specifies the shape of the body bo
       <span class="nx">systemId</span><span class="o">:</span> <span class="s2">&quot;mySystem&quot;</span><span class="p">,</span>  <span class="c1">// Optional - selects scene&#39;s default system when absent</span>
       <span class="nx">gravity</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">9.8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
       <span class="nx">solver</span><span class="o">:</span><span class="s2">&quot;ACCUMULATED&quot;</span> <span class="c1">// (default) or &quot;FAST&quot;, &quot;NORMAL&quot;</span>
-<span class="p">})</span>
-</code></pre></div>
+<span class="p">})</span></code></pre></div>
 
 <p>We can reconfigure the system any time:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">physicsSystem</span><span class="p">.</span><span class="nx">setConfigs</span><span class="p">({</span>
      <span class="nx">gravity</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
      <span class="nx">solver</span><span class="o">:</span><span class="s2">&quot;FAST&quot;</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <ul>
   <li>When the <code>systemId</code> is given, the <code>physics/system</code> node will configure that system, creating it first if not existing yet. When <code>systemId</code> is absent, the node will configure the scene’s default physics system.</li>
@@ -423,8 +417,7 @@ The <code>shape</code> parameter on this node specifies the shape of the body bo
     <span class="nx">velocity</span><span class="o">:</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">,</span><span class="o">-</span><span class="mf">0.2</span><span class="p">],</span>
     <span class="nx">mass</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
     <span class="c1">//...</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <ul>
   <li><a href="http://scenejs.org/api/latest/plugins/node/physics/teapot.js"><code>physics/teapot</code> node implementation</a></li>
@@ -439,8 +432,7 @@ The <code>shape</code> parameter on this node specifies the shape of the body bo
     <span class="nx">size</span><span class="o">:</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span>
     <span class="nx">mass</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
     <span class="c1">//...</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <ul>
   <li><a href="http://scenejs.org/api/latest/plugins/node/physics/box.js"><code>physics/box</code> node implementation</a></li>
@@ -458,8 +450,7 @@ The <code>shape</code> parameter on this node specifies the shape of the body bo
     <span class="nx">wire</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
     <span class="nx">mass</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
     <span class="c1">//...</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <ul>
   <li><a href="http://scenejs.org/api/latest/plugins/node/physics/sphere.js"><code>physics/sphere</code> node implementation</a></li>
@@ -479,8 +470,7 @@ The <code>shape</code> parameter on this node specifies the shape of the body bo
     <span class="nx">wire</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
     <span class="nx">mass</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
     <span class="c1">//...</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <ul>
   <li><a href="http://scenejs.org/api/latest/plugins/node/physics/plane.js"><code>physics/plane</code> node implementation</a></li>
@@ -496,8 +486,7 @@ The <code>shape</code> parameter on this node specifies the shape of the body bo
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">SceneJS</span><span class="p">,</span><span class="nx">setConfigs</span><span class="p">({</span>
     <span class="nx">physicsEngine</span><span class="o">:</span> <span class="s2">&quot;jiglibjs&quot;</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>Each supported physics engine will be a RequireJS module  within the plugin support library directory, and will export this interface:</p>
 
@@ -537,8 +526,7 @@ The <code>shape</code> parameter on this node specifies the shape of the body bo
 <span class="cm">       */</span>
       <span class="nx">integrate</span> <span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
       <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <ul>
   <li><a href="http://scenejs.org/api/latest/plugins/lib/physics/worker.js">Worker implementation for JigLibJS</a></li>
@@ -555,7 +543,7 @@ The <code>shape</code> parameter on this node specifies the shape of the body bo
       <hr />
       <footer role="contentinfo">
         <div class="article-author-bottom">
-          <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+          <img src="/images/bio-photo.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
 <h3><a href="/about/">@xeoLabs</a></h3>
 <p>Lindsay Kay<br>3D Web developer</p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
@@ -601,17 +589,29 @@ The <code>shape</code> parameter on this node specifies the shape of the body bo
     
       
       
+        
+          
+        
+      
       
       <li><a href="/articles/scenejs-transparency" title="Transparency in SceneJS">Transparency in SceneJS</a></li>
       
     
       
       
+        
+          
+        
+      
       
       <li><a href="/articles/scenejs-alpha-mapping" title="Alpha Mapping in SceneJS">Alpha Mapping in SceneJS</a></li>
       
     
       
+      
+        
+          
+        
       
       
       <li><a href="/articles/scenejs-webgl-context-lost" title="Automatic WebGLContestLost Recovery in SceneJS">Automatic WebGLContestLost Recovery in SceneJS</a></li>
@@ -621,7 +621,7 @@ The <code>shape</code> parameter on this node specifies the shape of the body bo
     <hr />
   </div><!-- /.related-articles -->
   <footer>
-    <span>&copy; 2013 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+    <span>&copy; 2014 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

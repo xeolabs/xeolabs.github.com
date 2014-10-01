@@ -25,15 +25,15 @@ tags: [scenejs, tutorial, culling, optimisation]
 
 
 # Overview
-SceneJS supports detail culling via the ```frustum/lod``` node, which sets up an axis-aligned bounding box around its child nodes. Each child provides a different level of detail for the object within the boundary, and the ```frustum/lod``` enables one of its children at any instant in order to show the appropriate detail level for the current projected 2D canvas size of the boundary.
+SceneJS supports detail culling via the ```cull/detail``` node, which sets up an axis-aligned bounding box around its child nodes. Each child provides a different level of detail for the object within the boundary, and the ```cull/detail``` enables one of its children at any instant in order to show the appropriate detail level for the current projected 2D canvas size of the boundary.
 
-The ```frustum/body``` node can be configured to disable all its children when the boundary falls outside the view frustum. This is an optional configuration because the node might potentially be used to switch detail for non-visible objects, such as sound sources, which could influence the scene even when they fall outside the frustum. Note that the node disables all children at the lowest level of detail, effectively working as a sort of distance culling.
+The ```cull/body``` node can be configured to disable all its children when the boundary falls outside the view frustum. This is an optional configuration because the node might potentially be used to switch detail for non-visible objects, such as sound sources, which could influence the scene even when they fall outside the frustum. Note that the node disables all children at the lowest level of detail, effectively working as a sort of distance culling.
 
 Internally, culling is distributed across multiple culling engines, each running in its own web worker. This attempts to make culling responsive, while preventing it from starving the main rendering thread.
 
 # Creating a detail-switched object
 
-The ```frustum/lod``` node encloses its child nodes in an axis-aligned  World-space bounding box and enables the appropriate child for the box's current projected 2D canvas size.
+The ```cull/detail``` node encloses its child nodes in an axis-aligned  World-space bounding box and enables the appropriate child for the box's current projected 2D canvas size.
 
 As shown in the example below, we configure the node with a 2D size threshold for each child node, given in property ```sizes```. When the boundary's projected size falls below the first of these thresholds, then no child will be enabled. When the projected size is between the first and second thresholds, the first child is enabled, then when between the second and third thresholds, the second child is enabled, and so on.
 
@@ -44,7 +44,7 @@ By default, all of the children are disabled when the bounding box falls outside
 ##Example:
 {% highlight javascript %}
 someNode.addNode({
-   type: "frustum/lod",
+   type: "cull/detail",
 
    // World-space axis-aligned bounding box
    min: [xPos - 8, yPos - 3, zPos - 5],
@@ -94,9 +94,9 @@ someNode.addNode({
                   nodes: [
 
                      // Box primitive, implemented by plugin at
-                     // ./plugins/node/prims/box.js
+                     // ./plugins/node/geometry/box.js
                      {
-                        type: "prims/box"
+                        type: "geometry/box"
                      }
                   ]
                }]
@@ -130,9 +130,9 @@ someNode.addNode({
                nodes: [
 
                   // Sphere primitive, implemented by plugin at
-                  // ./plugins/node/prims/sphere.js
+                  // ./plugins/node/geometry/sphere.js
                   {
-                     type: "prims/sphere",
+                     type: "geometry/sphere",
                      radius: 5,
                      latitudeBands: 16, // A fairly low-rez sphere
                      longitudeBands: 16
@@ -168,9 +168,9 @@ someNode.addNode({
                nodes: [
 
                   // Teapot primitive, implemented by plugin at
-                  // ./plugins/node/prims/teapot.js
+                  // ./plugins/node/geometry/teapot.js
                   {
-                     type: "prims/teapot"
+                     type: "geometry/teapot"
                   }
                ]
             }]
@@ -194,14 +194,14 @@ to automatically determine the boundaries of, such as sound. It's up to the scen
 Here's some details on the internals, just in case you're curious how it works:
 ![](http://scenejs.org/images/frustumCulling.png)
 
-* The ```frustum/lod``` node is implementated by this [custom node plugin](http://scenejs.org/api/latest/plugins/node/frustum/lod.js).
-* For performance, culling is distributed across multiple [culling engines](http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullEngine.js), each running within its own [worker thread](http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullWorker.js). Each of those workers is proxied by a [system](http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullSystem.js) in which the ```frustum/lod``` nodes create frustum collision bodies, and those systems are managed in a load-balanced [pool](http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullSystemPool.js).
-* The ```frustum/lod``` node actually wraps a more basic [```frustum/body```](http://scenejs.org/api/latest/plugins/node/frustum/body.js) node type, which creates the collision body and subscribes to its frustum intersection status and projected 2D boundary size. The ```frustum/lod``` node does the job of translating those updates into child node enables/disables. This strategy allows us to reuse the ```frustum/body``` for internal workings of new types of culling node in future.
+* The ```cull/detail``` node is implementated by this [custom node plugin](http://scenejs.org/api/latest/plugins/node/cull/detail.js).
+* For performance, culling is distributed across multiple [culling engines](http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullEngine.js), each running within its own [worker thread](http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullWorker.js). Each of those workers is proxied by a [system](http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullSystem.js) in which the ```cull/detail``` nodes create frustum collision bodies, and those systems are managed in a load-balanced [pool](http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullSystemPool.js).
+* The ```cull/detail``` node actually wraps a more basic [```cull/body```](http://scenejs.org/api/latest/plugins/node/cull/body.js) node type, which creates the collision body and subscribes to its frustum intersection status and projected 2D boundary size. The ```cull/detail``` node does the job of translating those updates into child node enables/disables. This strategy allows us to reuse the ```cull/body``` for internal workings of new types of culling node in future.
 
 
 # Roadmap
 
-* Allow ```frustum/cull``` boundaries to be defined in Model-space, where they are transformed by parent transform nodes
+* Allow ```cull/visibility``` boundaries to be defined in Model-space, where they are transformed by parent transform nodes
 * Other types of boundary shape, such as spherical
 * Each culling engine simply iterates over a list of bodies - improve their performance by organising the bodies in KD-trees
 * [Issues tagged 'culling'](https://github.com/xeolabs/scenejs/issues?direction=desc&labels=Culling&page=1&sort=created&state=open)

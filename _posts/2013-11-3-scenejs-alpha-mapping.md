@@ -96,17 +96,13 @@ var scene = SceneJS.createScene({
                                 // the intensity of each texture pixel.
                                 {
                                     type:"texture",
-                                    id:"theTexture",
-                                    layers:[
-                                        {
-                                            src:"../../../textures/leavesAlphaMap.jpg",
-                                            applyTo:"alpha",
-                                            blendMode: "mul"  // Default
-                                        }
-                                    ],
+                                    src:"../../../textures/leavesAlphaMap.jpg",
+                                    applyTo:"alpha",
+                                    blendMode: "mul",  // Default
+
                                     nodes:[
                                         {
-                                            type:"prims/box"
+                                            type:"geometry/box"
                                         }
                                     ]
                                 }
@@ -127,7 +123,7 @@ var scene = SceneJS.createScene({
                             type:"scale", x:0.7, y:0.7, z:0.7,
                             nodes:[
                                 {
-                                    type:"prims/box"
+                                    type:"geometry/box"
                                 }
                             ]
                         }
@@ -168,23 +164,16 @@ create a cool flowing gas pattern across the surface of the outer box.
 
 {% highlight javascript %}
 {
-    type:"texture",
-    layers:[
-        {
-            source:{
-                type:"video",
-                src:"../../../movies/testVideo.ogv"
-            },
-            applyTo:"alpha"
-        }
-    ],
+    type:"texture/video",
+    src:"../../../movies/testVideo.ogv"
+    applyTo:"alpha",
     //...
 }
 {% endhighlight %}
 
 Things to note:
 
-* The ```source``` on this ```texture``` causes it to employ the core SceneJS "video" texture plugin to stream the video file into the texture
+* We're using a [```texture/video```](http://scenejs.org/api/latest/plugins/node/texture/video.js) node, which streams the video file into the texture
 * Each of the video's frames is a grayscale image, applied using the same principles as used for regular image textures
 <br>
 <br>

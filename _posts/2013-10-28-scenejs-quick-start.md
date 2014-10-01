@@ -83,9 +83,9 @@ var scene = SceneJS.createScene({
                     nodes: [
 
                         // Teapot primitive, implemented by plugin file
-                        // ./plugins/node/prims/teapot.js
+                        // ./plugins/node/geometry/teapot.js
                         {
-                            type:"prims/teapot",
+                            type:"geometry/teapot",
                             id: "myTeapot"
                         }
                     ]
@@ -114,7 +114,7 @@ scene.getNode("myRotate", function(myRotate) {
 
 ### Replace the teapot
 
-Scenes can be build incrementally. Let's add another teapot
+Scenes can be built incrementally. Let's add another teapot
 
 {% highlight javascript %}
 scene.getNode("myTeapot", function(myTeapot) {
@@ -123,7 +123,7 @@ scene.getNode("myTeapot", function(myTeapot) {
 
     scene.getNode("myRotate", function(myRotate) {
         myRotate.addNode({
-            type: "prims/torus"
+            type: "geometry/torus"
         });
     })
 });

@@ -131,7 +131,7 @@ To show the available attributes on a texture layer, we'll we'll specify all of 
 
             nodes: [
                 {
-                    type: "prims/box"
+                    type: "geometry/box"
                 }
             ]
         }
@@ -225,7 +225,7 @@ This Earth consists of a sphere [[geometry - Defining Shapes|geometry]], wrapped
                     baseColor: {r: 1, g: 1, b: 1},
                     nodes: [
                         {
-                            type: "prims/sphere"
+                            type: "geometry/sphere"
                         }
                     ]
                 }
@@ -334,7 +334,7 @@ Here's the implementation - note that we only specify attributes for the layers 
 
             nodes: [
                 {
-                    type: "prims/box"
+                    type: "geometry/box"
                 }
             ]
         }

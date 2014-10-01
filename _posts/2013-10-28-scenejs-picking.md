@@ -70,7 +70,7 @@ var myScene = SceneJS.createScene({
 
                                         // Teapot primitive
                                         {
-                                            type:"prims/teapot"
+                                            type:"geometry/teapot"
                                         }
                                     ]
                                 }
@@ -93,7 +93,7 @@ var myScene = SceneJS.createScene({
 
                                         // Teapot primitive
                                         {
-                                            type:"prims/teapot"
+                                            type:"geometry/teapot"
                                         }
                                     ]
                                 }
@@ -197,7 +197,7 @@ var myScene = SceneJS.createScene({
 
                                         // Teapot primitive
                                         {
-                                            type:"prims/teapot"
+                                            type:"geometry/teapot"
                                         }
                                     ]
                                 }
@@ -227,7 +227,7 @@ var myScene = SceneJS.createScene({
 
                                                 // Teapot primitive
                                                 {
-                                                    type:"prims/teapot"
+                                                    type:"geometry/teapot"
                                                 }
                                             ]
                                         }
@@ -280,7 +280,7 @@ var myScene = SceneJS.createScene({
 
                                 // Teapot primitive
                                 {
-                                    type:"prims/teapot"
+                                    type:"geometry/teapot"
                                 }
                             ]
                         }
@@ -308,7 +308,7 @@ var myScene = SceneJS.createScene({
 
                                                 // Box primitive
                                                 {
-                                                    type:"prims/box",
+                                                    type:"geometry/box",
                                                     xSize:3, ySize:2, zSize:3
                                                 }
                                             ]
@@ -379,7 +379,7 @@ name "table", while the table's legs get the names "leg1", "leg2", "leg3" and "l
 
                                                 // Box primitive
                                                 {
-                                                    type:"prims/box"
+                                                    type:"geometry/box"
                                                 }
                                             ]
                                         }
@@ -406,7 +406,7 @@ name "table", while the table's legs get the names "leg1", "leg2", "leg3" and "l
 
                                                 // Box primitive
                                                 {
-                                                    type:"prims/box"
+                                                    type:"geometry/box"
                                                 }
                                             ]
                                         }
@@ -433,7 +433,7 @@ name "table", while the table's legs get the names "leg1", "leg2", "leg3" and "l
 
                                                 // Box primitive
                                                 {
-                                                    type:"prims/box"
+                                                    type:"geometry/box"
                                                 }
                                             ]
                                         }
@@ -460,7 +460,7 @@ name "table", while the table's legs get the names "leg1", "leg2", "leg3" and "l
 
                                                 // Box primitive
                                                 {
-                                                    type:"prims/box"
+                                                    type:"geometry/box"
                                                 }
                                             ]
                                         }
@@ -487,7 +487,7 @@ name "table", while the table's legs get the names "leg1", "leg2", "leg3" and "l
 
                                                 // Box primitive
                                                 {
-                                                    type:"prims/box"
+                                                    type:"geometry/box"
                                                 }
                                             ]
                                         }

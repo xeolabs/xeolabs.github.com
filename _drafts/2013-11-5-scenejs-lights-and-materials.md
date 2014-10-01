@@ -106,7 +106,7 @@ Here's all the code needed to create the scene shown above:
 
              nodes:[
                  {
-                     type:"prims/teapot"
+                     type:"geometry/teapot"
                  }
              ]
          }
@@ -158,7 +158,7 @@ var scene = SceneJS.createScene({
 
                     nodes:[
                         {
-                            type:"prims/teapot"
+                            type:"geometry/teapot"
                         }
                     ]
                 }
@@ -231,7 +231,7 @@ var scene = SceneJS.createScene({
 
                     nodes:[
                         {
-                            type:"prims/teapot"
+                            type:"geometry/teapot"
                         }
                     ]
                 }
@@ -278,7 +278,7 @@ var scene = SceneJS.createScene({
                     ],
                     nodes:[
                         {
-                            type:"prims/teapot"
+                            type:"geometry/teapot"
                         }
                     ]
                 }
@@ -315,7 +315,7 @@ SceneJS.createScene({
                     ],
                     nodes:[
                         {
-                            type:"prims/teapot"
+                            type:"geometry/teapot"
                         }
                     ]
                 }
@@ -350,7 +350,7 @@ var scene = SceneJS.createScene({
                     ],
                     nodes:[
                         {
-                            type:"prims/teapot"
+                            type:"geometry/teapot"
                         }
                     ]
                 }

@@ -98,7 +98,7 @@
 
 <div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
   <div class="article-author-top">
-    <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+    <img src="/images/bio-photo.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
 <h3><a href="/about/">@xeoLabs</a></h3>
 <p>Lindsay Kay<br>3D Web developer</p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
@@ -150,8 +150,7 @@ In this tutorial, I’ll build on techniques from the <a href="/articles/scenejs
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">setConfigs</span><span class="p">({</span>
      <span class="nx">pluginPath</span><span class="o">:</span><span class="s2">&quot;./plugins&quot;</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>Then we’ll create the scene below, in which the outer green box has an alpha texture which creates transparent areas through
 which you can see the inner blue box.
@@ -212,17 +211,13 @@ transparency (which you learned about in the <a href="/articles/scenejs-transpar
                                 <span class="c1">// the intensity of each texture pixel.</span>
                                 <span class="p">{</span>
                                     <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;texture&quot;</span><span class="p">,</span>
-                                    <span class="nx">id</span><span class="o">:</span><span class="s2">&quot;theTexture&quot;</span><span class="p">,</span>
-                                    <span class="nx">layers</span><span class="o">:</span><span class="p">[</span>
-                                        <span class="p">{</span>
-                                            <span class="nx">src</span><span class="o">:</span><span class="s2">&quot;../../../textures/leavesAlphaMap.jpg&quot;</span><span class="p">,</span>
-                                            <span class="nx">applyTo</span><span class="o">:</span><span class="s2">&quot;alpha&quot;</span><span class="p">,</span>
-                                            <span class="nx">blendMode</span><span class="o">:</span> <span class="s2">&quot;mul&quot;</span>  <span class="c1">// Default</span>
-                                        <span class="p">}</span>
-                                    <span class="p">],</span>
+                                    <span class="nx">src</span><span class="o">:</span><span class="s2">&quot;../../../textures/leavesAlphaMap.jpg&quot;</span><span class="p">,</span>
+                                    <span class="nx">applyTo</span><span class="o">:</span><span class="s2">&quot;alpha&quot;</span><span class="p">,</span>
+                                    <span class="nx">blendMode</span><span class="o">:</span> <span class="s2">&quot;mul&quot;</span><span class="p">,</span>  <span class="c1">// Default</span>
+
                                     <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
                                         <span class="p">{</span>
-                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/box&quot;</span>
+                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/box&quot;</span>
                                         <span class="p">}</span>
                                     <span class="p">]</span>
                                 <span class="p">}</span>
@@ -243,7 +238,7 @@ transparency (which you learned about in the <a href="/articles/scenejs-transpar
                             <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;scale&quot;</span><span class="p">,</span> <span class="nx">x</span><span class="o">:</span><span class="mf">0.7</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mf">0.7</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mf">0.7</span><span class="p">,</span>
                             <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
                                 <span class="p">{</span>
-                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/box&quot;</span>
+                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/box&quot;</span>
                                 <span class="p">}</span>
                             <span class="p">]</span>
                         <span class="p">}</span>
@@ -252,8 +247,7 @@ transparency (which you learned about in the <a href="/articles/scenejs-transpar
             <span class="p">]</span>
         <span class="p">}</span>
     <span class="p">]</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>Things to note:</p>
 
@@ -285,24 +279,16 @@ create a cool flowing gas pattern across the surface of the outer box.
 <p><br /><br />The code is identical to the previous example, except for the <code>texture</code> node, which looks like this:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;texture&quot;</span><span class="p">,</span>
-    <span class="nx">layers</span><span class="o">:</span><span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nx">source</span><span class="o">:</span><span class="p">{</span>
-                <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;video&quot;</span><span class="p">,</span>
-                <span class="nx">src</span><span class="o">:</span><span class="s2">&quot;../../../movies/testVideo.ogv&quot;</span>
-            <span class="p">},</span>
-            <span class="nx">applyTo</span><span class="o">:</span><span class="s2">&quot;alpha&quot;</span>
-        <span class="p">}</span>
-    <span class="p">],</span>
+    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;texture/video&quot;</span><span class="p">,</span>
+    <span class="nx">src</span><span class="o">:</span><span class="s2">&quot;../../../movies/testVideo.ogv&quot;</span>
+    <span class="nx">applyTo</span><span class="o">:</span><span class="s2">&quot;alpha&quot;</span><span class="p">,</span>
     <span class="c1">//...</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <p>Things to note:</p>
 
 <ul>
-  <li>The <code>source</code> on this <code>texture</code> causes it to employ the core SceneJS “video” texture plugin to stream the video file into the texture</li>
+  <li>We’re using a <a href="http://scenejs.org/api/latest/plugins/node/texture/video.js"><code>texture/video</code></a> node, which streams the video file into the texture</li>
   <li>Each of the video’s frames is a grayscale image, applied using the same principles as used for regular image textures
 <br />
 <br /></li>
@@ -317,7 +303,7 @@ in the <a href="/articles/scenejs-transparency">Transparency</a> tutorial, to ma
       <hr />
       <footer role="contentinfo">
         <div class="article-author-bottom">
-          <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+          <img src="/images/bio-photo.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
 <h3><a href="/about/">@xeoLabs</a></h3>
 <p>Lindsay Kay<br>3D Web developer</p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
@@ -363,17 +349,29 @@ in the <a href="/articles/scenejs-transparency">Transparency</a> tutorial, to ma
     
       
       
+        
+          
+        
+      
       
       <li><a href="/articles/scenejs-transparency" title="Transparency in SceneJS">Transparency in SceneJS</a></li>
       
     
       
       
+        
+          
+        
+      
       
       <li><a href="/articles/scenejs-webgl-context-lost" title="Automatic WebGLContestLost Recovery in SceneJS">Automatic WebGLContestLost Recovery in SceneJS</a></li>
       
     
       
+      
+        
+          
+        
       
       
       <li><a href="/articles/scenejs-ray-picking-technique" title="Pssst...How Fast Ray Picking Works in SceneJS">Pssst...How Fast Ray Picking Works in SceneJS</a></li>
@@ -383,7 +381,7 @@ in the <a href="/articles/scenejs-transparency">Transparency</a> tutorial, to ma
     <hr />
   </div><!-- /.related-articles -->
   <footer>
-    <span>&copy; 2013 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+    <span>&copy; 2014 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

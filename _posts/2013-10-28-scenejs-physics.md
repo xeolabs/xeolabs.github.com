@@ -79,9 +79,9 @@ someNode.addNode({
       // Child nodes can be anything, but must fit within the dimensions
       // of the physics body. In this case, we have a child box primitive,
       // implemented by the plugin at
-      // http://scenejs.org/api/latest/plugins/node/prims/box.js
+      // http://scenejs.org/api/latest/plugins/node/geometry/box.js
       {
-         type: "prims/box",
+         type: "geometry/box",
          size: [3, 1, 2]
       }
    ]
@@ -91,7 +91,7 @@ someNode.addNode({
 * There is one default physics system per scene
 * Each system has its own physics engine (eg. JigLibJS) that runs in its own Web worker
 * Using an optional ```systemId``` property on the ```physics/body``` node, multiple physics systems may be created per scene
-* Note that vectors (size, pos, velocity) on the ```physics/body``` and ``prims/box``` are arrays - we're deprecating object formats for those sort of params.
+* Note that vectors (size, pos, velocity) on the ```physics/body``` and ``geometry/box``` are arrays - we're deprecating object formats for those sort of params.
 * [```physics/body``` node implementation](http://scenejs.org/api/latest/plugins/node/physics/body.js)
 
 ## Sphere-shaped body
@@ -132,9 +132,9 @@ someNode.addNode({
    nodes: [
 
       // Child sphere primitive, implemented by the plugin at
-      // http://scenejs.org/api/latest/plugins/node/prims/sphere.js
+      // http://scenejs.org/api/latest/plugins/node/geometry/sphere.js
       {
-         type: "prims/sphere",
+         type: "geometry/sphere",
          radius: 1
       }
    ]
@@ -184,9 +184,9 @@ someNode.addNode({
             nodes:[
 
                 // Grid ground plane geometry, implemented by plugin at
-                // http://scenejs.org/api/latest/plugins/node/prims/grid.js
+                // http://scenejs.org/api/latest/plugins/node/geometry/grid.js
                 {
-                    type:"prims/grid",
+                    type:"geometry/grid",
                     size:{ x:1000, z:1000 },
                     xSegments:200,
                     zSegments:200

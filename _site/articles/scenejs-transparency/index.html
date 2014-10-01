@@ -98,7 +98,7 @@
 
 <div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
   <div class="article-author-top">
-    <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+    <img src="/images/bio-photo.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
 <h3><a href="/about/">@xeoLabs</a></h3>
 <p>Lindsay Kay<br>3D Web developer</p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
@@ -170,8 +170,7 @@ transparency with <a href="/articles/scenejs-alpha-mapping">Alpha Maps</a>.</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">setConfigs</span><span class="p">({</span>
      <span class="nx">pluginPath</span><span class="o">:</span><span class="s2">&quot;./plugins&quot;</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>Then we’ll create the scene below, in which the outer blue box has a transparent material which allows you to see the teapot within it.
 <br /><br />
@@ -198,7 +197,7 @@ a <code>material</code> node to make it transparent.</p>
 
                     <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
                         <span class="p">{</span>
-                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/teapot&quot;</span>
+                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/teapot&quot;</span>
                         <span class="p">}</span>
                     <span class="p">]</span>
                 <span class="p">}</span>                     <span class="p">,</span>
@@ -226,7 +225,7 @@ a <code>material</code> node to make it transparent.</p>
                                     <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;translate&quot;</span><span class="p">,</span> <span class="nx">x</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
                                     <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
                                         <span class="p">{</span>
-                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/box&quot;</span><span class="p">,</span>
+                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/box&quot;</span><span class="p">,</span>
                                             <span class="nx">xSize</span><span class="o">:</span><span class="mi">3</span><span class="p">,</span> <span class="nx">ySize</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span> <span class="nx">zSize</span><span class="o">:</span><span class="mi">3</span>
                                         <span class="p">}</span>
                                     <span class="p">]</span>
@@ -238,8 +237,7 @@ a <code>material</code> node to make it transparent.</p>
             <span class="p">]</span>
         <span class="p">}</span>
     <span class="p">]</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>Things to note:</p>
 
@@ -269,8 +267,7 @@ That way, an <code>alpha</code> value less than 1.0 would be sufficient to make 
 <div class="highlight"><pre><code class="javascript"><span class="nx">myScene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">&quot;myFlags&quot;</span><span class="p">,</span>
     <span class="kd">function</span><span class="p">(</span><span class="nx">flags</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">flags</span><span class="p">.</span><span class="nx">setTransparent</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-    <span class="p">});</span>
-</code></pre></div>
+    <span class="p">});</span></code></pre></div>
 
 <h3 id="varying-opacity">Varying opacity</h3>
 <p>You can make the box less transparent my increasing the <code>alpha</code> on its <code>material</code> node:</p>
@@ -278,8 +275,7 @@ That way, an <code>alpha</code> value less than 1.0 would be sufficient to make 
 <div class="highlight"><pre><code class="javascript"><span class="nx">myScene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">&quot;myMaterial&quot;</span><span class="p">,</span>
     <span class="kd">function</span><span class="p">(</span><span class="nx">myMaterial</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">myMaterial</span><span class="p">.</span><span class="nx">setAlpha</span><span class="p">(</span><span class="mf">0.8</span><span class="p">);</span>
-    <span class="p">});</span>
-</code></pre></div>
+    <span class="p">});</span></code></pre></div>
 
 <h3 id="picking-through-transparent-objects">Picking through transparent objects</h3>
 <p>Want to be able to pick the teapot through the box? That’s covered in the
@@ -382,7 +378,7 @@ Here’s the scene that renders the nested boxes in the scene above.</p>
 
                                         <span class="c1">// Box primitive</span>
                                         <span class="p">{</span>
-                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/box&quot;</span>
+                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/box&quot;</span>
                                         <span class="p">}</span>
                                     <span class="p">]</span>
                                 <span class="p">}</span>
@@ -438,7 +434,7 @@ Here’s the scene that renders the nested boxes in the scene above.</p>
 
                                             <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
                                                 <span class="p">{</span>
-                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/box&quot;</span>
+                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/box&quot;</span>
                                                 <span class="p">}</span>
                                             <span class="p">]</span>
                                         <span class="p">}</span>
@@ -473,7 +469,7 @@ Here’s the scene that renders the nested boxes in the scene above.</p>
 
                                             <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
                                                 <span class="p">{</span>
-                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/box&quot;</span>
+                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/box&quot;</span>
                                                 <span class="p">}</span>
                                             <span class="p">]</span>
                                         <span class="p">}</span>
@@ -486,8 +482,7 @@ Here’s the scene that renders the nested boxes in the scene above.</p>
             <span class="p">]</span>
         <span class="p">}</span>
     <span class="p">]</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>Things to note:</p>
 
@@ -504,8 +499,7 @@ innermost box renders first</li>
 <div class="highlight"><pre><code class="javascript"><span class="nx">myScene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">&quot;greenBoxLayer&quot;</span><span class="p">,</span>
     <span class="kd">function</span><span class="p">(</span><span class="nx">layer</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">layer</span><span class="p">.</span><span class="nx">setPriority</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
-    <span class="p">});</span>
-</code></pre></div>
+    <span class="p">});</span></code></pre></div>
 
 <p>That’s going to make the green outermost box render before the innermost blue box, which is actually going to wreck our
  transparency sorting.
@@ -532,7 +526,7 @@ performance hit if you do that frequently.</p>
       <hr />
       <footer role="contentinfo">
         <div class="article-author-bottom">
-          <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+          <img src="/images/bio-photo.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
 <h3><a href="/about/">@xeoLabs</a></h3>
 <p>Lindsay Kay<br>3D Web developer</p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
@@ -578,17 +572,29 @@ performance hit if you do that frequently.</p>
     
       
       
+        
+          
+        
+      
       
       <li><a href="/articles/scenejs-alpha-mapping" title="Alpha Mapping in SceneJS">Alpha Mapping in SceneJS</a></li>
       
     
       
       
+        
+          
+        
+      
       
       <li><a href="/articles/scenejs-webgl-context-lost" title="Automatic WebGLContestLost Recovery in SceneJS">Automatic WebGLContestLost Recovery in SceneJS</a></li>
       
     
       
+      
+        
+          
+        
       
       
       <li><a href="/articles/scenejs-ray-picking-technique" title="Pssst...How Fast Ray Picking Works in SceneJS">Pssst...How Fast Ray Picking Works in SceneJS</a></li>
@@ -598,7 +604,7 @@ performance hit if you do that frequently.</p>
     <hr />
   </div><!-- /.related-articles -->
   <footer>
-    <span>&copy; 2013 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+    <span>&copy; 2014 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

@@ -178,7 +178,7 @@ Now in V3.X you create it using a plugin:
 
 {% highlight javascript %}
 var myMaterial = myScene.addNode({
-    type: "prims/box",
+    type: "geometry/box",
     //...
 });
 {% endhighlight %}

@@ -68,7 +68,7 @@ var scene = SceneJS.createScene({
 
                     nodes:[
                         {
-                            type:"prims/teapot"
+                            type:"geometry/teapot"
                         }
                     ]
                 }                     ,
@@ -96,7 +96,7 @@ var scene = SceneJS.createScene({
                                     type:"translate", x:1, y:2, z:1,
                                     nodes:[
                                         {
-                                            type:"prims/box",
+                                            type:"geometry/box",
                                             xSize:3, ySize:2, zSize:3
                                         }
                                     ]
@@ -250,7 +250,7 @@ var scene = SceneJS.createScene({
 
                                         // Box primitive
                                         {
-                                            type:"prims/box"
+                                            type:"geometry/box"
                                         }
                                     ]
                                 }
@@ -306,7 +306,7 @@ var scene = SceneJS.createScene({
 
                                             nodes:[
                                                 {
-                                                    type:"prims/box"
+                                                    type:"geometry/box"
                                                 }
                                             ]
                                         }
@@ -341,7 +341,7 @@ var scene = SceneJS.createScene({
 
                                             nodes:[
                                                 {
-                                                    type:"prims/box"
+                                                    type:"geometry/box"
                                                 }
                                             ]
                                         }

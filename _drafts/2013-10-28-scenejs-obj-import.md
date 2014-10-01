@@ -57,9 +57,9 @@ var scene = SceneJS.createScene({
                     nodes: [
 
                         // Teapot primitive, implemented by plugin at
-                        // http://scenejs.org/api/latest/plugins/node/prims/teapot.js
+                        // http://scenejs.org/api/latest/plugins/node/geometry/teapot.js
                         {
-                            type:"prims/teapot"
+                            type:"geometry/teapot"
                         }
                     ]
                 }
@@ -88,9 +88,9 @@ scene.getNode("myRotate", function(myRotate) {
 
 # Plugins
 To keep the core library small, SceneJS dynamically loads it's non-core functionality from a directory of
-plugins. In the example above, the <code>prims/teapot</code> node is a custom node type instantiated
-from a <a href="https://github.com/xeolabs/scenejs/tree/V3.1/api/latest/plugins/node/prims/teapot.js">prims/teapot</a>
-plugin, which SceneJS loaded on-demand from <a href="https://github.com/xeolabs/scenejs/tree/V3.1/api/latest/plugins">the
+plugins. In the example above, the <code>geometry/teapot</code> node is a custom node type instantiated
+from a <a href="https://github.com/xeolabs/scenejs/tree/v4.0/api/latest/plugins/node/geometry/teapot.js">geometry/teapot</a>
+plugin, which SceneJS loaded on-demand from <a href="https://github.com/xeolabs/scenejs/tree/v4.0/api/latest/plugins">the
 plugins directory</a> within its repository on GitHub.
 
 ## Serving your own plugins

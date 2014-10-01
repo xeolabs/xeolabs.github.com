@@ -98,7 +98,7 @@
 
 <div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
   <div class="article-author-top">
-    <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+    <img src="/images/bio-photo.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
 <h3><a href="/about/">@xeoLabs</a></h3>
 <p>Lindsay Kay<br>3D Web developer</p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
@@ -157,8 +157,7 @@ without using plugins.
 <div class="highlight"><pre><code class="html">.
 ├── scenejs.js
 ├── plugins
-└── firstExample.html
-</code></pre></div>
+└── firstExample.html</code></pre></div>
 
 <p>We have the SceneJS library, the SceneJS plugins bundle, and an example HTML page which renders our teapot.
   <br /><br />
@@ -168,8 +167,7 @@ Now let’s look at the essential bits of that <code>firstExample.html</code> pa
 
 <p>Within the &lt;head&gt; tag of the page, we link to the SceneJS library:</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;./scenejs.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;./scenejs.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
 
 <h3 id="point-scenejs-to-the-plugins">Point SceneJS to the plugins</h3>
 
@@ -177,8 +175,7 @@ Now let’s look at the essential bits of that <code>firstExample.html</code> pa
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">setConfigs</span><span class="p">({</span>
     <span class="nx">pluginPath</span><span class="o">:</span> <span class="s2">&quot;./plugins&quot;</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <h3 id="create-a-scene">Create a scene</h3>
 
@@ -199,9 +196,9 @@ Now let’s look at the essential bits of that <code>firstExample.html</code> pa
                     <span class="nx">nodes</span><span class="o">:</span> <span class="p">[</span>
 
                         <span class="c1">// Teapot primitive, implemented by plugin file</span>
-                        <span class="c1">// ./plugins/node/prims/teapot.js</span>
+                        <span class="c1">// ./plugins/node/geometry/teapot.js</span>
                         <span class="p">{</span>
-                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/teapot&quot;</span><span class="p">,</span>
+                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/teapot&quot;</span><span class="p">,</span>
                             <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;myTeapot&quot;</span>
                         <span class="p">}</span>
                     <span class="p">]</span>
@@ -209,8 +206,7 @@ Now let’s look at the essential bits of that <code>firstExample.html</code> pa
             <span class="p">]</span>
         <span class="p">}</span>
     <span class="p">]</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <h3 id="spin-the-teapot">Spin the teapot</h3>
 
@@ -224,12 +220,11 @@ Now let’s look at the essential bits of that <code>firstExample.html</code> pa
         <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
             <span class="nx">myRotate</span><span class="p">.</span><span class="nx">setAngle</span><span class="p">(</span><span class="nx">angle</span> <span class="o">+=</span> <span class="mf">0.5</span><span class="p">);</span>
         <span class="p">});</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <h3 id="replace-the-teapot">Replace the teapot</h3>
 
-<p>Scenes can be build incrementally. Let’s add another teapot</p>
+<p>Scenes can be built incrementally. Let’s add another teapot</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">scene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">&quot;myTeapot&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">myTeapot</span><span class="p">)</span> <span class="p">{</span>
 
@@ -237,11 +232,10 @@ Now let’s look at the essential bits of that <code>firstExample.html</code> pa
 
     <span class="nx">scene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">&quot;myRotate&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">myRotate</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">myRotate</span><span class="p">.</span><span class="nx">addNode</span><span class="p">({</span>
-            <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;prims/torus&quot;</span>
+            <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;geometry/torus&quot;</span>
         <span class="p">});</span>
     <span class="p">})</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <h1 id="whats-next">What’s next?</h1>
 
@@ -252,7 +246,7 @@ Now let’s look at the essential bits of that <code>firstExample.html</code> pa
       <hr />
       <footer role="contentinfo">
         <div class="article-author-bottom">
-          <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+          <img src="/images/bio-photo.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
 <h3><a href="/about/">@xeoLabs</a></h3>
 <p>Lindsay Kay<br>3D Web developer</p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
@@ -298,17 +292,29 @@ Now let’s look at the essential bits of that <code>firstExample.html</code> pa
     
       
       
+        
+          
+        
+      
       
       <li><a href="/articles/scenejs-transparency" title="Transparency in SceneJS">Transparency in SceneJS</a></li>
       
     
       
       
+        
+          
+        
+      
       
       <li><a href="/articles/scenejs-alpha-mapping" title="Alpha Mapping in SceneJS">Alpha Mapping in SceneJS</a></li>
       
     
       
+      
+        
+          
+        
       
       
       <li><a href="/articles/scenejs-webgl-context-lost" title="Automatic WebGLContestLost Recovery in SceneJS">Automatic WebGLContestLost Recovery in SceneJS</a></li>
@@ -318,7 +324,7 @@ Now let’s look at the essential bits of that <code>firstExample.html</code> pa
     <hr />
   </div><!-- /.related-articles -->
   <footer>
-    <span>&copy; 2013 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+    <span>&copy; 2014 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

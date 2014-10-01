@@ -62,7 +62,7 @@ var scene = SceneJS.createScene({
                 z: 5.0,
 
                 nodes: [{
-                    type: "prims/box"
+                    type: "geometry/box"
                 }]
             }, {
                 type: "translate",
@@ -70,11 +70,11 @@ var scene = SceneJS.createScene({
                 z: 5.0,
 
                 nodes: [{
-                    type: "prims/box"
+                    type: "geometry/box"
                 }]
             }]
         }, {
-            type: "prims/teapot"
+            type: "geometry/teapot"
         }]
     }]
 });
@@ -124,7 +124,7 @@ scene.getNode("myMaterial",
                 x: 5,
                 nodes: [
                     {
-                        type: "prims/torus"
+                        type: "geometry/torus"
                     }
                 ]
             }

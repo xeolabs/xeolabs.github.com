@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2013-11-18T01:33:32-05:00</updated>
+<updated>2014-09-30T20:49:39-04:00</updated>
 <id>/</id>
 <author>
   <name>@xeoLabs</name>
@@ -80,8 +80,7 @@ transparency with &lt;a href=&quot;/articles/scenejs-alpha-mapping&quot;&gt;Alph
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setConfigs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
      &lt;span class=&quot;nx&quot;&gt;pluginPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;./plugins&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Then we’ll create the scene below, in which the outer blue box has a transparent material which allows you to see the teapot within it.
 &lt;br /&gt;&lt;br /&gt;
@@ -108,7 +107,7 @@ a &lt;code&gt;material&lt;/code&gt; node to make it transparent.&lt;/p&gt;
 
                     &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/teapot&amp;quot;&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/teapot&amp;quot;&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;                     &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -136,7 +135,7 @@ a &lt;code&gt;material&lt;/code&gt; node to make it transparent.&lt;/p&gt;
                                     &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;translate&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
                                     &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/box&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
                                             &lt;span class=&quot;nx&quot;&gt;xSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ySize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;zSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                                     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
@@ -148,8 +147,7 @@ a &lt;code&gt;material&lt;/code&gt; node to make it transparent.&lt;/p&gt;
             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Things to note:&lt;/p&gt;
 
@@ -179,8 +177,7 @@ That way, an &lt;code&gt;alpha&lt;/code&gt; value less than 1.0 would be suffici
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;myScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;myFlags&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;nx&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setTransparent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;varying-opacity&quot;&gt;Varying opacity&lt;/h3&gt;
 &lt;p&gt;You can make the box less transparent my increasing the &lt;code&gt;alpha&lt;/code&gt; on its &lt;code&gt;material&lt;/code&gt; node:&lt;/p&gt;
@@ -188,8 +185,7 @@ That way, an &lt;code&gt;alpha&lt;/code&gt; value less than 1.0 would be suffici
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;myScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;myMaterial&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myMaterial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;nx&quot;&gt;myMaterial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setAlpha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;picking-through-transparent-objects&quot;&gt;Picking through transparent objects&lt;/h3&gt;
 &lt;p&gt;Want to be able to pick the teapot through the box? That’s covered in the
@@ -292,7 +288,7 @@ Here’s the scene that renders the nested boxes in the scene above.&lt;/p&gt;
 
                                         &lt;span class=&quot;c1&quot;&gt;// Box primitive&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/box&amp;quot;&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                                     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -348,7 +344,7 @@ Here’s the scene that renders the nested boxes in the scene above.&lt;/p&gt;
 
                                             &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
                                                 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/box&amp;quot;&lt;/span&gt;
                                                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                                             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -383,7 +379,7 @@ Here’s the scene that renders the nested boxes in the scene above.&lt;/p&gt;
 
                                             &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
                                                 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/box&amp;quot;&lt;/span&gt;
                                                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                                             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -396,8 +392,7 @@ Here’s the scene that renders the nested boxes in the scene above.&lt;/p&gt;
             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Things to note:&lt;/p&gt;
 
@@ -414,8 +409,7 @@ innermost box renders first&lt;/li&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;myScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;greenBoxLayer&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;layer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;nx&quot;&gt;layer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setPriority&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;That’s going to make the green outermost box render before the innermost blue box, which is actually going to wreck our
  transparency sorting.
@@ -489,8 +483,7 @@ In this tutorial, I’ll build on techniques from the &lt;a href=&quot;/articles
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setConfigs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
      &lt;span class=&quot;nx&quot;&gt;pluginPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;./plugins&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Then we’ll create the scene below, in which the outer green box has an alpha texture which creates transparent areas through
 which you can see the inner blue box.
@@ -551,17 +544,13 @@ transparency (which you learned about in the &lt;a href=&quot;/articles/scenejs-
                                 &lt;span class=&quot;c1&quot;&gt;// the intensity of each texture pixel.&lt;/span&gt;
                                 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
                                     &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;texture&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                    &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;theTexture&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                    &lt;span class=&quot;nx&quot;&gt;layers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-                                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                            &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;../../../textures/leavesAlphaMap.jpg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                            &lt;span class=&quot;nx&quot;&gt;applyTo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;alpha&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                            &lt;span class=&quot;nx&quot;&gt;blendMode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;mul&amp;quot;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Default&lt;/span&gt;
-                                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-                                    &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;../../../textures/leavesAlphaMap.jpg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;applyTo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;alpha&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;blendMode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;mul&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Default&lt;/span&gt;
+
                                     &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/box&amp;quot;&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                                     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -582,7 +571,7 @@ transparency (which you learned about in the &lt;a href=&quot;/articles/scenejs-
                             &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;scale&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
                             &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
                                 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/box&amp;quot;&lt;/span&gt;
                                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -591,8 +580,7 @@ transparency (which you learned about in the &lt;a href=&quot;/articles/scenejs-
             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Things to note:&lt;/p&gt;
 
@@ -624,24 +612,16 @@ create a cool flowing gas pattern across the surface of the outer box.
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;The code is identical to the previous example, except for the &lt;code&gt;texture&lt;/code&gt; node, which looks like this:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;texture&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;layers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;video&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;../../../movies/testVideo.ogv&amp;quot;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;applyTo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;alpha&amp;quot;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;texture/video&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;../../../movies/testVideo.ogv&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;applyTo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;alpha&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Things to note:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;The &lt;code&gt;source&lt;/code&gt; on this &lt;code&gt;texture&lt;/code&gt; causes it to employ the core SceneJS “video” texture plugin to stream the video file into the texture&lt;/li&gt;
+  &lt;li&gt;We’re using a &lt;a href=&quot;http://scenejs.org/api/latest/plugins/node/texture/video.js&quot;&gt;&lt;code&gt;texture/video&lt;/code&gt;&lt;/a&gt; node, which streams the video file into the texture&lt;/li&gt;
   &lt;li&gt;Each of the video’s frames is a grayscale image, applied using the same principles as used for regular image textures
 &lt;br /&gt;
 &lt;br /&gt;&lt;/li&gt;
@@ -782,8 +762,7 @@ into world-space by the inverse view and projection matrices.&lt;/li&gt;
     &lt;span class=&quot;k&quot;&gt;vec4&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bitShift&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xxyz&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bitMask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;unpacking-clip-space-z-in-javascript&quot;&gt;Unpacking clip-space Z in JavaScript&lt;/h4&gt;
 
@@ -791,15 +770,13 @@ into world-space by the inverse view and projection matrices.&lt;/li&gt;
     &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;vec&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;depthZ&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;256.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;depthZ&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;256.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;depthZ&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;256.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;depthZ&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;256.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bitShift&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;256.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;256.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;256.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;256.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;256.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;256.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SceneJS_math_dotVector4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;vec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bitShift&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;calculating-clip-space-z-in-the-fragment-shader&quot;&gt;Calculating clip-space Z in the fragment shader&lt;/h4&gt;
 &lt;p&gt;Step (4) requires that we have the view-space position in the fragment shader, which we pass through from the vertex shader. It also requires us to feed the locations of the near and far clipping planes into the fragment shader (which we take from the scene’s camera node). Using these, we calculate the clip-space depth like so:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;glsl&quot;&gt;&lt;span class=&quot;k&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uZNear&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vViewVertex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uZFar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;uZNear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;gl_FragColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;packDepth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;n&quot;&gt;gl_FragColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;packDepth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;SceneJS internally caches the hidden frame buffers to avoid re-rendering them. This means that when we do a subsequent pick, as long as a re-render is not neccessary after objects have moved or changed appearance, we just re-read the buffers without repeating any rendering passes.&lt;/li&gt;
@@ -890,13 +867,11 @@ back an additional &lt;code&gt;worldPos&lt;/code&gt; property in the result, whi
 
         &lt;span class=&quot;c1&quot;&gt;// Three-element array containing the X,Y,Z World-space coordinates at which we picked&lt;/span&gt;
         &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;worldPos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;worldPos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;And here’s the ray-pick call:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;myScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;150&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rayPick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Note the rayPick flag&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;myScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;150&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rayPick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Note the rayPick flag&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
   &lt;p&gt;&lt;a href=&quot;/articles/scenejs-ray-picking&quot;&gt;Fast Ray Picking in SceneJS&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
@@ -956,8 +931,7 @@ without using plugins.
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;.
 ├── scenejs.js
 ├── plugins
-└── firstExample.html
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+└── firstExample.html&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;We have the SceneJS library, the SceneJS plugins bundle, and an example HTML page which renders our teapot.
   &lt;br /&gt;&lt;br /&gt;
@@ -967,8 +941,7 @@ Now let’s look at the essential bits of that &lt;code&gt;firstExample.html&lt;
 
 &lt;p&gt;Within the &amp;lt;head&amp;gt; tag of the page, we link to the SceneJS library:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;./scenejs.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;./scenejs.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;point-scenejs-to-the-plugins&quot;&gt;Point SceneJS to the plugins&lt;/h3&gt;
 
@@ -976,8 +949,7 @@ Now let’s look at the essential bits of that &lt;code&gt;firstExample.html&lt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setConfigs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;pluginPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;./plugins&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;create-a-scene&quot;&gt;Create a scene&lt;/h3&gt;
 
@@ -998,9 +970,9 @@ Now let’s look at the essential bits of that &lt;code&gt;firstExample.html&lt;
                     &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
 
                         &lt;span class=&quot;c1&quot;&gt;// Teapot primitive, implemented by plugin file&lt;/span&gt;
-                        &lt;span class=&quot;c1&quot;&gt;// ./plugins/node/prims/teapot.js&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// ./plugins/node/geometry/teapot.js&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/teapot&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/teapot&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
                             &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;myTeapot&amp;quot;&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
@@ -1008,8 +980,7 @@ Now let’s look at the essential bits of that &lt;code&gt;firstExample.html&lt;
             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;spin-the-teapot&quot;&gt;Spin the teapot&lt;/h3&gt;
 
@@ -1023,12 +994,11 @@ Now let’s look at the essential bits of that &lt;code&gt;firstExample.html&lt;
         &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
             &lt;span class=&quot;nx&quot;&gt;myRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;angle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;replace-the-teapot&quot;&gt;Replace the teapot&lt;/h3&gt;
 
-&lt;p&gt;Scenes can be build incrementally. Let’s add another teapot&lt;/p&gt;
+&lt;p&gt;Scenes can be built incrementally. Let’s add another teapot&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;myTeapot&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myTeapot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
@@ -1036,11 +1006,10 @@ Now let’s look at the essential bits of that &lt;code&gt;firstExample.html&lt;
 
     &lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;myRotate&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;nx&quot;&gt;myRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/torus&amp;quot;&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/torus&amp;quot;&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;whats-next&quot;&gt;What’s next?&lt;/h1&gt;
 
@@ -1106,8 +1075,7 @@ Now let’s look at the essential bits of that &lt;code&gt;firstExample.html&lt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setConfigs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
      &lt;span class=&quot;nx&quot;&gt;pluginPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;./plugins&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Then we’ll create a scene containing the two teapots shown below. Each teapot is wrapped in a &lt;code&gt;name&lt;/code&gt; node, which enables it
 to be picked, and assigns it a symbolic name that will identify it in pick results whenever it is picked.
@@ -1141,7 +1109,7 @@ to be picked, and assigns it a symbolic name that will identify it in pick resul
 
                                         &lt;span class=&quot;c1&quot;&gt;// Teapot primitive&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/teapot&amp;quot;&lt;/span&gt;
+                                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/teapot&amp;quot;&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                                     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -1164,7 +1132,7 @@ to be picked, and assigns it a symbolic name that will identify it in pick resul
 
                                         &lt;span class=&quot;c1&quot;&gt;// Teapot primitive&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/teapot&amp;quot;&lt;/span&gt;
+                                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/teapot&amp;quot;&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                                     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -1175,8 +1143,7 @@ to be picked, and assigns it a symbolic name that will identify it in pick resul
             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;A few things to note:&lt;/p&gt;
 
@@ -1210,23 +1177,20 @@ That’s  useful for switching their pickability on and off.&lt;/li&gt;
 
         &lt;span class=&quot;c1&quot;&gt;// Two-element array containing the X,Y canvas coordinates at which we picked&lt;/span&gt;
         &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;canvasPos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;canvasPos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;We’ll also register a handler that gets called when nothing is picked:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;myScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;nopick&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Nothing picked.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;now-pick-something&quot;&gt;Now pick something&lt;/h3&gt;
 
 &lt;p&gt;Now we can attempt to pick one of our teapots, at some given canvas X and Y coordinates:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;myScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;150&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// X, Y&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;myScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;150&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// X, Y&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Assuming that we picked the blue teapot, the “pick” handler will then return:&lt;/p&gt;
 
@@ -1234,8 +1198,7 @@ That’s  useful for switching their pickability on and off.&lt;/li&gt;
     &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;blueTeapot&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;blueTeapot&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;canvasPos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;150&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;disabling-picking-for-objects&quot;&gt;Disabling picking for objects&lt;/h2&gt;
 
@@ -1267,7 +1230,7 @@ it just to emphasise that it’s the &lt;code&gt;flags&lt;/code&gt; node that ca
 
                                         &lt;span class=&quot;c1&quot;&gt;// Teapot primitive&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/teapot&amp;quot;&lt;/span&gt;
+                                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/teapot&amp;quot;&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                                     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -1297,7 +1260,7 @@ it just to emphasise that it’s the &lt;code&gt;flags&lt;/code&gt; node that ca
 
                                                 &lt;span class=&quot;c1&quot;&gt;// Teapot primitive&lt;/span&gt;
                                                 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/teapot&amp;quot;&lt;/span&gt;
+                                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/teapot&amp;quot;&lt;/span&gt;
                                                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                                             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -1310,8 +1273,7 @@ it just to emphasise that it’s the &lt;code&gt;flags&lt;/code&gt; node that ca
             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;toggling-pickability-for-an-object&quot;&gt;Toggling pickability for an object&lt;/h3&gt;
 &lt;p&gt;You can make the green teapot pickable by flipping the &lt;code&gt;picking&lt;/code&gt; flag on that &lt;code&gt;flags&lt;/code&gt; node:&lt;/p&gt;
@@ -1319,8 +1281,7 @@ it just to emphasise that it’s the &lt;code&gt;flags&lt;/code&gt; node that ca
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;myScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;myFlags&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;nx&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setPicking&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;picking-through-transparent-objects&quot;&gt;Picking through transparent objects&lt;/h2&gt;
 
@@ -1350,7 +1311,7 @@ it just to emphasise that it’s the &lt;code&gt;flags&lt;/code&gt; node that ca
 
                                 &lt;span class=&quot;c1&quot;&gt;// Teapot primitive&lt;/span&gt;
                                 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/teapot&amp;quot;&lt;/span&gt;
+                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/teapot&amp;quot;&lt;/span&gt;
                                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -1378,7 +1339,7 @@ it just to emphasise that it’s the &lt;code&gt;flags&lt;/code&gt; node that ca
 
                                                 &lt;span class=&quot;c1&quot;&gt;// Box primitive&lt;/span&gt;
                                                 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/box&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
                                                     &lt;span class=&quot;nx&quot;&gt;xSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ySize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;zSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
                                                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                                             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
@@ -1392,8 +1353,7 @@ it just to emphasise that it’s the &lt;code&gt;flags&lt;/code&gt; node that ca
             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;pick-name-hierarchies&quot;&gt;Pick name hierarchies&lt;/h2&gt;
 
@@ -1413,8 +1373,7 @@ So for example, assuming that we picked one of the table
     &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;leg1&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;myScene.table.leg1&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;canvasPos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;78&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;110&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Here’s a snippet of this scene that defines the table. The whole scene gets the name “myScene”, the table gets the
 name “table”, while the table’s legs get the names “leg1”, “leg2”, “leg3” and “leg4”.&lt;/p&gt;
@@ -1446,7 +1405,7 @@ name “table”, while the table’s legs get the names “leg1”, “leg2”,
 
                                                 &lt;span class=&quot;c1&quot;&gt;// Box primitive&lt;/span&gt;
                                                 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/box&amp;quot;&lt;/span&gt;
                                                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                                             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -1473,7 +1432,7 @@ name “table”, while the table’s legs get the names “leg1”, “leg2”,
 
                                                 &lt;span class=&quot;c1&quot;&gt;// Box primitive&lt;/span&gt;
                                                 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/box&amp;quot;&lt;/span&gt;
                                                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                                             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -1500,7 +1459,7 @@ name “table”, while the table’s legs get the names “leg1”, “leg2”,
 
                                                 &lt;span class=&quot;c1&quot;&gt;// Box primitive&lt;/span&gt;
                                                 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/box&amp;quot;&lt;/span&gt;
                                                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                                             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -1527,7 +1486,7 @@ name “table”, while the table’s legs get the names “leg1”, “leg2”,
 
                                                 &lt;span class=&quot;c1&quot;&gt;// Box primitive&lt;/span&gt;
                                                 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/box&amp;quot;&lt;/span&gt;
                                                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                                             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -1554,7 +1513,7 @@ name “table”, while the table’s legs get the names “leg1”, “leg2”,
 
                                                 &lt;span class=&quot;c1&quot;&gt;// Box primitive&lt;/span&gt;
                                                 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                                                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/box&amp;quot;&lt;/span&gt;
                                                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                                             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -1568,9 +1527,7 @@ name “table”, while the table’s legs get the names “leg1”, “leg2”,
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
- 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;whats-next&quot;&gt;What’s next?&lt;/h2&gt;
 
@@ -1634,8 +1591,7 @@ pointed SceneJS to where you keep your plugins:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setConfigs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;pluginPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;./foo/myPluginsDir&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Then just wrap the node around your scene:&lt;/p&gt;
 
@@ -1659,8 +1615,7 @@ pointed SceneJS to where you keep your plugins:&lt;/p&gt;
             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;And then everything’s pick-fly-orbitable.&lt;br /&gt;&lt;br /&gt;The node’s properties are:&lt;/p&gt;
 
@@ -1806,20 +1761,19 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
       &lt;span class=&quot;c1&quot;&gt;// Child nodes can be anything, but must fit within the dimensions&lt;/span&gt;
       &lt;span class=&quot;c1&quot;&gt;// of the physics body. In this case, we have a child box primitive,&lt;/span&gt;
       &lt;span class=&quot;c1&quot;&gt;// implemented by the plugin at&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;// http://scenejs.org/api/latest/plugins/node/prims/box.js&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// http://scenejs.org/api/latest/plugins/node/geometry/box.js&lt;/span&gt;
       &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-         &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/box&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
          &lt;span class=&quot;nx&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
       &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;There is one default physics system per scene&lt;/li&gt;
   &lt;li&gt;Each system has its own physics engine (eg. JigLibJS) that runs in its own Web worker&lt;/li&gt;
   &lt;li&gt;Using an optional &lt;code&gt;systemId&lt;/code&gt; property on the &lt;code&gt;physics/body&lt;/code&gt; node, multiple physics systems may be created per scene&lt;/li&gt;
-  &lt;li&gt;Note that vectors (size, pos, velocity) on the &lt;code&gt;physics/body&lt;/code&gt; and &lt;code&gt;prims/box&lt;/code&gt;` are arrays - we’re deprecating object formats for those sort of params.&lt;/li&gt;
+  &lt;li&gt;Note that vectors (size, pos, velocity) on the &lt;code&gt;physics/body&lt;/code&gt; and &lt;code&gt;geometry/box&lt;/code&gt;` are arrays - we’re deprecating object formats for those sort of params.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://scenejs.org/api/latest/plugins/node/physics/body.js&quot;&gt;&lt;code&gt;physics/body&lt;/code&gt; node implementation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1861,14 +1815,13 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
    &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
 
       &lt;span class=&quot;c1&quot;&gt;// Child sphere primitive, implemented by the plugin at&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;// http://scenejs.org/api/latest/plugins/node/prims/sphere.js&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// http://scenejs.org/api/latest/plugins/node/geometry/sphere.js&lt;/span&gt;
       &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-         &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/sphere&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/sphere&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
          &lt;span class=&quot;nx&quot;&gt;radius&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
       &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;plane-shaped-body&quot;&gt;Plane-shaped body&lt;/h2&gt;
 
@@ -1913,9 +1866,9 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
             &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
 
                 &lt;span class=&quot;c1&quot;&gt;// Grid ground plane geometry, implemented by plugin at&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;// http://scenejs.org/api/latest/plugins/node/prims/grid.js&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;// http://scenejs.org/api/latest/plugins/node/geometry/grid.js&lt;/span&gt;
                 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/grid&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/grid&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
                     &lt;span class=&quot;nx&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
                     &lt;span class=&quot;nx&quot;&gt;xSegments&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
                     &lt;span class=&quot;nx&quot;&gt;zSegments&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;
@@ -1923,8 +1876,7 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;More body types coming up.&lt;/p&gt;
 
@@ -1961,8 +1913,7 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
        &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Note that spatial properties like &lt;code&gt;pos&lt;/code&gt;, &lt;code&gt;dir&lt;/code&gt;, &lt;code&gt;velocity&lt;/code&gt; etc. are not supported on a &lt;code&gt;physics/material&lt;/code&gt; node, because those only make sense on an actual physical body.&lt;/p&gt;
 
@@ -1979,16 +1930,14 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
       &lt;span class=&quot;nx&quot;&gt;systemId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;mySystem&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Optional - selects scene&amp;#39;s default system when absent&lt;/span&gt;
       &lt;span class=&quot;nx&quot;&gt;gravity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;9.8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
       &lt;span class=&quot;nx&quot;&gt;solver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;ACCUMULATED&amp;quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// (default) or &amp;quot;FAST&amp;quot;, &amp;quot;NORMAL&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;We can reconfigure the system any time:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;physicsSystem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setConfigs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
      &lt;span class=&quot;nx&quot;&gt;gravity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;4.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
      &lt;span class=&quot;nx&quot;&gt;solver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;FAST&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;When the &lt;code&gt;systemId&lt;/code&gt; is given, the &lt;code&gt;physics/system&lt;/code&gt; node will configure that system, creating it first if not existing yet. When &lt;code&gt;systemId&lt;/code&gt; is absent, the node will configure the scene’s default physics system.&lt;/li&gt;
@@ -2009,8 +1958,7 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
     &lt;span class=&quot;nx&quot;&gt;velocity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;mass&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://scenejs.org/api/latest/plugins/node/physics/teapot.js&quot;&gt;&lt;code&gt;physics/teapot&lt;/code&gt; node implementation&lt;/a&gt;&lt;/li&gt;
@@ -2025,8 +1973,7 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
     &lt;span class=&quot;nx&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;4.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;mass&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://scenejs.org/api/latest/plugins/node/physics/box.js&quot;&gt;&lt;code&gt;physics/box&lt;/code&gt; node implementation&lt;/a&gt;&lt;/li&gt;
@@ -2044,8 +1991,7 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
     &lt;span class=&quot;nx&quot;&gt;wire&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;mass&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://scenejs.org/api/latest/plugins/node/physics/sphere.js&quot;&gt;&lt;code&gt;physics/sphere&lt;/code&gt; node implementation&lt;/a&gt;&lt;/li&gt;
@@ -2065,8 +2011,7 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
     &lt;span class=&quot;nx&quot;&gt;wire&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;mass&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://scenejs.org/api/latest/plugins/node/physics/plane.js&quot;&gt;&lt;code&gt;physics/plane&lt;/code&gt; node implementation&lt;/a&gt;&lt;/li&gt;
@@ -2082,8 +2027,7 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setConfigs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;physicsEngine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;jiglibjs&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Each supported physics engine will be a RequireJS module  within the plugin support library directory, and will export this interface:&lt;/p&gt;
 
@@ -2123,8 +2067,7 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
 &lt;span class=&quot;cm&quot;&gt;       */&lt;/span&gt;
       &lt;span class=&quot;nx&quot;&gt;integrate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
       &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://scenejs.org/api/latest/plugins/lib/physics/worker.js&quot;&gt;Worker implementation for JigLibJS&lt;/a&gt;&lt;/li&gt;
@@ -2210,8 +2153,7 @@ become a de facto industry standard for transferring models between 3D programs,
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setConfigs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
      &lt;span class=&quot;nx&quot;&gt;pluginPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;./plugins&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;..then importing an .OBJ is as easy as:&lt;/p&gt;
 
@@ -2223,38 +2165,33 @@ become a de facto industry standard for transferring models between 3D programs,
             &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
                 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
                     &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;texture&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;layers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                            &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;foo/bar/raptor.jpg&amp;quot;&lt;/span&gt;
-                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;foo/bar/raptor.jpg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
                     &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
 
                         &lt;span class=&quot;c1&quot;&gt;// Import Wavefront .OBJ mesh&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;import/obj&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;foo/bar/raptor.obj&amp;quot;&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;import/obj&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;foo/bar/raptor.obj&amp;quot;&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Importing meshes from the other formats is similar. To import .MD2, your node would be:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;import/md2&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;foo/bar/lion.md2&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;And to import .3DS:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;import/3ds&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;foo/bar/lexus.3ds&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;shouts-out-to&quot;&gt;Shouts out to:&lt;/h3&gt;
 
@@ -2356,8 +2293,7 @@ in some way:&lt;/p&gt;
     &lt;span class=&quot;c1&quot;&gt;// manually with a destructor.&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;destroy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;using-the-new-node-type&quot;&gt;Using the new node type&lt;/h2&gt;
 
@@ -2367,8 +2303,7 @@ which means that we&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;.
 ├── scenejs.js
 ├── plugins
-└── firstExample.html
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+└── firstExample.html&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;We have the SceneJS library, the SceneJS plugins bundle, and an example HTML page which renders our teapot.
   &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
@@ -2378,8 +2313,7 @@ which means that we&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;configure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;pluginPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;./plugins&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;We’ll also assume that our new node type is saved as &lt;code&gt;color.js&lt;/code&gt; within the directory structure below:
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
@@ -2388,8 +2322,7 @@ which means that we&lt;/p&gt;
 └── plugins
     └── node
         └── demos
-            └── color.js
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+            └── color.js&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Now that SceneJS will be able to load the plugin listed above, you can create a scene that includes an instance of it (along with a teapot, which comes from another plugin):&lt;/p&gt;
 
@@ -2415,17 +2348,16 @@ which means that we&lt;/p&gt;
                     &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
 
                         &lt;span class=&quot;c1&quot;&gt;// Teapot primitive, implemented by plugin at&lt;/span&gt;
-                        &lt;span class=&quot;c1&quot;&gt;// ./plugins/node/prims/teapot.js&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// ./plugins/node/geometry/teapot.js&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/teapot&amp;quot;&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/teapot&amp;quot;&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;As mentioned, when SceneJS parses that instance of our &lt;code&gt;demos/color&lt;/code&gt; node type, it’s going to dynamically load our plugin script,
 which will install the plugin type, which SceneJS will then instantiate to create the node.
@@ -2439,7 +2371,7 @@ Now lets get the node instance and use one of its accessor methods to periodical
 Note that since our node originates from a plugin that will be loaded on-demand, we need to get the node asynchronously
 using a callback (instead of synchronously, like we can with instances of core node types):&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;    &lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;myColor&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;myColor&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
         &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
             &lt;span class=&quot;nx&quot;&gt;setInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -2450,8 +2382,7 @@ using a callback (instead of synchronously, like we can with instances of core n
                     &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
                 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
             &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;See that setColor method, which is defined by our node type?&lt;/p&gt;
 
@@ -2472,13 +2403,12 @@ Support libraries used by custom node types are conventionally kept in a &lt;cod
 │   │   ├── someLibrary.js
 │   │   └── someOtherLibrary.js
 │   └── node
-└── firstExample.html
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+└── firstExample.html&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;
 Custom node types can then require the dependencies using a &lt;em&gt;scenejsPluginDeps&lt;/em&gt; prefix:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;    &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;
 
         &lt;span class=&quot;c1&quot;&gt;// This prefix routes to the 3rd-party libs directory&lt;/span&gt;
         &lt;span class=&quot;c1&quot;&gt;// containing resources used by plugins&lt;/span&gt;
@@ -2493,12 +2423,11 @@ Custom node types can then require the dependencies using a &lt;em&gt;scenejsPlu
                     &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
             &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;SceneJS synchronises that RequireJS &lt;code&gt;scenejsPluginDeps&lt;/code&gt; path with the current &lt;a href=&quot;#serving-plugins-yourself&quot;&gt;pluginPath configuration&lt;/a&gt;.
 &lt;br /&gt;&lt;br /&gt;
-As an example, the bundled &lt;a href=&quot;https://github.com/xeolabs/scenejs/blob/V3.1/api/latest/plugins/node/canvas/capture.js&quot;&gt;canvas/capture&lt;/a&gt; node type
+As an example, the bundled &lt;a href=&quot;https://github.com/xeolabs/scenejs/blob/v4.0/api/latest/plugins/node/canvas/capture.js&quot;&gt;canvas/capture&lt;/a&gt; node type
 uses the 3rd-party &lt;code&gt;canvas2image&lt;/code&gt; library to capture the canvas to an image. Run a demo of that node
 &lt;a href=&quot;http://scenejs.org/examples.html?page=canvasCapture&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
@@ -2529,9 +2458,9 @@ Here’s a &lt;code&gt;growingTeapot&lt;/code&gt; node, which grows in height al
 
                         &lt;span class=&quot;c1&quot;&gt;// Teapot primitive,&lt;/span&gt;
                         &lt;span class=&quot;c1&quot;&gt;// implemented by plugin at&lt;/span&gt;
-                        &lt;span class=&quot;c1&quot;&gt;// http://scenejs.org/api/latest/plugins/node/prims/teapot.js&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// http://scenejs.org/api/latest/plugins/node/geometry/teapot.js&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/teapot&amp;quot;&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/teapot&amp;quot;&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -2562,8 +2491,7 @@ Here’s a &lt;code&gt;growingTeapot&lt;/code&gt; node, which grows in height al
     &lt;span class=&quot;nx&quot;&gt;destroy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;off&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_tick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;We’ll create a scene graph containing this node:&lt;/p&gt;
 
@@ -2589,8 +2517,7 @@ Here’s a &lt;code&gt;growingTeapot&lt;/code&gt; node, which grows in height al
             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Then we’ll get that node and subscribe to its publication:&lt;/p&gt;
 
@@ -2607,8 +2534,7 @@ Here’s a &lt;code&gt;growingTeapot&lt;/code&gt; node, which grows in height al
                 &lt;span class=&quot;c1&quot;&gt;// Show the publication in an alert&lt;/span&gt;
                 &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
             &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=customNodeDefWithPublications&quot;&gt;Run this example&lt;/a&gt;&lt;/li&gt;
@@ -2647,9 +2573,9 @@ notifications to us as a count of tasks in progress, as we’ll see further down
 
                         &lt;span class=&quot;c1&quot;&gt;// Teapot primitive,&lt;/span&gt;
                         &lt;span class=&quot;c1&quot;&gt;// implemented by plugin at&lt;/span&gt;
-                        &lt;span class=&quot;c1&quot;&gt;// http://scenejs.org/api/latest/plugins/node/prims/teapot.js&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// http://scenejs.org/api/latest/plugins/node/geometry/teapot.js&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/teapot&amp;quot;&lt;/span&gt;
+                            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/teapot&amp;quot;&lt;/span&gt;
                         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -2699,8 +2625,7 @@ notifications to us as a count of tasks in progress, as we’ll see further down
             &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_taskId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;taskFinished&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_taskId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Now create a scene that contains an instance of our node type:&lt;/p&gt;
 
@@ -2724,8 +2649,7 @@ notifications to us as a count of tasks in progress, as we’ll see further down
             &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Periodically query and log scene busyness status to the console:&lt;/p&gt;
 
@@ -2740,8 +2664,7 @@ notifications to us as a count of tasks in progress, as we’ll see further down
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Scene tasks in progress: &amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;numTasks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=customNodeDefWithTasks&quot;&gt;Run this example&lt;/a&gt;&lt;/li&gt;
@@ -2803,15 +2726,15 @@ notifications to us as a count of tasks in progress, as we’ll see further down
 &lt;/table&gt;
 
 &lt;h1 id=&quot;overview&quot;&gt;Overview&lt;/h1&gt;
-&lt;p&gt;SceneJS supports detail culling via the &lt;code&gt;frustum/lod&lt;/code&gt; node, which sets up an axis-aligned bounding box around its child nodes. Each child provides a different level of detail for the object within the boundary, and the &lt;code&gt;frustum/lod&lt;/code&gt; enables one of its children at any instant in order to show the appropriate detail level for the current projected 2D canvas size of the boundary.&lt;/p&gt;
+&lt;p&gt;SceneJS supports detail culling via the &lt;code&gt;cull/detail&lt;/code&gt; node, which sets up an axis-aligned bounding box around its child nodes. Each child provides a different level of detail for the object within the boundary, and the &lt;code&gt;cull/detail&lt;/code&gt; enables one of its children at any instant in order to show the appropriate detail level for the current projected 2D canvas size of the boundary.&lt;/p&gt;
 
-&lt;p&gt;The &lt;code&gt;frustum/body&lt;/code&gt; node can be configured to disable all its children when the boundary falls outside the view frustum. This is an optional configuration because the node might potentially be used to switch detail for non-visible objects, such as sound sources, which could influence the scene even when they fall outside the frustum. Note that the node disables all children at the lowest level of detail, effectively working as a sort of distance culling.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;cull/body&lt;/code&gt; node can be configured to disable all its children when the boundary falls outside the view frustum. This is an optional configuration because the node might potentially be used to switch detail for non-visible objects, such as sound sources, which could influence the scene even when they fall outside the frustum. Note that the node disables all children at the lowest level of detail, effectively working as a sort of distance culling.&lt;/p&gt;
 
 &lt;p&gt;Internally, culling is distributed across multiple culling engines, each running in its own web worker. This attempts to make culling responsive, while preventing it from starving the main rendering thread.&lt;/p&gt;
 
 &lt;h1 id=&quot;creating-a-detail-switched-object&quot;&gt;Creating a detail-switched object&lt;/h1&gt;
 
-&lt;p&gt;The &lt;code&gt;frustum/lod&lt;/code&gt; node encloses its child nodes in an axis-aligned  World-space bounding box and enables the appropriate child for the box’s current projected 2D canvas size.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;cull/detail&lt;/code&gt; node encloses its child nodes in an axis-aligned  World-space bounding box and enables the appropriate child for the box’s current projected 2D canvas size.&lt;/p&gt;
 
 &lt;p&gt;As shown in the example below, we configure the node with a 2D size threshold for each child node, given in property &lt;code&gt;sizes&lt;/code&gt;. When the boundary’s projected size falls below the first of these thresholds, then no child will be enabled. When the projected size is between the first and second thresholds, the first child is enabled, then when between the second and third thresholds, the second child is enabled, and so on.&lt;/p&gt;
 
@@ -2822,7 +2745,7 @@ notifications to us as a count of tasks in progress, as we’ll see further down
 &lt;h2 id=&quot;example&quot;&gt;Example:&lt;/h2&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;someNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-   &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;frustum/lod&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;cull/detail&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
    &lt;span class=&quot;c1&quot;&gt;// World-space axis-aligned bounding box&lt;/span&gt;
    &lt;span class=&quot;nx&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xPos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;yPos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;zPos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
@@ -2872,9 +2795,9 @@ notifications to us as a count of tasks in progress, as we’ll see further down
                   &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
 
                      &lt;span class=&quot;c1&quot;&gt;// Box primitive, implemented by plugin at&lt;/span&gt;
-                     &lt;span class=&quot;c1&quot;&gt;// ./plugins/node/prims/box.js&lt;/span&gt;
+                     &lt;span class=&quot;c1&quot;&gt;// ./plugins/node/geometry/box.js&lt;/span&gt;
                      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                        &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                        &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/box&amp;quot;&lt;/span&gt;
                      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                   &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
                &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt;
@@ -2908,9 +2831,9 @@ notifications to us as a count of tasks in progress, as we’ll see further down
                &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
 
                   &lt;span class=&quot;c1&quot;&gt;// Sphere primitive, implemented by plugin at&lt;/span&gt;
-                  &lt;span class=&quot;c1&quot;&gt;// ./plugins/node/prims/sphere.js&lt;/span&gt;
+                  &lt;span class=&quot;c1&quot;&gt;// ./plugins/node/geometry/sphere.js&lt;/span&gt;
                   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                     &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/sphere&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                     &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/sphere&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
                      &lt;span class=&quot;nx&quot;&gt;radius&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
                      &lt;span class=&quot;nx&quot;&gt;latitudeBands&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// A fairly low-rez sphere&lt;/span&gt;
                      &lt;span class=&quot;nx&quot;&gt;longitudeBands&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;
@@ -2946,9 +2869,9 @@ notifications to us as a count of tasks in progress, as we’ll see further down
                &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
 
                   &lt;span class=&quot;c1&quot;&gt;// Teapot primitive, implemented by plugin at&lt;/span&gt;
-                  &lt;span class=&quot;c1&quot;&gt;// ./plugins/node/prims/teapot.js&lt;/span&gt;
+                  &lt;span class=&quot;c1&quot;&gt;// ./plugins/node/geometry/teapot.js&lt;/span&gt;
                   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                     &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/teapot&amp;quot;&lt;/span&gt;
+                     &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/teapot&amp;quot;&lt;/span&gt;
                   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
             &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt;
@@ -2957,8 +2880,7 @@ notifications to us as a count of tasks in progress, as we’ll see further down
 
       &lt;span class=&quot;c1&quot;&gt;// Mode children as required..&lt;/span&gt;
    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;limitations&quot;&gt;Limitations&lt;/h1&gt;
 
@@ -2975,15 +2897,15 @@ keep track of the boundaries of things, which seemed a reasonable tradeoff to re
 &lt;img src=&quot;http://scenejs.org/images/frustumCulling.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;The &lt;code&gt;frustum/lod&lt;/code&gt; node is implementated by this &lt;a href=&quot;http://scenejs.org/api/latest/plugins/node/frustum/lod.js&quot;&gt;custom node plugin&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;For performance, culling is distributed across multiple &lt;a href=&quot;http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullEngine.js&quot;&gt;culling engines&lt;/a&gt;, each running within its own &lt;a href=&quot;http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullWorker.js&quot;&gt;worker thread&lt;/a&gt;. Each of those workers is proxied by a &lt;a href=&quot;http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullSystem.js&quot;&gt;system&lt;/a&gt; in which the &lt;code&gt;frustum/lod&lt;/code&gt; nodes create frustum collision bodies, and those systems are managed in a load-balanced &lt;a href=&quot;http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullSystemPool.js&quot;&gt;pool&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;The &lt;code&gt;frustum/lod&lt;/code&gt; node actually wraps a more basic &lt;a href=&quot;http://scenejs.org/api/latest/plugins/node/frustum/body.js&quot;&gt;&lt;code&gt;frustum/body&lt;/code&gt;&lt;/a&gt; node type, which creates the collision body and subscribes to its frustum intersection status and projected 2D boundary size. The &lt;code&gt;frustum/lod&lt;/code&gt; node does the job of translating those updates into child node enables/disables. This strategy allows us to reuse the &lt;code&gt;frustum/body&lt;/code&gt; for internal workings of new types of culling node in future.&lt;/li&gt;
+  &lt;li&gt;The &lt;code&gt;cull/detail&lt;/code&gt; node is implementated by this &lt;a href=&quot;http://scenejs.org/api/latest/plugins/node/cull/detail.js&quot;&gt;custom node plugin&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;For performance, culling is distributed across multiple &lt;a href=&quot;http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullEngine.js&quot;&gt;culling engines&lt;/a&gt;, each running within its own &lt;a href=&quot;http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullWorker.js&quot;&gt;worker thread&lt;/a&gt;. Each of those workers is proxied by a &lt;a href=&quot;http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullSystem.js&quot;&gt;system&lt;/a&gt; in which the &lt;code&gt;cull/detail&lt;/code&gt; nodes create frustum collision bodies, and those systems are managed in a load-balanced &lt;a href=&quot;http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullSystemPool.js&quot;&gt;pool&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;The &lt;code&gt;cull/detail&lt;/code&gt; node actually wraps a more basic &lt;a href=&quot;http://scenejs.org/api/latest/plugins/node/cull/body.js&quot;&gt;&lt;code&gt;cull/body&lt;/code&gt;&lt;/a&gt; node type, which creates the collision body and subscribes to its frustum intersection status and projected 2D boundary size. The &lt;code&gt;cull/detail&lt;/code&gt; node does the job of translating those updates into child node enables/disables. This strategy allows us to reuse the &lt;code&gt;cull/body&lt;/code&gt; for internal workings of new types of culling node in future.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;roadmap&quot;&gt;Roadmap&lt;/h1&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Allow &lt;code&gt;frustum/cull&lt;/code&gt; boundaries to be defined in Model-space, where they are transformed by parent transform nodes&lt;/li&gt;
+  &lt;li&gt;Allow &lt;code&gt;cull/visibility&lt;/code&gt; boundaries to be defined in Model-space, where they are transformed by parent transform nodes&lt;/li&gt;
   &lt;li&gt;Other types of boundary shape, such as spherical&lt;/li&gt;
   &lt;li&gt;Each culling engine simply iterates over a list of bodies - improve their performance by organising the bodies in KD-trees&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/xeolabs/scenejs/issues?direction=desc&amp;amp;labels=Culling&amp;amp;page=1&amp;amp;sort=created&amp;amp;state=open&quot;&gt;Issues tagged ‘culling’&lt;/a&gt;&lt;/li&gt;
@@ -3066,7 +2988,7 @@ and rotation transform.&lt;/p&gt;
                 &lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;5.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
                 &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[{&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/box&amp;quot;&lt;/span&gt;
                 &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt;
             &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
                 &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;translate&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -3074,15 +2996,14 @@ and rotation transform.&lt;/p&gt;
                 &lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;5.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
                 &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[{&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/box&amp;quot;&lt;/span&gt;
                 &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt;
             &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/teapot&amp;quot;&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/teapot&amp;quot;&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;SceneJS parses that description to create the 3D scene shown below:
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
@@ -3109,8 +3030,7 @@ nodes like this:&lt;/p&gt;
                 &lt;span class=&quot;nx&quot;&gt;inc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
             &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;See how we get the node with an asynchronous callback? That’s because SceneJS may actually be creating bits
 of your scene asynchronously, as it waits for plugins to load. Always get your node objects this way.&lt;/p&gt;
@@ -3126,13 +3046,12 @@ of your scene asynchronously, as it waits for plugins to load. Always get your n
                 &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
                 &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
                     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                        &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/torus&amp;quot;&lt;/span&gt;
+                        &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/torus&amp;quot;&lt;/span&gt;
                     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
                 &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
             &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;removing-nodes&quot;&gt;Removing nodes&lt;/h2&gt;
 &lt;p&gt;Remove nodes like this:&lt;/p&gt;
@@ -3141,8 +3060,7 @@ of your scene asynchronously, as it waits for plugins to load. Always get your n
     &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myMaterial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
         &lt;span class=&quot;nx&quot;&gt;myMaterial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;destroy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
   &lt;p&gt;&lt;a href=&quot;/articles/scenejs-creating-a-scene-and-adding-nodes&quot;&gt;Adding and Removing Scene Nodes&lt;/a&gt; was originally published by @xeoLabs at &lt;a href=&quot;&quot;&gt;xeoLabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
@@ -3203,8 +3121,7 @@ their IFC viewer over to the latest SceneJS API. When it’s done, we should hav
 &lt;span class=&quot;s2&quot;&gt;    canvasId: &amp;quot;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myCanvas&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;The scene starts immediately - no need to call &lt;code&gt;myScene.start()&lt;/code&gt;.&lt;/li&gt;
@@ -3226,8 +3143,7 @@ their IFC viewer over to the latest SceneJS API. When it’s done, we should hav
     &lt;span class=&quot;nx&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
          &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;lights&quot;&gt;Lights&lt;/h1&gt;
 
@@ -3282,8 +3198,7 @@ their IFC viewer over to the latest SceneJS API. When it’s done, we should hav
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
         &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;now-in-v3x&quot;&gt;Now in V3.X&lt;/h3&gt;
 &lt;p&gt;In V3.X, light nodes have been simplified as shown below, where a single &lt;code&gt;lights&lt;/code&gt; node defines multiple light
@@ -3321,8 +3236,7 @@ sources for its subgraph. The &lt;code&gt;lights&lt;/code&gt; node:&lt;/p&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
         &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;These restrictions greatly simplify the engine and provide improved performance.&lt;/p&gt;
 
@@ -3345,16 +3259,14 @@ sources for its subgraph. The &lt;code&gt;lights&lt;/code&gt; node:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myMaterial&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;box&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Now in V3.X you create it using a plugin:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myMaterial&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;prims/box&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;geometry/box&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;/articles/scenejs-node-types&quot;&gt;Read more about the plugin API here&lt;/a&gt;&lt;/li&gt;

@@ -98,7 +98,7 @@
 
 <div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
   <div class="article-author-top">
-    <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+    <img src="/images/bio-photo.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
 <h3><a href="/about/">@xeoLabs</a></h3>
 <p>Lindsay Kay<br>3D Web developer</p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
@@ -158,8 +158,7 @@
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">setConfigs</span><span class="p">({</span>
      <span class="nx">pluginPath</span><span class="o">:</span><span class="s2">&quot;./plugins&quot;</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>Then we’ll create a scene containing the two teapots shown below. Each teapot is wrapped in a <code>name</code> node, which enables it
 to be picked, and assigns it a symbolic name that will identify it in pick results whenever it is picked.
@@ -193,7 +192,7 @@ to be picked, and assigns it a symbolic name that will identify it in pick resul
 
                                         <span class="c1">// Teapot primitive</span>
                                         <span class="p">{</span>
-                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/teapot&quot;</span>
+                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/teapot&quot;</span>
                                         <span class="p">}</span>
                                     <span class="p">]</span>
                                 <span class="p">}</span>
@@ -216,7 +215,7 @@ to be picked, and assigns it a symbolic name that will identify it in pick resul
 
                                         <span class="c1">// Teapot primitive</span>
                                         <span class="p">{</span>
-                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/teapot&quot;</span>
+                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/teapot&quot;</span>
                                         <span class="p">}</span>
                                     <span class="p">]</span>
                                 <span class="p">}</span>
@@ -227,8 +226,7 @@ to be picked, and assigns it a symbolic name that will identify it in pick resul
             <span class="p">]</span>
         <span class="p">}</span>
     <span class="p">]</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>A few things to note:</p>
 
@@ -262,23 +260,20 @@ That’s  useful for switching their pickability on and off.</li>
 
         <span class="c1">// Two-element array containing the X,Y canvas coordinates at which we picked</span>
         <span class="kd">var</span> <span class="nx">canvasPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">canvasPos</span><span class="p">;</span>
-    <span class="p">});</span>
-</code></pre></div>
+    <span class="p">});</span></code></pre></div>
 
 <p>We’ll also register a handler that gets called when nothing is picked:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">myScene</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;nopick&quot;</span><span class="p">,</span>
     <span class="kd">function</span> <span class="p">(</span><span class="nx">hit</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Nothing picked.&quot;</span><span class="p">);</span>
-    <span class="p">});</span>
-</code></pre></div>
+    <span class="p">});</span></code></pre></div>
 
 <h3 id="now-pick-something">Now pick something</h3>
 
 <p>Now we can attempt to pick one of our teapots, at some given canvas X and Y coordinates:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">myScene</span><span class="p">.</span><span class="nx">pick</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="mi">150</span><span class="p">);</span> <span class="c1">// X, Y</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="javascript"><span class="nx">myScene</span><span class="p">.</span><span class="nx">pick</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="mi">150</span><span class="p">);</span> <span class="c1">// X, Y</span></code></pre></div>
 
 <p>Assuming that we picked the blue teapot, the “pick” handler will then return:</p>
 
@@ -286,8 +281,7 @@ That’s  useful for switching their pickability on and off.</li>
     <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;blueTeapot&quot;</span><span class="p">,</span>
     <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;blueTeapot&quot;</span><span class="p">,</span>
     <span class="nx">canvasPos</span><span class="o">:</span> <span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">150</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <h2 id="disabling-picking-for-objects">Disabling picking for objects</h2>
 
@@ -319,7 +313,7 @@ it just to emphasise that it’s the <code>flags</code> node that causes picking
 
                                         <span class="c1">// Teapot primitive</span>
                                         <span class="p">{</span>
-                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/teapot&quot;</span>
+                                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/teapot&quot;</span>
                                         <span class="p">}</span>
                                     <span class="p">]</span>
                                 <span class="p">}</span>
@@ -349,7 +343,7 @@ it just to emphasise that it’s the <code>flags</code> node that causes picking
 
                                                 <span class="c1">// Teapot primitive</span>
                                                 <span class="p">{</span>
-                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/teapot&quot;</span>
+                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/teapot&quot;</span>
                                                 <span class="p">}</span>
                                             <span class="p">]</span>
                                         <span class="p">}</span>
@@ -362,8 +356,7 @@ it just to emphasise that it’s the <code>flags</code> node that causes picking
             <span class="p">]</span>
         <span class="p">}</span>
     <span class="p">]</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <h3 id="toggling-pickability-for-an-object">Toggling pickability for an object</h3>
 <p>You can make the green teapot pickable by flipping the <code>picking</code> flag on that <code>flags</code> node:</p>
@@ -371,8 +364,7 @@ it just to emphasise that it’s the <code>flags</code> node that causes picking
 <div class="highlight"><pre><code class="javascript"><span class="nx">myScene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">&quot;myFlags&quot;</span><span class="p">,</span>
     <span class="kd">function</span><span class="p">(</span><span class="nx">flags</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">flags</span><span class="p">.</span><span class="nx">setPicking</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-    <span class="p">});</span>
-</code></pre></div>
+    <span class="p">});</span></code></pre></div>
 
 <h2 id="picking-through-transparent-objects">Picking through transparent objects</h2>
 
@@ -402,7 +394,7 @@ it just to emphasise that it’s the <code>flags</code> node that causes picking
 
                                 <span class="c1">// Teapot primitive</span>
                                 <span class="p">{</span>
-                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/teapot&quot;</span>
+                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/teapot&quot;</span>
                                 <span class="p">}</span>
                             <span class="p">]</span>
                         <span class="p">}</span>
@@ -430,7 +422,7 @@ it just to emphasise that it’s the <code>flags</code> node that causes picking
 
                                                 <span class="c1">// Box primitive</span>
                                                 <span class="p">{</span>
-                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/box&quot;</span><span class="p">,</span>
+                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/box&quot;</span><span class="p">,</span>
                                                     <span class="nx">xSize</span><span class="o">:</span><span class="mi">3</span><span class="p">,</span> <span class="nx">ySize</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span> <span class="nx">zSize</span><span class="o">:</span><span class="mi">3</span>
                                                 <span class="p">}</span>
                                             <span class="p">]</span>
@@ -444,8 +436,7 @@ it just to emphasise that it’s the <code>flags</code> node that causes picking
             <span class="p">]</span>
         <span class="p">}</span>
     <span class="p">]</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <h2 id="pick-name-hierarchies">Pick name hierarchies</h2>
 
@@ -465,8 +456,7 @@ So for example, assuming that we picked one of the table
     <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;leg1&quot;</span><span class="p">,</span>
     <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;myScene.table.leg1&quot;</span><span class="p">,</span>
     <span class="nx">canvasPos</span><span class="o">:</span> <span class="p">[</span><span class="mi">78</span><span class="p">,</span> <span class="mi">110</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <p>Here’s a snippet of this scene that defines the table. The whole scene gets the name “myScene”, the table gets the
 name “table”, while the table’s legs get the names “leg1”, “leg2”, “leg3” and “leg4”.</p>
@@ -498,7 +488,7 @@ name “table”, while the table’s legs get the names “leg1”, “leg2”,
 
                                                 <span class="c1">// Box primitive</span>
                                                 <span class="p">{</span>
-                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/box&quot;</span>
+                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/box&quot;</span>
                                                 <span class="p">}</span>
                                             <span class="p">]</span>
                                         <span class="p">}</span>
@@ -525,7 +515,7 @@ name “table”, while the table’s legs get the names “leg1”, “leg2”,
 
                                                 <span class="c1">// Box primitive</span>
                                                 <span class="p">{</span>
-                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/box&quot;</span>
+                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/box&quot;</span>
                                                 <span class="p">}</span>
                                             <span class="p">]</span>
                                         <span class="p">}</span>
@@ -552,7 +542,7 @@ name “table”, while the table’s legs get the names “leg1”, “leg2”,
 
                                                 <span class="c1">// Box primitive</span>
                                                 <span class="p">{</span>
-                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/box&quot;</span>
+                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/box&quot;</span>
                                                 <span class="p">}</span>
                                             <span class="p">]</span>
                                         <span class="p">}</span>
@@ -579,7 +569,7 @@ name “table”, while the table’s legs get the names “leg1”, “leg2”,
 
                                                 <span class="c1">// Box primitive</span>
                                                 <span class="p">{</span>
-                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/box&quot;</span>
+                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/box&quot;</span>
                                                 <span class="p">}</span>
                                             <span class="p">]</span>
                                         <span class="p">}</span>
@@ -606,7 +596,7 @@ name “table”, while the table’s legs get the names “leg1”, “leg2”,
 
                                                 <span class="c1">// Box primitive</span>
                                                 <span class="p">{</span>
-                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/box&quot;</span>
+                                                    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/box&quot;</span>
                                                 <span class="p">}</span>
                                             <span class="p">]</span>
                                         <span class="p">}</span>
@@ -620,9 +610,7 @@ name “table”, while the table’s legs get the names “leg1”, “leg2”,
         <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">}</span>
-<span class="c1">//...</span>
- 
-</code></pre></div>
+<span class="c1">//...</span></code></pre></div>
 
 <h2 id="whats-next">What’s next?</h2>
 
@@ -634,7 +622,7 @@ flag that causes SceneJS to return the World-space coordinates of the point we�
       <hr />
       <footer role="contentinfo">
         <div class="article-author-bottom">
-          <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+          <img src="/images/bio-photo.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
 <h3><a href="/about/">@xeoLabs</a></h3>
 <p>Lindsay Kay<br>3D Web developer</p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
@@ -680,17 +668,29 @@ flag that causes SceneJS to return the World-space coordinates of the point we�
     
       
       
+        
+          
+        
+      
       
       <li><a href="/articles/scenejs-transparency" title="Transparency in SceneJS">Transparency in SceneJS</a></li>
       
     
       
       
+        
+          
+        
+      
       
       <li><a href="/articles/scenejs-alpha-mapping" title="Alpha Mapping in SceneJS">Alpha Mapping in SceneJS</a></li>
       
     
       
+      
+        
+          
+        
       
       
       <li><a href="/articles/scenejs-webgl-context-lost" title="Automatic WebGLContestLost Recovery in SceneJS">Automatic WebGLContestLost Recovery in SceneJS</a></li>
@@ -700,7 +700,7 @@ flag that causes SceneJS to return the World-space coordinates of the point we�
     <hr />
   </div><!-- /.related-articles -->
   <footer>
-    <span>&copy; 2013 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+    <span>&copy; 2014 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

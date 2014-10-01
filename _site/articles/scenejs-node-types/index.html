@@ -98,7 +98,7 @@
 
 <div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
   <div class="article-author-top">
-    <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+    <img src="/images/bio-photo.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
 <h3><a href="/about/">@xeoLabs</a></h3>
 <p>Lindsay Kay<br>3D Web developer</p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
@@ -192,8 +192,7 @@ in some way:</p>
     <span class="c1">// manually with a destructor.</span>
     <span class="nx">destroy</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="p">}</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <h2 id="using-the-new-node-type">Using the new node type</h2>
 
@@ -203,8 +202,7 @@ which means that we</p>
 <div class="highlight"><pre><code class="html">.
 ├── scenejs.js
 ├── plugins
-└── firstExample.html
-</code></pre></div>
+└── firstExample.html</code></pre></div>
 
 <p>We have the SceneJS library, the SceneJS plugins bundle, and an example HTML page which renders our teapot.
   <br /><br /></p>
@@ -214,8 +212,7 @@ which means that we</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">configure</span><span class="p">({</span>
     <span class="nx">pluginPath</span><span class="o">:</span> <span class="s2">&quot;./plugins&quot;</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>We’ll also assume that our new node type is saved as <code>color.js</code> within the directory structure below:
 <br /><br /></p>
@@ -224,8 +221,7 @@ which means that we</p>
 └── plugins
     └── node
         └── demos
-            └── color.js
-</code></pre></div>
+            └── color.js</code></pre></div>
 
 <p>Now that SceneJS will be able to load the plugin listed above, you can create a scene that includes an instance of it (along with a teapot, which comes from another plugin):</p>
 
@@ -251,17 +247,16 @@ which means that we</p>
                     <span class="nx">nodes</span><span class="o">:</span><span class="p">[</span>
 
                         <span class="c1">// Teapot primitive, implemented by plugin at</span>
-                        <span class="c1">// ./plugins/node/prims/teapot.js</span>
+                        <span class="c1">// ./plugins/node/geometry/teapot.js</span>
                         <span class="p">{</span>
-                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/teapot&quot;</span>
+                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/teapot&quot;</span>
                         <span class="p">}</span>
                     <span class="p">]</span>
                 <span class="p">}</span>
             <span class="p">]</span>
         <span class="p">}</span>
     <span class="p">]</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>As mentioned, when SceneJS parses that instance of our <code>demos/color</code> node type, it’s going to dynamically load our plugin script,
 which will install the plugin type, which SceneJS will then instantiate to create the node.
@@ -275,7 +270,7 @@ Now lets get the node instance and use one of its accessor methods to periodical
 Note that since our node originates from a plugin that will be loaded on-demand, we need to get the node asynchronously
 using a callback (instead of synchronously, like we can with instances of core node types):</p>
 
-<div class="highlight"><pre><code class="javascript">    <span class="nx">scene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">&quot;myColor&quot;</span><span class="p">,</span>
+<div class="highlight"><pre><code class="javascript"><span class="nx">scene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">&quot;myColor&quot;</span><span class="p">,</span>
         <span class="kd">function</span><span class="p">(</span><span class="nx">myColor</span><span class="p">)</span> <span class="p">{</span>
 
             <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -286,8 +281,7 @@ using a callback (instead of synchronously, like we can with instances of core n
                     <span class="nx">b</span><span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span>
                 <span class="p">});</span>
             <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
-        <span class="p">});</span>
-</code></pre></div>
+        <span class="p">});</span></code></pre></div>
 
 <p>See that setColor method, which is defined by our node type?</p>
 
@@ -308,13 +302,12 @@ Support libraries used by custom node types are conventionally kept in a <code>l
 │   │   ├── someLibrary.js
 │   │   └── someOtherLibrary.js
 │   └── node
-└── firstExample.html
-</code></pre></div>
+└── firstExample.html</code></pre></div>
 
 <p><br /><br />
 Custom node types can then require the dependencies using a <em>scenejsPluginDeps</em> prefix:</p>
 
-<div class="highlight"><pre><code class="javascript">    <span class="nx">require</span><span class="p">([</span>
+<div class="highlight"><pre><code class="javascript"><span class="nx">require</span><span class="p">([</span>
 
         <span class="c1">// This prefix routes to the 3rd-party libs directory</span>
         <span class="c1">// containing resources used by plugins</span>
@@ -329,12 +322,11 @@ Custom node types can then require the dependencies using a <em>scenejsPluginDep
                     <span class="c1">// ...</span>
                 <span class="p">}</span>
             <span class="p">});</span>
-        <span class="p">});</span>
-</code></pre></div>
+        <span class="p">});</span></code></pre></div>
 
 <p>SceneJS synchronises that RequireJS <code>scenejsPluginDeps</code> path with the current <a href="#serving-plugins-yourself">pluginPath configuration</a>.
 <br /><br />
-As an example, the bundled <a href="https://github.com/xeolabs/scenejs/blob/V3.1/api/latest/plugins/node/canvas/capture.js">canvas/capture</a> node type
+As an example, the bundled <a href="https://github.com/xeolabs/scenejs/blob/v4.0/api/latest/plugins/node/canvas/capture.js">canvas/capture</a> node type
 uses the 3rd-party <code>canvas2image</code> library to capture the canvas to an image. Run a demo of that node
 <a href="http://scenejs.org/examples.html?page=canvasCapture">here</a>.</p>
 
@@ -365,9 +357,9 @@ Here’s a <code>growingTeapot</code> node, which grows in height along the Y-ax
 
                         <span class="c1">// Teapot primitive,</span>
                         <span class="c1">// implemented by plugin at</span>
-                        <span class="c1">// http://scenejs.org/api/latest/plugins/node/prims/teapot.js</span>
+                        <span class="c1">// http://scenejs.org/api/latest/plugins/node/geometry/teapot.js</span>
                         <span class="p">{</span>
-                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;prims/teapot&quot;</span>
+                            <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;geometry/teapot&quot;</span>
                         <span class="p">}</span>
                     <span class="p">]</span>
                 <span class="p">}</span>
@@ -398,8 +390,7 @@ Here’s a <code>growingTeapot</code> node, which grows in height along the Y-ax
     <span class="nx">destroy</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">getScene</span><span class="p">().</span><span class="nx">off</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_tick</span><span class="p">);</span>
     <span class="p">}</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>We’ll create a scene graph containing this node:</p>
 
@@ -425,8 +416,7 @@ Here’s a <code>growingTeapot</code> node, which grows in height along the Y-ax
             <span class="p">]</span>
         <span class="p">}</span>
     <span class="p">]</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>Then we’ll get that node and subscribe to its publication:</p>
 
@@ -443,8 +433,7 @@ Here’s a <code>growingTeapot</code> node, which grows in height along the Y-ax
                 <span class="c1">// Show the publication in an alert</span>
                 <span class="nx">alert</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
             <span class="p">});</span>
-    <span class="p">});</span>
-</code></pre></div>
+    <span class="p">});</span></code></pre></div>
 
 <ul>
   <li><a href="http://scenejs.org/examples.html?page=customNodeDefWithPublications">Run this example</a></li>
@@ -483,9 +472,9 @@ notifications to us as a count of tasks in progress, as we’ll see further down
 
                         <span class="c1">// Teapot primitive,</span>
                         <span class="c1">// implemented by plugin at</span>
-                        <span class="c1">// http://scenejs.org/api/latest/plugins/node/prims/teapot.js</span>
+                        <span class="c1">// http://scenejs.org/api/latest/plugins/node/geometry/teapot.js</span>
                         <span class="p">{</span>
-                            <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;prims/teapot&quot;</span>
+                            <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;geometry/teapot&quot;</span>
                         <span class="p">}</span>
                     <span class="p">]</span>
                 <span class="p">}</span>
@@ -535,8 +524,7 @@ notifications to us as a count of tasks in progress, as we’ll see further down
             <span class="k">this</span><span class="p">.</span><span class="nx">_taskId</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">taskFinished</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_taskId</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>Now create a scene that contains an instance of our node type:</p>
 
@@ -560,8 +548,7 @@ notifications to us as a count of tasks in progress, as we’ll see further down
             <span class="p">]</span>
         <span class="p">}</span>
     <span class="p">]</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <p>Periodically query and log scene busyness status to the console:</p>
 
@@ -576,8 +563,7 @@ notifications to us as a count of tasks in progress, as we’ll see further down
         <span class="k">return</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Scene tasks in progress: &quot;</span> <span class="o">+</span> <span class="nx">status</span><span class="p">.</span><span class="nx">numTasks</span><span class="p">);</span>
-<span class="p">},</span> <span class="mi">100</span><span class="p">);</span>
-</code></pre></div>
+<span class="p">},</span> <span class="mi">100</span><span class="p">);</span></code></pre></div>
 
 <ul>
   <li><a href="http://scenejs.org/examples.html?page=customNodeDefWithTasks">Run this example</a></li>
@@ -590,7 +576,7 @@ notifications to us as a count of tasks in progress, as we’ll see further down
       <hr />
       <footer role="contentinfo">
         <div class="article-author-bottom">
-          <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+          <img src="/images/bio-photo.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
 <h3><a href="/about/">@xeoLabs</a></h3>
 <p>Lindsay Kay<br>3D Web developer</p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
@@ -636,17 +622,29 @@ notifications to us as a count of tasks in progress, as we’ll see further down
     
       
       
+        
+          
+        
+      
       
       <li><a href="/articles/scenejs-transparency" title="Transparency in SceneJS">Transparency in SceneJS</a></li>
       
     
       
       
+        
+          
+        
+      
       
       <li><a href="/articles/scenejs-alpha-mapping" title="Alpha Mapping in SceneJS">Alpha Mapping in SceneJS</a></li>
       
     
       
+      
+        
+          
+        
       
       
       <li><a href="/articles/scenejs-webgl-context-lost" title="Automatic WebGLContestLost Recovery in SceneJS">Automatic WebGLContestLost Recovery in SceneJS</a></li>
@@ -656,7 +654,7 @@ notifications to us as a count of tasks in progress, as we’ll see further down
     <hr />
   </div><!-- /.related-articles -->
   <footer>
-    <span>&copy; 2013 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+    <span>&copy; 2014 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

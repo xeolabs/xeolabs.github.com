@@ -56,16 +56,14 @@ SceneJS.createScene({
             nodes:[
                 {
                     type: "texture",
-                    layers:[
-                        {
-                            src: "foo/bar/raptor.jpg"
-                        }
-                    ],
+                    src: "foo/bar/raptor.jpg",
+
                     nodes:[
 
                         // Import Wavefront .OBJ mesh
                         {
-                            type: "import/obj", src: "foo/bar/raptor.obj"
+                            type: "import/obj",
+                            src: "foo/bar/raptor.obj"
                         }
                     ]
                 }

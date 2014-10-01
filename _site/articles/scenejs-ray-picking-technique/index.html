@@ -98,7 +98,7 @@
 
 <div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
   <div class="article-author-top">
-    <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+    <img src="/images/bio-photo.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
 <h3><a href="/about/">@xeoLabs</a></h3>
 <p>Lindsay Kay<br>3D Web developer</p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
@@ -173,8 +173,7 @@ into world-space by the inverse view and projection matrices.</li>
     <span class="k">vec4</span> <span class="n">res</span> <span class="o">=</span> <span class="n">fract</span><span class="p">(</span><span class="n">depth</span> <span class="o">*</span> <span class="n">bitShift</span><span class="p">);</span>
     <span class="n">res</span> <span class="o">-=</span> <span class="n">res</span><span class="p">.</span><span class="n">xxyz</span> <span class="o">*</span> <span class="n">bitMask</span><span class="p">;</span>
     <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <h4 id="unpacking-clip-space-z-in-javascript">Unpacking clip-space Z in JavaScript</h4>
 
@@ -182,15 +181,13 @@ into world-space by the inverse view and projection matrices.</li>
     <span class="kd">var</span> <span class="nx">vec</span> <span class="o">=</span> <span class="p">[</span><span class="nx">depthZ</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mf">256.0</span><span class="p">,</span> <span class="nx">depthZ</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mf">256.0</span><span class="p">,</span> <span class="nx">depthZ</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="mf">256.0</span><span class="p">,</span> <span class="nx">depthZ</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">/</span> <span class="mf">256.0</span><span class="p">];</span>
     <span class="kd">var</span> <span class="nx">bitShift</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mf">256.0</span> <span class="o">*</span> <span class="mf">256.0</span> <span class="o">*</span> <span class="mf">256.0</span><span class="p">),</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mf">256.0</span> <span class="o">*</span> <span class="mf">256.0</span><span class="p">),</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="mf">256.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">];</span>
     <span class="k">return</span> <span class="nx">SceneJS_math_dotVector4</span><span class="p">(</span><span class="nx">vec</span><span class="p">,</span> <span class="nx">bitShift</span><span class="p">);</span>
-<span class="p">};</span>
-</code></pre></div>
+<span class="p">};</span></code></pre></div>
 
 <h4 id="calculating-clip-space-z-in-the-fragment-shader">Calculating clip-space Z in the fragment shader</h4>
 <p>Step (4) requires that we have the view-space position in the fragment shader, which we pass through from the vertex shader. It also requires us to feed the locations of the near and far clipping planes into the fragment shader (which we take from the scene’s camera node). Using these, we calculate the clip-space depth like so:</p>
 
 <div class="highlight"><pre><code class="glsl"><span class="k">float</span> <span class="n">depth</span> <span class="o">=</span> <span class="p">(</span><span class="n">uZNear</span> <span class="o">-</span> <span class="n">vViewVertex</span><span class="p">.</span><span class="n">z</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">uZFar</span> <span class="o">-</span> <span class="n">uZNear</span><span class="p">);</span>
-<span class="n">gl_FragColor</span> <span class="o">=</span> <span class="n">packDepth</span><span class="p">(</span><span class="n">depth</span><span class="p">);</span>
-</code></pre></div>
+<span class="n">gl_FragColor</span> <span class="o">=</span> <span class="n">packDepth</span><span class="p">(</span><span class="n">depth</span><span class="p">);</span></code></pre></div>
 
 <ul>
   <li>SceneJS internally caches the hidden frame buffers to avoid re-rendering them. This means that when we do a subsequent pick, as long as a re-render is not neccessary after objects have moved or changed appearance, we just re-read the buffers without repeating any rendering passes.</li>
@@ -207,7 +204,7 @@ into world-space by the inverse view and projection matrices.</li>
       <hr />
       <footer role="contentinfo">
         <div class="article-author-bottom">
-          <img src="/images/largePortrait.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
+          <img src="/images/bio-photo.jpg" class="bio-photo" alt="@xeoLabs bio photo"></a>
 <h3><a href="/about/">@xeoLabs</a></h3>
 <p>Lindsay Kay<br>3D Web developer</p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
@@ -253,17 +250,29 @@ into world-space by the inverse view and projection matrices.</li>
     
       
       
+        
+          
+        
+      
       
       <li><a href="/articles/scenejs-transparency" title="Transparency in SceneJS">Transparency in SceneJS</a></li>
       
     
       
       
+        
+          
+        
+      
       
       <li><a href="/articles/scenejs-alpha-mapping" title="Alpha Mapping in SceneJS">Alpha Mapping in SceneJS</a></li>
       
     
       
+      
+        
+          
+        
       
       
       <li><a href="/articles/scenejs-webgl-context-lost" title="Automatic WebGLContestLost Recovery in SceneJS">Automatic WebGLContestLost Recovery in SceneJS</a></li>
@@ -273,7 +282,7 @@ into world-space by the inverse view and projection matrices.</li>
     <hr />
   </div><!-- /.related-articles -->
   <footer>
-    <span>&copy; 2013 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+    <span>&copy; 2014 @xeoLabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->
