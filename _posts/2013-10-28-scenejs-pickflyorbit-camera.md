@@ -22,7 +22,7 @@ tags: [scenejs, tutorial, picking, camera]
 The folks over at [BIMSurfer.org](http://bimsurfer.org) needed a
  camera that flies to and orbits whatever you click on, so I made a plugin.<br><br>Try a couple of demos:
 
-[![]({{ site.url }}/images/scenejs/pickFlyOrbitCity.png)](http://scenejs.org/examples/pages/demos/pickFlyOrbitCity.html) | [![]({{ site.url }}/images/scenejs/pickFlyOrbitTerrain.png)](http://scenejs.org/examples/pages/demos/pickFlyOrbitTerrain.html)
+[![]({{ site.url }}/images/scenejs/pickFlyOrbitCity.png)](http://scenejs.org/examples/pages/demos/pickFlyOrbitCity.html) | [![]({{ site.url }}/images/scenejs/pickFlyOrbitTerrain.png)](http://scenejs.org/examples/index.html#cameras_pickFlyOrbit_terrain)
 ----|----
 [Click to run](http://scenejs.org/examples/pages/demos/pickFlyOrbitCity.html) | [Click to run](http://scenejs.org/examples/pages/demos/pickFlyOrbitTerrain.html)
 
