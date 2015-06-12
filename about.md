@@ -18,7 +18,7 @@ medical visualisation platform that brings to life thousands of medically accura
 <br><br>
 I'm also working on the latest version of [BIMVie.ws](https://github.com/opensourceBIM/bimvie.ws-viewer), an extensible and
 modular WebGL-based 3D viewer for [BIMSurfer](http://bimsurfer.org/).
-<br><br>In my spare time I keep things edgy by authoring open source 3D engines like [SceneJS](http://scenejs.org) and [xeoEngine](http://xeoengine.org).
+<br><br>In my spare time I'm keeping things edgy by authoring open source 3D engines like [SceneJS](http://scenejs.org) and [xeoEngine](http://xeoengine.org).
 <br>
 <br>
 ![Email](../images/email.png)
