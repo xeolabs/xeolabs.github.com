@@ -9,7 +9,7 @@ baseurl:          /xeolabs.github.io/xeolabs
 owner:
   name:           "@xeoLabs"
   avatar:         largePortrait.jpg
-  bio:            "Lindsay Kay<br>3D Web developer"
+  bio:            "Lindsay Kay<br>3D software developer"
   email:          lindsay.kay@xeolabs.com
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
   twitter: xeolabs
@@ -33,10 +33,13 @@ links:
     url: /articles
   - title: SceneJS Tutorials
     url: /articles/learning-scenejs
-  - title: SceneJS.org
+  - title: SceneJS
     url: http://scenejs.org
     external: true
-  - title: BioDigitalHuman.com
+  - title: xeoEngine
+    url: http://xeoengine.org
+    external: true
+  - title: BioDigitalHuman
     url: http://biodigitalhuman.com
     external: true
 
