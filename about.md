@@ -22,5 +22,5 @@ modular WebGL-based 3D viewer for [BIMSurfer](http://bimsurfer.org/).
 <br>
 <br>
 ![Email](../images/email.png)
-<br><br>
+<br><br><br>
 ![Hacking]({{ site.url }}/images/hacking.jpg)
