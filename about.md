@@ -11,12 +11,15 @@ image:
   creditlink: http://xeolabs.org
 ---
 
-I'm Lindsay Kay, a software developer based in Berlin who’s into abstracting high-performance 3D behind user-friendly JavaScript
-APIs, so that Web developers can have fun making virtual worlds.
+I'm Lindsay Kay, a software engineer based in Berlin who develops Web-based 3D visualisation systems for healthcare and engineering.
 <br><br>
-In my day job, I'm the 3D engine architect on the [BioDigital Human](http://biodigitalhuman.com) team. We make a WebGL-based
+Currently I'm a 3D engine architect on the [BioDigital Human](http://biodigitalhuman.com) team. We make a WebGL-based
 medical visualisation platform that brings to life thousands of medically accurate anatomy objects and health conditions.
-<br><br>In my spare time I keep things edgy by authoring open source projects like [SceneJS](http://scenejs.org).
+<br><br>
+I'm also working on the latest version of [BIMVie.ws](https://github.com/opensourceBIM/bimvie.ws-viewer), an extensible and
+modular WebGL-based 3D viewer for [BIMSurfer](http://bimsurfer.org/).
+
+<br><br>In my spare time I keep things edgy by authoring open source 3D engines like [SceneJS](http://scenejs.org) and [xeoEngine](http://xeoengine.org).
 <br>
 <br>
 ![Email](../images/email.png)
