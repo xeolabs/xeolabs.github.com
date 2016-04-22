@@ -1,0 +1,144 @@
+---
+layout: post
+title: "Introducing xeoEngine - a component-based WebGL engine"
+description: "A component-based WebGL engine from xeoLabs"
+modified: 2015-06-31
+category: articles
+tags: [xeoengine, webgl]
+---
+
+<section id="table-of-contents" class="toc">
+  <header>
+    <h3>Contents</h3>
+  </header>
+<div id="drawer" markdown="1">
+*  Auto generated table of contents
+{:toc}
+</div>
+</section><!-- /#table-of-contents -->
+
+[![Transparency sorting]({{ site.url }}/images/xeoengine/transparency_sorting.png)](http://xeoengine.org/examples/#materials_techniques_transparencySort)
+xeoEngine transparency sorting demo - [run this](http://xeoengine.org/examples/#materials_techniques_transparencySort)
+
+# Introduction
+
+**[xeoEngine](http://xeoengine.org)** is an open-source WebGL-based engine for visualizing complex and dynamic 3D scenes. In addition to a free set of steak knives, you get:
+
+* **Scene graph API** comprised of data-driven components, with lots of love given to the [documentation](http://xeoengine.org/docs/classes/Scene.html) and [examples](http://xeoengine.org/examples/#geometry_TorusGeometry).
+* **Dynamically editable scenes** - everything in a scene can be updated at runtime, right down to 
+the [minFilter](http://xeoengine.org/docs/classes/Texture.html#property_minFilter) on 
+a [texture](http://xeoengine.org/docs/classes/Texture.html) (which makes it pretty sweet for live coding).
+* **Fully-observable scene state**, where *everything* fires change events. In combination with editable everything, this 
+makes it possible to wire component properties together as outputs and inputs using change handlers (think dataflowy-node-based 
+scene builder UIs!).
+* **Sensible defaults** for virtually everything - create a running scene with one line of code, then build it up from there.
+* **Fast rendering** using all the tricks, such as optimized draw list compilation, state tracking, sorting, batching and caching, plus lots of other classic game engine patterns. 
+* **Performance monitoring** - get running [statistics](http://xeoengine.org/examples/#profiling_statistics) on memory usage and WebGL performance.
+* **Serializable scene state** - save and load scenes as JSON, easily clone scenes and components.
+
+# Background
+
+# Usage
+
+First, link xeoEngine in your page:
+
+{% highlight html %}
+<iframe id="my-iframe" src="http://xeoengine.org/build/xeoengine.min.js"></iframe>
+{% endhighlight %}
+
+## Defining a 3D scene
+
+Next, we'll create a [Scene](http://xeoengine.org/docs/classes/Scene.html), which is a component-object graph, like the example
+below. Note that a Scene is essentially a container for soup of [components](http://xeoengine.org/docs/classes/Component.html) that are tied together into
+entities by [GameObjects](http://xeoengine.org/docs/classes/GameObject.html).
+
+![First scene]({{ site.url }}/images/xeoengine/firstScene.png)
+
+Since xeoEngine provides defaults for pretty much everything, we only need to specify what we need to override, in this case the
+[Material](http://xeoengine.org/docs/classes/Material.html) and [Geometry](http://xeoengine.org/docs/classes/Geometry.html) for our
+[GameObject](http://xeoengine.org/docs/classes/GameObject.html). The GameObject will fall back on the scene's default flyweight
+components (eg. [Camera](http://xeoengine.org/docs/classes/Camera.html), [Lights](http://xeoengine.org/docs/classes/Lights.html) etc) for
+all the other components we didn't explicitly attach to it. As you can see, this keeps the code compact, while flattening the learning curve and making harder to
+accidentally make scenes that don't render anything.
+
+<iframe height='469' scrolling='no' src='//codepen.io/xeolabs/embed/xGNjPM/?height=469&theme-id=11815&default-tab=js' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/xeolabs/pen/xGNjPM/'>xGNjPM</a> by xeolabs (<a href='http://codepen.io/xeolabs'>@xeolabs</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+<br>
+In fact, we could even just let xeoEngine provide a default Scene for us. Here's this example again, using xeoEngine's default Scene:
+
+ <iframe height='492' scrolling='no' src='//codepen.io/xeolabs/embed/WvBJMO/?height=492&theme-id=11815&default-tab=js' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/xeolabs/pen/WvBJMO/'>xeoEngine: Using the default Scene</a> by xeolabs (<a href='http://codepen.io/xeolabs'>@xeolabs</a>) on <a href='http://codepen.io'>CodePen</a>.
+ </iframe>
+
+
+> I avoided naming the GameObject class "Entity" because that would imply an [Entity component system](https://en.wikipedia.org/wiki/Entity_component_system),
+  in which scenes are built using fairly strict [composition over inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance). In xeoEngine, we can
+  subclass components to create more specialized components, and may even choose to apply inheritance-based patterns
+  like [subclass sandbox](http://gameprogrammingpatterns.com/subclass-sandbox.html), in which we subclass GameObject to make
+  template base classes.
+
+## Animation
+
+Animate scene state by setting the values of component properties. Almost everything in xeoEngine fires change events
+which you can subscribe to. This is cool for scripting the engine, while also making it easier to write a UI layer for a
+graphical scene editor, which is one of the future goals of xeoEngine.
+
+<iframe height='482' scrolling='no' src='//codepen.io/xeolabs/embed/MwdGGG/?height=482&theme-id=11815&default-tab=js' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/xeolabs/pen/MwdGGG/'>xeoEngine: Animation</a> by xeolabs (<a href='http://codepen.io/xeolabs'>@xeolabs</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
+
+Likewise, you can update properties on any of the scene's default flyweight components, such as the default camera:
+
+{% highlight javascript %}
+scene.camera.view.eye = [3.0, 2.0, -10.0];
+{% endhighlight %}
+
+> By making every bit of scene state fire a change event when updated, I'm applying
+the [open/closed principle](https://en.wikipedia.org/wiki/Open/closed_principle), which lets us make all kinds
+  of other objects to control and synchronize the state, without needing to extend xeoEngine in any way.
+
+## Editing
+
+You can edit everything in your scene dynamically, at runtime. Create and destroy components, link or unlink them to
+each other, update their properties, and so on. Let's add a diffuse [Texture](http://xeoengine.org/docs/classes/Texture.html)
+map to our [Material](http://xeoengine.org/docs/classes/Material.html), which will immediately appear on our box:
+
+{% highlight javascript %}
+var texture = new XEO.Texture(scene, {
+    src: "myTexture.jpg"
+});
+
+material.diffuseMap = texture;
+{% endhighlight %}
+
+And of course, since edits are state changes, we can subscribe to them in the usual way:
+
+{% highlight javascript %}
+ material.on("diffuseMap",
+      function(value) {
+             console.log("Our material's diffuse map is now: "
+                + value ? value.id : "undefined");
+      });
+{% endhighlight %}
+
+> The idea here is to TODO
+
+## Saving and loading
+
+You can save or load a JSON snapshot of your scene at any time. This snippet will dump the whole state of our scene to
+JSON, then load that JSON again to create a second identical scene:
+
+{% highlight javascript %}
+var json = scene.json;
+
+var scene2 = new XEO.Scene({ json: json });
+{% endhighlight %}
+
+> xeoEngine is **[data-driven](https://en.wikipedia.org/wiki/Data-driven_programming)**, meaning that we can define
+scene state using JSON data. As a consequence, we can just serialize that state out as JSON at any time, then deserialize it
+  to rebuild the scene.
+  
+## Cloning
+
+<div data-height="665" data-theme-id="11815" data-slug-hash="bdyRQd" data-default-tab="js" data-user="xeolabs" class='codepen'>
+<p>See the Pen <a href='http://codepen.io/xeolabs/pen/bdyRQd/'>xeoEngine: Component Cloning Demo</a> by xeolabs (<a href='http://codepen.io/xeolabs'>@xeolabs</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>

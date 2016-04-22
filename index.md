@@ -3,7 +3,7 @@ layout: home
 description: "xeoLabs - Lindsay's 3D research blog"
 tags: [xeolabs, webgl, scenejs]
 image:
-  feature: grid.jpg
+  feature: bdsAntibodies.png
   credit: SceneJS
   creditlink: http://scenejs.org
 ---
