@@ -3,10 +3,10 @@ layout: page
 permalink: /about/index.html
 title: About
 tagline: Minimal Mistakes, a Jekyll Theme
-tags: [about, Jekyll, theme, responsive]
+tags: [about]
 modified: 9-9-2013
 image:
-  feature: cbmTrajectoryPlot.jpg
+  feature: xeoengine/gearboxSplash.jpg
   credit: xeoLabs
   creditlink: http://xeolabs.org
 ---
