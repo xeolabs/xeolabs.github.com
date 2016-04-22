@@ -6,7 +6,7 @@ tagline: Minimal Mistakes, a Jekyll Theme
 tags: [about]
 modified: 9-9-2013
 image:
-  feature: xeoengine/gearboxSplash.png
+  feature: xeoengine/gearboxScreenshot.png
   credit: xeoLabs
   creditlink: http://xeolabs.org
 ---
