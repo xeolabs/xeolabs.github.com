@@ -1,7 +1,7 @@
 ---
 layout: home
-description: "xeoLabs - Lindsay's 3D research blog"
-tags: [xeolabs, webgl, scenejs]
+description: "xeoLabs - 3D Visualization"
+tags: [xeolabs, webgl, scenejs, xeoengine, biodigitalhuman, visualization, 3d]
 image:
   feature: bdsAntibodies.png
   credit: SceneJS
