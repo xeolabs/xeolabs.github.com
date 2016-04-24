@@ -390,4 +390,4 @@ Each supported physics engine will be a RequireJS module  within the plugin supp
 
 * Ability to enable or disable physics systems so they don't keep running when their bodies are culled from the view (ie. by frustum culling etc)
 * An engine (pluggable as shown above) that proxies a high-performance server-side physics system (ie. written in C/C++, not JavaScript)
-* [Issues tagged 'physics'](https://github.com/xeolabs/scenejs/issues?direction=desc&labels=Physics&page=1&sort=created&state=open)
+* [Issues tagged 'physics'](https://github.com/xeographics/scenejs/issues?direction=desc&labels=Physics&page=1&sort=created&state=open)

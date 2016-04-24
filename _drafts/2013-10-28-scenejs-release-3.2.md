@@ -21,7 +21,7 @@ tags: [scenejs, release]
 ### Summary
 
 [SceneJS](http://scenejs.org) V3.2 adds a bunch of new node types for visibility and detail culling, plus import from OBJ, DX2 and MD2
-[custom node plugins](https://github.com/xeolabs/scenejs#custom-node-types).
+[custom node plugins](https://github.com/xeographics/scenejs#custom-node-types).
 
 ### Visibility and Detail Culling
 

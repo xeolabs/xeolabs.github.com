@@ -1,19 +1,19 @@
-title:            xeoLabs
+title:            xeographics
 tagline:          On the other side of the screen, it all looks so easy
 description:      Lindsay's 3D research blog
 #Comment out url when working locally to resolve base urls correctly
-url:              http://xeolabs.com
-baseurl:          /xeolabs.github.io/xeolabs
+url:              http://xeographics.com
+baseurl:          /xeographics.github.io/xeographics
 
 # Owner/author information
 owner:
-  name:           "@xeoLabs"
+  name:           "@xeographics"
   avatar:         skullavatar.jpg
   bio:            "Lindsay Kay<br>3D visualization app/engine developer"
-  email:          lindsay.kay@xeolabs.com
+  email:          lindsay.kay@xeographics.com
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
-  twitter: xeolabs
-  github: xeolabs
+  twitter: xeographics
+  github: xeographics
   linkedin: lindsaystanleykay
   # For Google Authorship https://plus.google.com/authorship
   google_plus: https://plus.google.com/u/0/110983138227486752827/posts

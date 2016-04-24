@@ -17,4 +17,4 @@ tags: [scenejs, webgl]
 </div>
 </section><!-- /#table-of-contents -->
 
-<iframe id="my-iframe" src="http://slides.com/xeolabs/deck/#/"></iframe>
+<iframe id="my-iframe" src="http://slides.com/xeographics/deck/#/"></iframe>

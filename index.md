@@ -1,7 +1,7 @@
 ---
 layout: home
-description: "xeoLabs - 3D Visualization"
-tags: [xeolabs, webgl, scenejs, xeoengine, biodigitalhuman, visualization, 3d, bimsurfer]
+description: "xeographics - 3D Visualization"
+tags: [xeographics, webgl, scenejs, xeoengine, biodigitalhuman, visualization, 3d, bimsurfer]
 image:
   feature: bdsAntibodies.png
   credit: SceneJS

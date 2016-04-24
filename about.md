@@ -7,8 +7,8 @@ tags: [about]
 modified: 9-9-2013
 image:
   feature: xeoengine/gearboxScreenshot.png
-  credit: xeoLabs
-  creditlink: http://xeolabs.org
+  credit: xeographics
+  creditlink: http://xeographics.org
 ---
 
 I'm Lindsay Kay, a software engineer based in Berlin who develops Web-based 3D visualisation systems for healthcare and engineering.

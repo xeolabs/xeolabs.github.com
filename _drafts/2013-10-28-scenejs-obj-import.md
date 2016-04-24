@@ -89,8 +89,8 @@ scene.getNode("myRotate", function(myRotate) {
 # Plugins
 To keep the core library small, SceneJS dynamically loads it's non-core functionality from a directory of
 plugins. In the example above, the <code>geometry/teapot</code> node is a custom node type instantiated
-from a <a href="https://github.com/xeolabs/scenejs/tree/v4.0/api/latest/plugins/node/geometry/teapot.js">geometry/teapot</a>
-plugin, which SceneJS loaded on-demand from <a href="https://github.com/xeolabs/scenejs/tree/v4.0/api/latest/plugins">the
+from a <a href="https://github.com/xeographics/scenejs/tree/v4.0/api/latest/plugins/node/geometry/teapot.js">geometry/teapot</a>
+plugin, which SceneJS loaded on-demand from <a href="https://github.com/xeographics/scenejs/tree/v4.0/api/latest/plugins">the
 plugins directory</a> within its repository on GitHub.
 
 ## Serving your own plugins

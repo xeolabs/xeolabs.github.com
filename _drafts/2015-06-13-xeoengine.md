@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Introducing xeoEngine - a component-based WebGL engine"
-description: "A component-based WebGL engine from xeoLabs"
+description: "A component-based WebGL engine from xeographics"
 modified: 2015-06-31
 category: articles
 tags: [xeoengine, webgl]
@@ -61,12 +61,12 @@ components (eg. [Camera](http://xeoengine.org/docs/classes/Camera.html), [Lights
 all the other components we didn't explicitly attach to it. As you can see, this keeps the code compact, while flattening the learning curve and making harder to
 accidentally make scenes that don't render anything.
 
-<iframe height='469' scrolling='no' src='//codepen.io/xeolabs/embed/xGNjPM/?height=469&theme-id=11815&default-tab=js' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/xeolabs/pen/xGNjPM/'>xGNjPM</a> by xeolabs (<a href='http://codepen.io/xeolabs'>@xeolabs</a>) on <a href='http://codepen.io'>CodePen</a>.
+<iframe height='469' scrolling='no' src='//codepen.io/xeographics/embed/xGNjPM/?height=469&theme-id=11815&default-tab=js' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/xeographics/pen/xGNjPM/'>xGNjPM</a> by xeographics (<a href='http://codepen.io/xeographics'>@xeographics</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 <br>
 In fact, we could even just let xeoEngine provide a default Scene for us. Here's this example again, using xeoEngine's default Scene:
 
- <iframe height='492' scrolling='no' src='//codepen.io/xeolabs/embed/WvBJMO/?height=492&theme-id=11815&default-tab=js' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/xeolabs/pen/WvBJMO/'>xeoEngine: Using the default Scene</a> by xeolabs (<a href='http://codepen.io/xeolabs'>@xeolabs</a>) on <a href='http://codepen.io'>CodePen</a>.
+ <iframe height='492' scrolling='no' src='//codepen.io/xeographics/embed/WvBJMO/?height=492&theme-id=11815&default-tab=js' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/xeographics/pen/WvBJMO/'>xeoEngine: Using the default Scene</a> by xeographics (<a href='http://codepen.io/xeographics'>@xeographics</a>) on <a href='http://codepen.io'>CodePen</a>.
  </iframe>
 
 
@@ -82,7 +82,7 @@ Animate scene state by setting the values of component properties. Almost everyt
 which you can subscribe to. This is cool for scripting the engine, while also making it easier to write a UI layer for a
 graphical scene editor, which is one of the future goals of xeoEngine.
 
-<iframe height='482' scrolling='no' src='//codepen.io/xeolabs/embed/MwdGGG/?height=482&theme-id=11815&default-tab=js' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/xeolabs/pen/MwdGGG/'>xeoEngine: Animation</a> by xeolabs (<a href='http://codepen.io/xeolabs'>@xeolabs</a>) on <a href='http://codepen.io'>CodePen</a>.
+<iframe height='482' scrolling='no' src='//codepen.io/xeographics/embed/MwdGGG/?height=482&theme-id=11815&default-tab=js' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/xeographics/pen/MwdGGG/'>xeoEngine: Animation</a> by xeographics (<a href='http://codepen.io/xeographics'>@xeographics</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
 
@@ -139,6 +139,6 @@ scene state using JSON data. As a consequence, we can just serialize that state 
   
 ## Cloning
 
-<div data-height="665" data-theme-id="11815" data-slug-hash="bdyRQd" data-default-tab="js" data-user="xeolabs" class='codepen'>
-<p>See the Pen <a href='http://codepen.io/xeolabs/pen/bdyRQd/'>xeoEngine: Component Cloning Demo</a> by xeolabs (<a href='http://codepen.io/xeolabs'>@xeolabs</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<div data-height="665" data-theme-id="11815" data-slug-hash="bdyRQd" data-default-tab="js" data-user="xeographics" class='codepen'>
+<p>See the Pen <a href='http://codepen.io/xeographics/pen/bdyRQd/'>xeoEngine: Component Cloning Demo</a> by xeographics (<a href='http://codepen.io/xeographics'>@xeographics</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 </div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>

@@ -18,7 +18,7 @@ tags: [scenejs, releases]
 </div>
 </section><!-- /#table-of-contents -->
 
-[SceneJS v4.0](https://github.com/xeolabs/scenejs/releases/tag/v4.0) adds:
+[SceneJS v4.0](https://github.com/xeographics/scenejs/releases/tag/v4.0) adds:
 
  * custom effects pipelines (AKA postprocessing),
  * multi-pass rendering,
