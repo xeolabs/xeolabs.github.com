@@ -34,8 +34,8 @@ links:
   - title: SceneJS
     url: http://scenejs.org
     external: true
-  - title: xeoEngine
-    url: http://xeoengine.org
+  - title: xeogl
+    url: http://xeogl.org
     external: true
   - title: BioDigitalHuman
     url: http://biodigitalhuman.com
