@@ -19,8 +19,9 @@ tags: [xeogl, bimsurfer, webgl]
 </div>
 </section><!-- /#table-of-contents -->
 
-Last week I integrated the latest build of [xeogl](http://xeogl.org) into [BIMSurfer](http://bimsurfer.org), the open source tool 
- for WebGL-based visualization and evaluation of Building Information Models (BIM). Here's a quick blog post on that.
+Last week I integrated the latest build of [xeogl](http://xeogl.org) into [BIMSurfer](http://bimsurfer.org).<br><br>xeogl is an 
+ open source WebGL-based 3D visualization engine I've been working on, and BIMSurfer is an open source tool 
+ for Web-based visualization and evaluation of Building Information Models (BIM). Here's my first blog post on these adventures.
  <br>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tCHwEA2HqU8" frameborder="0" allowfullscreen></iframe>
@@ -49,7 +50,7 @@ Last week I integrated the latest build of [xeogl](http://xeogl.org) into [BIMSu
 
 ## BIMSurfer requirements
 
-BIMSurfer has many requirements which are valuable for shaping and testing xeogl, such as: 
+BIMSurfer has certain requirements which are valuable for shaping and testing xeogl, such as: 
      
  * fast rendering of [large numbers of independently transformed geometries](http://xeogl.org/examples/#profiling_statistics) 
  * efficient queries for boundaries of objects, so that we can [fly the camera to look at them](http://xeogl.org/examples/#animation_CameraFlightAnimation_AABB)
@@ -57,7 +58,7 @@ BIMSurfer has many requirements which are valuable for shaping and testing xeogl
 
 ### Responsiveness
 
-To keep applications like BIMSurfer from locking up while loading huge amounts of content, xeogl defers all scene updates (eg. creation of 
+To keep applications like BIMSurfer from locking up while loading monstrous amounts of content, xeogl defers all scene updates (eg. creation of 
 scene entities, generation of geometries, shader allocations, matrix updates etc) to a FIFO task queue, then executes 
 a few tasks from the queue before it renders each frame. By amortizing the cost of updates across many frames like this, 
 xeogl also prevents WebGL from freaking out and thinking that it's running on a potato, which may cause it to lock 
@@ -71,19 +72,21 @@ in [WebGL Insights](https://www.amazon.com/WebGL-Insights-Patrick-Cozzi/dp/14987
   
 ## Future extension
 
-An advantage of using a 3rd-party 3D engine within an app like BIMSurfer is that all functionality that's added to the engine 
- is automatically available to the app. xeogl has a growing library of pluggable components that we can easily drop into our apps 
- to add more functionality. I'm not sure exactly how many of these overlap with BIMSurfer's roadmap, but a few possibilities 
- in future might be: 
+Using an open source 3D engine within an app like BIMSurfer has the advantage that all functionality that gets added to the engine 
+ is then automatically available to the app. xeogl has a growing library of plugin components that we can easily drop into our apps 
+ to add more functionality. I'm not sure exactly how many of these overlap with BIMSurfer's roadmap, but a few possibilities might be: 
 
- * Loading glTF BIM models using a [xeogl.GLTFModel](http://xeogl.org/docs/classes/GLTFModel.html)
- * WebVR and Cardboard effects
- * Rendering on zSpace VR displays using a [xeogl.ZSPaceEffect](http://xeogl.org/docs/classes/ZSpaceEffect.html)
- * Walkthroughs with camera waypoints using a [xeogl.CameraPathAnimation](http://xeogl.org/docs/classes/CameraPathAnimation.html)
+ * Loading glTF BIM models using the [xeogl.GLTFModel](http://xeogl.org/docs/classes/GLTFModel.html) component
+ * WebVR and Cardboard effect components (in progress)
+ * Rendering on zSpace VR displays using the [xeogl.ZSpaceEffect](http://xeogl.org/docs/classes/ZSpaceEffect.html) component
+ * Walkthroughs with camera waypoints using the [xeogl.CameraPathAnimation](http://xeogl.org/docs/classes/CameraPathAnimation.html) component
  
-Two more features planned for xeogl are [order-independent transparency](https://en.wikipedia.org/wiki/Order-independent_transparency)  
- and [shadow mapping](https://en.wikipedia.org/wiki/Shadow_mapping), but those are planned for future releases - right now the 
-   plain old geometric bits are the priority.
+A couple of features are on the drawing board for xeogl's rendering core, which will be great to have in BIMSurfer:
+
+ * [order-independent transparency](https://en.wikipedia.org/wiki/Order-independent_transparency), and 
+ * [shadow mapping](https://en.wikipedia.org/wiki/Shadow_mapping)
+ 
+Right now, however, the plain old CAD-ish geometric features are xeogl's priority.
 
 ## Get involved!
 
