@@ -1,4 +1,4 @@
-title:            xeoLabs
+title:            xeolabs
 tagline:          On the other side of the screen, it all looks so easy
 description:      Lindsay's 3D research blog
 #Comment out url when working locally to resolve base urls correctly
@@ -7,7 +7,7 @@ baseurl:          /xeolabs.github.io/xeolabs
 
 # Owner/author information
 owner:
-  name:           "@xeoLabs"
+  name:           "@xeolabs"
   avatar:         skullavatar.jpg
   bio:            "Lindsay Kay<br>3D visualization app/engine developer"
   email:          lindsay.kay@xeolabs.com
@@ -34,8 +34,8 @@ links:
   - title: SceneJS
     url: http://scenejs.org
     external: true
-  - title: xeoEngine
-    url: http://xeoengine.org
+  - title: xeogl
+    url: http://xeogl.org
     external: true
   - title: BioDigitalHuman
     url: http://biodigitalhuman.com
