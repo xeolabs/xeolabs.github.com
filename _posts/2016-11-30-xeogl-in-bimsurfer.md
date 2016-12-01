@@ -26,10 +26,10 @@ Last week I integrated the latest build of [xeogl](http://xeogl.org) into [BIMSu
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tCHwEA2HqU8" frameborder="0" allowfullscreen></iframe>
 
-## History
+## Background
 
- First, a little history. BIMSurfer's WebGL-based 3D viewer has been through a few evolutions, so it's been an tag-team effort in which each evolution 
- has built upon lessons learned from the previous one. 
+ First, a little history. BIMSurfer's WebGL-based 3D viewer has been through a few evolutions, so it's been a tag-team 
+ effort in which each evolution has built upon lessons learned from the previous one. 
  <br><br>
  [Rehno Lindeque](https://twitter.com/RehnoLindeque) kicked things off 
  with the first version in 2011, which he implemented as a facade object wrapping a [SceneJS](http://scenejs.org) scene graph.
@@ -44,12 +44,12 @@ Last week I integrated the latest build of [xeogl](http://xeogl.org) into [BIMSu
   as a bunch of components wrapping SceneJS, then later as a completely new component-based WebGL engine, stripped down 
   to the bare essentials for fast CAD-like visualization.   
  <br>
- Finally, behind the scenes there is [BIMServer](http://bimserver.org/), which serves IFC models to BIMSurfer as 
+ Behind the scenes all this time, there is [BIMServer](http://bimserver.org/), which serves IFC models to BIMSurfer as 
  binary streams over WebSockets. The principle developers of BIMServer are [Thomas Krijnen](https://github.com/aothms) (who also handles various UI elements), [Ruben de Laat](https://github.com/rubendel) and [Leon van Berlo](https://github.com/berlotti) (who is also overall project leader).
 
 ## BIMSurfer requirements
 
-BIMSurfer has certain requirements that have shaped xeogl, such as: 
+BIMSurfer has certain requirements which have shaped xeogl, such as: 
      
  * fast rendering of [large numbers of independently transformed geometries](http://xeogl.org/examples/#profiling_statistics) 
  * efficient queries for boundaries of things, so that we can [fly the camera to look at them](http://xeogl.org/examples/#animation_CameraFlightAnimation_AABB)
@@ -75,27 +75,27 @@ in [WebGL Insights](https://www.amazon.com/WebGL-Insights-Patrick-Cozzi/dp/14987
   
 ## Future extension
 
-Using an open source 3D engine within an app like BIMSurfer has the advantage that all enhancements made to the engine 
- are then automatically available to the app. 
+An advantage of using an open source 3D engine within an app like BIMSurfer is that all enhancements made to the engine 
+ are then automatically available within the app. 
 <br><br>
-xeogl has a growing library of generic plugin components that we can easily drop into our apps 
+xeogl has a growing library of plugin components that we can drop into our apps 
  to add more functionality. I'm not sure exactly how many of these currently overlap with BIMSurfer's roadmap, but 
- a few possibilities might be: 
+ there are a few xeogl components already that might be useful in BIMSurfer at some point:  
 
- * Loading glTF BIM models using the [xeogl.GLTFModel](http://xeogl.org/docs/classes/GLTFModel.html) component
- * WebVR and Cardboard effect components (in progress)
- * Rendering on zSpace VR displays using the [xeogl.ZSpaceEffect](http://xeogl.org/docs/classes/ZSpaceEffect.html) component
- * Walkthroughs with camera waypoints using the [xeogl.CameraPathAnimation](http://xeogl.org/docs/classes/CameraPathAnimation.html) component
+ * [xeogl.GLTFModel](http://xeogl.org/docs/classes/GLTFModel.html) loads models from glTF, 
+ * [xeogl.ZSpaceEffect](http://xeogl.org/docs/classes/ZSpaceEffect.html) renders scenes on zSpace VR displays, 
+ * [xeogl.CameraPathAnimation](http://xeogl.org/docs/classes/CameraPathAnimation.html) animates cameras along paths defined by waypoints (great for walkthroughs), and
+ * WebVR and Cardboard support components are coming soon.
  
-Some key features are planned for xeogl's rendering core, which will be great to have in BIMSurfer:
+I'm also planning a few more features for xeogl's rendering core, which will be nice to have in BIMSurfer:
 
  * [order-independent transparency](https://en.wikipedia.org/wiki/Order-independent_transparency), 
  * [view frustum culling](http://www.lighthouse3d.com/tutorials/view-frustum-culling/), and
- * [shadow mapping](https://en.wikipedia.org/wiki/Shadow_mapping)
+ * [shadow mapping](https://en.wikipedia.org/wiki/Shadow_mapping).
  
-Right now, however, the plain old CAD-ish geometric features are xeogl's priority.
+Right now, however, plain old CAD-ish rendering is the priority for xeogl's first release.  
 
-## Get involved!
+## Want to help out?
 
 The best way contribute to BIMSurfer is to fork the [repository at GitHub](https://github.com/opensourcebim/BIMsurfer).
 We also use the [community forum](support.opensourcebim.org) from the open source BIM collective. Feel free to interact 
