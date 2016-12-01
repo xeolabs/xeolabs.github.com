@@ -21,7 +21,9 @@ tags: [xeogl, bimsurfer, webgl]
 
 Last week I integrated the latest build of [xeogl](http://xeogl.org) into [BIMSurfer](http://bimsurfer.org).<br><br>xeogl is an 
  open source WebGL-based 3D visualization engine I've been working on, and BIMSurfer is an open source tool 
- for Web-based visualization and evaluation of Building Information Models (BIM). Here's my first blog post on these adventures.
+ for Web-based visualization and evaluation of Building Information Models (BIM). 
+ <br><br>
+ Here's my first post on my adventures with xeogl and BIMSurfer.
  <br>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tCHwEA2HqU8" frameborder="0" allowfullscreen></iframe>
