@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2016-11-30T21:07:05-05:00</updated>
+<updated>2016-11-30T21:09:12-05:00</updated>
 <id>/</id>
 <author>
   <name>@xeolabs</name>
@@ -56,7 +56,7 @@
 &lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
 
 &lt;p&gt;First, a little history. BIMSurfer’s WebGL-based 3D viewer has been through a few evolutions, so it’s been a tag-team 
- effort in which each evolution has built upon lessons learned from the previous one. 
+ effort in which each evolution has built upon lessons learned from the previous ones. 
  &lt;br /&gt;&lt;br /&gt;
  &lt;a href=&quot;https://twitter.com/RehnoLindeque&quot;&gt;Rehno Lindeque&lt;/a&gt; kicked things off 
  with the first version in 2011, which he implemented as a facade object wrapping a &lt;a href=&quot;http://scenejs.org&quot;&gt;SceneJS&lt;/a&gt; scene graph.

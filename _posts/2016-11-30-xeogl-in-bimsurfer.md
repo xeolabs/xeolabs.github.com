@@ -30,7 +30,7 @@ Last week I integrated the latest build of [xeogl](http://xeogl.org) into [BIMSu
 ## Background
 
  First, a little history. BIMSurfer's WebGL-based 3D viewer has been through a few evolutions, so it's been a tag-team 
- effort in which each evolution has built upon lessons learned from the previous one. 
+ effort in which each evolution has built upon lessons learned from the previous ones. 
  <br><br>
  [Rehno Lindeque](https://twitter.com/RehnoLindeque) kicked things off 
  with the first version in 2011, which he implemented as a facade object wrapping a [SceneJS](http://scenejs.org) scene graph.
