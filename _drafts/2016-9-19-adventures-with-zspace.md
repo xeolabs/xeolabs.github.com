@@ -5,7 +5,7 @@ description: "TODO"
 modified: 2016-19-09
 category: articles
 comments: true
-tags: [xeoengine, webgl]
+tags: [xeogl, webgl]
 ---
 
 <section id="table-of-contents" class="toc">

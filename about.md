@@ -6,9 +6,9 @@ tagline: Minimal Mistakes, a Jekyll Theme
 tags: [about]
 modified: 9-9-2013
 image:
-  feature: xeoengine/gearboxScreenshot.png
-  credit: xeoLabs
-  creditlink: http://xeolabs.org
+  feature: xeogl/gearboxScreenshot.png
+  credit: xeolabs
+  creditlink: http://xeolabs.com
 ---
 
 I'm Lindsay Kay, a software engineer based in Berlin who develops Web-based 3D visualisation systems for healthcare and engineering.
