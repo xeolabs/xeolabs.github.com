@@ -25,6 +25,7 @@ Last week I integrated the latest build of [xeogl](http://xeogl.org) into [BIMSu
  <br>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tCHwEA2HqU8" frameborder="0" allowfullscreen></iframe>
+<br>
 
 ## Background
 
@@ -66,14 +67,14 @@ that it's running on a potato, which may cause it to lock FPS down to a lower ra
 <br><br>In the screen capture above, we're loading a test model containing around 3500 objects. While those are loading, 
 we can still show and hide things, rotate the model, and so forth. In future we may end up choosing to intentionally 
 throttle the FPS while loading, just to get the initial loading out of the way as quickly as possible, but this technique 
-is still potentially useful for dynamically streamed content.   
+is still potentially useful for keeping things snappy while dynamically loading content.   
                              
 <br>
 I learned this technique from the excellent article *Rendering Optimizations in 
 the Turbulenz Engine* by [David Galeano](https://twitter.com/davidgaleano), which you can read 
 in [WebGL Insights](https://www.amazon.com/WebGL-Insights-Patrick-Cozzi/dp/1498716075). 
   
-## Future extension
+## Future extensions
 
 An advantage of using an open source 3D engine within an app like BIMSurfer is that all enhancements made to the engine 
  are then automatically available within the app. 
@@ -91,19 +92,17 @@ I'm also planning a few more features for xeogl's rendering core, which will be 
 
  * [order-independent transparency](https://en.wikipedia.org/wiki/Order-independent_transparency), 
  * [view frustum culling](http://www.lighthouse3d.com/tutorials/view-frustum-culling/), and
- * [shadow mapping](https://en.wikipedia.org/wiki/Shadow_mapping).
- 
-Right now, however, plain old CAD-ish rendering is the priority for xeogl's first release.  
+ * [shadow mapping](https://en.wikipedia.org/wiki/Shadow_mapping). 
 
 ## Want to help out?
 
 The best way contribute to BIMSurfer is to fork the [repository at GitHub](https://github.com/opensourcebim/BIMsurfer).
 We also use the [community forum](support.opensourcebim.org) from the open source BIM collective. Feel free to interact 
 with other developers to help answer your questions. Then prepare a new branch with a new feature and post a pull request. 
+<br><br>
 We will review your code and commit it into the official BIM Surfer code base. Alternatively you can also attach a patch 
 into our [issue tracker](https://github.com/opensourcebim/BIMsurfer/issues). 
 
- 
 
  
 
