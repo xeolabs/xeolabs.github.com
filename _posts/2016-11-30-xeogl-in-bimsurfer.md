@@ -29,6 +29,8 @@ Last week I integrated the latest build of [xeogl](http://xeogl.org) into [BIMSu
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tCHwEA2HqU8" frameborder="0" allowfullscreen></iframe>
 <br>
 
+ * [Run some live demos here](http://opensourcebim.github.io/BIMsurfer/) - try the links at the top of the page.
+
 ## Background
 
  First, a little history. BIMSurfer's WebGL-based 3D viewer has been through a few evolutions, so it's been a tag-team 
