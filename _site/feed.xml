@@ -5,10 +5,10 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2016-12-08T10:10:44-05:00</updated>
+<updated>2017-01-03T16:02:26-05:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
-  <name>@xeolabs</name>
+  <name>@xeographics</name>
   <uri>http://xeolabs.com/</uri>
   <email>lindsay.kay@xeolabs.com</email>
 </author>
@@ -22,7 +22,7 @@
   <published>2016-11-30T00:00:00-05:00</published>
   
   <author>
-    <name>@xeolabs</name>
+    <name>@xeographics</name>
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
@@ -142,7 +142,7 @@ We will review your code and commit it into the official BIM Surfer code base. A
 into our &lt;a href=&quot;https://github.com/opensourcebim/BIMsurfer/issues&quot;&gt;issue tracker&lt;/a&gt;.&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/xeogl-in-bimsurfer&quot;&gt;xeogl in BIMSurfer&lt;/a&gt; was originally published by @xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on November 30, 2016.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/xeogl-in-bimsurfer&quot;&gt;xeogl in BIMSurfer&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on November 30, 2016.&lt;/p&gt;</content>
 </entry>
 
 
@@ -154,7 +154,7 @@ into our &lt;a href=&quot;https://github.com/opensourcebim/BIMsurfer/issues&quot
   <published>2014-09-26T00:00:00-04:00</published>
   
   <author>
-    <name>@xeolabs</name>
+    <name>@xeographics</name>
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
@@ -407,7 +407,7 @@ used over at THREE.js. Hopefully it doesn’t look too similar - I may have to s
 
 &lt;p&gt;Anything I missed? Add a comment at the bottom of this page and I’ll fix it up.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs4-release&quot;&gt;SceneJS v4.0 Released&lt;/a&gt; was originally published by @xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on September 26, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs4-release&quot;&gt;SceneJS v4.0 Released&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on September 26, 2014.&lt;/p&gt;</content>
 </entry>
 
 
@@ -419,7 +419,7 @@ used over at THREE.js. Hopefully it doesn’t look too similar - I may have to s
   <published>2014-07-24T00:00:00-04:00</published>
   
   <author>
-    <name>@xeolabs</name>
+    <name>@xeographics</name>
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
@@ -825,7 +825,7 @@ and wrapped it with a &lt;code&gt;reflect&lt;/code&gt; to make it shiny:
      which may avoid needing to adjust the &lt;code&gt;specular&lt;/code&gt; properties on those &lt;code&gt;material&lt;/code&gt; nodes.
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-reflection&quot;&gt;Reflective Surfaces in SceneJS&lt;/a&gt; was originally published by @xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on July 24, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-reflection&quot;&gt;Reflective Surfaces in SceneJS&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on July 24, 2014.&lt;/p&gt;</content>
 </entry>
 
 
@@ -837,7 +837,7 @@ and wrapped it with a &lt;code&gt;reflect&lt;/code&gt; to make it shiny:
   <published>2013-11-03T00:00:00-04:00</published>
   
   <author>
-    <name>@xeolabs</name>
+    <name>@xeographics</name>
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
@@ -1248,7 +1248,7 @@ performance hit if you do that frequently.&lt;/p&gt;
   &lt;li&gt;Learn how to texture your transparency using &lt;a href=&quot;/articles/scenejs-alpha-mapping&quot;&gt;Alpha Maps&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-transparency&quot;&gt;Transparency in SceneJS&lt;/a&gt; was originally published by @xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on November 03, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-transparency&quot;&gt;Transparency in SceneJS&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on November 03, 2013.&lt;/p&gt;</content>
 </entry>
 
 
@@ -1260,7 +1260,7 @@ performance hit if you do that frequently.&lt;/p&gt;
   <published>2013-11-03T00:00:00-04:00</published>
   
   <author>
-    <name>@xeolabs</name>
+    <name>@xeographics</name>
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
@@ -1448,7 +1448,7 @@ create a cool flowing gas pattern across the surface of the outer box.
 in the &lt;a href=&quot;/articles/scenejs-transparency&quot;&gt;Transparency&lt;/a&gt; tutorial, to make holes in things. I also showed you how it’s easy
  to use a video, instead of the usual image, in order to make animated regions of transparancy.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-alpha-mapping&quot;&gt;Alpha Mapping in SceneJS&lt;/a&gt; was originally published by @xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on November 03, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-alpha-mapping&quot;&gt;Alpha Mapping in SceneJS&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on November 03, 2013.&lt;/p&gt;</content>
 </entry>
 
 
@@ -1460,7 +1460,7 @@ in the &lt;a href=&quot;/articles/scenejs-transparency&quot;&gt;Transparency&lt;
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
-    <name>@xeolabs</name>
+    <name>@xeographics</name>
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
@@ -1504,7 +1504,7 @@ how an app will then need to reallocate its textures, VBOs, shaders etc. on a ne
 SceneJS retains all state and assets, such as matrices, geoemtry and textures etc in its scene graph. Then when the context
 is recovered after loss, it simply reallocates those assets on the new context.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-webgl-context-lost&quot;&gt;Automatic WebGLContestLost Recovery in SceneJS&lt;/a&gt; was originally published by @xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-webgl-context-lost&quot;&gt;Automatic WebGLContestLost Recovery in SceneJS&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
@@ -1516,7 +1516,7 @@ is recovered after loss, it simply reallocates those assets on the new context.&
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
-    <name>@xeolabs</name>
+    <name>@xeographics</name>
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
@@ -1605,7 +1605,7 @@ into world-space by the inverse view and projection matrices.&lt;/li&gt;
   &lt;li&gt;Another limitation is that this technique does not find any topological information on the pick hit: it only finds the name and a world-space coordinate. When picking a mesh for example, it does not report the actual face that was picked.&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-ray-picking-technique&quot;&gt;Pssst...How Fast Ray Picking Works in SceneJS&lt;/a&gt; was originally published by @xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-ray-picking-technique&quot;&gt;Pssst...How Fast Ray Picking Works in SceneJS&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
@@ -1617,7 +1617,7 @@ into world-space by the inverse view and projection matrices.&lt;/li&gt;
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
-    <name>@xeolabs</name>
+    <name>@xeographics</name>
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
@@ -1689,7 +1689,7 @@ back an additional &lt;code&gt;worldPos&lt;/code&gt; property in the result, whi
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;myScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;150&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rayPick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Note the rayPick flag&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-ray-picking&quot;&gt;Fast Ray Picking in SceneJS&lt;/a&gt; was originally published by @xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-ray-picking&quot;&gt;Fast Ray Picking in SceneJS&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
@@ -1701,7 +1701,7 @@ back an additional &lt;code&gt;worldPos&lt;/code&gt; property in the result, whi
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
-    <name>@xeolabs</name>
+    <name>@xeographics</name>
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
@@ -1832,7 +1832,7 @@ Now let’s look at the essential bits of that &lt;code&gt;firstExample.html&lt;
   &lt;li&gt;&lt;a href=&quot;/articles/scenejs-creating-a-scene-and-adding-nodes&quot;&gt;Adding and Removing Nodes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-quick-start&quot;&gt;SceneJS Quick Start&lt;/a&gt; was originally published by @xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-quick-start&quot;&gt;SceneJS Quick Start&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
@@ -1844,7 +1844,7 @@ Now let’s look at the essential bits of that &lt;code&gt;firstExample.html&lt;
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
-    <name>@xeolabs</name>
+    <name>@xeographics</name>
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
@@ -2351,7 +2351,7 @@ name “table”, while the table’s legs get the names “leg1”, “leg2”,
 flag that causes SceneJS to return the World-space coordinates of the point we’re picking on the surface of the object.&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-picking&quot;&gt;Picking in SceneJS&lt;/a&gt; was originally published by @xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-picking&quot;&gt;Picking in SceneJS&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
@@ -2363,7 +2363,7 @@ flag that causes SceneJS to return the World-space coordinates of the point we�
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
-    <name>@xeolabs</name>
+    <name>@xeographics</name>
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
@@ -2456,7 +2456,7 @@ a point on the skybox, which would be rather a Truman Show moment!&lt;br /&gt;&l
   &lt;li&gt;&lt;a href=&quot;/articles/scenejs-node-types&quot;&gt;Creating your own Scene Node Types&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-pickflyorbit-camera&quot;&gt;SceneJS Pick-Fly-Orbit Camera&lt;/a&gt; was originally published by @xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-pickflyorbit-camera&quot;&gt;SceneJS Pick-Fly-Orbit Camera&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
@@ -2468,7 +2468,7 @@ a point on the skybox, which would be rather a Truman Show moment!&lt;br /&gt;&l
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
-    <name>@xeolabs</name>
+    <name>@xeographics</name>
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
@@ -2896,7 +2896,7 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
   &lt;li&gt;&lt;a href=&quot;https://github.com/xeolabs/scenejs/issues?direction=desc&amp;amp;labels=Physics&amp;amp;page=1&amp;amp;sort=created&amp;amp;state=open&quot;&gt;Issues tagged ‘physics’&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-physics&quot;&gt;Rigid-Body Physics in SceneJS&lt;/a&gt; was originally published by @xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-physics&quot;&gt;Rigid-Body Physics in SceneJS&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
@@ -2908,7 +2908,7 @@ The &lt;code&gt;shape&lt;/code&gt; parameter on this node specifies the shape of
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
-    <name>@xeolabs</name>
+    <name>@xeographics</name>
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
@@ -3016,7 +3016,7 @@ files into typed arrays, which it then parses.
 &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-obj-md2-3ds&quot;&gt;Importing .OBJ, .MD2 and .3DS into SceneJS&lt;/a&gt; was originally published by @xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-obj-md2-3ds&quot;&gt;Importing .OBJ, .MD2 and .3DS into SceneJS&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
@@ -3028,7 +3028,7 @@ files into typed arrays, which it then parses.
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
-    <name>@xeolabs</name>
+    <name>@xeographics</name>
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
@@ -3489,7 +3489,7 @@ notifications to us as a count of tasks in progress, as we’ll see further down
 
 &lt;p&gt;TODO&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-node-types&quot;&gt;Creating your own Scene Node Types&lt;/a&gt; was originally published by @xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-node-types&quot;&gt;Creating your own Scene Node Types&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
@@ -3501,7 +3501,7 @@ notifications to us as a count of tasks in progress, as we’ll see further down
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
-    <name>@xeolabs</name>
+    <name>@xeographics</name>
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
@@ -3726,7 +3726,7 @@ keep track of the boundaries of things, which seemed a reasonable tradeoff to re
   &lt;li&gt;&lt;a href=&quot;https://github.com/xeolabs/scenejs/issues?direction=desc&amp;amp;labels=Culling&amp;amp;page=1&amp;amp;sort=created&amp;amp;state=open&quot;&gt;Issues tagged ‘culling’&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-detail-culling&quot;&gt;SceneJS Visibility and Detail Culling&lt;/a&gt; was originally published by @xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-detail-culling&quot;&gt;SceneJS Visibility and Detail Culling&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
@@ -3738,7 +3738,7 @@ keep track of the boundaries of things, which seemed a reasonable tradeoff to re
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
-    <name>@xeolabs</name>
+    <name>@xeographics</name>
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
@@ -3878,7 +3878,7 @@ of your scene asynchronously, as it waits for plugins to load. Always get your n
     &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-creating-a-scene-and-adding-nodes&quot;&gt;Adding and Removing Scene Nodes&lt;/a&gt; was originally published by @xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-creating-a-scene-and-adding-nodes&quot;&gt;Adding and Removing Scene Nodes&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
@@ -3890,7 +3890,7 @@ of your scene asynchronously, as it waits for plugins to load. Always get your n
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
-    <name>@xeolabs</name>
+    <name>@xeographics</name>
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
@@ -4111,7 +4111,7 @@ This means that you can create a scene containing nothing but a &lt;code&gt;geom
 &lt;p&gt;The &lt;code&gt;renderer&lt;/code&gt; node configures misceleaneous WebGL capabilities for its subgraph, such as line width, color buffer, depth buffer etc.
   It will be replaced by a collection of more specific nodes, eg. &lt;code&gt;depthBuf&lt;/code&gt; and &lt;code&gt;colorbuf&lt;/code&gt;.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/migrating-scenejs-2-to-3&quot;&gt;Migrating from SceneJS 2.0 to 3.1&lt;/a&gt; was originally published by @xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/migrating-scenejs-2-to-3&quot;&gt;Migrating from SceneJS 2.0 to 3.1&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
@@ -4123,7 +4123,7 @@ This means that you can create a scene containing nothing but a &lt;code&gt;geom
   <published>2013-10-28T00:00:00-04:00</published>
   
   <author>
-    <name>@xeolabs</name>
+    <name>@xeographics</name>
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
@@ -4216,7 +4216,7 @@ Have fun!&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/articles/scenejs-webgl-context-lost&quot;&gt;Automatic Recovery from Lost WebGL Context&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/learning-scenejs&quot;&gt;SceneJS Tutorials&lt;/a&gt; was originally published by @xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/learning-scenejs&quot;&gt;SceneJS Tutorials&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 </feed>
