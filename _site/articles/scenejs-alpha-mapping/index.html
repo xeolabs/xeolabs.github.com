@@ -10,7 +10,7 @@
 <meta name="keywords" content="scenejs, tutorial, transparency, texturing">
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://xeolabs.com/images/">
+<meta name="twitter:image" content="/images/">
 <meta name="twitter:title" content="Alpha Mapping in SceneJS">
 <meta name="twitter:description" content="Using textures to make transparent areas on the surfaces of objects">
 <meta name="twitter:creator" content="@xeographics">
@@ -20,15 +20,15 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Alpha Mapping in SceneJS">
 <meta property="og:description" content="Using textures to make transparent areas on the surfaces of objects">
-<meta property="og:url" content="http://xeolabs.com/articles/scenejs-alpha-mapping">
+<meta property="og:url" content="/articles/scenejs-alpha-mapping">
 <meta property="og:site_name" content="xeolabs">
 
 
 
 
 
-<link rel="canonical" href="http://xeolabs.com/articles/scenejs-alpha-mapping">
-<link href="http://xeolabs.com/feed.xml" type="application/atom+xml" rel="alternate" title="xeolabs Feed">
+<link rel="canonical" href="/articles/scenejs-alpha-mapping">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="xeolabs Feed">
 <link rel="author" href="https://plus.google.com/u/0/110983138227486752827/posts?rel=author">
 
 <!-- http://t.co/dKP3o1e -->
@@ -39,30 +39,30 @@
 <!-- Google Webfonts -->
 <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
 <!-- For all browsers -->
-<link rel="stylesheet" href="http://xeolabs.com/assets/css/main.min.css">
+<link rel="stylesheet" href="/assets/css/main.min.css">
 
 <!--[if (lt IE 9) & (!IEMobile)]>
-<link rel="stylesheet" href="http://xeolabs.com/assets/css/ie.min.css">
+<link rel="stylesheet" href="/assets/css/ie.min.css">
 <![endif]-->
 
 <meta http-equiv="cleartype" content="on">
 
 <!-- Load Modernizr -->
-<script src="http://xeolabs.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
 
 <!-- Icons -->
 <!-- 16x16 -->
-<link rel="shortcut icon" href="http://xeolabs.com/favicon.ico">
+<link rel="shortcut icon" href="/favicon.ico">
 <!-- 32x32 -->
-<link rel="shortcut icon" href="http://xeolabs.com/favicon.png">
+<link rel="shortcut icon" href="/favicon.png">
 <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="http://xeolabs.com/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
 <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://xeolabs.com/images/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
 <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://xeolabs.com/images/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://xeolabs.com/images/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
 
 </head>
 
@@ -72,15 +72,15 @@
 
 <div class="navigation-wrapper">
 	<div class="site-name">
-		<a href="http://xeolabs.com">xeolabs</a>
+		<a href="">xeolabs</a>
 	</div><!-- /.site-name -->
 	<div class="top-navigation">
 		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 		    <ul>
 		        
-				<li><a href="http://xeolabs.com/about" >About</a></li>
+				<li><a href="/about" >About</a></li>
 		        
-				<li><a href="http://xeolabs.com/articles" >Articles</a></li>
+				<li><a href="/articles" >Articles</a></li>
 		        
 				<li><a href="http://scenejs.org" target="_blank">SceneJS</a></li>
 		        
@@ -100,8 +100,8 @@
 
 <div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
   <div class="article-author-top">
-    <img src="http://xeolabs.com/images/portraitBerlinCafe.jpg" class="bio-photo" alt="@xeographics bio photo"></a>
-<h3><a href="http://xeolabs.com/about/">@xeographics</a></h3>
+    <img src="/images/portraitBerlinCafe.jpg" class="bio-photo" alt="@xeographics bio photo"></a>
+<h3><a href="/about/">@xeographics</a></h3>
 <p>Lindsay Kay<br>3D visualization app/engine developer</p>
 <a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
 
@@ -158,14 +158,14 @@ In this tutorial, I’ll build on techniques from the <a href="/articles/scenejs
 <p>Then we’ll create the scene below, in which the outer green box has an alpha texture which creates transparent areas through
 which you can see the inner blue box.
 <br /><br />
-<a href="http://scenejs.org/examples.html?page=alphaMap"><img src="http://xeolabs.com/images/scenejs/basicAlphaMap.png" alt="Alpha map" /></a>
+<a href="http://scenejs.org/examples.html?page=alphaMap"><img src="/images/scenejs/basicAlphaMap.png" alt="Alpha map" /></a>
 <a href="http://scenejs.org/examples.html?page=alphaMap">Run this demo</a>
 <br /><br />Shown below is the texture we’ll use for the alpha map. The white areas will be where the outer box will be opaque,
 while the black areas are where it will be transparent.</p>
 
 <p><br /><br /></p>
 
-<p><a href="http://xeolabs.com/images/scenejs/leavesAlphaMap.jpg"><img src="http://xeolabs.com/images/scenejs/leavesAlphaMapSmall.jpg" alt="Alpha map image" /></a></p>
+<p><a href="/images/scenejs/leavesAlphaMap.jpg"><img src="/images/scenejs/leavesAlphaMapSmall.jpg" alt="Alpha map image" /></a></p>
 
 <p><br /><br />Listed below is the code that defines our scene. It’s using <code>flags</code> and <code>material</code> nodes to set up
 transparency (which you learned about in the <a href="/articles/scenejs-transparency">Transparency</a> tutorial), plus a <code>texture</code> node, which
@@ -273,10 +273,10 @@ achieve the same effect as shown in this example, you would then need an <code>a
 
 <h1 id="video-alpha-map">Video alpha map</h1>
 
-<p>Now I’ll show you how to apply a video as an alpha map. This time, we’ll dynamically sample our texture from <a href="http://xeolabs.com/images/scenejs/testVideo.ogv">an .OGV file</a>, to
+<p>Now I’ll show you how to apply a video as an alpha map. This time, we’ll dynamically sample our texture from <a href="/images/scenejs/testVideo.ogv">an .OGV file</a>, to
 create a cool flowing gas pattern across the surface of the outer box.
 <br /><br />
-<a href="http://scenejs.org/examples.html?page=videoAlphaMap"><img src="http://xeolabs.com/images/scenejs/videoAlphaMap.jpg" alt="Alpha video map" /></a>
+<a href="http://scenejs.org/examples.html?page=videoAlphaMap"><img src="/images/scenejs/videoAlphaMap.jpg" alt="Alpha video map" /></a>
 <a href="http://scenejs.org/examples.html?page=videoAlphaMap">Run this demo</a></p>
 
 <p><br /><br />The code is identical to the previous example, except for the <code>texture</code> node, which looks like this:</p>
@@ -306,8 +306,8 @@ in the <a href="/articles/scenejs-transparency">Transparency</a> tutorial, to ma
       <hr />
       <footer role="contentinfo">
         <div class="article-author-bottom">
-          <img src="http://xeolabs.com/images/portraitBerlinCafe.jpg" class="bio-photo" alt="@xeographics bio photo"></a>
-<h3><a href="http://xeolabs.com/about/">@xeographics</a></h3>
+          <img src="/images/portraitBerlinCafe.jpg" class="bio-photo" alt="@xeographics bio photo"></a>
+<h3><a href="/about/">@xeographics</a></h3>
 <p>Lindsay Kay<br>3D visualization app/engine developer</p>
 <a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
 
@@ -318,7 +318,7 @@ in the <a href="/articles/scenejs-transparency">Transparency</a> tutorial, to ma
 
 
         </div>
-        <p class="byline"><strong>Alpha Mapping in SceneJS</strong> was published on <time datetime="2013-11-03T00:00:00-04:00" itemprop="datePublished">November 03, 2013</time> and last modified on <time datetime="2013-05-31" itemprop="dateModified">May 31, 2013</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://xeolabs.com/about" title="About @xeographics" itemprop="url">@xeographics</a></span></span>.</p>
+        <p class="byline"><strong>Alpha Mapping in SceneJS</strong> was published on <time datetime="2013-11-03T00:00:00-04:00" itemprop="datePublished">November 03, 2013</time> and last modified on <time datetime="2013-05-31" itemprop="dateModified">May 31, 2013</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="/about" title="About @xeographics" itemprop="url">@xeographics</a></span></span>.</p>
       </footer>
 
         
@@ -347,7 +347,7 @@ in the <a href="/articles/scenejs-transparency">Transparency</a> tutorial, to ma
 
 <div class="footer-wrap">
   <div class="related-articles">
-  <h4>You might also enjoy <small class="pull-right">(<a href="http://xeolabs.com/articles">View all articles</a>)</small></h4>
+  <h4>You might also enjoy <small class="pull-right">(<a href="/articles">View all articles</a>)</small></h4>
     <ul>
     
       
@@ -357,7 +357,7 @@ in the <a href="/articles/scenejs-transparency">Transparency</a> tutorial, to ma
         
       
       
-      <li><a href="http://xeolabs.com/articles/xeogl-in-bimsurfer" title="xeogl in BIMSurfer">xeogl in BIMSurfer</a></li>
+      <li><a href="/articles/xeogl-pbr" title="Physically Based Rendering in xeogl">Physically Based Rendering in xeogl</a></li>
       
     
       
@@ -367,7 +367,7 @@ in the <a href="/articles/scenejs-transparency">Transparency</a> tutorial, to ma
         
       
       
-      <li><a href="http://xeolabs.com/articles/scenejs4-release" title="SceneJS v4.0 Released">SceneJS v4.0 Released</a></li>
+      <li><a href="/articles/xeogl-in-bimsurfer" title="xeogl in BIMSurfer">xeogl in BIMSurfer</a></li>
       
     
       
@@ -377,7 +377,7 @@ in the <a href="/articles/scenejs-transparency">Transparency</a> tutorial, to ma
         
       
       
-      <li><a href="http://xeolabs.com/articles/scenejs-reflection" title="Reflective Surfaces in SceneJS">Reflective Surfaces in SceneJS</a></li>
+      <li><a href="/articles/scenejs4-release" title="SceneJS v4.0 Released">SceneJS v4.0 Released</a></li>
       
     
     </ul>
@@ -390,8 +390,8 @@ in the <a href="/articles/scenejs-transparency">Transparency</a> tutorial, to ma
 </div><!-- /.footer-wrap -->
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="http://xeolabs.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-<script src="http://xeolabs.com/assets/js/scripts.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
 
 
 <script type="text/javascript">

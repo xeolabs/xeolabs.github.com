@@ -1,80 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://xeolabs.com</loc>
+        <loc></loc>
     </url>
     
     
     <url>
-        <loc>http://xeolabs.com/articles/xeogl-in-bimsurfer</loc>
+        <loc>/articles/xeogl-pbr</loc>
     </url>
     
     <url>
-        <loc>http://xeolabs.com/articles/scenejs4-release</loc>
+        <loc>/articles/xeogl-in-bimsurfer</loc>
     </url>
     
     <url>
-        <loc>http://xeolabs.com/articles/scenejs-reflection</loc>
+        <loc>/articles/scenejs4-release</loc>
     </url>
     
     <url>
-        <loc>http://xeolabs.com/articles/scenejs-transparency</loc>
+        <loc>/articles/scenejs-reflection</loc>
     </url>
     
     <url>
-        <loc>http://xeolabs.com/articles/scenejs-alpha-mapping</loc>
+        <loc>/articles/scenejs-transparency</loc>
     </url>
     
     <url>
-        <loc>http://xeolabs.com/articles/scenejs-webgl-context-lost</loc>
+        <loc>/articles/scenejs-alpha-mapping</loc>
     </url>
     
     <url>
-        <loc>http://xeolabs.com/articles/scenejs-ray-picking-technique</loc>
+        <loc>/articles/scenejs-webgl-context-lost</loc>
     </url>
     
     <url>
-        <loc>http://xeolabs.com/articles/scenejs-ray-picking</loc>
+        <loc>/articles/scenejs-ray-picking-technique</loc>
     </url>
     
     <url>
-        <loc>http://xeolabs.com/articles/scenejs-quick-start</loc>
+        <loc>/articles/scenejs-ray-picking</loc>
     </url>
     
     <url>
-        <loc>http://xeolabs.com/articles/scenejs-picking</loc>
+        <loc>/articles/scenejs-quick-start</loc>
     </url>
     
     <url>
-        <loc>http://xeolabs.com/articles/scenejs-pickflyorbit-camera</loc>
+        <loc>/articles/scenejs-picking</loc>
     </url>
     
     <url>
-        <loc>http://xeolabs.com/articles/scenejs-physics</loc>
+        <loc>/articles/scenejs-pickflyorbit-camera</loc>
     </url>
     
     <url>
-        <loc>http://xeolabs.com/articles/scenejs-obj-md2-3ds</loc>
+        <loc>/articles/scenejs-physics</loc>
     </url>
     
     <url>
-        <loc>http://xeolabs.com/articles/scenejs-node-types</loc>
+        <loc>/articles/scenejs-obj-md2-3ds</loc>
     </url>
     
     <url>
-        <loc>http://xeolabs.com/articles/scenejs-detail-culling</loc>
+        <loc>/articles/scenejs-node-types</loc>
     </url>
     
     <url>
-        <loc>http://xeolabs.com/articles/scenejs-creating-a-scene-and-adding-nodes</loc>
+        <loc>/articles/scenejs-detail-culling</loc>
     </url>
     
     <url>
-        <loc>http://xeolabs.com/articles/migrating-scenejs-2-to-3</loc>
+        <loc>/articles/scenejs-creating-a-scene-and-adding-nodes</loc>
     </url>
     
     <url>
-        <loc>http://xeolabs.com/articles/learning-scenejs</loc>
+        <loc>/articles/migrating-scenejs-2-to-3</loc>
+    </url>
+    
+    <url>
+        <loc>/articles/learning-scenejs</loc>
     </url>
     
 </urlset>

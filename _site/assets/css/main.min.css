@@ -3106,3 +3106,8 @@ img.mfp-img {
         margin-left: 16.666666666666668%
     }
 }
+
+/* To center images */
+.center {
+    text-align: center;
+}
