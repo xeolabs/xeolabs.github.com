@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2017-02-16T12:57:09-05:00</updated>
+<updated>2017-02-17T10:00:34-05:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>@xeographics</name>
@@ -40,14 +40,15 @@
   &lt;/div&gt;
 &lt;/section&gt;
 &lt;!-- /#table-of-contents --&gt;
-&lt;p&gt;This month I extended &lt;a href=&quot;http://xeogl.org&quot;&gt;xeogl&lt;/a&gt; to support Physically Based Rendering (PBR), which is an approach to rendering 
+&lt;p&gt;This month I made some more progress extended &lt;a href=&quot;http://xeogl.org&quot;&gt;xeogl&lt;/a&gt; to support Physically Based Rendering (PBR), which is an approach to rendering 
 that uses real world values to provide results that are more accurate and consistent under all lighting conditions. 
 &lt;br /&gt;&lt;br /&gt;
 I also extended xeogl to load &lt;a href=&quot;https://github.com/KhronosGroup/glTF&quot;&gt;glTF&lt;/a&gt; models with PBR materials, for 
 both &lt;em&gt;metallic/roughness&lt;/em&gt; and &lt;em&gt;specular/glossiness&lt;/em&gt; work flows, using the FRAUNHOFER_materials_pbr extension.
 &lt;br /&gt;&lt;br /&gt;
-Note that &lt;strong&gt;this is not ready for production yet&lt;/strong&gt; because I’ve yet to implement a few crucial things like HDR for lightmaps, 
-gamma correction and tone mapping, but here’s a look at where I’m up to with PBR so far.
+This is still a work in progress, as I’m following along behind the current development of the glTF 2.0 spec. Also, I’m learning PBR 
+ as I go here, and still need to implement some of those little things in the shaders that really make it look good, like HDR lighting, 
+gamma correction and tone mapping.
 &lt;br /&gt;&lt;br /&gt;
 For an introduction to PBR concepts, check out the &lt;a href=&quot;https://www.allegorithmic.com/pbr-guide&quot;&gt;Allegorithmic PBR Guide&lt;/a&gt;.
 &lt;br /&gt;&lt;/p&gt;
@@ -64,7 +65,7 @@ For an introduction to PBR concepts, check out the &lt;a href=&quot;https://www.
 
 &lt;h3 id=&quot;api-additions&quot;&gt;API additions&lt;/h3&gt;
 
-&lt;p&gt;To support PBR, I added two new material component types to xeogl, which closely follow the glTF PBR model:&lt;/p&gt;
+&lt;p&gt;To support PBR, I added two new material component types to xeogl, which closely follow glTF’s PBR spec:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://xeogl.org/docs/classes/MetallicMaterial.html&quot;&gt;MetallicMaterial&lt;/a&gt; to support a &lt;em&gt;metallic/roughness&lt;/em&gt; workflow, and&lt;/li&gt;
@@ -114,9 +115,11 @@ texture’s R component and &lt;em&gt;roughness&lt;/em&gt; in its G component.&l
 &lt;h3 id=&quot;work-remaining&quot;&gt;Work remaining&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;HDR for light maps&lt;/li&gt;
-  &lt;li&gt;Gamma correction&lt;/li&gt;
-  &lt;li&gt;Tone mapping&lt;/li&gt;
+  &lt;li&gt;Proper accreditation on all models.&lt;/li&gt;
+  &lt;li&gt;Organize glTF examples better. Organize them into 1.0, 1.1 and 2.0 categories so that xeogl support can be checked at a glance.&lt;/li&gt;
+  &lt;li&gt;HDR for IBL (looks so rough without this).&lt;/li&gt;
+  &lt;li&gt;Gamma correction - not sure yet at what scope to do this in the API - per material, per model or entire scene?&lt;/li&gt;
+  &lt;li&gt;Tone mapping - will probably need to build up a postprocessing framework and make this an effect that plugs into it.&lt;/li&gt;
 &lt;/ul&gt;
 
 

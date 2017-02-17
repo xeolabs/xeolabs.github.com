@@ -133,14 +133,15 @@
   </div>
 </section>
 <!-- /#table-of-contents -->
-<p>This month I extended <a href="http://xeogl.org">xeogl</a> to support Physically Based Rendering (PBR), which is an approach to rendering 
+<p>This month I made some more progress extended <a href="http://xeogl.org">xeogl</a> to support Physically Based Rendering (PBR), which is an approach to rendering 
 that uses real world values to provide results that are more accurate and consistent under all lighting conditions. 
 <br /><br />
 I also extended xeogl to load <a href="https://github.com/KhronosGroup/glTF">glTF</a> models with PBR materials, for 
 both <em>metallic/roughness</em> and <em>specular/glossiness</em> work flows, using the FRAUNHOFER_materials_pbr extension.
 <br /><br />
-Note that <strong>this is not ready for production yet</strong> because I’ve yet to implement a few crucial things like HDR for lightmaps, 
-gamma correction and tone mapping, but here’s a look at where I’m up to with PBR so far.
+This is still a work in progress, as I’m following along behind the current development of the glTF 2.0 spec. Also, I’m learning PBR 
+ as I go here, and still need to implement some of those little things in the shaders that really make it look good, like HDR lighting, 
+gamma correction and tone mapping.
 <br /><br />
 For an introduction to PBR concepts, check out the <a href="https://www.allegorithmic.com/pbr-guide">Allegorithmic PBR Guide</a>.
 <br /></p>
@@ -157,7 +158,7 @@ For an introduction to PBR concepts, check out the <a href="https://www.allegori
 
 <h3 id="api-additions">API additions</h3>
 
-<p>To support PBR, I added two new material component types to xeogl, which closely follow the glTF PBR model:</p>
+<p>To support PBR, I added two new material component types to xeogl, which closely follow glTF’s PBR spec:</p>
 
 <ul>
   <li><a href="http://xeogl.org/docs/classes/MetallicMaterial.html">MetallicMaterial</a> to support a <em>metallic/roughness</em> workflow, and</li>
@@ -207,9 +208,11 @@ texture’s R component and <em>roughness</em> in its G component.</p>
 <h3 id="work-remaining">Work remaining</h3>
 
 <ul>
-  <li>HDR for light maps</li>
-  <li>Gamma correction</li>
-  <li>Tone mapping</li>
+  <li>Proper accreditation on all models.</li>
+  <li>Organize glTF examples better. Organize them into 1.0, 1.1 and 2.0 categories so that xeogl support can be checked at a glance.</li>
+  <li>HDR for IBL (looks so rough without this).</li>
+  <li>Gamma correction - not sure yet at what scope to do this in the API - per material, per model or entire scene?</li>
+  <li>Tone mapping - will probably need to build up a postprocessing framework and make this an effect that plugs into it.</li>
 </ul>
 
 
