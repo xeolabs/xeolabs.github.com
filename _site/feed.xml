@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2017-02-24T13:11:25-05:00</updated>
+<updated>2017-02-24T13:16:06-05:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>@xeographics</name>
@@ -53,11 +53,7 @@ xeogl’s PBR is fairly standard so far:&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;I also extended xeogl to load &lt;a href=&quot;https://github.com/KhronosGroup/glTF&quot;&gt;glTF&lt;/a&gt; models with PBR materials, for 
-both &lt;em&gt;metallic/roughness&lt;/em&gt; and &lt;em&gt;specular/glossiness&lt;/em&gt; work flows, using the FRAUNHOFER_materials_pbr extension.
-&lt;br /&gt;&lt;br /&gt;
-Check out some demos:
-—-|—-|—-
-&lt;a href=&quot;http://xeogl.org/examples/#importing_gltf_pbr_metallic_helmet&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/MetallicMaterial/helmet.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; | &lt;a href=&quot;http://xeogl.org/examples/#materials_metallic_fireHydrant&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/MetallicMaterial/hydrant0.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; | &lt;a href=&quot;http://xeogl.org/examples/#importing_gltf_pbr_specular_saw&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/SpecularMaterial/reciprocatingSaw.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; | &lt;a href=&quot;http://xeogl.org/examples/importing_scenejs_tronTank.html&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/MetallicMaterial/scenejsTronTank.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; | &lt;a href=&quot;http://xeogl.org/examples/#importing_gltf_pbr_metallic_telephone&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/MetallicMaterial/telephone.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+both &lt;em&gt;metallic/roughness&lt;/em&gt; and &lt;em&gt;specular/glossiness&lt;/em&gt; work flows, using the FRAUNHOFER_materials_pbr extension.&lt;/p&gt;
 
 &lt;p&gt;This is still a work in progress, as I’m following along behind the current development of the glTF 2.0 spec. Also, I’m learning PBR 
  as I go here, and still need to implement some of those little things in the shaders that really make it look good, like HDR lighting, 
@@ -65,6 +61,18 @@ gamma correction and tone mapping.
 &lt;br /&gt;&lt;br /&gt;
 For an introduction to PBR concepts, check out the &lt;a href=&quot;https://www.allegorithmic.com/pbr-guide&quot;&gt;Allegorithmic PBR Guide&lt;/a&gt;.
 &lt;br /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;http://xeogl.org/examples/#importing_gltf_pbr_metallic_helmet&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/MetallicMaterial/helmet.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://xeogl.org/examples/#materials_metallic_fireHydrant&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/MetallicMaterial/hydrant0.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://xeogl.org/examples/#importing_gltf_pbr_specular_saw&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/SpecularMaterial/reciprocatingSaw.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://xeogl.org/examples/importing_scenejs_tronTank.html&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/MetallicMaterial/scenejsTronTank.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://xeogl.org/examples/#importing_gltf_pbr_metallic_telephone&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/MetallicMaterial/telephone.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
 &lt;h3 id=&quot;api-additions&quot;&gt;API additions&lt;/h3&gt;
 
