@@ -1,12 +1,12 @@
 ---
 layout: page
 permalink: /about/index.html
-title: Hello!
-tagline: More than you wanted to know
+title: Greetings, program!
+tagline: On the other side of the screen it all looked so easy.
 tags: [about]
 modified: 9-9-2013
 image:
-  feature: xeogl/gearboxScreenshot.png
+  feature: xeogl/tronTank.png
   credit: xeolabs
   creditlink: http://xeolabs.com
 ---
