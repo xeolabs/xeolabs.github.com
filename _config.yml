@@ -8,8 +8,8 @@ baseurl:          /xeolabs.github.io/xeolabs
 # Owner/author information
 owner:
   name:           "@xeographics"
-  avatar:         portraitBerlinCafe.jpg
-  bio:            "Lindsay Kay<br>3D visualization app/engine developer"
+  avatar:         portraitCoffeeNormal.png
+  bio:            "Lindsay Kay<br>3D graphics programmer"
   email:          lindsay.kay@xeolabs.com
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
   twitter: xeographics
