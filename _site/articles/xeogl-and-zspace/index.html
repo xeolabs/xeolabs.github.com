@@ -5,20 +5,20 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Building xeogl Apps on a zSpace VR/AR System &#8211; xeolabs</title>
+<title>Developing xeogl Apps for zSpace VR/AR Systems &#8211; xeolabs</title>
 <meta name="description" content="A collaboration with zSpace Inc.">
 <meta name="keywords" content="xeogl, webgl, zspace, mixedreality, 3D">
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://xeolabs.com/images/">
-<meta name="twitter:title" content="Building xeogl Apps on a zSpace VR/AR System">
+<meta name="twitter:title" content="Developing xeogl Apps for zSpace VR/AR Systems">
 <meta name="twitter:description" content="A collaboration with zSpace Inc.">
 <meta name="twitter:creator" content="@xeographics">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Building xeogl Apps on a zSpace VR/AR System">
+<meta property="og:title" content="Developing xeogl Apps for zSpace VR/AR Systems">
 <meta property="og:description" content="A collaboration with zSpace Inc.">
 <meta property="og:url" content="http://xeolabs.com/articles/xeogl-and-zspace">
 <meta property="og:site_name" content="xeolabs">
@@ -114,7 +114,7 @@
   </div>
   <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
     <div class="headline-wrap">
-      <h1 itemprop="name">Building xeogl Apps on a zSpace VR/AR System</h1>
+      <h1 itemprop="name">Developing xeogl Apps for zSpace VR/AR Systems</h1>
         <br>
       <!--<h2></h2>-->
     </div><!--/ .headline-wrap -->
@@ -171,13 +171,13 @@
 <p>To support zSpace, I added two new component types to xeogl:</p>
 
 <ul>
-  <li><a href="http://xeogl.org/docs/classes/ZSpaceEffect.html">ZSpaceEffect</a> - renders in quad-buffered stereo while updating the viewing and projection transforms off the zSpace WebVR device events.</li>
-  <li><a href="http://xeogl.org/docs/classes/ZSpaceStylusControl.html">ZSpaceStylusControl</a> - a control to select and drag entities using the stylus.</li>
+  <li><a href="http://xeogl.org/docs/classes/ZSpaceEffect.html">ZSpaceEffect</a> - renders its scene in quad-buffered stereo while updating the viewing and projection transforms off the zSpace WebVR device events.</li>
+  <li><a href="http://xeogl.org/docs/classes/ZSpaceStylusControl.html">ZSpaceStylusControl</a> - an input control to select and drag entities with the stylus.</li>
 </ul>
 
-<p>Let’s have a quick example to see how these are used.</p>
+<p>Let’s take a quick look at how these components are used.</p>
 
-<p><br />First, I’ll set up a 3D scene by importing a <a href="https://github.com/KhronosGroup/glTF">glTF</a> model into xeogl, using a <a href="http://xeogl.org/docs/classes/GLTFModel.html">GLTFModel</a> component:</p>
+<p><br />First, we’ll set up a 3D scene by importing a <a href="https://github.com/KhronosGroup/glTF">glTF</a> model into xeogl, using a <a href="http://xeogl.org/docs/classes/GLTFModel.html">GLTFModel</a>:</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">GLTFModel</span><span class="p">({</span>
     <span class="nx">src</span><span class="o">:</span> <span class="s2">&quot;models/gltf/2.0/Reciprocating_Saw/PBR-SpecGloss/Reciprocating_Saw.gltf&quot;</span><span class="p">,</span>
@@ -187,9 +187,9 @@
     <span class="p">})</span>
  <span class="p">});</span></code></pre></div>
 
-<p>Our model is the red reciprocating saw shown in the third thumbnail above. I’ve also attached a <a href="http://xeogl.org/docs/classes/Rotate.html">Rotate</a> to my GLTFModel, just to tip upright so that we can see it more clearly.</p>
+<p>Our model is the red reciprocating saw shown in the third thumbnail above. We’ve also attached a <a href="http://xeogl.org/docs/classes/Rotate.html">Rotate</a> to our GLTFModel, just to tip it upright so that we can see it more clearly.</p>
 
-<p><br />Now, to view the model on the zSpace display, I’ll simply create a <a href="http://xeogl.org/docs/classes/ZSpaceEffect.html">ZSpaceEffect</a>:</p>
+<p><br />Now, to view the model on the zSpace display, we’ll simply create a <a href="http://xeogl.org/docs/classes/ZSpaceEffect.html">ZSpaceEffect</a>:</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">zspaceEffect</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ZSpaceEffect</span><span class="p">();</span></code></pre></div>
 
@@ -207,8 +207,7 @@
 
 <h3 id="stylus-tracking">Stylus tracking</h3>
 
-<p>Let’s track the position and direction of the zSpace stylus. Also, whenever we press button 0 on the stylus while intersecting 
-  an entity, we’ll ray-pick the entity with the stylus.</p>
+<p>Let’s track the position and direction of the zSpace stylus. Also, whenever we press button 0 on the stylus while intersecting an entity, we’ll ray-pick the entity with the stylus.</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">zspaceEffect</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;stylusPos&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">pos</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Stylus position: &quot;</span> <span class="o">+</span> <span class="nx">pos</span><span class="p">);</span>
@@ -230,7 +229,7 @@
         <span class="p">}</span>
     <span class="p">});</span></code></pre></div>
 
-<p>You can also just poll the ZSpaceEffect at any time for the current state of the stylus:</p>
+<p>We can also just poll the ZSpaceEffect at any time for the current state of the stylus:</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Get stylus position</span>
  <span class="kd">var</span> <span class="nx">stylusPos</span> <span class="o">=</span> <span class="nx">zspaceEffect</span><span class="p">.</span><span class="nx">stylusPos</span><span class="p">;</span>
@@ -243,7 +242,7 @@
 
 <h3 id="zspacestyluscontrol">ZSpaceStylusControl</h3>
 
-<p>In xeogl you would normally wrap your input controls in reusable components, so I added the <a href="http://xeogl.org/docs/classes/ZSpaceStylusControl.html">ZSpaceStylusControl</a> as an example on which you might base your own zSpace stylus control.</p>
+<p>In xeogl we’d normally wrap your input controls in reusable components, so I added the <a href="http://xeogl.org/docs/classes/ZSpaceStylusControl.html">ZSpaceStylusControl</a> as an example on which you might base your own zSpace stylus control.</p>
 
 <p><br />This component:</p>
 
@@ -254,11 +253,11 @@
   <li>drags grabbed entities while button 0 is down.</li>
 </ul>
 
-<p>To use it, all I need to do is add it to my scene:</p>
+<p>To use it, all we need to do is add it to our scene:</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">zspaceStylusControl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">ZSpaceStylusControl</span><span class="p">();</span></code></pre></div>
 
-<p>At this point we can see a ray extending from the tip of our stylus, which we can select and drag entities with it.</p>
+<p>At this point we can see a ray extending from the tip of our stylus, which we can select and drag entities with.</p>
 
 <iframe src="//giphy.com/embed/mRdkHVQ1NdUWc" width="480" height="270" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>
 <p><a href="http://giphy.com/gifs/mRdkHVQ1NdUWc">via GIPHY</a></p>
@@ -279,7 +278,7 @@
 
 
         </div>
-        <p class="byline"><strong>Building xeogl Apps on a zSpace VR/AR System</strong> was published on <time datetime="2017-03-19T00:00:00-04:00" itemprop="datePublished">March 19, 2017</time> and last modified on <time datetime="2017-19-03" itemprop="dateModified">2017-19-03</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://xeolabs.com/about" title="About @xeographics" itemprop="url">@xeographics</a></span></span>.</p>
+        <p class="byline"><strong>Developing xeogl Apps for zSpace VR/AR Systems</strong> was published on <time datetime="2017-03-19T00:00:00-04:00" itemprop="datePublished">March 19, 2017</time> and last modified on <time datetime="2017-19-03" itemprop="dateModified">2017-19-03</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://xeolabs.com/about" title="About @xeographics" itemprop="url">@xeographics</a></span></span>.</p>
       </footer>
 
         

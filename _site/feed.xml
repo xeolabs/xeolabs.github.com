@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2017-03-22T19:13:51-04:00</updated>
+<updated>2017-03-22T19:24:11-04:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>@xeographics</name>
@@ -15,7 +15,7 @@
 
 
 <entry>
-  <title type="html"><![CDATA[Building xeogl Apps on a zSpace VR/AR System]]></title>
+  <title type="html"><![CDATA[Developing xeogl Apps for zSpace VR/AR Systems]]></title>
   <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/xeogl-and-zspace" />
   <id>http://xeolabs.com/articles/xeogl-and-zspace</id>
   <updated>2017-19-03T00:00:00-00:00</updated>
@@ -78,13 +78,13 @@
 &lt;p&gt;To support zSpace, I added two new component types to xeogl:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://xeogl.org/docs/classes/ZSpaceEffect.html&quot;&gt;ZSpaceEffect&lt;/a&gt; - renders in quad-buffered stereo while updating the viewing and projection transforms off the zSpace WebVR device events.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://xeogl.org/docs/classes/ZSpaceStylusControl.html&quot;&gt;ZSpaceStylusControl&lt;/a&gt; - a control to select and drag entities using the stylus.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://xeogl.org/docs/classes/ZSpaceEffect.html&quot;&gt;ZSpaceEffect&lt;/a&gt; - renders its scene in quad-buffered stereo while updating the viewing and projection transforms off the zSpace WebVR device events.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://xeogl.org/docs/classes/ZSpaceStylusControl.html&quot;&gt;ZSpaceStylusControl&lt;/a&gt; - an input control to select and drag entities with the stylus.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Let’s have a quick example to see how these are used.&lt;/p&gt;
+&lt;p&gt;Let’s take a quick look at how these components are used.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;First, I’ll set up a 3D scene by importing a &lt;a href=&quot;https://github.com/KhronosGroup/glTF&quot;&gt;glTF&lt;/a&gt; model into xeogl, using a &lt;a href=&quot;http://xeogl.org/docs/classes/GLTFModel.html&quot;&gt;GLTFModel&lt;/a&gt; component:&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;First, we’ll set up a 3D scene by importing a &lt;a href=&quot;https://github.com/KhronosGroup/glTF&quot;&gt;glTF&lt;/a&gt; model into xeogl, using a &lt;a href=&quot;http://xeogl.org/docs/classes/GLTFModel.html&quot;&gt;GLTFModel&lt;/a&gt;:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xeogl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;GLTFModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;models/gltf/2.0/Reciprocating_Saw/PBR-SpecGloss/Reciprocating_Saw.gltf&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -94,9 +94,9 @@
     &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Our model is the red reciprocating saw shown in the third thumbnail above. I’ve also attached a &lt;a href=&quot;http://xeogl.org/docs/classes/Rotate.html&quot;&gt;Rotate&lt;/a&gt; to my GLTFModel, just to tip upright so that we can see it more clearly.&lt;/p&gt;
+&lt;p&gt;Our model is the red reciprocating saw shown in the third thumbnail above. We’ve also attached a &lt;a href=&quot;http://xeogl.org/docs/classes/Rotate.html&quot;&gt;Rotate&lt;/a&gt; to our GLTFModel, just to tip it upright so that we can see it more clearly.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;Now, to view the model on the zSpace display, I’ll simply create a &lt;a href=&quot;http://xeogl.org/docs/classes/ZSpaceEffect.html&quot;&gt;ZSpaceEffect&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;Now, to view the model on the zSpace display, we’ll simply create a &lt;a href=&quot;http://xeogl.org/docs/classes/ZSpaceEffect.html&quot;&gt;ZSpaceEffect&lt;/a&gt;:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;zspaceEffect&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ZSpaceEffect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -114,8 +114,7 @@
 
 &lt;h3 id=&quot;stylus-tracking&quot;&gt;Stylus tracking&lt;/h3&gt;
 
-&lt;p&gt;Let’s track the position and direction of the zSpace stylus. Also, whenever we press button 0 on the stylus while intersecting 
-  an entity, we’ll ray-pick the entity with the stylus.&lt;/p&gt;
+&lt;p&gt;Let’s track the position and direction of the zSpace stylus. Also, whenever we press button 0 on the stylus while intersecting an entity, we’ll ray-pick the entity with the stylus.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;zspaceEffect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;stylusPos&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Stylus position: &amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -137,7 +136,7 @@
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;You can also just poll the ZSpaceEffect at any time for the current state of the stylus:&lt;/p&gt;
+&lt;p&gt;We can also just poll the ZSpaceEffect at any time for the current state of the stylus:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Get stylus position&lt;/span&gt;
  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;stylusPos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;zspaceEffect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stylusPos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -150,7 +149,7 @@
 
 &lt;h3 id=&quot;zspacestyluscontrol&quot;&gt;ZSpaceStylusControl&lt;/h3&gt;
 
-&lt;p&gt;In xeogl you would normally wrap your input controls in reusable components, so I added the &lt;a href=&quot;http://xeogl.org/docs/classes/ZSpaceStylusControl.html&quot;&gt;ZSpaceStylusControl&lt;/a&gt; as an example on which you might base your own zSpace stylus control.&lt;/p&gt;
+&lt;p&gt;In xeogl we’d normally wrap your input controls in reusable components, so I added the &lt;a href=&quot;http://xeogl.org/docs/classes/ZSpaceStylusControl.html&quot;&gt;ZSpaceStylusControl&lt;/a&gt; as an example on which you might base your own zSpace stylus control.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;This component:&lt;/p&gt;
 
@@ -161,17 +160,17 @@
   &lt;li&gt;drags grabbed entities while button 0 is down.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;To use it, all I need to do is add it to my scene:&lt;/p&gt;
+&lt;p&gt;To use it, all we need to do is add it to our scene:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;zspaceStylusControl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xeogl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ZSpaceStylusControl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;At this point we can see a ray extending from the tip of our stylus, which we can select and drag entities with it.&lt;/p&gt;
+&lt;p&gt;At this point we can see a ray extending from the tip of our stylus, which we can select and drag entities with.&lt;/p&gt;
 
 &lt;iframe src=&quot;//giphy.com/embed/mRdkHVQ1NdUWc&quot; width=&quot;480&quot; height=&quot;270&quot; frameborder=&quot;0&quot; class=&quot;giphy-embed&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 &lt;p&gt;&lt;a href=&quot;http://giphy.com/gifs/mRdkHVQ1NdUWc&quot;&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/xeogl-and-zspace&quot;&gt;Building xeogl Apps on a zSpace VR/AR System&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 19, 2017.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/xeogl-and-zspace&quot;&gt;Developing xeogl Apps for zSpace VR/AR Systems&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 19, 2017.&lt;/p&gt;</content>
 </entry>
 
 
