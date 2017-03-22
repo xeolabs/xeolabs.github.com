@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Coding with xeogl on a zSpace Display 
+title: Building xeogl Applications on a zSpace VR/AR System  
 description: A collaboration with zSpace Inc.
 modified: 2017-19-03
 category: articles
@@ -35,11 +35,7 @@ tags: [xeogl, webgl, zspace, mixedreality, 3D]
  ----|----|----
  [Simple geometries](http://xeogl.org/examples/#effects_zspace_geometries) | [Gearbox loaded from glTF](http://xeogl.org/examples/#effects_zspace_gearbox) | [Saw loaded from glTF](http://xeogl.org/examples/#effects_zspace_ReciprocatingSaw)
  
-## Anatomy of a zSpace display 
-
-First up, what's a zSpace display.  
-
-## Coding with xeogl on zSpace 
+## zSpace support in xeogl 
  
  To support zSpace, I added two new component types to xeogl: 
  
@@ -139,7 +135,7 @@ First up, what's a zSpace display.
  var zspaceStylusControl = new xeogl.ZSpaceStylusControl();
  {% endhighlight %}
 
- At this point we can see a ray extending from the tip of our stylus, which we can select and drag entities with.
+ At this point we can see a ray extending from the tip of our stylus, which we can select and drag entities with it.
   
 <iframe src="//giphy.com/embed/mRdkHVQ1NdUWc" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/mRdkHVQ1NdUWc">via GIPHY</a></p>
 

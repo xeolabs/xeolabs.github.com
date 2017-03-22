@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2017-03-22T19:05:02-04:00</updated>
+<updated>2017-03-22T19:12:05-04:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>@xeographics</name>
@@ -15,7 +15,7 @@
 
 
 <entry>
-  <title type="html"><![CDATA[Coding with xeogl on a zSpace Display]]></title>
+  <title type="html"><![CDATA[Building xeogl Applications on a zSpace VR/AR System]]></title>
   <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/xeogl-and-zspace" />
   <id>http://xeolabs.com/articles/xeogl-and-zspace</id>
   <updated>2017-19-03T00:00:00-00:00</updated>
@@ -32,8 +32,7 @@
   &lt;/header&gt;
 &lt;div id=&quot;drawer&quot;&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#anatomy-of-a-zspace-display&quot; id=&quot;markdown-toc-anatomy-of-a-zspace-display&quot;&gt;Anatomy of a zSpace display&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#coding-with-xeogl-on-zspace&quot; id=&quot;markdown-toc-coding-with-xeogl-on-zspace&quot;&gt;Coding with xeogl on zSpace&lt;/a&gt;    &lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#zspace-support-in-xeogl&quot; id=&quot;markdown-toc-zspace-support-in-xeogl&quot;&gt;zSpace support in xeogl&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#detecting-zspace-support&quot; id=&quot;markdown-toc-detecting-zspace-support&quot;&gt;Detecting zSpace support&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#stylus-tracking&quot; id=&quot;markdown-toc-stylus-tracking&quot;&gt;Stylus tracking&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#zspacestyluscontrol&quot; id=&quot;markdown-toc-zspacestyluscontrol&quot;&gt;ZSpaceStylusControl&lt;/a&gt;&lt;/li&gt;
@@ -74,11 +73,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h2 id=&quot;anatomy-of-a-zspace-display&quot;&gt;Anatomy of a zSpace display&lt;/h2&gt;
-
-&lt;p&gt;First up, what’s a zSpace display.&lt;/p&gt;
-
-&lt;h2 id=&quot;coding-with-xeogl-on-zspace&quot;&gt;Coding with xeogl on zSpace&lt;/h2&gt;
+&lt;h2 id=&quot;zspace-support-in-xeogl&quot;&gt;zSpace support in xeogl&lt;/h2&gt;
 
 &lt;p&gt;To support zSpace, I added two new component types to xeogl:&lt;/p&gt;
 
@@ -170,13 +165,13 @@
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;zspaceStylusControl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xeogl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ZSpaceStylusControl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;At this point we can see a ray extending from the tip of our stylus, which we can select and drag entities with.&lt;/p&gt;
+&lt;p&gt;At this point we can see a ray extending from the tip of our stylus, which we can select and drag entities with it.&lt;/p&gt;
 
 &lt;iframe src=&quot;//giphy.com/embed/mRdkHVQ1NdUWc&quot; width=&quot;480&quot; height=&quot;270&quot; frameborder=&quot;0&quot; class=&quot;giphy-embed&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 &lt;p&gt;&lt;a href=&quot;http://giphy.com/gifs/mRdkHVQ1NdUWc&quot;&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/xeogl-and-zspace&quot;&gt;Coding with xeogl on a zSpace Display&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 19, 2017.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/xeogl-and-zspace&quot;&gt;Building xeogl Applications on a zSpace VR/AR System&lt;/a&gt; was originally published by @xeographics at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 19, 2017.&lt;/p&gt;</content>
 </entry>
 
 
