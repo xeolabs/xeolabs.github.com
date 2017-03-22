@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Building xeogl Applications on a zSpace VR/AR System  
+title: Building xeogl Apps on a zSpace VR/AR System  
 description: A collaboration with zSpace Inc.
 modified: 2017-19-03
 category: articles
