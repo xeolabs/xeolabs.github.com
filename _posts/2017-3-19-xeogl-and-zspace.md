@@ -20,9 +20,9 @@ tags: [xeogl, webgl, zspace, mixedreality, 3D]
 
 [**zSpace**](http://zspace.com) is a technology firm based in Sunnyvale, California that creates mixed reality systems that combine elements of virtual and augmented reality in a specially-built computer system, which has a quad-buffered stereo display that works with IR-tracked active-shuttered glasses and a stylus. 
 
-<br>[**xeogl**](http://xeogl.org) is an open-source WebGL-based 3D engine that I've been working on for the past year or so. It's got a data-driven node-based API that lets you plug 3D scenes together from reusable components.
+<br>[**xeogl**](http://xeogl.org) is an open-source WebGL-based 3D engine that I've been working on for the past year or so. 
 
-<br>Last year, zSpace loaned me one of their *zSpace 300* displays so that I could put together some xeogl demos for it. If you were at [GDC 2017](www.gdconf.co), you might have seen those demos running at the [Khronos booth](https://www.khronos.org/news/events/gdc-2017#gdc2017_booth).
+<br>Last year, zSpace loaned me one of their *zSpace 300* displays so that I could put together some xeogl demos for its beta support for WebVR. If you were at [GDC 2017](www.gdconf.co), you might have seen those demos running at the [Khronos booth](https://www.khronos.org/news/events/gdc-2017#gdc2017_booth).
 
 <br>
  ![]({{ site.url }}/images/xeogl/zspace/zSpaceDevice.jpg)
@@ -136,5 +136,9 @@ tags: [xeogl, webgl, zspace, mixedreality, 3D]
 
  At this point we can see a ray extending from the tip of our stylus, which we can select and drag entities with.
   
+### Conclusion
+
+**zSpace's support for WebVR is still in beta, so xeogl's support for zSpace is also in beta.** Therefore, I'll likely be changing the implementation of the xeogl components I just described. Their API is really minimal though, so is unlikely to change much. 
+
 <iframe src="//giphy.com/embed/mRdkHVQ1NdUWc" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/mRdkHVQ1NdUWc">via GIPHY</a></p>
 

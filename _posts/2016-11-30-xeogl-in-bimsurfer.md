@@ -57,8 +57,8 @@ Last week I integrated the latest build of [xeogl](http://xeogl.org) into [BIMSu
 BIMSurfer has certain requirements which have shaped xeogl, such as: 
      
  * fast rendering of [large numbers of independently transformed geometries](http://xeogl.org/examples/#profiling_statistics) 
- * efficient queries for boundaries of things, so that we can [fly the camera to look at them](http://xeogl.org/examples/#animation_CameraFlightAnimation_AABB)
- * extensible camera animation and control components, like [xeogl.BIMCameraControl](http://xeogl.org/examples/#interaction_BIMCameraControl)
+ * efficient queries for boundaries of things, so that we can [fly the camera to look at them](http://xeogl.org/examples/#animation_camera_flight)
+ * extensible camera animation and control components, like [xeogl.BIMCameraControl](http://xeogl.org/examples/#interaction_camera_BIMCameraControl)
 
 ### Responsiveness
 
