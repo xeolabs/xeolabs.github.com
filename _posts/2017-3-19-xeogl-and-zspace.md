@@ -22,12 +22,12 @@ tags: [xeogl, webgl, zspace, mixedreality, 3D]
 
 <br>[**xeogl**](http://xeogl.org) is an open-source WebGL-based 3D engine that I've been working on for the past year or so. 
 
-<br>Last year, zSpace loaned me one of their *zSpace 300* displays so that I could put together some xeogl demos for its beta support for WebVR. If you were at [GDC 2017](www.gdconf.co), you might have seen those demos running at the [Khronos booth](https://www.khronos.org/news/events/gdc-2017#gdc2017_booth).
+<br>Last year, zSpace loaned me one of their *zSpace 300* displays so that I could put together some xeogl demos for its beta WebVR support. If you were at [GDC 2017](www.gdconf.co), you might have seen those demos running at the [Khronos booth](https://www.khronos.org/news/events/gdc-2017#gdc2017_booth).
 
 <br>
  ![]({{ site.url }}/images/xeogl/zspace/zSpaceDevice.jpg)
  
- <br>The demos were fun to make, and we had lots of fun playing with them in the lab. If you happen to be using a zSpace 300 right now, click these thumbnails to run them: 
+ <br>These demos were my first foray into WebVR and were lots of fun to make. If you happen to be using a zSpace 300 right now, go ahead and click these thumbnails to run them: 
  <br>
  
  ----|----|----
@@ -44,7 +44,7 @@ tags: [xeogl, webgl, zspace, mixedreality, 3D]
  
  Let's take a quick look at how these components are used.
   
-<br>First, we'll set up a 3D scene by importing a [glTF](https://github.com/KhronosGroup/glTF) model into xeogl, using a [GLTFModel](http://xeogl.org/docs/classes/GLTFModel.html):
+<br>First, I'll set up a 3D scene by importing a [glTF](https://github.com/KhronosGroup/glTF) model into xeogl, using a [GLTFModel](http://xeogl.org/docs/classes/GLTFModel.html) component:
 
  {% highlight javascript %}
  var model = new xeogl.GLTFModel({
@@ -56,9 +56,9 @@ tags: [xeogl, webgl, zspace, mixedreality, 3D]
  });
  {% endhighlight %}
 
- Our model is the red reciprocating saw shown in the third thumbnail above. We've also attached a [Rotate](http://xeogl.org/docs/classes/Rotate.html) to our GLTFModel, just to tip it upright so that we can see it more clearly.
+ Our model is the red reciprocating saw shown in the third thumbnail above. I've also attached a [Rotate](http://xeogl.org/docs/classes/Rotate.html) to our GLTFModel, just to tip it upright so that we can see it more clearly.
  
- <br>Now, to view the model on the zSpace display, we'll simply create a [ZSpaceEffect](http://xeogl.org/docs/classes/ZSpaceEffect.html):
+ <br>Now, to view the model on the zSpace display, I'll simply create a [ZSpaceEffect](http://xeogl.org/docs/classes/ZSpaceEffect.html):
 
  {% highlight javascript %}
  var zspaceEffect = new ZSpaceEffect();
@@ -72,39 +72,39 @@ tags: [xeogl, webgl, zspace, mixedreality, 3D]
  
  {% highlight javascript %}
  zspaceEffect.on("supported", function (supported) {
-        if (!supported) { 
-            this.error("This computer is not a ZSpace viewer! Inconceivable.");           
-        }
-    });
+     if (!supported) { 
+         this.error("This computer is not a ZSpace viewer! Inconceivable.");           
+     }
+ });
  {% endhighlight %}
 
 ### Stylus tracking
  
- Let's track the position and direction of the zSpace stylus. Also, whenever we press button 0 on the stylus while intersecting an entity, we'll ray-pick the entity with the stylus.
+ Now let's track the World-space position and direction of the zSpace stylus. Also, whenever we press button 0 on the stylus while intersecting an entity, we'll ray-pick the entity with the stylus.
   
  {% highlight javascript %}
- zspaceEffect.on("stylusPos", function(pos) {
-        console.log("Stylus position: " + pos);
-    });
+ zspaceEffect.on("stylusPos", function(pos) { 
+     console.log("Stylus position: " + pos);
+ });
     
- zspaceEffect.on("stylusDir", function(dir) {
-         console.log("Stylus direction: " + dir);
-     });
+ zspaceEffect.on("stylusDir", function(dir) { 
+     console.log("Stylus direction: " + dir);
+ });
  
  zspaceEffect.on("stylusButton0", function(down) { 
-        if (down) {
-            var hit = zspaceEffect.scene.pick({
-                pickSurface: true,
-                origin: zspaceEffect.stylusPos,
-                direction: zspaceEffect.stylusDir
-            });
+     if (down) {
+         var hit = zspaceEffect.scene.pick({
+             pickSurface: true,
+             origin: zspaceEffect.stylusPos,
+             direction: zspaceEffect.stylusDir
+         });
   
-            console.log("Entity selected with stylus: " + hit.entity.id);
-        }
-    });
+         console.log("Entity selected with stylus: " + hit.entity.id);
+     }
+ });
  {% endhighlight %}
 
- We can also just poll the ZSpaceEffect at any time for the current state of the stylus:
+ note that we can also just poll the ZSpaceEffect at any time for the current state of the stylus:
  
  {% highlight javascript %}
  // Get stylus position
@@ -119,14 +119,14 @@ tags: [xeogl, webgl, zspace, mixedreality, 3D]
 
 ### ZSpaceStylusControl
   
- In xeogl we'd normally wrap your input controls in reusable components, so I added the [ZSpaceStylusControl](http://xeogl.org/docs/classes/ZSpaceStylusControl.html) as an example on which you might base your own zSpace stylus control. 
+ In xeogl we'd normally wrap your input controls in reusable components, so I added the [ZSpaceStylusControl](http://xeogl.org/docs/classes/ZSpaceStylusControl.html) as an boilerplate/example on which you might base your own zSpace stylus control. 
    
  <br>This component:
 
  * hooks into the [ZSpaceEffect](http://xeogl.org/docs/classes/ZSpaceEffect.html) events we just saw,  
  * renders a 3D line segment that appears to extend from the tip of the stylus,
  * grabs intersecting entities when you push button 0, and 
- * drags grabbed entities while button 0 is down.
+ * drags grabbed entities around while button 0 is down.
 
  To use it, all we need to do is add it to our scene:
    
@@ -134,11 +134,11 @@ tags: [xeogl, webgl, zspace, mixedreality, 3D]
  var zspaceStylusControl = new xeogl.ZSpaceStylusControl();
  {% endhighlight %}
 
- At this point we can see a ray extending from the tip of our stylus, which we can select and drag entities with.
+ At this point we can see a ray extending from the tip of our stylus, with which we can select and drag entities.
   
 ### Conclusion
 
-**zSpace's support for WebVR is still in beta, so xeogl's support for zSpace is also in beta.** Therefore, I'll likely be changing the implementation of the xeogl components I just described. Their API is really minimal though, so is unlikely to change much. 
+**zSpace's support for WebVR is still in beta, so xeogl's support for zSpace is also in beta.** Therefore, I'll be changing the implementation of these xeogl components moving forwards, but their API should remain the same. Stay tuned!
 
 <iframe src="//giphy.com/embed/mRdkHVQ1NdUWc" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/mRdkHVQ1NdUWc">via GIPHY</a></p>
 

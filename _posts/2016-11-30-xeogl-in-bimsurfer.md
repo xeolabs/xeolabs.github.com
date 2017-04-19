@@ -1,9 +1,9 @@
 ---
 layout: post
-title: xeogl in BIMSurfer
+title: xeogl Powering BIMSurfer
 description: "Supercharging your BIM"
 tagline: "Supercharging your BIM"
-modified: 2016-19-09
+modified: 2017-12-02
 category: articles
 comments: true
 tags: [xeogl, bimsurfer, webgl]
