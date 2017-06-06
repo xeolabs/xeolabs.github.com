@@ -1,0 +1,356 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Annotations in xeogl &#8211; xeolabs</title>
+<meta name="description" content="Sticking 3D labels on entities in xeogl">
+<meta name="keywords" content="xeogl, webgl">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/">
+<meta name="twitter:title" content="Annotations in xeogl">
+<meta name="twitter:description" content="Sticking 3D labels on entities in xeogl">
+<meta name="twitter:creator" content="@xeographics">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Annotations in xeogl">
+<meta property="og:description" content="Sticking 3D labels on entities in xeogl">
+<meta property="og:url" content="/articles/annotations-in-xeogl">
+<meta property="og:site_name" content="xeolabs">
+
+
+
+
+
+<link rel="canonical" href="/articles/annotations-in-xeogl">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="xeolabs Feed">
+<link rel="author" href="https://plus.google.com/u/0/110983138227486752827/posts?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="article" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="">xeolabs</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <ul>
+		        
+				<li><a href="/about" >About</a></li>
+		        
+				<li><a href="/articles" >Articles</a></li>
+		        
+				<li><a href="http://scenejs.org" target="_blank">SceneJS</a></li>
+		        
+				<li><a href="http://xeogl.org" target="_blank">xeogl</a></li>
+		        
+				<li><a href="http://biodigitalhuman.com" target="_blank">BioDigitalHuman</a></li>
+		        
+				<li><a href="http://bimsurfer.org" target="_blank">BIMSurfer</a></li>
+		        
+
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <div class="article-author-top">
+    <img src="/images/portraitCoffeeNormal.png" class="bio-photo" alt="@xeographics bio photo"></a>
+<h3><a href="/about/">@xeographics</a></h3>
+<p>Lindsay Kay<br>3D graphics programmer</p>
+<a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+  </div>
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <div class="headline-wrap">
+      <h1 itemprop="name">Annotations in xeogl</h1>
+        <br>
+      <!--<h2>Sticking labels on 3D objects in xeogl</h2>-->
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap" itemprop="text">
+      <section id="table-of-contents" class="toc">
+  <header>
+    <h3>Contents</h3>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#dynamic-positioning" id="markdown-toc-dynamic-positioning">Dynamic positioning</a></li>
+  <li><a href="#occlusion-culling" id="markdown-toc-occlusion-culling">Occlusion culling</a></li>
+  <li><a href="#editable" id="markdown-toc-editable">Editable</a></li>
+  <li><a href="#camera-positions" id="markdown-toc-camera-positions">Camera positions</a></li>
+  <li><a href="#usage" id="markdown-toc-usage">Usage</a></li>
+</ul>
+
+  </div>
+</section>
+<!-- /#table-of-contents -->
+
+<p>This month I added the ability to annotate 3D objects in xeogl. A xeogl annotation is a label that pins to the surface of an Entity, similar to how they work in sketchfab.</p>
+
+<p>in the form of a new non-core  <a href="">Annotation</a> component.  I added it to xeogl as a non-core I was inspired by with an API inspired by SketchFab’s annotations.</p>
+
+<h4 id="dynamic-positioning">Dynamic positioning</h4>
+
+<p>An Annotation’s position is given as the index of a triangle, along with its barycentric coordinates within that triangle. Whenever the Entity is transformed, or the Geometry is modified, the Annotation will automatically recalculate its position from the triangle and the barycentric coordinates.</p>
+
+<h4 id="occlusion-culling">Occlusion culling</h4>
+
+<p>Annotations can be configured to hide themselves whenever their pin positions are occluded by other objects in the 3D
+view. To determine if each Annotation is occluded, xeogl renders the scene to a hidden framebuffer, along with a colored
+point for each Annotation’s pin. Then xeogl determines if each Annotation is occluded if the pixel at the location of
+its pin does not match the special pin color. The pin color is configured as some unusual color that is not used
+elsewhere in the scene.</p>
+
+<h4 id="editable">Editable</h4>
+
+<p>Everything in xeogl is runtime editable, including Annotations. You can reassign an Annotation to a different Entity, pin
+it to a different triangle and barycentric coordinate, edit its title and description etc.</p>
+
+<h4 id="camera-positions">Camera positions</h4>
+
+<p>Like SketchFab, each Annotation may be configured with a viewpoint, given as <code>eye</code>, <code>look</code> and <code>up</code>,
+which you can set the Camera to whenever we focusing the user’s attention on that Annotation. As shown in the example,
+you can use a CameraFlightAnimation to fly the Camera to each Annotation, for things like guided tours of Annotations.</p>
+
+<h2 id="usage">Usage</h2>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">GLTFModel</span><span class="p">({</span>
+    <span class="nx">src</span><span class="o">:</span> <span class="s2">&quot;models/gltf/2.0/Reciprocating_Saw/PBR-SpecGloss/Reciprocating_Saw.gltf&quot;</span><span class="p">,</span>
+    <span class="nx">transform</span><span class="o">:</span> <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">Rotate</span><span class="p">({</span>
+        <span class="nx">xyz</span><span class="o">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="nx">angle</span><span class="o">:</span> <span class="mi">90</span>
+    <span class="p">})</span>
+ <span class="p">});</span>
+
+ <span class="nx">model</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;loaded&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">view</span> <span class="o">=</span> <span class="nx">model</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">view</span><span class="p">;</span>
+    <span class="nx">view</span><span class="p">.</span><span class="nx">eye</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">110.89</span><span class="p">,</span> <span class="o">-</span><span class="mf">44.85</span><span class="p">,</span> <span class="mf">276.65</span><span class="p">];</span>
+    <span class="nx">view</span><span class="p">.</span><span class="nx">look</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">110.89</span><span class="p">,</span> <span class="o">-</span><span class="mf">44.85</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.46</span><span class="p">];</span>
+    <span class="nx">view</span><span class="p">.</span><span class="nx">up</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span>
+    <span class="nx">view</span><span class="p">.</span><span class="nx">zoom</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+
+    <span class="c1">// Create three annotations</span>
+
+    <span class="kd">var</span> <span class="nx">a1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">Annotation</span><span class="p">({</span>
+        <span class="nx">entity</span><span class="o">:</span> <span class="nx">model</span><span class="p">.</span><span class="nx">entities</span><span class="p">[</span><span class="mi">156</span><span class="p">],</span> <span class="c1">// Red handle</span>
+        <span class="nx">primIndex</span><span class="o">:</span> <span class="mi">125</span><span class="p">,</span>
+        <span class="nx">bary</span><span class="o">:</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span>
+        <span class="nx">occludable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">symbol</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+        <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Handle&quot;</span><span class="p">,</span>
+        <span class="nx">desc</span><span class="o">:</span> <span class="s2">&quot;This is the handle. It allows us to grab onto the saw so we can hold it and make things with it.&quot;</span><span class="p">,</span>
+        <span class="nx">eye</span><span class="o">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">355.481</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.871</span><span class="p">,</span> <span class="mf">116.711</span><span class="p">],</span>
+        <span class="nx">look</span><span class="o">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">227.456</span><span class="p">,</span> <span class="o">-</span><span class="mf">57.628</span><span class="p">,</span> <span class="mf">5.428</span><span class="p">],</span>
+        <span class="nx">up</span><span class="o">:</span> <span class="p">[</span><span class="mf">0.239</span><span class="p">,</span> <span class="mf">0.948</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.208</span><span class="p">],</span>
+        <span class="nx">pinShown</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">labelShown</span><span class="o">:</span> <span class="kc">false</span>
+    <span class="p">});</span>
+
+    <span class="kd">var</span> <span class="nx">a2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">Annotation</span><span class="p">({</span>
+        <span class="nx">entity</span><span class="o">:</span> <span class="nx">model</span><span class="p">.</span><span class="nx">entities</span><span class="p">[</span><span class="mi">156</span><span class="p">],</span> <span class="c1">// Red handle and cover</span>
+        <span class="nx">primIndex</span><span class="o">:</span> <span class="mi">10260</span><span class="p">,</span>
+        <span class="nx">bary</span><span class="o">:</span> <span class="p">[</span><span class="mf">0.333</span><span class="p">,</span> <span class="mf">0.333</span><span class="p">,</span> <span class="mf">0.333</span><span class="p">],</span>
+        <span class="nx">occludable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">symbol</span><span class="o">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+        <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Handle and cover&quot;</span><span class="p">,</span>
+        <span class="nx">desc</span><span class="o">:</span> <span class="s2">&quot;This is the handle and cover. It provides something grab the saw with, and covers the things inside.&quot;</span><span class="p">,</span>
+        <span class="nx">eye</span><span class="o">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">123.206</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.094</span><span class="p">,</span> <span class="mf">169.849</span><span class="p">],</span>
+        <span class="nx">look</span><span class="o">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">161.838</span><span class="p">,</span> <span class="o">-</span><span class="mf">37.875</span><span class="p">,</span> <span class="mf">37.313</span><span class="p">],</span>
+        <span class="nx">up</span><span class="o">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.066</span><span class="p">,</span> <span class="mf">0.971</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.228</span><span class="p">],</span>
+        <span class="nx">pinShown</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">labelShown</span><span class="o">:</span> <span class="kc">false</span>
+    <span class="p">});</span>
+
+    <span class="kd">var</span> <span class="nx">a3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">Annotation</span><span class="p">({</span>
+        <span class="nx">entity</span><span class="o">:</span> <span class="nx">model</span><span class="p">.</span><span class="nx">entities</span><span class="p">[</span><span class="mi">796</span><span class="p">],</span> <span class="c1">// Barrel</span>
+        <span class="nx">primIndex</span><span class="o">:</span> <span class="mi">3783</span><span class="p">,</span>
+        <span class="nx">bary</span><span class="o">:</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span>
+        <span class="nx">occludable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">symbol</span><span class="o">:</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span>
+        <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Barrel&quot;</span><span class="p">,</span>
+        <span class="nx">desc</span><span class="o">:</span> <span class="s2">&quot;This is the barrel&quot;</span><span class="p">,</span>
+        <span class="nx">eye</span><span class="o">:</span> <span class="p">[</span><span class="mf">80.0345</span><span class="p">,</span> <span class="mf">38.255</span><span class="p">,</span> <span class="mf">60.457</span><span class="p">],</span>
+        <span class="nx">look</span><span class="o">:</span> <span class="p">[</span><span class="mf">35.023</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.166</span><span class="p">,</span> <span class="mf">8.679</span><span class="p">],</span>
+        <span class="nx">up</span><span class="o">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.320</span><span class="p">,</span> <span class="mf">0.872</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.368</span><span class="p">],</span>
+        <span class="nx">pinShown</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">labelShown</span><span class="o">:</span> <span class="kc">false</span>
+    <span class="p">});</span>
+
+     <span class="c1">//</span>
+
+    <span class="kd">var</span> <span class="nx">cameraFlight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">CameraFlightAnimation</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">lastAnnotation</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">gotoAnnotation</span><span class="p">(</span><span class="nx">annotation</span><span class="p">)</span> <span class="p">{</span>         
+        <span class="k">if</span> <span class="p">(</span><span class="nx">lastAnnotation</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">annotation</span><span class="p">.</span><span class="nx">labelShown</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>         
+        <span class="nx">annotation</span><span class="p">.</span><span class="nx">labelShown</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>        
+        <span class="nx">cameraFlight</span><span class="p">.</span><span class="nx">flyTo</span><span class="p">(</span><span class="nx">annotation</span><span class="p">);</span>        
+        <span class="nx">lastAnnotation</span> <span class="o">=</span> <span class="nx">annotation</span><span class="p">;</span> 
+    <span class="p">}</span>
+
+    <span class="nx">a1</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;pinClicked&quot;</span><span class="p">,</span> <span class="nx">gotoAnnotation</span><span class="p">);</span>
+    <span class="nx">a2</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;pinClicked&quot;</span><span class="p">,</span> <span class="nx">gotoAnnotation</span><span class="p">);</span>
+    <span class="nx">a3</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;pinClicked&quot;</span><span class="p">,</span> <span class="nx">gotoAnnotation</span><span class="p">);</span>
+ <span class="p">});</span></code></pre></div>
+
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="/images/portraitCoffeeNormal.png" class="bio-photo" alt="@xeographics bio photo"></a>
+<h3><a href="/about/">@xeographics</a></h3>
+<p>Lindsay Kay<br>3D graphics programmer</p>
+<a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+        </div>
+        <p class="byline"><strong>Annotations in xeogl</strong> was published on <time datetime="2016-11-30T00:00:00-05:00" itemprop="datePublished">November 30, 2016</time> and last modified on <time datetime="2017-17-04" itemprop="dateModified">2017-17-04</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="/about" title="About @xeographics" itemprop="url">@xeographics</a></span></span>.</p>
+      </footer>
+
+        
+        <br><br>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'xeographics'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+    </div><!-- /.article-wrap -->
+  </article>
+
+</div><!-- /#main -->
+
+
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/articles">View all articles</a>)</small></h4>
+    <ul>
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="/articles/xeogl-and-zspace" title="Developing xeogl Apps for zSpace VR/AR Systems">Developing xeogl Apps for zSpace VR/AR Systems</a></li>
+      
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="/articles/xeogl-pbr" title="Adding Physically Based Rendering to xeogl">Adding Physically Based Rendering to xeogl</a></li>
+      
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="/articles/xeogl-in-bimsurfer" title="xeogl Powering BIMSurfer">xeogl Powering BIMSurfer</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2017 @xeographics. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'xeographics'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+</body>
+</html>

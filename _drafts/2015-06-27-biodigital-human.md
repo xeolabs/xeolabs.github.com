@@ -19,6 +19,17 @@ tags: [scenejs, biodigitalhuman]
 
 <div style="width:100%; margin:0 auto; text-align: center;"><iframe width="640" height="360" src="//www.youtube.com/embed/2vJ13EXG6rc" frameborder="0"> </iframe></div>
 
+<iframe
+  id="embedded-human"
+  frameBorder="0"
+  width="600"
+  height="600"
+  allowFullScreen="true"
+  src="https://human.biodigital.com/widget?be=1p0v&background=255,255,255,51,64,77&dk=1496c2fae9b943b838a40f86bfc8db5314c116e3">
+</iframe>
+<a href="https://www.biodigital.com"></a>
+
+<a class="twitter-moment" href="https://twitter.com/i/moments/802173933466382336">xeogl - a data-driven 3D engine on WebGL </a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 # JavaScript API
 

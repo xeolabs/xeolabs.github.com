@@ -6,6 +6,10 @@
     
     
     <url>
+        <loc>http://xeolabs.com/articles/xeogl-annotations</loc>
+    </url>
+    
+    <url>
         <loc>http://xeolabs.com/articles/xeogl-and-zspace</loc>
     </url>
     
@@ -38,11 +42,11 @@
     </url>
     
     <url>
-        <loc>http://xeolabs.com/articles/scenejs-ray-picking-technique</loc>
+        <loc>http://xeolabs.com/articles/scenejs-ray-picking</loc>
     </url>
     
     <url>
-        <loc>http://xeolabs.com/articles/scenejs-ray-picking</loc>
+        <loc>http://xeolabs.com/articles/scenejs-ray-picking-technique</loc>
     </url>
     
     <url>
