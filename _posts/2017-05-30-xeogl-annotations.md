@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Annotations in xeogl"
+title: Annotations in xeogl
 description: "A Sketchfab-style annotation system for xeogl"
 tagline: "Made a Sketchfab-style annotation system for xeogl"
 modified: 2017-17-05
@@ -9,7 +9,7 @@ comments: true
 tags: [xeogl, webgl]
 ---
 
-<section id="table-of-contents" class="toc">`****`
+<section id="table-of-contents" class="toc">
   <header>
     <h3>Contents</h3>
   </header>
@@ -104,7 +104,7 @@ point that we created it from (see previous example).
 
 ## Occlusion culling
 
-The annotation system automatically hides annotations when they are hidden behind other objects in the 3D view. You can see this in
+The annotation system automatically hides annotations when they are occluded by other objects in the 3D view. You can see this in
 the demo example, where the (C) annotation disappears while the cannon barrel moves over it.
 <br><br>
 The system uses a fast GPU-assisted occlusion technique which renders a small point at each annotation's position, then
@@ -112,8 +112,7 @@ determines the annotation to be occluded when the color of the point's location 
 reading WebGL's drawing buffer is expensive, the system performs this occlusion test for all annotations in a batch on
 every 10th frame or so. You'll note a slight lag between when the annotation is occluded/revealed and hidden/shown.
 <br><br>
-For large meshes, this technique is much more efficient for large meshes and numbers of objects than
-a ray-casting approach.
+This technique is much more efficient than the standard ray-casting approach for large meshes and number of objects.
 <br><br>
 Culling is enabled for an annotation by default, but you can disable it:
 {% highlight javascript %}
