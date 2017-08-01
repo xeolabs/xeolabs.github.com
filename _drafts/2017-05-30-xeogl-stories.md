@@ -1,8 +1,8 @@
 ---
 layout: post
 title: A storytelling system for xeogl
-description: "A storytelling presentation system for xeogl"
-tagline: "A storytelling presentation system for xeogl"
+description: "Building annotated stories with xeogl"
+tagline: "Building annotated stories with xeogl"
 modified: 2017-17-08
 category: articles
 comments: true
@@ -18,98 +18,135 @@ tags: [xeogl, webgl]
 {:toc}
 </div>
 </section><!-- /#table-of-contents -->
+An **AnnotationStory** is a collection of Annotations that's accompanied by a panel of markdown text. Words
+in the text can be linked to Annotations, where clicking a link will focus the view on its Annotation.
+<br><br>
+The AnnotationStory renders the markdown as HTML in a panel to the left of the canvas. Clicking
+an annotation link in the panel will basically fire a method on the AnnotationStory that will focus the camera on the
+ Annotation and show its label.
+<br><br>
+[![]({{ site.url }}/images/xeogl/annotationsTank.png)](http://xeogl.org/examples/#presentation_annotations_tronTank)
+<br><br>
 
-After making xeogl's [annotation system]({{site.url}}/articles/xeogl-annotations) I set to work making a
-sort of storytelling component that would render a panel of text with links that would fly the camera to annotations.
+## Creating a story
+
+AnnotationStory has an "authoring" mode, in which you can interactively build Annotations and markdown by clicking on entities in the scene, making it a quick-and-easy utility for building interactive guided tours for any sort of xeogl content.
 <br><br>
-The component is implemented by [xeogl.AnnotationStory](). You create the AnnotationStory with a list of
-[xeogl.Annotations]() and a string of markdown that contains links that call methods on the AnnotationStory API.
-<br><br>
-First we'll import our Tron Tank from SceneJS format:
+Let's load an example model, then create an empty AnnotationStory in authoring mode:
+
 {% highlight javascript %}
 var model = new xeogl.SceneJSModel({
-    id: "tank",
-    src: "models/scenejs/tronTank/tronTank.json"
-});
+        id: "tank",
+        src: "models/scenejs/tronTank/tronTank.json"
+    }, function() {
+        new xeogl.AnnotationStory({
+            authoring: true // <------- Authoring mode
+        });
+    });
 {% endhighlight %}
+[![]({{ site.url }}/images/xeogl/annotationsTank.png)](http://xeogl.org/examples/#presentation_annotations_tronTank)
+<br><br>
 
-Once the model has finished loading, we'll create our AnnotationStory.
+If you then shift-click on an entity, the AnnotationStory will create an Annotation on the surface of that entity, with a dummy title and decription, as well as a paragraph of dummy markdown containing a link that focuses on the annotation when clicked.
+<br><br>
+[![]({{ site.url }}/images/xeogl/annotationsTank.png)](http://xeogl.org/examples/#presentation_annotations_tronTank)
+<br><br>
+
+Pressing ESC when authoring will clear the AnnotationStory.
+<br><br>
+Pressing ENTER when authoring serializes the AnnotationStory's current state to JSON and displays that in a new browser tab.
 
 {% highlight javascript %}
-model.on("loaded", function () {
-
-   new xeogl.AnnotationStory({
-       speaking: false, // Set true to have a voice announce each annotation
-       authoring: true, // Set true to author the annotations
-       text: [
-           "# [Stories](../docs/classes/AnnotationStory.html) : Tron Tank Program",
-           "This is a Light Tank from the 1982 Disney movie *Tron*.",
-           "The [orange tracks](focusAnnotation(0)) on this tank indicate that ....",
-           "![](./images/Clu_Program.png)",
-           "The [cannon](focusAnnotation(1)) is the tank's main armament, which  ....",
-           "The [pilot hatch](focusAnnotation(2)) is where Clu enters and exits the tank.",
-           "At the back of the tank is the [antenna](focusAnnotation(3)) through ....",
-           "*\"I fight for the users!\" -- Clu*"
-       ],
-       annotations: [
-           {
-               entity: "tank.entity2"
-               primIndex: 204,
-               bary: [0.05, 0.16, 0.79],
-               glyph: "A",
-               title: "Orange tracks",
-               desc: "Indicates that the pilot is the rebel hacker, Clu",
-               eye: [14.69, 17.89, -26.88],
-               look: [5.35, 4.14, -15.44],
-               up: [-0.09, 0.99, 0.11]
-           },
-           {
-               entity: "tank.entity9",
-               primIndex: 468,
-               bary: [0.05, 0.16, 0.79],
-               glyph: "B",
-               title: "Cannon",
-               desc: "Fires chevron-shaped bolts of de-rezzing energy",
-               eye: [-0.66, 20.84, -21.59],
-               look: [-0.39, 6.84, -9.18],
-               up: [0.01, 0.97, 0.24]
-           },
-           {
-               entity: "tank.entity6",
-               primIndex: 216,
-               bary: [0.05, 0.16, 0.79],
-               glyph: "C",
-               title: "Pilot hatch",
-               desc: "Clu hops in and out of the tank program here",
-               eye: [1.48, 11.79, -15.13],
-               look: [1.62, 5.04, -9.14],
-               up: [0.01, 0.97, 0.24]
-           },
-           {
-               entity: "tank.entity9",
-               primIndex: 4464,
-               bary: [0.05, 0.16, 0.79],
-               glyph: "D",
-               title: "Antenna",
-               desc: "Links the tank program to the Master Control Program",
-               eye: [13.63, 16.79, 13.87],
-               look: [1.08, 7.72, 3.07],
-               up: [0.08, 0.99, 0.07]
-           }
-       ]
-   });
-});
+{
+    authoring: true,
+    text: [
+        "[annotation 1](focusAnnotation(0)) on this tank indicate that ....",
+        "The [annotation 2](focusAnnotation(1)) is the tank's main armament, which  ...."
+    ],
+    annotations: [
+        {
+            primIndex: 204,
+            bary: [0.05, 0.16, 0.79],
+            occludable: true,
+            glyph: "A",
+            title: "Orange tracks",
+            desc: "Indicates that the pilot is the rebel hacker, Clu",
+            eye: [14.69, 17.89, -26.88],
+            look: [5.35, 4.14, -15.44],
+            up: [-0.09, 0.99, 0.11],
+            pinShown: true,
+            labelShown: true,
+            entity: "tank.entity2"
+        },
+        {
+            primIndex: 468,
+            bary: [0.05, 0.16, 0.79],
+            occludable: true,
+            glyph: "B",
+            title: "Cannon",
+            desc: "Fires chevron-shaped bolts of de-rezzing energy",
+            eye: [-0.66, 20.84, -21.59],
+            look: [-0.39, 6.84, -9.18],
+            up: [0.01, 0.97, 0.24],
+            pinShown: true,
+            labelShown: true,
+            entity: "tank.entity9"
+        }
+    ]
+}
 {% endhighlight %}
 
-When this AnnotationStory is instantiated, it creates four annotations on our model and renders a panel of HTML 
-from the markdown on the left side of the page.
-<br><br>
-Note how some of the markdown links contain function calls. These resolve to a set of private methods that the AnnotationStory
- provides as an API for your markdown to call. So far, AnnotationStory provides just one method,
- ````focusAnnotation(index)````, which focuses the view on the Annotation at the given index in the list.
+Note how the markdown for the ````text```` parameter is organized as a list of paragraphs. Each link contains a call to a ````focusAnnotation()```` function, which is actually a private method of AnnotationStory. Internally, the AnnotationStory's markdown parser will massage that call to make sure it executes on this AnnotationStory instance (you can have multiple AnnotationStory instances, in case that's useful).
 
-## Building a story
+You would then edit that JSON to replace the markdown and annotation title and description with meaningful content, then paste the JSON into the AnnotationStory's constructor, and voila, you've interactively authored a presentation. If you leave the authoring parameter in place, you can repeat the authoring process described above to append more annotations. Remove the parameter when you've finished, otherwise your audience may unintentially create more annotations as they attempt to interact with your scene.
 
+Shown below is our JSON pasted back into the constructor of the AnnotationStory, with tweaks made to the markdown and Annotations.
+
+{% highlight javascript %}
+var model = new xeogl.SceneJSModel({
+        id: "tank",
+        src: "models/scenejs/tronTank/tronTank.json"
+    }, function() { // Model loaded
+        new xeogl.AnnotationStory({
+            // Disallow authoring, we're done
+            // authoring: true,
+            text: [
+                "The [orange tracks](focusAnnotation(0)) on this tank indicate that ....",
+                "The [cannon](focusAnnotation(1)) is the tank's main armament, which  ...."
+            ],
+            annotations: [
+                {
+                    primIndex: 204,
+                    bary: [0.05, 0.16, 0.79],
+                    occludable: true,
+                    glyph: "A",
+                    title: "Orange tracks",
+                    desc: "Indicates that the pilot is the rebel hacker, Clu",
+                    eye: [14.69, 17.89, -26.88],
+                    look: [5.35, 4.14, -15.44],
+                    up: [-0.09, 0.99, 0.11],
+                    pinShown: true,
+                    labelShown: true,
+                    entity: "tank.entity2"
+                },
+                {
+                    primIndex: 468,
+                    bary: [0.05, 0.16, 0.79],
+                    occludable: true,
+                    glyph: "B",
+                    title: "Cannon",
+                    desc: "Fires chevron-shaped bolts of de-rezzing energy",
+                    eye: [-0.66, 20.84, -21.59],
+                    look: [-0.39, 6.84, -9.18],
+                    up: [0.01, 0.97, 0.24],
+                    pinShown: true,
+                    labelShown: true,
+                    entity: "tank.entity9"
+                }
+            ]
+        });
+    });
+{% endhighlight %}
 
 
 

@@ -1,0 +1,499 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>GPU-Assisted Picking in xeogl &#8211; xeolabs</title>
+<meta name="description" content="How picking works in xeogl">
+<meta name="keywords" content="xeogl, picking, webgl">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xeolabs.com/images/">
+<meta name="twitter:title" content="GPU-Assisted Picking in xeogl">
+<meta name="twitter:description" content="How picking works in xeogl">
+<meta name="twitter:creator" content="@xeographics">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GPU-Assisted Picking in xeogl">
+<meta property="og:description" content="How picking works in xeogl">
+<meta property="og:url" content="http://xeolabs.com/articles/xeogl-picking">
+<meta property="og:site_name" content="xeolabs">
+
+
+
+
+
+<link rel="canonical" href="http://xeolabs.com/articles/xeogl-picking">
+<link href="http://xeolabs.com/feed.xml" type="application/atom+xml" rel="alternate" title="xeolabs Feed">
+<link rel="author" href="https://plus.google.com/u/0/110983138227486752827/posts?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://xeolabs.com/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="http://xeolabs.com/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://xeolabs.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://xeolabs.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://xeolabs.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://xeolabs.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://xeolabs.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://xeolabs.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://xeolabs.com/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="article" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://xeolabs.com">xeolabs</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <ul>
+		        
+				<li><a href="http://xeolabs.com/about" >About</a></li>
+		        
+				<li><a href="http://xeolabs.com/articles" >Articles</a></li>
+		        
+				<li><a href="http://scenejs.org" target="_blank">SceneJS</a></li>
+		        
+				<li><a href="http://xeogl.org" target="_blank">xeogl</a></li>
+		        
+				<li><a href="http://biodigitalhuman.com" target="_blank">BioDigitalHuman</a></li>
+		        
+				<li><a href="http://bimsurfer.org" target="_blank">BIMSurfer</a></li>
+		        
+
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <div class="article-author-top">
+    <img src="http://xeolabs.com/images/portraitCoffeeNormal.png" class="bio-photo" alt="@xeographics bio photo"></a>
+<h3><a href="http://xeolabs.com/about/">@xeographics</a></h3>
+<p>Lindsay Kay<br>3D graphics programmer</p>
+<a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+  </div>
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <div class="headline-wrap">
+      <h1 itemprop="name">GPU-Assisted Picking in xeogl</h1>
+        <br>
+      <!--<h2></h2>-->
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap" itemprop="text">
+      <section id="table-of-contents" class="toc">
+  <header>
+    <h3>Contents</h3>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#background" id="markdown-toc-background">Background</a></li>
+  <li><a href="#picking-methods-in-xeogl" id="markdown-toc-picking-methods-in-xeogl">Picking methods in xeogl</a>    <ul>
+      <li><a href="#pick-entity-at-canvas-coordinates" id="markdown-toc-pick-entity-at-canvas-coordinates">1. Pick entity at canvas coordinates</a></li>
+      <li><a href="#pick-point-on-entity-surface-at-canvas-coordinates" id="markdown-toc-pick-point-on-entity-surface-at-canvas-coordinates">2. Pick point on entity surface at canvas coordinates</a></li>
+      <li><a href="#pick-entity-with-world-space-ray" id="markdown-toc-pick-entity-with-world-space-ray">3. Pick entity with World-space ray</a></li>
+      <li><a href="#pick-point-on-entity-surface-with-world-space-ray" id="markdown-toc-pick-point-on-entity-surface-with-world-space-ray">4. Pick point on entity surface with world-space ray</a></li>
+    </ul>
+  </li>
+  <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+</ul>
+
+  </div>
+</section>
+<!-- /#table-of-contents -->
+
+<p><strong><a href="http://xeogl.org">xeogl</a></strong> is a WebGL-based engine for 3D visualization. In this article, I’ll describe xeogl’s
+GPU-assisted picking system, which uses a multi-layer color-indexing rendering algorithm to ray-pick objects in linear
+time complexity.</p>
+
+<h2 id="background">Background</h2>
+
+<p>TODO:
+https://www.hindawi.com/journals/ijcgt/2009/730894/
+http://people.csail.mit.edu/ericchan/bib/pdf/p215-hanrahan.pdf</p>
+
+<h2 id="picking-methods-in-xeogl">Picking methods in xeogl</h2>
+
+<p>xeogl supports four methods of picking, which are as follows:</p>
+
+<ol>
+  <li>pick entity at canvas coordinates,</li>
+  <li>pick point on entity surface at canvas coordinates,</li>
+  <li>pick entity with World-space ray, and</li>
+  <li>pick point on entity surface with World-space ray.</li>
+</ol>
+
+<p>Methods 1 and 3 just return the picked entity.
+<br /><br />Methods 2 and 4 return the picked entity
+ along with additional information about the point that was picked on its surface. That includes:</p>
+
+<ul>
+  <li>the <strong>entity</strong></li>
+  <li>the <strong>triangle</strong> that contains the position,</li>
+  <li>the <strong>barycentric coordinates</strong> of the position within the triangle,</li>
+  <li>the <strong>World space coordinates</strong> of the position,</li>
+  <li>the <strong>View space coordinates</strong> of the position,</li>
+  <li>the <strong>normal vector</strong> at the the position, and</li>
+  <li>the <strong>UV coordinates</strong> at the position.</li>
+</ul>
+
+<p>Note that we’ll only get a normal vector if the entity’s geometry has normals, and we’ll only get UV coordinates if the
+geometry has UVs. xeogl finds the values for these by interpolating within the values for the triangle vertices using
+the barycentric coordinates.</p>
+
+<h3 id="pick-entity-at-canvas-coordinates">1. Pick entity at canvas coordinates</h3>
+
+<p>This picking method is the simplest: we pick the closest entity behind the given canvas coordinates. This is equivalent to
+firing a ray through the canvas, down the negative Z-axis, to find the first entity it hits.
+<br />
+<br />
+<a href="http://xeogl.org/examples/#picking_canvas_pickEntity"><img src="http://xeolabs.com/images/xeogl/pickingCanvasEntity.gif" alt="" /></a>
+   <br /><a href="http://xeogl.org/examples/#picking_canvas_pickEntity">Run demo</a>
+<br />
+<br />
+To show how to use it, we’ll start by loading a <a href="http://xeogl.org/docs/classes/GLTFModel.html">GLTFModel</a>:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="kd">var</span> <span class="nx">gearbox</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">GLTFModel</span><span class="p">({</span>
+     <span class="nx">src</span><span class="o">:</span> <span class="s2">&quot;models/gltf/gearbox/gearbox_assy.gltf&quot;</span>
+ <span class="p">});</span> </code></pre></figure>
+
+<p>With our model loaded and sitting in the middle of our canvas, we’ll try picking an entity at some canvas coordinates:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="kd">var</span> <span class="nx">hit</span> <span class="o">=</span> <span class="nx">gearbox</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">pick</span><span class="p">({</span>
+     <span class="nx">canvasPos</span><span class="o">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span><span class="mi">400</span><span class="p">]</span>
+ <span class="p">});</span> </code></pre></figure>
+
+<p>If we hit an entity, then we’ll get a result containing a reference to it:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="k">if</span> <span class="p">(</span><span class="nx">hit</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Picked an entity</span>
+     <span class="kd">var</span> <span class="nx">entity</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">entity</span><span class="p">;</span>
+ <span class="p">}</span> </code></pre></figure>
+
+<p>Internally, xeogl performs the following steps for this picking method:</p>
+
+<ol>
+  <li>User picks at canvas coordinates.</li>
+  <li>Render the scene to an auxiliary frame buffer, filling each entity with a unique colour that is the RBGA-encoded
+index of its position within xeogl’s internal display list.</li>
+  <li>Read the colour from the framebuffer at the canvas coordinates, map the colour back to the entity in the display list.</li>
+  <li>Return a hit result containing the entity.</li>
+</ol>
+
+<h3 id="pick-point-on-entity-surface-at-canvas-coordinates">2. Pick point on entity surface at canvas coordinates</h3>
+
+<p>Like the previous picking method, this one also picks the closest entity behind the given canvas coordinates, but also
+gets information about the point on the entity’s surface that lies right behind those canvas coordinates.
+ <br />
+ <br />
+<a href="http://xeogl.org/examples/#picking_canvas_pickSurface"><img src="http://xeolabs.com/images/xeogl/pickingCanvasEntitySurface.gif" alt="" /></a>
+   <br /><a href="http://xeogl.org/examples/#picking_canvas_pickSurface">Run demo</a>
+<br />
+<br />
+Reusing the scene from the previous example, we’ll pick again at the canvas coordinates, but this time
+ we’ll supply a <code>pickSurface</code> flag to indicate that we want information about the point we’re picking on the surface:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">hit</span> <span class="o">=</span> <span class="nx">gearbox</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">pick</span><span class="p">({</span>
+    <span class="nx">canvasPos</span><span class="o">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span><span class="mi">400</span><span class="p">],</span>
+    <span class="nx">pickSurface</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>    <span class="c1">// &lt;&lt;----- Indicates that we want to pick on surface</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Here’s what we get in the pick result this time:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">if</span> <span class="p">(</span><span class="nx">hit</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Picked an entity</span>
+
+    <span class="kd">var</span> <span class="nx">entity</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">entity</span><span class="p">;</span>        <span class="c1">// Entity we picked</span>
+    <span class="kd">var</span> <span class="nx">primitive</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">primitive</span><span class="p">;</span>  <span class="c1">// Type of primitive we picked, usually &quot;triangles&quot;</span>
+    <span class="kd">var</span> <span class="nx">primIndex</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">primIndex</span><span class="p">;</span>  <span class="c1">// Index of triangle&#39;s first element within Entity&#39;s Geometry indices array</span>
+    <span class="kd">var</span> <span class="nx">indices</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">indices</span><span class="p">;</span>      <span class="c1">// Value of each of the triangle&#39;s vertex indices (a three element array)</span>
+    <span class="kd">var</span> <span class="nx">localPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">localPos</span><span class="p">;</span>    <span class="c1">// Local-space position</span>
+    <span class="kd">var</span> <span class="nx">worldPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">worldPos</span><span class="p">;</span>    <span class="c1">// World-space position</span>
+    <span class="kd">var</span> <span class="nx">viewPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">viewPos</span><span class="p">;</span>      <span class="c1">// View-space position</span>
+    <span class="kd">var</span> <span class="nx">bary</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">bary</span><span class="p">;</span>            <span class="c1">// Barycentric coordinate within the triangle</span>
+    <span class="kd">var</span> <span class="nx">normal</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">normal</span><span class="p">;</span>        <span class="c1">// Interpolated normal vector within the triangle</span>
+    <span class="kd">var</span> <span class="nx">uv</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">uv</span><span class="p">;</span>                <span class="c1">// Interpolated UVs within the triangle</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>We can then get the triangle vertices like so:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">entity</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">entity</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">geometry</span><span class="o">=</span> <span class="nx">entity</span><span class="p">.</span><span class="nx">geometry</span><span class="p">;</span>
+
+<span class="c1">// Get indices for each of the vertices of the picked triangle</span>
+
+<span class="kd">var</span> <span class="nx">primIndex</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">primIndex</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">indexA</span> <span class="o">=</span> <span class="nx">geometry</span><span class="p">.</span><span class="nx">indices</span><span class="p">[</span><span class="nx">primIndex</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">indexB</span> <span class="o">=</span> <span class="nx">geometry</span><span class="p">.</span><span class="nx">indices</span><span class="p">[</span><span class="nx">primIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">indexC</span> <span class="o">=</span> <span class="nx">geometry</span><span class="p">.</span><span class="nx">indices</span><span class="p">[</span><span class="nx">primIndex</span> <span class="o">+</span> <span class="mi">2</span><span class="p">];</span>
+
+<span class="c1">// Get the triangle&#39;s local-space vertex positions</span>
+
+<span class="kd">var</span> <span class="nx">ax</span> <span class="o">=</span> <span class="nx">geometry</span><span class="p">.</span><span class="nx">position</span><span class="p">[</span><span class="nx">indexA</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">ay</span> <span class="o">=</span> <span class="nx">geometry</span><span class="p">.</span><span class="nx">position</span><span class="p">[</span><span class="nx">indexA</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">az</span> <span class="o">=</span> <span class="nx">geometry</span><span class="p">.</span><span class="nx">position</span><span class="p">[</span><span class="nx">indexA</span> <span class="o">+</span> <span class="mi">2</span><span class="p">];</span>
+
+<span class="kd">var</span> <span class="nx">bx</span> <span class="o">=</span> <span class="nx">geometry</span><span class="p">.</span><span class="nx">position</span><span class="p">[</span><span class="nx">indexB</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">by</span> <span class="o">=</span> <span class="nx">geometry</span><span class="p">.</span><span class="nx">position</span><span class="p">[</span><span class="nx">indexB</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">bz</span> <span class="o">=</span> <span class="nx">geometry</span><span class="p">.</span><span class="nx">position</span><span class="p">[</span><span class="nx">indexB</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">cx</span> <span class="o">=</span> <span class="nx">geometry</span><span class="p">.</span><span class="nx">position</span><span class="p">[</span><span class="nx">indexC</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">cy</span> <span class="o">=</span> <span class="nx">geometry</span><span class="p">.</span><span class="nx">position</span><span class="p">[</span><span class="nx">indexC</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">cz</span> <span class="o">=</span> <span class="nx">geometry</span><span class="p">.</span><span class="nx">position</span><span class="p">[</span><span class="nx">indexC</span> <span class="o">+</span> <span class="mi">2</span><span class="p">];</span>
+
+<span class="c1">// Another way to get the indices</span>
+<span class="kd">var</span> <span class="nx">indexABC</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">indices</span><span class="p">;</span></code></pre></figure>
+
+<p>Internally, xeogl performs the following steps for this picking method:</p>
+
+<ol>
+  <li>User ray-picks at given canvas coordinates.</li>
+  <li>Render the scene to an auxiliary frame buffer, filling each entity with a unique colour that is the RBGA-encoded
+index of its position within xeogl’s internal display list.</li>
+  <li>Read the colour from the framebuffer at the canvas coordinates, map the colour back to an entity in the display list.</li>
+  <li>Clear the framebuffer, then render the triangles of the picked entity to it, filling each triangle with a unique color that
+is the RBGA-encoded index of triangle’s first element within the entity’s geometry indices.</li>
+  <li>Read the colour from the framebuffer at the canvas coordinates, map the colour back to the picked triangle.</li>
+  <li>Now that we have the entity and the triangle, make a ray in clip-space, originating at the eye position and passing through
+the near projection plane at a position corresponding to where we picked, then unproject that ray to get a ray in the entity’s
+local coordinate space.</li>
+  <li>Find the intersection of the ray with the triangle in local space.</li>
+  <li>Find the barycentric coordinates of the local-space intersection, then use those to interpolate within the triangle
+to find the normal vector and UV coordinates at that position.</li>
+  <li>Return a hit result containing the picked entity, the triangle, and the ray-triangle intersection info (see code example above).</li>
+</ol>
+
+<p>For step (4) we lazy-compute extra vertex position and color arrays for the entity geometry, so that we can render each
+triangle with a unique flat color. It’s actually very fast, so you’d hardly notice it, even with big meshes - <a href="https://gist.github.com/xeolabs/6e53681b88e00773075e97460a5e7c72">here’s
+the math function</a>.</p>
+
+<h3 id="pick-entity-with-world-space-ray">3. Pick entity with World-space ray</h3>
+
+<p>For this picking method, xeogl fires a ray through the scene, in World-space, to pick the first entity it hits. I originally added
+this to support the 3D stylus for the <a href="http://xeolabs.com/articles/xeogl-and-zspace">zSpace integration project</a>.
+<br />
+<br />
+<a href="http://xeogl.org/examples/#picking_raycast_pickEntity"><img src="http://xeolabs.com/images/xeogl/pickingRaycastEntity.gif" alt="" /></a>
+   <br /><a href="http://xeogl.org/examples/#picking_raycast_pickEntity">Run demo</a>
+<br />
+<br />
+To show how it’s done, we’ll fire a ray through the scene in World-space, to pick the first entity hit by the ray:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">hit</span> <span class="o">=</span> <span class="nx">scene</span><span class="p">.</span><span class="nx">pick</span><span class="p">({</span>
+    <span class="nx">origin</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">],</span>   <span class="c1">// Ray origin</span>
+    <span class="nx">direction</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="c1">// Ray direction</span>
+    <span class="nx">pickSurface</span><span class="o">:</span> <span class="kc">false</span>   <span class="c1">// &lt;&lt;------ Don&#39;t want to pick a point on the surface</span>
+<span class="p">});</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">hit</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Picked an entity with the ray</span>
+     <span class="kd">var</span> <span class="nx">entity</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">entity</span><span class="p">;</span>   <span class="c1">// Entity we picked</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>xeogl performs the following steps for this picking method:</p>
+
+<ol>
+  <li>User picks using a ray in World-space.</li>
+  <li>Position the camera to look along the ray.</li>
+  <li>Render the scene to an auxiliary frame buffer, filling each entity with a unique colour that is the RBGA-encoded
+index of its position within xeogl’s internal display list.</li>
+  <li>Restore the camera to its previous position.</li>
+  <li>Read the colour from the framebuffer at the canvas coordinates, map the colour back to an entity in the display list.</li>
+  <li>Return a hit result containing the entity.</li>
+</ol>
+
+<h3 id="pick-point-on-entity-surface-with-world-space-ray">4. Pick point on entity surface with world-space ray</h3>
+
+<p>Like the previous picking method, this one also involves firing a ray through the scene in World-space, to pick
+ an entity, but this time we’re also getting some geometric information about the intersection of the ray with the
+ entity surface.
+<br />
+<br />
+<a href="http://xeogl.org/examples/#picking_raycast_pickSurface"><img src="http://xeolabs.com/images/xeogl/pickingRaycastEntitySurface.gif" alt="" /></a>
+   <br /><a href="http://xeogl.org/examples/#picking_raycast_pickSurface">Run demo</a>
+<br />
+<br />
+Lets fire a ray through the scene in World-space, to pick a 3D position on the surface of the first entity hit by the ray:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">hit</span> <span class="o">=</span> <span class="nx">scene</span><span class="p">.</span><span class="nx">pick</span><span class="p">({</span>
+    <span class="nx">origin</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">],</span>   <span class="c1">// Ray origin</span>
+    <span class="nx">direction</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="c1">// Ray direction</span>
+    <span class="nx">pickSurface</span><span class="o">:</span> <span class="kc">true</span>   <span class="c1">// &lt;&lt;--------- Indicates that we want to pick on surface</span>
+<span class="p">});</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">hit</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Picked an entity with the ray</span>
+
+    <span class="c1">// Hit result contains the same properties as the second example</span>
+    
+     <span class="kd">var</span> <span class="nx">entity</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">entity</span><span class="p">;</span>        <span class="c1">// Entity we picked</span>
+     <span class="kd">var</span> <span class="nx">primitive</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">primitive</span><span class="p">;</span>  <span class="c1">// Type of primitive we picked, usually &quot;triangles&quot;</span>
+     <span class="kd">var</span> <span class="nx">primIndex</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">primIndex</span><span class="p">;</span>  <span class="c1">// Triangle&#39;s first index within geometry indices</span>
+     <span class="kd">var</span> <span class="nx">indices</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">indices</span><span class="p">;</span>      <span class="c1">// Triangle&#39;s vertex indices (a three element array)</span>
+     <span class="kd">var</span> <span class="nx">localPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">localPos</span><span class="p">;</span>    <span class="c1">// Local-space position within the triangle</span>
+     <span class="kd">var</span> <span class="nx">worldPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">worldPos</span><span class="p">;</span>    <span class="c1">// World-space position within the triangle</span>
+     <span class="kd">var</span> <span class="nx">viewPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">viewPos</span><span class="p">;</span>      <span class="c1">// View-space position within the triangle</span>
+     <span class="kd">var</span> <span class="nx">bary</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">bary</span><span class="p">;</span>            <span class="c1">// Barycentric coordinate within the triangle</span>
+     <span class="kd">var</span> <span class="nx">normal</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">normal</span><span class="p">;</span>        <span class="c1">// Interpolated normal vector within the triangle</span>
+     <span class="kd">var</span> <span class="nx">uv</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">uv</span><span class="p">;</span>                <span class="c1">// Interpolated UVs within the triangle</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Internally, xeogl performs the following steps for this picking method:</p>
+
+<ol>
+  <li>User picks using a ray in World-space.</li>
+  <li>Position the camera to look along the ray.</li>
+  <li>Render the scene to an auxiliary frame buffer, filling each entity with a unique colour that is the RBGA-encoded
+index of its position within xeogl’s internal display list.</li>
+  <li>Read the colour from the framebuffer at the canvas coordinates, map the colour back to an entity in the display list.</li>
+  <li>Clear the framebuffer, then render the triangles of the picked entity to it, filling each triangle with a unique color that
+is the RBGA-encoded index of the triangle’s first element within the entity’s geometry indices.</li>
+  <li>Read the colour from the framebuffer at the canvas coordinates, map the colour back to the picked triangle.</li>
+  <li>Restore the camera to its previous position.</li>
+  <li>Now that we have the entity and the triangle, make a ray in clip-space, originating at the eye position and passing through
+the near projection plane at a position corresponding to where we picked, then unproject that ray to get a ray in the entity’s
+local coordinate space.</li>
+  <li>Find the intersection of the ray with the triangle in local space.</li>
+  <li>Find the barycentric coordinates of the local-space intersection, then use those to interpolate within the triangle
+to find the normal vector and UV coordinates at that position.</li>
+  <li>Return a hit result containing the picked entity, the triangle, and the ray-triangle intersection info (see code example above).</li>
+</ol>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<h1 id="references">References</h1>
+
+<ul>
+  <li>P. Hanrahan and P. Haeberli, “Direct WYSIWYG painting and texturing on 3D shapes,” ACM SIGGRAPH Computer Graphics, vol. 24, no. 4, pp. 215–223, 1990. View at Publisher · View at Google Scholar</li>
+</ul>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="http://xeolabs.com/images/portraitCoffeeNormal.png" class="bio-photo" alt="@xeographics bio photo"></a>
+<h3><a href="http://xeolabs.com/about/">@xeographics</a></h3>
+<p>Lindsay Kay<br>3D graphics programmer</p>
+<a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+        </div>
+        <p class="byline"><strong>GPU-Assisted Picking in xeogl</strong> was published on <time datetime="2017-08-30T00:00:00-04:00" itemprop="datePublished">August 30, 2017</time> and last modified on <time datetime="2017-30-08" itemprop="dateModified">2017-30-08</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://xeolabs.com/about" title="About @xeographics" itemprop="url">@xeographics</a></span></span>.</p>
+      </footer>
+
+        
+        <br><br>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'xeographics'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+    </div><!-- /.article-wrap -->
+  </article>
+
+</div><!-- /#main -->
+
+
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://xeolabs.com/articles">View all articles</a>)</small></h4>
+    <ul>
+    
+      
+      
+      
+      <li><a href="http://xeolabs.com/articles/xeogl-annotations" title="Annotations in xeogl">Annotations in xeogl</a></li>
+      
+    
+      
+      
+      
+      <li><a href="http://xeolabs.com/articles/xeogl-and-zspace" title="Developing xeogl Apps for zSpace VR/AR Systems">Developing xeogl Apps for zSpace VR/AR Systems</a></li>
+      
+    
+      
+      
+      
+      <li><a href="http://xeolabs.com/articles/xeogl-pbr" title="Adding Physically Based Rendering to xeogl">Adding Physically Based Rendering to xeogl</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2017 @xeographics. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://xeolabs.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://xeolabs.com/assets/js/scripts.min.js"></script>
+
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'xeographics'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+</body>
+</html>
