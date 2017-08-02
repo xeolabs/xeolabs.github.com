@@ -294,11 +294,14 @@ to find the normal vector and UV coordinates at that position.
 
 Ray-picking usually involves testing a ray for intersection with each object's bounding box,
 then having picked an object, testing the ray for intersection with each of the object's triangles. This is normally done
-on the CPU, with the assistance of a spatial lookup structure, such as a KD-tree. I believe this is how THREE.js does ray picking.
-
+on the CPU, with the assistance of a spatial lookup structure, such as a KD-tree. I believe this is how its done in THREE.js.
+<br><br>
 Compared to the usual technique, xeogl will be faster for huge numbers of objects and triangles, since it avoids these
 CPU-intensive calculations. There are some disadvantages, however:
 
+* xeogl's ray-picking technique only works for triangles so far. It should be possible to extend it to support line segments though.
+* The CPU-intensive technique can find multiple objects that intersect a ray, while xeogl's technique only finds the closest
+intersecting object to the ray origin.
 * As mentioned when [ray-picking triangles](#pick-point-on-entity-surface-with-world-space-ray), xeogl lazy-computes extra
 vertex position and color arrays for each entity we're about to ray-pick a triangle from, so that we can render each of its
 triangles with a unique flat color. That happens on-the-fly, just before we attempt to pick a triangle on the entity,
@@ -308,14 +311,11 @@ triangles with a unique flat color. That happens on-the-fly, just before we atte
  instanced by multiple entities, this can be mitigated if we're able to share (instance) our geometries among many entities. For example,
   if we have a scene made up mostly of cubes, where we have one cube geometry shared by all our entities, then when we ray-pick
    our entities, we're only calculating those arrays once, for the shared geometry.
-* xeogl's ray-picking technique only works for triangles so far. It should be possible to extend it to support line segments though.
-* The CPU-intensive technique can find multiple objects that intersect a ray, while xeogl's technique only finds the closest
-intersecting object to the ray origin.
 
 ## Work remaining
 
 * When rendering to auxiliary frame buffers for ray-picking, xeogl renders the whole canvas-sized viewport. That's wasteful
-in terms of GPU efficiency and memory use, so I need reduce that viewport, and the framebuffer, to a 1x1 size.
+in terms of GPU efficiency and memory, so I need reduce the picking framebuffer, and temporarily the picking viewport, to 1x1 size.
 * As mentioned in the previous section, I also need to extend the ray-picking technique to select line segments.
 
 ## References
