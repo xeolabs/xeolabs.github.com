@@ -147,24 +147,24 @@ An annotation is a label that you pin to the surface an entity. Click this scree
 The code below shows how to create an annotation. First, we’ll load our model:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">SceneJSModel</span><span class="p">({</span> <span class="c1">// Importing a SceneJS model for fun</span>
-    <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;tank&quot;</span><span class="p">,</span>
-    <span class="nx">src</span><span class="o">:</span> <span class="s2">&quot;models/scenejs/tronTank/tronTank.json&quot;</span>
+    <span class="na">id</span><span class="p">:</span> <span class="s2">"tank"</span><span class="p">,</span>
+    <span class="na">src</span><span class="p">:</span> <span class="s2">"models/scenejs/tronTank/tronTank.json"</span>
 <span class="p">});</span></code></pre></figure>
 
 <p>Once the model has loaded, we’ll create an <a href="http://xeogl.org/docs/classes/Annotation.html">Annotation</a> on one of its entities:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">model</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;loaded&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">model</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"loaded"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 
         <span class="kd">var</span> <span class="nx">annotation</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">Annotation</span><span class="p">({</span>
-            <span class="nx">entity</span><span class="o">:</span> <span class="s2">&quot;tank.entity9&quot;</span><span class="p">,</span>         <span class="c1">// Entity instance or ID</span>
-            <span class="nx">primIndex</span><span class="o">:</span> <span class="mi">468</span><span class="p">,</span>                 <span class="c1">// First triangle vertex in geometry indices</span>
-            <span class="nx">bary</span><span class="o">:</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.16</span><span class="p">,</span> <span class="mf">0.79</span><span class="p">],</span>       <span class="c1">// Barycentric coordinates in triangle</span>
-            <span class="nx">glyph</span><span class="o">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span>                     <span class="c1">// Symbol(s) for pin</span>
-            <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Cannon&quot;</span><span class="p">,</span>
-            <span class="nx">desc</span><span class="o">:</span> <span class="s2">&quot;Fires chevron-shaped bolts of de-rezzing energy&quot;</span><span class="p">,</span>
-            <span class="nx">eye</span><span class="o">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.66</span><span class="p">,</span> <span class="mf">20.84</span><span class="p">,</span> <span class="o">-</span><span class="mf">21.59</span><span class="p">],</span>    <span class="c1">// Camera eye position (optional)</span>
-            <span class="nx">look</span><span class="o">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.39</span><span class="p">,</span> <span class="mf">6.84</span><span class="p">,</span> <span class="o">-</span><span class="mf">9.18</span><span class="p">],</span>     <span class="c1">// Camera point-of-interest (optional)</span>
-            <span class="nx">up</span><span class="o">:</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.97</span><span class="p">,</span> <span class="mf">0.24</span><span class="p">]</span>          <span class="c1">// Camera &quot;up&quot; vector (optional)</span>
+            <span class="na">entity</span><span class="p">:</span> <span class="s2">"tank.entity9"</span><span class="p">,</span>         <span class="c1">// Entity instance or ID</span>
+            <span class="na">primIndex</span><span class="p">:</span> <span class="mi">468</span><span class="p">,</span>                 <span class="c1">// First triangle vertex in geometry indices</span>
+            <span class="na">bary</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.16</span><span class="p">,</span> <span class="mf">0.79</span><span class="p">],</span>       <span class="c1">// Barycentric coordinates in triangle</span>
+            <span class="na">glyph</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>                     <span class="c1">// Symbol(s) for pin</span>
+            <span class="na">title</span><span class="p">:</span> <span class="s2">"Cannon"</span><span class="p">,</span>
+            <span class="na">desc</span><span class="p">:</span> <span class="s2">"Fires chevron-shaped bolts of de-rezzing energy"</span><span class="p">,</span>
+            <span class="na">eye</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.66</span><span class="p">,</span> <span class="mf">20.84</span><span class="p">,</span> <span class="o">-</span><span class="mf">21.59</span><span class="p">],</span>    <span class="c1">// Camera eye position (optional)</span>
+            <span class="na">look</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.39</span><span class="p">,</span> <span class="mf">6.84</span><span class="p">,</span> <span class="o">-</span><span class="mf">9.18</span><span class="p">],</span>     <span class="c1">// Camera point-of-interest (optional)</span>
+            <span class="na">up</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.97</span><span class="p">,</span> <span class="mf">0.24</span><span class="p">]</span>          <span class="c1">// Camera "up" vector (optional)</span>
         <span class="p">});</span>
     <span class="p">});</span></code></pre></figure>
 
@@ -175,7 +175,7 @@ this is demonstrated by the (A) annotation on our Tron Tank’s cannon, which wi
 <h2 id="camera-vantage-points">Camera vantage points</h2>
 
 <p>As we saw in the previous example, you can optionally specify a camera position from which to view the annotation, given as
-<code>eye</code>, <code>look</code> and <code>up</code> vectors. You can then fly the camera to look at the annotation by
+<code class="highlighter-rouge">eye</code>, <code class="highlighter-rouge">look</code> and <code class="highlighter-rouge">up</code> vectors. You can then fly the camera to look at the annotation by
 passing the annotation to a <a href="http://xeogl.org/docs/classes/CameraFlightAnimation.html">CameraFlightAnimation</a>:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">cameraFlight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">CameraFlightAnimation</span><span class="p">();</span>
@@ -186,25 +186,25 @@ passing the annotation to a <a href="http://xeogl.org/docs/classes/CameraFlightA
 
 <p>I made annotations easy to create from pick results:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">xeogl</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;mouseclicked&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">canvasPos</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">xeogl</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"mouseclicked"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">canvasPos</span><span class="p">)</span> <span class="p">{</span>
 
     <span class="kd">var</span> <span class="nx">hit</span> <span class="o">=</span> <span class="nx">myScene</span><span class="p">.</span><span class="nx">pick</span><span class="p">({</span> <span class="c1">// Ray-pick entity surface</span>
-        <span class="nx">canvasPos</span><span class="o">:</span> <span class="nx">canvasPos</span><span class="p">,</span>
-        <span class="nx">pickSurface</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="na">canvasPos</span><span class="p">:</span> <span class="nx">canvasPos</span><span class="p">,</span>
+        <span class="na">pickSurface</span><span class="p">:</span> <span class="kc">true</span>
     <span class="p">});</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="nx">hit</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">lookat</span> <span class="o">=</span> <span class="nx">myScene</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">view</span><span class="p">;</span>
 
         <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">Annotation</span><span class="p">({</span>
-            <span class="nx">entity</span><span class="o">:</span>     <span class="nx">hit</span><span class="p">.</span><span class="nx">entity</span><span class="p">,</span>
-            <span class="nx">primIndex</span><span class="o">:</span>  <span class="nx">hit</span><span class="p">.</span><span class="nx">primIndex</span><span class="p">,</span>
-            <span class="nx">bary</span><span class="o">:</span>       <span class="nx">hit</span><span class="p">.</span><span class="nx">bary</span><span class="p">,</span>
-            <span class="nx">title</span><span class="o">:</span>      <span class="s2">&quot;A new world awaits you&quot;</span><span class="p">,</span>
-            <span class="nx">desc</span><span class="o">:</span>       <span class="s2">&quot;in the off-world colonies.&quot;</span><span class="p">,</span>
-            <span class="nx">eye</span><span class="o">:</span>        <span class="nx">lookat</span><span class="p">.</span><span class="nx">eye</span><span class="p">,</span>
-            <span class="nx">look</span><span class="o">:</span>       <span class="nx">lookat</span><span class="p">.</span><span class="nx">look</span><span class="p">,</span>
-            <span class="nx">up</span><span class="o">:</span>         <span class="nx">lookat</span><span class="p">.</span><span class="nx">up</span>
+            <span class="na">entity</span><span class="p">:</span>     <span class="nx">hit</span><span class="p">.</span><span class="nx">entity</span><span class="p">,</span>
+            <span class="na">primIndex</span><span class="p">:</span>  <span class="nx">hit</span><span class="p">.</span><span class="nx">primIndex</span><span class="p">,</span>
+            <span class="na">bary</span><span class="p">:</span>       <span class="nx">hit</span><span class="p">.</span><span class="nx">bary</span><span class="p">,</span>
+            <span class="na">title</span><span class="p">:</span>      <span class="s2">"A new world awaits you"</span><span class="p">,</span>
+            <span class="na">desc</span><span class="p">:</span>       <span class="s2">"in the off-world colonies."</span><span class="p">,</span>
+            <span class="na">eye</span><span class="p">:</span>        <span class="nx">lookat</span><span class="p">.</span><span class="nx">eye</span><span class="p">,</span>
+            <span class="na">look</span><span class="p">:</span>       <span class="nx">lookat</span><span class="p">.</span><span class="nx">look</span><span class="p">,</span>
+            <span class="na">up</span><span class="p">:</span>         <span class="nx">lookat</span><span class="p">.</span><span class="nx">up</span>
         <span class="p">});</span>
     <span class="p">}</span>
 <span class="p">});</span></code></pre></figure>
@@ -237,7 +237,7 @@ annotation’s pin the camera will focus on the annotation and the label will op
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">cameraFlight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">CameraFlightAnimation</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">lastAnnotation</span><span class="p">;</span>
 
-<span class="nx">annotation</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;pinClicked&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">annotation</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">annotation</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"pinClicked"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">annotation</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">lastAnnotation</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">annotation</span><span class="p">.</span><span class="nx">labelShown</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
     <span class="p">}</span>
@@ -249,12 +249,12 @@ annotation’s pin the camera will focus on the annotation and the label will op
 <p>You can also track the annotation’s position in Local-space (coordinate space of entity’s geometry
 before modeling transformation) and World-space (after the modeling transform):</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">annotation</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;localPos&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">localPos</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Local pos changed: &quot;</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">localPos</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">&quot;\t&quot;</span><span class="p">));</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">annotation</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"localPos"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">localPos</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Local pos changed: "</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">localPos</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"\t"</span><span class="p">));</span>
 <span class="p">});</span>
 
-<span class="nx">annotation</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;worldPos&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">worldPos</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;World pos changed: &quot;</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">worldPos</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">&quot;\t&quot;</span><span class="p">));</span>
+<span class="nx">annotation</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"worldPos"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">worldPos</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"World pos changed: "</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">worldPos</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"\t"</span><span class="p">));</span>
 <span class="p">});</span></code></pre></figure>
 
 <p>The Local position will change when the geometry is edited, while the World position will change when the
