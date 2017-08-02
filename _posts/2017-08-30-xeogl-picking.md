@@ -31,16 +31,16 @@ was first proposed by Robin Forrest in the mid-1980s and used in 3D painting by 
 implementation, each triangle is assigned a unique color which is used as an identifier. Given the cursor's canvas coordinates and a map of IDs
 to triangles, the picked position on the surface can be found by retrieving color values from the frame buffer and mapping them back to triangles.
 <br><br>
-Jeff Lander extended this approach to calculate the exact intersection information, ie. the barycentric coordinate
+Jeff Lander extended this approach to calculate the exact intersection information, ie. the barycentric coordinates
 within the intersected triangle. By setting additional color values to the three triangle vertices, he calculated the barycentric
-coordinate by interpolation after the rasterization stage [[Lander2000](#lander2000)].
+coordinates by interpolation after the rasterization stage [[Lander2000](#lander2000)].
 <br>
 <br>
 xeogl uses a three-stage picking technique:
 
 1. Color-indexed method to find the picked object.
 2. Color-indexed method to find the picked triangle within the object.
-3. Calculations in JavaScript to find the barycentric coordinate, position, normal and UV.
+3. Calculations in JavaScript to find the barycentric coordinates, position, normal and UV.
 
 ## Four types of picking in xeogl
 
@@ -99,7 +99,7 @@ To show how to use it, we'll start by loading a [GLTFModel](http://xeogl.org/doc
  We can also listen for pick hits on individual entities:
 
  {% highlight javascript %}
-  var entity = gearbox.entities["gearbox#"someGear"];
+  var entity = gearbox.entities["gearbox#someGear"];
   entity.on("picked", function(hit) {
         //...
  });{% endhighlight %}
@@ -140,10 +140,10 @@ if (hit) { // Picked an entity
     var primitive = hit.primitive;  // Type of primitive we picked, usually "triangles"
     var primIndex = hit.primIndex;  // Index of triangle's first element within Entity's Geometry indices array
     var indices = hit.indices;      // Value of each of the triangle's vertex indices (a three element array)
-    var localPos = hit.localPos;    // Local-space position
-    var worldPos = hit.worldPos;    // World-space position
-    var viewPos = hit.viewPos;      // View-space position
-    var bary = hit.bary;            // Barycentric coordinate within the triangle
+    var localPos = hit.localPos;    // Local-space coordinates
+    var worldPos = hit.worldPos;    // World-space coordinates
+    var viewPos = hit.viewPos;      // View-space coordinates
+    var bary = hit.bary;            // Barycentric coordinates within the triangle
     var normal = hit.normal;        // Interpolated normal vector within the triangle
     var uv = hit.uv;                // Interpolated UVs within the triangle
 }{% endhighlight %}
@@ -193,7 +193,7 @@ the near projection plane at a position corresponding to where we picked, then u
 local coordinate space.
 7. Find the intersection of the ray with the triangle in local space.
 8. Find the barycentric coordinates of the local-space intersection, then use those to interpolate within the triangle
-to find the normal vector and UV coordinates at that position.
+to Find the normal vector and UV coordinates at that position.
 9. Return a hit result containing the picked entity, the triangle, and the ray-triangle intersection info (see code example above).
 
 For step (4) we lazy-compute extra vertex position and color arrays for the entity geometry, so that we can render each
@@ -261,10 +261,10 @@ if (hit) { // Picked an entity with the ray
      var primitive = hit.primitive;  // Type of primitive we picked, usually "triangles"
      var primIndex = hit.primIndex;  // Triangle's first index within geometry indices
      var indices = hit.indices;      // Triangle's vertex indices (a three element array)
-     var localPos = hit.localPos;    // Local-space position within the triangle
-     var worldPos = hit.worldPos;    // World-space position within the triangle
-     var viewPos = hit.viewPos;      // View-space position within the triangle
-     var bary = hit.bary;            // Barycentric coordinate within the triangle
+     var localPos = hit.localPos;    // Local-space coordinates within the triangle
+     var worldPos = hit.worldPos;    // World-space coordinates within the triangle
+     var viewPos = hit.viewPos;      // View-space coordinates within the triangle
+     var bary = hit.bary;            // Barycentric coordinates within the triangle
      var normal = hit.normal;        // Interpolated normal vector within the triangle
      var uv = hit.uv;                // Interpolated UVs within the triangle
 }{% endhighlight %}
