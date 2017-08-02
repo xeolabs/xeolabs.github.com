@@ -6,29 +6,29 @@
 <head>
 <meta charset="utf-8">
 <title>GPU-Assisted Picking in xeogl &#8211; xeolabs</title>
-<meta name="description" content="How picking works in xeogl">
+<meta name="description" content="A multi-layer color-indexing rendering algorithm which ray-picks 3D scene objects in linear time">
 <meta name="keywords" content="xeogl, picking, webgl">
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://xeolabs.com/images/">
+<meta name="twitter:image" content="/images/">
 <meta name="twitter:title" content="GPU-Assisted Picking in xeogl">
-<meta name="twitter:description" content="How picking works in xeogl">
+<meta name="twitter:description" content="A multi-layer color-indexing rendering algorithm which ray-picks 3D scene objects in linear time">
 <meta name="twitter:creator" content="@xeographics">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GPU-Assisted Picking in xeogl">
-<meta property="og:description" content="How picking works in xeogl">
-<meta property="og:url" content="http://xeolabs.com/articles/xeogl-picking">
+<meta property="og:description" content="A multi-layer color-indexing rendering algorithm which ray-picks 3D scene objects in linear time">
+<meta property="og:url" content="/articles/xeogl-picking">
 <meta property="og:site_name" content="xeolabs">
 
 
 
 
 
-<link rel="canonical" href="http://xeolabs.com/articles/xeogl-picking">
-<link href="http://xeolabs.com/feed.xml" type="application/atom+xml" rel="alternate" title="xeolabs Feed">
+<link rel="canonical" href="/articles/xeogl-picking">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="xeolabs Feed">
 <link rel="author" href="https://plus.google.com/u/0/110983138227486752827/posts?rel=author">
 
 <!-- http://t.co/dKP3o1e -->
@@ -39,30 +39,30 @@
 <!-- Google Webfonts -->
 <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
 <!-- For all browsers -->
-<link rel="stylesheet" href="http://xeolabs.com/assets/css/main.min.css">
+<link rel="stylesheet" href="/assets/css/main.min.css">
 
 <!--[if (lt IE 9) & (!IEMobile)]>
-<link rel="stylesheet" href="http://xeolabs.com/assets/css/ie.min.css">
+<link rel="stylesheet" href="/assets/css/ie.min.css">
 <![endif]-->
 
 <meta http-equiv="cleartype" content="on">
 
 <!-- Load Modernizr -->
-<script src="http://xeolabs.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
 
 <!-- Icons -->
 <!-- 16x16 -->
-<link rel="shortcut icon" href="http://xeolabs.com/favicon.ico">
+<link rel="shortcut icon" href="/favicon.ico">
 <!-- 32x32 -->
-<link rel="shortcut icon" href="http://xeolabs.com/favicon.png">
+<link rel="shortcut icon" href="/favicon.png">
 <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="http://xeolabs.com/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
 <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://xeolabs.com/images/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
 <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://xeolabs.com/images/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://xeolabs.com/images/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
 
 </head>
 
@@ -72,15 +72,15 @@
 
 <div class="navigation-wrapper">
 	<div class="site-name">
-		<a href="http://xeolabs.com">xeolabs</a>
+		<a href="">xeolabs</a>
 	</div><!-- /.site-name -->
 	<div class="top-navigation">
 		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 		    <ul>
 		        
-				<li><a href="http://xeolabs.com/about" >About</a></li>
+				<li><a href="/about" >About</a></li>
 		        
-				<li><a href="http://xeolabs.com/articles" >Articles</a></li>
+				<li><a href="/articles" >Articles</a></li>
 		        
 				<li><a href="http://scenejs.org" target="_blank">SceneJS</a></li>
 		        
@@ -100,8 +100,8 @@
 
 <div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
   <div class="article-author-top">
-    <img src="http://xeolabs.com/images/portraitCoffeeNormal.png" class="bio-photo" alt="@xeographics bio photo"></a>
-<h3><a href="http://xeolabs.com/about/">@xeographics</a></h3>
+    <img src="/images/portraitCoffeeNormal.png" class="bio-photo" alt="@xeographics bio photo"></a>
+<h3><a href="/about/">@xeographics</a></h3>
 <p>Lindsay Kay<br>3D graphics programmer</p>
 <a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
 
@@ -125,16 +125,19 @@
   </header>
 <div id="drawer">
 <ul id="markdown-toc">
-  <li><a href="#background" id="markdown-toc-background">Background</a></li>
-  <li><a href="#picking-methods-in-xeogl" id="markdown-toc-picking-methods-in-xeogl">Picking methods in xeogl</a>    <ul>
-      <li><a href="#pick-entity-at-canvas-coordinates" id="markdown-toc-pick-entity-at-canvas-coordinates">1. Pick entity at canvas coordinates</a></li>
-      <li><a href="#pick-point-on-entity-surface-at-canvas-coordinates" id="markdown-toc-pick-point-on-entity-surface-at-canvas-coordinates">2. Pick point on entity surface at canvas coordinates</a></li>
-      <li><a href="#pick-entity-with-world-space-ray" id="markdown-toc-pick-entity-with-world-space-ray">3. Pick entity with World-space ray</a></li>
-      <li><a href="#pick-point-on-entity-surface-with-world-space-ray" id="markdown-toc-pick-point-on-entity-surface-with-world-space-ray">4. Pick point on entity surface with world-space ray</a></li>
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#four-types-of-picking-in-xeogl" id="markdown-toc-four-types-of-picking-in-xeogl">Four types of picking in xeogl</a></li>
+  <li><a href="#pick-entity-at-canvas-coordinates" id="markdown-toc-pick-entity-at-canvas-coordinates">1. Pick entity at canvas coordinates</a></li>
+  <li><a href="#pick-point-on-entity-surface-at-canvas-coords" id="markdown-toc-pick-point-on-entity-surface-at-canvas-coords">2. Pick point on entity surface at canvas coords</a></li>
+  <li><a href="#pick-entity-with-world-space-ray" id="markdown-toc-pick-entity-with-world-space-ray">3. Pick entity with World-space ray</a></li>
+  <li><a href="#pick-point-on-entity-surface-with-world-space-ray" id="markdown-toc-pick-point-on-entity-surface-with-world-space-ray">4. Pick point on entity surface with World-space ray</a></li>
+  <li><a href="#pros-and-cons" id="markdown-toc-pros-and-cons">Pros and cons</a></li>
+  <li><a href="#work-remaining" id="markdown-toc-work-remaining">Work remaining</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a>    <ul>
+      <li><a href="#hanrahan1990" id="markdown-toc-hanrahan1990">Hanrahan1990</a></li>
+      <li><a href="#lander2000" id="markdown-toc-lander2000">Lander2000</a></li>
     </ul>
   </li>
-  <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
-  <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
   </div>
@@ -142,18 +145,34 @@
 <!-- /#table-of-contents -->
 
 <p><strong><a href="http://xeogl.org">xeogl</a></strong> is a WebGL-based engine for 3D visualization. In this article, I’ll describe xeogl’s
-GPU-assisted picking system, which uses a multi-layer color-indexing rendering algorithm to ray-pick objects in linear
-time complexity.</p>
+GPU-assisted picking system, which uses a multi-layer color-indexing rendering algorithm to ray-pick scene entities
+in linear time complexity.
+<br /><br />
+<img src="/images/xeogl/pickingTeapots.png" alt="" /></p>
 
-<h2 id="background">Background</h2>
+<h2 id="introduction">Introduction</h2>
 
-<p>TODO:
-https://www.hindawi.com/journals/ijcgt/2009/730894/
-http://people.csail.mit.edu/ericchan/bib/pdf/p215-hanrahan.pdf</p>
+<p>The color-indexed “WYSIWYG” picking method, which takes advantage of graphics hardware to render scene objects into an auxiliary frame buffer,
+was first proposed by Robin Forrest in the mid-1980s and used in 3D painting by Hanrahan and Haeberli [<a href="#hanrahan1990">Hanrahan1990</a>]. In their
+implementation, each triangle is assigned a unique color which is used as an identifier. Given the cursor’s canvas coordinates and a map of IDs
+to triangles, the picked position on the surface can be found by retrieving color values from the frame buffer and mapping them back to triangles.
+<br /><br />
+Jeff Lander extended this approach to calculate the exact intersection information, ie. the barycentric coordinate
+within the intersected triangle. By setting additional color values to the three triangle vertices, he calculated the barycentric
+coordinate by interpolation after the rasterization stage [<a href="#lander2000">Lander2000</a>].
+<br />
+<br />
+xeogl uses a three-stage picking technique:</p>
 
-<h2 id="picking-methods-in-xeogl">Picking methods in xeogl</h2>
+<ol>
+  <li>Color-indexed method to find the picked object.</li>
+  <li>Color-indexed method to find the picked triangle within the object.</li>
+  <li>Calculations in JavaScript to find the barycentric coordinate, position, normal and UV.</li>
+</ol>
 
-<p>xeogl supports four methods of picking, which are as follows:</p>
+<h2 id="four-types-of-picking-in-xeogl">Four types of picking in xeogl</h2>
+
+<p>xeogl supports four types of picking, which are:</p>
 
 <ol>
   <li>pick entity at canvas coordinates,</li>
@@ -162,9 +181,9 @@ http://people.csail.mit.edu/ericchan/bib/pdf/p215-hanrahan.pdf</p>
   <li>pick point on entity surface with World-space ray.</li>
 </ol>
 
-<p>Methods 1 and 3 just return the picked entity.
-<br /><br />Methods 2 and 4 return the picked entity
- along with additional information about the point that was picked on its surface. That includes:</p>
+<p>Types 1 and 3 just return the picked entity.
+<br /><br />Types 2 and 4 return the picked entity,
+ along with additional information about the point that was picked on its surface, which includes:</p>
 
 <ul>
   <li>the <strong>entity</strong></li>
@@ -180,13 +199,13 @@ http://people.csail.mit.edu/ericchan/bib/pdf/p215-hanrahan.pdf</p>
 geometry has UVs. xeogl finds the values for these by interpolating within the values for the triangle vertices using
 the barycentric coordinates.</p>
 
-<h3 id="pick-entity-at-canvas-coordinates">1. Pick entity at canvas coordinates</h3>
+<h2 id="pick-entity-at-canvas-coordinates">1. Pick entity at canvas coordinates</h2>
 
-<p>This picking method is the simplest: we pick the closest entity behind the given canvas coordinates. This is equivalent to
+<p>This type of picking is the simplest: we pick the closest entity behind the given canvas coordinates. This is equivalent to
 firing a ray through the canvas, down the negative Z-axis, to find the first entity it hits.
 <br />
 <br />
-<a href="http://xeogl.org/examples/#picking_canvas_pickEntity"><img src="http://xeolabs.com/images/xeogl/pickingCanvasEntity.gif" alt="" /></a>
+<a href="http://xeogl.org/examples/#picking_canvas_pickEntity"><img src="/images/xeogl/pickingCanvasEntity.gif" alt="" /></a>
    <br /><a href="http://xeogl.org/examples/#picking_canvas_pickEntity">Run demo</a>
 <br />
 <br />
@@ -208,7 +227,14 @@ To show how to use it, we’ll start by loading a <a href="http://xeogl.org/docs
      <span class="kd">var</span> <span class="nx">entity</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">entity</span><span class="p">;</span>
  <span class="p">}</span> </code></pre></figure>
 
-<p>Internally, xeogl performs the following steps for this picking method:</p>
+<p>We can also listen for pick hits on individual entities:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">var</span> <span class="nx">entity</span> <span class="o">=</span> <span class="nx">gearbox</span><span class="p">.</span><span class="nx">entities</span><span class="p">[</span><span class="s2">&quot;gearbox#&quot;</span><span class="nx">someGear</span><span class="s2">&quot;];</span>
+<span class="s2">  entity.on(&quot;</span><span class="nx">picked</span><span class="err">&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">hit</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//...</span>
+ <span class="p">});</span></code></pre></figure>
+
+<p>Internally, xeogl performs the following steps for this type of picking:</p>
 
 <ol>
   <li>User picks at canvas coordinates.</li>
@@ -218,13 +244,13 @@ index of its position within xeogl’s internal display list.</li>
   <li>Return a hit result containing the entity.</li>
 </ol>
 
-<h3 id="pick-point-on-entity-surface-at-canvas-coordinates">2. Pick point on entity surface at canvas coordinates</h3>
+<h2 id="pick-point-on-entity-surface-at-canvas-coords">2. Pick point on entity surface at canvas coords</h2>
 
-<p>Like the previous picking method, this one also picks the closest entity behind the given canvas coordinates, but also
-gets information about the point on the entity’s surface that lies right behind those canvas coordinates.
+<p>Like the previous type of picking, this one also picks the closest entity behind the given canvas coordinates, but also
+gets geometric information about the point on the entity’s surface that lies right behind those canvas coordinates.
  <br />
  <br />
-<a href="http://xeogl.org/examples/#picking_canvas_pickSurface"><img src="http://xeolabs.com/images/xeogl/pickingCanvasEntitySurface.gif" alt="" /></a>
+<a href="http://xeogl.org/examples/#picking_canvas_pickSurface"><img src="/images/xeogl/pickingCanvasEntitySurface.gif" alt="" /></a>
    <br /><a href="http://xeogl.org/examples/#picking_canvas_pickSurface">Run demo</a>
 <br />
 <br />
@@ -282,7 +308,7 @@ Reusing the scene from the previous example, we’ll pick again at the canvas co
 <span class="c1">// Another way to get the indices</span>
 <span class="kd">var</span> <span class="nx">indexABC</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">indices</span><span class="p">;</span></code></pre></figure>
 
-<p>Internally, xeogl performs the following steps for this picking method:</p>
+<p>Internally, xeogl performs the following steps for this type of picking:</p>
 
 <ol>
   <li>User ray-picks at given canvas coordinates.</li>
@@ -305,13 +331,13 @@ to find the normal vector and UV coordinates at that position.</li>
 triangle with a unique flat color. It’s actually very fast, so you’d hardly notice it, even with big meshes - <a href="https://gist.github.com/xeolabs/6e53681b88e00773075e97460a5e7c72">here’s
 the math function</a>.</p>
 
-<h3 id="pick-entity-with-world-space-ray">3. Pick entity with World-space ray</h3>
+<h2 id="pick-entity-with-world-space-ray">3. Pick entity with World-space ray</h2>
 
-<p>For this picking method, xeogl fires a ray through the scene, in World-space, to pick the first entity it hits. I originally added
-this to support the 3D stylus for the <a href="http://xeolabs.com/articles/xeogl-and-zspace">zSpace integration project</a>.
+<p>For this type of picking, xeogl fires a ray through the scene, in World-space, to pick the first entity it hits. I originally added
+this to support the 3D stylus in some <a href="http://xeolabs.com/articles/xeogl-and-zspace">xeogl demo apps for the zSpace 300</a>.
 <br />
 <br />
-<a href="http://xeogl.org/examples/#picking_raycast_pickEntity"><img src="http://xeolabs.com/images/xeogl/pickingRaycastEntity.gif" alt="" /></a>
+<a href="http://xeogl.org/examples/#picking_raycast_pickEntity"><img src="/images/xeogl/pickingRaycastEntity.gif" alt="" /></a>
    <br /><a href="http://xeogl.org/examples/#picking_raycast_pickEntity">Run demo</a>
 <br />
 <br />
@@ -327,7 +353,7 @@ To show how it’s done, we’ll fire a ray through the scene in World-space, to
      <span class="kd">var</span> <span class="nx">entity</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">entity</span><span class="p">;</span>   <span class="c1">// Entity we picked</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>xeogl performs the following steps for this picking method:</p>
+<p>Internally, xeogl performs the following steps for this type of picking:</p>
 
 <ol>
   <li>User picks using a ray in World-space.</li>
@@ -339,14 +365,14 @@ index of its position within xeogl’s internal display list.</li>
   <li>Return a hit result containing the entity.</li>
 </ol>
 
-<h3 id="pick-point-on-entity-surface-with-world-space-ray">4. Pick point on entity surface with world-space ray</h3>
+<h2 id="pick-point-on-entity-surface-with-world-space-ray">4. Pick point on entity surface with World-space ray</h2>
 
-<p>Like the previous picking method, this one also involves firing a ray through the scene in World-space, to pick
- an entity, but this time we’re also getting some geometric information about the intersection of the ray with the
+<p>Like the previous type of picking, this one also involves firing a ray through the scene in World-space, to pick
+ an entity, but this time we’re also getting geometric information about the intersection of the ray with the
  entity surface.
 <br />
 <br />
-<a href="http://xeogl.org/examples/#picking_raycast_pickSurface"><img src="http://xeolabs.com/images/xeogl/pickingRaycastEntitySurface.gif" alt="" /></a>
+<a href="http://xeogl.org/examples/#picking_raycast_pickSurface"><img src="/images/xeogl/pickingRaycastEntitySurface.gif" alt="" /></a>
    <br /><a href="http://xeogl.org/examples/#picking_raycast_pickSurface">Run demo</a>
 <br />
 <br />
@@ -374,7 +400,7 @@ Lets fire a ray through the scene in World-space, to pick a 3D position on the s
      <span class="kd">var</span> <span class="nx">uv</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">uv</span><span class="p">;</span>                <span class="c1">// Interpolated UVs within the triangle</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Internally, xeogl performs the following steps for this picking method:</p>
+<p>Internally, xeogl performs the following steps for this type of picking:</p>
 
 <ol>
   <li>User picks using a ray in World-space.</li>
@@ -395,19 +421,53 @@ to find the normal vector and UV coordinates at that position.</li>
   <li>Return a hit result containing the picked entity, the triangle, and the ray-triangle intersection info (see code example above).</li>
 </ol>
 
-<h1 id="conclusion">Conclusion</h1>
+<h2 id="pros-and-cons">Pros and cons</h2>
 
-<h1 id="references">References</h1>
+<p>Ray-picking usually involves testing a ray for intersection with each object’s bounding box,
+then having picked an object, testing the ray for intersection with each of the object’s triangles. This is normally done
+on the CPU, with the assistance of a spatial lookup structure, such as a KD-tree. I believe this is how its done in THREE.js.
+<br /><br />
+Compared to the usual technique, xeogl will be faster for huge numbers of objects and triangles, since it avoids these
+CPU-intensive calculations. There are some disadvantages, however:</p>
 
 <ul>
-  <li>P. Hanrahan and P. Haeberli, “Direct WYSIWYG painting and texturing on 3D shapes,” ACM SIGGRAPH Computer Graphics, vol. 24, no. 4, pp. 215–223, 1990. View at Publisher · View at Google Scholar</li>
+  <li>xeogl’s ray-picking technique only works for triangles so far. It should be possible to extend it to support line segments though.</li>
+  <li>The CPU-intensive technique can find multiple objects that intersect a ray, while xeogl’s technique only finds the closest
+intersecting object to the ray origin.</li>
+  <li>As mentioned when <a href="#pick-point-on-entity-surface-with-world-space-ray">ray-picking triangles</a>, xeogl lazy-computes extra
+vertex position and color arrays for each entity we’re about to ray-pick a triangle from, so that we can render each of its
+triangles with a unique flat color. That happens on-the-fly, just before we attempt to pick a triangle on the entity,
+ and can’t be deferred to xeogl’s’ frame-budgeted task queue (like most computationally-intensive things in xeogl), because
+ we need those arrays immediately. Therefore there can be a moment’s delay when picking a complex entity for the first time,
+ plus the sudden memory needs for those two extra arrays. Since those extra arrays belong to the geometry, which can be
+ instanced by multiple entities, this can be mitigated if we’re able to share (instance) our geometries among many entities. For example,
+if we have a scene made up mostly of cubes, where we have one cube geometry shared by all our entities, then when we ray-pick
+ our entities, we’re only calculating those arrays once, for the shared geometry.</li>
 </ul>
+
+<h2 id="work-remaining">Work remaining</h2>
+
+<ul>
+  <li>When rendering to auxiliary frame buffers for ray-picking, xeogl renders the whole canvas-sized viewport. That’s wasteful
+in terms of GPU efficiency and memory, so I need reduce the picking framebuffer, and temporarily the picking viewport, to 1x1 size.</li>
+  <li>As mentioned in the previous section, I also need to extend the ray-picking technique to select line segments.</li>
+</ul>
+
+<h2 id="references">References</h2>
+
+<h3 id="hanrahan1990">Hanrahan1990</h3>
+
+<p>P. Hanrahan and P. Haeberli, “Direct WYSIWYG painting and texturing on 3D shapes,” ACM SIGGRAPH Computer Graphics, vol. 24, no. 4, pp. 215–223, 1990. View at Publisher · View at Google Scholar</p>
+
+<h3 id="lander2000">Lander2000</h3>
+
+<p>J. Lander, “Haunted trees for halloween,” Game Developer Magazine, vol. 7, no. 11, pp. 17–21, 2000. View at Google Scholar</p>
 
       <hr />
       <footer role="contentinfo">
         <div class="article-author-bottom">
-          <img src="http://xeolabs.com/images/portraitCoffeeNormal.png" class="bio-photo" alt="@xeographics bio photo"></a>
-<h3><a href="http://xeolabs.com/about/">@xeographics</a></h3>
+          <img src="/images/portraitCoffeeNormal.png" class="bio-photo" alt="@xeographics bio photo"></a>
+<h3><a href="/about/">@xeographics</a></h3>
 <p>Lindsay Kay<br>3D graphics programmer</p>
 <a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
 
@@ -418,7 +478,7 @@ to find the normal vector and UV coordinates at that position.</li>
 
 
         </div>
-        <p class="byline"><strong>GPU-Assisted Picking in xeogl</strong> was published on <time datetime="2017-08-30T00:00:00-04:00" itemprop="datePublished">August 30, 2017</time> and last modified on <time datetime="2017-30-08" itemprop="dateModified">2017-30-08</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://xeolabs.com/about" title="About @xeographics" itemprop="url">@xeographics</a></span></span>.</p>
+        <p class="byline"><strong>GPU-Assisted Picking in xeogl</strong> was published on <time datetime="2017-08-30T00:00:00-04:00" itemprop="datePublished">August 30, 2017</time> and last modified on <time datetime="2017-30-08" itemprop="dateModified">2017-30-08</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="/about" title="About @xeographics" itemprop="url">@xeographics</a></span></span>.</p>
       </footer>
 
         
@@ -447,25 +507,25 @@ to find the normal vector and UV coordinates at that position.</li>
 
 <div class="footer-wrap">
   <div class="related-articles">
-  <h4>You might also enjoy <small class="pull-right">(<a href="http://xeolabs.com/articles">View all articles</a>)</small></h4>
+  <h4>You might also enjoy <small class="pull-right">(<a href="/articles">View all articles</a>)</small></h4>
     <ul>
     
       
       
       
-      <li><a href="http://xeolabs.com/articles/xeogl-annotations" title="Annotations in xeogl">Annotations in xeogl</a></li>
+      <li><a href="/articles/xeogl-annotations" title="Annotations in xeogl">Annotations in xeogl</a></li>
       
     
       
       
       
-      <li><a href="http://xeolabs.com/articles/xeogl-and-zspace" title="Developing xeogl Apps for zSpace VR/AR Systems">Developing xeogl Apps for zSpace VR/AR Systems</a></li>
+      <li><a href="/articles/xeogl-and-zspace" title="Developing xeogl Apps for zSpace VR/AR Systems">Developing xeogl Apps for zSpace VR/AR Systems</a></li>
       
     
       
       
       
-      <li><a href="http://xeolabs.com/articles/xeogl-pbr" title="Adding Physically Based Rendering to xeogl">Adding Physically Based Rendering to xeogl</a></li>
+      <li><a href="/articles/xeogl-pbr" title="Adding Physically Based Rendering to xeogl">Adding Physically Based Rendering to xeogl</a></li>
       
     
     </ul>
@@ -478,8 +538,8 @@ to find the normal vector and UV coordinates at that position.</li>
 </div><!-- /.footer-wrap -->
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="http://xeolabs.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-<script src="http://xeolabs.com/assets/js/scripts.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
 
 
 <script type="text/javascript">
