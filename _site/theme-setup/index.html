@@ -196,11 +196,11 @@
 
 <h3 id="configyml">_config.yml</h3>
 
-<p>Most of the variables found here are used in the .html files found in <code>_includes</code> if you need to add or remove anything. A good place to start would be to change the title, tagline, description, and url of your site. When working locally comment out <code>url</code> or else you will get a bunch of broken links because they are absolute and prefixed with <code>{{ site.url }}</code><sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> in the various <code>_includes</code> and <code>_layouts</code>. Just remember to uncomment <code>url</code> when building for deployment or pushing to <strong>gh-pages</strong>…</p>
+<p>Most of the variables found here are used in the .html files found in <code class="highlighter-rouge">_includes</code> if you need to add or remove anything. A good place to start would be to change the title, tagline, description, and url of your site. When working locally comment out <code class="highlighter-rouge">url</code> or else you will get a bunch of broken links because they are absolute and prefixed with <code class="highlighter-rouge"><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">site.url</span><span class="w"> </span><span class="p">}</span><span class="err">}</span></code><sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> in the various <code class="highlighter-rouge">_includes</code> and <code class="highlighter-rouge">_layouts</code>. Just remember to uncomment <code class="highlighter-rouge">url</code> when building for deployment or pushing to <strong>gh-pages</strong>…</p>
 
 <h4 id="ownerauthor-information">Owner/Author Information</h4>
 
-<p>Change your name, bio, and avatar photo (100x100 pixels or larger), Twitter url, email, and Google+ url. If you want to link to an external image on Gravatar or something similiar you’ll need to edit the path in <code>author-bio.html</code> since it assumes it is located in <code>\images</code>.</p>
+<p>Change your name, bio, and avatar photo (100x100 pixels or larger), Twitter url, email, and Google+ url. If you want to link to an external image on Gravatar or something similiar you’ll need to edit the path in <code class="highlighter-rouge">author-bio.html</code> since it assumes it is located in <code class="highlighter-rouge">\images</code>.</p>
 
 <p>Including a link to your Google+ profile has the added benefit of displaying <a href="https://plus.google.com/authorship">Google Authorship</a> in Google search results if you’ve went ahead and applied for it. Don’t have a Google+ account? Just leave it blank.</p>
 
@@ -210,19 +210,19 @@
 
 <h4 id="top-navigation-links">Top Navigation Links</h4>
 
-<p>Edit page/post titles and URLs to include in the site’s navigation. For external links add <code>external: true</code>.</p>
+<p>Edit page/post titles and URLs to include in the site’s navigation. For external links add <code class="highlighter-rouge">external: true</code>.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="c1"># sample top navigation links</span>
-<span class="l l-Scalar l-Scalar-Plain">links</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">About Page</span>
-    <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/about</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Articles</span>
-    <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/articles</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Other Page</span>
-    <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/other-page</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">External Page</span>
-    <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://mademistakes.com</span>
-    <span class="l l-Scalar l-Scalar-Plain">external</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span></code></pre></figure>
+<span class="s">links</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">About Page</span>
+    <span class="s">url</span><span class="pi">:</span> <span class="s">/about</span>
+  <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Articles</span>
+    <span class="s">url</span><span class="pi">:</span> <span class="s">/articles</span>
+  <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Other Page</span>
+    <span class="s">url</span><span class="pi">:</span> <span class="s">/other-page</span>
+  <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">External Page</span>
+    <span class="s">url</span><span class="pi">:</span> <span class="s">http://mademistakes.com</span>
+    <span class="s">external</span><span class="pi">:</span> <span class="s">true</span></code></pre></figure>
 
 <h3 id="adding-posts-and-pages">Adding Posts and Pages</h3>
 
@@ -232,18 +232,18 @@
 
 <p>A good rule of thumb is to keep feature images nice and wide so you don’t push the body text too far down. An image cropped around around 1024 x 256 pixels will keep file size down with an acceptable resolution for most devices. If you want to serve these images responsively I’d suggest looking at the <a href="https://github.com/scottjehl/picturefill">Jekyll Picture Tag</a> plugin<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>.</p>
 
-<p>The two layouts make the assumption that the feature images live in the <code>images/</code> folder. To add a feature image to a post or page just include the filename in the front matter like so.</p>
+<p>The two layouts make the assumption that the feature images live in the <code class="highlighter-rouge">images/</code> folder. To add a feature image to a post or page just include the filename in the front matter like so.</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">feature</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">feature-image-filename.jpg</span>
-  <span class="l l-Scalar l-Scalar-Plain">thumb</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">thumbnail-image.jpg</span> <span class="c1">#keep it square 200x200 px is good</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">image</span><span class="pi">:</span>
+  <span class="s">feature</span><span class="pi">:</span> <span class="s">feature-image-filename.jpg</span>
+  <span class="s">thumb</span><span class="pi">:</span> <span class="s">thumbnail-image.jpg</span> <span class="c1">#keep it square 200x200 px is good</span></code></pre></figure>
 
 <p>If you want to apply attribution to a feature image use the following YAML front matter on posts or pages. Image credits appear directly below the feature image with a link back to the original source.</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">feature</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">feature-image-filename.jpg</span>
-  <span class="l l-Scalar l-Scalar-Plain">credit</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Michael Rose</span> <span class="c1">#name of the person or site you want to credit</span>
-  <span class="l l-Scalar l-Scalar-Plain">creditlink</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://mademistakes.com</span> <span class="c1">#url to their site or licensing</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">image</span><span class="pi">:</span>
+  <span class="s">feature</span><span class="pi">:</span> <span class="s">feature-image-filename.jpg</span>
+  <span class="s">credit</span><span class="pi">:</span> <span class="s">Michael Rose</span> <span class="c1">#name of the person or site you want to credit</span>
+  <span class="s">creditlink</span><span class="pi">:</span> <span class="s">http://mademistakes.com</span> <span class="c1">#url to their site or licensing</span></code></pre></figure>
 
 <h4 id="thumbnails-for-og-and-twitter-cards">Thumbnails for OG and Twitter Cards</h4>
 
@@ -255,33 +255,33 @@
 
 <p class="notice"><strong>PS:</strong> The TOC is hidden on small devices because I haven’t gotten around to optimizing it. For now it only appears on larger screens (tablet and desktop).</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;table-of-contents&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Contents<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;drawer&quot;</span> <span class="na">markdown</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">"table-of-contents"</span> <span class="na">class=</span><span class="s">"toc"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;header&gt;</span>
+    <span class="nt">&lt;h3&gt;</span>Contents<span class="nt">&lt;/h3&gt;</span>
+  <span class="nt">&lt;/header&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"drawer"</span> <span class="na">markdown=</span><span class="s">"1"</span><span class="nt">&gt;</span>
 *  Auto generated table of contents
 {:toc}
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span><span class="c">&lt;!-- /#table-of-contents --&gt;</span></code></pre></figure>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span><span class="c">&lt;!-- /#table-of-contents --&gt;</span></code></pre></figure>
 
 <h4 id="videos">Videos</h4>
 
 <p>Video embeds are responsive and scale with the width of the main content block with the help of <a href="http://fitvidsjs.com/">FitVids</a>.</p>
 
-<p>Not sure if this only effects Kramdown or if it’s an issue with Markdown in general. But adding YouTube video embeds causes errors when building your Jekyll site. To fix add a space between the <code>&lt;iframe&gt;</code> tags and remove <code>allowfullscreen</code>. Example below:</p>
+<p>Not sure if this only effects Kramdown or if it’s an issue with Markdown in general. But adding YouTube video embeds causes errors when building your Jekyll site. To fix add a space between the <code class="highlighter-rouge">&lt;iframe&gt;</code> tags and remove <code class="highlighter-rouge">allowfullscreen</code>. Example below:</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://www.youtube.com/embed/PWf4WUoMXwg&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;iframe</span> <span class="na">width=</span><span class="s">"560"</span> <span class="na">height=</span><span class="s">"315"</span> <span class="na">src=</span><span class="s">"http://www.youtube.com/embed/PWf4WUoMXwg"</span> <span class="na">frameborder=</span><span class="s">"0"</span><span class="nt">&gt;</span> <span class="nt">&lt;/iframe&gt;</span></code></pre></figure>
 
 <hr />
 
 <h2 id="theme-development">Theme Development</h2>
 
-<p>If you want to easily skin the themes’ colors and fonts, take a look at <code>variables.less</code> in <code>assets/less/</code> and make the necessary changes to the color and font variables. To make development easier I setup a Grunt build script to compile/minify the LESS files into <code>main.min.css</code> and lint/concatenate/minify all scripts into <code>scripts.min.js</code>. <a href="http://nodejs.org/">Install Node.js</a>, then <a href="http://gruntjs.com/getting-started">install Grunt</a>, and then finally install the dependencies for the theme contained in <code>package.json</code>:</p>
+<p>If you want to easily skin the themes’ colors and fonts, take a look at <code class="highlighter-rouge">variables.less</code> in <code class="highlighter-rouge">assets/less/</code> and make the necessary changes to the color and font variables. To make development easier I setup a Grunt build script to compile/minify the LESS files into <code class="highlighter-rouge">main.min.css</code> and lint/concatenate/minify all scripts into <code class="highlighter-rouge">scripts.min.js</code>. <a href="http://nodejs.org/">Install Node.js</a>, then <a href="http://gruntjs.com/getting-started">install Grunt</a>, and then finally install the dependencies for the theme contained in <code class="highlighter-rouge">package.json</code>:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm install</code></pre></figure>
 
-<p>From the theme’s root, use <code>grunt</code> to rebuild the CSS, concatenate JavaScript files, and optimize .jpg, .png, and .svg files in the <code>images/</code> folder. You can also use <code>grunt watch</code> in combination with <code>jekyll build --watch</code> to watch for updates to your LESS and JS files that Grunt will then automatically re-build as you write your code which will in turn auto-generate your Jekyll site when developing locally.</p>
+<p>From the theme’s root, use <code class="highlighter-rouge">grunt</code> to rebuild the CSS, concatenate JavaScript files, and optimize .jpg, .png, and .svg files in the <code class="highlighter-rouge">images/</code> folder. You can also use <code class="highlighter-rouge">grunt watch</code> in combination with <code class="highlighter-rouge">jekyll build --watch</code> to watch for updates to your LESS and JS files that Grunt will then automatically re-build as you write your code which will in turn auto-generate your Jekyll site when developing locally.</p>
 
 <p>And if the command line isn’t your thing (you’re using Jekyll so it probably is), <a href="http://incident57.com/codekit/">CodeKit</a> for Mac OS X and <a href="http://alphapixels.com/prepros/">Prepros</a> for Windows are great alternatives.</p>
 
@@ -300,7 +300,7 @@
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>Used to generate absolute urls in <code>sitemap.xml</code>, <code>feed.xml</code>, and for canonical urls in <code>head.html</code>. Don’t include a trailing <code>/</code> in your base url ie: <code>http://mademistakes.com</code>. When developing locally remove or comment out this line so local .css, .js, and images are used. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>Used to generate absolute urls in <code class="highlighter-rouge">sitemap.xml</code>, <code class="highlighter-rouge">feed.xml</code>, and for canonical urls in <code class="highlighter-rouge">head.html</code>. Don’t include a trailing <code class="highlighter-rouge">/</code> in your base url ie: <code class="highlighter-rouge">http://mademistakes.com</code>. When developing locally remove or comment out this line so local .css, .js, and images are used. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
       <p>If you’re using GitHub Pages to host your site be aware that plugins are disabled. So you’ll need to build your site locally and then manually deploy if you want to use this sweet plugin. <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
