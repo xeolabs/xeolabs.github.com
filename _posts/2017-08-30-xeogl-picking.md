@@ -52,18 +52,16 @@ xeogl supports four types of picking, which are:
  2. pick point on entity surface with World-space ray.
 
 Types 1 and 3 just return the picked entity.
-<br><br>Types 2 and 4 return the picked entity,
- along with additional information about the point that was picked on its surface, which includes:
+<br><br>Types 2 and 4 return the picked entity, as well as information about the surface intersection, which includes:
 
- * the **entity**
- * the **triangle** that contains the position,
- * the **barycentric coordinates** of the position within the triangle,
- * the **World space coordinates** of the position,
- * the **View space coordinates** of the position,
- * the **normal vector** at the the position, and
- * the **UV coordinates** at the position.
+ * the triangle,
+ * barycentric coordinates within the triangle,
+ * World space coordinates,
+ * View space coordinates,
+ * normal vector, and
+ * UV coordinates.
 
-Note that we'll only get a normal vector if the entity's geometry has normals, and we'll only get UV coordinates if the
+Note that we'll only get a normal if the entity's geometry has normals, and UV coordinates if the
 geometry has UVs. xeogl finds the values for these by interpolating within the values for the triangle vertices using
 the barycentric coordinates.
 
