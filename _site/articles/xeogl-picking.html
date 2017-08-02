@@ -157,9 +157,9 @@ was first proposed by Robin Forrest in the mid-1980s and used in 3D painting by 
 implementation, each triangle is assigned a unique color which is used as an identifier. Given the cursor’s canvas coordinates and a map of IDs
 to triangles, the picked position on the surface can be found by retrieving color values from the frame buffer and mapping them back to triangles.
 <br /><br />
-Jeff Lander extended this approach to calculate the exact intersection information, ie. the barycentric coordinate
+Jeff Lander extended this approach to calculate the exact intersection information, ie. the barycentric coordinates
 within the intersected triangle. By setting additional color values to the three triangle vertices, he calculated the barycentric
-coordinate by interpolation after the rasterization stage [<a href="#lander2000">Lander2000</a>].
+coordinates by interpolation after the rasterization stage [<a href="#lander2000">Lander2000</a>].
 <br />
 <br />
 xeogl uses a three-stage picking technique:</p>
@@ -167,7 +167,7 @@ xeogl uses a three-stage picking technique:</p>
 <ol>
   <li>Color-indexed method to find the picked object.</li>
   <li>Color-indexed method to find the picked triangle within the object.</li>
-  <li>Calculations in JavaScript to find the barycentric coordinate, position, normal and UV.</li>
+  <li>Calculations in JavaScript to find the barycentric coordinates, position, normal and UV.</li>
 </ol>
 
 <h2 id="four-types-of-picking-in-xeogl">Four types of picking in xeogl</h2>
@@ -268,10 +268,10 @@ Reusing the scene from the previous example, we’ll pick again at the canvas co
     <span class="kd">var</span> <span class="nx">primitive</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">primitive</span><span class="p">;</span>  <span class="c1">// Type of primitive we picked, usually &quot;triangles&quot;</span>
     <span class="kd">var</span> <span class="nx">primIndex</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">primIndex</span><span class="p">;</span>  <span class="c1">// Index of triangle&#39;s first element within Entity&#39;s Geometry indices array</span>
     <span class="kd">var</span> <span class="nx">indices</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">indices</span><span class="p">;</span>      <span class="c1">// Value of each of the triangle&#39;s vertex indices (a three element array)</span>
-    <span class="kd">var</span> <span class="nx">localPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">localPos</span><span class="p">;</span>    <span class="c1">// Local-space position</span>
-    <span class="kd">var</span> <span class="nx">worldPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">worldPos</span><span class="p">;</span>    <span class="c1">// World-space position</span>
-    <span class="kd">var</span> <span class="nx">viewPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">viewPos</span><span class="p">;</span>      <span class="c1">// View-space position</span>
-    <span class="kd">var</span> <span class="nx">bary</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">bary</span><span class="p">;</span>            <span class="c1">// Barycentric coordinate within the triangle</span>
+    <span class="kd">var</span> <span class="nx">localPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">localPos</span><span class="p">;</span>    <span class="c1">// Local-space coordinates</span>
+    <span class="kd">var</span> <span class="nx">worldPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">worldPos</span><span class="p">;</span>    <span class="c1">// World-space coordinates</span>
+    <span class="kd">var</span> <span class="nx">viewPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">viewPos</span><span class="p">;</span>      <span class="c1">// View-space coordinates</span>
+    <span class="kd">var</span> <span class="nx">bary</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">bary</span><span class="p">;</span>            <span class="c1">// Barycentric coordinates within the triangle</span>
     <span class="kd">var</span> <span class="nx">normal</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">normal</span><span class="p">;</span>        <span class="c1">// Interpolated normal vector within the triangle</span>
     <span class="kd">var</span> <span class="nx">uv</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">uv</span><span class="p">;</span>                <span class="c1">// Interpolated UVs within the triangle</span>
 <span class="p">}</span></code></pre></figure>
@@ -390,10 +390,10 @@ Lets fire a ray through the scene in World-space, to pick a 3D position on the s
      <span class="kd">var</span> <span class="nx">primitive</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">primitive</span><span class="p">;</span>  <span class="c1">// Type of primitive we picked, usually &quot;triangles&quot;</span>
      <span class="kd">var</span> <span class="nx">primIndex</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">primIndex</span><span class="p">;</span>  <span class="c1">// Triangle&#39;s first index within geometry indices</span>
      <span class="kd">var</span> <span class="nx">indices</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">indices</span><span class="p">;</span>      <span class="c1">// Triangle&#39;s vertex indices (a three element array)</span>
-     <span class="kd">var</span> <span class="nx">localPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">localPos</span><span class="p">;</span>    <span class="c1">// Local-space position within the triangle</span>
-     <span class="kd">var</span> <span class="nx">worldPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">worldPos</span><span class="p">;</span>    <span class="c1">// World-space position within the triangle</span>
-     <span class="kd">var</span> <span class="nx">viewPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">viewPos</span><span class="p">;</span>      <span class="c1">// View-space position within the triangle</span>
-     <span class="kd">var</span> <span class="nx">bary</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">bary</span><span class="p">;</span>            <span class="c1">// Barycentric coordinate within the triangle</span>
+     <span class="kd">var</span> <span class="nx">localPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">localPos</span><span class="p">;</span>    <span class="c1">// Local-space coordinates within the triangle</span>
+     <span class="kd">var</span> <span class="nx">worldPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">worldPos</span><span class="p">;</span>    <span class="c1">// World-space coordinates within the triangle</span>
+     <span class="kd">var</span> <span class="nx">viewPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">viewPos</span><span class="p">;</span>      <span class="c1">// View-space coordinates within the triangle</span>
+     <span class="kd">var</span> <span class="nx">bary</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">bary</span><span class="p">;</span>            <span class="c1">// Barycentric coordinates within the triangle</span>
      <span class="kd">var</span> <span class="nx">normal</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">normal</span><span class="p">;</span>        <span class="c1">// Interpolated normal vector within the triangle</span>
      <span class="kd">var</span> <span class="nx">uv</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">uv</span><span class="p">;</span>                <span class="c1">// Interpolated UVs within the triangle</span>
 <span class="p">}</span></code></pre></figure>
