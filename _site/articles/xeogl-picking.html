@@ -210,13 +210,13 @@ firing a ray through the canvas, down the negative Z-axis, to find the first ent
 To show how to use it, we’ll start by loading a <a href="http://xeogl.org/docs/classes/GLTFModel.html">GLTFModel</a>:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="kd">var</span> <span class="nx">gearbox</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">GLTFModel</span><span class="p">({</span>
-     <span class="nx">src</span><span class="o">:</span> <span class="s2">&quot;models/gltf/gearbox/gearbox_assy.gltf&quot;</span>
+     <span class="na">src</span><span class="p">:</span> <span class="s2">"models/gltf/gearbox/gearbox_assy.gltf"</span>
  <span class="p">});</span> </code></pre></figure>
 
 <p>With our model loaded and sitting in the middle of our canvas, we’ll try picking an entity at some canvas coordinates:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="kd">var</span> <span class="nx">hit</span> <span class="o">=</span> <span class="nx">gearbox</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">pick</span><span class="p">({</span>
-     <span class="nx">canvasPos</span><span class="o">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span><span class="mi">400</span><span class="p">]</span>
+     <span class="na">canvasPos</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span><span class="mi">400</span><span class="p">]</span>
  <span class="p">});</span> </code></pre></figure>
 
 <p>If we hit an entity, then we’ll get a result containing a reference to it:</p>
@@ -227,8 +227,8 @@ To show how to use it, we’ll start by loading a <a href="http://xeogl.org/docs
 
 <p>We can also listen for pick hits on individual entities:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">var</span> <span class="nx">entity</span> <span class="o">=</span> <span class="nx">gearbox</span><span class="p">.</span><span class="nx">entities</span><span class="p">[</span><span class="s2">&quot;gearbox#&quot;</span><span class="nx">someGear</span><span class="s2">&quot;];</span>
-<span class="s2">  entity.on(&quot;</span><span class="nx">picked</span><span class="err">&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">hit</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">var</span> <span class="nx">entity</span> <span class="o">=</span> <span class="nx">gearbox</span><span class="p">.</span><span class="nx">entities</span><span class="p">[</span><span class="s2">"gearbox#someGear"</span><span class="p">];</span>
+  <span class="nx">entity</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"picked"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">hit</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">//...</span>
  <span class="p">});</span></code></pre></figure>
 
@@ -253,11 +253,11 @@ gets geometric information about the point on the entity’s surface that lies r
 <br />
 <br />
 Reusing the scene from the previous example, we’ll pick again at the canvas coordinates, but this time
- we’ll supply a <code>pickSurface</code> flag to indicate that we want information about the point we’re picking on the surface:</p>
+ we’ll supply a <code class="highlighter-rouge">pickSurface</code> flag to indicate that we want information about the point we’re picking on the surface:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">hit</span> <span class="o">=</span> <span class="nx">gearbox</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">pick</span><span class="p">({</span>
-    <span class="nx">canvasPos</span><span class="o">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span><span class="mi">400</span><span class="p">],</span>
-    <span class="nx">pickSurface</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>    <span class="c1">// &lt;&lt;----- Indicates that we want to pick on surface</span>
+    <span class="na">canvasPos</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span><span class="mi">400</span><span class="p">],</span>
+    <span class="na">pickSurface</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>    <span class="c1">// &lt;&lt;----- Indicates that we want to pick on surface</span>
 <span class="p">});</span></code></pre></figure>
 
 <p>Here’s what we get in the pick result this time:</p>
@@ -265,9 +265,9 @@ Reusing the scene from the previous example, we’ll pick again at the canvas co
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">if</span> <span class="p">(</span><span class="nx">hit</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Picked an entity</span>
 
     <span class="kd">var</span> <span class="nx">entity</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">entity</span><span class="p">;</span>        <span class="c1">// Entity we picked</span>
-    <span class="kd">var</span> <span class="nx">primitive</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">primitive</span><span class="p">;</span>  <span class="c1">// Type of primitive we picked, usually &quot;triangles&quot;</span>
-    <span class="kd">var</span> <span class="nx">primIndex</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">primIndex</span><span class="p">;</span>  <span class="c1">// Index of triangle&#39;s first element within Entity&#39;s Geometry indices array</span>
-    <span class="kd">var</span> <span class="nx">indices</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">indices</span><span class="p">;</span>      <span class="c1">// Value of each of the triangle&#39;s vertex indices (a three element array)</span>
+    <span class="kd">var</span> <span class="nx">primitive</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">primitive</span><span class="p">;</span>  <span class="c1">// Type of primitive we picked, usually "triangles"</span>
+    <span class="kd">var</span> <span class="nx">primIndex</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">primIndex</span><span class="p">;</span>  <span class="c1">// Index of triangle's first element within Entity's Geometry indices array</span>
+    <span class="kd">var</span> <span class="nx">indices</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">indices</span><span class="p">;</span>      <span class="c1">// Value of each of the triangle's vertex indices (a three element array)</span>
     <span class="kd">var</span> <span class="nx">localPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">localPos</span><span class="p">;</span>    <span class="c1">// Local-space coordinates</span>
     <span class="kd">var</span> <span class="nx">worldPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">worldPos</span><span class="p">;</span>    <span class="c1">// World-space coordinates</span>
     <span class="kd">var</span> <span class="nx">viewPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">viewPos</span><span class="p">;</span>      <span class="c1">// View-space coordinates</span>
@@ -289,7 +289,7 @@ Reusing the scene from the previous example, we’ll pick again at the canvas co
 <span class="kd">var</span> <span class="nx">indexB</span> <span class="o">=</span> <span class="nx">geometry</span><span class="p">.</span><span class="nx">indices</span><span class="p">[</span><span class="nx">primIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
 <span class="kd">var</span> <span class="nx">indexC</span> <span class="o">=</span> <span class="nx">geometry</span><span class="p">.</span><span class="nx">indices</span><span class="p">[</span><span class="nx">primIndex</span> <span class="o">+</span> <span class="mi">2</span><span class="p">];</span>
 
-<span class="c1">// Get the triangle&#39;s local-space vertex positions</span>
+<span class="c1">// Get the triangle's local-space vertex positions</span>
 
 <span class="kd">var</span> <span class="nx">ax</span> <span class="o">=</span> <span class="nx">geometry</span><span class="p">.</span><span class="nx">position</span><span class="p">[</span><span class="nx">indexA</span><span class="p">];</span>
 <span class="kd">var</span> <span class="nx">ay</span> <span class="o">=</span> <span class="nx">geometry</span><span class="p">.</span><span class="nx">position</span><span class="p">[</span><span class="nx">indexA</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
@@ -342,9 +342,9 @@ this to support the 3D stylus in some <a href="http://xeolabs.com/articles/xeogl
 To show how it’s done, we’ll fire a ray through the scene in World-space, to pick the first entity hit by the ray:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">hit</span> <span class="o">=</span> <span class="nx">scene</span><span class="p">.</span><span class="nx">pick</span><span class="p">({</span>
-    <span class="nx">origin</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">],</span>   <span class="c1">// Ray origin</span>
-    <span class="nx">direction</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="c1">// Ray direction</span>
-    <span class="nx">pickSurface</span><span class="o">:</span> <span class="kc">false</span>   <span class="c1">// &lt;&lt;------ Don&#39;t want to pick a point on the surface</span>
+    <span class="na">origin</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">],</span>   <span class="c1">// Ray origin</span>
+    <span class="na">direction</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="c1">// Ray direction</span>
+    <span class="na">pickSurface</span><span class="p">:</span> <span class="kc">false</span>   <span class="c1">// &lt;&lt;------ Don't want to pick a point on the surface</span>
 <span class="p">});</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="nx">hit</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Picked an entity with the ray</span>
@@ -377,9 +377,9 @@ index of its position within xeogl’s internal display list.</li>
 Lets fire a ray through the scene in World-space, to pick a 3D position on the surface of the first entity hit by the ray:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">hit</span> <span class="o">=</span> <span class="nx">scene</span><span class="p">.</span><span class="nx">pick</span><span class="p">({</span>
-    <span class="nx">origin</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">],</span>   <span class="c1">// Ray origin</span>
-    <span class="nx">direction</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="c1">// Ray direction</span>
-    <span class="nx">pickSurface</span><span class="o">:</span> <span class="kc">true</span>   <span class="c1">// &lt;&lt;--------- Indicates that we want to pick on surface</span>
+    <span class="na">origin</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">],</span>   <span class="c1">// Ray origin</span>
+    <span class="na">direction</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="c1">// Ray direction</span>
+    <span class="na">pickSurface</span><span class="p">:</span> <span class="kc">true</span>   <span class="c1">// &lt;&lt;--------- Indicates that we want to pick on surface</span>
 <span class="p">});</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="nx">hit</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Picked an entity with the ray</span>
@@ -387,9 +387,9 @@ Lets fire a ray through the scene in World-space, to pick a 3D position on the s
     <span class="c1">// Hit result contains the same properties as the second example</span>
     
      <span class="kd">var</span> <span class="nx">entity</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">entity</span><span class="p">;</span>        <span class="c1">// Entity we picked</span>
-     <span class="kd">var</span> <span class="nx">primitive</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">primitive</span><span class="p">;</span>  <span class="c1">// Type of primitive we picked, usually &quot;triangles&quot;</span>
-     <span class="kd">var</span> <span class="nx">primIndex</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">primIndex</span><span class="p">;</span>  <span class="c1">// Triangle&#39;s first index within geometry indices</span>
-     <span class="kd">var</span> <span class="nx">indices</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">indices</span><span class="p">;</span>      <span class="c1">// Triangle&#39;s vertex indices (a three element array)</span>
+     <span class="kd">var</span> <span class="nx">primitive</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">primitive</span><span class="p">;</span>  <span class="c1">// Type of primitive we picked, usually "triangles"</span>
+     <span class="kd">var</span> <span class="nx">primIndex</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">primIndex</span><span class="p">;</span>  <span class="c1">// Triangle's first index within geometry indices</span>
+     <span class="kd">var</span> <span class="nx">indices</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">indices</span><span class="p">;</span>      <span class="c1">// Triangle's vertex indices (a three element array)</span>
      <span class="kd">var</span> <span class="nx">localPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">localPos</span><span class="p">;</span>    <span class="c1">// Local-space coordinates within the triangle</span>
      <span class="kd">var</span> <span class="nx">worldPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">worldPos</span><span class="p">;</span>    <span class="c1">// World-space coordinates within the triangle</span>
      <span class="kd">var</span> <span class="nx">viewPos</span> <span class="o">=</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">viewPos</span><span class="p">;</span>      <span class="c1">// View-space coordinates within the triangle</span>
