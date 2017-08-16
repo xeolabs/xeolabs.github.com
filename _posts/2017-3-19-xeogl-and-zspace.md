@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Developing xeogl Apps for zSpace VR/AR Systems  
-description: A collaboration with zSpace Inc.
+description: Snagged a zSpace 300 to write some xeogl demos for it
 modified: 2017-19-03
 category: articles
 comments: true

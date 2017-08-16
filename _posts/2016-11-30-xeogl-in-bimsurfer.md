@@ -1,7 +1,7 @@
 ---
 layout: post
 title: xeogl Powering BIMSurfer
-description: "Supercharging your BIM"
+description: "Developing BIMSurfer v2.0 around xeogl"
 tagline: "Supercharging your BIM"
 modified: 2017-12-02
 category: articles

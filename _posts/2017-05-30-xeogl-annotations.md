@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Annotations in xeogl
-description: "A Sketchfab-style annotation system for xeogl"
+description: "Introducing a Sketchfab-style annotation system for xeogl"
 tagline: "Made a Sketchfab-style annotation system for xeogl"
 modified: 2017-17-05
 category: articles

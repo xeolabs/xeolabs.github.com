@@ -1,0 +1,616 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Reflective Surfaces in SceneJS &#8211; xeolabs</title>
+<meta name="description" content="Using cube maps to make objects reflective">
+<meta name="keywords" content="scenejs, tutorial, reflection">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xeolabs.com/images/">
+<meta name="twitter:title" content="Reflective Surfaces in SceneJS">
+<meta name="twitter:description" content="Using cube maps to make objects reflective">
+<meta name="twitter:creator" content="@xeographics">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reflective Surfaces in SceneJS">
+<meta property="og:description" content="Using cube maps to make objects reflective">
+<meta property="og:url" content="http://xeolabs.com/articles/scenejs-reflection">
+<meta property="og:site_name" content="xeolabs">
+
+
+
+
+
+<link rel="canonical" href="http://xeolabs.com/articles/scenejs-reflection">
+<link href="http://xeolabs.com/feed.xml" type="application/atom+xml" rel="alternate" title="xeolabs Feed">
+<link rel="author" href="https://plus.google.com/u/0/110983138227486752827/posts?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://xeolabs.com/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="http://xeolabs.com/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://xeolabs.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://xeolabs.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://xeolabs.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://xeolabs.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://xeolabs.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://xeolabs.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://xeolabs.com/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="article" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://xeolabs.com">xeolabs</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <ul>
+		        
+				<li><a href="http://xeolabs.com/about" >About</a></li>
+		        
+				<li><a href="http://xeolabs.com/articles" >Articles</a></li>
+		        
+				<li><a href="http://scenejs.org" target="_blank">SceneJS</a></li>
+		        
+				<li><a href="http://xeogl.org" target="_blank">xeogl</a></li>
+		        
+				<li><a href="http://biodigitalhuman.com" target="_blank">BioDigitalHuman</a></li>
+		        
+				<li><a href="http://bimsurfer.org" target="_blank">BIMSurfer</a></li>
+		        
+
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <div class="article-author-top">
+    <img src="http://xeolabs.com/images/portraitCoffeeNormal.png" class="bio-photo" alt="@xeographics bio photo"></a>
+<h3><a href="http://xeolabs.com/about/">@xeographics</a></h3>
+<p>Lindsay Kay<br>3D graphics programmer</p>
+<a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+  </div>
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <div class="headline-wrap">
+      <h1 itemprop="name">Reflective Surfaces in SceneJS</h1>
+        <p style="font-weight:bold; font-style:italic;"><time datetime="2014-07-24T00:00:00-04:00" itemprop="datePublished">July 24, 2014</time></p>
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap" itemprop="text">
+      <section id="table-of-contents" class="toc">
+  <header>
+    <h3>Contents</h3>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#making-objects-reflective" id="markdown-toc-making-objects-reflective">Making objects reflective</a></li>
+  <li><a href="#reflection-map-intensity" id="markdown-toc-reflection-map-intensity">Reflection map intensity</a></li>
+  <li><a href="#material-specularity" id="markdown-toc-material-specularity">Material specularity</a></li>
+  <li><a href="#varying-reflectivity-across-a-surface" id="markdown-toc-varying-reflectivity-across-a-surface">Varying reflectivity across a surface</a></li>
+  <li><a href="#switching-reflection-on-and-off" id="markdown-toc-switching-reflection-on-and-off">Switching reflection on and off</a></li>
+  <li><a href="#multiple-reflections" id="markdown-toc-multiple-reflections">Multiple reflections</a></li>
+  <li><a href="#reflections-on-textured-objects" id="markdown-toc-reflections-on-textured-objects">Reflections on textured objects:</a></li>
+  <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
+</ul>
+
+  </div>
+</section>
+<!-- /#table-of-contents -->
+
+<p><strong>Reflection mapping</strong> or <strong>environment mapping</strong> is an efficient image-based lighting technique (introduced in <a href="/articles/scenejs4-release">SceneJS v4.0</a>) for approximating the
+appearance of a reflective surface by means of a precomputed texture image.
+The texture image contains a view of the distant environment surrounding the rendered objects, and is projected onto the six
+faces of a cube, which we can imagine as surrounding our objects. For each point on the objects, SceneJS will then
+determine the colour by calculating the reflection vector at that point and mapping it to the texel in the environment map.
+<br /><br />
+In this tutorial I’ll show you how to</p>
+
+<ul>
+  <li>make objects reflective,</li>
+  <li>control surface reflectivity</li>
+  <li>vary reflectivity across a surface using a <strong>specular control map</strong>,</li>
+  <li>control reflection map intensity,</li>
+  <li>switch reflection on and off for objects, selectively, and</li>
+  <li>layer multiple reflections onto the same objects.</li>
+</ul>
+
+<h2 id="making-objects-reflective">Making objects reflective</h2>
+
+<p>As usual, we’ll point SceneJS at where you keep your plugins:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">setConfigs</span><span class="p">({</span>
+     <span class="na">pluginPath</span><span class="p">:</span><span class="s2">"./plugins"</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Then we’ll create a scene containing the reflective teapot shown below. The teapot is wrapped in a <code class="highlighter-rouge">reflect</code> node, which defines
+our environment cube map.
+<br /><br />
+<a href="http://scenejs.org/examples.html?page=cubeMap"><img src="http://xeolabs.com/images/scenejs/reflection.jpg" alt="Reflection Example 1" /></a>
+<a href="http://scenejs.org/examples.html?page=cubeMap">Run this demo</a></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">createScene</span><span class="p">({</span>
+  <span class="na">nodes</span><span class="p">:</span> <span class="p">[</span>
+
+    <span class="c1">// The reflection cube map</span>
+    <span class="c1">// Images taken from: http://hristo.oskov.com/projects/cs418/mp3/</span>
+    <span class="p">{</span>
+      <span class="na">type</span><span class="p">:</span> <span class="s2">"reflect"</span><span class="p">,</span>
+      <span class="na">src</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"../../../textures/reflection/london/pos-x.png"</span><span class="p">,</span>    <span class="c1">// +X axis</span>
+        <span class="s2">"../../../textures/reflection/london/neg-x.png"</span><span class="p">,</span>    <span class="c1">// -X axis</span>
+        <span class="s2">"../../../textures/reflection/london/pos-y.png"</span><span class="p">,</span>    <span class="c1">// +Y axis</span>
+        <span class="s2">"../../../textures/reflection/london/neg-y.png"</span><span class="p">,</span>    <span class="c1">// -Y axis</span>
+        <span class="s2">"../../../textures/reflection/london/pos-z.png"</span><span class="p">,</span>    <span class="c1">// +Z axis</span>
+        <span class="s2">"../../../textures/reflection/london/neg-z.png"</span>     <span class="c1">// -Z axis</span>
+      <span class="p">],</span>
+
+      <span class="c1">// 100% texture intensity (default)</span>
+      <span class="na">intensity</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+
+      <span class="na">nodes</span><span class="p">:</span> <span class="p">[</span>
+
+        <span class="c1">// Specular material</span>
+        <span class="p">{</span>
+          <span class="na">type</span><span class="p">:</span> <span class="s2">"material"</span><span class="p">,</span>
+          <span class="na">color</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">r</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="na">g</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span>
+            <span class="na">b</span><span class="p">:</span> <span class="mi">0</span>
+          <span class="p">},</span>
+
+          <span class="c1">// Mirror-like reflection when specular == 1.0</span>
+          <span class="c1">// No reflection at all when specular == 0.0</span>
+          <span class="na">specular</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
+
+          <span class="na">nodes</span><span class="p">:</span> <span class="p">[</span>
+
+            <span class="c1">// Teapot primitive implemented by plugin at</span>
+            <span class="c1">// http://scenejs.org/api/latest/plugins/node/geometry/teapot.js</span>
+            <span class="p">{</span>
+              <span class="na">type</span><span class="p">:</span> <span class="s2">"geometry/teapot"</span>
+            <span class="p">}</span>
+          <span class="p">]</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>These are the images we’re using for each face of our <code class="highlighter-rouge">reflect</code> node’s cubemap:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><img src="http://xeolabs.com/images/scenejs/reflection/london/pos-x.png" alt="" /></th>
+      <th><img src="http://xeolabs.com/images/scenejs/reflection/london/neg-x.png" alt="" /></th>
+      <th><img src="http://xeolabs.com/images/scenejs/reflection/london/pos-y.png" alt="" /></th>
+      <th><img src="http://xeolabs.com/images/scenejs/reflection/london/neg-y.png" alt="" /></th>
+      <th><img src="http://xeolabs.com/images/scenejs/reflection/london/pos-z.png" alt="" /></th>
+      <th><img src="http://xeolabs.com/images/scenejs/reflection/london/neg-z.png" alt="" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>pos-x.png</td>
+      <td>neg-x.png</td>
+      <td>pos-y.png</td>
+      <td>neg-y.png</td>
+      <td>pos-z.png</td>
+      <td>neg-z.png</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The amount of environment that’s actually reflected by the teapot is the product of the <code class="highlighter-rouge">intensity</code> property on
+the <code class="highlighter-rouge">reflect</code> node multiplied by the <code class="highlighter-rouge">specular</code> property on the <code class="highlighter-rouge">material</code> node. When that product is 0, then
+the surface will reflect none of the environment, and when its 1.0, the surface will have mirror-like reflectivity. One
+thing to note in the example above is that the product is <code class="highlighter-rouge">0.8</code>, which allows some of the yellow material <code class="highlighter-rouge">color</code> to
+show through, creating a gold-like surface.
+<br /><br />
+The <code class="highlighter-rouge">specular</code> property on the <code class="highlighter-rouge">material</code> node also controls the amount of specular light reflected by the
+surface from <code class="highlighter-rouge">light</code> light nodes. This allows you to have a shiny object with a dull reflection, by specifying a
+low value for <code class="highlighter-rouge">intensity</code> and a high value for <code class="highlighter-rouge">specular</code>.
+<br /><br />
+The geometry must have normal vectors, but does not require UV coordinates. The <code class="highlighter-rouge">reflect</code> node is designed so that you
+can just slap it around some portion your scene graph and all the geometries within that will magically get reflective
+surfaces, just as long as those geometries have normal vectors and <code class="highlighter-rouge">material</code> nodes with non-zero <code class="highlighter-rouge">specular</code> factors.
+<br /><br /></p>
+
+<h2 id="reflection-map-intensity">Reflection map intensity</h2>
+
+<p>Let’s look at the effect of varying <code class="highlighter-rouge">reflect</code> node <code class="highlighter-rouge">intensity</code> while keeping <code class="highlighter-rouge">material</code> node <code class="highlighter-rouge">specular</code> fixed.
+The example below contain four objects, each wrapped with a <code class="highlighter-rouge">reflect</code> node with a different <code class="highlighter-rouge">intensity</code> value.</p>
+
+<p><br /><br />
+<a href="http://scenejs.org/examples.html?page=reflectionIntensity"><img src="http://xeolabs.com/images/scenejs/reflectionIntensity.jpg" alt="Reflection Example 1" /></a>
+<a href="http://scenejs.org/examples.html?page=reflectionIntensity">Run this demo</a></p>
+
+<ul>
+  <li>From left to right, the <code class="highlighter-rouge">intensity</code> factors are 1.0, 0.4, 0.2 and 0.05, respectively.</li>
+  <li>Note how all the tanks have different amounts of relection, but the same amount of specularity.</li>
+  <li>Click <em>Source code</em> on the example for source code.</li>
+</ul>
+
+<h2 id="material-specularity">Material specularity</h2>
+
+<p>Now let’s look at the effect of varying <code class="highlighter-rouge">material</code> node <code class="highlighter-rouge">specular</code> while keeping <code class="highlighter-rouge">reflect</code> node <code class="highlighter-rouge">intensity</code> fixed.
+The example below shows three boxes that share the same <code class="highlighter-rouge">reflect</code>, but each have their own <code class="highlighter-rouge">material</code> node with a unique <code class="highlighter-rouge">specular</code> factor.</p>
+
+<p><br /><br />
+<a href="http://scenejs.org/examples.html?page=reflectionWithVaryingSpecularity"><img src="http://xeolabs.com/images/scenejs/surfaceReflectivity.jpg" alt="Reflection Example 1" /></a>
+<a href="http://scenejs.org/examples.html?page=reflectionWithVaryingSpecularity">Run this demo</a></p>
+
+<ul>
+  <li>From left to right, the <code class="highlighter-rouge">specular</code> factors are 1.0, 0.5 and 0.0, respectively.</li>
+  <li>See how the specularity varies, along with the amount of reflection.</li>
+  <li>Click <em>Source code</em> on the example for source code.</li>
+</ul>
+
+<h2 id="varying-reflectivity-across-a-surface">Varying reflectivity across a surface</h2>
+
+<p>Often we want to control reflectivity across a surface using a control texture. In SceneJS, a <strong>specular map</strong> is a texture
+that is applied to the <code class="highlighter-rouge">specular</code> property of a geometry’s <code class="highlighter-rouge">material</code>, to vary the
+amount of specular reflection across the geometry surface. The amount of specular reflection at each fragment on the
+  surface is multiplied by the value of the <em>red</em> channel of the corresponding pixel in the texture image. We can also use
+  a greyscale image for these textures, where only the red channel will be actually be used.
+  <br /><br />
+  As mentioned earlier, when <code class="highlighter-rouge">reflect</code> nodes are involved, the <code class="highlighter-rouge">material</code> node’s <code class="highlighter-rouge">specular</code> factor contributes to the degree of surface
+  reflectivity, so texturing that factor with a map will vary the reflectivity across the surface.
+  <br /><br />
+  The demo below shows three boxes with specular map textures, where each texture image has an increasing darkness of the
+  diamond shapes it contains.
+  <br /><br />
+<a href="http://scenejs.org/examples.html?page=reflectionWithControlMap"><img src="http://xeolabs.com/images/scenejs/reflectionControlMap.jpg" alt="Reflection Example 2" /></a>
+<a href="http://scenejs.org/examples.html?page=reflectionWithControlMap">Run this demo</a></p>
+
+<ul>
+  <li>Note how as the diamonds get darker, the value of the <strong>red</strong> channel in the pixels will be lower. Therefore, the specularity
+at the corresponding surface fragment will be lower after multiplying by it, so the reflectivity at that point will be lower also.</li>
+  <li>Since the <code class="highlighter-rouge">material</code> node’s <code class="highlighter-rouge">color</code> property is light blue, as the reflectivity decreases, the blue color begins to contribute
+more to the surface color, while the <code class="highlighter-rouge">reflect</code> node’s texture contributes less.</li>
+  <li>See <a href="http://scenejs.org/examples.html?page=specularMap">this example</a> for a basic example of how specular maps are normally done in SceneJS.</li>
+</ul>
+
+<p>Shown below are the images we’re using for the specular control maps for each box:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="http://xeolabs.com/images/scenejs/reflection/reflectionSpecularMap1.jpg" alt="" /></td>
+      <td><img src="http://xeolabs.com/images/scenejs/reflection/reflectionSpecularMap2.jpg" alt="" /></td>
+      <td><img src="http://xeolabs.com/images/scenejs/reflection/reflectionSpecularMap3.jpg" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="switching-reflection-on-and-off">Switching reflection on and off</h2>
+
+<p>Usually you’ll want to apply reflection only to certain objects in your scene. Do that with a <code class="highlighter-rouge">reflection</code> flag
+on a <code class="highlighter-rouge">flags</code> node, as shown in the example below:
+<br /><br />
+<a href="http://scenejs.org/examples.html?page=reflectionFlag"><img src="http://xeolabs.com/images/scenejs/reflection.jpg" alt="Reflection Example 3" /></a>
+<a href="http://scenejs.org/examples.html?page=reflectionFlag">Run this demo</a></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="nx">SceneJS</span><span class="p">.</span><span class="nx">createScene</span><span class="p">({</span>
+   <span class="na">nodes</span><span class="p">:</span> <span class="p">[</span>
+
+     <span class="c1">// Mouse-orbited camera, implemented by plugin at</span>
+     <span class="c1">// http://scenejs.org/api/latest/plugins/node/cameras/orbit.js</span>
+     <span class="p">{</span>
+       <span class="na">type</span><span class="p">:</span> <span class="s2">"cameras/orbit"</span><span class="p">,</span>
+       <span class="na">yaw</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+       <span class="na">pitch</span><span class="p">:</span> <span class="o">-</span><span class="mi">30</span><span class="p">,</span>
+       <span class="na">zoom</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+       <span class="na">zoomSensitivity</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+       <span class="na">nodes</span><span class="p">:</span> <span class="p">[</span>
+
+         <span class="c1">// Flags node which enables or disables reflection on our teapot</span>
+         <span class="p">{</span>
+           <span class="na">type</span><span class="p">:</span> <span class="s2">"flags"</span><span class="p">,</span>
+           <span class="na">id</span><span class="p">:</span> <span class="s2">"myFlags"</span><span class="p">,</span>
+           <span class="na">flags</span><span class="p">:</span> <span class="p">{</span>
+             <span class="na">reflection</span><span class="p">:</span> <span class="kc">true</span> <span class="c1">// (default is true)</span>
+           <span class="p">},</span>
+
+           <span class="na">nodes</span><span class="p">:</span> <span class="p">[</span>
+
+             <span class="c1">// The reflection cube map</span>
+             <span class="c1">// Images taken from: http://hristo.oskov.com/projects/cs418/mp3/</span>
+             <span class="p">{</span>
+               <span class="na">type</span><span class="p">:</span> <span class="s2">"reflect"</span><span class="p">,</span>
+               <span class="na">src</span><span class="p">:</span> <span class="p">[</span>
+                 <span class="s2">"../../textures/reflection/london/pos-x.png"</span><span class="p">,</span>
+                 <span class="s2">"../../textures/reflection/london/neg-x.png"</span><span class="p">,</span>
+                 <span class="s2">"../../textures/reflection/london/pos-y.png"</span><span class="p">,</span>
+                 <span class="s2">"../../textures/reflection/london/neg-y.png"</span><span class="p">,</span>
+                 <span class="s2">"../../textures/reflection/london/pos-z.png"</span><span class="p">,</span>
+                 <span class="s2">"../../textures/reflection/london/neg-z.png"</span>
+               <span class="p">],</span>
+
+               <span class="c1">// 100% texture intensity</span>
+               <span class="na">intensity</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+
+               <span class="na">nodes</span><span class="p">:</span> <span class="p">[</span>
+
+                 <span class="c1">// Specular material</span>
+                 <span class="p">{</span>
+                   <span class="na">type</span><span class="p">:</span> <span class="s2">"material"</span><span class="p">,</span>
+                   <span class="na">color</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="na">r</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                     <span class="na">g</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span>
+                     <span class="na">b</span><span class="p">:</span> <span class="mi">0</span>
+                   <span class="p">},</span>
+
+                   <span class="c1">// Mirror-like reflection when specular == 1.0</span>
+                   <span class="c1">// No reflection at all when specular == 0.0</span>
+                   <span class="na">specular</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
+
+                   <span class="na">nodes</span><span class="p">:</span> <span class="p">[</span>
+
+                     <span class="c1">// Teapot primitive implemented by plugin at</span>
+                     <span class="c1">// http://scenejs.org/api/latest/plugins/node/geometry/teapot.js</span>
+                     <span class="p">{</span>
+                       <span class="na">type</span><span class="p">:</span> <span class="s2">"geometry/teapot"</span>
+                     <span class="p">}</span>
+                   <span class="p">]</span>
+                 <span class="p">}</span>
+               <span class="p">]</span>
+             <span class="p">}</span>
+           <span class="p">]</span>
+         <span class="p">}</span>
+       <span class="p">]</span>
+     <span class="p">}</span>
+   <span class="p">]</span>
+ <span class="p">});</span></code></pre></figure>
+
+<p>Then we can toggle reflectivity on and off for the teapot:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">myScene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">"myFlags"</span><span class="p">,</span>
+    <span class="kd">function</span><span class="p">(</span><span class="nx">flags</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">flags</span><span class="p">.</span><span class="nx">setTransparent</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+    <span class="p">});</span></code></pre></figure>
+
+<ul>
+  <li>The <code class="highlighter-rouge">geometry/teapot</code> in our scene “inherits” the <code class="highlighter-rouge">flags</code> node, where the <code class="highlighter-rouge">flags</code> can be anywhere on the path from
+ the <code class="highlighter-rouge">geometry/teapot</code> up to the scene root. Only the first <code class="highlighter-rouge">flags</code> on the path up to the root will be applied, overriding
+any other higher <code class="highlighter-rouge">flags</code> for the <code class="highlighter-rouge">geometry/teapot</code>.</li>
+  <li>By default, the <code class="highlighter-rouge">flags</code> node <code class="highlighter-rouge">reflection</code> property is <code class="highlighter-rouge">true</code>.</li>
+</ul>
+
+<h2 id="multiple-reflections">Multiple reflections</h2>
+
+<p>Like <code class="highlighter-rouge">texture</code> nodes, multiple reflections can be layered onto the same object, as shown in the example below:
+<br /><br />
+<a href="http://scenejs.org/examples/index.html#reflections_multipleCombined"><img src="http://xeolabs.com/images/scenejs/reflectionLayered.jpg" alt="Reflection Example 4" /></a>
+<a href="http://scenejs.org/examples/index.html#reflections_multipleCombined">Run this demo</a></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">createScene</span><span class="p">({</span>
+    <span class="na">nodes</span><span class="p">:</span> <span class="p">[</span>
+
+        <span class="c1">// Orbiting camera node, implemented by plugin at</span>
+        <span class="c1">// http://scenejs.org/api/latest/plugins/node/cameras/orbit.js</span>
+        <span class="p">{</span>
+            <span class="na">type</span><span class="p">:</span> <span class="s2">"cameras/orbit"</span><span class="p">,</span>
+            <span class="na">yaw</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+            <span class="na">pitch</span><span class="p">:</span> <span class="o">-</span><span class="mi">30</span><span class="p">,</span>
+            <span class="na">zoom</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="na">zoomSensitivity</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+
+            <span class="na">nodes</span><span class="p">:</span> <span class="p">[</span>
+
+                <span class="c1">// London reflection</span>
+                <span class="c1">// Images taken from: http://hristo.oskov.com/projects/cs418/mp3/</span>
+                <span class="p">{</span>
+                    <span class="na">type</span><span class="p">:</span> <span class="s2">"reflect"</span><span class="p">,</span>
+                    <span class="na">src</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="s2">"textures/reflection/london/pos-x.png"</span><span class="p">,</span>
+                        <span class="s2">"textures/reflection/london/neg-x.png"</span><span class="p">,</span>
+                        <span class="s2">"textures/reflection/london/pos-y.png"</span><span class="p">,</span>
+                        <span class="s2">"textures/reflection/london/neg-y.png"</span><span class="p">,</span>
+                        <span class="s2">"textures/reflection/london/pos-z.png"</span><span class="p">,</span>
+                        <span class="s2">"textures/reflection/london/neg-z.png"</span>
+                    <span class="p">],</span>
+                    <span class="na">intensity</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+
+                    <span class="na">nodes</span><span class="p">:</span> <span class="p">[</span>
+
+                        <span class="c1">// Cloudy sky reflection</span>
+                        <span class="p">{</span>
+                            <span class="na">type</span><span class="p">:</span> <span class="s2">"reflect"</span><span class="p">,</span>
+                            <span class="na">src</span><span class="p">:</span> <span class="p">[</span>
+                                <span class="s2">"textures/reflection/clouds/a.png"</span><span class="p">,</span>
+                                <span class="s2">"textures/reflection/clouds/b.png"</span><span class="p">,</span>
+                                <span class="s2">"textures/reflection/clouds/top.png"</span><span class="p">,</span>
+                                <span class="s2">"textures/reflection/clouds/bottom.png"</span><span class="p">,</span>
+                                <span class="s2">"textures/reflection/clouds/c.png"</span><span class="p">,</span>
+                                <span class="s2">"textures/reflection/clouds/d.png"</span>
+                            <span class="p">],</span>
+                            <span class="na">intensity</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+
+                            <span class="na">nodes</span><span class="p">:</span> <span class="p">[</span>
+
+                                <span class="c1">// Specular material</span>
+                                <span class="p">{</span>
+                                    <span class="na">type</span><span class="p">:</span> <span class="s2">"material"</span><span class="p">,</span>
+                                    <span class="na">color</span><span class="p">:</span> <span class="p">{</span> <span class="na">r</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">g</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mf">1.0</span> <span class="p">},</span>
+
+                                    <span class="c1">// Mirror-like reflection when specular == 1.0</span>
+                                    <span class="c1">// No reflection at all when specular == 0.0</span>
+                                    <span class="na">specular</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+
+                                    <span class="na">nodes</span><span class="p">:</span> <span class="p">[</span>
+
+                                        <span class="c1">// Teapot primitive implemented by plugin at</span>
+                                        <span class="c1">// http://scenejs.org/api/latest/plugins/node/geometry/teapot.js</span>
+                                        <span class="p">{</span>
+                                            <span class="na">type</span><span class="p">:</span> <span class="s2">"geometry/teapot"</span>
+                                        <span class="p">}</span>
+                                    <span class="p">]</span>
+                                <span class="p">}</span>
+                            <span class="p">]</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span></code></pre></figure>
+
+<ul>
+  <li>Each of the nested <code class="highlighter-rouge">reflect</code> nodes in our scene has the same value for <code class="highlighter-rouge">intensity</code>, so they both contribute the same amount to the <code class="highlighter-rouge">teapot</code>.</li>
+</ul>
+
+<h2 id="reflections-on-textured-objects">Reflections on textured objects:</h2>
+
+<p>Finally, just to show how the <code class="highlighter-rouge">reflect</code> node is designed so that you can slap around almost anything you already
+have in your scene, let’s finish off with an example in which we’ve taken a raptor imported with an <code class="highlighter-rouge">import/obj</code> node
+and wrapped it with a <code class="highlighter-rouge">reflect</code> to make it shiny:
+<br /><br />
+<a href="http://scenejs.org/examples.html?page=reflectionWithOBJImport"><img src="http://xeolabs.com/images/scenejs/reflectionToOBJ.jpg" alt="Reflection Example 3" /></a>
+<a href="http://scenejs.org/examples.html?page=reflectionWithOBJImport">Run this demo</a></p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>In this tutorial I’ve shown you how to use the <code class="highlighter-rouge">reflect</code> node to make geometry
+   appear to reflect its environment. Reflections are designed so that you can wrap them around any subgraph to make objects
+    with specular materials reflective, without modifying the contents of the subgraph. The amount of reflectivity is governed by the
+    combination of the <code class="highlighter-rouge">reflect</code> node’s <code class="highlighter-rouge">intensity</code> property with the <code class="highlighter-rouge">specular</code> property on the <code class="highlighter-rouge">material</code> nodes around the
+     geometries in the subgraph. You can vary the amount of reflection using the <code class="highlighter-rouge">reflect</code> node’s <code class="highlighter-rouge">intensity</code> property,
+     which may avoid needing to adjust the <code class="highlighter-rouge">specular</code> properties on those <code class="highlighter-rouge">material</code> nodes.
+<br /><br /></p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="http://xeolabs.com/images/portraitCoffeeNormal.png" class="bio-photo" alt="@xeographics bio photo"></a>
+<h3><a href="http://xeolabs.com/about/">@xeographics</a></h3>
+<p>Lindsay Kay<br>3D graphics programmer</p>
+<a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+        </div>
+        <p class="byline"><strong>Reflective Surfaces in SceneJS</strong> was published on <time datetime="2014-07-24T00:00:00-04:00" itemprop="datePublished">July 24, 2014</time> and last modified on <time datetime="2014-07-24" itemprop="dateModified">July 24, 2014</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://xeolabs.com/about" title="About @xeographics" itemprop="url">@xeographics</a></span></span>.</p>
+      </footer>
+
+        
+        <br><br>sudo
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'xeographics'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+    </div><!-- /.article-wrap -->
+  </article>
+
+</div><!-- /#main -->
+
+
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://xeolabs.com/articles">View all articles</a>)</small></h4>
+    <ul>
+    
+      
+      
+      
+      <li><a href="http://xeolabs.com/articles/xeogl-picking" title="GPU-Assisted Picking in xeogl">GPU-Assisted Picking in xeogl</a></li>
+      
+    
+      
+      
+      
+      <li><a href="http://xeolabs.com/articles/xeogl-annotations" title="Annotations in xeogl">Annotations in xeogl</a></li>
+      
+    
+      
+      
+      
+      <li><a href="http://xeolabs.com/articles/xeogl-and-zspace" title="Developing xeogl Apps for zSpace VR/AR Systems">Developing xeogl Apps for zSpace VR/AR Systems</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2017 @xeographics. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://xeolabs.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://xeolabs.com/assets/js/scripts.min.js"></script>
+
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'xeographics'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+</body>
+</html>

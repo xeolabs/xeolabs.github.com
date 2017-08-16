@@ -1,0 +1,671 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Creating your own Scene Node Types &#8211; xeolabs</title>
+<meta name="description" content="Extending the SceneJS API">
+<meta name="keywords" content="scenejs, tutorial, extending">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xeolabs.com/images/">
+<meta name="twitter:title" content="Creating your own Scene Node Types">
+<meta name="twitter:description" content="Extending the SceneJS API">
+<meta name="twitter:creator" content="@xeographics">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Creating your own Scene Node Types">
+<meta property="og:description" content="Extending the SceneJS API">
+<meta property="og:url" content="http://xeolabs.com/articles/scenejs-node-types">
+<meta property="og:site_name" content="xeolabs">
+
+
+
+
+
+<link rel="canonical" href="http://xeolabs.com/articles/scenejs-node-types">
+<link href="http://xeolabs.com/feed.xml" type="application/atom+xml" rel="alternate" title="xeolabs Feed">
+<link rel="author" href="https://plus.google.com/u/0/110983138227486752827/posts?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://xeolabs.com/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="http://xeolabs.com/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://xeolabs.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://xeolabs.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://xeolabs.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://xeolabs.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://xeolabs.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://xeolabs.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://xeolabs.com/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="article" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://xeolabs.com">xeolabs</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <ul>
+		        
+				<li><a href="http://xeolabs.com/about" >About</a></li>
+		        
+				<li><a href="http://xeolabs.com/articles" >Articles</a></li>
+		        
+				<li><a href="http://scenejs.org" target="_blank">SceneJS</a></li>
+		        
+				<li><a href="http://xeogl.org" target="_blank">xeogl</a></li>
+		        
+				<li><a href="http://biodigitalhuman.com" target="_blank">BioDigitalHuman</a></li>
+		        
+				<li><a href="http://bimsurfer.org" target="_blank">BIMSurfer</a></li>
+		        
+
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <div class="article-author-top">
+    <img src="http://xeolabs.com/images/portraitCoffeeNormal.png" class="bio-photo" alt="@xeographics bio photo"></a>
+<h3><a href="http://xeolabs.com/about/">@xeographics</a></h3>
+<p>Lindsay Kay<br>3D graphics programmer</p>
+<a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+  </div>
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <div class="headline-wrap">
+      <h1 itemprop="name">Creating your own Scene Node Types</h1>
+        <p style="font-weight:bold; font-style:italic;"><time datetime="2013-10-28T00:00:00-04:00" itemprop="datePublished">October 28, 2013</time></p>
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap" itemprop="text">
+      <section id="table-of-contents" class="toc">
+  <header>
+    <h3>Contents</h3>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#creating-a-new-node-type" id="markdown-toc-creating-a-new-node-type">Creating a new node type</a></li>
+  <li><a href="#using-the-new-node-type" id="markdown-toc-using-the-new-node-type">Using the new node type</a></li>
+  <li><a href="#using-3rd-party-libraries-in-nodes" id="markdown-toc-using-3rd-party-libraries-in-nodes">Using 3rd-Party Libraries in Nodes</a></li>
+  <li><a href="#publishing-data-from-nodes" id="markdown-toc-publishing-data-from-nodes">Publishing data from nodes</a></li>
+  <li><a href="#task-tracking-on-nodes" id="markdown-toc-task-tracking-on-nodes">Task tracking on nodes</a></li>
+  <li><a href="#scene-compilation-hooks" id="markdown-toc-scene-compilation-hooks">Scene compilation hooks</a></li>
+</ul>
+
+  </div>
+</section>
+<!-- /#table-of-contents -->
+
+<p>You can define new node types for SceneJS via plugins. This extension mechanism lets you
+create your own higher-level scene components that just slot straight into your scene graphs as nodes which
+you can create and update as usual via the API, in the same way as for the core node types.
+<br /><br />
+In this article I’ll show you how to define a new node type and how to use it within a scene graph. The examples page also
+has <a href="http://scenejs.org/examples.html?tags=plugins">several examples</a> that show how to define and use node types.</p>
+
+<h2 id="creating-a-new-node-type">Creating a new node type</h2>
+
+<p>You provide a class definition for a new node type as a plugin, which SceneJS will automatically load on-demand
+the first time you try to instantiate it within your scene graph.
+<br /><br />
+Our trivial example plugin shows how these custom node types are often a kind of actor/facade that creates additional
+scene nodes within its subgraph, while providing nice abstract accessor methods which update the state of those nodes
+in some way:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">addType</span><span class="p">(</span><span class="s2">"demos/color"</span><span class="p">,</span> <span class="p">{</span>
+
+    <span class="c1">// Constructor</span>
+    <span class="c1">// The params are the attributes which are specified</span>
+    <span class="c1">// for instances of this node type within scene definitions</span>
+    <span class="na">construct</span><span class="p">:</span><span class="kd">function</span> <span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">_material</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">addNode</span><span class="p">({</span>
+            <span class="na">type</span><span class="p">:</span><span class="s2">"material"</span><span class="p">,</span>
+
+            <span class="c1">// Custom node types are responsible for</span>
+            <span class="c1">// attaching any child nodes that are</span>
+            <span class="c1">// specified in their 'nodes' properties</span>
+            <span class="na">nodes</span><span class="p">:</span><span class="nx">params</span><span class="p">.</span><span class="nx">nodes</span>
+        <span class="p">});</span>
+
+        <span class="c1">// Set initial color, if provided</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">color</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">setColor</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">color</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+
+    <span class="c1">// Setter on node to set its color</span>
+    <span class="na">setColor</span><span class="p">:</span><span class="kd">function</span> <span class="p">(</span><span class="nx">color</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_material</span><span class="p">.</span><span class="nx">setColor</span><span class="p">(</span><span class="nx">color</span><span class="p">);</span>
+    <span class="p">},</span>
+
+    <span class="c1">// Getter on node to get its color</span>
+    <span class="na">getColor</span><span class="p">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_material</span><span class="p">.</span><span class="nx">getColor</span><span class="p">();</span>
+    <span class="p">},</span>
+
+    <span class="c1">// Node destructor, not actually needed for this</span>
+    <span class="c1">// example. Use these to clean up any resources</span>
+    <span class="c1">// created by the node.</span>
+    <span class="c1">//</span>
+    <span class="c1">// Note that when the node is destroyed, SceneJS</span>
+    <span class="c1">// will automatically destroy any child nodes</span>
+    <span class="c1">// of our node, so there's no need to destroy them</span>
+    <span class="c1">// manually with a destructor.</span>
+    <span class="na">destroy</span><span class="p">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+<h2 id="using-the-new-node-type">Using the new node type</h2>
+
+<p>Let’s assume that you’ve downloaded the SceneJS plugins bundle as described in the <a href="/articles/scenejs-quick-start">Quick Start</a> tutorial,
+which means that we</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">.
+├── scenejs.js
+├── plugins
+└── firstExample.html</code></pre></figure>
+
+<p>We have the SceneJS library, the SceneJS plugins bundle, and an example HTML page which renders our teapot.
+  <br /><br /></p>
+
+<p>and
+ that you’ve pointed SceneJS at where you unzipped them:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">configure</span><span class="p">({</span>
+    <span class="na">pluginPath</span><span class="p">:</span> <span class="s2">"./plugins"</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>We’ll also assume that our new node type is saved as <code class="highlighter-rouge">color.js</code> within the directory structure below:
+<br /><br /></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">.
+└── plugins
+    └── node
+        └── demos
+            └── color.js</code></pre></figure>
+
+<p>Now that SceneJS will be able to load the plugin listed above, you can create a scene that includes an instance of it (along with a teapot, which comes from another plugin):</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="nx">SceneJS</span><span class="p">.</span><span class="nx">createScene</span><span class="p">({</span>
+    <span class="na">nodes</span><span class="p">:[</span>
+        <span class="p">{</span>
+            <span class="na">type</span><span class="p">:</span><span class="s2">"lookAt"</span><span class="p">,</span>
+            <span class="na">eye</span><span class="p">:{</span> <span class="na">x</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span> <span class="na">z</span><span class="p">:</span><span class="mi">8</span> <span class="p">},</span>
+
+            <span class="na">nodes</span><span class="p">:[</span>
+
+                <span class="c1">// Node type defined by our new plugin, served from:</span>
+                <span class="c1">// ./plugins/node/demos/color.js</span>
+                <span class="p">{</span>
+                    <span class="na">type</span><span class="p">:</span><span class="s2">"demos/color"</span><span class="p">,</span>
+                    <span class="na">id</span><span class="p">:</span> <span class="s2">"myColor"</span><span class="p">,</span>
+                    <span class="na">color</span><span class="p">:</span> <span class="p">{</span> <span class="na">r</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">g</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mf">0.3</span> <span class="p">},</span>
+
+                    <span class="c1">// Child nodes specified for custom nodes are</span>
+                    <span class="c1">// expected to be created within the custom</span>
+                    <span class="c1">// types' constructors (see this in the custom</span>
+                    <span class="c1">// node type's constructor above)</span>
+                    <span class="na">nodes</span><span class="p">:[</span>
+
+                        <span class="c1">// Teapot primitive, implemented by plugin at</span>
+                        <span class="c1">// ./plugins/node/geometry/teapot.js</span>
+                        <span class="p">{</span>
+                            <span class="na">type</span><span class="p">:</span><span class="s2">"geometry/teapot"</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>As mentioned, when SceneJS parses that instance of our <code class="highlighter-rouge">demos/color</code> node type, it’s going to dynamically load our plugin script,
+which will install the plugin type, which SceneJS will then instantiate to create the node.
+<br /><br />
+See how in the scene we are providing a child geometry for our node. Within its constructor (the <code class="highlighter-rouge">init</code> method in
+the node type definition plugin above) the custom node type is responsible for inserting  specified child node(s) into
+the subgraph it creates under itself. That’s because only the node type knows exactly where the child nodes should be located within its subgraph.
+<br /><br />
+Now lets get the node instance and use one of its accessor methods to periodically switch its color property.
+<br /><br />
+Note that since our node originates from a plugin that will be loaded on-demand, we need to get the node asynchronously
+using a callback (instead of synchronously, like we can with instances of core node types):</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="nx">scene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">"myColor"</span><span class="p">,</span>
+        <span class="kd">function</span><span class="p">(</span><span class="nx">myColor</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+                <span class="nx">myColor</span><span class="p">.</span><span class="nx">setColor</span><span class="p">({</span>
+                    <span class="na">r</span><span class="p">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">(),</span>
+                    <span class="na">g</span><span class="p">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">(),</span>
+                    <span class="na">b</span><span class="p">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span>
+                <span class="p">});</span>
+            <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+        <span class="p">});</span></code></pre></figure>
+
+<p>See that setColor method, which is defined by our node type?</p>
+
+<ul>
+  <li><a href="http://scenejs.org/examples.html?page=basicCustomNodeDef">Run this example</a></li>
+</ul>
+
+<h1 id="using-3rd-party-libraries-in-nodes">Using 3rd-Party Libraries in Nodes</h1>
+
+<p>SceneJS bundles RequireJS, so that plugins can dynamically load support libraries, such as those from 3rd-party vendors.
+<br /><br />
+Support libraries used by custom node types are conventionally kept in a <code class="highlighter-rouge">lib</code> subdirectory within your plugins directory:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">.
+├── scenejs.js
+├── plugins
+│   ├── lib
+│   │   ├── someLibrary.js
+│   │   └── someOtherLibrary.js
+│   └── node
+└── firstExample.html</code></pre></figure>
+
+<p><br /><br />
+Custom node types can then require the dependencies using a <em>scenejsPluginDeps</em> prefix:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="nx">require</span><span class="p">([</span>
+
+        <span class="c1">// This prefix routes to the 3rd-party libs directory</span>
+        <span class="c1">// containing resources used by plugins</span>
+        <span class="s2">"scenejsPluginDeps/someLibrary.js"</span>
+    <span class="p">],</span>
+        <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+
+            <span class="nx">SceneJS</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">addType</span><span class="p">(</span><span class="s2">"foo/myCustomNodeType"</span><span class="p">,</span> <span class="p">{</span>
+
+                <span class="na">construct</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="c1">// Now we can use that library in our node</span>
+                    <span class="c1">// ...</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="p">});</span></code></pre></figure>
+
+<p>SceneJS synchronises that RequireJS <code class="highlighter-rouge">scenejsPluginDeps</code> path with the current <a href="#serving-plugins-yourself">pluginPath configuration</a>.
+<br /><br />
+As an example, the bundled <a href="https://github.com/xeolabs/scenejs/blob/v4.0/api/latest/plugins/node/canvas/capture.js">canvas/capture</a> node type
+uses the 3rd-party <code class="highlighter-rouge">canvas2image</code> library to capture the canvas to an image. Run a demo of that node
+<a href="http://scenejs.org/examples.html?page=canvasCapture">here</a>.</p>
+
+<h1 id="publishing-data-from-nodes">Publishing data from nodes</h1>
+
+<p>Sometimes we want our nodes to publish some data that we can subscribe to via the API.
+<br /><br />
+Here’s a <code class="highlighter-rouge">growingTeapot</code> node, which grows in height along the Y-axis, then publishes its height when it reaches a certain value:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">addType</span><span class="p">(</span><span class="s2">"growingTeapot"</span><span class="p">,</span> <span class="p">{</span>
+
+    <span class="c1">// Node constructor.</span>
+    <span class="na">construct</span><span class="p">:</span><span class="kd">function</span> <span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="c1">// Our node will contain a teapot that grows in height on the Y-axis</span>
+        <span class="kd">var</span> <span class="nx">scale</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">addNode</span><span class="p">({</span>
+            <span class="na">type</span><span class="p">:</span><span class="s2">"scale"</span><span class="p">,</span>
+            <span class="na">x</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+            <span class="na">y</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+            <span class="na">z</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+            <span class="na">nodes</span><span class="p">:[</span>
+
+                <span class="c1">// Green material</span>
+                <span class="p">{</span>
+                    <span class="na">type</span><span class="p">:</span><span class="s2">"material"</span><span class="p">,</span>
+                    <span class="na">color</span><span class="p">:{</span> <span class="na">r</span><span class="p">:</span><span class="mf">0.6</span><span class="p">,</span> <span class="na">g</span><span class="p">:</span><span class="mf">0.6</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span><span class="mf">1.0</span> <span class="p">},</span>
+                    <span class="na">nodes</span><span class="p">:[</span>
+
+                        <span class="c1">// Teapot primitive,</span>
+                        <span class="c1">// implemented by plugin at</span>
+                        <span class="c1">// http://scenejs.org/api/latest/plugins/node/geometry/teapot.js</span>
+                        <span class="p">{</span>
+                            <span class="na">type</span><span class="p">:</span><span class="s2">"geometry/teapot"</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">});</span>
+
+        <span class="c1">// Start growing the teapot within the scene animation loop</span>
+        <span class="kd">var</span> <span class="nx">ySize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_tick</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getScene</span><span class="p">().</span><span class="nx">on</span><span class="p">(</span><span class="s2">"tick"</span><span class="p">,</span>
+            <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="nx">ySize</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">self</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="s2">"teapotGrown"</span><span class="p">,</span> <span class="p">{</span>
+                       <span class="na">newHeight</span><span class="p">:</span><span class="nx">ySize</span>
+                    <span class="p">});</span>
+
+                    <span class="c1">// Unsubscribe from scene render loop</span>
+                    <span class="nx">self</span><span class="p">.</span><span class="nx">getScene</span><span class="p">().</span><span class="nx">off</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">_tick</span><span class="p">);</span>
+                    <span class="k">return</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="nx">scale</span><span class="p">.</span><span class="nx">setY</span><span class="p">(</span><span class="nx">ySize</span> <span class="o">+=</span> <span class="mf">0.01</span><span class="p">);</span>
+            <span class="p">});</span>
+    <span class="p">},</span>
+
+    <span class="c1">// Node destructor, unsubscribes from scene tick</span>
+    <span class="na">destroy</span><span class="p">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">getScene</span><span class="p">().</span><span class="nx">off</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_tick</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>We’ll create a scene graph containing this node:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Create a scene that contains an instance of our node type</span>
+<span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="nx">SceneJS</span><span class="p">.</span><span class="nx">createScene</span><span class="p">({</span>
+    <span class="na">nodes</span><span class="p">:[</span>
+
+        <span class="c1">// Mouse-orbited camera, implemented by plugin at</span>
+        <span class="c1">// http://scenejs.org/api/latest/plugins/node/cameras/orbit.js</span>
+        <span class="p">{</span>
+            <span class="na">type</span><span class="p">:</span><span class="s2">"cameras/orbit"</span><span class="p">,</span>
+            <span class="na">yaw</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span>
+            <span class="na">pitch</span><span class="p">:</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span>
+            <span class="na">zoom</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span>
+            <span class="na">zoomSensitivity</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+            <span class="na">nodes</span><span class="p">:[</span>
+
+                <span class="c1">// An instance of our node type</span>
+                <span class="p">{</span>
+                    <span class="na">type</span><span class="p">:</span><span class="s2">"growingTeapot"</span><span class="p">,</span>
+                    <span class="na">id</span><span class="p">:</span><span class="s2">"myGrowingTeapot"</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Then we’ll get that node and subscribe to its publication:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Get the custom node</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nx">getNode</span><span class="p">(</span><span class="s2">"myGrowingTeapot"</span><span class="p">,</span>
+
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">myGrowingTeapot</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="c1">// Subscribe to its publication topic</span>
+        <span class="nx">myGrowingTeapot</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"teapotGrown"</span><span class="p">,</span>
+
+            <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+
+                <span class="c1">// Show the publication in an alert</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+            <span class="p">});</span>
+    <span class="p">});</span></code></pre></figure>
+
+<ul>
+  <li><a href="http://scenejs.org/examples.html?page=customNodeDefWithPublications">Run this example</a></li>
+</ul>
+
+<h1 id="task-tracking-on-nodes">Task tracking on nodes</h1>
+
+<p>Sometimes our nodes will run tasks that we’ll want to monitor progress on.
+<br /><br />
+Here’s a defintion for that growing teapot node again, this time using <code class="highlighter-rouge">taskStarted</code>, <code class="highlighter-rouge">taskFinished</code>
+and <code class="highlighter-rouge">taskFailed</code>  methods to notify SceneJS of its progress while it grows. SceneJS can relay those
+notifications to us as a count of tasks in progress, as we’ll see further down.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">addType</span><span class="p">(</span><span class="s2">"myGrowingTeapot"</span><span class="p">,</span> <span class="p">{</span>
+
+    <span class="c1">// Node constructor.</span>
+    <span class="na">construct</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="c1">// Our node will contain a teapot that grows in height on the Y-axis</span>
+        <span class="kd">var</span> <span class="nx">scale</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">addNode</span><span class="p">({</span>
+            <span class="na">type</span><span class="p">:</span> <span class="s2">"scale"</span><span class="p">,</span>
+            <span class="na">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="na">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="na">z</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="na">nodes</span><span class="p">:</span> <span class="p">[</span>
+
+                <span class="c1">// Green material</span>
+                <span class="p">{</span>
+                    <span class="na">type</span><span class="p">:</span> <span class="s2">"material"</span><span class="p">,</span>
+                    <span class="na">color</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="na">r</span><span class="p">:</span> <span class="mf">0.6</span><span class="p">,</span>
+                        <span class="na">g</span><span class="p">:</span> <span class="mf">0.6</span><span class="p">,</span>
+                        <span class="na">b</span><span class="p">:</span> <span class="mf">1.0</span>
+                    <span class="p">},</span>
+                    <span class="na">nodes</span><span class="p">:</span> <span class="p">[</span>
+
+                        <span class="c1">// Teapot primitive,</span>
+                        <span class="c1">// implemented by plugin at</span>
+                        <span class="c1">// http://scenejs.org/api/latest/plugins/node/geometry/teapot.js</span>
+                        <span class="p">{</span>
+                            <span class="na">type</span><span class="p">:</span> <span class="s2">"geometry/teapot"</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">});</span>
+
+        <span class="c1">// Notify that our node is starting its task</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_taskId</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">taskStarted</span><span class="p">(</span><span class="s2">"Teapot growing"</span><span class="p">);</span>
+
+        <span class="c1">// Start growing the teapot within the scene animation loop</span>
+        <span class="kd">var</span> <span class="nx">ySize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_tick</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getScene</span><span class="p">().</span><span class="nx">on</span><span class="p">(</span><span class="s2">"tick"</span><span class="p">,</span>
+
+            <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="nx">ySize</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+
+                    <span class="c1">// Notify that task has completed</span>
+                    <span class="nx">self</span><span class="p">.</span><span class="nx">_taskId</span> <span class="o">=</span> <span class="nx">self</span><span class="p">.</span><span class="nx">taskFinished</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">_taskId</span><span class="p">);</span>
+
+                    <span class="c1">// Unsubscribe from scene render loop</span>
+                    <span class="nx">self</span><span class="p">.</span><span class="nx">getScene</span><span class="p">().</span><span class="nx">off</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">_tick</span><span class="p">);</span>
+
+                    <span class="k">return</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="nx">scale</span><span class="p">.</span><span class="nx">setY</span><span class="p">(</span><span class="nx">ySize</span> <span class="o">+=</span> <span class="mf">0.002</span><span class="p">);</span>
+            <span class="p">});</span>
+
+        <span class="c1">//----------------------------------------------------------------</span>
+        <span class="c1">// If the task were to fail (not relevant to this example),</span>
+        <span class="c1">// we would notify of failure as shown in the commented-out</span>
+        <span class="c1">// line below - uncomment that to see what happens when you</span>
+        <span class="c1">// notify of task failure.</span>
+        <span class="c1">//----------------------------------------------------------------</span>
+
+        <span class="c1">// this._taskId = this.taskFailed(this._taskId);</span>
+    <span class="p">},</span>
+
+    <span class="c1">// Node destructor, unsubscribes from scene tick</span>
+    <span class="c1">// Aborts task if still running, ie. where the node</span>
+    <span class="c1">// is destroyed while the task is in process</span>
+    <span class="na">destroy</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">getScene</span><span class="p">().</span><span class="nx">off</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_tick</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_taskId</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">_taskId</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">taskFinished</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_taskId</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Now create a scene that contains an instance of our node type:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="nx">SceneJS</span><span class="p">.</span><span class="nx">createScene</span><span class="p">({</span>
+    <span class="na">nodes</span><span class="p">:</span> <span class="p">[</span>
+
+        <span class="c1">// Mouse-orbited camera, implemented by plugin at</span>
+        <span class="c1">// http://scenejs.org/api/latest/plugins/node/cameras/orbit.js</span>
+        <span class="p">{</span>
+            <span class="na">type</span><span class="p">:</span> <span class="s2">"cameras/orbit"</span><span class="p">,</span>
+            <span class="na">yaw</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+            <span class="na">pitch</span><span class="p">:</span> <span class="o">-</span><span class="mi">30</span><span class="p">,</span>
+            <span class="na">zoom</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="na">zoomSensitivity</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="na">nodes</span><span class="p">:</span> <span class="p">[</span>
+
+                <span class="c1">// An instance of our node type</span>
+                <span class="p">{</span>
+                    <span class="na">type</span><span class="p">:</span> <span class="s2">"myGrowingTeapot"</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Periodically query and log scene busyness status to the console:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">status</span> <span class="o">=</span> <span class="nx">scene</span><span class="p">.</span><span class="nx">getStatus</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">status</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Scene status not found"</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">status</span><span class="p">.</span><span class="nx">destroyed</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Scene destroyed"</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Scene tasks in progress: "</span> <span class="o">+</span> <span class="nx">status</span><span class="p">.</span><span class="nx">numTasks</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">100</span><span class="p">);</span></code></pre></figure>
+
+<ul>
+  <li><a href="http://scenejs.org/examples.html?page=customNodeDefWithTasks">Run this example</a></li>
+</ul>
+
+<h1 id="scene-compilation-hooks">Scene compilation hooks</h1>
+
+<p>TODO</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="http://xeolabs.com/images/portraitCoffeeNormal.png" class="bio-photo" alt="@xeographics bio photo"></a>
+<h3><a href="http://xeolabs.com/about/">@xeographics</a></h3>
+<p>Lindsay Kay<br>3D graphics programmer</p>
+<a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+        </div>
+        <p class="byline"><strong>Creating your own Scene Node Types</strong> was published on <time datetime="2013-10-28T00:00:00-04:00" itemprop="datePublished">October 28, 2013</time> and last modified on <time datetime="2013-05-31" itemprop="dateModified">May 31, 2013</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://xeolabs.com/about" title="About @xeographics" itemprop="url">@xeographics</a></span></span>.</p>
+      </footer>
+
+        
+        <br><br>sudo
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'xeographics'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+    </div><!-- /.article-wrap -->
+  </article>
+
+</div><!-- /#main -->
+
+
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://xeolabs.com/articles">View all articles</a>)</small></h4>
+    <ul>
+    
+      
+      
+      
+      <li><a href="http://xeolabs.com/articles/xeogl-picking" title="GPU-Assisted Picking in xeogl">GPU-Assisted Picking in xeogl</a></li>
+      
+    
+      
+      
+      
+      <li><a href="http://xeolabs.com/articles/xeogl-annotations" title="Annotations in xeogl">Annotations in xeogl</a></li>
+      
+    
+      
+      
+      
+      <li><a href="http://xeolabs.com/articles/xeogl-and-zspace" title="Developing xeogl Apps for zSpace VR/AR Systems">Developing xeogl Apps for zSpace VR/AR Systems</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2017 @xeographics. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://xeolabs.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://xeolabs.com/assets/js/scripts.min.js"></script>
+
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'xeographics'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+</body>
+</html>

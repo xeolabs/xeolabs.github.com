@@ -1,0 +1,369 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Developing xeogl Apps for zSpace VR/AR Systems &#8211; xeolabs</title>
+<meta name="description" content="Snagged a zSpace 300 to write some xeogl demos for it">
+<meta name="keywords" content="xeogl, webgl, zspace, mixedreality, 3D">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xeolabs.com/images/">
+<meta name="twitter:title" content="Developing xeogl Apps for zSpace VR/AR Systems">
+<meta name="twitter:description" content="Snagged a zSpace 300 to write some xeogl demos for it">
+<meta name="twitter:creator" content="@xeographics">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Developing xeogl Apps for zSpace VR/AR Systems">
+<meta property="og:description" content="Snagged a zSpace 300 to write some xeogl demos for it">
+<meta property="og:url" content="http://xeolabs.com/articles/xeogl-and-zspace">
+<meta property="og:site_name" content="xeolabs">
+
+
+
+
+
+<link rel="canonical" href="http://xeolabs.com/articles/xeogl-and-zspace">
+<link href="http://xeolabs.com/feed.xml" type="application/atom+xml" rel="alternate" title="xeolabs Feed">
+<link rel="author" href="https://plus.google.com/u/0/110983138227486752827/posts?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://xeolabs.com/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="http://xeolabs.com/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://xeolabs.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://xeolabs.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://xeolabs.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://xeolabs.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://xeolabs.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://xeolabs.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://xeolabs.com/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="article" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://xeolabs.com">xeolabs</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <ul>
+		        
+				<li><a href="http://xeolabs.com/about" >About</a></li>
+		        
+				<li><a href="http://xeolabs.com/articles" >Articles</a></li>
+		        
+				<li><a href="http://scenejs.org" target="_blank">SceneJS</a></li>
+		        
+				<li><a href="http://xeogl.org" target="_blank">xeogl</a></li>
+		        
+				<li><a href="http://biodigitalhuman.com" target="_blank">BioDigitalHuman</a></li>
+		        
+				<li><a href="http://bimsurfer.org" target="_blank">BIMSurfer</a></li>
+		        
+
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <div class="article-author-top">
+    <img src="http://xeolabs.com/images/portraitCoffeeNormal.png" class="bio-photo" alt="@xeographics bio photo"></a>
+<h3><a href="http://xeolabs.com/about/">@xeographics</a></h3>
+<p>Lindsay Kay<br>3D graphics programmer</p>
+<a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+  </div>
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <div class="headline-wrap">
+      <h1 itemprop="name">Developing xeogl Apps for zSpace VR/AR Systems</h1>
+        <p style="font-weight:bold; font-style:italic;"><time datetime="2017-03-19T00:00:00-04:00" itemprop="datePublished">March 19, 2017</time></p>
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap" itemprop="text">
+      <section id="table-of-contents" class="toc">
+  <header>
+    <h3>Contents</h3>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#zspace-support-in-xeogl" id="markdown-toc-zspace-support-in-xeogl">zSpace support in xeogl</a>    <ul>
+      <li><a href="#detecting-zspace-support" id="markdown-toc-detecting-zspace-support">Detecting zSpace support</a></li>
+      <li><a href="#stylus-tracking" id="markdown-toc-stylus-tracking">Stylus tracking</a></li>
+      <li><a href="#zspacestyluscontrol" id="markdown-toc-zspacestyluscontrol">ZSpaceStylusControl</a></li>
+      <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
+    </ul>
+  </li>
+</ul>
+
+  </div>
+</section>
+<!-- /#table-of-contents -->
+
+<p><a href="http://zspace.com"><strong>zSpace</strong></a> is a technology firm based in Sunnyvale, California that creates mixed reality systems that combine elements of virtual and augmented reality in a specially-built computer system, which has a quad-buffered stereo display that works with IR-tracked active-shuttered glasses and a stylus.</p>
+
+<p><br /><a href="http://xeogl.org"><strong>xeogl</strong></a> is an open-source WebGL-based 3D engine that I’ve been working on for the past year or so.</p>
+
+<p><br />Last year, zSpace loaned me one of their <em>zSpace 300</em> displays so that I could put together some xeogl demos for its beta WebVR support. If you were at <a href="www.gdconf.co">GDC 2017</a>, you might have seen those demos running at the <a href="https://www.khronos.org/news/events/gdc-2017#gdc2017_booth">Khronos booth</a>.</p>
+
+<p><br />
+ <img src="http://xeolabs.com/images/xeogl/zspace/zSpaceDevice.jpg" alt="" /></p>
+
+<p><br />These demos were my first foray into WebVR and were lots of fun to make. If you happen to be using a zSpace 300 right now, go ahead and click these thumbnails to run them: 
+ <br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th><a href="http://xeogl.org/examples/#effects_zspace_geometries"><img src="http://xeolabs.com/images/xeogl/zspace/zspace-geometries.png" alt="" /></a></th>
+      <th><a href="http://xeogl.org/examples/#effects_zspace_gearbox"><img src="http://xeolabs.com/images/xeogl/zspace/zspace-gearbox.png" alt="" /></a></th>
+      <th><a href="http://xeogl.org/examples/#effects_zspace_ReciprocatingSaw"><img src="http://xeolabs.com/images/xeogl/zspace/zspace-saw.png" alt="" /></a></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="http://xeogl.org/examples/#effects_zspace_geometries">Simple geometries</a></td>
+      <td><a href="http://xeogl.org/examples/#effects_zspace_gearbox">Gearbox loaded from glTF</a></td>
+      <td><a href="http://xeogl.org/examples/#effects_zspace_ReciprocatingSaw">Saw loaded from glTF</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="zspace-support-in-xeogl">zSpace support in xeogl</h2>
+
+<p>To support zSpace, I added two new component types to xeogl:</p>
+
+<ul>
+  <li><a href="http://xeogl.org/docs/classes/ZSpaceEffect.html">ZSpaceEffect</a> - renders its scene in quad-buffered stereo while updating the viewing and projection transforms off the zSpace WebVR device events.</li>
+  <li><a href="http://xeogl.org/docs/classes/ZSpaceStylusControl.html">ZSpaceStylusControl</a> - an input control to select and drag entities with the stylus.</li>
+</ul>
+
+<p>Let’s take a quick look at how these components are used.</p>
+
+<p><br />First, I’ll set up a 3D scene by importing a <a href="https://github.com/KhronosGroup/glTF">glTF</a> model into xeogl, using a <a href="http://xeogl.org/docs/classes/GLTFModel.html">GLTFModel</a> component:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="kd">var</span> <span class="nx">model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">GLTFModel</span><span class="p">({</span>
+    <span class="na">src</span><span class="p">:</span> <span class="s2">"models/gltf/2.0/Reciprocating_Saw/PBR-SpecGloss/Reciprocating_Saw.gltf"</span><span class="p">,</span>
+    <span class="na">transform</span><span class="p">:</span> <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">Rotate</span><span class="p">({</span>
+        <span class="na">xyz</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="na">angle</span><span class="p">:</span> <span class="mi">90</span>
+    <span class="p">})</span>
+ <span class="p">});</span>
+ </code></pre></figure>
+
+<p>Our model is the red reciprocating saw shown in the third thumbnail above. I’ve also attached a <a href="http://xeogl.org/docs/classes/Rotate.html">Rotate</a> to our GLTFModel, just to tip it upright so that we can see it more clearly.</p>
+
+<p><br />Now, to view the model on the zSpace display, I’ll simply create a <a href="http://xeogl.org/docs/classes/ZSpaceEffect.html">ZSpaceEffect</a>:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="kd">var</span> <span class="nx">zspaceEffect</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ZSpaceEffect</span><span class="p">();</span>
+ </code></pre></figure>
+
+<p>That activates immediately, rendering whatever we have in our scene in quad-buffered stereo. At this point, we can put on our stereo glasses and see the model rendering in 3D.</p>
+
+<h3 id="detecting-zspace-support">Detecting zSpace support</h3>
+
+<p>The <a href="http://xeogl.org/docs/classes/ZSpaceEffect.html">ZSpaceEffect</a> will fire a “supported” event once it has determined whether or not your browser is running on a zSpace viewer:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="nx">zspaceEffect</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"supported"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">supported</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">supported</span><span class="p">)</span> <span class="p">{</span> 
+         <span class="k">this</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">"This computer is not a ZSpace viewer! Inconceivable."</span><span class="p">);</span>           
+     <span class="p">}</span>
+ <span class="p">});</span>
+ </code></pre></figure>
+
+<h3 id="stylus-tracking">Stylus tracking</h3>
+
+<p>Now let’s track the World-space position and direction of the zSpace stylus. Also, whenever we press button 0 on the stylus while intersecting an entity, we’ll ray-pick the entity with the stylus.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="nx">zspaceEffect</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"stylusPos"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">pos</span><span class="p">)</span> <span class="p">{</span> 
+     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Stylus position: "</span> <span class="o">+</span> <span class="nx">pos</span><span class="p">);</span>
+ <span class="p">});</span>
+    
+ <span class="nx">zspaceEffect</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"stylusDir"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">dir</span><span class="p">)</span> <span class="p">{</span> 
+     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Stylus direction: "</span> <span class="o">+</span> <span class="nx">dir</span><span class="p">);</span>
+ <span class="p">});</span>
+ 
+ <span class="nx">zspaceEffect</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"stylusButton0"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">down</span><span class="p">)</span> <span class="p">{</span> 
+     <span class="k">if</span> <span class="p">(</span><span class="nx">down</span><span class="p">)</span> <span class="p">{</span>
+         <span class="kd">var</span> <span class="nx">hit</span> <span class="o">=</span> <span class="nx">zspaceEffect</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">pick</span><span class="p">({</span>
+             <span class="na">pickSurface</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+             <span class="na">origin</span><span class="p">:</span> <span class="nx">zspaceEffect</span><span class="p">.</span><span class="nx">stylusPos</span><span class="p">,</span>
+             <span class="na">direction</span><span class="p">:</span> <span class="nx">zspaceEffect</span><span class="p">.</span><span class="nx">stylusDir</span>
+         <span class="p">});</span>
+  
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Entity selected with stylus: "</span> <span class="o">+</span> <span class="nx">hit</span><span class="p">.</span><span class="nx">entity</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+     <span class="p">}</span>
+ <span class="p">});</span>
+ </code></pre></figure>
+
+<p>note that we can also just poll the ZSpaceEffect at any time for the current state of the stylus:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="c1">// Get stylus position</span>
+ <span class="kd">var</span> <span class="nx">stylusPos</span> <span class="o">=</span> <span class="nx">zspaceEffect</span><span class="p">.</span><span class="nx">stylusPos</span><span class="p">;</span>
+ <span class="kd">var</span> <span class="nx">stylusDir</span> <span class="o">=</span> <span class="nx">zspaceEffect</span><span class="p">.</span><span class="nx">stylusDir</span><span class="p">;</span>
+ 
+ <span class="c1">// Get button states</span>
+ <span class="kd">var</span> <span class="nx">button0</span> <span class="o">=</span> <span class="nx">zspaceEffect</span><span class="p">.</span><span class="nx">stylusButton0</span><span class="p">;</span> <span class="c1">// Boolean</span>
+ <span class="kd">var</span> <span class="nx">button1</span> <span class="o">=</span> <span class="nx">zspaceEffect</span><span class="p">.</span><span class="nx">stylusButton1</span><span class="p">;</span>
+ <span class="kd">var</span> <span class="nx">button2</span> <span class="o">=</span> <span class="nx">zspaceEffect</span><span class="p">.</span><span class="nx">stylusButton2</span><span class="p">;</span>
+ </code></pre></figure>
+
+<h3 id="zspacestyluscontrol">ZSpaceStylusControl</h3>
+
+<p>In xeogl we’d normally wrap your input controls in reusable components, so I added the <a href="http://xeogl.org/docs/classes/ZSpaceStylusControl.html">ZSpaceStylusControl</a> as an boilerplate/example on which you might base your own zSpace stylus control.</p>
+
+<p><br />This component:</p>
+
+<ul>
+  <li>hooks into the <a href="http://xeogl.org/docs/classes/ZSpaceEffect.html">ZSpaceEffect</a> events we just saw,</li>
+  <li>renders a 3D line segment that appears to extend from the tip of the stylus,</li>
+  <li>grabs intersecting entities when you push button 0, and</li>
+  <li>drags grabbed entities around while button 0 is down.</li>
+</ul>
+
+<p>To use it, all we need to do is add it to our scene:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="kd">var</span> <span class="nx">zspaceStylusControl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">ZSpaceStylusControl</span><span class="p">();</span>
+ </code></pre></figure>
+
+<p>At this point we can see a ray extending from the tip of our stylus, with which we can select and drag entities.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p><strong>zSpace’s support for WebVR is still in beta, so xeogl’s support for zSpace is also in beta.</strong> Therefore, I’ll be changing the implementation of these xeogl components moving forwards, but their API should remain the same. Stay tuned!</p>
+
+<iframe src="//giphy.com/embed/mRdkHVQ1NdUWc" width="480" height="270" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>
+<p><a href="http://giphy.com/gifs/mRdkHVQ1NdUWc">via GIPHY</a></p>
+
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="http://xeolabs.com/images/portraitCoffeeNormal.png" class="bio-photo" alt="@xeographics bio photo"></a>
+<h3><a href="http://xeolabs.com/about/">@xeographics</a></h3>
+<p>Lindsay Kay<br>3D graphics programmer</p>
+<a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+        </div>
+        <p class="byline"><strong>Developing xeogl Apps for zSpace VR/AR Systems</strong> was published on <time datetime="2017-03-19T00:00:00-04:00" itemprop="datePublished">March 19, 2017</time> and last modified on <time datetime="2017-19-03" itemprop="dateModified">2017-19-03</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://xeolabs.com/about" title="About @xeographics" itemprop="url">@xeographics</a></span></span>.</p>
+      </footer>
+
+        
+        <br><br>sudo
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'xeographics'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+    </div><!-- /.article-wrap -->
+  </article>
+
+</div><!-- /#main -->
+
+
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://xeolabs.com/articles">View all articles</a>)</small></h4>
+    <ul>
+    
+      
+      
+      
+      <li><a href="http://xeolabs.com/articles/xeogl-picking" title="GPU-Assisted Picking in xeogl">GPU-Assisted Picking in xeogl</a></li>
+      
+    
+      
+      
+      
+      <li><a href="http://xeolabs.com/articles/xeogl-annotations" title="Annotations in xeogl">Annotations in xeogl</a></li>
+      
+    
+      
+      
+      
+      <li><a href="http://xeolabs.com/articles/xeogl-pbr" title="Adding Physically Based Rendering to xeogl">Adding Physically Based Rendering to xeogl</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2017 @xeographics. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://xeolabs.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://xeolabs.com/assets/js/scripts.min.js"></script>
+
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'xeographics'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+</body>
+</html>

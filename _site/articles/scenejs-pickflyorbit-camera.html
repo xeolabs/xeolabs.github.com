@@ -1,0 +1,303 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>SceneJS Pick-Fly-Orbit Camera &#8211; xeolabs</title>
+<meta name="description" content="Camera node which flies to whatever you pick and orbits it">
+<meta name="keywords" content="scenejs, tutorial, picking, camera">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xeolabs.com/images/">
+<meta name="twitter:title" content="SceneJS Pick-Fly-Orbit Camera">
+<meta name="twitter:description" content="Camera node which flies to whatever you pick and orbits it">
+<meta name="twitter:creator" content="@xeographics">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SceneJS Pick-Fly-Orbit Camera">
+<meta property="og:description" content="Camera node which flies to whatever you pick and orbits it">
+<meta property="og:url" content="http://xeolabs.com/articles/scenejs-pickflyorbit-camera">
+<meta property="og:site_name" content="xeolabs">
+
+
+
+
+
+<link rel="canonical" href="http://xeolabs.com/articles/scenejs-pickflyorbit-camera">
+<link href="http://xeolabs.com/feed.xml" type="application/atom+xml" rel="alternate" title="xeolabs Feed">
+<link rel="author" href="https://plus.google.com/u/0/110983138227486752827/posts?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://xeolabs.com/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="http://xeolabs.com/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://xeolabs.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://xeolabs.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://xeolabs.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://xeolabs.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://xeolabs.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://xeolabs.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://xeolabs.com/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="article" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://xeolabs.com">xeolabs</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <ul>
+		        
+				<li><a href="http://xeolabs.com/about" >About</a></li>
+		        
+				<li><a href="http://xeolabs.com/articles" >Articles</a></li>
+		        
+				<li><a href="http://scenejs.org" target="_blank">SceneJS</a></li>
+		        
+				<li><a href="http://xeogl.org" target="_blank">xeogl</a></li>
+		        
+				<li><a href="http://biodigitalhuman.com" target="_blank">BioDigitalHuman</a></li>
+		        
+				<li><a href="http://bimsurfer.org" target="_blank">BIMSurfer</a></li>
+		        
+
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <div class="article-author-top">
+    <img src="http://xeolabs.com/images/portraitCoffeeNormal.png" class="bio-photo" alt="@xeographics bio photo"></a>
+<h3><a href="http://xeolabs.com/about/">@xeographics</a></h3>
+<p>Lindsay Kay<br>3D graphics programmer</p>
+<a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+  </div>
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <div class="headline-wrap">
+      <h1 itemprop="name">SceneJS Pick-Fly-Orbit Camera</h1>
+        <p style="font-weight:bold; font-style:italic;"><time datetime="2013-10-28T00:00:00-04:00" itemprop="datePublished">October 28, 2013</time></p>
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap" itemprop="text">
+      <section id="table-of-contents" class="toc">
+  <header>
+    <h3>Contents</h3>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#usage" id="markdown-toc-usage">Usage</a></li>
+  <li><a href="#making-scene-objects-unpickable" id="markdown-toc-making-scene-objects-unpickable">Making scene objects unpickable</a></li>
+  <li><a href="#read-more" id="markdown-toc-read-more">Read More</a></li>
+</ul>
+
+  </div>
+</section>
+<!-- /#table-of-contents -->
+
+<p>The folks over at <a href="http://bimsurfer.org">BIMSurfer.org</a> needed a
+ camera that flies to and orbits whatever you click on, so I made a plugin.<br /><br />Try a couple of demos:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><a href="http://scenejs.org/examples/pages/demos/pickFlyOrbitCity.html"><img src="http://xeolabs.com/images/scenejs/pickFlyOrbitCity.png" alt="" /></a></th>
+      <th><a href="http://scenejs.org/examples/index.html#cameras_pickFlyOrbit_terrain"><img src="http://xeolabs.com/images/scenejs/pickFlyOrbitTerrain.png" alt="" /></a></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="http://scenejs.org/examples/pages/demos/pickFlyOrbitCity.html">Click to run</a></td>
+      <td><a href="http://scenejs.org/examples/pages/demos/pickFlyOrbitTerrain.html">Click to run</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="usage">Usage</h3>
+<p>The plugin provides a new scene node type and gets loaded as you need it. So assuming that you’ve
+pointed SceneJS to where you keep your plugins:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">setConfigs</span><span class="p">({</span>
+    <span class="na">pluginPath</span><span class="p">:</span> <span class="s2">"./foo/myPluginsDir"</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Then just wrap the node around your scene:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">SceneJS</span><span class="p">.</span><span class="nx">createScene</span><span class="p">({</span>
+    <span class="na">nodes</span><span class="p">:[</span>
+        <span class="p">{</span>
+            <span class="na">type</span><span class="p">:</span><span class="s2">"cameras/pickFlyOrbit"</span><span class="p">,</span>
+            <span class="na">look</span><span class="p">:{</span> <span class="na">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span> <span class="na">z</span><span class="p">:</span> <span class="mi">0</span> <span class="p">},</span>
+            <span class="na">yaw</span><span class="p">:</span><span class="o">-</span><span class="mi">40</span><span class="p">,</span>
+            <span class="na">pitch</span><span class="p">:</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span>
+            <span class="na">zoom</span><span class="p">:</span><span class="mi">800</span><span class="p">,</span>
+            <span class="na">zoomSensitivity</span><span class="p">:</span><span class="o">-</span><span class="mf">20.0</span><span class="p">,</span>
+            <span class="na">showCursor</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="na">cursorSize</span><span class="p">:</span><span class="mf">6.0</span><span class="p">,</span>
+
+            <span class="na">nodes</span><span class="p">:[</span>
+                <span class="p">{</span>
+                    <span class="na">type</span><span class="p">:</span><span class="s2">"objects/buildings/city"</span><span class="p">,</span>
+                    <span class="na">width</span><span class="p">:</span><span class="mi">600</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>And then everything’s pick-fly-orbitable.<br /><br />The node’s properties are:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">look</code> - initial point-of-interest (POI) in World-coordinates</li>
+  <li><code class="highlighter-rouge">yaw</code>, <code class="highlighter-rouge">pitch</code> - initial degrees of rotation of eye position about POI on Y and X axis, respectively</li>
+  <li><code class="highlighter-rouge">zoom</code> - initial distance of eye from POI</li>
+  <li><code class="highlighter-rouge">zoomSensitivity</code> - sensivity of mouse wheel when updating zoom. The sign of this determines which direction the wheel drives the zoom.</li>
+  <li><code class="highlighter-rouge">showCursor</code> - set true to show the POI with a sphere</li>
+  <li><code class="highlighter-rouge">cursorSize</code> - radius of the cursor sphere</li>
+</ul>
+
+<h3 id="making-scene-objects-unpickable">Making scene objects unpickable</h3>
+
+<p>See how you can’t pick the sky in the live demos above? That’s a good thing, because otherwise you’d be able to orbit
+a point on the skybox, which would be rather a Truman Show moment!<br /><br />Learn how to make objects unpickable in
+ <a href="http://scenejs.org/examples.html?page=disablePicking&amp;showCode=true">this API example</a>.</p>
+
+<h3 id="read-more">Read More</h3>
+<ul>
+  <li><a href="http://xeolabs.com/articles/scenejs-picking">Picking in SceneJS</a></li>
+  <li><a href="http://xeolabs.com/articles/scenejs-ray-picking">Fast Ray Picking in SceneJS</a></li>
+  <li><a href="/articles/scenejs-node-types">Creating your own Scene Node Types</a></li>
+</ul>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="http://xeolabs.com/images/portraitCoffeeNormal.png" class="bio-photo" alt="@xeographics bio photo"></a>
+<h3><a href="http://xeolabs.com/about/">@xeographics</a></h3>
+<p>Lindsay Kay<br>3D graphics programmer</p>
+<a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+<a href="https://plus.google.com/u/0/110983138227486752827/posts" class="author-social" target="_blank"><i class="icon-google-plus"></i> Google+</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+        </div>
+        <p class="byline"><strong>SceneJS Pick-Fly-Orbit Camera</strong> was published on <time datetime="2013-10-28T00:00:00-04:00" itemprop="datePublished">October 28, 2013</time> and last modified on <time datetime="2013-05-31" itemprop="dateModified">May 31, 2013</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://xeolabs.com/about" title="About @xeographics" itemprop="url">@xeographics</a></span></span>.</p>
+      </footer>
+
+        
+        <br><br>sudo
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'xeographics'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+    </div><!-- /.article-wrap -->
+  </article>
+
+</div><!-- /#main -->
+
+
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://xeolabs.com/articles">View all articles</a>)</small></h4>
+    <ul>
+    
+      
+      
+      
+      <li><a href="http://xeolabs.com/articles/xeogl-picking" title="GPU-Assisted Picking in xeogl">GPU-Assisted Picking in xeogl</a></li>
+      
+    
+      
+      
+      
+      <li><a href="http://xeolabs.com/articles/xeogl-annotations" title="Annotations in xeogl">Annotations in xeogl</a></li>
+      
+    
+      
+      
+      
+      <li><a href="http://xeolabs.com/articles/xeogl-and-zspace" title="Developing xeogl Apps for zSpace VR/AR Systems">Developing xeogl Apps for zSpace VR/AR Systems</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2017 @xeographics. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://xeolabs.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://xeolabs.com/assets/js/scripts.min.js"></script>
+
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'xeographics'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+</body>
+</html>
