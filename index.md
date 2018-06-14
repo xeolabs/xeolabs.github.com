@@ -23,7 +23,7 @@ I studied electronic engineering at the Christchurch Polytechnic.
 In over two decades of computing, I've taught computing at an elementary school, tutored programming and algorithms at a 
 university, been a CTO in San Diego, tested wind turbines in New Zealand, created two production-proven WebGL-based 3D engines, 
 lead 3D development on the [BioDigital Human]({{ site.url }}/portfolio/biodigital-human) and the Smiletrain surgical simulator, 
-and built two of the leading WebGL-based IFC viewers. For details on those projects, please check out my **[resume](http://linkedin.com/in/lindsaystanleykay)** and **[portfolio]({{ site.url }}/portfolio/)**. 
+and built two WebGL-based IFC model viewers. For details on those projects, please check out my **[resume](http://linkedin.com/in/lindsaystanleykay)** and **[portfolio]({{ site.url }}/portfolio/)**. 
 
 ### Process
 
