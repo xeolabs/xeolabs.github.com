@@ -91,7 +91,7 @@ A little while later, I began working for BioDigital Systems and we ended up mak
 
 ### Human Content Pipeline Origins
 
-Using my earlier open source [SceneJS asset server experiments](https://github.com/xeolabs/scenejs-asset-server), we began by parsing a COLLADA 
+Using my earlier open source [SceneJS asset server experiments](https://github.com/xeolabs/scenejs-asset-server), [Brandon Smith](https://twitter.com/phaeta) and I began by parsing a COLLADA 
 model of the human skeletal system into a JSON-based SceneJS scene representation. The scene rendered at a promising rate 
 of around ~20FPS, so we took a gamble on WebGL and thus the BioDigital flagship app was born.
 <br><br>
