@@ -29,8 +29,8 @@ and built two WebGL-based IFC model viewers. For details on those projects, plea
 
 As a software engineer, I value process, teamwork, empathy and simple, maintainable design, because those are what make software development fun, healthy and productive. 
 <br><br>
-As an open source developer, I draw on the generosity of a lot of passionate graphics geeks. I'll often adapt our experiments 
-and tools to the needs of clients, resulting in greater efficiency and certainty of delivery. When more help is needed on a project, 
+As an open source developer, I draw on the generosity of a lot of passionate graphics geeks. Often, I'll adapt our experiments 
+and tools to the needs of my clients, resulting in greater efficiency and certainty of delivery. When more help is needed on a project, 
 I can also bring in experienced WebGL geeks who I've collaborated with on various open source projects. 
 <br><br>
 **Got a project you'd like to discuss?** Fire me an email via the secret address below! Please note that, after the first 
