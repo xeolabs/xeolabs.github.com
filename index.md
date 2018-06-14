@@ -11,7 +11,7 @@ image:
   creditlink: http://xeolabs.com
 ---
 
-I'm a freelance 3D software engineer specializing in custom WebGL-based solutions for product visualization, engineering, medicine and BIM.
+I'm a freelance 3D software engineer specializing in custom WebGL-based solutions for product visualization, engineering, medviz and BIM.
 
 ### Background
 
