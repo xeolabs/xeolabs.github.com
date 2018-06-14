@@ -193,8 +193,8 @@ Along the way, I got to write about SceneJS and present it to fellow graphics ne
 I'm going to keep making more of these WebGl engines, because there's never a one-size-fit-all solution (and well, it is a 
 bit of a creative compulsion).
 <br><br>
-The public fork of SceneJS is archived now, so it's no longer under development. However, if you're looking for a production-proven 
-WebGL-based 3D visualization engine with a more conventional component-based architecture, you might find my latest engine useful: [xeogl](http://xeogl.org).
+The public fork of SceneJS is now archived and no longer under development. However, if you're looking for a production-proven 
+WebGL-based 3D engine with a more conventional component-based architecture, you might find my latest engine useful: [http://xeogl.org](http://xeogl.org).
 
 ## Acknowledgements
 
