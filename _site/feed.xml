@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-14T18:04:56+00:00</updated>
+<updated>2018-06-14T18:09:35+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -133,9 +133,9 @@ So I quit my day job, &lt;a href=&quot;https://github.com/xeolabs/scenejs&quot;&
 
 &lt;h3 id=&quot;human-content-pipeline-origins&quot;&gt;Human Content Pipeline Origins&lt;/h3&gt;
 
-&lt;p&gt;Using my earlier open source &lt;a href=&quot;https://github.com/xeolabs/scenejs-asset-server&quot;&gt;SceneJS asset server experiments&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/phaeta&quot;&gt;Brandon Smith&lt;/a&gt; and I began by parsing a COLLADA 
-model of the human skeletal system into a JSON-based SceneJS scene representation. The scene rendered at a promising rate 
-of around ~20FPS, so we took a gamble on WebGL and thus the BioDigital flagship app was born.
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/phaeta&quot;&gt;Brandon Smith&lt;/a&gt; began by exporting a human skeletal system model to COLLADA, which I then loaded into 
+SceneJS using one of my earlier open source &lt;a href=&quot;https://github.com/xeolabs/scenejs-asset-server&quot;&gt;SceneJS asset server&lt;/a&gt; experiments. The scene 
+rendered at a promising rate of around ~20FPS, so we took a gamble on WebGL and thus the BioDigital flagship app was born.
 &lt;br /&gt;&lt;br /&gt;
 Our biggest challenge was getting the platform to work reliably across the various operating systems, browsers and GPUs, 
 and so the next few years involved navigating patchy GPU support and a lot of “Aw Snap”. We owe a lot to the work of 
