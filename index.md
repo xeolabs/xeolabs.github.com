@@ -30,10 +30,10 @@ and built two of the leading WebGL-based IFC viewers. For details on those proje
 As a software engineer, I value process, teamwork, empathy and simple, maintainable design, because those are what make software development fun, healthy and productive. 
 <br><br>
 As an open source contributor, I often adapt my own experiments and tools to the needs of clients, resulting 
-in greater efficiency and certainty of delivery. When clients require more assistance, I can bring in experienced WebGL 
+in greater efficiency and certainty of delivery. When more help is needed, I can bring in experienced WebGL 
 developers who I've collaborated with on open source projects. 
 <br><br>
-**Got a project you'd like to discuss?** Send me an email via the address below! Please note that, after the first 
+**Got a project you'd like to discuss?** Fire me an email to the secret address below! Please note that, after the first 
 couple of meetings, we'll need to formalize things before moving forward.
    
 <br>
