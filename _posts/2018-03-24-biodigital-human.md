@@ -193,7 +193,7 @@ Along the way, I got to write about SceneJS and demonstrate it for graphics nerd
  * [Paul Brunt](http://www.paulbrunt.co.uk/#/) for his pioneering open source WebGL-based [GLGE](http://www.glge.org/) engine, which was like a living textbook on graphics algorithms on JavaScript,
  * the [Zygote Body](https://www.zygotebody.com/), which was originally created as the Google Body by [Won Chun](https://twitter.com/won3d?lang=en), as his 20% experiment at Google,
  * the SceneJS community for a crash course on what a 3D engine is, and
- * the modeling team at BioDigital for creating all the cool content that makes the platform shine.
+ * the model creation team at BioDigital for creating all the cool content that makes the platform shine.
 
 I won't list the whole BioDigital team here because I might miss someone, but I'll give props to interns, such 
 as [Jacqueline Chu](https://www.linkedin.com/in/jacqueline-chu-7a532558) and [Shuai Shao](https://twitter.com/shrekshao) (AKA ShrekShao), 
