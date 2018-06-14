@@ -120,7 +120,7 @@ Some of those experiments were:
 Those are now archived projects, but were useful for determining the best way to control a Human within an 
 IFRAME embedded in a 3rd-party container page.
 <br><br>
-One of my inspirations for JSON-RPC was the messaging system that [Paul Brunt](https://twitter.com/super_eggbert) had built into his WebGL-based [GLGE](http://www.glge.org) engine.
+One of my inspirations for JSON-RPC was the nifty messaging system that [Paul Brunt](https://twitter.com/super_eggbert) had built into his WebGL-based [GLGE](http://www.glge.org) engine.
  
 #### Using the Developer API
 
@@ -176,8 +176,7 @@ earlier C++ version, which he implemented on OpenSceneGraph.
 </figure>
 
 <br><br>
-
-The slick Darth Vader Approved UI you're seeing in Human and Smiletrain is the work of BioDigital front-end engineers Kathia Yau and Avinash Chan. 
+> The slick Darth Vader Approved UI you're seeing in Human and Smiletrain is the work of BioDigital front-end engineers Kathia Yau and Avinash Chan. 
 
 ## 2015: SceneJS Private Fork 
 
@@ -185,7 +184,7 @@ With [Tarek Sherif](https://twitter.com/thsherif) taking over as on-site lead gr
 features to Human and SceneJS, including a streaming asset server, physically-based rendering (PBR), geometry and texture compression, particle 
 systems and an improved post-effects pipeline.
 <br><br>
-For post-effects support in SceneJS, Tarek built an extensible plugin-based architecture based off his own open source WebGL engine, [PicoGL](https://tsherif.github.io/picogl.js/).  
+> For post-effects support in SceneJS, Tarek built an extensible plugin-based architecture based off his own open source WebGL engine, [PicoGL](https://tsherif.github.io/picogl.js/).  
 
 ## SceneJS Presentations
 

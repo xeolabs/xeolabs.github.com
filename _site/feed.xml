@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-14T20:10:30+00:00</updated>
+<updated>2018-06-14T20:15:20+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -137,7 +137,7 @@ Some of those experiments were:&lt;/p&gt;
 &lt;p&gt;Those are now archived projects, but were useful for determining the best way to control a Human within an 
 IFRAME embedded in a 3rd-party container page.
 &lt;br /&gt;&lt;br /&gt;
-One of my inspirations for JSON-RPC was the messaging system that &lt;a href=&quot;https://twitter.com/super_eggbert&quot;&gt;Paul Brunt&lt;/a&gt; had built into his WebGL-based &lt;a href=&quot;http://www.glge.org&quot;&gt;GLGE&lt;/a&gt; engine.&lt;/p&gt;
+One of my inspirations for JSON-RPC was the nifty messaging system that &lt;a href=&quot;https://twitter.com/super_eggbert&quot;&gt;Paul Brunt&lt;/a&gt; had built into his WebGL-based &lt;a href=&quot;http://www.glge.org&quot;&gt;GLGE&lt;/a&gt; engine.&lt;/p&gt;
 
 &lt;h4 id=&quot;using-the-developer-api&quot;&gt;Using the Developer API&lt;/h4&gt;
 
@@ -189,9 +189,8 @@ earlier C++ version, which he implemented on OpenSceneGraph.&lt;/p&gt;
 	&lt;figcaption&gt;&lt;a href=&quot;https://www.smiletrain.org/&quot; title=&quot;SceneJS powering the BioDigital Human&quot;&gt;The Smiletrain Surgical Simulator is built on the BioDigital Human and assists healthcare professionals in developing countries with learning cleft repair procedures.&lt;/a&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;The slick Darth Vader Approved UI you’re seeing in Human and Smiletrain is the work of BioDigital front-end engineers Kathia Yau and Avinash Chan.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+&amp;gt; The slick Darth Vader Approved UI you’re seeing in Human and Smiletrain is the work of BioDigital front-end engineers Kathia Yau and Avinash Chan.&lt;/p&gt;
 
 &lt;h2 id=&quot;scenejs-private-fork&quot;&gt;2015: SceneJS Private Fork&lt;/h2&gt;
 
@@ -199,7 +198,7 @@ earlier C++ version, which he implemented on OpenSceneGraph.&lt;/p&gt;
 features to Human and SceneJS, including a streaming asset server, physically-based rendering (PBR), geometry and texture compression, particle 
 systems and an improved post-effects pipeline.
 &lt;br /&gt;&lt;br /&gt;
-For post-effects support in SceneJS, Tarek built an extensible plugin-based architecture based off his own open source WebGL engine, &lt;a href=&quot;https://tsherif.github.io/picogl.js/&quot;&gt;PicoGL&lt;/a&gt;.&lt;/p&gt;
+&amp;gt; For post-effects support in SceneJS, Tarek built an extensible plugin-based architecture based off his own open source WebGL engine, &lt;a href=&quot;https://tsherif.github.io/picogl.js/&quot;&gt;PicoGL&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;scenejs-presentations&quot;&gt;SceneJS Presentations&lt;/h2&gt;
 
