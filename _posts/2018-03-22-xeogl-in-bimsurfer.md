@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Developing the BIMSurfer IFC Viewer on xeogl
-description: "<b>xeogl</b> is an open source JavaScript library I created for WebGL-based 3D graphics, based on lessons I learned while developing and applying SceneJS.<br><br>In this article, I describe my recent work rewriting the <b>BIMSurfer</b> 3D IFC viewer, to convert it from using SceneJS to xeogl."
+description: "<b>xeogl</b> is an open source JavaScript library I created for WebGL-based 3D graphics.<br><br>In this article, I describe my work rewriting the <b>BIMSurfer</b> 3D IFC viewer, to convert it from using SceneJS to xeogl."
 Xthumbnail: clientLogos/bimsurfer-logo.png
 thumbnail: bimsurfer/bimsurfer.png
 tagline: "Supercharging your BIM"
