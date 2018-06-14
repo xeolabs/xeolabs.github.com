@@ -182,31 +182,17 @@ If you're interested in the inner workings of the pre-fork SceneJS, I wrote a ch
 
 ## Acknowledgements
 
-Vladimir Vukevic
-
-Khronos
-
-ANGLE
-
-COLLADA
-
-GLGE
-
-JSON-RPC control of game engines
-
-SceneJS community
-
-
-
-
-
-Human is nothing without the quality content created by the modeling team at BioDigital, who have created a ton of  
-
-which, at the end of the day is really what makes the platform shine.
+ * [Vladimir Vukevic](https://en.wikipedia.org/wiki/Vladimir_Vuki%C4%87evi%C4%87) for kicking WebGL off with his Canvas3D experiments
+ * [The Khronos WebGL Working Group](https://www.khronos.org/) for overseeing the development of the WebGL specification  
+ * [The ANGLE developers](https://chromium.googlesource.com/angle/angle/+/master/README.md) for making WebGL work on DirectX
+ * [COLLADA™](https://www.khronos.org/collada/) 
+ * [Paul Brunt](http://www.paulbrunt.co.uk/#/) for his open source WebGL-based [GLGE](http://www.glge.org/) engine 
+ * The SceneJS community for a crash course on what a 3D engine is
+ * The modeling team at BioDigital for creating all the cool content that makes the platform shine
 <br><br>
-I won't list the BioDigital team here because I might miss someone, but I'll 
-give props to interns such as [Jacqueline Chu](https://www.linkedin.com/in/jacqueline-chu-7a532558) 
-and [Shuai Shao](https://twitter.com/shrekshao) (AKA ShrekShao), who came in fresh from academia and added many valuable rendering features. 
+I won't list the wholle BioDigital team here because I might miss someone, but I'll give props to interns, such 
+as [Jacqueline Chu](https://www.linkedin.com/in/jacqueline-chu-7a532558) and [Shuai Shao](https://twitter.com/shrekshao) (AKA ShrekShao), 
+who came in fresh from academia and added many valuable rendering features. 
 <br><br>
 
 <section id="table-of-contents" class="toc">

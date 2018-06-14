@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-14T08:08:55+00:00</updated>
+<updated>2018-06-14T10:45:22+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -222,28 +222,20 @@ If you’re interested in the inner workings of the pre-fork SceneJS, I wrote a 
 
 &lt;h2 id=&quot;acknowledgements&quot;&gt;Acknowledgements&lt;/h2&gt;
 
-&lt;p&gt;Vladimir Vukevic&lt;/p&gt;
-
-&lt;p&gt;Khronos&lt;/p&gt;
-
-&lt;p&gt;ANGLE&lt;/p&gt;
-
-&lt;p&gt;COLLADA&lt;/p&gt;
-
-&lt;p&gt;GLGE&lt;/p&gt;
-
-&lt;p&gt;JSON-RPC control of game engines&lt;/p&gt;
-
-&lt;p&gt;SceneJS community&lt;/p&gt;
-
-&lt;p&gt;Human is nothing without the quality content created by the modeling team at BioDigital, who have created a ton of&lt;/p&gt;
-
-&lt;p&gt;which, at the end of the day is really what makes the platform shine.
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Vladimir_Vuki%C4%87evi%C4%87&quot;&gt;Vladimir Vukevic&lt;/a&gt; for kicking WebGL off with his Canvas3D experiments&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.khronos.org/&quot;&gt;The Khronos WebGL Working Group&lt;/a&gt; for overseeing the development of the WebGL specification&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://chromium.googlesource.com/angle/angle/+/master/README.md&quot;&gt;The ANGLE developers&lt;/a&gt; for making WebGL work on DirectX&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.khronos.org/collada/&quot;&gt;COLLADA™&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.paulbrunt.co.uk/#/&quot;&gt;Paul Brunt&lt;/a&gt; for his open source WebGL-based &lt;a href=&quot;http://www.glge.org/&quot;&gt;GLGE&lt;/a&gt; engine&lt;/li&gt;
+  &lt;li&gt;The SceneJS community for a crash course on what a 3D engine is&lt;/li&gt;
+  &lt;li&gt;The modeling team at BioDigital for creating all the cool content that makes the platform shine
 &lt;br /&gt;&lt;br /&gt;
-I won’t list the BioDigital team here because I might miss someone, but I’ll 
-give props to interns such as &lt;a href=&quot;https://www.linkedin.com/in/jacqueline-chu-7a532558&quot;&gt;Jacqueline Chu&lt;/a&gt; 
-and &lt;a href=&quot;https://twitter.com/shrekshao&quot;&gt;Shuai Shao&lt;/a&gt; (AKA ShrekShao), who came in fresh from academia and added many valuable rendering features. 
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+I won’t list the wholle BioDigital team here because I might miss someone, but I’ll give props to interns, such 
+as &lt;a href=&quot;https://www.linkedin.com/in/jacqueline-chu-7a532558&quot;&gt;Jacqueline Chu&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/shrekshao&quot;&gt;Shuai Shao&lt;/a&gt; (AKA ShrekShao), 
+who came in fresh from academia and added many valuable rendering features. 
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
   &lt;header&gt;
