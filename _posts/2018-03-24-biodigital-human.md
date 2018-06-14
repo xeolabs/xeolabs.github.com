@@ -91,7 +91,7 @@ A little while later, I began working for BioDigital Systems and we ended up mak
 
 ### Human Content Pipeline Origins
 
-[Brandon Smith](https://twitter.com/phaeta) began by exporting a human skeletal system model to COLLADA, which I then loaded into 
+[Brandon Smith](https://twitter.com/phaeta) began by exporting one of BioDigital's skeletal system models to COLLADA, which I then imported into 
 SceneJS using one of my earlier open source [SceneJS asset server](https://github.com/xeolabs/scenejs-asset-server) experiments. 
 <br><br>
 The model rendered at a promising rate of around ~20FPS, so we took a gamble on WebGL and thus the BioDigital flagship app was born.
@@ -103,7 +103,7 @@ Windows without relying on OpenGL graphics drivers.
 <br><br>
 Over the next couple of years I rewrote SceneJS twice, and we managed to double that frame rate. NVIDIA even helped 
 out and made optimizations for mobile GPUs, and later, after we made a private fork (described below), we got it rendering 
-at ~60FPS for most of the basic anatomy model.
+at ~60FPS for most of the full anatomy model.
 
 ### Human Developer API Origins
 
@@ -186,7 +186,7 @@ For post-effects support in SceneJS, Tarek built an extensible plugin-based arch
 
 Along the way, I got to write about SceneJS and present it to fellow graphics nerds:
 
-* Wote a chapter on the pre-forked SceneJS for *OpenGL Insights* 2012, which you can now [download for free](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf).
+* Contributed a chapter on the pre-fork SceneJS to *OpenGL Insights* 2012, which you can now [download for free](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf).
 * Gave a talk on SceneJS at the 2015 Berlin WebGL Meetup - [here are the slides](http://slides.com/xeolabs/deck) from that talk, with a few embedded live demos.
 
 ## Next Steps: xeogl
