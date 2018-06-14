@@ -183,17 +183,17 @@ For post-effects support in SceneJS, Tarek built an extensible plugin-based arch
 
 ## SceneJS Presentations
 
-Along the way, I got to write about SceneJS and demonstrate it for graphics nerds:
+Along the way, I got to write about SceneJS and present it to fellow graphics nerds:
 
-* In 2012, I wrote a chapter on the pre-fork version of SceneJS for *OpenGL Insights*, which you can now [download for free](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf).
-* I gave a talk on SceneJS at the Berlin WebGL Meetup - [here are the slides](http://slides.com/xeolabs/deck) from that talk, with a few embedded demos.
+* In 2012, I contributed a chapter on the pre-fork version of SceneJS to *OpenGL Insights*, which you can now [download for free](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf).
+* In 2015, I gave a talk on SceneJS at the Berlin WebGL Meetup - [here are the slides](http://slides.com/xeolabs/deck) from that talk, with a few embedded demos.
 
 ## Acknowledgements
 
  * [Vladimir Vukevic](https://en.wikipedia.org/wiki/Vladimir_Vuki%C4%87evi%C4%87) for kicking WebGL off with his Canvas3D experiments,
  * the [Khronos WebGL Working Group](https://www.khronos.org/) for overseeing the development of the WebGL specification,
  * the [ANGLE developers](https://chromium.googlesource.com/angle/angle/+/master/README.md) for making WebGL work on DirectX,
- * [COLLADA™](https://www.khronos.org/collada/) for the file format that got us started with the Human, 
+ * [COLLADA™](https://www.khronos.org/collada/) for the file format that got us started with the Human (and taught me a lot about what goes in a 3D engine), 
  * [Paul Brunt](http://www.paulbrunt.co.uk/#/) for his pioneering open source WebGL-based [GLGE](http://www.glge.org/) engine, which was like a living textbook on graphics algorithms on JavaScript,
  * the [Zygote Body](https://www.zygotebody.com/), which was originally created as the Google Body by [Won Chun](https://twitter.com/won3d?lang=en), as his 20% experiment at Google,
  * the SceneJS community for a crash course on what a 3D engine is, and
