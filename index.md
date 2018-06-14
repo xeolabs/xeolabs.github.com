@@ -27,9 +27,9 @@ and built a couple of WebGL-based IFC model viewers. For details on those activi
 
 ### Process
 
-As a software engineer, I value process, teamwork and simple, maintainable design, because those are what make this activity fun, healthy and productive. 
+As a **software engineer**, I value process, teamwork and simple, maintainable design, because those are what make this activity fun, healthy and productive. 
 <br><br>
-As an open source developer, I build on the generosity of a community of passionate graphics geeks. Often, I'll adapt our experiments 
+As an **open source developer**, I build on the generosity of a community of passionate graphics geeks. Often, I'll adapt our experiments 
 and tools to the needs of my clients, resulting in greater efficiency and certainty of delivery. And, when more help is needed on a project, 
 I can bring in experienced engineers who I've collaborated with in the past on various open source projects. 
 <br><br>
@@ -38,5 +38,3 @@ couple of meetings, we'll need to formalize things before moving forward.
    
 <br>
 ![Email](../images/email.png)
-<br><br><br>
-<!-- ![Hacking]({{ site.url }}/images/hacking.jpg) -->
