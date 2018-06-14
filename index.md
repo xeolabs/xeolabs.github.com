@@ -27,7 +27,7 @@ and built two WebGL-based IFC model viewers. For details on those projects, plea
 
 ### Process
 
-As a software engineer, I value process, teamwork, empathy and simple, maintainable design, because those are what make software development fun, healthy and productive. 
+As a software engineer, I value process, teamwork, empathy and simple, maintainable design, because those are what make this activity fun, healthy and productive. 
 <br><br>
 As an open source developer, I draw on the generosity of a lot of passionate graphics geeks. Often, I'll adapt our experiments 
 and tools to the needs of my clients, resulting in greater efficiency and certainty of delivery. When more help is needed on a project, 
