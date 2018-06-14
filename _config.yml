@@ -9,7 +9,7 @@ baseurl:          /xeolabs.github.io/xeolabs
 owner:
   name:           "xeolabs"
   avatar:         avatar.jpg
-  bio:            "<b>Lindsay Kay</b><br><br><i>3D software engineer providing WebGL-based solutions for product visualization, engineering, medicine and BIM</i>"
+  bio:            "<b>Lindsay Kay</b><br><br><i>3D software engineer specializing in WebGL for product visualization, engineering, medviz and BIM</i>"
   email:          lindsay.kay@xeolabs.com
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
   twitter: xeographics

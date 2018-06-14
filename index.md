@@ -20,10 +20,10 @@ Originally from Christchurch, New Zealand, I've lived in Berlin, Germany since 2
 I graduated with a degree in computer science from the University of Canterbury in 2005. Before that, 
 I studied electronic engineering at the Christchurch Polytechnic.
 <br><br>
-In over a couple of decades of computing, I've taught computing at an elementary school, tutored programming and algorithms at a 
+Over the last couple of decades, I've taught computing at an elementary school, tutored programming and algorithms at a 
 university, been a CTO in San Diego, tested wind turbines in New Zealand, created two open source WebGL-based 3D engines, 
 lead 3D development on the [BioDigital Human]({{ site.url }}/portfolio/biodigital-human) and the Smiletrain surgical simulator, 
-and built a couple of WebGL-based IFC model viewers. For details on those projects, please check out my **[portfolio]({{ site.url }}/portfolio/)** and **[resume](http://linkedin.com/in/lindsaystanleykay)**. 
+and built a couple of WebGL-based IFC model viewers. For details on those projects, check out my **[portfolio]({{ site.url }}/portfolio/)** and **[resume](http://linkedin.com/in/lindsaystanleykay)**. 
 
 ### Process
 
