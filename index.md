@@ -11,7 +11,7 @@ image:
   creditlink: http://xeolabs.com
 ---
 
-I'm a freelance 3D software engineer providing WebGL-based solutions for product visualization, engineering, medicine and BIM.
+I'm a freelance 3D software engineer specializing WebGL-based solutions for product visualization, engineering, medicine and BIM.
 
 ### Background
 
@@ -23,7 +23,7 @@ I studied electronic engineering at the Christchurch Polytechnic.
 Over the last couple of decades, I've taught computing at an elementary school, tutored programming and algorithms at a 
 university, been a CTO in San Diego, tested wind turbines in New Zealand, created two open source WebGL-based 3D engines, 
 lead 3D development on the [BioDigital Human]({{ site.url }}/portfolio/biodigital-human) and the Smiletrain surgical simulator, 
-and built a couple of WebGL-based IFC model viewers. For details on those projects, check out my **[portfolio]({{ site.url }}/portfolio/)** and **[resume](http://linkedin.com/in/lindsaystanleykay)**. 
+and built a couple of WebGL-based IFC model viewers. For details on those activities, check out my **[portfolio]({{ site.url }}/portfolio/)** and **[resume](http://linkedin.com/in/lindsaystanleykay)**. 
 
 ### Process
 
@@ -31,7 +31,7 @@ As a software engineer, I value process, teamwork and simple, maintainable desig
 <br><br>
 As an open source developer, I build on the generosity of a community of passionate graphics geeks. Often, I'll adapt our experiments 
 and tools to the needs of my clients, resulting in greater efficiency and certainty of delivery. And, when more help is needed on a project, 
-I can bring in experienced engineers with whom I've collaborated with in the past on various open source projects. 
+I can bring in experienced engineers who I've collaborated with in the past on various open source projects. 
 <br><br>
 **Got a project you'd like to discuss?** Fire me an email via the secret address below! Please note that, after the first 
 couple of meetings, we'll need to formalize things before moving forward.
