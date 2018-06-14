@@ -20,20 +20,20 @@ Originally from Christchurch, New Zealand, I've lived in Berlin, Germany since 2
 I graduated with a degree in computer science from the University of Canterbury in 2005. Before that, 
 I studied electronic engineering at the Christchurch Polytechnic.
 <br><br>
-Over the last couple of decades, I've taught computing at an elementary school, tutored programming and algorithms at a 
+Over the past couple of decades, I've taught computing at an elementary school, tutored programming and algorithms at a 
 university, been a CTO in San Diego, tested wind turbines in New Zealand, created two open source WebGL-based 3D engines, 
 lead 3D development on the [BioDigital Human]({{ site.url }}/portfolio/biodigital-human) and the Smiletrain surgical simulator, 
 and built a couple of WebGL-based IFC model viewers. For details on those activities, check out my **[portfolio]({{ site.url }}/portfolio/)** and **[resume](http://linkedin.com/in/lindsaystanleykay)**. 
 
 ### Process
 
-As a **software engineer**, I value process, teamwork and simple, maintainable design, because those are what make this activity fun, healthy and productive. 
+As a software engineer, I value process, teamwork and simple, maintainable design, because those are what make this activity fun, healthy and productive. 
 <br><br>
-As an **open source developer**, I build on the generosity of a community of passionate graphics geeks. Often, I'll adapt our experiments 
+As an open source developer, I build on the generosity of a community of passionate graphics geeks. Often, I'll adapt our experiments 
 and tools to the needs of my clients, resulting in greater efficiency and certainty of delivery. And, when more help is needed on a project, 
 I can bring in experienced engineers who I've collaborated with in the past on various open source projects. 
 <br><br>
-**Got a project you'd like to discuss?** Fire me an email via the secret address below! Please note that, after the first 
+**Got a project you'd like to discuss?** Fire me an email via the address below! Please note that, after the first 
 couple of meetings, we'll need to formalize things before moving forward.
    
 <br>
