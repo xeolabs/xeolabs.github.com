@@ -178,6 +178,8 @@ earlier C++ version, which he implemented on OpenSceneGraph.
 With [Tarek Sherif](https://twitter.com/thsherif) taking over as on-site lead graphics programmer 2015, we added many more 
 features to Human and SceneJS, including a streaming asset server, physically-based rendering (PBR), geometry and texture compression, particle 
 systems and an improved post-effects pipeline.
+<br><br>
+For post-effects support in SceneJS, Tarek built an extensible plugin-based architecture based off his own open source WebGL engine, [PicoGL](https://tsherif.github.io/picogl.js/).  
 
 ## SceneJS Presentations
 
