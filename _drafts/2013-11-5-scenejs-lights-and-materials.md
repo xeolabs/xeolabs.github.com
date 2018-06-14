@@ -4,7 +4,7 @@ title: Lights and Materials in SceneJS
 description: "All about texturing in SceneJS"
 modified: 2013-05-31
 category: articles
-comments: true
+comments: false
 tags: [scenejs, tutorial, texture]
 ---
 

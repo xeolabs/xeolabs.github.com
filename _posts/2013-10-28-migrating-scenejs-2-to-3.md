@@ -4,7 +4,7 @@ title: Migrating from SceneJS 2.0 to 3.1
 description: "Updating your apps to the V3.1 API"
 modified: 2013-05-31
 category: articles
-comments: true
+comments: false
 tags: [scenejs, tutorial, migrating]
 ---
 

@@ -2,9 +2,10 @@
 layout: post
 title: GPU-Assisted Picking in xeogl
 description: "A multi-layer color-indexing rendering algorithm which ray-picks 3D scene objects in linear time"
+thumbnail: xeogl/pickingRaycastEntity.gif
 modified: 2017-30-08
 category: articles
-comments: true
+comments: false
 tags: [xeogl, picking, webgl]
 ---
 

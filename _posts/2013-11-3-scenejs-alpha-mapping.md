@@ -4,7 +4,7 @@ title: Alpha Mapping in SceneJS
 description: "Using textures to make transparent areas on the surfaces of objects"
 modified: 2013-05-31
 category: articles
-comments: true
+comments: false
 tags: [scenejs, tutorial, transparency, texturing]
 ---
 

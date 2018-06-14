@@ -4,7 +4,7 @@ title: SceneJS Quick Start
 description: "Get cracking with SceneJS in two minutes"
 modified: 2013-05-31
 category: articles
-comments: true
+comments: false
 tags: [scenejs, tutorial, definition]
 ---
 

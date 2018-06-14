@@ -3,6 +3,7 @@ layout: post
 title: SceneJS Tutorials
 description: "3D web programming using SceneJS"
 tagline: "3D web programming using SceneJS"
+thumbnail: scenejs/reflectionLayered.jpg
 modified: 2013-05-31
 category: articles
 

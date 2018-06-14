@@ -4,10 +4,8 @@ title: SceneJS Geometry
 description: "How to define geometry"
 modified: 2013-05-31
 category: articles
-comments: true
 tags: [scenejs, tutorial, geometry]
 ---
-
 
 <section id="table-of-contents" class="toc">
   <header>

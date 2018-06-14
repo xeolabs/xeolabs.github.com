@@ -4,7 +4,7 @@ title: SceneJS v4.0 Released
 description: "More rendering capabilities!"
 modified: 2014-07-24
 category: articles
-comments: true
+comments: false
 tags: [scenejs, releases]
 ---
 

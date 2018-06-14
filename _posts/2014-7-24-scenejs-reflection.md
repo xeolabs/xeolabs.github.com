@@ -4,7 +4,7 @@ title: Reflective Surfaces in SceneJS
 description: "Using cube maps to make objects reflective"
 modified: 2014-07-24
 category: articles
-comments: true
+comments: false
 tags: [scenejs, tutorial, reflection]
 ---
 

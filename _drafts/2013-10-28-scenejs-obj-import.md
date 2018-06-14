@@ -4,7 +4,7 @@ title: Importing a Mesh from .OBJ into SceneJS
 description: "Using the `import/obj` node to load a mesh from Wavefront OBJ into your scene"
 modified: 2013-05-31
 category: articles
-comments: true
+comments: false
 tags: [scenejs, tutorial]
 ---
 

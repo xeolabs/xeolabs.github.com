@@ -4,7 +4,7 @@ title: Pssst...How Fast Ray Picking Works in SceneJS
 description: "A quick writeup on how I'm using the colour buffer to help find ray-intersects and avoid expensive intersection calculations"
 modified: 2013-05-31
 category: articles
-comments: true
+comments: false
 tags: [scenejs, tutorial, picking, interaction]
 ---
 

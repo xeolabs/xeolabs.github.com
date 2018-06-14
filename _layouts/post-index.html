@@ -35,8 +35,13 @@
       {% endif %}
     {% endunless %}
     <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+      <hr width="100%"/>
+      <p style="font-style:italic; margin-bottom: 0px;"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></p>
       <h2 itemprop="headline"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}">{{ post.title }}</a></h2>
-      <p itemprop="text">{% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 120 }}{% endif %}</p>
+
+      <p itemprop="text">{% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html | strip_newlines }}{% endif %} &nbsp;&nbsp;<span style="font-weight: bold; font-style: italic;"><a href="{{ site.url }}{{ post.url }}">Read more</a></span></p>
+      <p  style="font-style:italic; font-weight: bold; padding-top: 5px; padding-bottom:0px;"></p>
+      <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}"><img src="{{ site.url }}/images/{{ post.thumbnail }}"></a>
     </article>
   {% endfor %}
 </div><!-- /#index -->

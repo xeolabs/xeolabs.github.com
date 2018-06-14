@@ -4,7 +4,7 @@ title: Introducing xeogl
 description: "An open source engine for Web-based 3D visualization"
 modified: 2016-19-09
 category: articles
-comments: true
+comments: false
 tags: [xeogl, webgl]
 ---
 

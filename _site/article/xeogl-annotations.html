@@ -1,0 +1,379 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>An Annotation System for xeogl &#8211; xeolabs</title>
+<meta name="description" content="Introducing a Sketchfab-style annotation system for xeogl">
+<meta name="keywords" content="xeogl, webgl">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xeolabs.com/images/">
+<meta name="twitter:title" content="An Annotation System for xeogl">
+<meta name="twitter:description" content="Introducing a Sketchfab-style annotation system for xeogl">
+<meta name="twitter:creator" content="@xeographics">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="An Annotation System for xeogl">
+<meta property="og:description" content="Introducing a Sketchfab-style annotation system for xeogl">
+<meta property="og:url" content="http://xeolabs.com/article/xeogl-annotations">
+<meta property="og:site_name" content="xeolabs">
+
+
+
+
+
+<link rel="canonical" href="http://xeolabs.com/article/xeogl-annotations">
+<link href="http://xeolabs.com/feed.xml" type="application/atom+xml" rel="alternate" title="xeolabs Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://xeolabs.com/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="http://xeolabs.com/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://xeolabs.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://xeolabs.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://xeolabs.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://xeolabs.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://xeolabs.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://xeolabs.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://xeolabs.com/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="article" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://xeolabs.com/">xeolabs</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <ul>
+		        
+				<li><a href="http://xeolabs.com/index" >Home</a></li>
+		        
+				<li><a href="http://xeolabs.com/articles" >Articles</a></li>
+		        
+				<li><a href="http://xeolabs.com/portfolio" >Portfolio</a></li>
+		        
+				<li><a href="http://linkedin.com/in/lindsaystanleykay" target="_blank">Resume</a></li>
+		        
+				<li><a href="http://xeogl.org" target="_blank">xeogl</a></li>
+		        
+
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <div class="article-author-top">
+    <img src="http://xeolabs.com/images/avatar.jpg" class="bio-photo" alt="xeolabs bio photo"></a>
+<h3><a href="http://xeolabs.com/about/">xeolabs</a></h3>
+<p><b>Lindsay Kay</b><br><br><i>3D software engineer providing WebGL-based solutions for product visualization, engineering, medicine and BIM</i></p>
+<a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+<br><br>
+<hr>
+<p style="text-align: center;"><a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf"><img style="text-align: center;" src="http://xeolabs.com/images/scenejs/OpenGLInsights2.jpg"></a><br>
+    <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now free to download! <a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf">Grab it here.</a></i></p>
+<hr>
+
+  </div>
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <div class="headline-wrap">
+      <h1 itemprop="name">An Annotation System for xeogl</h1>
+        <p style="font-weight:bold; font-style:italic;"><time datetime="2017-05-30T00:00:00+00:00" itemprop="datePublished">May 30, 2017</time></p>
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap" itemprop="text">
+      <section id="table-of-contents" class="toc">
+  <header>
+    <h3>Contents</h3>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#camera-vantage-points" id="markdown-toc-camera-vantage-points">Camera vantage points</a></li>
+  <li><a href="#creating-annotations-by-picking" id="markdown-toc-creating-annotations-by-picking">Creating annotations by picking</a></li>
+  <li><a href="#occlusion-culling" id="markdown-toc-occlusion-culling">Occlusion culling</a></li>
+  <li><a href="#events" id="markdown-toc-events">Events</a></li>
+  <li><a href="#styling" id="markdown-toc-styling">Styling</a></li>
+  <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
+</ul>
+
+  </div>
+</section>
+<!-- /#table-of-contents -->
+
+<p>I recently made a Sketchfab-style annotation system for <a href="http://xeogl.org">xeogl</a>, a WebGL-based 3D engine
+I’ve been working on.
+<br /><br />
+An annotation is a label that you pin to the surface a mesh. Click this screenshot for a <a href="http://xeogl.org/examples/#annotations_tronTank">demo</a>:
+<br /><br />
+<a href="http://xeogl.org/examples/#annotations_tronTank"><img src="http://xeolabs.com/images/xeogl/annotationsTank.png" alt="" /></a>
+<br /><br />
+The code below shows how to create an annotation. First, we’ll load our model:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">SceneJSModel</span><span class="p">({</span> <span class="c1">// Importing a SceneJS model for fun</span>
+    <span class="na">id</span><span class="p">:</span> <span class="s2">"tank"</span><span class="p">,</span>
+    <span class="na">src</span><span class="p">:</span> <span class="s2">"models/scenejs/tronTank/tronTank.json"</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Once the model has loaded, we’ll create an <a href="http://xeogl.org/docs/classes/Annotation.html">Annotation</a> on one of its meshes:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">model</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"loaded"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+
+        <span class="kd">var</span> <span class="nx">annotation</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">Annotation</span><span class="p">({</span>
+            <span class="na">mesh</span><span class="p">:</span> <span class="s2">"tank.mesh9"</span><span class="p">,</span>             <span class="c1">// xeogl.Mesh instance or ID</span>
+            <span class="na">primIndex</span><span class="p">:</span> <span class="mi">468</span><span class="p">,</span>                 <span class="c1">// First triangle vertex in geometry indices</span>
+            <span class="na">bary</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.16</span><span class="p">,</span> <span class="mf">0.79</span><span class="p">],</span>       <span class="c1">// Barycentric coordinates in triangle</span>
+            <span class="na">glyph</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>                     <span class="c1">// Symbol(s) for pin</span>
+            <span class="na">title</span><span class="p">:</span> <span class="s2">"Cannon"</span><span class="p">,</span>
+            <span class="na">desc</span><span class="p">:</span> <span class="s2">"Fires chevron-shaped bolts of de-rezzing energy"</span><span class="p">,</span>
+            <span class="na">eye</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.66</span><span class="p">,</span> <span class="mf">20.84</span><span class="p">,</span> <span class="o">-</span><span class="mf">21.59</span><span class="p">],</span>    <span class="c1">// Camera eye position (optional)</span>
+            <span class="na">look</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.39</span><span class="p">,</span> <span class="mf">6.84</span><span class="p">,</span> <span class="o">-</span><span class="mf">9.18</span><span class="p">],</span>     <span class="c1">// Camera point-of-interest (optional)</span>
+            <span class="na">up</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.97</span><span class="p">,</span> <span class="mf">0.24</span><span class="p">]</span>          <span class="c1">// Camera "up" vector (optional)</span>
+        <span class="p">});</span>
+    <span class="p">});</span></code></pre></figure>
+
+<p>The annotation is pinned at the given barycentric coordinates within a triangle of the mesh (the Tank’s cannon). Whenever the mesh
+is transformed or deformed, the annotation will always stick to that position on the surface of the mesh. In the demo,
+this is demonstrated by the (A) annotation on our Tron Tank’s cannon, which will move wherever the cannon goes.</p>
+
+<h2 id="camera-vantage-points">Camera vantage points</h2>
+
+<p>As we saw in the previous example, you can optionally specify a camera position from which to view the annotation, given as
+<code class="highlighter-rouge">eye</code>, <code class="highlighter-rouge">look</code> and <code class="highlighter-rouge">up</code> vectors. You can then fly the camera to look at the annotation by
+passing the annotation to a <a href="http://xeogl.org/docs/classes/CameraFlightAnimation.html">CameraFlightAnimation</a>:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">cameraFlight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">CameraFlightAnimation</span><span class="p">();</span>
+
+<span class="nx">cameraFlight</span><span class="p">.</span><span class="nx">flyTo</span><span class="p">(</span><span class="nx">annotation</span><span class="p">);</span></code></pre></figure>
+
+<h2 id="creating-annotations-by-picking">Creating annotations by picking</h2>
+
+<p>I made annotations easy to create from pick results:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">xeogl</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"mouseclicked"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">canvasPos</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">hit</span> <span class="o">=</span> <span class="nx">myScene</span><span class="p">.</span><span class="nx">pick</span><span class="p">({</span> <span class="c1">// Ray-pick mesh surface</span>
+        <span class="na">canvasPos</span><span class="p">:</span> <span class="nx">canvasPos</span><span class="p">,</span>
+        <span class="na">pickSurface</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">});</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">hit</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">lookat</span> <span class="o">=</span> <span class="nx">myScene</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">view</span><span class="p">;</span>
+
+        <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">Annotation</span><span class="p">({</span>
+            <span class="na">mesh</span><span class="p">:</span>     <span class="nx">hit</span><span class="p">.</span><span class="nx">mesh</span><span class="p">,</span>
+            <span class="na">primIndex</span><span class="p">:</span>  <span class="nx">hit</span><span class="p">.</span><span class="nx">primIndex</span><span class="p">,</span>
+            <span class="na">bary</span><span class="p">:</span>       <span class="nx">hit</span><span class="p">.</span><span class="nx">bary</span><span class="p">,</span>
+            <span class="na">title</span><span class="p">:</span>      <span class="s2">"A new world awaits you"</span><span class="p">,</span>
+            <span class="na">desc</span><span class="p">:</span>       <span class="s2">"in the off-world colonies."</span><span class="p">,</span>
+            <span class="na">eye</span><span class="p">:</span>        <span class="nx">lookat</span><span class="p">.</span><span class="nx">eye</span><span class="p">,</span>
+            <span class="na">look</span><span class="p">:</span>       <span class="nx">lookat</span><span class="p">.</span><span class="nx">look</span><span class="p">,</span>
+            <span class="na">up</span><span class="p">:</span>         <span class="nx">lookat</span><span class="p">.</span><span class="nx">up</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>With this snippet, whenever we click on the surface of an mesh, we’ll create an annotation at that
+point. We’ll also save the current camera position with the annotation, so that we can restore the camera to the vantage
+point that we created it from (see previous example).</p>
+
+<h2 id="occlusion-culling">Occlusion culling</h2>
+
+<p>The annotation system automatically hides annotations when they are occluded by other objects in the 3D view. You can see this in
+the demo example, where the (C) annotation disappears while the cannon barrel moves over it.
+<br /><br />
+The system uses a fast GPU-assisted occlusion technique which renders a small point at each annotation’s position, then
+determines the annotation to be occluded when the color of the point’s location on the canvas does not match the point. Since
+reading WebGL’s drawing buffer is expensive, the system performs this occlusion test for all annotations in a batch on
+every 10th frame or so. You’ll note a slight lag between when the annotation is occluded/revealed and hidden/shown.
+<br /><br />
+This technique is much more efficient than the standard ray-casting approach for large meshes and number of objects.
+<br /><br />
+Culling is enabled for an annotation by default, but you can disable it:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">annotation</span><span class="p">.</span><span class="nx">culling</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span></code></pre></figure>
+
+<h2 id="events">Events</h2>
+
+<p>Annotations fire some events that you can subscribe to. Let’s make it so that when you click an
+annotation’s pin the camera will focus on the annotation and the label will open:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">cameraFlight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">xeogl</span><span class="p">.</span><span class="nx">CameraFlightAnimation</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">lastAnnotation</span><span class="p">;</span>
+
+<span class="nx">annotation</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"pinClicked"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">annotation</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">lastAnnotation</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">annotation</span><span class="p">.</span><span class="nx">labelShown</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">annotation</span><span class="p">.</span><span class="nx">labelShown</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="nx">cameraFlight</span><span class="p">.</span><span class="nx">flyTo</span><span class="p">(</span><span class="nx">annotation</span><span class="p">);</span>
+    <span class="nx">lastAnnotation</span> <span class="o">=</span> <span class="nx">annotation</span><span class="p">;</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>You can also track the annotation’s position in Local-space (coordinate space of mesh’s geometry
+before modeling transformation) and World-space (after the modeling transform):</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">annotation</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"localPos"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">localPos</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Local pos changed: "</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">localPos</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"\t"</span><span class="p">));</span>
+<span class="p">});</span>
+
+<span class="nx">annotation</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"worldPos"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">worldPos</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"World pos changed: "</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">worldPos</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">"\t"</span><span class="p">));</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>The Local position will change when the geometry is edited, while the World position will change when the
+ geometry is edited and/or the modeling transform is updated.</p>
+
+<h2 id="styling">Styling</h2>
+
+<p>Annotations manage their HTML elements internally, giving them hardcoded CSS class names. The rules for those classes are defined
+in <a href="https://github.com/xeolabs/xeogl/blob/master/examples/js/annotations/annotation-style.css">annotation-style.css</a>, so
+you can tweak that file if you want to customize the appearance of your annotations.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>So there you have it - an annotation system for <a href="http://xeogl.org">xeogl</a> that’s inspired by the one
+on <a href="https://help.sketchfab.com/hc/en-us/articles/202512456-Annotations">Sketchfab</a>.
+<br /><br />
+The main points in this introduction were:</p>
+
+<ul>
+  <li>The <a href="http://xeogl.org/docs/classes/Annotation.html">Annotation</a> component class provides the means to pin labels on <a href="http://xeogl.org/docs/classes/Mesh.html">Entities</a> that have triangle mesh
+<a href="http://xeogl.org/docs/classes/Geometry.html">Geometries</a>.</li>
+  <li>Since an annotation is pinned to a barycentric location with a its triangle, it can  dynamically
+recalculate its Cartesian coordinates from the triangle vertices whenever the Mesh is transformed or the Geometry is
+edited.</li>
+  <li>An annotation can be configured with a camera vantage point from which to view it. This is useful for focusing the camera
+on the annotation, as part of a presentation.</li>
+  <li>The annotation API makes it easy to create annotations from the results of picking operations.</li>
+  <li>An Annotation will automatically hide itself when occluded by another object in the 3D view.</li>
+  <li>You can customize the appearance of annotations by editing their <a href="https://github.com/xeolabs/xeogl/blob/master/examples/js/annotations/annotation-style.css">CSS stylesheet</a>.</li>
+  <li>See the <a href="http://xeogl.org/examples/#presentation_annotations_tronTank">demo example</a> to see annotations in action, click VIEW SOURCE so see the source code.</li>
+</ul>
+
+<p>Thanks for reading!</p>
+
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="http://xeolabs.com/images/avatar.jpg" class="bio-photo" alt="xeolabs bio photo"></a>
+<h3><a href="http://xeolabs.com/about/">xeolabs</a></h3>
+<p><b>Lindsay Kay</b><br><br><i>3D software engineer providing WebGL-based solutions for product visualization, engineering, medicine and BIM</i></p>
+<a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+<br><br>
+<hr>
+<p style="text-align: center;"><a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf"><img style="text-align: center;" src="http://xeolabs.com/images/scenejs/OpenGLInsights2.jpg"></a><br>
+    <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now free to download! <a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf">Grab it here.</a></i></p>
+<hr>
+
+        </div>
+        <p class="byline"><strong>An Annotation System for xeogl</strong> was published on <time datetime="2017-05-30T00:00:00+00:00" itemprop="datePublished">May 30, 2017</time> and last modified on <time datetime="2017-17-05" itemprop="dateModified">2017-17-05</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://xeolabs.com/about" title="About xeolabs" itemprop="url">xeolabs</a></span></span>.</p>
+      </footer>
+
+        <!---->
+        <!--<br><br>-->
+        <!--<div id="disqus_thread"></div>-->
+        <!--<script type="text/javascript">-->
+            <!--/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */-->
+            <!--var disqus_shortname = 'xeographics'; // required: replace example with your forum shortname-->
+
+            <!--/* * * DON'T EDIT BELOW THIS LINE * * */-->
+            <!--(function() {-->
+                <!--var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;-->
+                <!--dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';-->
+                <!--(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);-->
+            <!--})();-->
+        <!--</script>-->
+        <!--<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
+        <!--<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>-->
+        <!---->
+    </div><!-- /.article-wrap -->
+  </article>
+
+</div><!-- /#main -->
+
+
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://xeolabs.com/articles">View all articles</a>)</small></h4>
+    <ul>
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2018 xeolabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://xeolabs.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://xeolabs.com/assets/js/scripts.min.js"></script>
+
+
+<script type="text/javascript">
+//    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+//    var disqus_shortname = 'xeographics'; // required: replace example with your forum shortname
+//
+//    /* * * DON'T EDIT BELOW THIS LINE * * */
+//    (function () {
+//        var s = document.createElement('script'); s.async = true;
+//        s.type = 'text/javascript';
+//        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+//        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+//    }());
+</script>
+
+</body>
+</html>

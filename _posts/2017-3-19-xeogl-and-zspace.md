@@ -1,10 +1,12 @@
 ---
 layout: post
-title: Developing xeogl Apps for zSpace VR/AR Systems  
-description: Snagged a zSpace 300 to write some xeogl demos for it
+title: Creating xeogl Demos for zSpace VR/AR 
+description: zSpace is a technology firm based in Sunnyvale, California that creates mixed reality systems that combine elements of virtual and augmented reality in a specially-built computer system. in 2017, zSpace loaned me one of their zSpace 300 systems so that I could write some WebGL-based demo applications using xeogl. This is a brief case study of how that went. 
+Xthumbnail: clientLogos/zspaceLogo.jpg
+thumbnail: xeogl/zspace/zSpaceDevice.jpg
 modified: 2017-19-03
-category: articles
-comments: true
+category: portfolio
+comments: false
 tags: [xeogl, webgl, zspace, mixedreality, 3D]
 ---
 
@@ -49,10 +51,8 @@ tags: [xeogl, webgl, zspace, mixedreality, 3D]
  {% highlight javascript %}
  var model = new xeogl.GLTFModel({
     src: "models/gltf/2.0/Reciprocating_Saw/PBR-SpecGloss/Reciprocating_Saw.gltf",
-    transform: new xeogl.Rotate({
-        xyz: [1, 0, 0],
-        angle: 90
-    })
+    position: [1, 0, 0],
+    rotation: [90, 0, 0]    
  });
  {% endhighlight %}
 

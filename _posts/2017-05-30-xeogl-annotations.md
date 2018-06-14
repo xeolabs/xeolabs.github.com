@@ -1,11 +1,12 @@
 ---
 layout: post
-title: Annotations in xeogl
+title: An Annotation System for xeogl
 description: "Introducing a Sketchfab-style annotation system for xeogl"
+thumbnail: xeogl/annotationsTank.png
 tagline: "Made a Sketchfab-style annotation system for xeogl"
 modified: 2017-17-05
-category: articles
-comments: true
+category: article
+comments: false
 tags: [xeogl, webgl]
 ---
 
@@ -22,9 +23,9 @@ tags: [xeogl, webgl]
 I recently made a Sketchfab-style annotation system for [xeogl](http://xeogl.org), a WebGL-based 3D engine
 I've been working on.
 <br><br>
-An annotation is a label that you pin to the surface an entity. Click this screenshot for a [demo](http://xeogl.org/examples/#presentation_annotations_tronTank):
+An annotation is a label that you pin to the surface a mesh. Click this screenshot for a [demo](http://xeogl.org/examples/#annotations_tronTank):
 <br><br>
-[![]({{ site.url }}/images/xeogl/annotationsTank.png)](http://xeogl.org/examples/#presentation_annotations_tronTank)
+[![]({{ site.url }}/images/xeogl/annotationsTank.png)](http://xeogl.org/examples/#annotations_tronTank)
 <br><br>
 The code below shows how to create an annotation. First, we'll load our model:
 {% highlight javascript %}
@@ -34,13 +35,13 @@ var model = new xeogl.SceneJSModel({ // Importing a SceneJS model for fun
 });
 {% endhighlight %}
 
-Once the model has loaded, we'll create an [Annotation](http://xeogl.org/docs/classes/Annotation.html) on one of its entities:
+Once the model has loaded, we'll create an [Annotation](http://xeogl.org/docs/classes/Annotation.html) on one of its meshes:
 
 {% highlight javascript %}
 model.on("loaded", function () {
 
         var annotation = new xeogl.Annotation({
-            entity: "tank.entity9",         // Entity instance or ID
+            mesh: "tank.mesh9",             // xeogl.Mesh instance or ID
             primIndex: 468,                 // First triangle vertex in geometry indices
             bary: [0.05, 0.16, 0.79],       // Barycentric coordinates in triangle
             glyph: "A",                     // Symbol(s) for pin
@@ -53,8 +54,8 @@ model.on("loaded", function () {
     });
 {% endhighlight %}
 
-The annotation is pinned at the given barycentric coordinates within a triangle of its entity's mesh (the Tank's cannon). Whenever the entity
-is transformed or deformed, the annotation will always stick to that position on the surface of the entity. In the demo,
+The annotation is pinned at the given barycentric coordinates within a triangle of the mesh (the Tank's cannon). Whenever the mesh
+is transformed or deformed, the annotation will always stick to that position on the surface of the mesh. In the demo,
 this is demonstrated by the (A) annotation on our Tron Tank's cannon, which will move wherever the cannon goes.
 
 ## Camera vantage points
@@ -76,7 +77,7 @@ I made annotations easy to create from pick results:
 {% highlight javascript %}
 xeogl.input.on("mouseclicked", function(canvasPos) {
 
-    var hit = myScene.pick({ // Ray-pick entity surface
+    var hit = myScene.pick({ // Ray-pick mesh surface
         canvasPos: canvasPos,
         pickSurface: true
     });
@@ -85,7 +86,7 @@ xeogl.input.on("mouseclicked", function(canvasPos) {
         var lookat = myScene.camera.view;
 
         new xeogl.Annotation({
-            entity:     hit.entity,
+            mesh:     hit.mesh,
             primIndex:  hit.primIndex,
             bary:       hit.bary,
             title:      "A new world awaits you",
@@ -98,7 +99,7 @@ xeogl.input.on("mouseclicked", function(canvasPos) {
 });
 {% endhighlight %}
 
-With this snippet, whenever we click on the surface of an entity, we'll create an annotation at that
+With this snippet, whenever we click on the surface of an mesh, we'll create an annotation at that
 point. We'll also save the current camera position with the annotation, so that we can restore the camera to the vantage
 point that we created it from (see previous example).
 
@@ -138,7 +139,7 @@ annotation.on("pinClicked", function (annotation) {
 });
 {% endhighlight %}
 
-You can also track the annotation's position in Local-space (coordinate space of entity's geometry
+You can also track the annotation's position in Local-space (coordinate space of mesh's geometry
 before modeling transformation) and World-space (after the modeling transform):
 
 {% highlight javascript %}
@@ -167,10 +168,10 @@ on [Sketchfab](https://help.sketchfab.com/hc/en-us/articles/202512456-Annotation
 <br><br>
 The main points in this introduction were:
 
-* The [Annotation](http://xeogl.org/docs/classes/Annotation.html) component class provides the means to pin labels on [Entities](http://xeogl.org/docs/classes/Entity.html) that have triangle mesh
+* The [Annotation](http://xeogl.org/docs/classes/Annotation.html) component class provides the means to pin labels on [Entities](http://xeogl.org/docs/classes/Mesh.html) that have triangle mesh
 [Geometries](http://xeogl.org/docs/classes/Geometry.html).
 * Since an annotation is pinned to a barycentric location with a its triangle, it can  dynamically
-recalculate its Cartesian coordinates from the triangle vertices whenever the Entity is transformed or the Geometry is
+recalculate its Cartesian coordinates from the triangle vertices whenever the Mesh is transformed or the Geometry is
 edited.
 * An annotation can be configured with a camera vantage point from which to view it. This is useful for focusing the camera
 on the annotation, as part of a presentation.

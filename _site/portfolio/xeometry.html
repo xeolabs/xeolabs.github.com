@@ -1,0 +1,336 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>xeometry - a WebGL-based 3D model viewing library &#8211; xeolabs</title>
+<meta name="description" content="<b>xeometry</b> is an experimental open source JavaScript library I created for viewing and interacting with 3D glTF models on WebGL.<br><br>Use xeometry to rapidly build 3D viewer apps and interactive presentations, or as a boilerplate on which to base your own 3D viewer.">
+<meta name="keywords" content="xeogl, seometry, experiments, webgl">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xeolabs.com/images/">
+<meta name="twitter:title" content="xeometry - a WebGL-based 3D model viewing library">
+<meta name="twitter:description" content="<b>xeometry</b> is an experimental open source JavaScript library I created for viewing and interacting with 3D glTF models on WebGL.<br><br>Use xeometry to rapidly build 3D viewer apps and interactive presentations, or as a boilerplate on which to base your own 3D viewer.">
+<meta name="twitter:creator" content="@xeographics">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xeometry - a WebGL-based 3D model viewing library">
+<meta property="og:description" content="<b>xeometry</b> is an experimental open source JavaScript library I created for viewing and interacting with 3D glTF models on WebGL.<br><br>Use xeometry to rapidly build 3D viewer apps and interactive presentations, or as a boilerplate on which to base your own 3D viewer.">
+<meta property="og:url" content="http://xeolabs.com/portfolio/xeometry">
+<meta property="og:site_name" content="xeolabs">
+
+
+
+
+
+<link rel="canonical" href="http://xeolabs.com/portfolio/xeometry">
+<link href="http://xeolabs.com/feed.xml" type="application/atom+xml" rel="alternate" title="xeolabs Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://xeolabs.com/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="http://xeolabs.com/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://xeolabs.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://xeolabs.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://xeolabs.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://xeolabs.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://xeolabs.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://xeolabs.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://xeolabs.com/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="article" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://xeolabs.com/">xeolabs</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <ul>
+		        
+				<li><a href="http://xeolabs.com/index" >Home</a></li>
+		        
+				<li><a href="http://xeolabs.com/articles" >Articles</a></li>
+		        
+				<li><a href="http://xeolabs.com/portfolio" >Portfolio</a></li>
+		        
+				<li><a href="http://linkedin.com/in/lindsaystanleykay" target="_blank">Resume</a></li>
+		        
+				<li><a href="http://xeogl.org" target="_blank">xeogl</a></li>
+		        
+
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <div class="article-author-top">
+    <img src="http://xeolabs.com/images/avatar.jpg" class="bio-photo" alt="xeolabs bio photo"></a>
+<h3><a href="http://xeolabs.com/about/">xeolabs</a></h3>
+<p><b>Lindsay Kay</b><br><br><i>3D software engineer providing WebGL-based solutions for product visualization, engineering, medicine and BIM</i></p>
+<a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+<br><br>
+<hr>
+<p style="text-align: center;"><a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf"><img style="text-align: center;" src="http://xeolabs.com/images/scenejs/OpenGLInsights2.jpg"></a><br>
+    <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now free to download! <a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf">Grab it here.</a></i></p>
+<hr>
+
+  </div>
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <div class="headline-wrap">
+      <h1 itemprop="name">xeometry - a WebGL-based 3D model viewing library</h1>
+        <p style="font-weight:bold; font-style:italic;"><time datetime="2018-02-16T00:00:00+00:00" itemprop="datePublished">February 16, 2018</time></p>
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap" itemprop="text">
+      <section id="table-of-contents" class="toc">
+  <header>
+    <h3>Contents</h3>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#using-object-ids" id="markdown-toc-using-object-ids">Using object IDs</a></li>
+  <li><a href="#using-object-types" id="markdown-toc-using-object-types">Using object types</a></li>
+  <li><a href="#bookmarking" id="markdown-toc-bookmarking">Bookmarking</a></li>
+  <li><a href="#features" id="markdown-toc-features">Features</a></li>
+  <li><a href="#architecture" id="markdown-toc-architecture">Architecture</a></li>
+</ul>
+
+  </div>
+</section>
+<!-- /#table-of-contents -->
+
+<p>Last month I made <em><a href="http://xeolabs.com/xeometry">xeometry</a></em>, a WebGL-based toolkit for viewing and navigating models
+loaded from glTF.</p>
+
+<p><br />A xeometry viewer is basically a wrapper around <a href="http://xeogl.org">xeogl</a>, providing methods to:</p>
+
+<ul>
+  <li>load models from glTF,</li>
+  <li>reference objects by ID or type,</li>
+  <li>show, hide and transform objects,</li>
+  <li>visually emphasise objects, using effects like outlines and x-ray views,</li>
+  <li>query object boundaries,</li>
+  <li>raycast to select objects,</li>
+  <li>move the camera around to look at target objects, and</li>
+  <li>save and load viewer state as JSON “bookmarks”.</li>
+</ul>
+
+<h2 id="using-object-ids">Using object IDs</h2>
+
+<p>You can also just operate on objects using their IDs:<br /><br />
+<a href="http://xeogl.org/examples/#presentation_annotations_tronTank"><img src="http://xeolabs.com/images/xeogl/sawObjects.png" alt="" /></a></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="kd">var</span> <span class="nx">viewer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">xeometry</span><span class="p">.</span><span class="nx">Viewer</span><span class="p">({</span> <span class="na">canvasId</span><span class="p">:</span> <span class="s2">"theCanvas"</span> <span class="p">});</span>
+
+ <span class="nx">viewer</span><span class="p">.</span><span class="nx">loadModel</span><span class="p">(</span><span class="s2">"saw"</span><span class="p">,</span> <span class="s2">"models/Reciprocating_Saw.gltf"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+     <span class="nx">viewer</span><span class="p">.</span><span class="nx">setOpacity</span><span class="p">([</span> <span class="c1">// Make the red plastic casing transparent</span>
+         <span class="s2">"saw#body-node.entity.0"</span><span class="p">,</span>
+         <span class="s2">"saw#body-node_1.entity.0"</span><span class="p">,</span>
+         <span class="s2">"saw#body-node_2.entity.0"</span><span class="p">,</span>
+         <span class="s2">"saw#body-node_3.entity.0"</span><span class="p">,</span>
+         <span class="s2">"saw#body-node_11.entity.0"</span><span class="p">,</span>
+         <span class="s2">"saw#body-node_110.entity.0"</span><span class="p">,</span>
+         <span class="s2">"saw#body-node_29.entity.0"</span><span class="p">,</span>
+         <span class="s2">"saw#body-node_7.entity.0"</span><span class="p">,</span>
+         <span class="s2">"saw#body-node_6.entity.0"</span>
+     <span class="p">],</span> <span class="mf">0.3</span><span class="p">);</span>
+     <span class="nx">viewer</span><span class="p">.</span><span class="nx">viewFit</span><span class="p">([</span><span class="s2">"saw"</span><span class="p">]);</span>
+ <span class="p">});</span>
+ </code></pre></figure>
+
+<h2 id="using-object-types">Using object types</h2>
+
+<p>You can tag entities within your glTF with type codes, then once you’ve
+loaded it, you’re able to do operations on sets of objects that are selected by type, such as <em>“make everything
+in the gearbox transparent except for the bearings and shafts”</em>.
+<br /><br />
+Here’s an example, using a hypothetical type system for gearbox components:<br /><br />
+<a href="http://xeogl.org/examples/#presentation_annotations_tronTank"><img src="http://xeolabs.com/images/xeogl/typeViewer.png" alt="" /></a></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="nx">viewer</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+
+ <span class="nx">viewer</span><span class="p">.</span><span class="nx">loadModel</span><span class="p">(</span><span class="s2">"gearbox"</span><span class="p">,</span> <span class="s2">"models/GearboxAssy.gltf"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+     <span class="nx">viewer</span><span class="p">.</span><span class="nx">setOpacity</span><span class="p">(</span><span class="s2">"gearbox"</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">);</span> <span class="c1">// Everything in model transparent</span>
+     <span class="nx">viewer</span><span class="p">.</span><span class="nx">setOpacity</span><span class="p">([</span><span class="s2">"bearing"</span><span class="p">,</span> <span class="s2">"shaft"</span><span class="p">],</span> <span class="mf">1.0</span><span class="p">);</span> <span class="c1">// Bearings and shafts opaque</span>
+     <span class="nx">viewer</span><span class="p">.</span><span class="nx">viewFit</span><span class="p">([</span><span class="s2">"bearing"</span><span class="p">,</span> <span class="s2">"shaft"</span><span class="p">]);</span> <span class="c1">// Fit 3D view to bearings and shafts</span>
+ <span class="p">});</span></code></pre></figure>
+
+<h2 id="bookmarking">Bookmarking</h2>
+
+<p>Once you’ve programmed the view you want, you can save it as a JSON bookmark.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="kd">var</span> <span class="nx">bearingsAndShafts</span> <span class="o">=</span> <span class="nx">viewer</span><span class="p">.</span><span class="nx">getBookmark</span><span class="p">();</span>
+ <span class="kd">var</span> <span class="nx">viewer2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">xeometry</span><span class="p">.</span><span class="nx">Viewer</span><span class="p">({</span> <span class="na">canvasId</span><span class="p">:</span> <span class="s2">"anotherCanvas"</span> <span class="p">});</span>
+ <span class="nx">viewer2</span><span class="p">.</span><span class="nx">setBookmark</span><span class="p">(</span><span class="nx">bearingsAndShafts</span><span class="p">);</span>
+ </code></pre></figure>
+
+<p>You can then reload that bookmark at any time to restore the view. You can also of course load the
+bookmark into other viewer instances, as long as they are able to load the models it references.</p>
+
+<p>Here’s the bookmark we just saved: <a href=""></a></p>
+
+<h2 id="features">Features</h2>
+
+<ul>
+  <li>load IFC models from glTF,</li>
+  <li>transform, show and hide objects,</li>
+  <li>control object opacities,,</li>
+  <li>query object boundaries,</li>
+  <li>raycast to find objects,</li>
+  <li>navigate camera to objects, and</li>
+  <li>save and load JSON bookmarks.</li>
+</ul>
+
+<p>Being able to programmatically control objects lets us code animated presentations, like exploding parts assemblies, guided tours and so on.</p>
+
+<h2 id="architecture">Architecture</h2>
+
+<p>The API consists of a single <code class="highlighter-rouge">Viewer</code> class, which is a facade wrapping a xeogl <code class="highlighter-rouge">Scene</code>.</p>
+
+<p>The viewer API represents everything in the Scene
+with IDs, managing the scene objects, camera etc. internally.</p>
+
+<p>For scalability, I’d normally break it up
+into various classes representing scene objects, camera  etc, but in this case I went for a single facade in order to have
+ a simple data-driven boundary between the xeogl graphics engine and the application layer.
+ <br /><br />
+The API represents everything in the viewer with IDs, managing entities internally. This results in a set of self-contained
+and data-driven methods that are easy to play around with in the browser’s JavaScript console.
+ <br /><br />
+ With xeogl doing all the heavy lifting, and with much of the required functionality built into xeogl by
+ design, the facade turned out to be a very thin wrapper of around a thousand lines of code or so.</p>
+
+<p>With regard to the IFC, element types are about as far as the IFC support goes for this viewer. I’m thinking that a
+typical BIM application layer would manage other aspects of the IFC schema, such as layers, relationships etc, while the
+viewer can just use object IDs and types to reference the objects in the 3D view.</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="http://xeolabs.com/images/avatar.jpg" class="bio-photo" alt="xeolabs bio photo"></a>
+<h3><a href="http://xeolabs.com/about/">xeolabs</a></h3>
+<p><b>Lindsay Kay</b><br><br><i>3D software engineer providing WebGL-based solutions for product visualization, engineering, medicine and BIM</i></p>
+<a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+<a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+<a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+<br><br>
+<hr>
+<p style="text-align: center;"><a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf"><img style="text-align: center;" src="http://xeolabs.com/images/scenejs/OpenGLInsights2.jpg"></a><br>
+    <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now free to download! <a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf">Grab it here.</a></i></p>
+<hr>
+
+        </div>
+        <p class="byline"><strong>xeometry - a WebGL-based 3D model viewing library</strong> was published on <time datetime="2018-02-16T00:00:00+00:00" itemprop="datePublished">February 16, 2018</time> and last modified on <time datetime="2018-19-09" itemprop="dateModified">2018-19-09</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://xeolabs.com/about" title="About xeolabs" itemprop="url">xeolabs</a></span></span>.</p>
+      </footer>
+
+        <!---->
+        <!--<br><br>-->
+        <!--<div id="disqus_thread"></div>-->
+        <!--<script type="text/javascript">-->
+            <!--/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */-->
+            <!--var disqus_shortname = 'xeographics'; // required: replace example with your forum shortname-->
+
+            <!--/* * * DON'T EDIT BELOW THIS LINE * * */-->
+            <!--(function() {-->
+                <!--var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;-->
+                <!--dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';-->
+                <!--(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);-->
+            <!--})();-->
+        <!--</script>-->
+        <!--<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
+        <!--<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>-->
+        <!---->
+    </div><!-- /.article-wrap -->
+  </article>
+
+</div><!-- /#main -->
+
+
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://xeolabs.com/articles">View all articles</a>)</small></h4>
+    <ul>
+    
+      
+      
+      
+      <li><a href="http://xeolabs.com/portfolio/solidcomponents-viewer" title="Developing the SolidComponents™ Viewer on xeogl">Developing the SolidComponents™ Viewer on xeogl</a></li>
+      
+    
+      
+      
+      
+      <li><a href="http://xeolabs.com/portfolio/biodigital-human" title="Developing the BioDigital Human™ on SceneJS">Developing the BioDigital Human™ on SceneJS</a></li>
+      
+    
+      
+      
+      
+      <li><a href="http://xeolabs.com/portfolio/bimdata" title="Developing the BIMData IFC Viewer on xeogl">Developing the BIMData IFC Viewer on xeogl</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2018 xeolabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://xeolabs.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://xeolabs.com/assets/js/scripts.min.js"></script>
+
+
+<script type="text/javascript">
+//    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+//    var disqus_shortname = 'xeographics'; // required: replace example with your forum shortname
+//
+//    /* * * DON'T EDIT BELOW THIS LINE * * */
+//    (function () {
+//        var s = document.createElement('script'); s.async = true;
+//        s.type = 'text/javascript';
+//        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+//        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+//    }());
+</script>
+
+</body>
+</html>

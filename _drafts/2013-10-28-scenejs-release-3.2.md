@@ -4,7 +4,7 @@ title: What's new in SceneJS 3.2
 description: "New file import formats, frustum culling, pick-zoom-rotate camera, more functionality for custom nodes and more "
 modified: 2013-05-31
 category: articles
-comments: true
+comments: false
 tags: [scenejs, release]
 ---
 

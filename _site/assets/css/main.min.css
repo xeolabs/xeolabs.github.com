@@ -3,6 +3,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
     display: block
 }
 
+article {
+    margin-top: 10px;
+    padding-bottom: 0px;
+}
+
 audio, canvas, video {
     display: inline-block
 }
@@ -307,16 +312,18 @@ h6 {
 }
 
 a {
-    color: #343434;
-    text-decoration: none
+    color: #343464;
+    text-decoration: none;
 }
 
 a:visited {
     color: #676767
+    text-decoration: underline;
 }
 
 a:hover {
     color: #010101
+    text-decoration: underline;
 }
 
 a:focus {
@@ -325,10 +332,12 @@ a:focus {
 }
 
 a:hover, a:active {
-    outline: 0
+    outline: 0;
+    text-decoration: underline;
 }
 
 figcaption {
+    font-style: italic;
     padding-top: 10px;
     font-size: 14px;
     font-size: .875rem;
@@ -1227,6 +1236,11 @@ svg:not(:root) {
     width: 100%
 }
 
+.clients img {
+    padding: 5px;
+}
+
+
 .third {
     width: 100%;
     margin: 0 auto;
@@ -1259,6 +1273,43 @@ svg:not(:root) {
 }
 
 .third figcaption {
+    display: inline;
+    float: left;
+    width: 100%
+}
+
+.fourth {
+    width: 100%;
+    margin: 0 auto;
+    *zoom: 1
+}
+
+.fourth:before, .fourth:after {
+    display: table;
+    content: ""
+}
+
+.fourth:after {
+    clear: both
+}
+
+.fourth:before, .fourth:after {
+    display: table;
+    line-height: 0;
+    content: ""
+}
+
+.fourth:after {
+    clear: both
+}
+
+.fourth img {
+    display: inline;
+    float: left;
+    width: 25%
+}
+
+.fourth figcaption {
     display: inline;
     float: left;
     width: 100%
@@ -1767,6 +1818,9 @@ body {
 }
 
 #index article h2 {
+    /*border-top: 1px solid black;*/
+    margin-top: 0;
+    border-bottom: 0px;
     margin-bottom: 4px;
     font-size: 20px;
     font-size: 1.25rem;
@@ -1827,7 +1881,7 @@ body {
 
 .article-author-top p, .article-author-bottom p {
     font-size: 80%;
-    font-style: italic
+    /*font-style: italic*/
 }
 
 .article-author-top a, .article-author-bottom a, .article-author-top a:hover, .article-author-bottom a:hover {
@@ -3110,4 +3164,17 @@ img.mfp-img {
 /* To center images */
 .center {
     text-align: center;
+}
+
+.column {
+    float: left;
+}
+
+.left {
+    width: 50%;
+}
+
+.right {
+    width: 45%;
+    padding-left: 5px;
 }

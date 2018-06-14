@@ -5,7 +5,7 @@ description: "Building annotated stories with xeogl"
 tagline: "Building annotated stories with xeogl"
 modified: 2017-17-08
 category: articles
-comments: true
+comments: false
 tags: [xeogl, webgl]
 ---
 

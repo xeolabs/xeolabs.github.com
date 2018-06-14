@@ -4,7 +4,7 @@ title: SceneJS Pick-Fly-Orbit Camera
 description: "Camera node which flies to whatever you pick and orbits it"
 modified: 2013-05-31
 category: articles
-comments: true
+comments: false
 tags: [scenejs, tutorial, picking, camera]
 ---
 

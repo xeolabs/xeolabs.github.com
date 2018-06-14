@@ -4,7 +4,7 @@ title: Using the SceneJS Depth Buffer
 description: "Using the depthbuf node to configure the depth buffer for subgraphs"
 modified: 2013-05-31
 category: articles
-comments: true
+comments: false
 tags: [scenejs, tutorial, depthbuf]
 ---
 

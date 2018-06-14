@@ -4,7 +4,7 @@ title: Importing SceneJS content into xeogl
 description: "On the joys of data-driven scene definitions and recursive-descent parsing"
 modified: 2016-19-09
 category: articles
-comments: true
+comments: false
 tags: [xeogl, scenejs, picking, webgl]
 ---
 

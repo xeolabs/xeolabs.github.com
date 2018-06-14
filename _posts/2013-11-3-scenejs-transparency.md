@@ -4,7 +4,7 @@ title: Transparency in SceneJS
 description: "All about making objects transparent in SceneJS"
 modified: 2013-05-31
 category: articles
-comments: true
+comments: false
 tags: [scenejs, tutorial, transparency]
 ---
 

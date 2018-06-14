@@ -4,7 +4,7 @@ title: Automatic WebGLContestLost Recovery in SceneJS
 description: "How SceneJS gets back on its feet when WebGL blows a fuse"
 modified: 2013-05-31
 category: articles
-comments: true
+comments: false
 tags: [scenejs, tutorial]
 ---
 

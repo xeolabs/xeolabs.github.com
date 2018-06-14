@@ -4,7 +4,7 @@ title: Picking in SceneJS
 description: "How to click on things in the 3D view"
 modified: 2013-05-31
 category: articles
-comments: true
+comments: false
 tags: [scenejs, tutorial, picking, interaction]
 ---
 

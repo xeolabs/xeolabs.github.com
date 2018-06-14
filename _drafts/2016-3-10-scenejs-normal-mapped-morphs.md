@@ -4,7 +4,7 @@ title: Normal Mapping Morphs in SceneJS
 description: "How to make morphing meshes look lumpy"
 modified: 2016-3-16
 category: articles
-comments: true
+comments: false
 tags: [scenejs, tutorial, textures, morphing]
 ---
 

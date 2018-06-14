@@ -5,7 +5,7 @@ description: "Loading IFC models from glTF"
 tagline: "Loading IFC models from glTF"
 modified: 2017-17-04
 category: articles
-comments: true
+comments: false
 tags: [xeogl, webgl]
 ---
 
