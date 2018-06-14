@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-14T13:47:54+00:00</updated>
+<updated>2018-06-14T13:50:39+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -227,8 +227,8 @@ For post-effects support in SceneJS, Tarek built an extensible plugin-based arch
 &lt;p&gt;Along the way, I got to write about SceneJS and present it to fellow graphics nerds:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;In 2012, I contributed a chapter on the pre-fork version of SceneJS to &lt;em&gt;OpenGL Insights&lt;/em&gt;, which you can now &lt;a href=&quot;http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf&quot;&gt;download for free&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;In 2015, I gave a talk on SceneJS at the Berlin WebGL Meetup - &lt;a href=&quot;http://slides.com/xeolabs/deck&quot;&gt;here are the slides&lt;/a&gt; from that talk, with a few embedded demos.&lt;/li&gt;
+  &lt;li&gt;Wote a chapter on the pre-forked SceneJS for &lt;em&gt;OpenGL Insights&lt;/em&gt; 2012, which you can now &lt;a href=&quot;http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf&quot;&gt;download for free&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Gave a talk on SceneJS at the 2015 Berlin WebGL Meetup - &lt;a href=&quot;http://slides.com/xeolabs/deck&quot;&gt;here are the slides&lt;/a&gt; from that talk, with a few embedded live demos.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;next-steps-xeogl&quot;&gt;Next Steps: xeogl&lt;/h2&gt;

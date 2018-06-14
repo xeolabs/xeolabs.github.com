@@ -185,8 +185,8 @@ For post-effects support in SceneJS, Tarek built an extensible plugin-based arch
 
 Along the way, I got to write about SceneJS and present it to fellow graphics nerds:
 
-* In 2012, I contributed a chapter on the pre-fork version of SceneJS to *OpenGL Insights*, which you can now [download for free](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf).
-* In 2015, I gave a talk on SceneJS at the Berlin WebGL Meetup - [here are the slides](http://slides.com/xeolabs/deck) from that talk, with a few embedded demos.
+* Wote a chapter on the pre-forked SceneJS for *OpenGL Insights* 2012, which you can now [download for free](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf).
+* Gave a talk on SceneJS at the 2015 Berlin WebGL Meetup - [here are the slides](http://slides.com/xeolabs/deck) from that talk, with a few embedded live demos.
 
 ## Next Steps: xeogl
 
