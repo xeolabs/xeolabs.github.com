@@ -171,26 +171,31 @@ earlier C++ version, which he implemented on OpenSceneGraph.
 	<figcaption><a href="https://www.smiletrain.org/" title="SceneJS powering the BioDigital Human">The Smiletrain Surgical Simulator is built on the BioDigital Human and assists healthcare professionals in developing countries with learning cleft repair procedures.</a></figcaption>
 </figure>
 
-
 ## 2015: SceneJS Private Fork 
 
 With [Tarek Sherif](https://twitter.com/thsherif) taking over as on-site lead graphics programmer 2015, we added many more 
 features to Human and SceneJS, including a streaming asset server, physically-based rendering (PBR), geometry and texture compression, particle 
 systems and an improved post-effects pipeline.
 <br><br>
-If you're interested in the inner workings of the pre-fork SceneJS, I wrote a chapter on it for *OpenGL Insights*, which you can now [download for free](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf).
+
+## SceneJS Presentations
+
+A couple of presentations of SceneJS:
+
+* In 2012, I wrote a chapter on the pre-fork version of SceneJS for *OpenGL Insights*, which you can now [download for free](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf).
+* I gave a talk on SceneJS at the Berlin WebGL Meetup - [here's the slides](http://slides.com/xeolabs/deck) from that talk.
 
 ## Acknowledgements
 
- * [Vladimir Vukevic](https://en.wikipedia.org/wiki/Vladimir_Vuki%C4%87evi%C4%87) for kicking WebGL off with his Canvas3D experiments
- * [The Khronos WebGL Working Group](https://www.khronos.org/) for overseeing the development of the WebGL specification  
- * [The ANGLE developers](https://chromium.googlesource.com/angle/angle/+/master/README.md) for making WebGL work on DirectX
- * [COLLADA™](https://www.khronos.org/collada/) 
- * [Paul Brunt](http://www.paulbrunt.co.uk/#/) for his open source WebGL-based [GLGE](http://www.glge.org/) engine 
- * The SceneJS community for a crash course on what a 3D engine is
- * The modeling team at BioDigital for creating all the cool content that makes the platform shine
-<br><br>
-I won't list the wholle BioDigital team here because I might miss someone, but I'll give props to interns, such 
+ * [Vladimir Vukevic](https://en.wikipedia.org/wiki/Vladimir_Vuki%C4%87evi%C4%87) for kicking WebGL off with his Canvas3D experiments,
+ * [the Khronos WebGL Working Group](https://www.khronos.org/) for overseeing the development of the WebGL specification,
+ * [the ANGLE developers](https://chromium.googlesource.com/angle/angle/+/master/README.md) for making WebGL work on DirectX,
+ * [COLLADA™](https://www.khronos.org/collada/) for the file format that got us started with the Human, 
+ * [Paul Brunt](http://www.paulbrunt.co.uk/#/) for his pioneering open source WebGL-based [GLGE](http://www.glge.org/) engine, which was like a living textbook on graphics algorithms on JavaScript,  
+ * the SceneJS community for a crash course on what a 3D engine is, and
+ * the modeling team at BioDigital for creating all the cool content that makes the platform shine.
+
+I won't list the whole BioDigital team here because I might miss someone, but I'll give props to interns, such 
 as [Jacqueline Chu](https://www.linkedin.com/in/jacqueline-chu-7a532558) and [Shuai Shao](https://twitter.com/shrekshao) (AKA ShrekShao), 
 who came in fresh from academia and added many valuable rendering features. 
 <br><br>

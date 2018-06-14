@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-14T10:45:22+00:00</updated>
+<updated>2018-06-14T11:01:32+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -217,25 +217,33 @@ earlier C++ version, which he implemented on OpenSceneGraph.&lt;/p&gt;
 &lt;p&gt;With &lt;a href=&quot;https://twitter.com/thsherif&quot;&gt;Tarek Sherif&lt;/a&gt; taking over as on-site lead graphics programmer 2015, we added many more 
 features to Human and SceneJS, including a streaming asset server, physically-based rendering (PBR), geometry and texture compression, particle 
 systems and an improved post-effects pipeline.
-&lt;br /&gt;&lt;br /&gt;
-If you’re interested in the inner workings of the pre-fork SceneJS, I wrote a chapter on it for &lt;em&gt;OpenGL Insights&lt;/em&gt;, which you can now &lt;a href=&quot;http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf&quot;&gt;download for free&lt;/a&gt;.&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;scenejs-presentations&quot;&gt;SceneJS Presentations&lt;/h2&gt;
+
+&lt;p&gt;A couple of presentations of SceneJS:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In 2012, I wrote a chapter on the pre-fork version of SceneJS for &lt;em&gt;OpenGL Insights&lt;/em&gt;, which you can now &lt;a href=&quot;http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf&quot;&gt;download for free&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;I gave a talk on SceneJS at the Berlin WebGL Meetup - &lt;a href=&quot;http://slides.com/xeolabs/deck&quot;&gt;here’s the slides&lt;/a&gt; from that talk.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;acknowledgements&quot;&gt;Acknowledgements&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Vladimir_Vuki%C4%87evi%C4%87&quot;&gt;Vladimir Vukevic&lt;/a&gt; for kicking WebGL off with his Canvas3D experiments&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.khronos.org/&quot;&gt;The Khronos WebGL Working Group&lt;/a&gt; for overseeing the development of the WebGL specification&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://chromium.googlesource.com/angle/angle/+/master/README.md&quot;&gt;The ANGLE developers&lt;/a&gt; for making WebGL work on DirectX&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.khronos.org/collada/&quot;&gt;COLLADA™&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.paulbrunt.co.uk/#/&quot;&gt;Paul Brunt&lt;/a&gt; for his open source WebGL-based &lt;a href=&quot;http://www.glge.org/&quot;&gt;GLGE&lt;/a&gt; engine&lt;/li&gt;
-  &lt;li&gt;The SceneJS community for a crash course on what a 3D engine is&lt;/li&gt;
-  &lt;li&gt;The modeling team at BioDigital for creating all the cool content that makes the platform shine
-&lt;br /&gt;&lt;br /&gt;
-I won’t list the wholle BioDigital team here because I might miss someone, but I’ll give props to interns, such 
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Vladimir_Vuki%C4%87evi%C4%87&quot;&gt;Vladimir Vukevic&lt;/a&gt; for kicking WebGL off with his Canvas3D experiments,&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.khronos.org/&quot;&gt;the Khronos WebGL Working Group&lt;/a&gt; for overseeing the development of the WebGL specification,&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://chromium.googlesource.com/angle/angle/+/master/README.md&quot;&gt;the ANGLE developers&lt;/a&gt; for making WebGL work on DirectX,&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.khronos.org/collada/&quot;&gt;COLLADA™&lt;/a&gt; for the file format that got us started with the Human,&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.paulbrunt.co.uk/#/&quot;&gt;Paul Brunt&lt;/a&gt; for his pioneering open source WebGL-based &lt;a href=&quot;http://www.glge.org/&quot;&gt;GLGE&lt;/a&gt; engine, which was like a living textbook on graphics algorithms on JavaScript,&lt;/li&gt;
+  &lt;li&gt;the SceneJS community for a crash course on what a 3D engine is, and&lt;/li&gt;
+  &lt;li&gt;the modeling team at BioDigital for creating all the cool content that makes the platform shine.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I won’t list the whole BioDigital team here because I might miss someone, but I’ll give props to interns, such 
 as &lt;a href=&quot;https://www.linkedin.com/in/jacqueline-chu-7a532558&quot;&gt;Jacqueline Chu&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/shrekshao&quot;&gt;Shuai Shao&lt;/a&gt; (AKA ShrekShao), 
 who came in fresh from academia and added many valuable rendering features. 
-&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
   &lt;header&gt;
@@ -257,6 +265,7 @@ who came in fresh from academia and added many valuable rendering features.
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#scenejs-private-fork&quot; id=&quot;markdown-toc-scenejs-private-fork&quot;&gt;2015: SceneJS Private Fork&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#scenejs-presentations&quot; id=&quot;markdown-toc-scenejs-presentations&quot;&gt;SceneJS Presentations&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#acknowledgements&quot; id=&quot;markdown-toc-acknowledgements&quot;&gt;Acknowledgements&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
