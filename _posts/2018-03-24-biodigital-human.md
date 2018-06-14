@@ -176,14 +176,13 @@ earlier C++ version, which he implemented on OpenSceneGraph.
 With [Tarek Sherif](https://twitter.com/thsherif) taking over as on-site lead graphics programmer 2015, we added many more 
 features to Human and SceneJS, including a streaming asset server, physically-based rendering (PBR), geometry and texture compression, particle 
 systems and an improved post-effects pipeline.
-<br><br>
 
 ## SceneJS Presentations
 
-A couple of presentations of SceneJS:
+Along the way, I got to write about SceneJS and demonstrate it for graphics nerds:
 
 * In 2012, I wrote a chapter on the pre-fork version of SceneJS for *OpenGL Insights*, which you can now [download for free](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf).
-* I gave a talk on SceneJS at the Berlin WebGL Meetup - [here's the slides](http://slides.com/xeolabs/deck) from that talk.
+* I gave a talk on SceneJS at the Berlin WebGL Meetup - [here are the slides](http://slides.com/xeolabs/deck) from that talk, with a few embedded demos.
 
 ## Acknowledgements
 
