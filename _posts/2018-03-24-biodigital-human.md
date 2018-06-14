@@ -188,6 +188,14 @@ Along the way, I got to write about SceneJS and present it to fellow graphics ne
 * In 2012, I contributed a chapter on the pre-fork version of SceneJS to *OpenGL Insights*, which you can now [download for free](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf).
 * In 2015, I gave a talk on SceneJS at the Berlin WebGL Meetup - [here are the slides](http://slides.com/xeolabs/deck) from that talk, with a few embedded demos.
 
+## Next Steps: xeogl
+
+I'm going to keep making more of these WebGl engines, because there's never a one-size-fit-all solution (and well, it is a 
+bit of a creative compulsion).
+<br><br>
+The public fork of SceneJS is archived now, so it's no longer under development. However, if you're looking for a production-proven 
+WebGL-based 3D visualization engine with a more conventional component-based architecture, you might find my latest engine useful: [xeogl](http://xeogl.org).
+
 ## Acknowledgements
 
  * [Vladimir Vukevic](https://en.wikipedia.org/wiki/Vladimir_Vuki%C4%87evi%C4%87) for kicking WebGL off with his Canvas3D experiments,
