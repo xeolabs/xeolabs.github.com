@@ -33,7 +33,7 @@ As an open source contributor, I often adapt my own experiments and tools to the
 in greater efficiency and certainty of delivery. When more help is needed, I can bring in experienced WebGL 
 developers who I've collaborated with on open source projects. 
 <br><br>
-**Got a project you'd like to discuss?** Fire me an email to the secret address below! Please note that, after the first 
+**Got a project you'd like to discuss?** Fire me an email via the secret address below! Please note that, after the first 
 couple of meetings, we'll need to formalize things before moving forward.
    
 <br>
