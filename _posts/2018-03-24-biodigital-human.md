@@ -107,8 +107,7 @@ at ~60FPS for most of the basic anatomy model.
 ### Human Developer API Origins
 
 Before Human, I'd also done some open source experiments with controlling SceneJS via a JSON-RPC message protocol, and we used those 
-to get started with our [developer API](https://developer.biodigital.com/). One of my inspirations was JSON-based messaging 
-system Paul Brunt had built into his WebGL-based [GLGE](http://www.glge.org) engine.
+to get started with our [developer API](https://developer.biodigital.com/).
 <br><br>
 Some of those experiments were:
  
@@ -118,6 +117,8 @@ Some of those experiments were:
    
 Those are now archived projects, but were useful for determining the best way to control a Human within an 
 IFRAME from a 3rd-party container page.
+<br><br>
+One of my inspirations for JSON-RPC was the messaging system that Paul Brunt had built into his WebGL-based [GLGE](http://www.glge.org) engine.
  
 #### Using the Developer API
 
