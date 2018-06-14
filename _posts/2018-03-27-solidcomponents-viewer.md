@@ -1,12 +1,12 @@
 ---
 layout: post
 title: Developing the SolidComponents™ Viewer on xeogl
-description: SolidComponents™ is a market leader for highend online CAD support and supports millions of users on an international basis. TODO.
+description: SolidComponents™ is a market leader for high-end online CAD support. 
 thumbnail: clientLogos/SolidComponents.png
-modified: 2015-06-31
+modified: 2017-06-31
 category: portfolio
 wip: true
-tags: [scenejs, biodigitalhuman]
+tags: [xeogl]
 ---
 
 <section id="table-of-contents" class="toc">
