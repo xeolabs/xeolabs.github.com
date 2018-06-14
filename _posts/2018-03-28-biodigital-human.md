@@ -167,7 +167,7 @@ morph animations within the Human:
 The Human is a platform on which we can build applications. One of the most rewarding of those was the WebGL-based SmileTrain 
 Surgical Cleft Repair Simulator, on which I was also lead 3D programmer.
 <br><br>
-We based this off [Aaron Oliker's](https://www.linkedin.com/in/aaron-oliker-544a6a2/) 
+We based the Smiletrain Simulator on [Aaron Oliker's](https://www.linkedin.com/in/aaron-oliker-544a6a2/) 
 earlier C++ version, which he implemented on OpenSceneGraph.
   
 <figure>
@@ -176,7 +176,7 @@ earlier C++ version, which he implemented on OpenSceneGraph.
 </figure>
 
 <br><br>
-> The slick Darth Vader Approved UI you're seeing in Human and Smiletrain is the work of BioDigital front-end engineers Kathia Yau and Avinash Chan. 
+The slick Darth Vader Approved UI you're seeing in Human and Smiletrain is the work of BioDigital front-end engineers Kathia Yau and Avinash Chan. 
 
 ## 2015: SceneJS Private Fork 
 
@@ -184,13 +184,13 @@ With [Tarek Sherif](https://twitter.com/thsherif) taking over as on-site lead gr
 features to Human and SceneJS, including a streaming asset server, physically-based rendering (PBR), geometry and texture compression, particle 
 systems and an improved post-effects pipeline.
 <br><br>
-> For post-effects support in SceneJS, Tarek built an extensible plugin-based architecture based off his own open source WebGL engine, [PicoGL](https://tsherif.github.io/picogl.js/).  
+For post-effects support in SceneJS, Tarek built an extensible plugin-based architecture based off his own open source WebGL engine, [PicoGL](https://tsherif.github.io/picogl.js/).  
 
 ## SceneJS Presentations
 
 Along the way, I got to write about SceneJS and present it to fellow graphics nerds:
 
-* Contributed a chapter on the pre-fork SceneJS to *OpenGL Insights* 2012, which you can now [download for free](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf).
+* Wrote a chapter on the pre-fork SceneJS in *OpenGL Insights* 2012, which you can now [download for free](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf).
 * Gave a talk on SceneJS at the 2015 Berlin WebGL Meetup - [here are the slides](http://slides.com/xeolabs/deck) from that talk, with a few embedded live demos.
 
 ## Next Steps: xeogl
