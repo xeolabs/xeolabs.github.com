@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-14T20:02:22+00:00</updated>
+<updated>2018-06-14T20:10:30+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -93,7 +93,7 @@ visualize software architectures and OOP metrics, and by the terse, declarative 
 
 &lt;h2 id=&quot;scenejs-open-sourced&quot;&gt;2008: SceneJS Open Sourced&lt;/h2&gt;
 
-&lt;p&gt;My day job back then (in a cubicle, maintaining a Java-based spam-scrubbing platform) just wasn’t firing my creative circuits. I needed to get back in
+&lt;p&gt;My day job back in 2008 (in a cubicle, maintaining a Java-based spam-scrubbing platform) just wasn’t firing my creative circuits. I needed to get back in
  touch with the creative culture that drew me into programming in the first place: 3D graphics, SIGGRAPH journals, cyberpunk 
  science fiction, Tron - all that good stuff.
 &lt;br /&gt;&lt;br /&gt;
@@ -106,8 +106,9 @@ So I quit my day job, &lt;a href=&quot;https://github.com/xeolabs/scenejs&quot;&
 
 &lt;h3 id=&quot;human-content-pipeline-origins&quot;&gt;Human Content Pipeline Origins&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://twitter.com/phaeta&quot;&gt;Brandon Smith&lt;/a&gt; began by exporting one of BioDigital’s skeletal system models to COLLADA, which I then imported into 
-SceneJS using one of my earlier open source &lt;a href=&quot;https://github.com/xeolabs/scenejs-asset-server&quot;&gt;SceneJS asset server&lt;/a&gt; experiments. 
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/phaeta&quot;&gt;Brandon Smith&lt;/a&gt; (BioDigital’s lead systems architect AKA “The Wizard”) began by exporting one of 
+BioDigital’s skeletal anatomy system models to COLLADA, which I then imported into SceneJS using one of my earlier open 
+source &lt;a href=&quot;https://github.com/xeolabs/scenejs-asset-server&quot;&gt;SceneJS asset server&lt;/a&gt; experiments. 
 &lt;br /&gt;&lt;br /&gt;
 The model rendered at a promising rate of around ~20FPS, so we took a gamble on WebGL and thus the BioDigital flagship app was born.
 &lt;br /&gt;&lt;br /&gt;
@@ -188,7 +189,9 @@ earlier C++ version, which he implemented on OpenSceneGraph.&lt;/p&gt;
 	&lt;figcaption&gt;&lt;a href=&quot;https://www.smiletrain.org/&quot; title=&quot;SceneJS powering the BioDigital Human&quot;&gt;The Smiletrain Surgical Simulator is built on the BioDigital Human and assists healthcare professionals in developing countries with learning cleft repair procedures.&lt;/a&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;The slick UI you’re seeing in Human and Smiletrain is the work of BioDigital front-end engineers Kathia Yau and Avinash Chan.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;The slick Darth Vader Approved UI you’re seeing in Human and Smiletrain is the work of BioDigital front-end engineers Kathia Yau and Avinash Chan.&lt;/p&gt;
 
 &lt;h2 id=&quot;scenejs-private-fork&quot;&gt;2015: SceneJS Private Fork&lt;/h2&gt;
 

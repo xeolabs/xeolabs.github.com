@@ -78,7 +78,7 @@ visualize software architectures and OOP metrics, and by the terse, declarative 
 
 ## 2008: SceneJS Open Sourced
 
-My day job back then (in a cubicle, maintaining a Java-based spam-scrubbing platform) just wasn't firing my creative circuits. I needed to get back in
+My day job back in 2008 (in a cubicle, maintaining a Java-based spam-scrubbing platform) just wasn't firing my creative circuits. I needed to get back in
  touch with the creative culture that drew me into programming in the first place: 3D graphics, SIGGRAPH journals, cyberpunk 
  science fiction, Tron - all that good stuff.
 <br><br>
@@ -91,8 +91,9 @@ A little while later, I began working for BioDigital Systems and we ended up mak
 
 ### Human Content Pipeline Origins
 
-[Brandon Smith](https://twitter.com/phaeta) began by exporting one of BioDigital's skeletal system models to COLLADA, which I then imported into 
-SceneJS using one of my earlier open source [SceneJS asset server](https://github.com/xeolabs/scenejs-asset-server) experiments. 
+[Brandon Smith](https://twitter.com/phaeta) (BioDigital's lead systems architect AKA "The Wizard") began by exporting one of 
+BioDigital's skeletal anatomy system models to COLLADA, which I then imported into SceneJS using one of my earlier open 
+source [SceneJS asset server](https://github.com/xeolabs/scenejs-asset-server) experiments. 
 <br><br>
 The model rendered at a promising rate of around ~20FPS, so we took a gamble on WebGL and thus the BioDigital flagship app was born.
 <br><br>
@@ -174,7 +175,9 @@ earlier C++ version, which he implemented on OpenSceneGraph.
 	<figcaption><a href="https://www.smiletrain.org/" title="SceneJS powering the BioDigital Human">The Smiletrain Surgical Simulator is built on the BioDigital Human and assists healthcare professionals in developing countries with learning cleft repair procedures.</a></figcaption>
 </figure>
 
-The slick UI you're seeing in Human and Smiletrain is the work of BioDigital front-end engineers Kathia Yau and Avinash Chan. 
+<br><br>
+
+The slick Darth Vader Approved UI you're seeing in Human and Smiletrain is the work of BioDigital front-end engineers Kathia Yau and Avinash Chan. 
 
 ## 2015: SceneJS Private Fork 
 
