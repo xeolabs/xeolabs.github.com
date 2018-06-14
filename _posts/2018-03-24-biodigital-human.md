@@ -187,10 +187,11 @@ Along the way, I got to write about SceneJS and demonstrate it for graphics nerd
 ## Acknowledgements
 
  * [Vladimir Vukevic](https://en.wikipedia.org/wiki/Vladimir_Vuki%C4%87evi%C4%87) for kicking WebGL off with his Canvas3D experiments,
- * [the Khronos WebGL Working Group](https://www.khronos.org/) for overseeing the development of the WebGL specification,
- * [the ANGLE developers](https://chromium.googlesource.com/angle/angle/+/master/README.md) for making WebGL work on DirectX,
+ * the [Khronos WebGL Working Group](https://www.khronos.org/) for overseeing the development of the WebGL specification,
+ * the [ANGLE developers](https://chromium.googlesource.com/angle/angle/+/master/README.md) for making WebGL work on DirectX,
  * [COLLADA™](https://www.khronos.org/collada/) for the file format that got us started with the Human, 
- * [Paul Brunt](http://www.paulbrunt.co.uk/#/) for his pioneering open source WebGL-based [GLGE](http://www.glge.org/) engine, which was like a living textbook on graphics algorithms on JavaScript,  
+ * [Paul Brunt](http://www.paulbrunt.co.uk/#/) for his pioneering open source WebGL-based [GLGE](http://www.glge.org/) engine, which was like a living textbook on graphics algorithms on JavaScript,
+ * the [Zygote Body](https://www.zygotebody.com/), which was originally created as the Google Body by [Won Chun](https://twitter.com/won3d?lang=en), as his 20% experiment at Google,
  * the SceneJS community for a crash course on what a 3D engine is, and
  * the modeling team at BioDigital for creating all the cool content that makes the platform shine.
 

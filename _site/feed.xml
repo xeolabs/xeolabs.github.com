@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-14T11:04:28+00:00</updated>
+<updated>2018-06-14T11:10:48+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -231,10 +231,11 @@ systems and an improved post-effects pipeline.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Vladimir_Vuki%C4%87evi%C4%87&quot;&gt;Vladimir Vukevic&lt;/a&gt; for kicking WebGL off with his Canvas3D experiments,&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.khronos.org/&quot;&gt;the Khronos WebGL Working Group&lt;/a&gt; for overseeing the development of the WebGL specification,&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://chromium.googlesource.com/angle/angle/+/master/README.md&quot;&gt;the ANGLE developers&lt;/a&gt; for making WebGL work on DirectX,&lt;/li&gt;
+  &lt;li&gt;the &lt;a href=&quot;https://www.khronos.org/&quot;&gt;Khronos WebGL Working Group&lt;/a&gt; for overseeing the development of the WebGL specification,&lt;/li&gt;
+  &lt;li&gt;the &lt;a href=&quot;https://chromium.googlesource.com/angle/angle/+/master/README.md&quot;&gt;ANGLE developers&lt;/a&gt; for making WebGL work on DirectX,&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.khronos.org/collada/&quot;&gt;COLLADA™&lt;/a&gt; for the file format that got us started with the Human,&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.paulbrunt.co.uk/#/&quot;&gt;Paul Brunt&lt;/a&gt; for his pioneering open source WebGL-based &lt;a href=&quot;http://www.glge.org/&quot;&gt;GLGE&lt;/a&gt; engine, which was like a living textbook on graphics algorithms on JavaScript,&lt;/li&gt;
+  &lt;li&gt;the &lt;a href=&quot;https://www.zygotebody.com/&quot;&gt;Zygote Body&lt;/a&gt;, which was originally created as the Google Body by &lt;a href=&quot;https://twitter.com/won3d?lang=en&quot;&gt;Won Chun&lt;/a&gt;, as his 20% experiment at Google,&lt;/li&gt;
   &lt;li&gt;the SceneJS community for a crash course on what a 3D engine is, and&lt;/li&gt;
   &lt;li&gt;the modeling team at BioDigital for creating all the cool content that makes the platform shine.&lt;/li&gt;
 &lt;/ul&gt;
