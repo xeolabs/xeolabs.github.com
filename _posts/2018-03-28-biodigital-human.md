@@ -12,8 +12,8 @@ tags: [scenejs, human, biodigital, webgl]
 Since 2009, I've worked remotely from Berlin, Germany with [BioDigital Systems](http://biodigital.com) in NYC, to help develop 
 the [BioDigital Human](http://biodigitalhuman.com) and its developer API on [SceneJS](http://scenejs.org).
 <br><br>
-In 2015, with the company expanding, [Tarek Sherif](https://twitter.com/thsherif) took over as 3D programming lead, since it made 
-sense for that role to be a performed on-site by a non-virtual person who could chase people around the office, instead of 
+In 2015, with the company expanding, [Tarek Sherif](https://twitter.com/thsherif) took over my role as 3D programming lead, since it made 
+sense for that job to be a performed on-site by a non-virtual person who could chase people around the office, instead of 
 typing emails all night in the wrong time zone. 
 <br><br>
 SceneJS is an open source (MIT) JavaScript library I created for developing 3D graphics applications on WebGL. One of 
@@ -173,6 +173,8 @@ earlier C++ version, which he implemented on OpenSceneGraph.
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/fPNOXnzaiJ0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 	<figcaption><a href="https://www.smiletrain.org/" title="SceneJS powering the BioDigital Human">The Smiletrain Surgical Simulator is built on the BioDigital Human and assists healthcare professionals in developing countries with learning cleft repair procedures.</a></figcaption>
 </figure>
+
+The slick UI you're seeing in Human and Smiletrain is the work of BioDigital front-end engineers Kathia Yau and Avinash Chan. 
 
 ## 2015: SceneJS Private Fork 
 

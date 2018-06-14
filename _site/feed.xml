@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-14T18:28:51+00:00</updated>
+<updated>2018-06-14T19:28:45+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -15,38 +15,11 @@
 
 
 <entry>
-  <title type="html"><![CDATA[Developing the SolidComponents™ Viewer on xeogl]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/solidcomponents-viewer" />
-  <id>http://xeolabs.com/portfolio/solidcomponents-viewer</id>
-  <updated>2017-06-31T00:00:00-00:00</updated>
-  <published>2018-03-27T00:00:00+00:00</published>
-  
-  <author>
-    <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
-    <email>lindsay.kay@xeolabs.com</email>
-  </author>
-  <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
-  &lt;header&gt;
-    &lt;h3&gt;Contents&lt;/h3&gt;
-  &lt;/header&gt;
-&lt;div id=&quot;drawer&quot;&gt;
-
-  &lt;/div&gt;
-&lt;/section&gt;
-&lt;!-- /#table-of-contents --&gt;
-
-
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/solidcomponents-viewer&quot;&gt;Developing the SolidComponents™ Viewer on xeogl&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 27, 2018.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
   <title type="html"><![CDATA[Developing the BioDigital Human™ on SceneJS]]></title>
   <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/biodigital-human" />
   <id>http://xeolabs.com/portfolio/biodigital-human</id>
   <updated>2018-23-03T00:00:00-00:00</updated>
-  <published>2018-03-24T00:00:00+00:00</published>
+  <published>2018-03-28T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
@@ -56,8 +29,8 @@
   <content type="html">&lt;p&gt;Since 2009, I’ve worked remotely from Berlin, Germany with &lt;a href=&quot;http://biodigital.com&quot;&gt;BioDigital Systems&lt;/a&gt; in NYC, to help develop 
 the &lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;BioDigital Human&lt;/a&gt; and its developer API on &lt;a href=&quot;http://scenejs.org&quot;&gt;SceneJS&lt;/a&gt;.
 &lt;br /&gt;&lt;br /&gt;
-In 2015, with the company expanding, &lt;a href=&quot;https://twitter.com/thsherif&quot;&gt;Tarek Sherif&lt;/a&gt; took over as 3D programming lead, since it made 
-sense for that role to be a performed on-site by a non-virtual person who could chase people around the office, instead of 
+In 2015, with the company expanding, &lt;a href=&quot;https://twitter.com/thsherif&quot;&gt;Tarek Sherif&lt;/a&gt; took over my role as 3D programming lead, since it made 
+sense for that job to be a performed on-site by a non-virtual person who could chase people around the office, instead of 
 typing emails all night in the wrong time zone. 
 &lt;br /&gt;&lt;br /&gt;
 SceneJS is an open source (MIT) JavaScript library I created for developing 3D graphics applications on WebGL. One of 
@@ -215,6 +188,8 @@ earlier C++ version, which he implemented on OpenSceneGraph.&lt;/p&gt;
 	&lt;figcaption&gt;&lt;a href=&quot;https://www.smiletrain.org/&quot; title=&quot;SceneJS powering the BioDigital Human&quot;&gt;The Smiletrain Surgical Simulator is built on the BioDigital Human and assists healthcare professionals in developing countries with learning cleft repair procedures.&lt;/a&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
+&lt;p&gt;The slick UI you’re seeing in Human and Smiletrain is the work of BioDigital front-end engineers Kathia Yau and Avinash Chan.&lt;/p&gt;
+
 &lt;h2 id=&quot;scenejs-private-fork&quot;&gt;2015: SceneJS Private Fork&lt;/h2&gt;
 
 &lt;p&gt;With &lt;a href=&quot;https://twitter.com/thsherif&quot;&gt;Tarek Sherif&lt;/a&gt; taking over as on-site lead graphics programmer 2015, we added many more 
@@ -288,7 +263,34 @@ who came in fresh from academia and added many valuable rendering features.
 &lt;!-- /#table-of-contents --&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/biodigital-human&quot;&gt;Developing the BioDigital Human™ on SceneJS&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 24, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/biodigital-human&quot;&gt;Developing the BioDigital Human™ on SceneJS&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 28, 2018.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[xeogl - a WebGL-based 3D visualization engine]]></title>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/xeogl" />
+  <id>http://xeolabs.com/portfolio/xeogl</id>
+  <updated>2018-19-09T00:00:00-00:00</updated>
+  <published>2018-03-27T00:00:00+00:00</published>
+  
+  <author>
+    <name>xeolabs</name>
+    <uri>http://xeolabs.com</uri>
+    <email>lindsay.kay@xeolabs.com</email>
+  </author>
+  <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
+  &lt;header&gt;
+    &lt;h3&gt;Contents&lt;/h3&gt;
+  &lt;/header&gt;
+&lt;div id=&quot;drawer&quot;&gt;
+
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- /#table-of-contents --&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeogl&quot;&gt;xeogl - a WebGL-based 3D visualization engine&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 27, 2018.&lt;/p&gt;</content>
 </entry>
 
 
@@ -297,7 +299,7 @@ who came in fresh from academia and added many valuable rendering features.
   <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/bimdata" />
   <id>http://xeolabs.com/portfolio/bimdata</id>
   <updated>2018-19-09T00:00:00-00:00</updated>
-  <published>2018-03-23T00:00:00+00:00</published>
+  <published>2018-03-26T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
@@ -340,7 +342,7 @@ who came in fresh from academia and added many valuable rendering features.
 &lt;h2 id=&quot;subcontracting&quot;&gt;Subcontracting&lt;/h2&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/bimdata&quot;&gt;Developing the BIMData IFC Viewer on xeogl&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 23, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/bimdata&quot;&gt;Developing the BIMData IFC Viewer on xeogl&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 26, 2018.&lt;/p&gt;</content>
 </entry>
 
 
@@ -349,7 +351,7 @@ who came in fresh from academia and added many valuable rendering features.
   <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/xeogl-in-bimsurfer" />
   <id>http://xeolabs.com/portfolio/xeogl-in-bimsurfer</id>
   <updated>2018-23-03T00:00:00-00:00</updated>
-  <published>2018-03-22T00:00:00+00:00</published>
+  <published>2018-03-25T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
@@ -472,7 +474,34 @@ We will review your code and commit it into the official BIM Surfer code base. A
 into our &lt;a href=&quot;https://github.com/opensourcebim/BIMsurfer/issues&quot;&gt;issue tracker&lt;/a&gt;.&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeogl-in-bimsurfer&quot;&gt;Developing the BIMSurfer IFC Viewer on xeogl&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 22, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeogl-in-bimsurfer&quot;&gt;Developing the BIMSurfer IFC Viewer on xeogl&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 25, 2018.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Developing the SolidComponents™ Viewer on xeogl]]></title>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/solidcomponents-viewer" />
+  <id>http://xeolabs.com/portfolio/solidcomponents-viewer</id>
+  <updated>2017-06-31T00:00:00-00:00</updated>
+  <published>2018-02-27T00:00:00+00:00</published>
+  
+  <author>
+    <name>xeolabs</name>
+    <uri>http://xeolabs.com</uri>
+    <email>lindsay.kay@xeolabs.com</email>
+  </author>
+  <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
+  &lt;header&gt;
+    &lt;h3&gt;Contents&lt;/h3&gt;
+  &lt;/header&gt;
+&lt;div id=&quot;drawer&quot;&gt;
+
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- /#table-of-contents --&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/solidcomponents-viewer&quot;&gt;Developing the SolidComponents™ Viewer on xeogl&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on February 27, 2018.&lt;/p&gt;</content>
 </entry>
 
 
@@ -611,33 +640,6 @@ typical BIM application layer would manage other aspects of the IFC schema, such
 viewer can just use object IDs and types to reference the objects in the 3D view.&lt;/p&gt;
 
   &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeometry&quot;&gt;xeometry - a WebGL-based 3D model viewing library&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on February 16, 2018.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[xeogl - a WebGL-based 3D visualization engine]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/xeogl" />
-  <id>http://xeolabs.com/portfolio/xeogl</id>
-  <updated>2018-19-09T00:00:00-00:00</updated>
-  <published>2018-02-16T00:00:00+00:00</published>
-  
-  <author>
-    <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
-    <email>lindsay.kay@xeolabs.com</email>
-  </author>
-  <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
-  &lt;header&gt;
-    &lt;h3&gt;Contents&lt;/h3&gt;
-  &lt;/header&gt;
-&lt;div id=&quot;drawer&quot;&gt;
-
-  &lt;/div&gt;
-&lt;/section&gt;
-&lt;!-- /#table-of-contents --&gt;
-
-
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeogl&quot;&gt;xeogl - a WebGL-based 3D visualization engine&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on February 16, 2018.&lt;/p&gt;</content>
 </entry>
 
 
