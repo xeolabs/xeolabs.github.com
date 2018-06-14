@@ -116,7 +116,7 @@ Some of those experiments were:
 * **[scenejs-grid](https://github.com/xeolabs/scenejs-grid)** which combines the actor and JSON-RPC concepts to SceneJS.
    
 Those are now archived projects, but were useful for determining the best way to control a Human within an 
-IFRAME from a 3rd-party container page.
+IFRAME embedded in a 3rd-party container page.
 <br><br>
 One of my inspirations for JSON-RPC was the messaging system that Paul Brunt had built into his WebGL-based [GLGE](http://www.glge.org) engine.
  

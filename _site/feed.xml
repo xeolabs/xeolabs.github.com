@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-14T13:46:35+00:00</updated>
+<updated>2018-06-14T13:47:54+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -160,7 +160,7 @@ Some of those experiments were:&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Those are now archived projects, but were useful for determining the best way to control a Human within an 
-IFRAME from a 3rd-party container page.
+IFRAME embedded in a 3rd-party container page.
 &lt;br /&gt;&lt;br /&gt;
 One of my inspirations for JSON-RPC was the messaging system that Paul Brunt had built into his WebGL-based &lt;a href=&quot;http://www.glge.org&quot;&gt;GLGE&lt;/a&gt; engine.&lt;/p&gt;
 
