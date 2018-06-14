@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-14T14:05:29+00:00</updated>
+<updated>2018-06-14T16:15:46+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -53,8 +53,8 @@
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
-  <content type="html">&lt;p&gt;Since 2009, I’ve worked remotely from Berlin, Germany with &lt;a href=&quot;http://biodigital.com&quot;&gt;BioDigital Systems&lt;/a&gt; in NYC, to lead 3D development 
-on the &lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;BioDigital Human&lt;/a&gt; and its developer API on &lt;a href=&quot;http://scenejs.org&quot;&gt;SceneJS&lt;/a&gt;.
+  <content type="html">&lt;p&gt;Since 2009, I’ve worked remotely from Berlin, Germany with &lt;a href=&quot;http://biodigital.com&quot;&gt;BioDigital Systems&lt;/a&gt; in NYC, to help develop 
+the &lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;BioDigital Human&lt;/a&gt; and its developer API on &lt;a href=&quot;http://scenejs.org&quot;&gt;SceneJS&lt;/a&gt;.
 &lt;br /&gt;&lt;br /&gt;
 In 2015, with the company expanding, &lt;a href=&quot;https://twitter.com/thsherif&quot;&gt;Tarek Sherif&lt;/a&gt; took over as 3D programming lead, since it made 
 sense for that role to be a performed on-site by a non-virtual person who could chase people around the office, instead of 
@@ -62,7 +62,7 @@ typing emails all night in the wrong time zone.
 &lt;br /&gt;&lt;br /&gt;
 SceneJS is an open source (MIT) JavaScript library I created for developing 3D graphics applications on WebGL. One of 
 the first WebGL engines, SceneJS evolved alongside the WebGL specification to include advanced features such as posteffects, 
-physics, LoD, culling and many GL state optimizations. 
+physics, LoD, culling and various GL state optimizations. 
 &lt;br /&gt;&lt;br /&gt;
 In this article, I’m going to describe SceneJS’ journey from a weekend experiment to how we applied it within the world’s leading 
 Web-based anatomy visualization platform, which now has over three million registered users, plus a bunch a bunch of awards, 
