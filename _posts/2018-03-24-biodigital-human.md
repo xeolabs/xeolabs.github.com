@@ -18,7 +18,7 @@ typing emails all night in the wrong time zone.
 <br><br>
 SceneJS is an open source (MIT) JavaScript library I created for developing 3D graphics applications on WebGL. One of 
 the first WebGL engines, SceneJS evolved alongside the WebGL specification to include advanced features such as posteffects, 
-physics, LoD, culling and many GL state optimizations. 
+physics, LoD, culling and various GL state optimizations. 
 <br><br>
 In this article, I'm going to describe SceneJS' journey from a weekend experiment to how we applied it within the world's leading 
 Web-based anatomy visualization platform, which now has over three million registered users, plus a bunch a bunch of awards, 
