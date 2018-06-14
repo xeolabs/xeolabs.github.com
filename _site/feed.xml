@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-14T18:11:24+00:00</updated>
+<updated>2018-06-14T18:28:51+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -133,7 +133,7 @@ So I quit my day job, &lt;a href=&quot;https://github.com/xeolabs/scenejs&quot;&
 
 &lt;h3 id=&quot;human-content-pipeline-origins&quot;&gt;Human Content Pipeline Origins&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://twitter.com/phaeta&quot;&gt;Brandon Smith&lt;/a&gt; began by exporting a human skeletal system model to COLLADA, which I then loaded into 
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/phaeta&quot;&gt;Brandon Smith&lt;/a&gt; began by exporting one of BioDigital’s skeletal system models to COLLADA, which I then imported into 
 SceneJS using one of my earlier open source &lt;a href=&quot;https://github.com/xeolabs/scenejs-asset-server&quot;&gt;SceneJS asset server&lt;/a&gt; experiments. 
 &lt;br /&gt;&lt;br /&gt;
 The model rendered at a promising rate of around ~20FPS, so we took a gamble on WebGL and thus the BioDigital flagship app was born.
@@ -145,7 +145,7 @@ Windows without relying on OpenGL graphics drivers.
 &lt;br /&gt;&lt;br /&gt;
 Over the next couple of years I rewrote SceneJS twice, and we managed to double that frame rate. NVIDIA even helped 
 out and made optimizations for mobile GPUs, and later, after we made a private fork (described below), we got it rendering 
-at ~60FPS for most of the basic anatomy model.&lt;/p&gt;
+at ~60FPS for most of the full anatomy model.&lt;/p&gt;
 
 &lt;h3 id=&quot;human-developer-api-origins&quot;&gt;Human Developer API Origins&lt;/h3&gt;
 
@@ -163,7 +163,7 @@ Some of those experiments were:&lt;/p&gt;
 &lt;p&gt;Those are now archived projects, but were useful for determining the best way to control a Human within an 
 IFRAME embedded in a 3rd-party container page.
 &lt;br /&gt;&lt;br /&gt;
-One of my inspirations for JSON-RPC was the messaging system that Paul Brunt had built into his WebGL-based &lt;a href=&quot;http://www.glge.org&quot;&gt;GLGE&lt;/a&gt; engine.&lt;/p&gt;
+One of my inspirations for JSON-RPC was the messaging system that &lt;a href=&quot;https://twitter.com/super_eggbert&quot;&gt;Paul Brunt&lt;/a&gt; had built into his WebGL-based &lt;a href=&quot;http://www.glge.org&quot;&gt;GLGE&lt;/a&gt; engine.&lt;/p&gt;
 
 &lt;h4 id=&quot;using-the-developer-api&quot;&gt;Using the Developer API&lt;/h4&gt;
 
@@ -228,7 +228,7 @@ For post-effects support in SceneJS, Tarek built an extensible plugin-based arch
 &lt;p&gt;Along the way, I got to write about SceneJS and present it to fellow graphics nerds:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Wote a chapter on the pre-forked SceneJS for &lt;em&gt;OpenGL Insights&lt;/em&gt; 2012, which you can now &lt;a href=&quot;http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf&quot;&gt;download for free&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Contributed a chapter on the pre-fork SceneJS to &lt;em&gt;OpenGL Insights&lt;/em&gt; 2012, which you can now &lt;a href=&quot;http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf&quot;&gt;download for free&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;Gave a talk on SceneJS at the 2015 Berlin WebGL Meetup - &lt;a href=&quot;http://slides.com/xeolabs/deck&quot;&gt;here are the slides&lt;/a&gt; from that talk, with a few embedded live demos.&lt;/li&gt;
 &lt;/ul&gt;
 

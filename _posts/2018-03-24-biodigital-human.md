@@ -119,7 +119,7 @@ Some of those experiments were:
 Those are now archived projects, but were useful for determining the best way to control a Human within an 
 IFRAME embedded in a 3rd-party container page.
 <br><br>
-One of my inspirations for JSON-RPC was the messaging system that Paul Brunt had built into his WebGL-based [GLGE](http://www.glge.org) engine.
+One of my inspirations for JSON-RPC was the messaging system that [Paul Brunt](https://twitter.com/super_eggbert) had built into his WebGL-based [GLGE](http://www.glge.org) engine.
  
 #### Using the Developer API
 
