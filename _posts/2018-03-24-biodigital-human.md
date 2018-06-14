@@ -12,7 +12,7 @@ tags: [scenejs, human, biodigital, webgl]
 Since 2009, I've worked remotely from Berlin, Germany with [BioDigital Systems](http://biodigital.com) in NYC, to lead 3D development 
 on the [BioDigital Human](http://biodigitalhuman.com) and its developer API on [SceneJS](http://scenejs.org).
 <br><br>
-In 2015, with the company rapidly expanding, [Tarek Sherif](https://twitter.com/thsherif) took over as 3D programming lead, since it made 
+In 2015, with the company expanding, [Tarek Sherif](https://twitter.com/thsherif) took over as 3D programming lead, since it made 
 sense for that role to be a performed on-site by a non-virtual person who could chase people around the office, instead of 
 typing emails all night in the wrong time zone. 
 <br><br>
