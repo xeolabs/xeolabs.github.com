@@ -14,11 +14,7 @@ the [BioDigital Human](http://biodigitalhuman.com) and its developer API on [Sce
 <br><br>
 SceneJS is an open source (MIT) JavaScript library I created for developing 3D graphics applications on WebGL. One of 
 the first WebGL engines, SceneJS evolved alongside the WebGL specification to include advanced features such as posteffects, 
-physics, LoD, culling and various GL state optimizations.
-<br><br>
-In 2015, with the company expanding, [Tarek Sherif](https://twitter.com/thsherif) took over my role as 3D programming lead, since it made 
- sense for that job to be a performed on-site by a non-virtual person who could chase people around the office, instead of 
- typing emails all night in the wrong time zone. 
+physics, LoD, culling and various GL state optimizations. 
 <br><br>
 In this article, I'm going to describe SceneJS' journey from a weekend experiment to how we applied it within the world's leading 
 Web-based anatomy visualization platform, which now has over three million registered users, plus a bunch a bunch of awards, 
@@ -180,8 +176,11 @@ The slick Darth Vader Approved UI you're seeing in Human and Smiletrain is the w
 
 ## 2015: SceneJS Private Fork 
 
-With [Tarek Sherif](https://twitter.com/thsherif) taking over as on-site lead graphics programmer 2015, we added many more 
-features to Human and SceneJS, including a streaming asset server, physically-based rendering (PBR), geometry and texture compression, particle 
+In 2015, with the company expanding, [Tarek Sherif](https://twitter.com/thsherif) took over my role as 3D programming lead, since it made 
+ sense for that job to be a performed on-site by a non-virtual person who could chase people around the office, instead of 
+ typing emails all night in the wrong time zone.
+<br><br> 
+We then added many more features to Human and SceneJS, including a streaming asset server, physically-based rendering (PBR), geometry and texture compression, particle 
 systems and an improved post-effects pipeline.
 <br><br>
 For post-effects support in SceneJS, Tarek built an extensible plugin-based architecture based off his own open source WebGL engine, [PicoGL](https://tsherif.github.io/picogl.js/).  
