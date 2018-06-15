@@ -18,7 +18,7 @@ various features such as posteffects, physics, LoD, culling, plus various GL per
 <br><br>
 In this article, I'm going to describe SceneJS' journey from a weekend experiment to how we applied it within BioDigital's 
 Web-based anatomy visualization platform. Ten years down the track, the platform now has over three million 
-registered users, TODO
+registered users and continues to develop, with a growing library of models of anatomy and physical conditions.
 
 <!-- a bunch of awards including a Webby, and has been featured in [WIRED](https://www.wired.com/2012/04/biodigital-human/),  -->
 <!-- the [New York Times](https://www.nytimes.com/2012/01/08/business/the-human-anatomy-animated-with-3-d-technology.html), [ABC News](https://abcnews.go.com/Health/virtual-reality-body-transforming-innovations/story?id=16134453) and TED.  -->

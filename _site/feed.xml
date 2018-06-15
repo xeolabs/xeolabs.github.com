@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-15T07:10:20+00:00</updated>
+<updated>2018-06-15T07:13:42+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -35,7 +35,7 @@ various features such as posteffects, physics, LoD, culling, plus various GL per
 &lt;br /&gt;&lt;br /&gt;
 In this article, I’m going to describe SceneJS’ journey from a weekend experiment to how we applied it within BioDigital’s 
 Web-based anatomy visualization platform. Ten years down the track, the platform now has over three million 
-registered users, TODO&lt;/p&gt;
+registered users and continues to develop, with a growing library of models of anatomy and physical conditions.&lt;/p&gt;
 
 &lt;!-- a bunch of awards including a Webby, and has been featured in [WIRED](https://www.wired.com/2012/04/biodigital-human/),  --&gt;
 &lt;!-- the [New York Times](https://www.nytimes.com/2012/01/08/business/the-human-anatomy-animated-with-3-d-technology.html), [ABC News](https://abcnews.go.com/Health/virtual-reality-body-transforming-innovations/story?id=16134453) and TED.  --&gt;
