@@ -109,10 +109,17 @@
 <p style="text-align: center;"><a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf"><img style="text-align: center;" src="http://xeolabs.com/images/scenejs/OpenGLInsights2.jpg"></a><br>
     <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now free to download! <a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf">Grab it here.</a></i></p>
 <hr>
-<p style="text-align: center;"><a href=""><img style="text-align: center;" src="http://xeolabs.com/images/human/webby.jpg"></a>
-<a href=""><img style="text-align: center;" src="http://xeolabs.com/images/human/sxsw.png"></a><br>
-<i>At BioDigital we scored a Webby and the SXSW Interactive Award for the <a href="http://xeolabs.com/portfolio/biodigital-human">BioDigital Human</a></i></p>
+<p style="text-align: center;"><a href=""><img style="text-align: center;" src="http://xeolabs.com/images/human/webby.jpg"></a><br><br>
+<!--<a href=""><img style="text-align: center;" src="http://xeolabs.com/images/human/sxsw.png"></a><br><br>-->
 
+<p style="text-align: center; text-indent: 0;"><a href="https://www.nytimes.com/2012/01/08/business/the-human-anatomy-animated-with-3-d-technology.html"><img style="text-align: center;" src="http://xeolabs.com/images/human/logo-new-york-times.png"></a><br>
+    "... the virtual body as the health equivalent of Google Maps."</p>
+<br><br>
+<p style="text-align: center; text-indent: 0;"><a href="https://abcnews.go.com/Health/virtual-reality-body-transforming-innovations/story?id=16134453"><img style="text-align: center;" src="http://xeolabs.com/images/human/logo-abc-news.png"></a><br>
+    "Think: Google Earth meets the human body."</p>
+<br><br>
+<p style="text-align: center; text-indent: 0;"><a href="https://www.wired.com/2012/04/biodigital-human/"><img style="text-align: center;" src="http://xeolabs.com/images/human/logo-wired.png"></a><br>
+    "A Digital Revolution for Studying Human Anatomy."</p>
   </div>
   <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
     <div class="headline-wrap">
@@ -129,9 +136,11 @@ various features such as posteffects, physics, LoD, culling, plus various GL per
 <br /><br />
 In this article, I’m going to describe SceneJS’ journey from a weekend experiment to how we applied it within BioDigital’s 
 Web-based anatomy visualization platform. Ten years down the track, the platform now has over three million 
-registered users, a bunch of awards including a Webby, and has been featured in <a href="https://www.wired.com/2012/04/biodigital-human/">WIRED</a>, 
-the <a href="https://www.nytimes.com/2012/01/08/business/the-human-anatomy-animated-with-3-d-technology.html">New York Times</a>, <a href="https://abcnews.go.com/Health/virtual-reality-body-transforming-innovations/story?id=16134453">ABC News</a> and TED. 
-<br /><br /></p>
+registered users, TODO</p>
+
+<!-- a bunch of awards including a Webby, and has been featured in [WIRED](https://www.wired.com/2012/04/biodigital-human/),  -->
+<!-- the [New York Times](https://www.nytimes.com/2012/01/08/business/the-human-anatomy-animated-with-3-d-technology.html), [ABC News](https://abcnews.go.com/Health/virtual-reality-body-transforming-innovations/story?id=16134453) and TED.  -->
+<p><br /><br /></p>
 <figure>
 	<a href="http://biodigitalhuman.com"><img src="http://xeolabs.com/images/human/biodigital-human-platform.png" /></a>
 	<figcaption><a href="http://biodigitalhuman.com" title="SceneJS powering the BioDigital Human">SceneJS powering the BioDigital Human</a></figcaption>
@@ -141,16 +150,16 @@ the <a href="https://www.nytimes.com/2012/01/08/business/the-human-anatomy-anima
 
 <p>I started SceneJS as a weekend experiment, somewhere around late 2005. Back then, JavaScript wasn’t so fast and friends 
 like <a href="https://twitter.com/ohunt?lang=en">@ohunt</a> were busy writing raytracers on JavaScript that took forever, 
-as a kind of twisted novelty.<br /><br />The first version of SceneJS even rendered wireframe as DIV elements, arranged 
+as a kind of twisted browser-cooking exercise.<br /><br />The first version of SceneJS even rendered wireframe as DIV elements, arranged 
 using <a href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm">Bresenham’s line algorithm</a>, so I wasn’t expecting 
 that to be particularly interactive.
 <br /><br />
-That version was even written in completely functional-style JavaScript, and did a ton of garbage collection and scope traversal. I was 
+That early version was even written in completely functional-style JavaScript, and did a ton of garbage collection and scope traversal. I was 
 inspired at the time by LISP and CLOJURE and so perhaps took my fascination with terse scene definitions a little too far!</p>
 
 <h2 id="experiments-with-canvas3d">2006: Experiments with Canvas3D</h2>
 
-<p>Web-based 3D without plugins started to look viable in 2006, however, with the Canvas 3D experiments started by <a href="https://en.wikipedia.org/wiki/Vladimir_Vuki%C4%87evi%C4%87">Vladimir Vukićević</a> at Mozilla, and by the end of 
+<p>Web-based 3D without plugins actually started to look viable in 2006, however, with the Canvas 3D experiments started by <a href="https://en.wikipedia.org/wiki/Vladimir_Vuki%C4%87evi%C4%87">Vladimir Vukićević</a> at Mozilla, and by the end of 
 2007, both Mozilla and Opera had made their own separate implementations. Suddenly, interactive 3D in the browser didn’t 
 seem so crazy, so I switched SceneJS over to using Canvas3D. 
 <br /><br />

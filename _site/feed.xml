@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-15T06:45:39+00:00</updated>
+<updated>2018-06-15T07:10:20+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -35,9 +35,11 @@ various features such as posteffects, physics, LoD, culling, plus various GL per
 &lt;br /&gt;&lt;br /&gt;
 In this article, I’m going to describe SceneJS’ journey from a weekend experiment to how we applied it within BioDigital’s 
 Web-based anatomy visualization platform. Ten years down the track, the platform now has over three million 
-registered users, a bunch of awards including a Webby, and has been featured in &lt;a href=&quot;https://www.wired.com/2012/04/biodigital-human/&quot;&gt;WIRED&lt;/a&gt;, 
-the &lt;a href=&quot;https://www.nytimes.com/2012/01/08/business/the-human-anatomy-animated-with-3-d-technology.html&quot;&gt;New York Times&lt;/a&gt;, &lt;a href=&quot;https://abcnews.go.com/Health/virtual-reality-body-transforming-innovations/story?id=16134453&quot;&gt;ABC News&lt;/a&gt; and TED. 
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+registered users, TODO&lt;/p&gt;
+
+&lt;!-- a bunch of awards including a Webby, and has been featured in [WIRED](https://www.wired.com/2012/04/biodigital-human/),  --&gt;
+&lt;!-- the [New York Times](https://www.nytimes.com/2012/01/08/business/the-human-anatomy-animated-with-3-d-technology.html), [ABC News](https://abcnews.go.com/Health/virtual-reality-body-transforming-innovations/story?id=16134453) and TED.  --&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;figure&gt;
 	&lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/human/biodigital-human-platform.png&quot; /&gt;&lt;/a&gt;
 	&lt;figcaption&gt;&lt;a href=&quot;http://biodigitalhuman.com&quot; title=&quot;SceneJS powering the BioDigital Human&quot;&gt;SceneJS powering the BioDigital Human&lt;/a&gt;&lt;/figcaption&gt;
@@ -47,16 +49,16 @@ the &lt;a href=&quot;https://www.nytimes.com/2012/01/08/business/the-human-anato
 
 &lt;p&gt;I started SceneJS as a weekend experiment, somewhere around late 2005. Back then, JavaScript wasn’t so fast and friends 
 like &lt;a href=&quot;https://twitter.com/ohunt?lang=en&quot;&gt;@ohunt&lt;/a&gt; were busy writing raytracers on JavaScript that took forever, 
-as a kind of twisted novelty.&lt;br /&gt;&lt;br /&gt;The first version of SceneJS even rendered wireframe as DIV elements, arranged 
+as a kind of twisted browser-cooking exercise.&lt;br /&gt;&lt;br /&gt;The first version of SceneJS even rendered wireframe as DIV elements, arranged 
 using &lt;a href=&quot;https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm&quot;&gt;Bresenham’s line algorithm&lt;/a&gt;, so I wasn’t expecting 
 that to be particularly interactive.
 &lt;br /&gt;&lt;br /&gt;
-That version was even written in completely functional-style JavaScript, and did a ton of garbage collection and scope traversal. I was 
+That early version was even written in completely functional-style JavaScript, and did a ton of garbage collection and scope traversal. I was 
 inspired at the time by LISP and CLOJURE and so perhaps took my fascination with terse scene definitions a little too far!&lt;/p&gt;
 
 &lt;h2 id=&quot;experiments-with-canvas3d&quot;&gt;2006: Experiments with Canvas3D&lt;/h2&gt;
 
-&lt;p&gt;Web-based 3D without plugins started to look viable in 2006, however, with the Canvas 3D experiments started by &lt;a href=&quot;https://en.wikipedia.org/wiki/Vladimir_Vuki%C4%87evi%C4%87&quot;&gt;Vladimir Vukićević&lt;/a&gt; at Mozilla, and by the end of 
+&lt;p&gt;Web-based 3D without plugins actually started to look viable in 2006, however, with the Canvas 3D experiments started by &lt;a href=&quot;https://en.wikipedia.org/wiki/Vladimir_Vuki%C4%87evi%C4%87&quot;&gt;Vladimir Vukićević&lt;/a&gt; at Mozilla, and by the end of 
 2007, both Mozilla and Opera had made their own separate implementations. Suddenly, interactive 3D in the browser didn’t 
 seem so crazy, so I switched SceneJS over to using Canvas3D. 
 &lt;br /&gt;&lt;br /&gt;

@@ -18,8 +18,10 @@ various features such as posteffects, physics, LoD, culling, plus various GL per
 <br><br>
 In this article, I'm going to describe SceneJS' journey from a weekend experiment to how we applied it within BioDigital's 
 Web-based anatomy visualization platform. Ten years down the track, the platform now has over three million 
-registered users, a bunch of awards including a Webby, and has been featured in [WIRED](https://www.wired.com/2012/04/biodigital-human/), 
-the [New York Times](https://www.nytimes.com/2012/01/08/business/the-human-anatomy-animated-with-3-d-technology.html), [ABC News](https://abcnews.go.com/Health/virtual-reality-body-transforming-innovations/story?id=16134453) and TED. 
+registered users, TODO
+
+<!-- a bunch of awards including a Webby, and has been featured in [WIRED](https://www.wired.com/2012/04/biodigital-human/),  -->
+<!-- the [New York Times](https://www.nytimes.com/2012/01/08/business/the-human-anatomy-animated-with-3-d-technology.html), [ABC News](https://abcnews.go.com/Health/virtual-reality-body-transforming-innovations/story?id=16134453) and TED.  -->
 <br><br>
 <figure>
 	<a href="http://biodigitalhuman.com"><img src="{{ site.url }}/images/human/biodigital-human-platform.png"></a>
@@ -30,16 +32,16 @@ the [New York Times](https://www.nytimes.com/2012/01/08/business/the-human-anato
 
 I started SceneJS as a weekend experiment, somewhere around late 2005. Back then, JavaScript wasn't so fast and friends 
 like [@ohunt](https://twitter.com/ohunt?lang=en) were busy writing raytracers on JavaScript that took forever, 
-as a kind of twisted novelty.<br><br>The first version of SceneJS even rendered wireframe as DIV elements, arranged 
+as a kind of twisted browser-cooking exercise.<br><br>The first version of SceneJS even rendered wireframe as DIV elements, arranged 
 using [Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm), so I wasn't expecting 
 that to be particularly interactive.
 <br><br>
-That version was even written in completely functional-style JavaScript, and did a ton of garbage collection and scope traversal. I was 
+That early version was even written in completely functional-style JavaScript, and did a ton of garbage collection and scope traversal. I was 
 inspired at the time by LISP and CLOJURE and so perhaps took my fascination with terse scene definitions a little too far!     
   
 ## 2006: Experiments with Canvas3D
   
-Web-based 3D without plugins started to look viable in 2006, however, with the Canvas 3D experiments started by [Vladimir Vukićević](https://en.wikipedia.org/wiki/Vladimir_Vuki%C4%87evi%C4%87) at Mozilla, and by the end of 
+Web-based 3D without plugins actually started to look viable in 2006, however, with the Canvas 3D experiments started by [Vladimir Vukićević](https://en.wikipedia.org/wiki/Vladimir_Vuki%C4%87evi%C4%87) at Mozilla, and by the end of 
 2007, both Mozilla and Opera had made their own separate implementations. Suddenly, interactive 3D in the browser didn't 
 seem so crazy, so I switched SceneJS over to using Canvas3D. 
 <br><br>
