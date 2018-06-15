@@ -25,7 +25,7 @@ university, been a CTO in San Diego, tested wind turbines in New Zealand, create
 lead 3D development on the [BioDigital Human]({{ site.url }}/portfolio/biodigital-human) and the Smiletrain surgical simulator, 
 and built two WebGL-based BIM viewers.
 <br><br>
-For details on those activities, please check out my **[portfolio]({{ site.url }}/portfolio/)** and **[resume](http://linkedin.com/in/lindsaystanleykay)**. 
+For more details on what I've been up to, please check out my **[portfolio]({{ site.url }}/portfolio/)** and **[resume](http://linkedin.com/in/lindsaystanleykay)**. 
 
 ### Process
 
