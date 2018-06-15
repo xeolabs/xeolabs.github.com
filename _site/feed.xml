@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-15T02:24:44+00:00</updated>
+<updated>2018-06-15T06:26:59+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -26,16 +26,16 @@
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
-  <content type="html">&lt;p&gt;Since 2009, I’ve worked remotely from Berlin, Germany with &lt;a href=&quot;http://biodigital.com&quot;&gt;BioDigital Systems&lt;/a&gt; in NYC, to help develop 
+  <content type="html">&lt;p&gt;Since 2009, I’ve worked remotely from Berlin, Germany with the team at &lt;a href=&quot;http://biodigital.com&quot;&gt;BioDigital Systems&lt;/a&gt; in NYC, to help develop 
 the &lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;BioDigital Human&lt;/a&gt; and its developer API on &lt;a href=&quot;http://scenejs.org&quot;&gt;SceneJS&lt;/a&gt;.
 &lt;br /&gt;&lt;br /&gt;
-SceneJS is an open source (MIT) JavaScript library I created for developing 3D graphics applications on WebGL. One of 
-the first WebGL engines, SceneJS evolved alongside the WebGL specification to include features such as posteffects, 
-physics, LoD, culling and few different GL state optimizations. 
+&lt;a href=&quot;http://scenejs.org&quot;&gt;SceneJS&lt;/a&gt; is an open source (MIT) JavaScript library I created for developing 3D graphics applications 
+in Web browsers without needing plugins. One of the first WebGL engines, SceneJS evolved alongside the WebGL specification to include 
+various features such as posteffects, physics, LoD, culling, plus various GL performance optimizations. 
 &lt;br /&gt;&lt;br /&gt;
 In this article, I’m going to describe SceneJS’ journey from a weekend experiment to how we applied it within BioDigital’s 
-Web-based anatomy visualization platform, which now has over three million registered users, plus a bunch a bunch of awards, 
-including the 2015 Webby for Best Health Website.
+Web-based anatomy visualization platform. Ten years down the track, the platform now has over three million 
+registered users, a bunch of awards including a Webby, and has been featured in WIRED, the New York Times, ABC News and TED. 
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;figure&gt;
 	&lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/human/biodigital-human-platform.png&quot; /&gt;&lt;/a&gt;
@@ -51,7 +51,7 @@ using &lt;a href=&quot;https://en.wikipedia.org/wiki/Bresenham%27s_line_algorith
 that to be particularly interactive.
 &lt;br /&gt;&lt;br /&gt;
 That version was even written in completely functional-style JavaScript, and did a ton of garbage collection and scope traversal. I was 
-inspired at tthe time by LISP and CLOJURE and maybe took my fascination with terse scene definitions a little too far with that!&lt;/p&gt;
+inspired at the time by LISP and CLOJURE and maybe took my obsession with terse scene definitions a little too far with that!&lt;/p&gt;
 
 &lt;h2 id=&quot;experiments-with-canvas3d&quot;&gt;2006: Experiments with Canvas3D&lt;/h2&gt;
 
@@ -84,36 +84,36 @@ was, of course, a &lt;a href=&quot;https://en.wikipedia.org/wiki/Gouraud_shading
     &lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;myRotate&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;incRotateX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;I loved the idea of a 3D world defined declaratively, as pure data. At this point, I was inspired by the likes of &lt;a href=&quot;https://en.wikipedia.org/wiki/VRML&quot;&gt;VRML&lt;/a&gt;, which I’d used as a student to 
-visualize software architectures and OOP metrics, and by the terse, declarative syntax of &lt;a href=&quot;https://en.wikipedia.org/wiki/JavaFX&quot;&gt;JavaFX&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I loved the idea of a 3D world defined declaratively, as pure data. At this point, I was inspired by the likes 
+of &lt;a href=&quot;https://en.wikipedia.org/wiki/VRML&quot;&gt;VRML&lt;/a&gt;, which I’d used as a student, and by the terse, declarative syntax of &lt;a href=&quot;https://en.wikipedia.org/wiki/JavaFX&quot;&gt;JavaFX&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;scenejs-open-sourced&quot;&gt;2008: SceneJS Open Sourced&lt;/h2&gt;
 
 &lt;p&gt;My day job back in 2008 (in a cubicle, maintaining a Java-based spam-scrubbing platform) just wasn’t firing my creative circuits. I needed to get back in
  touch with the creative culture that drew me into programming in the first place: 3D graphics, SIGGRAPH journals, cyberpunk 
- science fiction, Tron - all that good stuff.
+ science fiction - all that good stuff.
 &lt;br /&gt;&lt;br /&gt;
 So I quit my day job, &lt;a href=&quot;https://github.com/xeolabs/scenejs&quot;&gt;put SceneJS on GitHub&lt;/a&gt;, and devoted my time to getting 
  back into 3D programming, using WebGL.&lt;/p&gt;
 
 &lt;h2 id=&quot;scenejs-powering-the-biodigital-human&quot;&gt;2009: SceneJS Powering the BioDigital Human&lt;/h2&gt;
 
-&lt;p&gt;A little while later, I signed up with BioDigital Systems and we began making the &lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;BioDigital Human&lt;/a&gt; on SceneJS.&lt;/p&gt;
+&lt;p&gt;A little while later, I signed up with BioDigital Systems and we began developing the &lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;BioDigital Human&lt;/a&gt; on SceneJS.&lt;/p&gt;
 
 &lt;h3 id=&quot;human-content-pipeline-origins&quot;&gt;Human Content Pipeline Origins&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://twitter.com/phaeta&quot;&gt;Brandon Smith&lt;/a&gt; (AKA “The Wizard”) began by exporting one of 
-BioDigital’s models of the human skeletal system to COLLADA, which I then imported into SceneJS using one of my earlier open 
-source &lt;a href=&quot;https://github.com/xeolabs/scenejs-asset-server&quot;&gt;SceneJS asset server&lt;/a&gt; experiments. 
+BioDigital’s models of the human skeletal system to COLLADA, which I then imported into SceneJS using an experimental open 
+source &lt;a href=&quot;https://github.com/xeolabs/scenejs-asset-server&quot;&gt;SceneJS asset server&lt;/a&gt; I’d been working on. 
 &lt;br /&gt;&lt;br /&gt;
-The 206 objects within that model rendered at a promising rate of around ~20FPS, so we took a gamble on WebGL and so the BioDigital flagship app was born.
+The 206 bones within that model rendered at a promising rate of around ~20FPS, so we took a gamble on WebGL and so the BioDigital flagship app was born.
 &lt;br /&gt;&lt;br /&gt;
 Our biggest challenge was getting the platform to work reliably across the various operating systems, browsers and GPUs, 
 and so the next few years involved navigating patchy GPU support and a lot of “Aw Snap”. We owe a lot to the work of 
 the &lt;a href=&quot;https://en.wikipedia.org/wiki/ANGLE_(software)&quot;&gt;ANGLE&lt;/a&gt; developers, whose work allows full hardware acceleration on 
 Windows without relying on OpenGL graphics drivers.
 &lt;br /&gt;&lt;br /&gt;
-Over the next couple of years I rewrote SceneJS twice, and we managed to double that frame rate. &lt;a href=&quot;https://twitter.com/oletus?lang=en&quot;&gt;Olli Etuaho&lt;/a&gt; from NVIDIA even helped 
+Over the next couple of years I rewrote SceneJS twice, and we managed to double that performance. &lt;a href=&quot;https://twitter.com/oletus?lang=en&quot;&gt;Olli Etuaho&lt;/a&gt; from NVIDIA even helped 
 out and made optimizations for mobile GPUs, and later, after we made a private fork (described below), we got it rendering 
 at ~60FPS for most of the full anatomy model.&lt;/p&gt;
 
@@ -127,7 +127,7 @@ Some of those experiments were:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/xeolabs/xeoEngine-experiment&quot;&gt;xeoEngine-experiment&lt;/a&gt;&lt;/strong&gt; which allows you to control SceneJS via JSON-RPC,&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/xeolabs/actorjs&quot;&gt;actorjs&lt;/a&gt;&lt;/strong&gt; which allows you to define and update &lt;em&gt;actor&lt;/em&gt; components via JSON-RPC, and&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/xeolabs/scenejs-grid&quot;&gt;scenejs-grid&lt;/a&gt;&lt;/strong&gt; which combines the actor and JSON-RPC concepts to SceneJS.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/xeolabs/scenejs-grid&quot;&gt;scenejs-grid&lt;/a&gt;&lt;/strong&gt; which applies the actor and JSON-RPC concepts on SceneJS.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Those are now archived projects, but were useful for determining the best way to control a Human within an 
@@ -151,7 +151,7 @@ One of my inspirations for JSON-RPC was the messaging system that &lt;a href=&qu
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Next, create an instance of the Human API:&lt;/p&gt;
+&lt;p&gt;Next, we’ll create an instance of the Human API:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;human&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HumanAPI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;myWidget&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -159,7 +159,7 @@ One of my inspirations for JSON-RPC was the messaging system that &lt;a href=&qu
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;human&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;camera.orbit&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;yaw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;90&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;For more info on what’s possible, sign up with Human and check out the API tutorials at &lt;a href=&quot;https://developer.biodigital.com/&quot;&gt;developer.biodigital.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For more info on what’s possible with the API, sign up with Human and check out the tutorials at &lt;a href=&quot;https://developer.biodigital.com/&quot;&gt;developer.biodigital.com&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h4 id=&quot;api-demo-lockheed-martin-ice-storm-integration&quot;&gt;API Demo: Lockheed-Martin ICE STORM Integration&lt;/h4&gt;
 &lt;p&gt;We used the API for various presentations. For one presentation, we used it to interface the Human with the Lockheed Martin 
@@ -186,7 +186,7 @@ earlier C++ version, which he implemented on OpenSceneGraph.&lt;/p&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;
-The slick Darth Vader Approved UI you’re seeing in Human and Smiletrain is the work of BioDigital front-end engineers Kathia Yau and Avinash Chan.&lt;/p&gt;
+That slick Darth Vader Approved UI you’re seeing in Human and Smiletrain is the work of BioDigital front-end engineers Kathia Yau and Avinash Chan.&lt;/p&gt;
 
 &lt;h2 id=&quot;scenejs-private-fork&quot;&gt;2015: SceneJS Private Fork&lt;/h2&gt;
 
@@ -194,17 +194,17 @@ The slick Darth Vader Approved UI you’re seeing in Human and Smiletrain is the
  sense for that job to be a performed on-site by a non-virtual person who could chase people around the office, instead of 
  typing emails all night in the wrong time zone.
 &lt;br /&gt;&lt;br /&gt; 
-We then added many more features to Human and SceneJS, including a streaming asset 
+Throwing the git pull requests back and forth, we then added many more features to Human and SceneJS, including a streaming asset 
 server, physically-based rendering (PBR), geometry and texture compression, particle systems and an improved post-effects pipeline.
 &lt;br /&gt;&lt;br /&gt;
-For post-effects support in SceneJS, Tarek built an extensible plugin-based architecture based off his own open source WebGL engine, &lt;a href=&quot;https://tsherif.github.io/picogl.js/&quot;&gt;PicoGL&lt;/a&gt;.&lt;/p&gt;
+For the post-effects support, Tarek built an extensible plugin-based architecture based off his own open source WebGL engine, &lt;a href=&quot;https://tsherif.github.io/picogl.js/&quot;&gt;PicoGL&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;scenejs-presentations&quot;&gt;SceneJS Presentations&lt;/h2&gt;
 
 &lt;p&gt;Along the way, I got to write about SceneJS and present it to fellow graphics nerds:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Wrote about SceneJS in &lt;em&gt;OpenGL Insights&lt;/em&gt; 2012, which you can now &lt;a href=&quot;http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf&quot;&gt;download for free&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Wrote a chapter about SceneJS in &lt;em&gt;OpenGL Insights&lt;/em&gt; 2012, which you can now &lt;a href=&quot;http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf&quot;&gt;download for free&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;Talked about SceneJS at the 2015 Berlin WebGL Meetup - &lt;a href=&quot;http://slides.com/xeolabs/deck&quot;&gt;here are the slides&lt;/a&gt; from that talk, with a few embedded live demos.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -229,7 +229,7 @@ WebGL-based 3D engine with a more conventional component-based architecture, you
   &lt;li&gt;the model creation team at BioDigital for creating all the cool content that makes the platform shine.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;I won’t list the whole BioDigital team here because I might miss someone, but I’ll give props to interns, such 
+&lt;p&gt;I won’t try to mention the whole BioDigital team here because I might miss someone, but I’ll give shouts out to our interns, such 
 as &lt;a href=&quot;https://www.linkedin.com/in/jacqueline-chu-7a532558&quot;&gt;Jacqueline Chu&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/shrekshao&quot;&gt;Shuai Shao&lt;/a&gt; (AKA ShrekShao), 
 who came in fresh from academia and added many valuable rendering features. 
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;

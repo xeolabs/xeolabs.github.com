@@ -9,16 +9,16 @@ comments: false
 tags: [scenejs, human, biodigital, webgl]
 ---
 
-Since 2009, I've worked remotely from Berlin, Germany with [BioDigital Systems](http://biodigital.com) in NYC, to help develop 
+Since 2009, I've worked remotely from Berlin, Germany with the team at [BioDigital Systems](http://biodigital.com) in NYC, to help develop 
 the [BioDigital Human](http://biodigitalhuman.com) and its developer API on [SceneJS](http://scenejs.org).
 <br><br>
-SceneJS is an open source (MIT) JavaScript library I created for developing 3D graphics applications on WebGL. One of 
-the first WebGL engines, SceneJS evolved alongside the WebGL specification to include features such as posteffects, 
-physics, LoD, culling and few different GL state optimizations. 
+[SceneJS](http://scenejs.org) is an open source (MIT) JavaScript library I created for developing 3D graphics applications 
+in Web browsers without needing plugins. One of the first WebGL engines, SceneJS evolved alongside the WebGL specification to include 
+various features such as posteffects, physics, LoD, culling, plus various GL performance optimizations. 
 <br><br>
 In this article, I'm going to describe SceneJS' journey from a weekend experiment to how we applied it within BioDigital's 
-Web-based anatomy visualization platform, which now has over three million registered users, plus a bunch a bunch of awards, 
-including the 2015 Webby for Best Health Website.
+Web-based anatomy visualization platform. Ten years down the track, the platform now has over three million 
+registered users, a bunch of awards including a Webby, and has been featured in WIRED, the New York Times, ABC News and TED. 
 <br><br>
 <figure>
 	<a href="http://biodigitalhuman.com"><img src="{{ site.url }}/images/human/biodigital-human-platform.png"></a>
@@ -34,7 +34,7 @@ using [Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_l
 that to be particularly interactive.
 <br><br>
 That version was even written in completely functional-style JavaScript, and did a ton of garbage collection and scope traversal. I was 
-inspired at tthe time by LISP and CLOJURE and maybe took my fascination with terse scene definitions a little too far with that!     
+inspired at the time by LISP and CLOJURE and maybe took my obsession with terse scene definitions a little too far with that!     
   
 ## 2006: Experiments with Canvas3D
   
@@ -69,36 +69,36 @@ setInterval(function() {)
 });
 {% endhighlight %}
 
-I loved the idea of a 3D world defined declaratively, as pure data. At this point, I was inspired by the likes of [VRML](https://en.wikipedia.org/wiki/VRML), which I'd used as a student to 
-visualize software architectures and OOP metrics, and by the terse, declarative syntax of [JavaFX](https://en.wikipedia.org/wiki/JavaFX).
+I loved the idea of a 3D world defined declaratively, as pure data. At this point, I was inspired by the likes 
+of [VRML](https://en.wikipedia.org/wiki/VRML), which I'd used as a student, and by the terse, declarative syntax of [JavaFX](https://en.wikipedia.org/wiki/JavaFX).
 
 ## 2008: SceneJS Open Sourced
 
 My day job back in 2008 (in a cubicle, maintaining a Java-based spam-scrubbing platform) just wasn't firing my creative circuits. I needed to get back in
  touch with the creative culture that drew me into programming in the first place: 3D graphics, SIGGRAPH journals, cyberpunk 
- science fiction, Tron - all that good stuff.
+ science fiction - all that good stuff.
 <br><br>
 So I quit my day job, [put SceneJS on GitHub](https://github.com/xeolabs/scenejs), and devoted my time to getting 
  back into 3D programming, using WebGL.   
 
 ## 2009: SceneJS Powering the BioDigital Human
  
-A little while later, I signed up with BioDigital Systems and we began making the [BioDigital Human](http://biodigitalhuman.com) on SceneJS. 
+A little while later, I signed up with BioDigital Systems and we began developing the [BioDigital Human](http://biodigitalhuman.com) on SceneJS. 
 
 ### Human Content Pipeline Origins
 
 [Brandon Smith](https://twitter.com/phaeta) (AKA "The Wizard") began by exporting one of 
-BioDigital's models of the human skeletal system to COLLADA, which I then imported into SceneJS using one of my earlier open 
-source [SceneJS asset server](https://github.com/xeolabs/scenejs-asset-server) experiments. 
+BioDigital's models of the human skeletal system to COLLADA, which I then imported into SceneJS using an experimental open 
+source [SceneJS asset server](https://github.com/xeolabs/scenejs-asset-server) I'd been working on. 
 <br><br>
-The 206 objects within that model rendered at a promising rate of around ~20FPS, so we took a gamble on WebGL and so the BioDigital flagship app was born.
+The 206 bones within that model rendered at a promising rate of around ~20FPS, so we took a gamble on WebGL and so the BioDigital flagship app was born.
 <br><br>
 Our biggest challenge was getting the platform to work reliably across the various operating systems, browsers and GPUs, 
 and so the next few years involved navigating patchy GPU support and a lot of "Aw Snap". We owe a lot to the work of 
 the [ANGLE](https://en.wikipedia.org/wiki/ANGLE_(software)) developers, whose work allows full hardware acceleration on 
 Windows without relying on OpenGL graphics drivers.
 <br><br>
-Over the next couple of years I rewrote SceneJS twice, and we managed to double that frame rate. [Olli Etuaho](https://twitter.com/oletus?lang=en) from NVIDIA even helped 
+Over the next couple of years I rewrote SceneJS twice, and we managed to double that performance. [Olli Etuaho](https://twitter.com/oletus?lang=en) from NVIDIA even helped 
 out and made optimizations for mobile GPUs, and later, after we made a private fork (described below), we got it rendering 
 at ~60FPS for most of the full anatomy model.
 
@@ -111,7 +111,7 @@ Some of those experiments were:
  
 * **[xeoEngine-experiment](https://github.com/xeolabs/xeoEngine-experiment)** which allows you to control SceneJS via JSON-RPC, 
 * **[actorjs](https://github.com/xeolabs/actorjs)** which allows you to define and update *actor* components via JSON-RPC, and 
-* **[scenejs-grid](https://github.com/xeolabs/scenejs-grid)** which combines the actor and JSON-RPC concepts to SceneJS.
+* **[scenejs-grid](https://github.com/xeolabs/scenejs-grid)** which applies the actor and JSON-RPC concepts on SceneJS.
    
 Those are now archived projects, but were useful for determining the best way to control a Human within an 
 IFRAME embedded in a 3rd-party container page.
@@ -135,7 +135,7 @@ To use the API, start by embeding the Human Widget in your page. In the example 
 </html>
 {% endhighlight %}
  
-Next, create an instance of the Human API:
+Next, we'll create an instance of the Human API:
 {% highlight javascript %}
 var human = new HumanAPI("myWidget"); 
 {% endhighlight %}
@@ -145,7 +145,7 @@ Through the API, we can now make the widget do things like set the position of t
 human.send("camera.orbit", { yaw: 90 });
 {% endhighlight %}
 
-For more info on what's possible, sign up with Human and check out the API tutorials at [developer.biodigital.com](https://developer.biodigital.com/).
+For more info on what's possible with the API, sign up with Human and check out the tutorials at [developer.biodigital.com](https://developer.biodigital.com/).
 
 #### API Demo: Lockheed-Martin ICE STORM Integration
 We used the API for various presentations. For one presentation, we used it to interface the Human with the Lockheed Martin 
@@ -172,7 +172,7 @@ earlier C++ version, which he implemented on OpenSceneGraph.
 </figure>
 
 <br><br>
-The slick Darth Vader Approved UI you're seeing in Human and Smiletrain is the work of BioDigital front-end engineers Kathia Yau and Avinash Chan. 
+That slick Darth Vader Approved UI you're seeing in Human and Smiletrain is the work of BioDigital front-end engineers Kathia Yau and Avinash Chan. 
 
 ## 2015: SceneJS Private Fork 
 
@@ -180,16 +180,16 @@ In 2015, with the company expanding, [Tarek Sherif](https://twitter.com/thsherif
  sense for that job to be a performed on-site by a non-virtual person who could chase people around the office, instead of 
  typing emails all night in the wrong time zone.
 <br><br> 
-We then added many more features to Human and SceneJS, including a streaming asset 
+Throwing the git pull requests back and forth, we then added many more features to Human and SceneJS, including a streaming asset 
 server, physically-based rendering (PBR), geometry and texture compression, particle systems and an improved post-effects pipeline.
 <br><br>
-For post-effects support in SceneJS, Tarek built an extensible plugin-based architecture based off his own open source WebGL engine, [PicoGL](https://tsherif.github.io/picogl.js/).  
+For the post-effects support, Tarek built an extensible plugin-based architecture based off his own open source WebGL engine, [PicoGL](https://tsherif.github.io/picogl.js/).  
 
 ## SceneJS Presentations
 
 Along the way, I got to write about SceneJS and present it to fellow graphics nerds:
 
-* Wrote about SceneJS in *OpenGL Insights* 2012, which you can now [download for free](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf).
+* Wrote a chapter about SceneJS in *OpenGL Insights* 2012, which you can now [download for free](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf).
 * Talked about SceneJS at the 2015 Berlin WebGL Meetup - [here are the slides](http://slides.com/xeolabs/deck) from that talk, with a few embedded live demos.
 
 ## Next Steps: xeogl
@@ -211,7 +211,7 @@ WebGL-based 3D engine with a more conventional component-based architecture, you
  * the SceneJS community for a crash course on what a 3D engine is, and
  * the model creation team at BioDigital for creating all the cool content that makes the platform shine.
 
-I won't list the whole BioDigital team here because I might miss someone, but I'll give props to interns, such 
+I won't try to mention the whole BioDigital team here because I might miss someone, but I'll give shouts out to our interns, such 
 as [Jacqueline Chu](https://www.linkedin.com/in/jacqueline-chu-7a532558) and [Shuai Shao](https://twitter.com/shrekshao) (AKA ShrekShao), 
 who came in fresh from academia and added many valuable rendering features. 
 <br><br>
