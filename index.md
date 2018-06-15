@@ -32,12 +32,13 @@ For details on those activities, please check out my **[portfolio]({{ site.url }
 As a software engineer, I value process, communication, teamwork and simple, maintainable design, because those are what make this activity fun, healthy and profitable. 
 <br><br>
 As an open source developer, I build on the generosity of a diverse community of passionate geeks. Often, I'll adapt our experiments 
-and tools to the needs of my clients, resulting in greater efficiency and certainty of delivery. And, when additional hands are needed, 
-I can enlist the help of a motley bunch of experienced engineers who I've previously worked with on various open source projects. 
+and tools to the needs of my clients, resulting in greater efficiency and certainty of delivery. When additional hands are needed, 
+I can also enlist the help of experienced engineers who I've previously collaborated with on various open source projects. 
 <br><br>
-**Got a project you'd like to discuss?** Fire me an email via the address below! 
+**Got a project you'd like to discuss?** Fire me an email via the address below! Please note that, after the first couple of meetings, 
+we'll need to formalize things before moving forward. 
    
 <br>
 ![Email](../images/email.png)
 
-*Please note that, after the first couple of meetings, we'll need to formalize things before moving forward.*
+
