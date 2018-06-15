@@ -91,14 +91,14 @@ A little while later, I signed up with BioDigital Systems and we began making th
 BioDigital's models of the human skeletal system to COLLADA, which I then imported into SceneJS using one of my earlier open 
 source [SceneJS asset server](https://github.com/xeolabs/scenejs-asset-server) experiments. 
 <br><br>
-The 206 objects within that model rendered at a promising rate of around ~20FPS, so we took a gamble on WebGL and thus the BioDigital flagship app was born.
+The 206 objects within that model rendered at a promising rate of around ~20FPS, so we took a gamble on WebGL and so the BioDigital flagship app was born.
 <br><br>
 Our biggest challenge was getting the platform to work reliably across the various operating systems, browsers and GPUs, 
 and so the next few years involved navigating patchy GPU support and a lot of "Aw Snap". We owe a lot to the work of 
 the [ANGLE](https://en.wikipedia.org/wiki/ANGLE_(software)) developers, whose work allows full hardware acceleration on 
 Windows without relying on OpenGL graphics drivers.
 <br><br>
-Over the next couple of years I rewrote SceneJS twice, and we managed to double that frame rate. NVIDIA even helped 
+Over the next couple of years I rewrote SceneJS twice, and we managed to double that frame rate. [Olli Etuaho](https://twitter.com/oletus?lang=en) from NVIDIA even helped 
 out and made optimizations for mobile GPUs, and later, after we made a private fork (described below), we got it rendering 
 at ~60FPS for most of the full anatomy model.
 
