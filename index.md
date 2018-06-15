@@ -20,7 +20,7 @@ Originally from Christchurch, New Zealand, I've lived in Berlin, Germany since 2
 I graduated with a degree in computer science from the University of Canterbury in 2005. Before that, 
 I studied electronic engineering at the Christchurch Polytechnic.
 <br><br>
-Over the past couple of decades, I've taught computing at an elementary school, tutored programming and algorithms at a 
+Over the past two decades, I've taught computing at a school, tutored programming and algorithms at a 
 university, been a CTO in San Diego, tested wind turbines in New Zealand, created two open source WebGL-based 3D engines, 
 lead 3D development on the [BioDigital Human]({{ site.url }}/portfolio/biodigital-human) and the Smiletrain surgical simulator, 
 and built two WebGL-based BIM viewers.
@@ -29,16 +29,18 @@ For details on those activities, please check out my **[portfolio]({{ site.url }
 
 ### Process
 
-As a software engineer, I value process, communication, teamwork and simple, maintainable design, because those are what make this activity fun, healthy and profitable. 
+As a **software engineer**, I value teamwork, process and simple, maintainable design, because those are what make this 
+activity fun, healthy and profitable. 
 <br><br>
-As an open source developer, I build on the generosity of a diverse community of passionate geeks. Often, I'll adapt our experiments 
+As an **open source developer**, I build on the generosity of a diverse community of passionate geeks. Often, I'll adapt our experiments 
 and tools to the needs of my clients, resulting in greater efficiency and certainty of delivery. When additional hands are needed, 
-I can also enlist the help of experienced engineers who I've previously collaborated with on various open source projects. 
+I can also enlist the help of experienced engineers who I’ve previously collaborated with on various open source projects. 
 <br><br>
-**Got a project you'd like to discuss?** Fire me an email via the address below! Please note that, after the first couple of meetings, 
-we'll need to formalize things before moving forward. 
-   
+**Got a project you'd like to discuss?** Fire me an email via the address below! [^1]
+    
 <br>
 ![Email](../images/email.png)
+
+[^1]: Please note that, after the first couple of meetings, we'd need to formalize things before moving forward.
 
 
