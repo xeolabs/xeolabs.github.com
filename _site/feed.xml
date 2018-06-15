@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-15T02:03:48+00:00</updated>
+<updated>2018-06-15T02:13:57+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -30,7 +30,7 @@
 the &lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;BioDigital Human&lt;/a&gt; and its developer API on &lt;a href=&quot;http://scenejs.org&quot;&gt;SceneJS&lt;/a&gt;.
 &lt;br /&gt;&lt;br /&gt;
 SceneJS is an open source (MIT) JavaScript library I created for developing 3D graphics applications on WebGL. One of 
-the first WebGL engines, SceneJS evolved alongside the WebGL specification to include advanced features such as posteffects, 
+the first WebGL engines, SceneJS evolved alongside the WebGL specification to include features such as posteffects, 
 physics, LoD, culling and various GL state optimizations. 
 &lt;br /&gt;&lt;br /&gt;
 In this article, I’m going to describe SceneJS’ journey from a weekend experiment to how we applied it within the world’s leading 
@@ -44,8 +44,8 @@ including the 2015 Webby Award for Best Health Website.
 
 &lt;h2 id=&quot;scenejs-origins&quot;&gt;2005: SceneJS Origins&lt;/h2&gt;
 
-&lt;p&gt;I started SceneJS as a weekend experiment, somewhere around late 2005. Back then, JavaScript wasn’t as fast as it is now and friends 
-at university like &lt;a href=&quot;https://twitter.com/ohunt?lang=en&quot;&gt;@ohunt&lt;/a&gt; were busy writing raytracers on JavaScript that took forever, 
+&lt;p&gt;I started SceneJS as a weekend experiment, somewhere around late 2005. Back then, JavaScript wasn’t so fast and friends 
+like &lt;a href=&quot;https://twitter.com/ohunt?lang=en&quot;&gt;@ohunt&lt;/a&gt; were busy writing raytracers on JavaScript that took forever, 
 as a kind of novelty.&lt;br /&gt;&lt;br /&gt;The first version of SceneJS even rendered wireframe as DIV elements, arranged 
 using &lt;a href=&quot;https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm&quot;&gt;Bresenham’s line algorithm&lt;/a&gt;, so I wasn’t expecting 
 that to be particularly interactive.
@@ -102,11 +102,11 @@ So I quit my day job, &lt;a href=&quot;https://github.com/xeolabs/scenejs&quot;&
 
 &lt;h3 id=&quot;human-content-pipeline-origins&quot;&gt;Human Content Pipeline Origins&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://twitter.com/phaeta&quot;&gt;Brandon Smith&lt;/a&gt; (BioDigital’s lead systems architect AKA “The Wizard”) began by exporting one of 
-BioDigital’s skeletal anatomy system models to COLLADA, which I then imported into SceneJS using one of my earlier open 
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/phaeta&quot;&gt;Brandon Smith&lt;/a&gt; (AKA “The Wizard”) began by exporting one of 
+BioDigital’s models of the human skeletal system to COLLADA, which I then imported into SceneJS using one of my earlier open 
 source &lt;a href=&quot;https://github.com/xeolabs/scenejs-asset-server&quot;&gt;SceneJS asset server&lt;/a&gt; experiments. 
 &lt;br /&gt;&lt;br /&gt;
-The model rendered at a promising rate of around ~20FPS, so we took a gamble on WebGL and thus the BioDigital flagship app was born.
+The 206 objects within that model rendered at a promising rate of around ~20FPS, so we took a gamble on WebGL and thus the BioDigital flagship app was born.
 &lt;br /&gt;&lt;br /&gt;
 Our biggest challenge was getting the platform to work reliably across the various operating systems, browsers and GPUs, 
 and so the next few years involved navigating patchy GPU support and a lot of “Aw Snap”. We owe a lot to the work of 
@@ -133,7 +133,7 @@ Some of those experiments were:&lt;/p&gt;
 &lt;p&gt;Those are now archived projects, but were useful for determining the best way to control a Human within an 
 IFRAME embedded in a 3rd-party container page.
 &lt;br /&gt;&lt;br /&gt;
-One of my inspirations for JSON-RPC was the nifty messaging system that &lt;a href=&quot;https://twitter.com/super_eggbert&quot;&gt;Paul Brunt&lt;/a&gt; had built into his WebGL-based &lt;a href=&quot;http://www.glge.org&quot;&gt;GLGE&lt;/a&gt; engine.&lt;/p&gt;
+One of my inspirations for JSON-RPC was the messaging system that &lt;a href=&quot;https://twitter.com/super_eggbert&quot;&gt;Paul Brunt&lt;/a&gt; had built into his WebGL-based &lt;a href=&quot;http://www.glge.org&quot;&gt;GLGE&lt;/a&gt; engine.&lt;/p&gt;
 
 &lt;h4 id=&quot;using-the-developer-api&quot;&gt;Using the Developer API&lt;/h4&gt;
 
@@ -175,7 +175,7 @@ morph animations within the Human:&lt;/p&gt;
 &lt;h4 id=&quot;smiletrain-virtual-surgery-simulator&quot;&gt;Smiletrain Virtual Surgery Simulator&lt;/h4&gt;
 
 &lt;p&gt;The Human is a platform on which we can build applications. One of the most rewarding of those was the WebGL-based SmileTrain 
-Surgical Cleft Repair Simulator, on which I was also lead 3D programmer.
+Surgical Cleft Repair Simulator.
 &lt;br /&gt;&lt;br /&gt;
 We based the Smiletrain Simulator on &lt;a href=&quot;https://www.linkedin.com/in/aaron-oliker-544a6a2/&quot;&gt;Aaron Oliker’s&lt;/a&gt; 
 earlier C++ version, which he implemented on OpenSceneGraph.&lt;/p&gt;
@@ -194,8 +194,8 @@ The slick Darth Vader Approved UI you’re seeing in Human and Smiletrain is the
  sense for that job to be a performed on-site by a non-virtual person who could chase people around the office, instead of 
  typing emails all night in the wrong time zone.
 &lt;br /&gt;&lt;br /&gt; 
-We then added many more features to Human and SceneJS, including a streaming asset server, physically-based rendering (PBR), geometry and texture compression, particle 
-systems and an improved post-effects pipeline.
+We then added many more features to Human and SceneJS, including a streaming asset 
+server, physically-based rendering (PBR), geometry and texture compression, particle systems and an improved post-effects pipeline.
 &lt;br /&gt;&lt;br /&gt;
 For post-effects support in SceneJS, Tarek built an extensible plugin-based architecture based off his own open source WebGL engine, &lt;a href=&quot;https://tsherif.github.io/picogl.js/&quot;&gt;PicoGL&lt;/a&gt;.&lt;/p&gt;
 
@@ -204,13 +204,13 @@ For post-effects support in SceneJS, Tarek built an extensible plugin-based arch
 &lt;p&gt;Along the way, I got to write about SceneJS and present it to fellow graphics nerds:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Wrote a chapter on the pre-fork SceneJS in &lt;em&gt;OpenGL Insights&lt;/em&gt; 2012, which you can now &lt;a href=&quot;http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf&quot;&gt;download for free&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Gave a talk on SceneJS at the 2015 Berlin WebGL Meetup - &lt;a href=&quot;http://slides.com/xeolabs/deck&quot;&gt;here are the slides&lt;/a&gt; from that talk, with a few embedded live demos.&lt;/li&gt;
+  &lt;li&gt;Wrote about SceneJS in &lt;em&gt;OpenGL Insights&lt;/em&gt; 2012, which you can now &lt;a href=&quot;http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf&quot;&gt;download for free&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Talked about SceneJS at the 2015 Berlin WebGL Meetup - &lt;a href=&quot;http://slides.com/xeolabs/deck&quot;&gt;here are the slides&lt;/a&gt; from that talk, with a few embedded live demos.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;next-steps-xeogl&quot;&gt;Next Steps: xeogl&lt;/h2&gt;
 
-&lt;p&gt;I’m going to keep making more of these WebGl engines, because there’s never a one-size-fit-all solution (and well, it is a 
+&lt;p&gt;I’m going to keep making more of these WebGL engines, because there’s never a one-size-fit-all solution (and well, it is a 
 bit of a creative compulsion).
 &lt;br /&gt;&lt;br /&gt;
 The public fork of SceneJS is now archived and no longer under development. However, if you’re looking for a production-proven 

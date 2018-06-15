@@ -13,7 +13,7 @@ Since 2009, I've worked remotely from Berlin, Germany with [BioDigital Systems](
 the [BioDigital Human](http://biodigitalhuman.com) and its developer API on [SceneJS](http://scenejs.org).
 <br><br>
 SceneJS is an open source (MIT) JavaScript library I created for developing 3D graphics applications on WebGL. One of 
-the first WebGL engines, SceneJS evolved alongside the WebGL specification to include advanced features such as posteffects, 
+the first WebGL engines, SceneJS evolved alongside the WebGL specification to include features such as posteffects, 
 physics, LoD, culling and various GL state optimizations. 
 <br><br>
 In this article, I'm going to describe SceneJS' journey from a weekend experiment to how we applied it within the world's leading 
@@ -27,8 +27,8 @@ including the 2015 Webby Award for Best Health Website.
 
 ## 2005: SceneJS Origins
 
-I started SceneJS as a weekend experiment, somewhere around late 2005. Back then, JavaScript wasn't as fast as it is now and friends 
-at university like [@ohunt](https://twitter.com/ohunt?lang=en) were busy writing raytracers on JavaScript that took forever, 
+I started SceneJS as a weekend experiment, somewhere around late 2005. Back then, JavaScript wasn't so fast and friends 
+like [@ohunt](https://twitter.com/ohunt?lang=en) were busy writing raytracers on JavaScript that took forever, 
 as a kind of novelty.<br><br>The first version of SceneJS even rendered wireframe as DIV elements, arranged 
 using [Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm), so I wasn't expecting 
 that to be particularly interactive.
@@ -87,11 +87,11 @@ A little while later, I began working for BioDigital Systems and we ended up mak
 
 ### Human Content Pipeline Origins
 
-[Brandon Smith](https://twitter.com/phaeta) (BioDigital's lead systems architect AKA "The Wizard") began by exporting one of 
-BioDigital's skeletal anatomy system models to COLLADA, which I then imported into SceneJS using one of my earlier open 
+[Brandon Smith](https://twitter.com/phaeta) (AKA "The Wizard") began by exporting one of 
+BioDigital's models of the human skeletal system to COLLADA, which I then imported into SceneJS using one of my earlier open 
 source [SceneJS asset server](https://github.com/xeolabs/scenejs-asset-server) experiments. 
 <br><br>
-The model rendered at a promising rate of around ~20FPS, so we took a gamble on WebGL and thus the BioDigital flagship app was born.
+The 206 objects within that model rendered at a promising rate of around ~20FPS, so we took a gamble on WebGL and thus the BioDigital flagship app was born.
 <br><br>
 Our biggest challenge was getting the platform to work reliably across the various operating systems, browsers and GPUs, 
 and so the next few years involved navigating patchy GPU support and a lot of "Aw Snap". We owe a lot to the work of 
@@ -116,7 +116,7 @@ Some of those experiments were:
 Those are now archived projects, but were useful for determining the best way to control a Human within an 
 IFRAME embedded in a 3rd-party container page.
 <br><br>
-One of my inspirations for JSON-RPC was the nifty messaging system that [Paul Brunt](https://twitter.com/super_eggbert) had built into his WebGL-based [GLGE](http://www.glge.org) engine.
+One of my inspirations for JSON-RPC was the messaging system that [Paul Brunt](https://twitter.com/super_eggbert) had built into his WebGL-based [GLGE](http://www.glge.org) engine.
  
 #### Using the Developer API
 
@@ -161,7 +161,7 @@ morph animations within the Human:
 #### Smiletrain Virtual Surgery Simulator
 
 The Human is a platform on which we can build applications. One of the most rewarding of those was the WebGL-based SmileTrain 
-Surgical Cleft Repair Simulator, on which I was also lead 3D programmer.
+Surgical Cleft Repair Simulator.
 <br><br>
 We based the Smiletrain Simulator on [Aaron Oliker's](https://www.linkedin.com/in/aaron-oliker-544a6a2/) 
 earlier C++ version, which he implemented on OpenSceneGraph.
@@ -180,8 +180,8 @@ In 2015, with the company expanding, [Tarek Sherif](https://twitter.com/thsherif
  sense for that job to be a performed on-site by a non-virtual person who could chase people around the office, instead of 
  typing emails all night in the wrong time zone.
 <br><br> 
-We then added many more features to Human and SceneJS, including a streaming asset server, physically-based rendering (PBR), geometry and texture compression, particle 
-systems and an improved post-effects pipeline.
+We then added many more features to Human and SceneJS, including a streaming asset 
+server, physically-based rendering (PBR), geometry and texture compression, particle systems and an improved post-effects pipeline.
 <br><br>
 For post-effects support in SceneJS, Tarek built an extensible plugin-based architecture based off his own open source WebGL engine, [PicoGL](https://tsherif.github.io/picogl.js/).  
 
@@ -189,12 +189,12 @@ For post-effects support in SceneJS, Tarek built an extensible plugin-based arch
 
 Along the way, I got to write about SceneJS and present it to fellow graphics nerds:
 
-* Wrote a chapter on the pre-fork SceneJS in *OpenGL Insights* 2012, which you can now [download for free](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf).
-* Gave a talk on SceneJS at the 2015 Berlin WebGL Meetup - [here are the slides](http://slides.com/xeolabs/deck) from that talk, with a few embedded live demos.
+* Wrote about SceneJS in *OpenGL Insights* 2012, which you can now [download for free](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf).
+* Talked about SceneJS at the 2015 Berlin WebGL Meetup - [here are the slides](http://slides.com/xeolabs/deck) from that talk, with a few embedded live demos.
 
 ## Next Steps: xeogl
 
-I'm going to keep making more of these WebGl engines, because there's never a one-size-fit-all solution (and well, it is a 
+I'm going to keep making more of these WebGL engines, because there's never a one-size-fit-all solution (and well, it is a 
 bit of a creative compulsion).
 <br><br>
 The public fork of SceneJS is now archived and no longer under development. However, if you're looking for a production-proven 
