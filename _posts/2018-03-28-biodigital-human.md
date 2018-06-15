@@ -1,6 +1,6 @@
 ---
 layout: biodigital
-title: Developing the BioDigital Human™ on SceneJS
+title: Developing the BioDigital Human on SceneJS
 description: <b>SceneJS</b> is an open source JavaScript library I created for WeGL-based 3D graphics.<br><br>In this article, I describe SceneJS' journey from a weekend experiment to how we ended up creating the world's leading Web-based anatomy visualization platform around it.
 thumbnail: human/biodigital-human-platform.png
 modified: 2018-23-03
@@ -12,13 +12,13 @@ tags: [scenejs, human, biodigital, webgl]
 Since 2009, I've worked remotely from Berlin, Germany with [BioDigital Systems](http://biodigital.com) in NYC, to help develop 
 the [BioDigital Human](http://biodigitalhuman.com) and its developer API on [SceneJS](http://scenejs.org).
 <br><br>
-In 2015, with the company expanding, [Tarek Sherif](https://twitter.com/thsherif) took over my role as 3D programming lead, since it made 
-sense for that job to be a performed on-site by a non-virtual person who could chase people around the office, instead of 
-typing emails all night in the wrong time zone. 
-<br><br>
 SceneJS is an open source (MIT) JavaScript library I created for developing 3D graphics applications on WebGL. One of 
 the first WebGL engines, SceneJS evolved alongside the WebGL specification to include advanced features such as posteffects, 
-physics, LoD, culling and various GL state optimizations. 
+physics, LoD, culling and various GL state optimizations.
+<br><br>
+In 2015, with the company expanding, [Tarek Sherif](https://twitter.com/thsherif) took over my role as 3D programming lead, since it made 
+ sense for that job to be a performed on-site by a non-virtual person who could chase people around the office, instead of 
+ typing emails all night in the wrong time zone. 
 <br><br>
 In this article, I'm going to describe SceneJS' journey from a weekend experiment to how we applied it within the world's leading 
 Web-based anatomy visualization platform, which now has over three million registered users, plus a bunch a bunch of awards, 
