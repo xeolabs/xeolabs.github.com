@@ -1,7 +1,7 @@
 ---
 layout: biodigital
 title: Developing the BioDigital Human on SceneJS
-description: <b>SceneJS</b> is an open source JavaScript library I created for WeGL-based 3D graphics.<br><br>In this article, I describe SceneJS' journey from a weekend experiment to how we ended up creating the world's leading Web-based anatomy visualization platform around it.
+description: <b>SceneJS</b> is an open source JavaScript library I created for WeGL-based 3D graphics.<br><br>In this article, I describe SceneJS' journey from a weekend experiment to how we built the world's leading Web-based anatomy visualization platform on it.
 thumbnail: human/biodigital-human-platform.png
 modified: 2018-23-03
 category: portfolio
