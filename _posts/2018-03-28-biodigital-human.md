@@ -34,7 +34,7 @@ using [Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_l
 that to be particularly interactive.
 <br><br>
 That version was even written in completely functional-style JavaScript, and did a ton of garbage collection and scope traversal. I was 
-inspired at the time by LISP and CLOJURE and maybe took my obsession with terse scene definitions a little too far with that!     
+inspired at the time by LISP and CLOJURE and so perhaps took my fascination with terse scene definitions a little too far!     
   
 ## 2006: Experiments with Canvas3D
   
@@ -70,7 +70,8 @@ setInterval(function() {)
 {% endhighlight %}
 
 I loved the idea of a 3D world defined declaratively, as pure data. At this point, I was inspired by the likes 
-of [VRML](https://en.wikipedia.org/wiki/VRML), which I'd used as a student, and by the terse, declarative syntax of [JavaFX](https://en.wikipedia.org/wiki/JavaFX).
+of [VRML](https://en.wikipedia.org/wiki/VRML), which I'd used as a student to visualize data, and by the terse, declarative 
+syntax of [JavaFX](https://en.wikipedia.org/wiki/JavaFX).
 
 ## 2008: SceneJS Open Sourced
 
@@ -78,7 +79,7 @@ My day job back in 2008 (in a cubicle, maintaining a Java-based spam-scrubbing p
  touch with the creative culture that drew me into programming in the first place: 3D graphics, SIGGRAPH journals, cyberpunk 
  science fiction - all that good stuff.
 <br><br>
-So I quit my day job, [put SceneJS on GitHub](https://github.com/xeolabs/scenejs), and devoted my time to getting 
+So I quit my job, [put SceneJS on GitHub](https://github.com/xeolabs/scenejs), and devoted my time to getting 
  back into 3D programming, using WebGL.   
 
 ## 2009: SceneJS Powering the BioDigital Human
@@ -99,7 +100,7 @@ the [ANGLE](https://en.wikipedia.org/wiki/ANGLE_(software)) developers, whose wo
 Windows without relying on OpenGL graphics drivers.
 <br><br>
 Over the next couple of years I rewrote SceneJS twice, and we managed to double that performance. [Olli Etuaho](https://twitter.com/oletus?lang=en) from NVIDIA even helped 
-out and made optimizations for mobile GPUs, and later, after we made a private fork (described below), we got it rendering 
+out and made optimizations for mobile GPUs, and later, after we'd made a private fork (described below), we got it rendering 
 at ~60FPS for most of the full anatomy model.
 
 ### Human Developer API Origins

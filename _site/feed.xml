@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-15T06:26:59+00:00</updated>
+<updated>2018-06-15T06:36:57+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -51,7 +51,7 @@ using &lt;a href=&quot;https://en.wikipedia.org/wiki/Bresenham%27s_line_algorith
 that to be particularly interactive.
 &lt;br /&gt;&lt;br /&gt;
 That version was even written in completely functional-style JavaScript, and did a ton of garbage collection and scope traversal. I was 
-inspired at the time by LISP and CLOJURE and maybe took my obsession with terse scene definitions a little too far with that!&lt;/p&gt;
+inspired at the time by LISP and CLOJURE and so perhaps took my fascination with terse scene definitions a little too far!&lt;/p&gt;
 
 &lt;h2 id=&quot;experiments-with-canvas3d&quot;&gt;2006: Experiments with Canvas3D&lt;/h2&gt;
 
@@ -85,7 +85,8 @@ was, of course, a &lt;a href=&quot;https://en.wikipedia.org/wiki/Gouraud_shading
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;I loved the idea of a 3D world defined declaratively, as pure data. At this point, I was inspired by the likes 
-of &lt;a href=&quot;https://en.wikipedia.org/wiki/VRML&quot;&gt;VRML&lt;/a&gt;, which I’d used as a student, and by the terse, declarative syntax of &lt;a href=&quot;https://en.wikipedia.org/wiki/JavaFX&quot;&gt;JavaFX&lt;/a&gt;.&lt;/p&gt;
+of &lt;a href=&quot;https://en.wikipedia.org/wiki/VRML&quot;&gt;VRML&lt;/a&gt;, which I’d used as a student to visualize data, and by the terse, declarative 
+syntax of &lt;a href=&quot;https://en.wikipedia.org/wiki/JavaFX&quot;&gt;JavaFX&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;scenejs-open-sourced&quot;&gt;2008: SceneJS Open Sourced&lt;/h2&gt;
 
@@ -93,7 +94,7 @@ of &lt;a href=&quot;https://en.wikipedia.org/wiki/VRML&quot;&gt;VRML&lt;/a&gt;, 
  touch with the creative culture that drew me into programming in the first place: 3D graphics, SIGGRAPH journals, cyberpunk 
  science fiction - all that good stuff.
 &lt;br /&gt;&lt;br /&gt;
-So I quit my day job, &lt;a href=&quot;https://github.com/xeolabs/scenejs&quot;&gt;put SceneJS on GitHub&lt;/a&gt;, and devoted my time to getting 
+So I quit my job, &lt;a href=&quot;https://github.com/xeolabs/scenejs&quot;&gt;put SceneJS on GitHub&lt;/a&gt;, and devoted my time to getting 
  back into 3D programming, using WebGL.&lt;/p&gt;
 
 &lt;h2 id=&quot;scenejs-powering-the-biodigital-human&quot;&gt;2009: SceneJS Powering the BioDigital Human&lt;/h2&gt;
@@ -114,7 +115,7 @@ the &lt;a href=&quot;https://en.wikipedia.org/wiki/ANGLE_(software)&quot;&gt;ANG
 Windows without relying on OpenGL graphics drivers.
 &lt;br /&gt;&lt;br /&gt;
 Over the next couple of years I rewrote SceneJS twice, and we managed to double that performance. &lt;a href=&quot;https://twitter.com/oletus?lang=en&quot;&gt;Olli Etuaho&lt;/a&gt; from NVIDIA even helped 
-out and made optimizations for mobile GPUs, and later, after we made a private fork (described below), we got it rendering 
+out and made optimizations for mobile GPUs, and later, after we’d made a private fork (described below), we got it rendering 
 at ~60FPS for most of the full anatomy model.&lt;/p&gt;
 
 &lt;h3 id=&quot;human-developer-api-origins&quot;&gt;Human Developer API Origins&lt;/h3&gt;
