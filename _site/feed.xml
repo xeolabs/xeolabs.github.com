@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-15T02:18:36+00:00</updated>
+<updated>2018-06-15T02:21:44+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -46,12 +46,12 @@ including the 2015 Webby for Best Health Website.
 
 &lt;p&gt;I started SceneJS as a weekend experiment, somewhere around late 2005. Back then, JavaScript wasn’t so fast and friends 
 like &lt;a href=&quot;https://twitter.com/ohunt?lang=en&quot;&gt;@ohunt&lt;/a&gt; were busy writing raytracers on JavaScript that took forever, 
-as a kind of novelty.&lt;br /&gt;&lt;br /&gt;The first version of SceneJS even rendered wireframe as DIV elements, arranged 
+as a kind of twisted novelty.&lt;br /&gt;&lt;br /&gt;The first version of SceneJS even rendered wireframe as DIV elements, arranged 
 using &lt;a href=&quot;https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm&quot;&gt;Bresenham’s line algorithm&lt;/a&gt;, so I wasn’t expecting 
 that to be particularly interactive.
 &lt;br /&gt;&lt;br /&gt;
 That version was even written in completely functional-style JavaScript, and did a ton of garbage collection and scope traversal. I was 
-inspired by LISP and CLOJURE and maybe took my fascination with terse scene definitions a little too far with that!&lt;/p&gt;
+inspired at tthe time by LISP and CLOJURE and maybe took my fascination with terse scene definitions a little too far with that!&lt;/p&gt;
 
 &lt;h2 id=&quot;experiments-with-canvas3d&quot;&gt;2006: Experiments with Canvas3D&lt;/h2&gt;
 
@@ -98,7 +98,7 @@ So I quit my day job, &lt;a href=&quot;https://github.com/xeolabs/scenejs&quot;&
 
 &lt;h2 id=&quot;scenejs-powering-the-biodigital-human&quot;&gt;2009: SceneJS Powering the BioDigital Human&lt;/h2&gt;
 
-&lt;p&gt;A little while later, I began working for BioDigital Systems and we ended up making the &lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;BioDigital Human&lt;/a&gt; on SceneJS.&lt;/p&gt;
+&lt;p&gt;A little while later, I signed up with BioDigital Systems and we began making the &lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;BioDigital Human&lt;/a&gt; on SceneJS.&lt;/p&gt;
 
 &lt;h3 id=&quot;human-content-pipeline-origins&quot;&gt;Human Content Pipeline Origins&lt;/h3&gt;
 

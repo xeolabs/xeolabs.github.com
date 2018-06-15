@@ -29,12 +29,12 @@ including the 2015 Webby for Best Health Website.
 
 I started SceneJS as a weekend experiment, somewhere around late 2005. Back then, JavaScript wasn't so fast and friends 
 like [@ohunt](https://twitter.com/ohunt?lang=en) were busy writing raytracers on JavaScript that took forever, 
-as a kind of novelty.<br><br>The first version of SceneJS even rendered wireframe as DIV elements, arranged 
+as a kind of twisted novelty.<br><br>The first version of SceneJS even rendered wireframe as DIV elements, arranged 
 using [Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm), so I wasn't expecting 
 that to be particularly interactive.
 <br><br>
 That version was even written in completely functional-style JavaScript, and did a ton of garbage collection and scope traversal. I was 
-inspired by LISP and CLOJURE and maybe took my fascination with terse scene definitions a little too far with that!     
+inspired at tthe time by LISP and CLOJURE and maybe took my fascination with terse scene definitions a little too far with that!     
   
 ## 2006: Experiments with Canvas3D
   
@@ -83,7 +83,7 @@ So I quit my day job, [put SceneJS on GitHub](https://github.com/xeolabs/scenejs
 
 ## 2009: SceneJS Powering the BioDigital Human
  
-A little while later, I began working for BioDigital Systems and we ended up making the [BioDigital Human](http://biodigitalhuman.com) on SceneJS. 
+A little while later, I signed up with BioDigital Systems and we began making the [BioDigital Human](http://biodigitalhuman.com) on SceneJS. 
 
 ### Human Content Pipeline Origins
 
