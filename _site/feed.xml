@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-15T02:13:57+00:00</updated>
+<updated>2018-06-15T02:18:36+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -31,11 +31,11 @@ the &lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;BioDigital Human&lt;/a&
 &lt;br /&gt;&lt;br /&gt;
 SceneJS is an open source (MIT) JavaScript library I created for developing 3D graphics applications on WebGL. One of 
 the first WebGL engines, SceneJS evolved alongside the WebGL specification to include features such as posteffects, 
-physics, LoD, culling and various GL state optimizations. 
+physics, LoD, culling and few different GL state optimizations. 
 &lt;br /&gt;&lt;br /&gt;
-In this article, I’m going to describe SceneJS’ journey from a weekend experiment to how we applied it within the world’s leading 
+In this article, I’m going to describe SceneJS’ journey from a weekend experiment to how we applied it within BioDigital’s 
 Web-based anatomy visualization platform, which now has over three million registered users, plus a bunch a bunch of awards, 
-including the 2015 Webby Award for Best Health Website.
+including the 2015 Webby for Best Health Website.
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;figure&gt;
 	&lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/human/biodigital-human-platform.png&quot; /&gt;&lt;/a&gt;

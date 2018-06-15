@@ -14,11 +14,11 @@ the [BioDigital Human](http://biodigitalhuman.com) and its developer API on [Sce
 <br><br>
 SceneJS is an open source (MIT) JavaScript library I created for developing 3D graphics applications on WebGL. One of 
 the first WebGL engines, SceneJS evolved alongside the WebGL specification to include features such as posteffects, 
-physics, LoD, culling and various GL state optimizations. 
+physics, LoD, culling and few different GL state optimizations. 
 <br><br>
-In this article, I'm going to describe SceneJS' journey from a weekend experiment to how we applied it within the world's leading 
+In this article, I'm going to describe SceneJS' journey from a weekend experiment to how we applied it within BioDigital's 
 Web-based anatomy visualization platform, which now has over three million registered users, plus a bunch a bunch of awards, 
-including the 2015 Webby Award for Best Health Website.
+including the 2015 Webby for Best Health Website.
 <br><br>
 <figure>
 	<a href="http://biodigitalhuman.com"><img src="{{ site.url }}/images/human/biodigital-human-platform.png"></a>
