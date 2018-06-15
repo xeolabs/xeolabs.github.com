@@ -36,11 +36,11 @@ As an **open source developer**, I build on the generosity of a diverse communit
 and tools to the needs of my clients, resulting in greater efficiency and certainty of delivery. When additional hands are needed, 
 I can also enlist the help of experienced engineers who I’ve previously collaborated with on various open source projects. 
 <br><br>
-**Got a project you'd like to discuss?** Fire me an email via the address below! [^1]
+**Got a project you'd like to discuss?** Fire me an email via the address below!
     
 <br>
 ![Email](../images/email.png)
 
-[^1]: Please note that, after the first couple of meetings, we'd need to formalize things before moving forward.
+<!-- [^1]: Please note that, after the first couple of meetings, we'd need to formalize things before moving forward. -->
 
 
