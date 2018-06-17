@@ -6,7 +6,7 @@ tagline: On the other side of the screen it all looked so easy.
 tags: [about, xeolabs, webgl]
 modified: 27-3-2018
 image:
-  feature: collage6.jpg
+  feature: collage7.jpg
   credit: xeolabs
   creditlink: http://xeolabs.com
 ---
@@ -35,8 +35,8 @@ As a **software engineer**, I value teamwork, process and simple, maintainable d
 business fun and profitable. 
 <br><br>
 As an **open source developer**, I collaborate with a diverse community of experienced engineers, adapting our experiments 
-and tools to the needs of our clients, resulting in efficiency and certainty of delivery. When projects grow, I can also enlist 
-the help of some of those engineers, as needed. 
+and tools to the needs of our clients, resulting in efficiency and certainty of delivery. When projects grow, I can also 
+bring in some of those engineers to help out, if needed. 
 
 
 <!-- [^1]: Please note that, after the first couple of meetings, we'd need to formalize things before moving forward. -->
