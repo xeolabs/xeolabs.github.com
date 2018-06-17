@@ -11,7 +11,11 @@ image:
   creditlink: http://xeolabs.com
 ---
 
-I'm a freelance 3D software engineer providing custom WebGL-based solutions for product visualization, MedViz, BIM and CAD.
+![Email](../images/email2.png)
+
+<br>I'm a freelance 3D software engineer providing custom WebGL-based solutions for product visualization, MedViz, 
+BIM and CAD.<br><br>
+For more info, check out my **[portfolio]({{ site.url }}/portfolio/)** and **[resume](http://linkedin.com/in/lindsaystanleykay)**.<br><br>Got a project you'd like to discuss? Send me an email! 
 
 ### Background
 
@@ -24,8 +28,6 @@ Over the past two decades, I've taught computing at a school, tutored programmin
 university, been a CTO in San Diego, tested wind turbines in New Zealand, created open source WebGL frameworks, 
 lead development on the [BioDigital Human]({{ site.url }}/portfolio/biodigital-human), 
 and built a bunch of WebGL-based BIM and CAD viewers.
-<br><br>
-For more details, please check out my **[portfolio]({{ site.url }}/portfolio/)** and **[resume](http://linkedin.com/in/lindsaystanleykay)**. 
 
 ### Process
 
@@ -35,11 +37,7 @@ activity fun and profitable.
 As an **open source developer**, I collaborate with a diverse community of passionate and experienced engineers, adapting our experiments 
 and tools to the needs of my clients, resulting in greater efficiency and certainty of delivery. When projects grow, I can also also enlist 
 the help of some of those engineers, as needed. 
-<br><br>
-**Got a project you'd like to discuss?** Fire an email at the address below!
-    
-<br>
-![Email](../images/email.png)
+
 
 <!-- [^1]: Please note that, after the first couple of meetings, we'd need to formalize things before moving forward. -->
 
