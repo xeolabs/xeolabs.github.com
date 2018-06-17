@@ -43,8 +43,9 @@
 
     <h1><a href="{{ site.url}}/clients">Portfolio</a></h1>
 
-    <p>Over the last few years, I've worked remotely with clients in NZ, USA, Netherlands, France and Sweden. Here's a
-        few articles describing those adventures, plus some of the open source frameworks I created to base them on.</p>
+    <p>I've worked remotely with clients in the USA, Netherlands, France, Sweden and New Zealand,
+        developing WebGL-based solutions for MedViz, BIM and CAD.<br><br>Here's some info on those projects, plus the
+        open source libraries I created to support them.</p>
 
     <hr width="100%"/>
 
@@ -103,9 +104,9 @@
         <h2 itemprop="headline">{{ post.title }}</h2>
         <div class="row">
             <div class="column left">
-                <p itemprop="text">{% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html  | strip_newlines }}{% endif %}
-                    <br><br>
-                    [&nbsp;<span style="font-weight: bold; color: #bd8341; font-style: italic;">UNDER CONSTRUCTION</span>&nbsp;]
+                <p itemprop="text">{% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html  | strip_newlines }}{% endif %}<br><br></p>
+                {% if post.tech %}<p itemprop="text">{{ post.tech }}<br><br></p>{% endif %}
+                <p itemprop="text">[&nbsp;<span style="font-weight: bold; color: #bd8341; font-style: italic;">UNDER CONSTRUCTION</span>&nbsp;]
                 </p>
             </div>
             <div class="column right">
@@ -118,10 +119,9 @@
         <h2 itemprop="headline"><a href="{{ post.website }}" rel="bookmark" title="{{ post.title }}">{{ post.title }}</a></h2>
         <div class="row">
             <div class="column left">
-                <p itemprop="text">{% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html | strip_newlines }}{% endif %}
-                    <br><br>
-                    [&nbsp;<span style="font-weight: bold; font-style: italic;"><a href="{{ post.website }}">VISIT WEBSITE &gt;&gt;</a></span>&nbsp;]
-                </p>
+                <p itemprop="text">{% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html | strip_newlines }}{% endif %}<br><br></p>
+                    {% if post.tech %}<p itemprop="text">{{ post.tech }}<br><br></p>{% endif %}
+                <p itemprop="text">[&nbsp;<span style="font-weight: bold; font-style: italic;"><a href="{{ post.website }}">VISIT WEBSITE &gt;&gt;</a></span>&nbsp;]</p>
             </div>
             <div class="column right">
                 <a href="{{ site.url }}{{ post.website }}" rel="bookmark"  title="{{ post.title }}">
@@ -136,9 +136,9 @@
         <div class="row">
             <div class="column left">
                 <p itemprop="text">{% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html | strip_newlines }}{% endif %}
-                    <br><br>
-                    [&nbsp;<span style="font-weight: bold; font-style: italic;"><a href="{{ site.url }}{{ post.url }}">READ ARTICLE &gt;&gt;</a></span>&nbsp;]
-                </p>
+                    <br><br></p>
+                    {% if post.tech %}<p itemprop="text">{{ post.tech }}<br><br></p>{% endif %}
+                <p itemprop="text">[&nbsp;<span style="font-weight: bold; font-style: italic;"><a href="{{ site.url }}{{ post.url }}">READ MORE &gt;&gt;</a></span>&nbsp;]</p>
             </div>
             <div class="column right">
                 <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}">

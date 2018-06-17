@@ -5,21 +5,21 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Developing the BioDigital Human on SceneJS &#8211; xeolabs</title>
-<meta name="description" content="<b>SceneJS</b> is an open source JavaScript library I created for WeGL-based 3D graphics.<br><br>In this article, I describe SceneJS' journey from a weekend experiment to how we built the world's leading Web-based anatomy visualization platform on it.">
+<title>The BioDigital Human™ &#8211; xeolabs</title>
+<meta name="description" content="The <b>BioDigital Human</b> is the leading Web-based 3D platform for the exploration of anatomy, medical conditions and treatments.<br><br>I worked remotely with BioDigital Systems in NYC as lead developer on the Human's WebGL-based 3D visualisation engine and its public developer API.">
 <meta name="keywords" content="scenejs, human, biodigital, webgl">
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://xeolabs.com/images/">
-<meta name="twitter:title" content="Developing the BioDigital Human on SceneJS">
-<meta name="twitter:description" content="<b>SceneJS</b> is an open source JavaScript library I created for WeGL-based 3D graphics.<br><br>In this article, I describe SceneJS' journey from a weekend experiment to how we built the world's leading Web-based anatomy visualization platform on it.">
+<meta name="twitter:title" content="The BioDigital Human™">
+<meta name="twitter:description" content="The <b>BioDigital Human</b> is the leading Web-based 3D platform for the exploration of anatomy, medical conditions and treatments.<br><br>I worked remotely with BioDigital Systems in NYC as lead developer on the Human's WebGL-based 3D visualisation engine and its public developer API.">
 <meta name="twitter:creator" content="@xeographics">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Developing the BioDigital Human on SceneJS">
-<meta property="og:description" content="<b>SceneJS</b> is an open source JavaScript library I created for WeGL-based 3D graphics.<br><br>In this article, I describe SceneJS' journey from a weekend experiment to how we built the world's leading Web-based anatomy visualization platform on it.">
+<meta property="og:title" content="The BioDigital Human™">
+<meta property="og:description" content="The <b>BioDigital Human</b> is the leading Web-based 3D platform for the exploration of anatomy, medical conditions and treatments.<br><br>I worked remotely with BioDigital Systems in NYC as lead developer on the Human's WebGL-based 3D visualisation engine and its public developer API.">
 <meta property="og:url" content="http://xeolabs.com/portfolio/biodigital-human">
 <meta property="og:site_name" content="xeolabs">
 
@@ -100,7 +100,7 @@
   <div class="article-author-top">
     <img src="http://xeolabs.com/images/avatar.jpg" class="bio-photo" alt="xeolabs bio photo"></a>
 <h3><a href="http://xeolabs.com/about/">xeolabs</a></h3>
-<p><b>Lindsay Kay</b><br><br><i>3D software engineer<br>specializing in<br>WebGL-based visualization for STEM</i></p>
+<p><b>Lindsay Kay</b><br><br><i>3D software engineer / WebGL developer</i></p>
 <a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
 <a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
 <a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
@@ -123,18 +123,18 @@
   </div>
   <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
     <div class="headline-wrap">
-      <h1 itemprop="name">Developing the BioDigital Human on SceneJS</h1>
+      <h1 itemprop="name">The BioDigital Human™</h1>
         <p style="font-weight:bold; font-style:italic;"><time datetime="2018-03-28T00:00:00+00:00" itemprop="datePublished">March 28, 2018</time></p>
     </div><!--/ .headline-wrap -->
     <div class="article-wrap" itemprop="text">
-      <p>Since 2009, I’ve worked remotely from Berlin, Germany with the team at <a href="http://biodigital.com">BioDigital Systems</a> in NYC, to help develop 
-the <a href="http://biodigitalhuman.com">BioDigital Human</a> and its developer API on <a href="http://scenejs.org">SceneJS</a>.
+      <p>Since 2009, I’ve worked remotely from Berlin, Germany with the team at <a href="http://biodigital.com">BioDigital Systems</a> in Manhattan, New York, to help develop 
+the <a href="http://biodigitalhuman.com">BioDigital Human</a> and its developer API.
 <br /><br />
-<a href="http://scenejs.org">SceneJS</a> is an open source (MIT) JavaScript library I created for developing 3D graphics applications 
-in Web browsers without needing plugins. One of the first WebGL engines, SceneJS evolved alongside the WebGL specification to include 
-various features such as posteffects, physics, LoD, culling, plus various GL performance optimizations. 
+We developed the Human on <a href="http://scenejs.org">SceneJS</a>, an open source (MIT) JavaScript library I created for developing 3D graphics applications 
+in Web browsers without using plugins. One of the first WebGL engines, SceneJS evolved alongside the WebGL specification, before 
+we eventually made a private version which we adapted specifically for the Human. 
 <br /><br />
-In this article, I’m going to describe SceneJS’ journey from a weekend experiment to how we applied it within BioDigital’s 
+In this article, I’m going to describe SceneJS’ journey from a weekend side  project to how we applied it within BioDigital’s 
 Web-based anatomy visualization platform. Ten years down the track, the platform now has over three million 
 registered users and continues to develop, with a growing library of models of anatomy and physical conditions.</p>
 
@@ -143,7 +143,6 @@ registered users and continues to develop, with a growing library of models of a
 <p><br /><br /></p>
 <figure>
 	<a href="http://biodigitalhuman.com"><img src="http://xeolabs.com/images/human/biodigital-human-platform.png" /></a>
-	<figcaption><a href="http://biodigitalhuman.com" title="SceneJS powering the BioDigital Human">SceneJS powering the BioDigital Human</a></figcaption>
 </figure>
 
 <h2 id="scenejs-origins">2005: SceneJS Origins</h2>
@@ -374,7 +373,7 @@ who came in fresh from academia and added many valuable rendering features.
         <div class="article-author-bottom">
           <img src="http://xeolabs.com/images/avatar.jpg" class="bio-photo" alt="xeolabs bio photo"></a>
 <h3><a href="http://xeolabs.com/about/">xeolabs</a></h3>
-<p><b>Lindsay Kay</b><br><br><i>3D software engineer<br>specializing in<br>WebGL-based visualization for STEM</i></p>
+<p><b>Lindsay Kay</b><br><br><i>3D software engineer / WebGL developer</i></p>
 <a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
 <a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
 <a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
@@ -385,7 +384,7 @@ who came in fresh from academia and added many valuable rendering features.
 <hr>
 
         </div>
-        <p class="byline"><strong>Developing the BioDigital Human on SceneJS</strong> was published on <time datetime="2018-03-28T00:00:00+00:00" itemprop="datePublished">March 28, 2018</time> and last modified on <time datetime="2018-23-03" itemprop="dateModified">2018-23-03</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://xeolabs.com/about" title="About xeolabs" itemprop="url">xeolabs</a></span></span>.</p>
+        <p class="byline"><strong>The BioDigital Human™</strong> was published on <time datetime="2018-03-28T00:00:00+00:00" itemprop="datePublished">March 28, 2018</time> and last modified on <time datetime="2018-23-03" itemprop="dateModified">2018-23-03</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://xeolabs.com/about" title="About xeolabs" itemprop="url">xeolabs</a></span></span>.</p>
       </footer>
 
         <!---->
@@ -420,19 +419,19 @@ who came in fresh from academia and added many valuable rendering features.
       
       
       
-      <li><a href="http://xeolabs.com/portfolio/xeogl" title="xeogl - a WebGL-based 3D visualization engine">xeogl - a WebGL-based 3D visualization engine</a></li>
+      <li><a href="http://xeolabs.com/portfolio/xeogl" title="xeogl - a 3D library for WebGL-based ArchViz & CAD">xeogl - a 3D library for WebGL-based ArchViz & CAD</a></li>
       
     
       
       
       
-      <li><a href="http://xeolabs.com/portfolio/bimdata" title="Developing the BIMData IFC Viewer on xeogl">Developing the BIMData IFC Viewer on xeogl</a></li>
+      <li><a href="http://xeolabs.com/portfolio/scenejs" title="SceneJS - a 3D library for WebGL-based MedViz">SceneJS - a 3D library for WebGL-based MedViz</a></li>
       
     
       
       
       
-      <li><a href="http://xeolabs.com/portfolio/xeogl-in-bimsurfer" title="Developing the BIMSurfer IFC Viewer on xeogl">Developing the BIMSurfer IFC Viewer on xeogl</a></li>
+      <li><a href="http://xeolabs.com/portfolio/bimdata" title="BIMData™ WebGL-Based 3D BIM Viewer">BIMData™ WebGL-Based 3D BIM Viewer</a></li>
       
     
     </ul>
