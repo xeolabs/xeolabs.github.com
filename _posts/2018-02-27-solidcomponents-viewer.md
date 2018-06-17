@@ -4,7 +4,7 @@ title: SolidComponents™ WebGL-Based 3D CAD Viewer
 client: Cervican  AB, Halmstad,  Sweden
 description: <b>SolidComponents™</b> provides an online 3D catalog that allows buyers to preview products published directly from SolidWorks.<br><br>I worked remotely with engineers in Halmstad, Sweden to develop their WebGL-based CAD viewer on <b>xeogl</b>, an open source library I created for 3D visualization in the browser.  
 thumbnail: solidcomponents/solidcomponents-mac.png
-tech: "#JavaScript, #WebGL, #CAD, #3DXML, #xeogl"
+tech: "#JavaScript, #WebGL, #3DXML, #xeogl"
 modified: 2017-06-31
 category: portfolio
 website: https://www.solidcomponents.com/

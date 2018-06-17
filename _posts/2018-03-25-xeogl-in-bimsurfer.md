@@ -3,7 +3,7 @@ layout: post
 title: BIMSurfer WebGL-Based 3D BIM Viewer
 description: <b>BIMSurfer</b> is the first open source WebGL-based IFC viewer, running as a Web client for <b>BIMServer</b>.<br><br>I work remotely with the team in the Netherlands to develop this viewer on <b>xeogl</b>, an open source library I created for 3D visualization in the browser.
 thumbnail: bimsurfer/bimsurfer.png
-tech: "#JavaScript, #WebGL, #BIM, #xeogl, #Opensource"
+tech: "#JavaScript, #WebGL, #xeogl, #Opensource"
 tagline: "Supercharging your BIM"
 modified: 2018-23-03
 category: portfolio
