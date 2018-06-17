@@ -27,7 +27,7 @@ I studied electronic engineering at the Christchurch Polytechnic.
 Over two decades, I've taught computing at a school, tutored software development at a 
 university, been a CTO in San Diego, tested wind turbines in New Zealand, created open source WebGL frameworks, 
 lead development on the [BioDigital Human]({{ site.url }}/portfolio/biodigital-human), 
-and built a bunch of WebGL-based BIM and CAD viewers that are out there on the Web right now, making revenue.
+and built a bunch of WebGL-based 3D apps that are out there on the Web right now, making revenue.
 
 ### Process
 
