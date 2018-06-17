@@ -2,8 +2,8 @@ title:            xeolabs
 tagline:          On the other side of the screen, it all looks so easy
 description:      Lindsay's 3D research blog
 #Comment out url when working locally to resolve base urls correctly
-url:              http://xeolabs.com
-baseurl:          /xeolabs.github.io/xeolabs
+#url:              http://xeolabs.com
+#baseurl:          /xeolabs.github.io/xeolabs
 
 # Owner/author information
 owner:

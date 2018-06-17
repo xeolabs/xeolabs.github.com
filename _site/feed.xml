@@ -3,27 +3,27 @@
 <title type="text">xeolabs</title>
 <subtitle type="text">On the other side of the screen, it all looks so easy</subtitle>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
-<link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-17T16:31:34+00:00</updated>
-<id>http://xeolabs.com/</id>
+<link rel="self" type="application/atom+xml" href="/feed.xml" />
+<link rel="alternate" type="text/html" href="" />
+<updated>2018-06-17T17:13:38+00:00</updated>
+<id>/</id>
 <author>
   <name>xeolabs</name>
-  <uri>http://xeolabs.com/</uri>
+  <uri>/</uri>
   <email>lindsay.kay@xeolabs.com</email>
 </author>
 
 
 <entry>
   <title type="html"><![CDATA[The BioDigital Human™]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/biodigital-human" />
-  <id>http://xeolabs.com/portfolio/biodigital-human</id>
+  <link rel="alternate" type="text/html" href="/portfolio/biodigital-human" />
+  <id>/portfolio/biodigital-human</id>
   <updated>2018-23-03T00:00:00-00:00</updated>
   <published>2018-03-28T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;p&gt;Since 2009, I’ve worked remotely from Berlin, Germany with the team at &lt;a href=&quot;http://biodigital.com&quot;&gt;BioDigital Systems&lt;/a&gt; in Manhattan, New York, to help develop 
@@ -41,7 +41,7 @@ registered users and continues to develop, with a growing library of models of a
 &lt;!-- the [New York Times](https://www.nytimes.com/2012/01/08/business/the-human-anatomy-animated-with-3-d-technology.html), [ABC News](https://abcnews.go.com/Health/virtual-reality-body-transforming-innovations/story?id=16134453) and TED.  --&gt;
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;figure&gt;
-	&lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/human/biodigital-human-platform.png&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;&lt;img src=&quot;/images/human/biodigital-human-platform.png&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&quot;scenejs-origins&quot;&gt;2005: SceneJS Origins&lt;/h2&gt;
@@ -64,7 +64,7 @@ seem so crazy, so I switched SceneJS over to using Canvas3D.
 Following tradition, my first SceneJS demo 
 was, of course, a &lt;a href=&quot;https://en.wikipedia.org/wiki/Gouraud_shading&quot;&gt;Gouraud-shaded&lt;/a&gt; &lt;a href=&quot;https://en.wikipedia.org/wiki/Utah_teapot&quot;&gt;Utah Teapot&lt;/a&gt;, a bit like this one:
 &lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://scenejs.org/examples.html?page=firstExample&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/firstExample.png&quot; alt=&quot;SceneJS First Example&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=firstExample&quot;&gt;&lt;img src=&quot;/images/scenejs/firstExample.png&quot; alt=&quot;SceneJS First Example&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
     &lt;span class=&quot;na&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[{&lt;/span&gt;
@@ -170,7 +170,7 @@ ICE STORM ICU Simulator, so that changes to the patient’s heartbeat and respir
 morph animations within the Human:&lt;/p&gt;
 
 &lt;figure&gt;
-	&lt;img src=&quot;http://xeolabs.com/images/human/icestorm.jpg&quot; /&gt;
+	&lt;img src=&quot;/images/human/icestorm.jpg&quot; /&gt;
 	&lt;figcaption&gt;Human interfaced with the Lockheed Martin ICE STORM ICU Simulator. Human (on the right) is animating the 
 	heart and lungs using morph targets, synchronized via JSON-RPC with changes to the patient&#39;s condition in the ICE STORM ICU simulator (on the left).&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -267,56 +267,56 @@ who came in fresh from academia and added many valuable rendering features.
 &lt;!-- /#table-of-contents --&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/biodigital-human&quot;&gt;The BioDigital Human™&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 28, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/portfolio/biodigital-human&quot;&gt;The BioDigital Human™&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;&quot;&gt;xeolabs&lt;/a&gt; on March 28, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[xeogl - a 3D library for WebGL-based ArchViz & CAD]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/xeogl" />
-  <id>http://xeolabs.com/portfolio/xeogl</id>
+  <link rel="alternate" type="text/html" href="/portfolio/xeogl" />
+  <id>/portfolio/xeogl</id>
   <updated>2018-19-09T00:00:00-00:00</updated>
   <published>2018-03-27T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeogl&quot;&gt;xeogl - a 3D library for WebGL-based ArchViz & CAD&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 27, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/portfolio/xeogl&quot;&gt;xeogl - a 3D library for WebGL-based ArchViz & CAD&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;&quot;&gt;xeolabs&lt;/a&gt; on March 27, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[SceneJS - a 3D library for WebGL-based MedViz]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/scenejs" />
-  <id>http://xeolabs.com/portfolio/scenejs</id>
+  <link rel="alternate" type="text/html" href="/portfolio/scenejs" />
+  <id>/portfolio/scenejs</id>
   <updated>2018-19-09T00:00:00-00:00</updated>
   <published>2018-03-27T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/scenejs&quot;&gt;SceneJS - a 3D library for WebGL-based MedViz&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 27, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/portfolio/scenejs&quot;&gt;SceneJS - a 3D library for WebGL-based MedViz&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;&quot;&gt;xeolabs&lt;/a&gt; on March 27, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[BIMData™ WebGL-Based 3D BIM Viewer]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/bimdata" />
-  <id>http://xeolabs.com/portfolio/bimdata</id>
+  <link rel="alternate" type="text/html" href="/portfolio/bimdata" />
+  <id>/portfolio/bimdata</id>
   <updated>2018-19-09T00:00:00-00:00</updated>
   <published>2018-03-26T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -355,20 +355,20 @@ who came in fresh from academia and added many valuable rendering features.
 &lt;h2 id=&quot;subcontracting&quot;&gt;Subcontracting&lt;/h2&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/bimdata&quot;&gt;BIMData™ WebGL-Based 3D BIM Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 26, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/portfolio/bimdata&quot;&gt;BIMData™ WebGL-Based 3D BIM Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;&quot;&gt;xeolabs&lt;/a&gt; on March 26, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[BIMSurfer WebGL-Based 3D BIM Viewer]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/xeogl-in-bimsurfer" />
-  <id>http://xeolabs.com/portfolio/xeogl-in-bimsurfer</id>
+  <link rel="alternate" type="text/html" href="/portfolio/xeogl-in-bimsurfer" />
+  <id>/portfolio/xeogl-in-bimsurfer</id>
   <updated>2018-23-03T00:00:00-00:00</updated>
   <published>2018-03-25T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -487,20 +487,20 @@ We will review your code and commit it into the official BIM Surfer code base. A
 into our &lt;a href=&quot;https://github.com/opensourcebim/BIMsurfer/issues&quot;&gt;issue tracker&lt;/a&gt;.&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeogl-in-bimsurfer&quot;&gt;BIMSurfer WebGL-Based 3D BIM Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 25, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/portfolio/xeogl-in-bimsurfer&quot;&gt;BIMSurfer WebGL-Based 3D BIM Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;&quot;&gt;xeolabs&lt;/a&gt; on March 25, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[SolidComponents™ WebGL-Based 3D CAD Viewer]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/solidcomponents-viewer" />
-  <id>http://xeolabs.com/portfolio/solidcomponents-viewer</id>
+  <link rel="alternate" type="text/html" href="/portfolio/solidcomponents-viewer" />
+  <id>/portfolio/solidcomponents-viewer</id>
   <updated>2017-06-31T00:00:00-00:00</updated>
   <published>2018-02-27T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;h1 id=&quot;the-client&quot;&gt;The Client&lt;/h1&gt;
@@ -592,20 +592,20 @@ smoothNormalsAngleThreshold. This makes smoothing robust for hard edges.&lt;/p&g
 &lt;!-- /#table-of-contents --&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/solidcomponents-viewer&quot;&gt;SolidComponents™ WebGL-Based 3D CAD Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on February 27, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/portfolio/solidcomponents-viewer&quot;&gt;SolidComponents™ WebGL-Based 3D CAD Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;&quot;&gt;xeolabs&lt;/a&gt; on February 27, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[xeometry - a WebGL-based 3D model viewing library]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/xeometry" />
-  <id>http://xeolabs.com/portfolio/xeometry</id>
+  <link rel="alternate" type="text/html" href="/portfolio/xeometry" />
+  <id>/portfolio/xeometry</id>
   <updated>2018-19-09T00:00:00-00:00</updated>
   <published>2018-02-16T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -644,7 +644,7 @@ loaded from glTF.&lt;/p&gt;
 &lt;h2 id=&quot;using-object-ids&quot;&gt;Using object IDs&lt;/h2&gt;
 
 &lt;p&gt;You can also just operate on objects using their IDs:&lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://xeogl.org/examples/#presentation_annotations_tronTank&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/sawObjects.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;http://xeogl.org/examples/#presentation_annotations_tronTank&quot;&gt;&lt;img src=&quot;/images/xeogl/sawObjects.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt; &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;viewer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xeometry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Viewer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;canvasId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;theCanvas&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 
@@ -671,7 +671,7 @@ loaded it, you’re able to do operations on sets of objects that are selected b
 in the gearbox transparent except for the bearings and shafts”&lt;/em&gt;.
 &lt;br /&gt;&lt;br /&gt;
 Here’s an example, using a hypothetical type system for gearbox components:&lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://xeogl.org/examples/#presentation_annotations_tronTank&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/typeViewer.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;http://xeogl.org/examples/#presentation_annotations_tronTank&quot;&gt;&lt;img src=&quot;/images/xeogl/typeViewer.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt; &lt;span class=&quot;nx&quot;&gt;viewer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 
@@ -730,20 +730,20 @@ and data-driven methods that are easy to play around with in the browser’s Jav
 typical BIM application layer would manage other aspects of the IFC schema, such as layers, relationships etc, while the
 viewer can just use object IDs and types to reference the objects in the 3D view.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeometry&quot;&gt;xeometry - a WebGL-based 3D model viewing library&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on February 16, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/portfolio/xeometry&quot;&gt;xeometry - a WebGL-based 3D model viewing library&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;&quot;&gt;xeolabs&lt;/a&gt; on February 16, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Creating WebGL Demos for zSpace using xeogl]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/xeogl-and-zspace" />
-  <id>http://xeolabs.com/portfolio/xeogl-and-zspace</id>
+  <link rel="alternate" type="text/html" href="/portfolio/xeogl-and-zspace" />
+  <id>/portfolio/xeogl-and-zspace</id>
   <updated>2017-19-03T00:00:00-00:00</updated>
   <published>2018-02-16T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -772,7 +772,7 @@ viewer can just use object IDs and types to reference the objects in the 3D view
 &lt;p&gt;&lt;br /&gt;Last year, zSpace loaned me one of their &lt;em&gt;zSpace 300&lt;/em&gt; displays so that I could put together some xeogl demos for its beta WebVR support. If you were at &lt;a href=&quot;www.gdconf.co&quot;&gt;GDC 2017&lt;/a&gt;, you might have seen those demos running at the &lt;a href=&quot;https://www.khronos.org/news/events/gdc-2017#gdc2017_booth&quot;&gt;Khronos booth&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
- &lt;img src=&quot;http://xeolabs.com/images/xeogl/zspace/zSpaceDevice.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+ &lt;img src=&quot;/images/xeogl/zspace/zSpaceDevice.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;These demos were my first foray into WebVR and were lots of fun to make. If you happen to be using a zSpace 300 right now, go ahead and click these thumbnails to run them: 
  &lt;br /&gt;&lt;/p&gt;
@@ -780,9 +780,9 @@ viewer can just use object IDs and types to reference the objects in the 3D view
 &lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th&gt;&lt;a href=&quot;http://xeogl.org/examples/#effects_zspace_geometries&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/zspace/zspace-geometries.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;a href=&quot;http://xeogl.org/examples/#effects_zspace_gearbox&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/zspace/zspace-gearbox.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;a href=&quot;http://xeogl.org/examples/#effects_zspace_ReciprocatingSaw&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/zspace/zspace-saw.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a href=&quot;http://xeogl.org/examples/#effects_zspace_geometries&quot;&gt;&lt;img src=&quot;/images/xeogl/zspace/zspace-geometries.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a href=&quot;http://xeogl.org/examples/#effects_zspace_gearbox&quot;&gt;&lt;img src=&quot;/images/xeogl/zspace/zspace-gearbox.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a href=&quot;http://xeogl.org/examples/#effects_zspace_ReciprocatingSaw&quot;&gt;&lt;img src=&quot;/images/xeogl/zspace/zspace-saw.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
@@ -899,38 +899,38 @@ viewer can just use object IDs and types to reference the objects in the 3D view
 &lt;p&gt;&lt;a href=&quot;http://giphy.com/gifs/mRdkHVQ1NdUWc&quot;&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeogl-and-zspace&quot;&gt;Creating WebGL Demos for zSpace using xeogl&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on February 16, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/portfolio/xeogl-and-zspace&quot;&gt;Creating WebGL Demos for zSpace using xeogl&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;&quot;&gt;xeolabs&lt;/a&gt; on February 16, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Testing Wind Turbines for Windflow™]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/windflow" />
-  <id>http://xeolabs.com/portfolio/windflow</id>
+  <link rel="alternate" type="text/html" href="/portfolio/windflow" />
+  <id>/portfolio/windflow</id>
   <updated>2018-19-09T00:00:00-00:00</updated>
   <published>2018-02-16T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/windflow&quot;&gt;Testing Wind Turbines for Windflow™&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on February 16, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/portfolio/windflow&quot;&gt;Testing Wind Turbines for Windflow™&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;&quot;&gt;xeolabs&lt;/a&gt; on February 16, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[GPU-Assisted Picking in xeogl]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/xeogl-picking" />
-  <id>http://xeolabs.com/articles/xeogl-picking</id>
+  <link rel="alternate" type="text/html" href="/articles/xeogl-picking" />
+  <id>/articles/xeogl-picking</id>
   <updated>2017-30-08T00:00:00-00:00</updated>
   <published>2017-08-01T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -962,7 +962,7 @@ viewer can just use object IDs and types to reference the objects in the 3D view
 GPU-assisted picking system, which uses a multi-layer color-indexing rendering algorithm to ray-pick scene entities
 in linear time complexity.
 &lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;http://xeolabs.com/images/xeogl/pickingTeapots.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/images/xeogl/pickingTeapots.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 
@@ -1017,7 +1017,7 @@ the barycentric coordinates.&lt;/p&gt;
 firing a ray through the canvas, down the negative Z-axis, to find the first entity it hits.
 &lt;br /&gt;
 &lt;br /&gt;
-&lt;a href=&quot;http://xeogl.org/examples/#picking_canvas_pickEntity&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/pickingCanvasEntity.gif&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://xeogl.org/examples/#picking_canvas_pickEntity&quot;&gt;&lt;img src=&quot;/images/xeogl/pickingCanvasEntity.gif&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
    &lt;br /&gt;&lt;a href=&quot;http://xeogl.org/examples/#picking_canvas_pickEntity&quot;&gt;Run demo&lt;/a&gt;
 &lt;br /&gt;
 &lt;br /&gt;
@@ -1062,7 +1062,7 @@ index of its position within xeogl’s internal display list.&lt;/li&gt;
 gets geometric information about the point on the entity’s surface that lies right behind those canvas coordinates.
  &lt;br /&gt;
  &lt;br /&gt;
-&lt;a href=&quot;http://xeogl.org/examples/#picking_canvas_pickSurface&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/pickingCanvasEntitySurface.gif&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://xeogl.org/examples/#picking_canvas_pickSurface&quot;&gt;&lt;img src=&quot;/images/xeogl/pickingCanvasEntitySurface.gif&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
    &lt;br /&gt;&lt;a href=&quot;http://xeogl.org/examples/#picking_canvas_pickSurface&quot;&gt;Run demo&lt;/a&gt;
 &lt;br /&gt;
 &lt;br /&gt;
@@ -1149,7 +1149,7 @@ the math function&lt;/a&gt;.&lt;/p&gt;
 this to support the 3D stylus in some &lt;a href=&quot;http://xeolabs.com/articles/xeogl-and-zspace&quot;&gt;xeogl demo apps for the zSpace 300&lt;/a&gt;.
 &lt;br /&gt;
 &lt;br /&gt;
-&lt;a href=&quot;http://xeogl.org/examples/#picking_raycast_pickEntity&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/pickingRaycastEntity.gif&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://xeogl.org/examples/#picking_raycast_pickEntity&quot;&gt;&lt;img src=&quot;/images/xeogl/pickingRaycastEntity.gif&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
    &lt;br /&gt;&lt;a href=&quot;http://xeogl.org/examples/#picking_raycast_pickEntity&quot;&gt;Run demo&lt;/a&gt;
 &lt;br /&gt;
 &lt;br /&gt;
@@ -1184,7 +1184,7 @@ index of its position within xeogl’s internal display list.&lt;/li&gt;
  entity surface.
 &lt;br /&gt;
 &lt;br /&gt;
-&lt;a href=&quot;http://xeogl.org/examples/#picking_raycast_pickSurface&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/pickingRaycastEntitySurface.gif&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://xeogl.org/examples/#picking_raycast_pickSurface&quot;&gt;&lt;img src=&quot;/images/xeogl/pickingRaycastEntitySurface.gif&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
    &lt;br /&gt;&lt;a href=&quot;http://xeogl.org/examples/#picking_raycast_pickSurface&quot;&gt;Run demo&lt;/a&gt;
 &lt;br /&gt;
 &lt;br /&gt;
@@ -1275,20 +1275,20 @@ in terms of GPU efficiency and memory, so I need reduce the picking framebuffer,
 
 &lt;p&gt;J. Lander, “Haunted trees for halloween,” Game Developer Magazine, vol. 7, no. 11, pp. 17–21, 2000. View at Google Scholar&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/xeogl-picking&quot;&gt;GPU-Assisted Picking in xeogl&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on August 01, 2017.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/articles/xeogl-picking&quot;&gt;GPU-Assisted Picking in xeogl&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;&quot;&gt;xeolabs&lt;/a&gt; on August 01, 2017.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[An Annotation System for xeogl]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/article/xeogl-annotations" />
-  <id>http://xeolabs.com/article/xeogl-annotations</id>
+  <link rel="alternate" type="text/html" href="/article/xeogl-annotations" />
+  <id>/article/xeogl-annotations</id>
   <updated>2017-17-05T00:00:00-00:00</updated>
   <published>2017-05-30T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -1314,7 +1314,7 @@ I’ve been working on.
 &lt;br /&gt;&lt;br /&gt;
 An annotation is a label that you pin to the surface a mesh. Click this screenshot for a &lt;a href=&quot;http://xeogl.org/examples/#annotations_tronTank&quot;&gt;demo&lt;/a&gt;:
 &lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://xeogl.org/examples/#annotations_tronTank&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/annotationsTank.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://xeogl.org/examples/#annotations_tronTank&quot;&gt;&lt;img src=&quot;/images/xeogl/annotationsTank.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
 &lt;br /&gt;&lt;br /&gt;
 The code below shows how to create an annotation. First, we’ll load our model:&lt;/p&gt;
 
@@ -1462,20 +1462,20 @@ on the annotation, as part of a presentation.&lt;/li&gt;
 &lt;p&gt;Thanks for reading!&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/article/xeogl-annotations&quot;&gt;An Annotation System for xeogl&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on May 30, 2017.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/article/xeogl-annotations&quot;&gt;An Annotation System for xeogl&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;&quot;&gt;xeolabs&lt;/a&gt; on May 30, 2017.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Adding Physically Based Rendering to xeogl]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/xeogl-pbr" />
-  <id>http://xeolabs.com/articles/xeogl-pbr</id>
+  <link rel="alternate" type="text/html" href="/articles/xeogl-pbr" />
+  <id>/articles/xeogl-pbr</id>
   <updated>2017-14-02T00:00:00-00:00</updated>
   <published>2017-02-16T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -1517,11 +1517,11 @@ For an introduction to PBR concepts, check out the &lt;a href=&quot;https://www.
 &lt;table&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;http://xeogl.org/examples/#importing_gltf_pbr_metallic_helmet&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/MetallicMaterial/helmet.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;http://xeogl.org/examples/#materials_metallic_fireHydrant&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/MetallicMaterial/hydrant0.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;http://xeogl.org/examples/#importing_gltf_pbr_specular_saw&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/SpecularMaterial/reciprocatingSaw.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;http://xeogl.org/examples/importing_scenejs_tronTank.html&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/MetallicMaterial/scenejsTronTank.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;http://xeogl.org/examples/#importing_gltf_pbr_metallic_telephone&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/xeogl/MetallicMaterial/telephone.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://xeogl.org/examples/#importing_gltf_pbr_metallic_helmet&quot;&gt;&lt;img src=&quot;/images/xeogl/MetallicMaterial/helmet.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://xeogl.org/examples/#materials_metallic_fireHydrant&quot;&gt;&lt;img src=&quot;/images/xeogl/MetallicMaterial/hydrant0.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://xeogl.org/examples/#importing_gltf_pbr_specular_saw&quot;&gt;&lt;img src=&quot;/images/xeogl/SpecularMaterial/reciprocatingSaw.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://xeogl.org/examples/importing_scenejs_tronTank.html&quot;&gt;&lt;img src=&quot;/images/xeogl/MetallicMaterial/scenejsTronTank.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://xeogl.org/examples/#importing_gltf_pbr_metallic_telephone&quot;&gt;&lt;img src=&quot;/images/xeogl/MetallicMaterial/telephone.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1586,20 +1586,20 @@ texture’s R component and &lt;em&gt;roughness&lt;/em&gt; in its G component.&l
 &lt;/ul&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/xeogl-pbr&quot;&gt;Adding Physically Based Rendering to xeogl&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on February 16, 2017.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/articles/xeogl-pbr&quot;&gt;Adding Physically Based Rendering to xeogl&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;&quot;&gt;xeolabs&lt;/a&gt; on February 16, 2017.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[SceneJS v4.0 Released]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs4-release" />
-  <id>http://xeolabs.com/articles/scenejs4-release</id>
+  <link rel="alternate" type="text/html" href="/articles/scenejs4-release" />
+  <id>/articles/scenejs4-release</id>
   <updated>2014-07-24T00:00:00-00:00</updated>
   <published>2014-09-26T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -1689,7 +1689,7 @@ GLSL sharing sites like &lt;a href=&quot;http://shadertoy.com&quot;&gt;ShaderToy
 
 &lt;p&gt;SceneJS v4.0 now supports reflection mapping, a feature that was actually in &lt;em&gt;alpha&lt;/em&gt; status in
 the previous version. Check out &lt;a href=&quot;/articles/scenejs-reflection&quot;&gt;this tutorial&lt;/a&gt; for more info. &lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://scenejs.org/examples.html?page=cubeMap&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/reflectionLayered.jpg&quot; alt=&quot;Reflection Example 1&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=cubeMap&quot;&gt;&lt;img src=&quot;/images/scenejs/reflectionLayered.jpg&quot; alt=&quot;Reflection Example 1&quot; /&gt;&lt;/a&gt;
 &lt;br /&gt;&lt;br /&gt;
 &lt;a href=&quot;http://scenejs.org/examples.html?page=cubeMap&quot;&gt;Run this demo&lt;/a&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
@@ -1851,20 +1851,20 @@ used over at THREE.js. Hopefully it doesn’t look too similar - I may have to s
 
 &lt;p&gt;Anything I missed? Add a comment at the bottom of this page and I’ll fix it up.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs4-release&quot;&gt;SceneJS v4.0 Released&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on September 26, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/articles/scenejs4-release&quot;&gt;SceneJS v4.0 Released&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;&quot;&gt;xeolabs&lt;/a&gt; on September 26, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Reflective Surfaces in SceneJS]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-reflection" />
-  <id>http://xeolabs.com/articles/scenejs-reflection</id>
+  <link rel="alternate" type="text/html" href="/articles/scenejs-reflection" />
+  <id>/articles/scenejs-reflection</id>
   <updated>2014-07-24T00:00:00-00:00</updated>
   <published>2014-07-24T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -1915,7 +1915,7 @@ In this tutorial I’ll show you how to&lt;/p&gt;
 &lt;p&gt;Then we’ll create a scene containing the reflective teapot shown below. The teapot is wrapped in a &lt;code class=&quot;highlighter-rouge&quot;&gt;reflect&lt;/code&gt; node, which defines
 our environment cube map.
 &lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://scenejs.org/examples.html?page=cubeMap&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/reflection.jpg&quot; alt=&quot;Reflection Example 1&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=cubeMap&quot;&gt;&lt;img src=&quot;/images/scenejs/reflection.jpg&quot; alt=&quot;Reflection Example 1&quot; /&gt;&lt;/a&gt;
 &lt;a href=&quot;http://scenejs.org/examples.html?page=cubeMap&quot;&gt;Run this demo&lt;/a&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
@@ -1971,12 +1971,12 @@ our environment cube map.
 &lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/reflection/london/pos-x.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/reflection/london/neg-x.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/reflection/london/pos-y.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/reflection/london/neg-y.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/reflection/london/pos-z.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/reflection/london/neg-z.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;img src=&quot;/images/scenejs/reflection/london/pos-x.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;img src=&quot;/images/scenejs/reflection/london/neg-x.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;img src=&quot;/images/scenejs/reflection/london/pos-y.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;img src=&quot;/images/scenejs/reflection/london/neg-y.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;img src=&quot;/images/scenejs/reflection/london/pos-z.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;img src=&quot;/images/scenejs/reflection/london/neg-z.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
@@ -2012,7 +2012,7 @@ surfaces, just as long as those geometries have normal vectors and &lt;code clas
 The example below contain four objects, each wrapped with a &lt;code class=&quot;highlighter-rouge&quot;&gt;reflect&lt;/code&gt; node with a different &lt;code class=&quot;highlighter-rouge&quot;&gt;intensity&lt;/code&gt; value.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://scenejs.org/examples.html?page=reflectionIntensity&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/reflectionIntensity.jpg&quot; alt=&quot;Reflection Example 1&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=reflectionIntensity&quot;&gt;&lt;img src=&quot;/images/scenejs/reflectionIntensity.jpg&quot; alt=&quot;Reflection Example 1&quot; /&gt;&lt;/a&gt;
 &lt;a href=&quot;http://scenejs.org/examples.html?page=reflectionIntensity&quot;&gt;Run this demo&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
@@ -2027,7 +2027,7 @@ The example below contain four objects, each wrapped with a &lt;code class=&quot
 The example below shows three boxes that share the same &lt;code class=&quot;highlighter-rouge&quot;&gt;reflect&lt;/code&gt;, but each have their own &lt;code class=&quot;highlighter-rouge&quot;&gt;material&lt;/code&gt; node with a unique &lt;code class=&quot;highlighter-rouge&quot;&gt;specular&lt;/code&gt; factor.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://scenejs.org/examples.html?page=reflectionWithVaryingSpecularity&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/surfaceReflectivity.jpg&quot; alt=&quot;Reflection Example 1&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=reflectionWithVaryingSpecularity&quot;&gt;&lt;img src=&quot;/images/scenejs/surfaceReflectivity.jpg&quot; alt=&quot;Reflection Example 1&quot; /&gt;&lt;/a&gt;
 &lt;a href=&quot;http://scenejs.org/examples.html?page=reflectionWithVaryingSpecularity&quot;&gt;Run this demo&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
@@ -2050,7 +2050,7 @@ amount of specular reflection across the geometry surface. The amount of specula
   The demo below shows three boxes with specular map textures, where each texture image has an increasing darkness of the
   diamond shapes it contains.
   &lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://scenejs.org/examples.html?page=reflectionWithControlMap&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/reflectionControlMap.jpg&quot; alt=&quot;Reflection Example 2&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=reflectionWithControlMap&quot;&gt;&lt;img src=&quot;/images/scenejs/reflectionControlMap.jpg&quot; alt=&quot;Reflection Example 2&quot; /&gt;&lt;/a&gt;
 &lt;a href=&quot;http://scenejs.org/examples.html?page=reflectionWithControlMap&quot;&gt;Run this demo&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
@@ -2066,9 +2066,9 @@ more to the surface color, while the &lt;code class=&quot;highlighter-rouge&quot
 &lt;table&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/reflection/reflectionSpecularMap1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/reflection/reflectionSpecularMap2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/reflection/reflectionSpecularMap3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;/images/scenejs/reflection/reflectionSpecularMap1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;/images/scenejs/reflection/reflectionSpecularMap2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;/images/scenejs/reflection/reflectionSpecularMap3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -2078,7 +2078,7 @@ more to the surface color, while the &lt;code class=&quot;highlighter-rouge&quot
 &lt;p&gt;Usually you’ll want to apply reflection only to certain objects in your scene. Do that with a &lt;code class=&quot;highlighter-rouge&quot;&gt;reflection&lt;/code&gt; flag
 on a &lt;code class=&quot;highlighter-rouge&quot;&gt;flags&lt;/code&gt; node, as shown in the example below:
 &lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://scenejs.org/examples.html?page=reflectionFlag&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/reflection.jpg&quot; alt=&quot;Reflection Example 3&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=reflectionFlag&quot;&gt;&lt;img src=&quot;/images/scenejs/reflection.jpg&quot; alt=&quot;Reflection Example 3&quot; /&gt;&lt;/a&gt;
 &lt;a href=&quot;http://scenejs.org/examples.html?page=reflectionFlag&quot;&gt;Run this demo&lt;/a&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt; &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
@@ -2171,7 +2171,7 @@ any other higher &lt;code class=&quot;highlighter-rouge&quot;&gt;flags&lt;/code&
 
 &lt;p&gt;Like &lt;code class=&quot;highlighter-rouge&quot;&gt;texture&lt;/code&gt; nodes, multiple reflections can be layered onto the same object, as shown in the example below:
 &lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://scenejs.org/examples/index.html#reflections_multipleCombined&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/reflectionLayered.jpg&quot; alt=&quot;Reflection Example 4&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://scenejs.org/examples/index.html#reflections_multipleCombined&quot;&gt;&lt;img src=&quot;/images/scenejs/reflectionLayered.jpg&quot; alt=&quot;Reflection Example 4&quot; /&gt;&lt;/a&gt;
 &lt;a href=&quot;http://scenejs.org/examples/index.html#reflections_multipleCombined&quot;&gt;Run this demo&lt;/a&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
@@ -2256,7 +2256,7 @@ any other higher &lt;code class=&quot;highlighter-rouge&quot;&gt;flags&lt;/code&
 have in your scene, let’s finish off with an example in which we’ve taken a raptor imported with an &lt;code class=&quot;highlighter-rouge&quot;&gt;import/obj&lt;/code&gt; node
 and wrapped it with a &lt;code class=&quot;highlighter-rouge&quot;&gt;reflect&lt;/code&gt; to make it shiny:
 &lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://scenejs.org/examples.html?page=reflectionWithOBJImport&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/reflectionToOBJ.jpg&quot; alt=&quot;Reflection Example 3&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=reflectionWithOBJImport&quot;&gt;&lt;img src=&quot;/images/scenejs/reflectionToOBJ.jpg&quot; alt=&quot;Reflection Example 3&quot; /&gt;&lt;/a&gt;
 &lt;a href=&quot;http://scenejs.org/examples.html?page=reflectionWithOBJImport&quot;&gt;Run this demo&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
@@ -2269,20 +2269,20 @@ and wrapped it with a &lt;code class=&quot;highlighter-rouge&quot;&gt;reflect&lt
      which may avoid needing to adjust the &lt;code class=&quot;highlighter-rouge&quot;&gt;specular&lt;/code&gt; properties on those &lt;code class=&quot;highlighter-rouge&quot;&gt;material&lt;/code&gt; nodes.
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-reflection&quot;&gt;Reflective Surfaces in SceneJS&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on July 24, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-reflection&quot;&gt;Reflective Surfaces in SceneJS&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;&quot;&gt;xeolabs&lt;/a&gt; on July 24, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Transparency in SceneJS]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-transparency" />
-  <id>http://xeolabs.com/articles/scenejs-transparency</id>
+  <link rel="alternate" type="text/html" href="/articles/scenejs-transparency" />
+  <id>/articles/scenejs-transparency</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-11-03T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -2343,7 +2343,7 @@ transparency with &lt;a href=&quot;/articles/scenejs-alpha-mapping&quot;&gt;Alph
 
 &lt;p&gt;Then we’ll create the scene below, in which the outer blue box has a transparent material which allows you to see the teapot within it.
 &lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://scenejs.org/examples.html?page=basicTransparency&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/transparentObject.png&quot; alt=&quot;Basic transparency&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=basicTransparency&quot;&gt;&lt;img src=&quot;/images/scenejs/transparentObject.png&quot; alt=&quot;Basic transparency&quot; /&gt;&lt;/a&gt;
 &lt;a href=&quot;http://scenejs.org/examples.html?page=basicTransparency&quot;&gt;Run this demo&lt;/a&gt;
 &lt;br /&gt;&lt;br /&gt;
 The code for this example is shown below. Our outer blue box is wrapped with a &lt;code class=&quot;highlighter-rouge&quot;&gt;flags&lt;/code&gt; node, which works in conjunction with
@@ -2470,7 +2470,7 @@ the pixels of those boxes will not be rendered, because their Z-depths are great
 the outer green box.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://scenejs.org/examples.html?page=transparencySorting&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/transparencySort.jpg&quot; alt=&quot;TransparencySort&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=transparencySorting&quot;&gt;&lt;img src=&quot;/images/scenejs/transparencySort.jpg&quot; alt=&quot;TransparencySort&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=transparencySorting&quot;&gt;Run this example&lt;/a&gt;.
 &lt;br /&gt;&lt;br /&gt;
@@ -2692,20 +2692,20 @@ performance hit if you do that frequently.&lt;/p&gt;
   &lt;li&gt;Learn how to texture your transparency using &lt;a href=&quot;/articles/scenejs-alpha-mapping&quot;&gt;Alpha Maps&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-transparency&quot;&gt;Transparency in SceneJS&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on November 03, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-transparency&quot;&gt;Transparency in SceneJS&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;&quot;&gt;xeolabs&lt;/a&gt; on November 03, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Alpha Mapping in SceneJS]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-alpha-mapping" />
-  <id>http://xeolabs.com/articles/scenejs-alpha-mapping</id>
+  <link rel="alternate" type="text/html" href="/articles/scenejs-alpha-mapping" />
+  <id>/articles/scenejs-alpha-mapping</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-11-03T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -2747,14 +2747,14 @@ In this tutorial, I’ll build on techniques from the &lt;a href=&quot;/articles
 &lt;p&gt;Then we’ll create the scene below, in which the outer green box has an alpha texture which creates transparent areas through
 which you can see the inner blue box.
 &lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://scenejs.org/examples.html?page=alphaMap&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/basicAlphaMap.png&quot; alt=&quot;Alpha map&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=alphaMap&quot;&gt;&lt;img src=&quot;/images/scenejs/basicAlphaMap.png&quot; alt=&quot;Alpha map&quot; /&gt;&lt;/a&gt;
 &lt;a href=&quot;http://scenejs.org/examples.html?page=alphaMap&quot;&gt;Run this demo&lt;/a&gt;
 &lt;br /&gt;&lt;br /&gt;Shown below is the texture we’ll use for the alpha map. The white areas will be where the outer box will be opaque,
 while the black areas are where it will be transparent.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://xeolabs.com/images/scenejs/leavesAlphaMap.jpg&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/leavesAlphaMapSmall.jpg&quot; alt=&quot;Alpha map image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/scenejs/leavesAlphaMap.jpg&quot;&gt;&lt;img src=&quot;/images/scenejs/leavesAlphaMapSmall.jpg&quot; alt=&quot;Alpha map image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;Listed below is the code that defines our scene. It’s using &lt;code class=&quot;highlighter-rouge&quot;&gt;flags&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;material&lt;/code&gt; nodes to set up
 transparency (which you learned about in the &lt;a href=&quot;/articles/scenejs-transparency&quot;&gt;Transparency&lt;/a&gt; tutorial), plus a &lt;code class=&quot;highlighter-rouge&quot;&gt;texture&lt;/code&gt; node, which
@@ -2862,10 +2862,10 @@ achieve the same effect as shown in this example, you would then need an &lt;cod
 
 &lt;h1 id=&quot;video-alpha-map&quot;&gt;Video alpha map&lt;/h1&gt;
 
-&lt;p&gt;Now I’ll show you how to apply a video as an alpha map. This time, we’ll dynamically sample our texture from &lt;a href=&quot;http://xeolabs.com/images/scenejs/testVideo.ogv&quot;&gt;an .OGV file&lt;/a&gt;, to
+&lt;p&gt;Now I’ll show you how to apply a video as an alpha map. This time, we’ll dynamically sample our texture from &lt;a href=&quot;/images/scenejs/testVideo.ogv&quot;&gt;an .OGV file&lt;/a&gt;, to
 create a cool flowing gas pattern across the surface of the outer box.
 &lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://scenejs.org/examples.html?page=videoAlphaMap&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/videoAlphaMap.jpg&quot; alt=&quot;Alpha video map&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=videoAlphaMap&quot;&gt;&lt;img src=&quot;/images/scenejs/videoAlphaMap.jpg&quot; alt=&quot;Alpha video map&quot; /&gt;&lt;/a&gt;
 &lt;a href=&quot;http://scenejs.org/examples.html?page=videoAlphaMap&quot;&gt;Run this demo&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;The code is identical to the previous example, except for the &lt;code class=&quot;highlighter-rouge&quot;&gt;texture&lt;/code&gt; node, which looks like this:&lt;/p&gt;
@@ -2892,20 +2892,20 @@ create a cool flowing gas pattern across the surface of the outer box.
 in the &lt;a href=&quot;/articles/scenejs-transparency&quot;&gt;Transparency&lt;/a&gt; tutorial, to make holes in things. I also showed you how it’s easy
  to use a video, instead of the usual image, in order to make animated regions of transparancy.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-alpha-mapping&quot;&gt;Alpha Mapping in SceneJS&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on November 03, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-alpha-mapping&quot;&gt;Alpha Mapping in SceneJS&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;&quot;&gt;xeolabs&lt;/a&gt; on November 03, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Automatic WebGLContestLost Recovery in SceneJS]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-webgl-context-lost" />
-  <id>http://xeolabs.com/articles/scenejs-webgl-context-lost</id>
+  <link rel="alternate" type="text/html" href="/articles/scenejs-webgl-context-lost" />
+  <id>/articles/scenejs-webgl-context-lost</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -2928,7 +2928,7 @@ WebGL frameworks.
 &lt;br /&gt;&lt;br /&gt;
 Check out the example below, in which we blow the context away every five seconds while you orbit the rising bubbles using the mouse:
 &lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;http://scenejs.org/examples.html?page=webglContextLost&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/webglContextLost.jpg&quot; alt=&quot;SceneJS First Example&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;http://scenejs.org/examples.html?page=webglContextLost&quot;&gt;&lt;img src=&quot;/images/scenejs/webglContextLost.jpg&quot; alt=&quot;SceneJS First Example&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=webglContextLost&quot;&gt;Run this example&lt;/a&gt;.&lt;/p&gt;
 
@@ -2948,20 +2948,20 @@ how an app will then need to reallocate its textures, VBOs, shaders etc. on a ne
 SceneJS retains all state and assets, such as matrices, geoemtry and textures etc in its scene graph. Then when the context
 is recovered after loss, it simply reallocates those assets on the new context.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-webgl-context-lost&quot;&gt;Automatic WebGLContestLost Recovery in SceneJS&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-webgl-context-lost&quot;&gt;Automatic WebGLContestLost Recovery in SceneJS&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Fast Ray Picking in SceneJS]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-ray-picking" />
-  <id>http://xeolabs.com/articles/scenejs-ray-picking</id>
+  <link rel="alternate" type="text/html" href="/articles/scenejs-ray-picking" />
+  <id>/articles/scenejs-ray-picking</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -2987,9 +2987,9 @@ ray-intersect computations. If you’re curious how it works, I did &lt;a href=&
 &lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=rayPicking&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/rayPicking.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples/pages/demos/pickFlyOrbitCity.html&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/pickFlyOrbitCity.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples/pages/demos/pickFlyOrbitTerrain.html&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/pickFlyOrbitTerrain.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=rayPicking&quot;&gt;&lt;img src=&quot;/images/scenejs/rayPicking.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples/pages/demos/pickFlyOrbitCity.html&quot;&gt;&lt;img src=&quot;/images/scenejs/pickFlyOrbitCity.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples/pages/demos/pickFlyOrbitTerrain.html&quot;&gt;&lt;img src=&quot;/images/scenejs/pickFlyOrbitTerrain.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
@@ -3003,7 +3003,7 @@ ray-intersect computations. If you’re curious how it works, I did &lt;a href=&
 
 &lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
 
-&lt;p&gt;I’ll assume that you know all about &lt;a href=&quot;http://xeolabs.com/articles/scenejs-picking&quot;&gt;basic 2D picking&lt;/a&gt; in SceneJS. Ray picking
+&lt;p&gt;I’ll assume that you know all about &lt;a href=&quot;/articles/scenejs-picking&quot;&gt;basic 2D picking&lt;/a&gt; in SceneJS. Ray picking
 is done in pretty much the same way, except that you supply an additional &lt;code class=&quot;highlighter-rouge&quot;&gt;rayPick&lt;/code&gt; flag when you do the pick, and get
 back an additional &lt;code class=&quot;highlighter-rouge&quot;&gt;worldPos&lt;/code&gt; property in the result, which gives you the intersection coordinates:&lt;/p&gt;
 
@@ -3032,20 +3032,20 @@ back an additional &lt;code class=&quot;highlighter-rouge&quot;&gt;worldPos&lt;/
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;myScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;150&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rayPick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Note the rayPick flag&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-ray-picking&quot;&gt;Fast Ray Picking in SceneJS&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-ray-picking&quot;&gt;Fast Ray Picking in SceneJS&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Pssst...How Fast Ray Picking Works in SceneJS]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-ray-picking-technique" />
-  <id>http://xeolabs.com/articles/scenejs-ray-picking-technique</id>
+  <link rel="alternate" type="text/html" href="/articles/scenejs-ray-picking-technique" />
+  <id>/articles/scenejs-ray-picking-technique</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -3076,8 +3076,8 @@ it must be too good to be true. However, despite a small amount of numeric inacc
 are far apart, it seems work well enough, so I went with it.&lt;/p&gt;
 
 &lt;h2 id=&quot;the-technique&quot;&gt;The technique&lt;/h2&gt;
-&lt;p&gt;I’ll assume that you’ve read about &lt;a href=&quot;http://xeolabs.com/articles/scenejs-picking&quot;&gt;2D picking&lt;/a&gt;
-and &lt;a href=&quot;http://xeolabs.com/articles/scenejs-ray-picking&quot;&gt;ray picking&lt;/a&gt;, which describe how you can wrap your objects with &lt;code class=&quot;highlighter-rouge&quot;&gt;name&lt;/code&gt;
+&lt;p&gt;I’ll assume that you’ve read about &lt;a href=&quot;/articles/scenejs-picking&quot;&gt;2D picking&lt;/a&gt;
+and &lt;a href=&quot;/articles/scenejs-ray-picking&quot;&gt;ray picking&lt;/a&gt;, which describe how you can wrap your objects with &lt;code class=&quot;highlighter-rouge&quot;&gt;name&lt;/code&gt;
 nodes to assign them logical pick names.
 &lt;br /&gt;&lt;br /&gt;
 The steps of my technique are:&lt;/p&gt;
@@ -3133,20 +3133,20 @@ into world-space by the inverse view and projection matrices.&lt;/li&gt;
   &lt;li&gt;Another limitation is that this technique does not find any topological information on the pick hit: it only finds the name and a world-space coordinate. When picking a mesh for example, it does not report the actual face that was picked.&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-ray-picking-technique&quot;&gt;Pssst...How Fast Ray Picking Works in SceneJS&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-ray-picking-technique&quot;&gt;Pssst...How Fast Ray Picking Works in SceneJS&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[SceneJS Quick Start]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-quick-start" />
-  <id>http://xeolabs.com/articles/scenejs-quick-start</id>
+  <link rel="alternate" type="text/html" href="/articles/scenejs-quick-start" />
+  <id>/articles/scenejs-quick-start</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
   <published>2013-10-28T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
+    <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -3179,7 +3179,7 @@ without using plugins.
 &lt;p&gt;We’re going to render this spinning Utah teapot:
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=firstExample&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/firstExample.png&quot; alt=&quot;SceneJS First Example&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=firstExample&quot;&gt;&lt;img src=&quot;/images/scenejs/firstExample.png&quot; alt=&quot;SceneJS First Example&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=firstExample&quot;&gt;Run this example&lt;/a&gt;.&lt;/p&gt;
 
@@ -3276,7 +3276,7 @@ Now let’s look at the essential bits of that &lt;code class=&quot;highlighter-
   &lt;li&gt;&lt;a href=&quot;/articles/scenejs-creating-a-scene-and-adding-nodes&quot;&gt;Adding and Removing Nodes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-quick-start&quot;&gt;SceneJS Quick Start&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/articles/scenejs-quick-start&quot;&gt;SceneJS Quick Start&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 </feed>
