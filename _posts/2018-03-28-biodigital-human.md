@@ -2,7 +2,7 @@
 layout: biodigital
 title: The BioDigital Human™
 client: BioDigital, NYC, USA
-description: The <b>BioDigital Human</b> is the leading Web-based 3D platform for the exploration of anatomy, medical conditions and treatments.<br><br>I worked remotely with BioDigital Systems in NYC as lead developer on the Human's WebGL-based engine and developer API. 
+description: The <b>BioDigital Human</b> is the leading Web-based 3D platform for the exploration of anatomy, medical conditions and treatments.<br><br>I worked remotely with BioDigital Systems in NYC as lead developer on the Human's WebGL-based 3D engine and developer API. 
 tech: "#JavaScript, #WebGL, #SceneJS, #MedViz"
 thumbnail: human/biodigital-human-platform.png
 modified: 2018-23-03
