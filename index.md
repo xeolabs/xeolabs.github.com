@@ -35,7 +35,7 @@ As a **software engineer**, I value teamwork, process and simple, maintainable d
 business fun and profitable. 
 <br><br>
 As an **open source developer**, I collaborate with a diverse community of experienced engineers, adapting our experiments 
-and tools to the needs of my clients, resulting in efficiency and certainty of delivery. When projects grow, I can also enlist 
+and tools to the needs of our clients, resulting in efficiency and certainty of delivery. When projects grow, I can also enlist 
 the help of some of those engineers, as needed. 
 
 
