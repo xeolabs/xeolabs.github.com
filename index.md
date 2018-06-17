@@ -15,7 +15,7 @@ image:
 
 <br>I'm a freelance 3D software engineer providing custom WebGL-based solutions for product visualization, MedViz, 
 BIM and CAD.<br><br>
-For more info, check out my **[portfolio]({{ site.url }}/portfolio/)** and **[resume](http://linkedin.com/in/lindsaystanleykay)**.<br><br>Got a project you'd like to discuss? Send me an email! 
+For more info, check out my [portfolio]({{ site.url }}/portfolio/) and [resume](http://linkedin.com/in/lindsaystanleykay).<br><br>Got a project you'd like to discuss? Send me an email! 
 
 ### Background
 
