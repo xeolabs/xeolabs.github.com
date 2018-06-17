@@ -13,7 +13,7 @@ image:
 
 ![Email](../images/email2.png)
 
-<br>I'm a freelance 3D software engineer providing custom WebGL-based solutions for product visualization, MedViz, 
+<br>I'm a freelance 3D software engineer providing WebGL-based solutions for product visualization, MedViz, 
 BIM and CAD.<br><br>
 For more info, check out my [portfolio]({{ site.url }}/portfolio/) and [resume](http://linkedin.com/in/lindsaystanleykay).<br><br>Got a project you'd like to discuss? Send me an email! 
 
@@ -24,7 +24,7 @@ Originally from Christchurch, New Zealand, I've lived in Berlin, Germany since 2
 I graduated with a degree in computer science from the University of Canterbury in 2005. Before that, 
 I studied electronic engineering at the Christchurch Polytechnic.
 <br><br>
-Over the past two decades, I've taught computing at a school, tutored software development at a 
+Over two decades, I've taught computing at a school, tutored software development at a 
 university, been a CTO in San Diego, tested wind turbines in New Zealand, created open source WebGL frameworks, 
 lead development on the [BioDigital Human]({{ site.url }}/portfolio/biodigital-human), 
 and built a bunch of WebGL-based BIM and CAD viewers that are out there on the Web right now, making revenue.
@@ -32,10 +32,10 @@ and built a bunch of WebGL-based BIM and CAD viewers that are out there on the W
 ### Process
 
 As a **software engineer**, I value teamwork, process and simple, maintainable design, because those are what make this 
-activity fun and profitable. 
+business fun and profitable. 
 <br><br>
-As an **open source developer**, I collaborate with a diverse community of passionate and experienced engineers, adapting our experiments 
-and tools to the needs of my clients, resulting in greater efficiency and certainty of delivery. When projects grow, I can also also enlist 
+As an **open source developer**, I collaborate with a diverse community of experienced engineers, adapting our experiments 
+and tools to the needs of my clients, resulting in efficiency and certainty of delivery. When projects grow, I can also enlist 
 the help of some of those engineers, as needed. 
 
 
