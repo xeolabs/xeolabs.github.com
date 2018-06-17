@@ -2,13 +2,12 @@
 layout: post
 title: Creating WebGL Demos for zSpace using xeogl 
 description: <b>zSpace</b> is a technology firm based in Sunnyvale, California that combines elements of VR and AR in a specially-built computer system.<br><br>In 2017, I partnered with zSpace to develop WebGL-based demos on the <b>zSpace 300</b> system using <b>xeogl</b>, an open source library I created for 3D visualization in the browser.
-Xthumbnail: clientLogos/zspaceLogo.jpg
 thumbnail: xeogl/zspace/zSpaceDeviceThumb.jpg
 tech: "#WebGL, #WebVR, #xeogl"
 modified: 2017-19-03
 category: portfolio
 comments: false
-tags: [xeogl, webgl, zspace, mixedreality, 3D]
+tags: [xeogl, webgl, zspace, AR]
 ---
 
 <section id="table-of-contents" class="toc">
