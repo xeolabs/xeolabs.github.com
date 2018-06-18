@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-18T02:24:42+00:00</updated>
+<updated>2018-06-18T20:21:53+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -29,13 +29,21 @@
   <content type="html">&lt;p&gt;Since 2009, I’ve worked remotely from Berlin, Germany with the team at &lt;a href=&quot;http://biodigital.com&quot;&gt;BioDigital Systems&lt;/a&gt; in Manhattan, New York, to help develop 
 the &lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;BioDigital Human&lt;/a&gt; and its developer API.
 &lt;br /&gt;&lt;br /&gt;
-We developed the Human on &lt;a href=&quot;http://scenejs.org&quot;&gt;SceneJS&lt;/a&gt;, an open source (MIT) JavaScript library I created for developing 3D graphics applications 
+We developed the Human on &lt;strong&gt;&lt;a href=&quot;http://scenejs.org&quot;&gt;SceneJS&lt;/a&gt;&lt;/strong&gt;, an open source (MIT) JavaScript library I created for developing 3D graphics applications 
 in Web browsers without using plugins. One of the first WebGL engines, SceneJS evolved alongside the WebGL specification, before 
 we eventually made a private version which we adapted specifically for the Human. 
 &lt;br /&gt;&lt;br /&gt;
 In this article, I’m going to describe SceneJS’ journey from a weekend side  project to how we applied it within BioDigital’s 
 Web-based anatomy visualization platform. Ten years down the track, the platform now has over three million 
 registered users and continues to develop, with a growing library of models of anatomy and physical conditions.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;&lt;a href=&quot;http://slides.com/xeolabs/deck&quot;&gt;SceneJS slides from Berlin WebGL Meetup&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;&lt;a href=&quot;http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf&quot;&gt;SceneJS in OpenGL Insights 2012&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
 
 &lt;!-- a bunch of awards including a Webby, and has been featured in [WIRED](https://www.wired.com/2012/04/biodigital-human/),  --&gt;
 &lt;!-- the [New York Times](https://www.nytimes.com/2012/01/08/business/the-human-anatomy-animated-with-3-d-technology.html), [ABC News](https://abcnews.go.com/Health/virtual-reality-body-transforming-innovations/story?id=16134453) and TED.  --&gt;

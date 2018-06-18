@@ -13,8 +13,7 @@ image:
 
 ![Email](../images/email2.png)
 
-<br>I'm a freelance software engineer providing WebGL-based solutions for 3D product visualization, MedViz, 
-BIM and CAD.<br><br>
+<br>I'm a freelance software engineer developing WebGL-based solutions for 3D product visualization, MedViz, BIM and CAD.<br><br>
 For more info, check out my [portfolio]({{ site.url }}/portfolio/) and [resume](http://linkedin.com/in/lindsaystanleykay).<br><br>Got a project you'd like to discuss? Send me an email! 
 
 ### Background

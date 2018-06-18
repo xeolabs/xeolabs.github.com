@@ -14,13 +14,18 @@ tags: [scenejs, human, biodigital, webgl]
 Since 2009, I've worked remotely from Berlin, Germany with the team at [BioDigital Systems](http://biodigital.com) in Manhattan, New York, to help develop 
 the [BioDigital Human](http://biodigitalhuman.com) and its developer API.
 <br><br>
-We developed the Human on [SceneJS](http://scenejs.org), an open source (MIT) JavaScript library I created for developing 3D graphics applications 
+We developed the Human on **[SceneJS](http://scenejs.org)**, an open source (MIT) JavaScript library I created for developing 3D graphics applications 
 in Web browsers without using plugins. One of the first WebGL engines, SceneJS evolved alongside the WebGL specification, before 
 we eventually made a private version which we adapted specifically for the Human. 
 <br><br>
 In this article, I'm going to describe SceneJS' journey from a weekend side  project to how we applied it within BioDigital's 
 Web-based anatomy visualization platform. Ten years down the track, the platform now has over three million 
 registered users and continues to develop, with a growing library of models of anatomy and physical conditions.
+
+<hr>
+* *[SceneJS slides from Berlin WebGL Meetup](http://slides.com/xeolabs/deck)*
+* *[SceneJS in OpenGL Insights 2012](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf)*
+<hr>
 
 <!-- a bunch of awards including a Webby, and has been featured in [WIRED](https://www.wired.com/2012/04/biodigital-human/),  -->
 <!-- the [New York Times](https://www.nytimes.com/2012/01/08/business/the-human-anatomy-animated-with-3-d-technology.html), [ABC News](https://abcnews.go.com/Health/virtual-reality-body-transforming-innovations/story?id=16134453) and TED.  -->
