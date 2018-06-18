@@ -38,8 +38,8 @@ As an **open source developer**, I collaborate with a diverse community of exper
 and tools to the needs of our clients, resulting in efficient and certain delivery. When projects grow, I can also 
 enlist some of those engineers to help out, if needed.
  
-### Community
-New to the industry and could use some mentoring? Get in touch - maybe I can help out, or point you to someone who can. 
+<!-- ### Community -->
+<!-- New to the industry and could use some mentoring? Get in touch - maybe I can help out, or point you to someone who can.  -->
 
 
 <!-- [^1]: Please note that, after the first couple of meetings, we'd need to formalize things before moving forward. -->
