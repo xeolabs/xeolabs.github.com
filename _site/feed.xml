@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-19T02:03:29+00:00</updated>
+<updated>2018-06-19T02:33:59+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -283,7 +283,7 @@ who came in fresh from academia and added many valuable rendering features.
 
 
 <entry>
-  <title type="html"><![CDATA[BIMData™ WebGL-Based 3D BIM Viewer]]></title>
+  <title type="html"><![CDATA[BIMData™ Online BIM Viewer]]></title>
   <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/bimdata" />
   <id>http://xeolabs.com/portfolio/bimdata</id>
   <updated>2018-19-09T00:00:00-00:00</updated>
@@ -330,12 +330,12 @@ who came in fresh from academia and added many valuable rendering features.
 &lt;h2 id=&quot;subcontracting&quot;&gt;Subcontracting&lt;/h2&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/bimdata&quot;&gt;BIMData™ WebGL-Based 3D BIM Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 26, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/bimdata&quot;&gt;BIMData™ Online BIM Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 26, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
-  <title type="html"><![CDATA[BIMSurfer WebGL-Based 3D BIM Viewer]]></title>
+  <title type="html"><![CDATA[BIMSurfer Online BIM Viewer]]></title>
   <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/xeogl-in-bimsurfer" />
   <id>http://xeolabs.com/portfolio/xeogl-in-bimsurfer</id>
   <updated>2018-23-03T00:00:00-00:00</updated>
@@ -462,12 +462,12 @@ We will review your code and commit it into the official BIM Surfer code base. A
 into our &lt;a href=&quot;https://github.com/opensourcebim/BIMsurfer/issues&quot;&gt;issue tracker&lt;/a&gt;.&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeogl-in-bimsurfer&quot;&gt;BIMSurfer WebGL-Based 3D BIM Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 25, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeogl-in-bimsurfer&quot;&gt;BIMSurfer Online BIM Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 25, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
-  <title type="html"><![CDATA[SolidComponents™ WebGL-Based 3D CAD Viewer]]></title>
+  <title type="html"><![CDATA[SolidComponents™ Online CAD Viewer]]></title>
   <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/solidcomponents-viewer" />
   <id>http://xeolabs.com/portfolio/solidcomponents-viewer</id>
   <updated>2017-06-31T00:00:00-00:00</updated>
@@ -567,12 +567,12 @@ smoothNormalsAngleThreshold. This makes smoothing robust for hard edges.&lt;/p&g
 &lt;!-- /#table-of-contents --&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/solidcomponents-viewer&quot;&gt;SolidComponents™ WebGL-Based 3D CAD Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 11, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/solidcomponents-viewer&quot;&gt;SolidComponents™ Online CAD Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 11, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
-  <title type="html"><![CDATA[xeogl - 3D library for ArchViz & CAD on WebGL]]></title>
+  <title type="html"><![CDATA[xeogl - WebGL engine for ArchViz & CAD]]></title>
   <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/xeogl" />
   <id>http://xeolabs.com/portfolio/xeogl</id>
   <updated>2018-19-09T00:00:00-00:00</updated>
@@ -585,12 +585,12 @@ smoothNormalsAngleThreshold. This makes smoothing robust for hard edges.&lt;/p&g
   </author>
   <content type="html">
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeogl&quot;&gt;xeogl - 3D library for ArchViz & CAD on WebGL&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 10, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeogl&quot;&gt;xeogl - WebGL engine for ArchViz & CAD&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 10, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
-  <title type="html"><![CDATA[SceneJS - 3D library for MedViz on WebGL]]></title>
+  <title type="html"><![CDATA[SceneJS - WebGL engine for MedViz]]></title>
   <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/scenejs" />
   <id>http://xeolabs.com/portfolio/scenejs</id>
   <updated>2018-19-09T00:00:00-00:00</updated>
@@ -603,12 +603,12 @@ smoothNormalsAngleThreshold. This makes smoothing robust for hard edges.&lt;/p&g
   </author>
   <content type="html">
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/scenejs&quot;&gt;SceneJS - 3D library for MedViz on WebGL&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 09, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/scenejs&quot;&gt;SceneJS - WebGL engine for MedViz&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 09, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
-  <title type="html"><![CDATA[xeometry - 3D Library for viewing glTF on WebGL]]></title>
+  <title type="html"><![CDATA[xeometry - WebGL Library for viewing glTF]]></title>
   <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/xeometry" />
   <id>http://xeolabs.com/portfolio/xeometry</id>
   <updated>2018-19-09T00:00:00-00:00</updated>
@@ -741,7 +741,7 @@ and data-driven methods that are easy to play around with in the browser’s Jav
 typical BIM application layer would manage other aspects of the IFC schema, such as layers, relationships etc, while the
 viewer can just use object IDs and types to reference the objects in the 3D view.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeometry&quot;&gt;xeometry - 3D Library for viewing glTF on WebGL&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on February 16, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeometry&quot;&gt;xeometry - WebGL Library for viewing glTF&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on February 16, 2018.&lt;/p&gt;</content>
 </entry>
 
 

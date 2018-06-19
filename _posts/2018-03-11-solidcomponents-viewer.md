@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SolidComponents™ WebGL-Based 3D CAD Viewer
+title: SolidComponents™ Online CAD Viewer
 client: Cervican  AB, Halmstad,  Sweden
 description: Built the online 3D CAD viewer for the <b>SolidComponents™</b> product catalog.  
 thumbnail: solidcomponents/solidcomponents-mac.png

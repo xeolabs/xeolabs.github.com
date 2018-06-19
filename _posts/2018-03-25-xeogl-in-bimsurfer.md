@@ -1,6 +1,6 @@
 ---
 layout: post
-title: BIMSurfer WebGL-Based 3D BIM Viewer
+title: BIMSurfer Online BIM Viewer
 description: Built the 3D viewer within <b>BIMSurfer</b>, the first open source WebGL-based IFC viewer.
 thumbnail: bimsurfer/bimsurfer.png
 tech: "WebGL, xeogl"
