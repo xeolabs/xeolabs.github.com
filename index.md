@@ -19,7 +19,7 @@ I graduated with a degree in computer science from the University of Canterbury 
 Some things I've done:
 
 * Built the core WebGL rendering technology from scratch for the **[BioDigital Human](./portfolio/biodigital-human)** anatomy visualization platform, which now serves over 3 million users  
-* Built the **[BimData](http://www.bimdata.io/en/bim-data-en/)** and **[BIMSurfer](http://bimsurfer.org/)** WebGL-based 3D IFC viewers
+* Built the **[BIMData](http://www.bimdata.io/en/bim-data-en/)** and **[BIMSurfer](http://bimsurfer.org/)** WebGL-based 3D IFC viewers
 * Developed two major open-source WebGL engines, namely **[SceneJS](http://scenejs.org)**, one of the first widely-used WebGL engines, and **[xeogl](http://xeogl.org)**, which is used in several commercial IFC and CAD viewers
 * Contributing author on **[OpenGL Insights](pdfs/OpenGLInsights.pdf)**
 
@@ -27,6 +27,6 @@ For more info, check out my **[portfolio]({{ site.url }}/portfolio/)** and **[re
 
 <br>
 
-<!-- <img src="../images/gear.gif"> -->
+
 
 
