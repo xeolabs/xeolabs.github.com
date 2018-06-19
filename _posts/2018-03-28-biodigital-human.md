@@ -2,13 +2,17 @@
 layout: biodigital
 title: The BioDigital Human™
 client: BioDigital, NYC, USA
-description: The <b>BioDigital Human</b> is the leading Web-based 3D platform for the exploration of anatomy, medical conditions and treatments.<br><br>I worked remotely with BioDigital Systems in NYC to develop the Human's WebGL-based 3D engine and developer API. 
-tech: "#JavaScript, #WebGL, #SceneJS"
+description: Built the core WebGL rendering technology from scratch for the <b>BioDigital Human</b> anatomy visualization platform, which now serves over 3 million users. 
 thumbnail: human/biodigital-human-platform-thumb.png
 modified: 2018-23-03
 category: portfolio
 comments: false
 tags: [scenejs, human, biodigital, webgl]
+tech: "WebGL, SceneJS"
+article: true
+location: "Manhattan, New York"
+website: http://scenejs.org
+websiteReadible: http://scenejs.org
 ---
 
 Since 2009, I've worked remotely from Berlin, Germany with the team at [BioDigital Systems](http://biodigital.com) in Manhattan, New York, to help develop 
@@ -23,8 +27,12 @@ Web-based anatomy visualization platform. Ten years down the track, the platform
 registered users and continues to develop, with a growing library of models of anatomy and physical conditions.
 
 <hr>
-* *[SceneJS slides from Berlin WebGL Meetup](http://slides.com/xeolabs/deck)*
-* *[SceneJS in OpenGL Insights 2012](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf)*
+
+<h5>Quick links:</h5>
+* [scenejs.org](http://scenejs.org)
+* [biodigitalhuman.com](http://biodigitalhuman.com)
+* [Slides from my talk at the Berlin WebGL Meetup](http://slides.com/xeolabs/deck)
+* [SceneJS in OpenGL Insights 2012](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf)
 <hr>
 
 <!-- a bunch of awards including a Webby, and has been featured in [WIRED](https://www.wired.com/2012/04/biodigital-human/),  -->

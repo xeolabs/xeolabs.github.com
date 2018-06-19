@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-06-18T20:37:57+00:00</updated>
+<updated>2018-06-19T01:05:59+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -39,9 +39,12 @@ registered users and continues to develop, with a growing library of models of a
 
 &lt;hr /&gt;
 
+&lt;h5&gt;Quick links:&lt;/h5&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;&lt;a href=&quot;http://slides.com/xeolabs/deck&quot;&gt;SceneJS slides from Berlin WebGL Meetup&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;&lt;a href=&quot;http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf&quot;&gt;SceneJS in OpenGL Insights 2012&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://scenejs.org&quot;&gt;scenejs.org&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;biodigitalhuman.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://slides.com/xeolabs/deck&quot;&gt;Slides from my talk at the Berlin WebGL Meetup&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf&quot;&gt;SceneJS in OpenGL Insights 2012&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
 
@@ -280,42 +283,6 @@ who came in fresh from academia and added many valuable rendering features.
 
 
 <entry>
-  <title type="html"><![CDATA[xeogl - a 3D library for WebGL-based ArchViz & CAD]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/xeogl" />
-  <id>http://xeolabs.com/portfolio/xeogl</id>
-  <updated>2018-19-09T00:00:00-00:00</updated>
-  <published>2018-03-27T00:00:00+00:00</published>
-  
-  <author>
-    <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
-    <email>lindsay.kay@xeolabs.com</email>
-  </author>
-  <content type="html">
-
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeogl&quot;&gt;xeogl - a 3D library for WebGL-based ArchViz & CAD&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 27, 2018.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[SceneJS - a 3D library for WebGL-based MedViz]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/scenejs" />
-  <id>http://xeolabs.com/portfolio/scenejs</id>
-  <updated>2018-19-09T00:00:00-00:00</updated>
-  <published>2018-03-27T00:00:00+00:00</published>
-  
-  <author>
-    <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
-    <email>lindsay.kay@xeolabs.com</email>
-  </author>
-  <content type="html">
-
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/scenejs&quot;&gt;SceneJS - a 3D library for WebGL-based MedViz&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 27, 2018.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
   <title type="html"><![CDATA[BIMData™ WebGL-Based 3D BIM Viewer]]></title>
   <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/bimdata" />
   <id>http://xeolabs.com/portfolio/bimdata</id>
@@ -504,7 +471,7 @@ into our &lt;a href=&quot;https://github.com/opensourcebim/BIMsurfer/issues&quot
   <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/solidcomponents-viewer" />
   <id>http://xeolabs.com/portfolio/solidcomponents-viewer</id>
   <updated>2017-06-31T00:00:00-00:00</updated>
-  <published>2018-02-27T00:00:00+00:00</published>
+  <published>2018-03-11T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
@@ -600,12 +567,48 @@ smoothNormalsAngleThreshold. This makes smoothing robust for hard edges.&lt;/p&g
 &lt;!-- /#table-of-contents --&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/solidcomponents-viewer&quot;&gt;SolidComponents™ WebGL-Based 3D CAD Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on February 27, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/solidcomponents-viewer&quot;&gt;SolidComponents™ WebGL-Based 3D CAD Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 11, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
-  <title type="html"><![CDATA[xeometry - a WebGL-based 3D model viewing library]]></title>
+  <title type="html"><![CDATA[xeogl - 3D library for ArchViz & CAD on WebGL]]></title>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/xeogl" />
+  <id>http://xeolabs.com/portfolio/xeogl</id>
+  <updated>2018-19-09T00:00:00-00:00</updated>
+  <published>2018-03-10T00:00:00+00:00</published>
+  
+  <author>
+    <name>xeolabs</name>
+    <uri>http://xeolabs.com</uri>
+    <email>lindsay.kay@xeolabs.com</email>
+  </author>
+  <content type="html">
+
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeogl&quot;&gt;xeogl - 3D library for ArchViz & CAD on WebGL&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 10, 2018.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[SceneJS - 3D library for MedViz on WebGL]]></title>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/scenejs" />
+  <id>http://xeolabs.com/portfolio/scenejs</id>
+  <updated>2018-19-09T00:00:00-00:00</updated>
+  <published>2018-03-09T00:00:00+00:00</published>
+  
+  <author>
+    <name>xeolabs</name>
+    <uri>http://xeolabs.com</uri>
+    <email>lindsay.kay@xeolabs.com</email>
+  </author>
+  <content type="html">
+
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/scenejs&quot;&gt;SceneJS - 3D library for MedViz on WebGL&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 09, 2018.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[xeometry - 3D Library for viewing glTF on WebGL]]></title>
   <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/xeometry" />
   <id>http://xeolabs.com/portfolio/xeometry</id>
   <updated>2018-19-09T00:00:00-00:00</updated>
@@ -738,7 +741,7 @@ and data-driven methods that are easy to play around with in the browser’s Jav
 typical BIM application layer would manage other aspects of the IFC schema, such as layers, relationships etc, while the
 viewer can just use object IDs and types to reference the objects in the 3D view.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeometry&quot;&gt;xeometry - a WebGL-based 3D model viewing library&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on February 16, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeometry&quot;&gt;xeometry - 3D Library for viewing glTF on WebGL&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on February 16, 2018.&lt;/p&gt;</content>
 </entry>
 
 
@@ -912,7 +915,7 @@ viewer can just use object IDs and types to reference the objects in the 3D view
 
 
 <entry>
-  <title type="html"><![CDATA[Testing Wind Turbines for Windflow™]]></title>
+  <title type="html"><![CDATA[Wind Turbine Testing for Windflow™]]></title>
   <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/windflow" />
   <id>http://xeolabs.com/portfolio/windflow</id>
   <updated>2018-19-09T00:00:00-00:00</updated>
@@ -925,7 +928,7 @@ viewer can just use object IDs and types to reference the objects in the 3D view
   </author>
   <content type="html">
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/windflow&quot;&gt;Testing Wind Turbines for Windflow™&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on February 16, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/windflow&quot;&gt;Wind Turbine Testing for Windflow™&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on February 16, 2018.&lt;/p&gt;</content>
 </entry>
 
 
