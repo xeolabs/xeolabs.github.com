@@ -35,11 +35,13 @@
     <h1><a href="{{ site.url}}/clients">Portfolio</a></h1>
     <h4>Highlights</h4>
     <ul style="">
-        <li style="">Built the core WebGL rendering technology from scratch for the BioDigital Human anatomy visualization
+        <li style="">Built the core WebGL rendering technology from scratch for the BioDigital Human anatomy
+            visualization
             platform, which now serves over 3 million users
         </li>
         <li style="">Built two successful WebGL-based 3D IFC viewers</li>
-        <li style="">Developed two major open-source WebGL engines, including SceneJS, one of the first widely-used WebGL
+        <li style="">Developed two major open-source WebGL engines, including SceneJS, one of the first widely-used
+            WebGL
             engines
         </li>
         <li style="">Contributing author on OpenGL Insights</li>
@@ -59,7 +61,6 @@
     {% for post in site.categories.portfolio %}
 
     <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-
         {% unless post.first %}
         <hr width="100%"/>
         {% endunless %}
@@ -69,93 +70,45 @@
                 %Y" }}
             </time>
         </p>
-
-        <!--{% if post.wip %}-->
-
-        <!--<h2 itemprop="headline">{{ post.title }}</h2>-->
-        <!--<div class="row">-->
-            <!--<div class="column left">-->
-                <!--<p itemprop="text">{% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html-->
-                    <!--| strip_newlines }}{% endif %}<br><br></p>-->
-                <!--{% if post.tech %}<p itemprop="text">{{ post.tech }}<br><br></p>{% endif %}-->
-                <!--<p itemprop="text">[&nbsp;<span style="font-weight: bold; color: #bd8341; font-style: italic;">UNDER CONSTRUCTION</span>&nbsp;]-->
-                <!--</p>-->
-            <!--</div>-->
-            <!--<div class="column right">-->
-                <!--<img style="padding-top:10px; padding-bottom:15px;padding-right: 0; padding-left: 20px;"-->
-                     <!--src="{{ site.url }}/images/{{ post.thumbnail }}">-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <!--{% elsif post.website %}-->
-
-        <!--<h2 itemprop="headline"><a href="{{ post.website }}" rel="bookmark" title="{{ post.title }}">{{ post.title-->
-            <!--}}</a></h2>-->
-        <!--<div class="row">-->
-            <!--<div class="column left">-->
-                <!--<p itemprop="text">{% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html-->
-                    <!--| strip_newlines }}{% endif %}<br><br></p>-->
-                <!--{% if post.tech %}<p itemprop="text">{{ post.tech }}<br><br></p>{% endif %}-->
-                <!--<p itemprop="text">[&nbsp;<span style="font-weight: bold; font-style: italic;"><a-->
-                        <!--href="{{ post.website }}">VISIT WEBSITE &gt;&gt;</a></span>&nbsp;]</p>-->
-            <!--</div>-->
-            <!--<div class="column right">-->
-                <!--<a href="{{ post.website }}" rel="bookmark" title="{{ post.title }}">-->
-                    <!--<img style="padding-top:10px; padding-bottom:15px;padding-right: 0; padding-left: 20px;"-->
-                         <!--src="{{ site.url }}/images/{{ post.thumbnail }}">-->
-                <!--</a>-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <!--{% else %}-->
-
-        <!--<h2 itemprop="headline"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}">{{-->
-            <!--post.title }}</a></h2>-->
-        <!--<div class="row">-->
-            <!--<div class="column left">-->
-                <!--<p itemprop="text">{% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html-->
-                    <!--| strip_newlines }}{% endif %}-->
-                    <!--<br><br></p>-->
-                <!--{% if post.tech %}<p itemprop="text">{{ post.tech }}<br><br></p>{% endif %}-->
-                <!--<p itemprop="text">[&nbsp;<span style="font-weight: bold; font-style: italic;"><a-->
-                        <!--href="{{ site.url }}{{ post.url }}">READ MORE &gt;&gt;</a></span>&nbsp;]</p>-->
-            <!--</div>-->
-            <!--<div class="column right">-->
-                <!--<a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}">-->
-                    <!--<img style="padding-top:10px; padding-bottom:15px;padding-right: 0; padding-left: 20px;"-->
-                         <!--src="{{ site.url }}/images/{{ post.thumbnail }}">-->
-                <!--</a>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--{% endif %}-->
-
-
+        {% if post.article %}
         <h2 itemprop="headline"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}">{{
             post.title }}</a></h2>
+        {% elsif post.website %}
+        <h2 itemprop="headline"><a href="{{ post.website }}" rel="bookmark" title="{{ post.title }}">{{ post.title}}</a>
+        </h2>
+        {% endif %}
         <div class="row">
             <div class="column left">
                 <p itemprop="text">{% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html
                     | strip_newlines }}{% endif %}</p>
                 <ul style="padding-left:15px;">
                     {% if post.tech %}
-                    <li><span >{{ post.tech }}</span></li>
+                    <li><span>{{ post.tech }}</span></li>
                     {% endif %}
                     {% if post.location %}
                     <li><span style="">{{ post.location }}</span></li>
                     {% endif %}
                     {% if post.article %}
-                    <li style="padding-bottom:10px;"><span style="font-weight: bold;"><a href="{{ site.url }}{{ post.url }}">Read case study&nbsp;&gt;&gt;</a></span></li>
+                    <li style="padding-bottom:10px;"><span style="font-weight: bold;"><a
+                            href="{{ site.url }}{{ post.url }}">Read case study&nbsp;&gt;&gt;</a></span></li>
 
                     {% elsif post.website %}
-                    <li><span style="font-weight: bold;"><a href="{{ post.website }}">{{ post.websiteReadible }}</a></span></li>
+                    <li><span style="font-weight: bold;"><a
+                            href="{{ post.website }}">{{ post.websiteReadible }}</a></span></li>
                     {% endif %}
                 </ul>
             </div>
             <div class="column right">
+                {% if post.article %}
                 <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}">
                     <img style="padding-top:10px; padding-bottom:15px;padding-right: 0; padding-left: 20px;"
                          src="{{ site.url }}/images/{{ post.thumbnail }}">
                 </a>
+                {% elsif post.website %}
+                <a href="{{ post.website }}" rel="bookmark" title="{{ post.title }}"><img
+                        style="padding-top:10px; padding-bottom:15px;padding-right: 0; padding-left: 20px;"
+                        src="{{ site.url }}/images/{{ post.thumbnail }}"></a>
+                {% endif %}
             </div>
         </div>
 
