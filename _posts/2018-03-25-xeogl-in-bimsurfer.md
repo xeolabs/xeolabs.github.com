@@ -8,7 +8,7 @@ tagline: "Supercharging your BIM"
 modified: 2018-23-03
 category: portfolio
 comments: false
-location: "Netherlands"
+location: "Amsterdam, Netherlands"
 website: http://bimsurfer.org
 websiteReadible: http://bimsurfer.org
 tags: [xeogl, bimsurfer, webgl]
