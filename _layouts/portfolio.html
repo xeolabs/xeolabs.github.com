@@ -34,18 +34,25 @@
 
     <h1><a href="{{ site.url}}/clients">Portfolio</a></h1>
     <h4>Highlights</h4>
-    <ul style="">
-        <li style="">Built the core WebGL rendering technology from scratch for the BioDigital Human anatomy
-            visualization
-            platform, which now serves over 3 million users
-        </li>
-        <li style="">Built two successful WebGL-based 3D IFC viewers</li>
-        <li style="">Developed two major open-source WebGL engines, including SceneJS, one of the first widely-used
-            WebGL
-            engines
-        </li>
-        <li style="">Contributing author on OpenGL Insights</li>
-        <!--<li>Worked remotely with clients in the USA, Netherlands, France, Sweden and New Zealand</li>-->
+    <!--<ul style="">-->
+        <!--<li style="">Built the core WebGL rendering technology from scratch for the BioDigital Human anatomy-->
+            <!--visualization-->
+            <!--platform, which now serves over 3 million users-->
+        <!--</li>-->
+        <!--<li style="">Built two successful WebGL-based 3D IFC viewers</li>-->
+        <!--<li style="">Developed two major open-source WebGL engines, including SceneJS, one of the first widely-used-->
+            <!--WebGL-->
+            <!--engines-->
+        <!--</li>-->
+        <!--<li style="">Contributing author on OpenGL Insights</li>-->
+        <!--&lt;!&ndash;<li>Worked remotely with clients in the USA, Netherlands, France, Sweden and New Zealand</li>&ndash;&gt;-->
+    <!--</ul>-->
+
+    <ul>
+        <li>Built the core WebGL rendering technology from scratch for the <strong><a href="./biodigital-human">BioDigital Human</a></strong> anatomy visualization platform, which now serves over 3 million users</li>
+        <li>Built the <strong><a href="http://www.bimdata.io/en/bim-data-en/">BIMData</a></strong> and <strong><a href="http://bimsurfer.org/">BIMSurfer</a></strong> WebGL-based 3D IFC viewers</li>
+        <li>Developed two major open-source WebGL engines: <strong><a href="http://scenejs.org">SceneJS</a></strong>, one of the first widely-used WebGL engines, and <strong><a href="http://xeogl.org">xeogl</a></strong>, which is used in several commercial IFC and CAD viewers</li>
+        <li>Contributing author on <strong><a href="http://openglinsights.com/">OpenGL Insights</a></strong></li>
     </ul>
 
     <!--<hr width="100%"/>-->
@@ -116,6 +123,8 @@
     </article>
 
     {% endfor %}
+
+    {% include client-logos.html %}
 
 </div><!-- /#index -->
 
