@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-08-10T08:27:44+00:00</updated>
+<updated>2018-08-10T13:08:43+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -449,17 +449,31 @@ including an all-in-one solution to visualize, check, edit and share building in
 &lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
 
 &lt;p&gt;I implemented the BIM viewer as a wrapper class around &lt;strong&gt;&lt;a href=&quot;http://xeogl.org&quot;&gt;xeogl&lt;/a&gt;&lt;/strong&gt;, which is an open source (MIT) library I created for WebGL-based 3D 
- visualization.&lt;br /&gt;&lt;br /&gt;The viewer is a facade class that wraps xeogl in a set of application-specific functions, and has a plugin architecture 
+ visualization.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#architecture&quot;&gt;Architecture&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#annotations&quot;&gt;Annotations&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#cross-section-views&quot;&gt;Cross-section views&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#viewcube&quot;&gt;ViewCube&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#emphasis-effects&quot;&gt;Emphasis effects&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#measuremenbt-tools&quot;&gt;Measurement tools&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;architecture&quot;&gt;Architecture&lt;/h4&gt;
+
+&lt;p&gt;The viewer is a facade class that wraps xeogl in a set of application-specific functions, and has a plugin architecture 
  into which we can incrementally add various tools and gizmos as we create them.
  &lt;br /&gt;&lt;br /&gt;
  &lt;img src=&quot;http://xeolabs.com/images/bimdata/uml.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;annotations&quot;&gt;Annotations&lt;/h4&gt;
-&lt;p&gt;Annotations are notes that users pin to the surface of models. These were derived on xeogl’s experimental &lt;a href=&quot;&quot;&gt;Annotation&lt;/a&gt; components. 
+
+&lt;p&gt;Annotations are notes that users pin to the surface of models. These were based on xeogl’s experimental &lt;a href=&quot;&quot;&gt;Annotation&lt;/a&gt; components. 
 &lt;br /&gt;&lt;br /&gt;
 &lt;img src=&quot;http://xeolabs.com/images/bimdata/annotations.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;cross-sectional-views&quot;&gt;Cross-sectional views&lt;/h4&gt;
+&lt;h4 id=&quot;cross-section-views&quot;&gt;Cross-section views&lt;/h4&gt;
 
 &lt;p&gt;The user can create an unlimited number of custom clipping planes, which can be arranged using mouse/touch input. Clipping 
 uses xeogl’s native &lt;a href=&quot;&quot;&gt;Clip&lt;/a&gt; components, which we can interactively arrange using our own fancy editing gizmo. 
@@ -498,8 +512,9 @@ Edge emphasis and ghosting effects for X-ray view:
   &lt;li&gt;&lt;a href=&quot;#the-client&quot; id=&quot;markdown-toc-the-client&quot;&gt;The Client&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#requirements&quot; id=&quot;markdown-toc-requirements&quot;&gt;Requirements&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#architecture&quot; id=&quot;markdown-toc-architecture&quot;&gt;Architecture&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#annotations&quot; id=&quot;markdown-toc-annotations&quot;&gt;Annotations&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#cross-sectional-views&quot; id=&quot;markdown-toc-cross-sectional-views&quot;&gt;Cross-sectional views&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#cross-section-views&quot; id=&quot;markdown-toc-cross-section-views&quot;&gt;Cross-section views&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#viewcube&quot; id=&quot;markdown-toc-viewcube&quot;&gt;ViewCube&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#emphasis-effects&quot; id=&quot;markdown-toc-emphasis-effects&quot;&gt;Emphasis effects&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#measurement-tools&quot; id=&quot;markdown-toc-measurement-tools&quot;&gt;Measurement tools&lt;/a&gt;&lt;/li&gt;
