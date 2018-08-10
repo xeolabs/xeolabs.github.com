@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-08-10T13:11:03+00:00</updated>
+<updated>2018-08-10T13:12:46+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -450,13 +450,6 @@ including an all-in-one solution to visualize, check, edit and share building in
 
 &lt;p&gt;I implemented the BIM viewer as a wrapper class around &lt;strong&gt;&lt;a href=&quot;http://xeogl.org&quot;&gt;xeogl&lt;/a&gt;&lt;/strong&gt;, which is an open source (MIT) library I created for WebGL-based 3D 
  visualization.&lt;/p&gt;
-
-&lt;p&gt;&lt;!-- * [Architecture](#architecture) --&gt;
- &lt;!-- * [Annotations](#annotations) --&gt;
- &lt;!-- * [Cross-section views](#cross-section-views) --&gt;
- &lt;!-- * [ViewCube](#viewcube) --&gt;
- &lt;!-- * [Emphasis effects](#emphasis-effects) --&gt;
- &lt;!-- * [Measurement tools](#measurement-tools) --&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;architecture&quot;&gt;Architecture&lt;/h4&gt;
 
