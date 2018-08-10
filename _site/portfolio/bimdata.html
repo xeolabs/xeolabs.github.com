@@ -6,20 +6,20 @@
 <head>
 <meta charset="utf-8">
 <title>BIMData™ Online BIM Viewer &#8211; xeolabs</title>
-<meta name="description" content="Built the 3D IFC viewer for <b>BIMData.io</b>, a cutting-edge platform to manage your construction projects, providing an all-in-one solution to visualize, check, edit and share building information.">
+<meta name="description" content="Built the 3D BIM viewer for <b>BIMData.io</b>, a cutting-edge platform to manage your construction projects that provides an all-in-one solution to visualize, check, edit and share building information.">
 <meta name="keywords" content="xeogl, bimdata, BIM, IFC, webgl">
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://xeolabs.com/images/">
 <meta name="twitter:title" content="BIMData™ Online BIM Viewer">
-<meta name="twitter:description" content="Built the 3D IFC viewer for <b>BIMData.io</b>, a cutting-edge platform to manage your construction projects, providing an all-in-one solution to visualize, check, edit and share building information.">
+<meta name="twitter:description" content="Built the 3D BIM viewer for <b>BIMData.io</b>, a cutting-edge platform to manage your construction projects that provides an all-in-one solution to visualize, check, edit and share building information.">
 <meta name="twitter:creator" content="@xeographics">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BIMData™ Online BIM Viewer">
-<meta property="og:description" content="Built the 3D IFC viewer for <b>BIMData.io</b>, a cutting-edge platform to manage your construction projects, providing an all-in-one solution to visualize, check, edit and share building information.">
+<meta property="og:description" content="Built the 3D BIM viewer for <b>BIMData.io</b>, a cutting-edge platform to manage your construction projects that provides an all-in-one solution to visualize, check, edit and share building information.">
 <meta property="og:url" content="http://xeolabs.com/portfolio/bimdata">
 <meta property="og:site_name" content="xeolabs">
 
@@ -118,40 +118,97 @@
         <p style="font-weight:bold; font-style:italic;"><time datetime="2018-03-26T00:00:00+00:00" itemprop="datePublished">March 26, 2018</time></p>
     </div><!--/ .headline-wrap -->
     <div class="article-wrap" itemprop="text">
-      <section id="table-of-contents" class="toc">
+      <p>In 2018, I built the WebGL-based 3D BIM viewer for <strong><a href="http://www.bimdata.io/en/bim-data-en/">BIMData™</a></strong>, a cutting-edge platform to manage your construction projects that provides an all-in-one solution to visualize, check, edit and 
+share building information. 
+<br /><br />
+For this job, I also subcontracted <a href="http://www.derschmale.com/">David Lenaerts</a>, a freelance graphics programmer, to help out with 
+ the math for 3D gizmo interactions. 
+<br /><br />
+ <img src="http://xeolabs.com/images/bimdata/bimdata.png" alt="" /></p>
+
+<h2 id="the-client">The Client</h2>
+
+<p><strong><a href="http://www.bimdata.io/en/bim-data-en/">BIMData™</a></strong> is a company in Nice, France that provides a cutting-edge online platform to manage your construction projects, 
+including an all-in-one solution to visualize, check, edit and share building information.</p>
+
+<h2 id="requirements">Requirements</h2>
+
+<ul>
+  <li>Implement a WebGL-based viewer to view large 3D IFC models online</li>
+  <li>Load IFC models from glTF</li>
+  <li>Emphasis effects such as ghosting, highlighting etc.</li>
+  <li>User annotations</li>
+  <li>Cross section views</li>
+  <li>Isolated object views</li>
+  <li>Measurement tools</li>
+  <li>A navigation gizmo similar to AutoDesk ViewCube</li>
+  <li>Orbit, first-person and walking navigation</li>
+</ul>
+
+<h2 id="solution">Solution</h2>
+
+<p>I implemented the BIM viewer as a wrapper class around <strong><a href="http://xeogl.org">xeogl</a></strong>, which is an open source (MIT) library I created for WebGL-based 3D 
+ visualization.<br /><br />The viewer is a facade class that wraps xeogl in a set of application-specific functions, and has a plugin architecture 
+ into which we can incrementally add various tools and gizmos as we create them.
+ <br /><br />
+ <img src="http://xeolabs.com/images/bimdata/uml.png" alt="" /></p>
+
+<h4 id="annotations">Annotations</h4>
+<p>Annotations are notes that users pin to the surface of models. These were derived on xeogl’s experimental <a href="">Annotation</a> components. 
+<br /><br />
+<img src="http://xeolabs.com/images/bimdata/annotations.gif" alt="" /></p>
+
+<h4 id="cross-sectional-views">Cross-sectional views</h4>
+
+<p>The user can create an unlimited number of custom clipping planes, which can be arranged using mouse/touch input. Clipping 
+uses xeogl’s native <a href="">Clip</a> components, which we can interactively arrange using our own fancy editing gizmo. 
+<br /><br />
+<img src="http://xeolabs.com/images/bimdata/clipping.gif" alt="" /></p>
+
+<h4 id="viewcube">ViewCube</h4>
+
+<p>The ViewCube is a 3D camera orientation indicator and controller. I implemented it to look and work the same as the 
+Autodesk Research ViewCube. The ViewCube is a 3D object implemented with xeogl, with clickable hotspots that fly the camera 
+to various vantage points. 
+<br /><br />
+<img src="http://xeolabs.com/images/bimdata/viewCube.gif" alt="" /></p>
+
+<h4 id="emphasis-effects">Emphasis effects</h4>
+
+<p>xeogl has various built-in rendering effects such as ghosting and wireframe, which I’m using for highlighting and 
+revealing objects. 
+<br /><br />
+<img src="http://xeolabs.com/images/bimdata/highlight.gif" alt="" />
+<br /><br />
+Edge emphasis and ghosting effects for X-ray view:
+<br /><br />
+<img src="http://xeolabs.com/images/bimdata/ghosting.gif" alt="" /></p>
+
+<h4 id="measurement-tools">Measurement tools</h4>
+
+<p>TODO</p>
+
+<section id="table-of-contents" class="toc">
   <header>
     <h3>Contents</h3>
   </header>
 <div id="drawer">
 <ul id="markdown-toc">
-  <li><a href="#distributed-remote-team" id="markdown-toc-distributed-remote-team">Distributed remote team</a></li>
-  <li><a href="#performance" id="markdown-toc-performance">Performance</a></li>
-  <li><a href="#emphasis-effects" id="markdown-toc-emphasis-effects">Emphasis Effects</a></li>
-  <li><a href="#viewcube" id="markdown-toc-viewcube">ViewCube</a></li>
-  <li><a href="#clipcontrols" id="markdown-toc-clipcontrols">ClipControls</a></li>
-  <li><a href="#camera-navigation" id="markdown-toc-camera-navigation">Camera Navigation</a></li>
-  <li><a href="#subcontracting" id="markdown-toc-subcontracting">Subcontracting</a></li>
+  <li><a href="#the-client" id="markdown-toc-the-client">The Client</a></li>
+  <li><a href="#requirements" id="markdown-toc-requirements">Requirements</a></li>
+  <li><a href="#solution" id="markdown-toc-solution">Solution</a>    <ul>
+      <li><a href="#annotations" id="markdown-toc-annotations">Annotations</a></li>
+      <li><a href="#cross-sectional-views" id="markdown-toc-cross-sectional-views">Cross-sectional views</a></li>
+      <li><a href="#viewcube" id="markdown-toc-viewcube">ViewCube</a></li>
+      <li><a href="#emphasis-effects" id="markdown-toc-emphasis-effects">Emphasis effects</a></li>
+      <li><a href="#measurement-tools" id="markdown-toc-measurement-tools">Measurement tools</a></li>
+    </ul>
+  </li>
 </ul>
 
   </div>
 </section>
 <!-- /#table-of-contents -->
-
-<h2 id="distributed-remote-team">Distributed remote team</h2>
-
-<p>(TODO: places where all the developers worked)</p>
-
-<h2 id="performance">Performance</h2>
-
-<h2 id="emphasis-effects">Emphasis Effects</h2>
-
-<h2 id="viewcube">ViewCube</h2>
-
-<h2 id="clipcontrols">ClipControls</h2>
-
-<h2 id="camera-navigation">Camera Navigation</h2>
-
-<h2 id="subcontracting">Subcontracting</h2>
 
 
       <hr />
@@ -203,6 +260,12 @@
       
       
       
+      <li><a href="http://xeolabs.com/portfolio/solidcomponents-viewer" title="SolidComponents™ Online CAD Viewer">SolidComponents™ Online CAD Viewer</a></li>
+      
+    
+      
+      
+      
       <li><a href="http://xeolabs.com/portfolio/biodigital-human" title="The BioDigital Human™">The BioDigital Human™</a></li>
       
     
@@ -210,12 +273,6 @@
       
       
       <li><a href="http://xeolabs.com/portfolio/xeogl-in-bimsurfer" title="BIMSurfer Online BIM Viewer">BIMSurfer Online BIM Viewer</a></li>
-      
-    
-      
-      
-      
-      <li><a href="http://xeolabs.com/portfolio/solidcomponents-viewer" title="SolidComponents™ Online CAD Viewer">SolidComponents™ Online CAD Viewer</a></li>
       
     
     </ul>
@@ -228,8 +285,17 @@
 </div><!-- /.footer-wrap -->
 
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
-<!--<script>window.jQuery || document.write('<script src="http://xeolabs.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>-->
+<script src="http://xeolabs.com/assets/js/vendor/jquery-1.9.1.min.js"></script>
+<script src="http://xeolabs.com/assets/js/vendor/jquery.gifplayer.js"></script>
+<link rel="stylesheet" href="http://xeolabs.com/assets/css/gifplayer.css" />
 <!--<script src="http://xeolabs.com/assets/js/scripts.min.js"></script>-->
+
+
+<script>
+    $(document).ready( function(){
+        $('.gifplayer').gifplayer();
+    });
+</script>
 
 
 

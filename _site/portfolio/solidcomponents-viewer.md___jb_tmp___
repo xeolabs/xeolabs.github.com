@@ -5,21 +5,21 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Developing the SolidComponents™ Viewer on xeogl &#8211; xeolabs</title>
-<meta name="description" content="SolidComponents™ is a market leader for highend online CAD support and supports millions of users on an international basis. TODO.">
-<meta name="keywords" content="scenejs, biodigitalhuman">
+<title>SolidComponents™ Online CAD Viewer &#8211; xeolabs</title>
+<meta name="description" content="Built the online 3D CAD viewer for the <b>SolidComponents™</b> product catalog.">
+<meta name="keywords" content="webgl, 3DXML, SolidWorks, CAD, xeogl">
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="/images/">
-<meta name="twitter:title" content="Developing the SolidComponents™ Viewer on xeogl">
-<meta name="twitter:description" content="SolidComponents™ is a market leader for highend online CAD support and supports millions of users on an international basis. TODO.">
+<meta name="twitter:title" content="SolidComponents™ Online CAD Viewer">
+<meta name="twitter:description" content="Built the online 3D CAD viewer for the <b>SolidComponents™</b> product catalog.">
 <meta name="twitter:creator" content="@xeographics">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Developing the SolidComponents™ Viewer on xeogl">
-<meta property="og:description" content="SolidComponents™ is a market leader for highend online CAD support and supports millions of users on an international basis. TODO.">
+<meta property="og:title" content="SolidComponents™ Online CAD Viewer">
+<meta property="og:description" content="Built the online 3D CAD viewer for the <b>SolidComponents™</b> product catalog.">
 <meta property="og:url" content="/portfolio/solidcomponents-viewer">
 <meta property="og:site_name" content="xeolabs">
 
@@ -54,7 +54,7 @@
 <!-- 16x16 -->
 <link rel="shortcut icon" href="/favicon.ico">
 <!-- 32x32 -->
-<link rel="shortcut icon" href="/favicon.png">
+<link rel="shortcut icon" href="/favicon-32x32.png">
 <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
 <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
 <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
@@ -86,6 +86,8 @@
 		        
 				<li><a href="http://linkedin.com/in/lindsaystanleykay" target="_blank">Resume</a></li>
 		        
+				<li><a href="/index" >Contact</a></li>
+		        
 				<li><a href="http://xeogl.org" target="_blank">xeogl</a></li>
 		        
 
@@ -100,24 +102,145 @@
   <div class="article-author-top">
     <img src="/images/avatar.jpg" class="bio-photo" alt="xeolabs bio photo"></a>
 <h3><a href="/about/">xeolabs</a></h3>
-<p><b>Lindsay Kay</b><br><br><i>3D software engineer providing WebGL-based solutions for product visualization, engineering, medicine and BIM</i></p>
+<p><b>Lindsay Kay</b><br><br><i>3D software engineer / WebGL developer</i></p>
 <a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
 <a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
 <a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
-<br><br>
+<br>
 <hr>
-<p style="text-align: center;"><a href="/pdfs/OpenGLInsights.pdf"><img style="text-align: center;" src="/images/scenejs/OpenGLInsights2.jpg"></a><br>
-    <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now free to download! <a href="/pdfs/OpenGLInsights.pdf">Grab it here.</a></i></p>
-<hr>
+<p style="text-align: center;"><a href="/pdfs/OpenGLInsights.pdf"><img style="text-align: center; width: 80%;" src="/images/scenejs/OpenGLInsights2.jpg"></a><br>
+    <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now <a href="/pdfs/OpenGLInsights.pdf">free to download!</a></i></p>
 
   </div>
   <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
     <div class="headline-wrap">
-      <h1 itemprop="name">Developing the SolidComponents™ Viewer on xeogl</h1>
-        <p style="font-weight:bold; font-style:italic;"><time datetime="2018-03-27T00:00:00+00:00" itemprop="datePublished">March 27, 2018</time></p>
+      <h1 itemprop="name">SolidComponents™ Online CAD Viewer</h1>
+        <p style="font-weight:bold; font-style:italic;"><time datetime="2018-06-11T00:00:00+00:00" itemprop="datePublished">June 11, 2018</time></p>
     </div><!--/ .headline-wrap -->
     <div class="article-wrap" itemprop="text">
-      <section id="table-of-contents" class="toc">
+      In 2018, I built a Web-based 3D viewer that would allow visitors to their online catalog to interactively view 
+        a 3D model of each product.
+
+ ![](/images/gear.gif)
+ 
+## The Client
+
+**[SolidComponents™](https://www.solidcomponents.com)** is a market leader for Web-based CAD support, based in Halmstad, Sweden. 
+
+They provide an online components catalog system....
+
+## Requirements
+ 
+- Create a WebGL-based viewer for users to interactively view 3D CAD models of products from the client's online catalog
+- Load models exported from **[SolidWorks](https://www.solidworks.com/)**
+- Realistic, physically-based materials
+- Wireframe and transparent viewing modes
+- Flexible integration into the catalog page 
+
+<!-- SolidComponents had already made some experimental viewers on THREE.js to load STL and OBJ files exported from SolidWorks, but  -->
+<!-- was having difficulty getting the final appearance of the models right using those file formats. -->
+ <!-- <br><br>One of the the trickiest things  -->
+<!-- was correctly smooth shading the models, since the face-aligned STL normals are useless for smooth shading, and the  -->
+<!-- vertex-aligned OBJ normals often caused hard edges to appear incorrectly smooth.   -->
+
+## Solution
+
+I implemented the SolidComponents CAD viewer as a wrapper class around **[xeogl](http://xeogl.org)**, an open source 
+WebGL library I created for 3D visualization.
+<br><br>
+![](/images/solidcomponents/uml.png)
+
+#### 3DXML
+
+I chose **[3DXML](https://en.wikipedia.org/wiki/3DXML)** as the viewer's file format, since it's the native SolidWorks format and represents the model exactly 
+as it appears in SolidWorks.
+
+#### Wireframe
+
+For wireframe views, I'm relying on xeogl to auto-generate wireframe meshes from 3DXML's triangle meshes. For each geometry, 
+xeogl creates a secondary mesh that contains the edges between adjacent triangles whose surface normals deviate from each other 
+by a given threshold, ie. the "hard" edges. This technique eliminates the "inner" edges, which are edges shared by triangles 
+that are part of the same faces. 
+
+![](/images/solidcomponents/innerEdges.png) | ![](/images/solidcomponents/innerEdgesRemoved.png)
+----|----
+Wireframe with inner edges | Inner edges eliminated
+
+
+#### STL models
+
+Initially, I experimented with loading the **[STL](https://en.wikipedia.org/wiki/STL_(file_format))** format, which is also exported by SolidWorks.
+<br><br>
+![](/images/solidcomponents/gearWhiteBG.png)
+
+Triangles in STL are disjoint, where each triangle has its own separate vertex positions, normals and 
+(optionally) colors. This means that you can have gaps between triangles. Normals for each triangle are perpendicular to the triangle's surface, which gives the model a 
+faceted appearance by default. The smoothNormals flag causes the STLModel to recalculate its normals, so that each normal's 
+direction is the average of the orientations of the triangles adjacent to its vertex. When smoothing, each vertex normal 
+is set to the average of the orientations of all other triangles that have a vertex at the same position, excluding those 
+triangles whose direction deviates from the direction of the vertice's triangle by a threshold given in smoothNormalsAngleThreshold. 
+This makes smoothing robust for hard edges. 
+
+
+Normals in STL are face-aligned for a 
+flat-shaded appearance, so I ignored them and relied on xeogl to auto-generate them per-vertex. To handle hard edges 
+correctly, I extended xeogl's auto-generation to
+
+#### OBJ Models
+
+The client had previously made an experimental viewer on THREE.js that loaded OBJ exported by SolidWorks. However, OBJ contained 
+vertex normals that rendered every edge as smooth-shaded, even when it was "hard" and should have rendered with a 
+crease.
+<br><br>
+  
+
+The viewer loads **3DXML** models exported by SolidWorks. 
+<br><br>
+Initially, I experimented with loading STL models    
+
+### First Attempt: Import STL
+
+My first attempt involved making a loader for STL models. 
+
+- First attempt by importing STL using this shading algorithm
+- Smoothing algorithm:  
+Triangles in STL are disjoint, where each triangle has its own separate vertex positions, normals and (optionally) colors. 
+This means that you can have gaps between triangles. Normals for each triangle are perpendicular to the triangle's surface, 
+which gives the model a faceted appearance by default. The smoothNormals flag causes the STLModel to recalculate its normals, 
+so that each normal's direction is the average of the orientations of the triangles adjacent to its vertex. When smoothing, 
+each vertex normal is set to the average of the orientations of all other triangles that have a vertex at the same position, 
+excluding those triangles whose direction deviates from the direction of the vertice's triangle by a threshold given in 
+smoothNormalsAngleThreshold. This makes smoothing robust for hard edges.
+
+- Differentiate objects on vertex colors
+- STL materials were not expressive enough
+- Not possible to preserve colors as modeled in  SolidWworks
+- STLModel them open sourced as part of xeogl extras
+
+### Second Attempt: Import 3DXML
+
+# OBJ
+
+- not expressive enough
+
+#glTF
+
+- export plugin available from SIMLab, but not core part of SolidWworks, so not enough control.
+
+# Second attempt: loading 3DXML
+
+- 3DXML is native SolidWorks format
+- Built a custom component that extends the xeogl native xeogl.Model component to parse 3DXML 4.2 & 4.3 schema
+- Smothing with hard edges supported in 3DXML,  where hard edges lie between  separate meshes with smooth per-vertex normals
+- Edges and Wireframe representations required 
+- Solidworks 2017 export had an edges representation bundled with models
+- SolidWorks 2010 export had no edges representation
+- xeogl has baked-in solution, automatically generating wireframe views using ghost and highlight materials
+- xeogl  CameraControl has all required interaction
+
+
+
+<section id="table-of-contents" class="toc">
   <header>
     <h3>Contents</h3>
   </header>
@@ -134,18 +257,17 @@
         <div class="article-author-bottom">
           <img src="/images/avatar.jpg" class="bio-photo" alt="xeolabs bio photo"></a>
 <h3><a href="/about/">xeolabs</a></h3>
-<p><b>Lindsay Kay</b><br><br><i>3D software engineer providing WebGL-based solutions for product visualization, engineering, medicine and BIM</i></p>
+<p><b>Lindsay Kay</b><br><br><i>3D software engineer / WebGL developer</i></p>
 <a href="http://twitter.com/xeographics" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
 <a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
 <a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
-<br><br>
+<br>
 <hr>
-<p style="text-align: center;"><a href="/pdfs/OpenGLInsights.pdf"><img style="text-align: center;" src="/images/scenejs/OpenGLInsights2.jpg"></a><br>
-    <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now free to download! <a href="/pdfs/OpenGLInsights.pdf">Grab it here.</a></i></p>
-<hr>
+<p style="text-align: center;"><a href="/pdfs/OpenGLInsights.pdf"><img style="text-align: center; width: 80%;" src="/images/scenejs/OpenGLInsights2.jpg"></a><br>
+    <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now <a href="/pdfs/OpenGLInsights.pdf">free to download!</a></i></p>
 
         </div>
-        <p class="byline"><strong>Developing the SolidComponents™ Viewer on xeogl</strong> was published on <time datetime="2018-03-27T00:00:00+00:00" itemprop="datePublished">March 27, 2018</time> and last modified on <time datetime="2015-07-01" itemprop="dateModified">July 01, 2015</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="/about" title="About xeolabs" itemprop="url">xeolabs</a></span></span>.</p>
+        <p class="byline"><strong>SolidComponents™ Online CAD Viewer</strong> was published on <time datetime="2018-06-11T00:00:00+00:00" itemprop="datePublished">June 11, 2018</time> and last modified on <time datetime="2018-07-31" itemprop="dateModified">July 31, 2018</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="/about" title="About xeolabs" itemprop="url">xeolabs</a></span></span>.</p>
       </footer>
 
         <!---->
@@ -171,7 +293,6 @@
 </div><!-- /#main -->
 
 
-
 <div class="footer-wrap">
   <div class="related-articles">
   <h4>You might also enjoy <small class="pull-right">(<a href="/articles">View all articles</a>)</small></h4>
@@ -180,19 +301,19 @@
       
       
       
-      <li><a href="/portfolio/solidcomponents-viewer" title="Developing the SolidComponents™ Viewer on xeogl">Developing the SolidComponents™ Viewer on xeogl</a></li>
+      <li><a href="/portfolio/solidcomponents-viewer" title="SolidComponents™ Online CAD Viewer">SolidComponents™ Online CAD Viewer</a></li>
       
     
       
       
       
-      <li><a href="/portfolio/biodigital-human" title="Developing the BioDigital Human™ on SceneJS">Developing the BioDigital Human™ on SceneJS</a></li>
+      <li><a href="/portfolio/biodigital-human" title="The BioDigital Human™">The BioDigital Human™</a></li>
       
     
       
       
       
-      <li><a href="/portfolio/bimdata" title="Developing the BIMData IFC Viewer on xeogl">Developing the BIMData IFC Viewer on xeogl</a></li>
+      <li><a href="/portfolio/bimdata" title="BIMData™ Online BIM Viewer">BIMData™ Online BIM Viewer</a></li>
       
     
     </ul>
@@ -204,23 +325,20 @@
   </footer>
 </div><!-- /.footer-wrap -->
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-<script src="/assets/js/scripts.min.js"></script>
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+<script src="/assets/js/vendor/jquery-1.9.1.min.js"></script>
+<script src="/assets/js/vendor/jquery.gifplayer.js"></script>
+<link rel="stylesheet" href="/assets/css/gifplayer.css" />
+<!--<script src="/assets/js/scripts.min.js"></script>-->
 
 
-<script type="text/javascript">
-//    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-//    var disqus_shortname = 'xeographics'; // required: replace example with your forum shortname
-//
-//    /* * * DON'T EDIT BELOW THIS LINE * * */
-//    (function () {
-//        var s = document.createElement('script'); s.async = true;
-//        s.type = 'text/javascript';
-//        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-//        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-//    }());
+<script>
+    $(document).ready( function(){
+        $('.gifplayer').gifplayer();
+    });
 </script>
+
+
 
 </body>
 </html>

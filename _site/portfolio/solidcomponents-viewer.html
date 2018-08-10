@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <title>SolidComponents™ Online CAD Viewer &#8211; xeolabs</title>
 <meta name="description" content="Built the online 3D CAD viewer for the <b>SolidComponents™</b> product catalog.">
-<meta name="keywords" content="webgl, SolidWorks, CAD, xeogl">
+<meta name="keywords" content="webgl, 3DXML, SolidWorks, CAD, xeogl">
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://xeolabs.com/images/">
@@ -115,78 +115,97 @@
   <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
     <div class="headline-wrap">
       <h1 itemprop="name">SolidComponents™ Online CAD Viewer</h1>
-        <p style="font-weight:bold; font-style:italic;"><time datetime="2018-03-11T00:00:00+00:00" itemprop="datePublished">March 11, 2018</time></p>
+        <p style="font-weight:bold; font-style:italic;"><time datetime="2018-06-11T00:00:00+00:00" itemprop="datePublished">June 11, 2018</time></p>
     </div><!--/ .headline-wrap -->
     <div class="article-wrap" itemprop="text">
-      <h1 id="the-client">The Client</h1>
+      <p>In 2018, I built a Web-based 3D viewer that would allow visitors to their online catalog to interactively view 
+        a 3D model of each product.</p>
 
-<p>Read about how component suppliers improve sales by taking advantage of SolidComponentstm digital product catalogues with CAD-support.</p>
+<p><img src="http://xeolabs.com/images/gear.gif" alt="" /></p>
 
-<h1 id="requirements">Requirements</h1>
+<h2 id="the-client">The Client</h2>
 
-<p>Interactively view 3D models exported from SolidWworks</p>
+<p><strong><a href="https://www.solidcomponents.com">SolidComponents™</a></strong> is a market leader for Web-based CAD support, based in Halmstad, Sweden.</p>
 
-<p>Viewer seamlessly integrated into SolidComponents web page</p>
+<p>They provide an online components catalog system….</p>
 
-<p>Allow to distribute with SSolidWorks integration software - a JavaSCript library called “SolidComponents Toolbox”, that 
-customers use to integrate SolidWork’s CAD support into their own web pages.</p>
-
-<p>The client had already made several viewers for STL and OBJ files using THREE and other WebGL libraries, but had 
-experienced difficulty controlling the way that smooth shading was applied across the surfaces of meshes</p>
+<h2 id="requirements">Requirements</h2>
 
 <ul>
-  <li>Needed  smooth shading, but not smooth across hard edges</li>
-  <li>
-    <p>Auto conversion of face-aligned normals to vertex aligned was not an option</p>
-  </li>
-  <li>I solved with a custom smoothing algorithm (TODO)</li>
-  <li>Requirement: view models exported from SolidWorks</li>
+  <li>Create a WebGL-based viewer for users to interactively view 3D CAD models of products from the client’s online catalog</li>
+  <li>Load models exported from <strong><a href="https://www.solidworks.com/">SolidWorks</a></strong></li>
+  <li>Realistic, physically-based materials</li>
+  <li>Wireframe and transparent viewing modes</li>
+  <li>Flexible integration into the catalog page</li>
 </ul>
 
-<h1 id="first-attempt--stl-files">First Attempt:  STL files</h1>
+<!-- SolidComponents had already made some experimental viewers on THREE.js to load STL and OBJ files exported from SolidWorks, but  -->
+<!-- was having difficulty getting the final appearance of the models right using those file formats. -->
+<p><!-- <br><br>One of the the trickiest things  -->
+<!-- was correctly smooth shading the models, since the face-aligned STL normals are useless for smooth shading, and the  -->
+<!-- vertex-aligned OBJ normals often caused hard edges to appear incorrectly smooth.   --></p>
 
-<ul>
-  <li>First attempt by importing STL using this shading algorithm</li>
-  <li>
-    <p>Smoothing algorithm:<br />
-Triangles in STL are disjoint, where each triangle has its own separate vertex positions, normals and (optionally) colors. 
-This means that you can have gaps between triangles. Normals for each triangle are perpendicular to the triangle’s surface, 
-which gives the model a faceted appearance by default. The smoothNormals flag causes the STLModel to recalculate its normals, 
-so that each normal’s direction is the average of the orientations of the triangles adjacent to its vertex. When smoothing, 
-each vertex normal is set to the average of the orientations of all other triangles that have a vertex at the same position, 
-excluding those triangles whose direction deviates from the direction of the vertice’s triangle by a threshold given in 
-smoothNormalsAngleThreshold. This makes smoothing robust for hard edges.</p>
-  </li>
-  <li>Differentiate objects on vertex colors</li>
-  <li>STL materials were not expressive enough</li>
-  <li>Not possible to preserve colors as modeled in  SolidWworks</li>
-  <li>STLModel them open sourced as part of xeogl extras</li>
-</ul>
+<h2 id="solution">Solution</h2>
 
-<h1 id="obj">OBJ</h1>
+<p>I implemented the SolidComponents CAD viewer as a wrapper class around <strong><a href="http://xeogl.org">xeogl</a></strong>, an open source 
+WebGL library I created for 3D visualization.
+<br /><br />
+<img src="http://xeolabs.com/images/solidcomponents/uml.png" alt="" /></p>
 
-<ul>
-  <li>not expressive enough</li>
-</ul>
+<h4 id="dxml">3DXML</h4>
 
-<h1 id="gltf">glTF</h1>
+<p>I chose <strong><a href="https://en.wikipedia.org/wiki/3DXML">3DXML</a></strong> as the viewer’s file format, since it’s the native SolidWorks format and represents the model exactly 
+as it appears in SolidWorks.</p>
 
-<ul>
-  <li>export plugin available from SIMLab, but not core part of SolidWworks, so not enough control.</li>
-</ul>
+<h4 id="wireframe">Wireframe</h4>
 
-<h1 id="second-attempt-loading-3dxml">Second attempt: loading 3DXML</h1>
+<p>For wireframe views, I’m relying on xeogl to auto-generate wireframe meshes from 3DXML’s triangle meshes. For each geometry, 
+xeogl creates a secondary mesh that contains the edges between adjacent triangles whose surface normals deviate from each other 
+by a given threshold, ie. the “hard” edges. This technique eliminates the “inner” edges, which are edges shared by triangles 
+that are part of the same faces.</p>
 
-<ul>
-  <li>3DXML is native SolidWworks format</li>
-  <li>Built a custom component that extends the xeogl native xeogl.Model component to parse 3DXML 4.2 &amp; 4.3 schema</li>
-  <li>Smothing with hard edges supported in 3DXML,  where hard edges lie between  separate meshes with smooth per-vertex normals</li>
-  <li>Edges and Wireframe representations required</li>
-  <li>Solidworks 2017 export had an edges representation bundled with models</li>
-  <li>SolidWorks 2010 export had no edges representation</li>
-  <li>xeogl has baked-in solution, automatically generating wireframe views using ghost and highlight materials</li>
-  <li>xeogl  CameraControl has all required interaction</li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th><img src="http://xeolabs.com/images/solidcomponents/innerEdges.png" alt="" /></th>
+      <th><img src="http://xeolabs.com/images/solidcomponents/innerEdgesRemoved.png" alt="" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Wireframe with inner edges</td>
+      <td>Inner edges eliminated</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>WIP</p>
+
+<!-- #### STL models -->
+
+<!-- Initially, I experimented with loading the **[STL](https://en.wikipedia.org/wiki/STL_(file_format))** format, which is also exported by SolidWorks. -->
+<!-- <br><br> -->
+<!-- ![](http://xeolabs.com/images/solidcomponents/gearWhiteBG.png) -->
+
+<!-- Triangles in STL are disjoint, where each triangle has its own separate vertex positions, normals and  -->
+<!-- (optionally) colors. This means that you can have gaps between triangles. Normals for each triangle are perpendicular to the triangle's surface, which gives the model a  -->
+<!-- faceted appearance by default. The smoothNormals flag causes the STLModel to recalculate its normals, so that each normal's  -->
+<!-- direction is the average of the orientations of the triangles adjacent to its vertex. When smoothing, each vertex normal  -->
+<!-- is set to the average of the orientations of all other triangles that have a vertex at the same position, excluding those  -->
+<!-- triangles whose direction deviates from the direction of the vertice's triangle by a threshold given in smoothNormalsAngleThreshold.  -->
+<!-- This makes smoothing robust for hard edges.  -->
+
+<!-- Normals in STL are face-aligned for a  -->
+<!-- flat-shaded appearance, so I ignored them and relied on xeogl to auto-generate them per-vertex. To handle hard edges  -->
+<!-- correctly, I extended xeogl's auto-generation to -->
+
+<!-- #### OBJ Models -->
+
+<!-- The client had previously made an experimental viewer on THREE.js that loaded OBJ exported by SolidWorks. However, OBJ contained  -->
+<!-- vertex normals that rendered every edge as smooth-shaded, even when it was "hard" and should have rendered with a  -->
+<!-- crease. -->
+<!-- <br><br> -->
+<p><!--  --></p>
 
 <section id="table-of-contents" class="toc">
   <header>
@@ -196,10 +215,11 @@ smoothNormalsAngleThreshold. This makes smoothing robust for hard edges.</p>
 <ul id="markdown-toc">
   <li><a href="#the-client" id="markdown-toc-the-client">The Client</a></li>
   <li><a href="#requirements" id="markdown-toc-requirements">Requirements</a></li>
-  <li><a href="#first-attempt--stl-files" id="markdown-toc-first-attempt--stl-files">First Attempt:  STL files</a></li>
-  <li><a href="#obj" id="markdown-toc-obj">OBJ</a></li>
-  <li><a href="#gltf" id="markdown-toc-gltf">glTF</a></li>
-  <li><a href="#second-attempt-loading-3dxml" id="markdown-toc-second-attempt-loading-3dxml">Second attempt: loading 3DXML</a></li>
+  <li><a href="#solution" id="markdown-toc-solution">Solution</a>    <ul>
+      <li><a href="#dxml" id="markdown-toc-dxml">3DXML</a></li>
+      <li><a href="#wireframe" id="markdown-toc-wireframe">Wireframe</a></li>
+    </ul>
+  </li>
 </ul>
 
   </div>
@@ -222,7 +242,7 @@ smoothNormalsAngleThreshold. This makes smoothing robust for hard edges.</p>
     <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now <a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf">free to download!</a></i></p>
 
         </div>
-        <p class="byline"><strong>SolidComponents™ Online CAD Viewer</strong> was published on <time datetime="2018-03-11T00:00:00+00:00" itemprop="datePublished">March 11, 2018</time> and last modified on <time datetime="2017-07-01" itemprop="dateModified">July 01, 2017</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://xeolabs.com/about" title="About xeolabs" itemprop="url">xeolabs</a></span></span>.</p>
+        <p class="byline"><strong>SolidComponents™ Online CAD Viewer</strong> was published on <time datetime="2018-06-11T00:00:00+00:00" itemprop="datePublished">June 11, 2018</time> and last modified on <time datetime="2018-07-31" itemprop="dateModified">July 31, 2018</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://xeolabs.com/about" title="About xeolabs" itemprop="url">xeolabs</a></span></span>.</p>
       </footer>
 
         <!---->
@@ -281,8 +301,17 @@ smoothNormalsAngleThreshold. This makes smoothing robust for hard edges.</p>
 </div><!-- /.footer-wrap -->
 
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
-<!--<script>window.jQuery || document.write('<script src="http://xeolabs.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>-->
+<script src="http://xeolabs.com/assets/js/vendor/jquery-1.9.1.min.js"></script>
+<script src="http://xeolabs.com/assets/js/vendor/jquery.gifplayer.js"></script>
+<link rel="stylesheet" href="http://xeolabs.com/assets/css/gifplayer.css" />
 <!--<script src="http://xeolabs.com/assets/js/scripts.min.js"></script>-->
+
+
+<script>
+    $(document).ready( function(){
+        $('.gifplayer').gifplayer();
+    });
+</script>
 
 
 
