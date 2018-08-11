@@ -14,16 +14,12 @@ websiteReadible: https://solidcomponents.com
 tags: [webgl, 3DXML, SolidWorks, CAD, xeogl]
 ---
 
-In 2018, I built a Web-based 3D viewer that would allow visitors to their online catalog to interactively view 
-        a 3D model of each product.
-
  ![]({{ site.url }}/images/gear.gif)
  
 ## The Client
 
-**[SolidComponents™](https://www.solidcomponents.com)** is a market leader for Web-based CAD support, based in Halmstad, Sweden. 
-
-They provide an online components catalog system....
+**[SolidComponents™](https://www.solidcomponents.com)**, based in Halmstad, Sweden, provides an online catalog of 
+engineering components.   
 
 ## Requirements
  

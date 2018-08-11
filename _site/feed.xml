@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-08-10T13:12:46+00:00</updated>
+<updated>2018-08-11T15:56:56+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -26,16 +26,12 @@
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
-  <content type="html">&lt;p&gt;In 2018, I built a Web-based 3D viewer that would allow visitors to their online catalog to interactively view 
-        a 3D model of each product.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://xeolabs.com/images/gear.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  <content type="html">&lt;p&gt;&lt;img src=&quot;http://xeolabs.com/images/gear.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;the-client&quot;&gt;The Client&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://www.solidcomponents.com&quot;&gt;SolidComponents™&lt;/a&gt;&lt;/strong&gt; is a market leader for Web-based CAD support, based in Halmstad, Sweden.&lt;/p&gt;
-
-&lt;p&gt;They provide an online components catalog system….&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://www.solidcomponents.com&quot;&gt;SolidComponents™&lt;/a&gt;&lt;/strong&gt;, based in Halmstad, Sweden, provides an online catalog of 
+engineering components.&lt;/p&gt;
 
 &lt;h2 id=&quot;requirements&quot;&gt;Requirements&lt;/h2&gt;
 
@@ -425,7 +421,7 @@ share building information.
 For this job, I also subcontracted &lt;a href=&quot;http://www.derschmale.com/&quot;&gt;David Lenaerts&lt;/a&gt;, a freelance graphics programmer, to help out with 
  the math for 3D gizmo interactions. 
 &lt;br /&gt;&lt;br /&gt;
- &lt;img src=&quot;http://xeolabs.com/images/bimdata/bimdata.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+ []&lt;img src=&quot;http://xeolabs.com/images/bimdata/bimdata.png&quot; alt=&quot;&quot; /&gt;](http://www.bimdata.io/en/bim-data-en/)&lt;/p&gt;
 
 &lt;h2 id=&quot;the-client&quot;&gt;The Client&lt;/h2&gt;
 
