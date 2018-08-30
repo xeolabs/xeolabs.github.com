@@ -24,10 +24,9 @@ engineering components.
 ## Requirements
  
 - Create a WebGL-based viewer for users to interactively view 3D CAD models of products from the client's online catalog
-- Load models exported from **[SolidWorks](https://www.solidworks.com/)**
+- Load files exported from **[SolidWorks](https://www.solidworks.com/)**
 - Realistic, physically-based materials
-- Wireframe and transparent viewing modes
-- Flexible integration into the catalog page 
+- Wireframe and transparent viewing modes 
 
 <!-- SolidComponents had already made some experimental viewers on THREE.js to load STL and OBJ files exported from SolidWorks, but  -->
 <!-- was having difficulty getting the final appearance of the models right using those file formats. -->
@@ -49,17 +48,17 @@ as it appears in SolidWorks.
 
 #### Wireframe
 
-For wireframe views, I'm relying on xeogl to auto-generate wireframe meshes from 3DXML's triangle meshes. For each geometry, 
-xeogl creates a secondary mesh that contains the edges between adjacent triangles whose surface normals deviate from each other 
-by a given threshold, ie. the "hard" edges. This technique eliminates the "inner" edges, which are edges shared by triangles 
-that are part of the same faces. 
+For wireframe views, I'm relying on xeogl to auto-generate wireframe meshes from 3DXML's triangle meshes. 
+
+For each geometry, xeogl creates a second wireframe mesh that contains the edges between adjacent triangles whose surface 
+normals deviate from each other by a given threshold, ie. the "hard" edges. This technique eliminates the "inner" edges, 
+which are edges shared by triangles that are part of the same faces. 
 
 ![]({{ site.url }}/images/solidcomponents/innerEdges.png) | ![]({{ site.url }}/images/solidcomponents/innerEdgesRemoved.png)
 ----|----
 Wireframe with inner edges | Inner edges eliminated
 
-
-WIP
+(work-in-progress)
 
 <!-- #### STL models -->
 

@@ -129,10 +129,9 @@ engineering components.</p>
 
 <ul>
   <li>Create a WebGL-based viewer for users to interactively view 3D CAD models of products from the client’s online catalog</li>
-  <li>Load models exported from <strong><a href="https://www.solidworks.com/">SolidWorks</a></strong></li>
+  <li>Load files exported from <strong><a href="https://www.solidworks.com/">SolidWorks</a></strong></li>
   <li>Realistic, physically-based materials</li>
   <li>Wireframe and transparent viewing modes</li>
-  <li>Flexible integration into the catalog page</li>
 </ul>
 
 <!-- SolidComponents had already made some experimental viewers on THREE.js to load STL and OBJ files exported from SolidWorks, but  -->
@@ -155,10 +154,11 @@ as it appears in SolidWorks.</p>
 
 <h4 id="wireframe">Wireframe</h4>
 
-<p>For wireframe views, I’m relying on xeogl to auto-generate wireframe meshes from 3DXML’s triangle meshes. For each geometry, 
-xeogl creates a secondary mesh that contains the edges between adjacent triangles whose surface normals deviate from each other 
-by a given threshold, ie. the “hard” edges. This technique eliminates the “inner” edges, which are edges shared by triangles 
-that are part of the same faces.</p>
+<p>For wireframe views, I’m relying on xeogl to auto-generate wireframe meshes from 3DXML’s triangle meshes.</p>
+
+<p>For each geometry, xeogl creates a second wireframe mesh that contains the edges between adjacent triangles whose surface 
+normals deviate from each other by a given threshold, ie. the “hard” edges. This technique eliminates the “inner” edges, 
+which are edges shared by triangles that are part of the same faces.</p>
 
 <table>
   <thead>
@@ -175,7 +175,7 @@ that are part of the same faces.</p>
   </tbody>
 </table>
 
-<p>WIP</p>
+<p>(work-in-progress)</p>
 
 <!-- #### STL models -->
 

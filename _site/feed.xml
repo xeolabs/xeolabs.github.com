@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-08-28T06:00:42+00:00</updated>
+<updated>2018-08-30T17:04:18+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -37,10 +37,9 @@ engineering components.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Create a WebGL-based viewer for users to interactively view 3D CAD models of products from the client’s online catalog&lt;/li&gt;
-  &lt;li&gt;Load models exported from &lt;strong&gt;&lt;a href=&quot;https://www.solidworks.com/&quot;&gt;SolidWorks&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Load files exported from &lt;strong&gt;&lt;a href=&quot;https://www.solidworks.com/&quot;&gt;SolidWorks&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;Realistic, physically-based materials&lt;/li&gt;
   &lt;li&gt;Wireframe and transparent viewing modes&lt;/li&gt;
-  &lt;li&gt;Flexible integration into the catalog page&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!-- SolidComponents had already made some experimental viewers on THREE.js to load STL and OBJ files exported from SolidWorks, but  --&gt;
@@ -63,10 +62,11 @@ as it appears in SolidWorks.&lt;/p&gt;
 
 &lt;h4 id=&quot;wireframe&quot;&gt;Wireframe&lt;/h4&gt;
 
-&lt;p&gt;For wireframe views, I’m relying on xeogl to auto-generate wireframe meshes from 3DXML’s triangle meshes. For each geometry, 
-xeogl creates a secondary mesh that contains the edges between adjacent triangles whose surface normals deviate from each other 
-by a given threshold, ie. the “hard” edges. This technique eliminates the “inner” edges, which are edges shared by triangles 
-that are part of the same faces.&lt;/p&gt;
+&lt;p&gt;For wireframe views, I’m relying on xeogl to auto-generate wireframe meshes from 3DXML’s triangle meshes.&lt;/p&gt;
+
+&lt;p&gt;For each geometry, xeogl creates a second wireframe mesh that contains the edges between adjacent triangles whose surface 
+normals deviate from each other by a given threshold, ie. the “hard” edges. This technique eliminates the “inner” edges, 
+which are edges shared by triangles that are part of the same faces.&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -83,7 +83,7 @@ that are part of the same faces.&lt;/p&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;WIP&lt;/p&gt;
+&lt;p&gt;(work-in-progress)&lt;/p&gt;
 
 &lt;!-- #### STL models --&gt;
 
