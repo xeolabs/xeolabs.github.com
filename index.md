@@ -6,7 +6,7 @@ tagline: On the other side of the screen it all looked so easy.
 tags: [about, xeolabs, webgl]
 modified: 27-3-2018
 image:
-  feature: collage-2560.jpg
+  youtube: https://www.youtube.com/embed/MX2kR1dq9fI?rel=0
   credit: xeolabs
   creditlink: http://xeolabs.com
 ---
