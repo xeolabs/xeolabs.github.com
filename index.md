@@ -1,7 +1,7 @@
 ---
 layout: page
 description: "xeolabs - Freelance 3D Web Developer"
-title: Lindsay Kay / Software Engineer
+title: Lindsay Kay / 3D Software Engineer
 tagline: On the other side of the screen it all looked so easy.
 tags: [about, xeolabs, webgl]
 modified: 27-3-2018
@@ -13,7 +13,7 @@ image:
 
 ![Email](../images/email2.png)
 
-<br>I'm a freelance 3D software engineer developing WebGL-based solutions for product visualization, MedViz, BIM and CAD.<br><br>
+<br>I'm a freelance software engineer developing WebGL-based solutions for product visualization, MedViz, BIM and CAD.<br><br>
 Originally from Christchurch, New Zealand, I've lived in Berlin, Germany since 2011.<br><br>
 I graduated with a degree in computer science from the University of Canterbury in 2005. Before that, I studied electronic engineering at the Christchurch Polytechnic.<br><br>
 Some things I've done:
