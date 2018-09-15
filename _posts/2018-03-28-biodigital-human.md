@@ -2,7 +2,7 @@
 layout: biodigital
 title: The BioDigital Human™
 client: BioDigital, NYC, USA
-description: Built the core WebGL rendering technology from scratch for the <b>BioDigital Human</b> anatomy visualization platform, which now serves over 3 million users. 
+description: Built the core WebGL rendering technology for the <b>BioDigital Human</b> anatomy visualization platform, which now serves over 3 million users. 
 thumbnail: human/biodigital-human-platform-thumb.png
 modified: 2018-23-03
 category: portfolio
