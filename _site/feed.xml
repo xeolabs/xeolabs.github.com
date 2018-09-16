@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-09-15T15:31:40+00:00</updated>
+<updated>2018-09-16T09:59:03+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -454,6 +454,10 @@ including an all-in-one solution to visualize, check, edit and share building in
  &lt;br /&gt;&lt;br /&gt;
  &lt;img src=&quot;http://xeolabs.com/images/bimdata/uml.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
+&lt;h4 id=&quot;gltf-models&quot;&gt;glTF models&lt;/h4&gt;
+
+&lt;p&gt;TODO&lt;/p&gt;
+
 &lt;h4 id=&quot;annotations&quot;&gt;Annotations&lt;/h4&gt;
 
 &lt;p&gt;Annotations are notes that users pin to the surface of models. These were based on xeogl’s experimental &lt;a href=&quot;&quot;&gt;Annotation&lt;/a&gt; components. 
@@ -462,23 +466,24 @@ including an all-in-one solution to visualize, check, edit and share building in
 
 &lt;h4 id=&quot;cross-section-views&quot;&gt;Cross-section views&lt;/h4&gt;
 
-&lt;p&gt;The user can create an unlimited number of custom clipping planes, which can be arranged using mouse/touch input. Clipping 
-uses xeogl’s native &lt;a href=&quot;&quot;&gt;Clip&lt;/a&gt; components, which we can interactively arrange using our own fancy editing gizmo. 
+&lt;p&gt;The user can create an unlimited number of custom clipping planes, which they can arrange using mouse/touch input. The clip 
+ planes use xeogl’s native &lt;a href=&quot;&quot;&gt;Clip&lt;/a&gt; components, which users can interactively arrange using our fancy editing gizmo. This 
+ is one of the bits that &lt;a href=&quot;http://www.derschmale.com/&quot;&gt;David Lenaerts&lt;/a&gt; helped out with.
 &lt;br /&gt;&lt;br /&gt;
 &lt;img src=&quot;http://xeolabs.com/images/bimdata/clipping.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;viewcube&quot;&gt;ViewCube&lt;/h4&gt;
 
-&lt;p&gt;The ViewCube is a 3D camera orientation indicator and controller. I implemented it to look and work the same as the 
-Autodesk Research ViewCube. The ViewCube is a 3D object implemented with xeogl, with clickable hotspots that fly the camera 
+&lt;p&gt;Our ViewCube is a 3D camera orientation indicator and controller. I implemented it to look and work the same as the 
+one by Autodesk Research. Our ViewCube is a 3D object implemented with xeogl, with clickable hotspots that fly the camera 
 to various vantage points. 
 &lt;br /&gt;&lt;br /&gt;
 &lt;img src=&quot;http://xeolabs.com/images/bimdata/viewCube.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;emphasis-effects&quot;&gt;Emphasis effects&lt;/h4&gt;
 
-&lt;p&gt;xeogl has various built-in rendering effects such as ghosting and wireframe, which I’m using for highlighting and 
-revealing objects. 
+&lt;p&gt;xeogl has some built-in emphasis effects, such as ghosting and wireframe, which we’re using for highlighting and 
+revealing BIM objects. 
 &lt;br /&gt;&lt;br /&gt;
 &lt;img src=&quot;http://xeolabs.com/images/bimdata/highlight.gif&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;br /&gt;
@@ -487,6 +492,21 @@ Edge emphasis and ghosting effects for X-ray view:
 &lt;img src=&quot;http://xeolabs.com/images/bimdata/ghosting.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;measurement-tools&quot;&gt;Measurement tools&lt;/h4&gt;
+
+&lt;p&gt;TODO&lt;/p&gt;
+
+&lt;h4 id=&quot;camera-navigation&quot;&gt;Camera navigation&lt;/h4&gt;
+
+&lt;p&gt;TODO&lt;/p&gt;
+
+&lt;h4 id=&quot;bcf&quot;&gt;BCF&lt;/h4&gt;
+
+&lt;p&gt;The BIM Collaboration Format (BCF) is an open file format that supports workflow communication in BIM processes. Our BCF system 
+captures the complete visual state of the viewer as a JSON BCF record, along with PNG canvas snapshot.&lt;/p&gt;
+
+&lt;p&gt;TODO&lt;/p&gt;
+
+&lt;h4 id=&quot;object-view&quot;&gt;Object view&lt;/h4&gt;
 
 &lt;p&gt;TODO&lt;/p&gt;
 
@@ -500,11 +520,15 @@ Edge emphasis and ghosting effects for X-ray view:
   &lt;li&gt;&lt;a href=&quot;#requirements&quot; id=&quot;markdown-toc-requirements&quot;&gt;Requirements&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#architecture&quot; id=&quot;markdown-toc-architecture&quot;&gt;Architecture&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#gltf-models&quot; id=&quot;markdown-toc-gltf-models&quot;&gt;glTF models&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#annotations&quot; id=&quot;markdown-toc-annotations&quot;&gt;Annotations&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#cross-section-views&quot; id=&quot;markdown-toc-cross-section-views&quot;&gt;Cross-section views&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#viewcube&quot; id=&quot;markdown-toc-viewcube&quot;&gt;ViewCube&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#emphasis-effects&quot; id=&quot;markdown-toc-emphasis-effects&quot;&gt;Emphasis effects&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#measurement-tools&quot; id=&quot;markdown-toc-measurement-tools&quot;&gt;Measurement tools&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#camera-navigation&quot; id=&quot;markdown-toc-camera-navigation&quot;&gt;Camera navigation&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#bcf&quot; id=&quot;markdown-toc-bcf&quot;&gt;BCF&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#object-view&quot; id=&quot;markdown-toc-object-view&quot;&gt;Object view&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;

@@ -124,7 +124,7 @@ share building information.
 For this job, I also subcontracted <a href="http://www.derschmale.com/">David Lenaerts</a>, a freelance graphics programmer, to help out with 
  the math for 3D gizmo interactions. 
 <br /><br />
- []<img src="http://xeolabs.com/images/bimdata/bimdata.png" alt="" />](http://www.bimdata.io/en/bim-data-en/)</p>
+ <a href="http://www.bimdata.io/en/bim-data-en/"><img src="http://xeolabs.com/images/bimdata/bimdata.png" alt="" /></a></p>
 
 <h2 id="the-client">The Client</h2>
 
@@ -157,6 +157,10 @@ including an all-in-one solution to visualize, check, edit and share building in
  <br /><br />
  <img src="http://xeolabs.com/images/bimdata/uml.png" alt="" /></p>
 
+<h4 id="gltf-models">glTF models</h4>
+
+<p>TODO</p>
+
 <h4 id="annotations">Annotations</h4>
 
 <p>Annotations are notes that users pin to the surface of models. These were based on xeogl’s experimental <a href="">Annotation</a> components. 
@@ -165,23 +169,24 @@ including an all-in-one solution to visualize, check, edit and share building in
 
 <h4 id="cross-section-views">Cross-section views</h4>
 
-<p>The user can create an unlimited number of custom clipping planes, which can be arranged using mouse/touch input. Clipping 
-uses xeogl’s native <a href="">Clip</a> components, which we can interactively arrange using our own fancy editing gizmo. 
+<p>The user can create an unlimited number of custom clipping planes, which they can arrange using mouse/touch input. The clip 
+ planes use xeogl’s native <a href="">Clip</a> components, which users can interactively arrange using our fancy editing gizmo. This 
+ is one of the bits that <a href="http://www.derschmale.com/">David Lenaerts</a> helped out with.
 <br /><br />
 <img src="http://xeolabs.com/images/bimdata/clipping.gif" alt="" /></p>
 
 <h4 id="viewcube">ViewCube</h4>
 
-<p>The ViewCube is a 3D camera orientation indicator and controller. I implemented it to look and work the same as the 
-Autodesk Research ViewCube. The ViewCube is a 3D object implemented with xeogl, with clickable hotspots that fly the camera 
+<p>Our ViewCube is a 3D camera orientation indicator and controller. I implemented it to look and work the same as the 
+one by Autodesk Research. Our ViewCube is a 3D object implemented with xeogl, with clickable hotspots that fly the camera 
 to various vantage points. 
 <br /><br />
 <img src="http://xeolabs.com/images/bimdata/viewCube.gif" alt="" /></p>
 
 <h4 id="emphasis-effects">Emphasis effects</h4>
 
-<p>xeogl has various built-in rendering effects such as ghosting and wireframe, which I’m using for highlighting and 
-revealing objects. 
+<p>xeogl has some built-in emphasis effects, such as ghosting and wireframe, which we’re using for highlighting and 
+revealing BIM objects. 
 <br /><br />
 <img src="http://xeolabs.com/images/bimdata/highlight.gif" alt="" />
 <br /><br />
@@ -190,6 +195,21 @@ Edge emphasis and ghosting effects for X-ray view:
 <img src="http://xeolabs.com/images/bimdata/ghosting.gif" alt="" /></p>
 
 <h4 id="measurement-tools">Measurement tools</h4>
+
+<p>TODO</p>
+
+<h4 id="camera-navigation">Camera navigation</h4>
+
+<p>TODO</p>
+
+<h4 id="bcf">BCF</h4>
+
+<p>The BIM Collaboration Format (BCF) is an open file format that supports workflow communication in BIM processes. Our BCF system 
+captures the complete visual state of the viewer as a JSON BCF record, along with PNG canvas snapshot.</p>
+
+<p>TODO</p>
+
+<h4 id="object-view">Object view</h4>
 
 <p>TODO</p>
 
@@ -203,11 +223,15 @@ Edge emphasis and ghosting effects for X-ray view:
   <li><a href="#requirements" id="markdown-toc-requirements">Requirements</a></li>
   <li><a href="#solution" id="markdown-toc-solution">Solution</a>    <ul>
       <li><a href="#architecture" id="markdown-toc-architecture">Architecture</a></li>
+      <li><a href="#gltf-models" id="markdown-toc-gltf-models">glTF models</a></li>
       <li><a href="#annotations" id="markdown-toc-annotations">Annotations</a></li>
       <li><a href="#cross-section-views" id="markdown-toc-cross-section-views">Cross-section views</a></li>
       <li><a href="#viewcube" id="markdown-toc-viewcube">ViewCube</a></li>
       <li><a href="#emphasis-effects" id="markdown-toc-emphasis-effects">Emphasis effects</a></li>
       <li><a href="#measurement-tools" id="markdown-toc-measurement-tools">Measurement tools</a></li>
+      <li><a href="#camera-navigation" id="markdown-toc-camera-navigation">Camera navigation</a></li>
+      <li><a href="#bcf" id="markdown-toc-bcf">BCF</a></li>
+      <li><a href="#object-view" id="markdown-toc-object-view">Object view</a></li>
     </ul>
   </li>
 </ul>
