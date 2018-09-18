@@ -1,6 +1,6 @@
 ---
 layout: page
-description: "xeolabs - Front-End 3D Web Developer"
+description: "xeolabs - Front-End 3D Development"
 title: Lindsay Kay / Front-End 3D Developer
 tagline: On the other side of the screen it all looked so easy.
 tags: [about, xeolabs, webgl]
@@ -13,7 +13,7 @@ image:
 
 ![Email](../images/email2.png)
 
-<br>I'm a freelance software engineer developing WebGL-based solutions for product visualization, MedViz, BIM and CAD.<br><br>
+<br>I'm a software engineer developing WebGL-based solutions for product visualization, MedViz, BIM and CAD.<br><br>
 Originally from Christchurch, New Zealand, I've lived in Berlin, Germany since 2011.<br><br>
 I graduated with a degree in computer science from the University of Canterbury in 2005. Before that, I studied electronic engineering at the Christchurch Polytechnic.<br><br>
 Some things I've done:
