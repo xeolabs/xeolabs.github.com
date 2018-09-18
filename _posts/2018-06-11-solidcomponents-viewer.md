@@ -44,7 +44,7 @@ WebGL library I created for 3D visualization.
 #### 3DXML
 
 I chose **[3DXML](https://en.wikipedia.org/wiki/3DXML)** as the viewer's file format, since it's the native SolidWorks format and represents the model exactly 
-as it appears in SolidWorks.
+as it appears in SolidWorks.    
 
 #### Wireframe
 
