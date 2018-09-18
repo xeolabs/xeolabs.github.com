@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-09-18T21:18:03+00:00</updated>
+<updated>2018-09-18T21:21:39+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -415,7 +415,7 @@ who came in fresh from academia and added many valuable rendering features.
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
-  <content type="html">&lt;p&gt;In 2018, I built the WebGL-based 3D BIM viewer for &lt;strong&gt;&lt;a href=&quot;http://www.bimdata.io/en/bim-data-en/&quot;&gt;BIMData&lt;/a&gt;&lt;/strong&gt;, a cutting-edge platform to manage your construction projects that provides an all-in-one solution to visualize, check, edit and 
+  <content type="html">&lt;p&gt;In 2018, I built the WebGL-based 3D BIM viewer within &lt;strong&gt;&lt;a href=&quot;http://www.bimdata.io/en/bim-data-en/&quot;&gt;BIMData&lt;/a&gt;&lt;/strong&gt;, a cutting-edge platform to manage your construction projects that provides an all-in-one solution to visualize, check, edit and 
 share building information. 
 &lt;br /&gt;&lt;br /&gt;
 For this job, I also subcontracted &lt;a href=&quot;http://www.derschmale.com/&quot;&gt;David Lenaerts&lt;/a&gt;, a freelance graphics programmer, to help out with 
