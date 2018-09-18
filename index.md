@@ -22,6 +22,7 @@ Some things I've done:
 * Built the **[BIMData](http://www.bimdata.io/en/bim-data-en/)** and **[BIMSurfer](http://bimsurfer.org/)** WebGL-based 3D IFC viewers
 * Created two open source WebGL engines: **[SceneJS](http://scenejs.org)**, one of the first widely-used WebGL engines, and **[xeogl](http://xeogl.org)**, which is used in several commercial IFC and CAD viewers
 * Contributing author on **[OpenGL Insights](http://openglinsights.com/)**
+* Worked remotely with clients in the USA, Netherlands, Sweden, France, Germany and Norway
 
 For more info, check out my **[portfolio]({{ site.url }}/portfolio/)** and **[resume](http://linkedin.com/in/lindsaystanleykay)**.<br><br>Got a project you'd like to discuss? Send me an email!
 
