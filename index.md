@@ -17,8 +17,8 @@ image:
 Originally from Christchurch, New Zealand, I've lived in Berlin, Germany since 2011. I graduated with a degree in computer science from the University of Canterbury in 2005. Before that, I studied electronic engineering at the Christchurch Polytechnic.<br><br>
 Some things I've been working on:
 
-* Built the WebGL rendering tech for **[BioDigital Human](./portfolio/biodigital-human)**, **[BIMData](./portfolio/bimdata)**, **[BIMSurfer](http://bimsurfer.org/)** and **[SolidComponents](./portfolio/solidcomponents-viewer)** 
-* Created two open source WebGL engines: **[xeogl](http://xeogl.org)** and **[SceneJS](http://scenejs.org)**
+* Built the WebGL-based 3D rendering tech for **[BioDigital Human](./portfolio/biodigital-human)**, **[BIMData](./portfolio/bimdata)**, **[BIMSurfer](http://bimsurfer.org/)** and **[SolidComponents](./portfolio/solidcomponents-viewer)** 
+* Created two open source WebGL 3D engines: **[xeogl](http://xeogl.org)** and **[SceneJS](http://scenejs.org)**
 * Contributing author on **[OpenGL Insights](http://openglinsights.com/)**
 
 For more info, please check out my **[portfolio]({{ site.url }}/portfolio/)** and **[resume](http://linkedin.com/in/lindsaystanleykay)**.<br><br>
