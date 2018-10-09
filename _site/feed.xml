@@ -5,13 +5,138 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-09-18T23:14:00+00:00</updated>
+<updated>2018-10-09T20:56:49+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
   <uri>http://xeolabs.com/</uri>
   <email>lindsay.kay@xeolabs.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Bigger Models in xeogl]]></title>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/xeogl-bigmodels" />
+  <id>http://xeolabs.com/articles/xeogl-bigmodels</id>
+  <updated>2018-10-08T00:00:00-00:00</updated>
+  <published>2018-10-09T00:00:00+00:00</published>
+  
+  <author>
+    <name>xeolabs</name>
+    <uri>http://xeolabs.com</uri>
+    <email>lindsay.kay@xeolabs.com</email>
+  </author>
+  <content type="html">&lt;p&gt;BigModel represents a large model within a xeogl Scene.&lt;/p&gt;
+
+&lt;p&gt;BigModel is compatible with WebGL1.&lt;/p&gt;
+
+&lt;p&gt;BimModel extends Object, which gives it the following capabilities:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Can be be plugged into a hierarchy with other Objects.&lt;/li&gt;
+  &lt;li&gt;Has a modeling transform to position, orient and scale it, relative to its parent Object, if any.&lt;/li&gt;
+  &lt;li&gt;Inherits rendering state updates (visibility, highlighted etc) from its parent Object, if any.&lt;/li&gt;
+  &lt;li&gt;Provides its dynamic axis-aligned World-space boundary (AABB).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;BigModel has the following limitations:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;No textures or materials; each object has simply an RGB color and opacity. This is typically not a problem for CAD or BIM.&lt;/li&gt;
+  &lt;li&gt;Flat Lambert-shaded, with no specular highlights. This renders fast because lighting is calculated in the vertex shader. This is not a problem for CAD or BIM either.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For a lower memory footprint, BigModel does not retain geometry data in browser memory and stores it solely in GPU memory as VBOs.&lt;/p&gt;
+
+&lt;p&gt;To further save memory, BigModel does not represent its objects as components, like the other model types do. Instead, BIMObject tracks object state internally, in a compressed format, allowing access to it via IDs and accessor methods, eg:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;objectIds&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myBigModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getObjectIDs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;myBigModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setVisible&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;myObject&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;aabb&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myBigModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getAABB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;myOtherObject&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Internally, BigModel has two types of “rendering layer” that manage the storage and rendering of objects, which I’ll describe in detail below:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Batched - batches geometries in combined VBOs, to render multiple objects with a single draw call, and uses additional vertex attribute buffers to hold per-object rendering state, such as visibility.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Instanced – uses hardware instancing to manage geometries that are heavily reused among objects.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;When an geomtery is shared by N or more objects, then BigModel creates an “instancing” layer that will use WebGL hardware instancing to draw that geometry for each of its object, each instance being rendered using the object’s modeling transform, color and rendering flags.&lt;/p&gt;
+
+&lt;p&gt;When a geometry is shared with less than N objects, then BigModel batches it in a set of uber-VBOs. When a geometry is used by more than one object, BigModel batches multiple duplicates, each copy transformed by its object’s modeling matrix. BigModel stores rendering state for the objects in an additional buffer which contains flags&lt;/p&gt;
+
+&lt;p&gt;Alongside each copy of the geometry arrays, it stores in additional VBOs per-vertex rendering states for that copy’s object.&lt;/p&gt;
+
+&lt;p&gt;BigModel extends Object, which allows it to be&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;plugged into a scene Object hierarchy&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;have a position, scale and orientation (relative to its parent Object, if any)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;have states like visibility, highlighted, selected etc, which can be switched for the whole model&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As mentioned, BigModel’s objects are not components and are instead represented purely as IDs. They are still integrated with the rest of xeogl’s bookkeeping for regular Objects’s however.&lt;/p&gt;
+
+&lt;p&gt;An extra attribute buffer within the VBOs holds the objects’ rendering flags (visibility, edges visible, highlighted, clippability). The flag values for each object are repeated for each of its vertices.&lt;/p&gt;
+
+&lt;p&gt;BigModel renders four passes for each frame:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;opaque objects,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;transparent objects,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;highlighted objects and&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;edges&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;BigModel uses the same triangle mesh shader for passes 1, 2, &amp;amp; 3, indicating to the shader which pass is being rendered via an integer uniform.&lt;/p&gt;
+
+&lt;p&gt;For each pass, the shader only draws the relevant objects, culling irrelevant objects by setting gl_Position to (0,0,0,0) within the vertex stage.&lt;/p&gt;
+
+&lt;p&gt;The vertex shader determines if an object is relevant to the current pass using the flags and the alpha channel of the color attribute. For example: the object is always&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;culled from every pass when invisible flags == false&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;culled from opaque pass when alpha &amp;lt; 1.0,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;culled from transparent pass when alpha == 1.0&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;culled from highlighting pass when highlighted flag == false&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;culled from edges pass when the edges flag == false&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;BigModel tracks the counts of objects that are visible, transparent, highlighted and edge-enhanced, which enables it to skip a pass altogether when there are no objects relevant to it.&lt;/p&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/xeogl-bigmodels&quot;&gt;Bigger Models in xeogl&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 09, 2018.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -147,36 +272,50 @@ which are edges shared by triangles that are part of the same faces.&lt;/p&gt;
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
-  <content type="html">&lt;p&gt;Since 2009, I’ve worked remotely from Berlin, Germany with the team at &lt;a href=&quot;http://biodigital.com&quot;&gt;BioDigital Systems&lt;/a&gt; in Manhattan, New York, to help develop 
-the &lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;BioDigital Human&lt;/a&gt; and its developer API.
+  <content type="html">&lt;p&gt;From 2009 to 2018 I worked remotely from Berlin, Germany with the team at &lt;a href=&quot;http://biodigital.com&quot;&gt;BioDigital Systems&lt;/a&gt; in Manhattan, New York, to help develop 
+and maintain the &lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;BioDigital Human&lt;/a&gt; anatomy visualization platform and its public developer API.
 &lt;br /&gt;&lt;br /&gt;
-We developed the Human on &lt;strong&gt;&lt;a href=&quot;http://scenejs.org&quot;&gt;SceneJS&lt;/a&gt;&lt;/strong&gt;, an open source (MIT) JavaScript library I created for developing 3D graphics applications 
+We developed the Human on &lt;strong&gt;&lt;a href=&quot;http://scenejs.org&quot;&gt;SceneJS&lt;/a&gt;&lt;/strong&gt;, an open source WebGL library I created for developing 3D graphics applications 
 in Web browsers without using plugins. One of the first WebGL engines, SceneJS evolved alongside the WebGL specification, before 
 we eventually made a private version which we adapted specifically for the Human. 
 &lt;br /&gt;&lt;br /&gt;
 In this article, I’m going to describe SceneJS’ journey from a weekend side  project to how we applied it within BioDigital’s 
 Web-based anatomy visualization platform. Ten years down the track, the platform now has over three million 
-registered users and continues to develop, with a growing library of models of anatomy and physical conditions.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h5&gt;Quick links:&lt;/h5&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://scenejs.org&quot;&gt;scenejs.org&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;biodigitalhuman.com&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://slides.com/xeolabs/deck&quot;&gt;Slides from my talk at the Berlin WebGL Meetup&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf&quot;&gt;SceneJS in OpenGL Insights 2012&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;!-- a bunch of awards including a Webby, and has been featured in [WIRED](https://www.wired.com/2012/04/biodigital-human/),  --&gt;
-&lt;!-- the [New York Times](https://www.nytimes.com/2012/01/08/business/the-human-anatomy-animated-with-3-d-technology.html), [ABC News](https://abcnews.go.com/Health/virtual-reality-body-transforming-innovations/story?id=16134453) and TED.  --&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+registered users and continues to develop, with a growing library of models of anatomy and physical conditions.
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;figure&gt;
 	&lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/human/biodigital-human-platform.png&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
-&lt;h2 id=&quot;scenejs-origins&quot;&gt;2005: SceneJS Origins&lt;/h2&gt;
+&lt;h1 id=&quot;contents&quot;&gt;Contents&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#2005--scenejs-origins&quot;&gt;2005: SceneJS Origins&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2006--experiments-with-canvas3d&quot;&gt;2006: Experiments with Canvas3D&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2008--scenejs-open-sourced&quot;&gt;2008: SceneJS Open Sourced&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2009--scenejs-powering-the-biodigital-human&quot;&gt;2009: SceneJS Powering the BioDigital Human&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#human-content-pipeline-origins&quot;&gt;Human Content Pipeline Origins&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#human-developer-api-origins&quot;&gt;Human Developer API Origins&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#using-the-developer-api&quot;&gt;Using the Developer API&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#api-demo--lockheed-martin-ice-storm-integration&quot;&gt;API Demo: Lockheed-Martin ICE STORM Integration&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#smiletrain-virtual-surgery-simulator&quot;&gt;Smiletrain Virtual Surgery Simulator&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2015--scenejs-private-fork&quot;&gt;2015: SceneJS Private Fork&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#scenejs-presentations&quot;&gt;SceneJS Presentations&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#next-steps--xeogl&quot;&gt;Next Steps: xeogl&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#acknowledgements&quot;&gt;Acknowledgements&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- &gt; * [scenejs.org](http://scenejs.org) --&gt;
+&lt;!-- &gt; * [biodigitalhuman.com](http://biodigitalhuman.com) --&gt;
+&lt;!-- &gt; * [Slides from my talk at the Berlin WebGL Meetup](http://slides.com/xeolabs/deck) --&gt;
+&lt;!-- &gt; * [SceneJS in OpenGL Insights 2012](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf) --&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;scenejs-origins&quot;&gt;2005: SceneJS Origins&lt;/h1&gt;
 
 &lt;p&gt;I started SceneJS as a weekend experiment, somewhere around late 2005. Back then, JavaScript wasn’t so fast and friends 
 like &lt;a href=&quot;https://twitter.com/ohunt?lang=en&quot;&gt;@ohunt&lt;/a&gt; were busy writing raytracers on JavaScript that took forever, 
@@ -187,7 +326,7 @@ that to be particularly interactive.
 That early version was even written in completely functional-style JavaScript, and did a ton of garbage collection and scope traversal. I was 
 inspired at the time by LISP and CLOJURE and so perhaps took my fascination with terse scene definitions a little too far!&lt;/p&gt;
 
-&lt;h2 id=&quot;experiments-with-canvas3d&quot;&gt;2006: Experiments with Canvas3D&lt;/h2&gt;
+&lt;h1 id=&quot;experiments-with-canvas3d&quot;&gt;2006: Experiments with Canvas3D&lt;/h1&gt;
 
 &lt;p&gt;Web-based 3D without plugins actually started to look viable in 2006, however, with the Canvas 3D experiments started by &lt;a href=&quot;https://en.wikipedia.org/wiki/Vladimir_Vuki%C4%87evi%C4%87&quot;&gt;Vladimir Vukićević&lt;/a&gt; at Mozilla, and by the end of 
 2007, both Mozilla and Opera had made their own separate implementations. Suddenly, interactive 3D in the browser didn’t 
@@ -222,7 +361,7 @@ was, of course, a &lt;a href=&quot;https://en.wikipedia.org/wiki/Gouraud_shading
 of &lt;a href=&quot;https://en.wikipedia.org/wiki/VRML&quot;&gt;VRML&lt;/a&gt;, which I’d used as a student to visualize data, and by the terse, declarative 
 syntax of &lt;a href=&quot;https://en.wikipedia.org/wiki/JavaFX&quot;&gt;JavaFX&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&quot;scenejs-open-sourced&quot;&gt;2008: SceneJS Open Sourced&lt;/h2&gt;
+&lt;h1 id=&quot;scenejs-open-sourced&quot;&gt;2008: SceneJS Open Sourced&lt;/h1&gt;
 
 &lt;p&gt;My day job back in 2008 (in a cubicle, maintaining a Java-based spam-scrubbing platform) just wasn’t firing my creative circuits. I needed to get back in
  touch with the creative culture that drew me into programming in the first place: 3D graphics, SIGGRAPH journals, cyberpunk 
@@ -231,7 +370,7 @@ syntax of &lt;a href=&quot;https://en.wikipedia.org/wiki/JavaFX&quot;&gt;JavaFX&
 So I quit my job, &lt;a href=&quot;https://github.com/xeolabs/scenejs&quot;&gt;put SceneJS on GitHub&lt;/a&gt;, and devoted my time to getting 
  back into 3D programming, using WebGL.&lt;/p&gt;
 
-&lt;h2 id=&quot;scenejs-powering-the-biodigital-human&quot;&gt;2009: SceneJS Powering the BioDigital Human&lt;/h2&gt;
+&lt;h1 id=&quot;scenejs-powering-the-biodigital-human&quot;&gt;2009: SceneJS Powering the BioDigital Human&lt;/h1&gt;
 
 &lt;p&gt;A little while later, I signed up with BioDigital Systems and we began developing the &lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;BioDigital Human&lt;/a&gt; on SceneJS.&lt;/p&gt;
 
@@ -270,7 +409,7 @@ IFRAME embedded in a 3rd-party container page.
 &lt;br /&gt;&lt;br /&gt;
 One of my inspirations for JSON-RPC was the messaging system that &lt;a href=&quot;https://twitter.com/super_eggbert&quot;&gt;Paul Brunt&lt;/a&gt; had built into his WebGL-based &lt;a href=&quot;http://www.glge.org&quot;&gt;GLGE&lt;/a&gt; engine.&lt;/p&gt;
 
-&lt;h4 id=&quot;using-the-developer-api&quot;&gt;Using the Developer API&lt;/h4&gt;
+&lt;h3 id=&quot;using-the-developer-api&quot;&gt;Using the Developer API&lt;/h3&gt;
 
 &lt;p&gt;To use the API, start by embeding the Human Widget in your page. In the example below, we’ll use the cochlear implant model:&lt;/p&gt;
 
@@ -296,7 +435,7 @@ One of my inspirations for JSON-RPC was the messaging system that &lt;a href=&qu
 
 &lt;p&gt;For more info on what’s possible with the API, sign up with Human and check out the tutorials at &lt;a href=&quot;https://developer.biodigital.com/&quot;&gt;developer.biodigital.com&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h4 id=&quot;api-demo-lockheed-martin-ice-storm-integration&quot;&gt;API Demo: Lockheed-Martin ICE STORM Integration&lt;/h4&gt;
+&lt;h3 id=&quot;api-demo-lockheed-martin-ice-storm-integration&quot;&gt;API Demo: Lockheed-Martin ICE STORM Integration&lt;/h3&gt;
 &lt;p&gt;We used the API for various presentations. For one presentation, we used it to interface the Human with the Lockheed Martin 
 ICE STORM ICU Simulator, so that changes to the patient’s heartbeat and respiration within the simulator were rendered as 
 morph animations within the Human:&lt;/p&gt;
@@ -307,7 +446,7 @@ morph animations within the Human:&lt;/p&gt;
 	heart and lungs using morph targets, synchronized via JSON-RPC with changes to the patient&#39;s condition in the ICE STORM ICU simulator (on the left).&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;h4 id=&quot;smiletrain-virtual-surgery-simulator&quot;&gt;Smiletrain Virtual Surgery Simulator&lt;/h4&gt;
+&lt;h3 id=&quot;smiletrain-virtual-surgery-simulator&quot;&gt;Smiletrain Virtual Surgery Simulator&lt;/h3&gt;
 
 &lt;p&gt;The Human is a platform on which we can build applications. One of the most rewarding of those was the WebGL-based SmileTrain 
 Surgical Cleft Repair Simulator.
@@ -323,7 +462,7 @@ earlier C++ version, which he implemented on OpenSceneGraph.&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;
 That slick Darth Vader Approved UI you’re seeing in Human and Smiletrain is the work of BioDigital front-end engineers Kathia Yau and Avinash Chan.&lt;/p&gt;
 
-&lt;h2 id=&quot;scenejs-private-fork&quot;&gt;2015: SceneJS Private Fork&lt;/h2&gt;
+&lt;h3 id=&quot;scenejs-private-fork&quot;&gt;2015: SceneJS Private Fork&lt;/h3&gt;
 
 &lt;p&gt;In 2015, with the company expanding, &lt;a href=&quot;https://twitter.com/thsherif&quot;&gt;Tarek Sherif&lt;/a&gt; took over my role as 3D programming lead, since it made 
  sense for that job to be a performed on-site by a non-virtual person who could chase people around the office, instead of 
@@ -334,7 +473,7 @@ server, physically-based rendering (PBR), geometry and texture compression, part
 &lt;br /&gt;&lt;br /&gt;
 For the post-effects support, Tarek built an extensible plugin-based architecture based off his own open source WebGL engine, &lt;a href=&quot;https://tsherif.github.io/picogl.js/&quot;&gt;PicoGL&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&quot;scenejs-presentations&quot;&gt;SceneJS Presentations&lt;/h2&gt;
+&lt;h1 id=&quot;scenejs-presentations&quot;&gt;SceneJS Presentations&lt;/h1&gt;
 
 &lt;p&gt;Along the way, I got to write about SceneJS and present it to fellow graphics nerds:&lt;/p&gt;
 
@@ -343,7 +482,7 @@ For the post-effects support, Tarek built an extensible plugin-based architectur
   &lt;li&gt;Talked about SceneJS at the 2015 Berlin WebGL Meetup - &lt;a href=&quot;http://slides.com/xeolabs/deck&quot;&gt;here are the slides&lt;/a&gt; from that talk, with a few embedded live demos.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;next-steps-xeogl&quot;&gt;Next Steps: xeogl&lt;/h2&gt;
+&lt;h1 id=&quot;next-steps-xeogl&quot;&gt;Next Steps: xeogl&lt;/h1&gt;
 
 &lt;p&gt;I’m going to keep making more of these WebGL engines, because there’s never a one-size-fit-all solution (and well, it is a 
 bit of a creative compulsion).
@@ -351,7 +490,7 @@ bit of a creative compulsion).
 The public fork of SceneJS is now archived and no longer under development. However, if you’re looking for a production-proven 
 WebGL-based 3D engine which is currently used in several commercial IFC and CAD viewers, you might find my latest engine useful: &lt;a href=&quot;http://xeogl.org&quot;&gt;http://xeogl.org&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&quot;acknowledgements&quot;&gt;Acknowledgements&lt;/h2&gt;
+&lt;h1 id=&quot;acknowledgements&quot;&gt;Acknowledgements&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Vladimir_Vuki%C4%87evi%C4%87&quot;&gt;Vladimir Vukevic&lt;/a&gt; for kicking WebGL off with his Canvas3D experiments,&lt;/li&gt;
@@ -369,42 +508,13 @@ as &lt;a href=&quot;https://www.linkedin.com/in/jacqueline-chu-7a532558&quot;&gt
 who came in fresh from academia and added many valuable rendering features. 
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
-  &lt;header&gt;
-    &lt;h3&gt;Contents&lt;/h3&gt;
-  &lt;/header&gt;
-&lt;div id=&quot;drawer&quot;&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#scenejs-origins&quot; id=&quot;markdown-toc-scenejs-origins&quot;&gt;2005: SceneJS Origins&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#experiments-with-canvas3d&quot; id=&quot;markdown-toc-experiments-with-canvas3d&quot;&gt;2006: Experiments with Canvas3D&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#scenejs-open-sourced&quot; id=&quot;markdown-toc-scenejs-open-sourced&quot;&gt;2008: SceneJS Open Sourced&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#scenejs-powering-the-biodigital-human&quot; id=&quot;markdown-toc-scenejs-powering-the-biodigital-human&quot;&gt;2009: SceneJS Powering the BioDigital Human&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#human-content-pipeline-origins&quot; id=&quot;markdown-toc-human-content-pipeline-origins&quot;&gt;Human Content Pipeline Origins&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#human-developer-api-origins&quot; id=&quot;markdown-toc-human-developer-api-origins&quot;&gt;Human Developer API Origins&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#using-the-developer-api&quot; id=&quot;markdown-toc-using-the-developer-api&quot;&gt;Using the Developer API&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#api-demo-lockheed-martin-ice-storm-integration&quot; id=&quot;markdown-toc-api-demo-lockheed-martin-ice-storm-integration&quot;&gt;API Demo: Lockheed-Martin ICE STORM Integration&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#smiletrain-virtual-surgery-simulator&quot; id=&quot;markdown-toc-smiletrain-virtual-surgery-simulator&quot;&gt;Smiletrain Virtual Surgery Simulator&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#scenejs-private-fork&quot; id=&quot;markdown-toc-scenejs-private-fork&quot;&gt;2015: SceneJS Private Fork&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#scenejs-presentations&quot; id=&quot;markdown-toc-scenejs-presentations&quot;&gt;SceneJS Presentations&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#next-steps-xeogl&quot; id=&quot;markdown-toc-next-steps-xeogl&quot;&gt;Next Steps: xeogl&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#acknowledgements&quot; id=&quot;markdown-toc-acknowledgements&quot;&gt;Acknowledgements&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-  &lt;/div&gt;
-&lt;/section&gt;
-&lt;!-- /#table-of-contents --&gt;
-
 
   &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/biodigital-human&quot;&gt;The BioDigital Human™&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 28, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
-  <title type="html"><![CDATA[BIMData™ Online BIM Viewer]]></title>
+  <title type="html"><![CDATA[BIMData™ Online 3D BIM Viewer]]></title>
   <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/bimdata" />
   <id>http://xeolabs.com/portfolio/bimdata</id>
   <updated>2018-19-09T00:00:00-00:00</updated>
@@ -415,72 +525,152 @@ who came in fresh from academia and added many valuable rendering features.
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
-  <content type="html">&lt;p&gt;In 2018, I developed the WebGL-based 3D BIM viewer within &lt;strong&gt;&lt;a href=&quot;http://www.bimdata.io/en/bim-data-en/&quot;&gt;BIMData&lt;/a&gt;&lt;/strong&gt;, a cutting-edge platform to manage your construction projects that provides an all-in-one solution to visualize, check, edit and 
-share building information. 
+  <content type="html">&lt;p&gt;In 2018, I worked remotely with &lt;strong&gt;&lt;a href=&quot;http://www.bimdata.io/en/bim-data-en/&quot;&gt;BIMData&lt;/a&gt;&lt;/strong&gt; in Lyon, France, to develop the WebGL-based 3D viewer 
+component of their online building information modeling (BIM) platform.
 &lt;br /&gt;&lt;br /&gt;
-For this job, I also subcontracted &lt;a href=&quot;http://www.derschmale.com/&quot;&gt;David Lenaerts&lt;/a&gt;, a freelance graphics programmer, to help out with 
- the math for 3D gizmo interactions. 
+We developed the viewer on &lt;strong&gt;&lt;a href=&quot;http://xeogl.org&quot;&gt;xeogl&lt;/a&gt;&lt;/strong&gt;, an open source WebGL library I created for developing 
+3D model visualization applications in Web browsers without using plugins.
 &lt;br /&gt;&lt;br /&gt;
- &lt;a href=&quot;http://www.bimdata.io/en/bim-data-en/&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/bimdata/bimdata.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+In this article, I’ll describe how we (TODO)
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;the-client&quot;&gt;The Client&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.bimdata.io/en/bim-data-en/&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/bimdata/bimdata.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://www.bimdata.io/en/bim-data-en/&quot;&gt;BIMData&lt;/a&gt;&lt;/strong&gt; is a company in Nice, France that provides a cutting-edge online platform to manage your construction projects, 
-including an all-in-one solution to visualize, check, edit and share building information.&lt;/p&gt;
-
-&lt;h2 id=&quot;requirements&quot;&gt;Requirements&lt;/h2&gt;
+&lt;h1 id=&quot;contents&quot;&gt;Contents&lt;/h1&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Implement a WebGL-based viewer to view large 3D IFC models online&lt;/li&gt;
-  &lt;li&gt;Load IFC models from glTF&lt;/li&gt;
-  &lt;li&gt;Emphasis effects such as ghosting, highlighting etc.&lt;/li&gt;
-  &lt;li&gt;User annotations&lt;/li&gt;
-  &lt;li&gt;Cross section views&lt;/li&gt;
-  &lt;li&gt;Isolated object views&lt;/li&gt;
-  &lt;li&gt;Measurement tools&lt;/li&gt;
-  &lt;li&gt;A navigation gizmo similar to AutoDesk ViewCube&lt;/li&gt;
-  &lt;li&gt;Orbit, first-person and walking navigation&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#background&quot;&gt;Background&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#the-client&quot;&gt;The Client&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#requirements&quot;&gt;Requirements&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#solution&quot;&gt;Solution&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#architecture&quot;&gt;Architecture&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#gltf-models&quot;&gt;glTF models&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#geometry-compression-and-batching&quot;&gt;Geometry compression and batching&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#annotations&quot;&gt;Annotations&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#cross-section-views&quot;&gt;Cross-section views&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#viewcube&quot;&gt;ViewCube&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#emphasis-effects&quot;&gt;Emphasis effects&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#measurement-tools&quot;&gt;Measurement tools&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#camera-navigation&quot;&gt;Camera navigation&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#bcf&quot;&gt;BCF&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#isolated-object-view&quot;&gt;Isolated object view&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+&lt;h1 id=&quot;background&quot;&gt;Background&lt;/h1&gt;
 
-&lt;p&gt;I implemented the BIM viewer as a wrapper class around &lt;strong&gt;&lt;a href=&quot;http://xeogl.org&quot;&gt;xeogl&lt;/a&gt;&lt;/strong&gt;, which is an open source (MIT) library I created for WebGL-based 3D 
- visualization.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;BIM&lt;/strong&gt; is a process involving the generation and management of digital representations of physical and functional characteristics 
+of buildings, usually while constructing them.
+&lt;br /&gt;&lt;br /&gt; 
+&lt;strong&gt;WebGL&lt;/strong&gt; is (TODO) and allows BIM models to be viewed online. IFC viewers are typically written as desktop apps, which allow 
+them efficiently render huge models via OpenGL/DirectX etc. The browser however (TODO) The challenge is how to engineer 
+things so that work at scale within the browser. WIP!&lt;/p&gt;
 
-&lt;h4 id=&quot;architecture&quot;&gt;Architecture&lt;/h4&gt;
+&lt;h1 id=&quot;the-client&quot;&gt;The Client&lt;/h1&gt;
 
-&lt;p&gt;The viewer is a facade class that wraps xeogl in a set of application-specific functions, and has a plugin architecture 
- into which we can incrementally add various tools and gizmos as we create them.
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://www.bimdata.io/en/bim-data-en/&quot;&gt;BIMData&lt;/a&gt;&lt;/strong&gt; is a company in Lyon, France that provides a cutting-edge online 
+BIM platform to manage your construction projects, including an all-in-one solution to visualize, check, edit and share 
+building information. 
+&lt;br /&gt;&lt;br /&gt;
+Our development team included about eighteen developers, mostly in Lyon, but also&lt;/p&gt;
+
+&lt;h1 id=&quot;requirements&quot;&gt;Requirements&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Implement a WebGL-based viewer in JavaScript, to view large 3D IFC models in Web browsers, without plugins&lt;/li&gt;
+  &lt;li&gt;Load IFC models from glTF&lt;/li&gt;
+  &lt;li&gt;Emphasise and reveal objects using ghosting, wireframing and highlighting&lt;/li&gt;
+  &lt;li&gt;Ability to annotate models with 3D labels&lt;/li&gt;
+  &lt;li&gt;Cross section views&lt;/li&gt;
+  &lt;li&gt;Isolated object views&lt;/li&gt;
+  &lt;li&gt;Measurement tools, to find areas and distances within models&lt;/li&gt;
+  &lt;li&gt;A camera navigation gizmo similar to AutoDesk ViewCube&lt;/li&gt;
+  &lt;li&gt;Orbit, first-person and walk-through navigation modes&lt;/li&gt;
+  &lt;li&gt;Ability to capture and share views via BCF format&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;solution&quot;&gt;Solution&lt;/h1&gt;
+
+&lt;h3 id=&quot;using-xeogl&quot;&gt;Using xeogl&lt;/h3&gt;
+
+&lt;p&gt;I implemented the BIMData viewer as a wrapper around &lt;strong&gt;&lt;a href=&quot;http://xeogl.org&quot;&gt;xeogl&lt;/a&gt;&lt;/strong&gt;, which is an open source (MIT) 
+ library I created for WebGL-based visualization.
+ &lt;br /&gt;&lt;br /&gt;
+ xeogl is also used in other commercial projects and is 
+ starting to receive contributions from other developers. This means that improvements and optimizations that we 
+ make to xeogl for those projects will also benefit the BIMData platform.
+ &lt;br /&gt;&lt;br /&gt;
+Being geared to engineering visualization, xeogl supports many of this project’s requirements out-of-the-box. For the more 
+  application-specific requirements, I extended it with proprietary components, for things like custom camera 
+  controls and interaction widgets.&lt;/p&gt;
+
+&lt;h3 id=&quot;sub-contracting&quot;&gt;Sub-contracting&lt;/h3&gt;
+
+&lt;p&gt;For this job, I sub-contracted &lt;a href=&quot;http://www.derschmale.com/&quot;&gt;David Lenaerts&lt;/a&gt;, a freelance graphics programmer, to help out with 
+the math for 3D gizmo interactions. This was the first time I ever subcontracted anyone, and I’d recommend David to any developer 
+who needs help with their WebGL projects.&lt;/p&gt;
+
+&lt;h3 id=&quot;aplication-architecture&quot;&gt;Aplication architecture&lt;/h3&gt;
+
+&lt;p&gt;Our viewer is a facade class that wraps xeogl in a set of application-specific functions, with a plugin architecture 
+ into which we can add tools and gizmos.
  &lt;br /&gt;&lt;br /&gt;
  &lt;img src=&quot;http://xeolabs.com/images/bimdata/uml.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;gltf-models&quot;&gt;glTF models&lt;/h4&gt;
+&lt;p&gt;This plugin architecture enabled us to deploy the core functionality of the viewer as soon as it was ready, then deploy 
+ various tools and gizmos incrementally, as we developed them.&lt;/p&gt;
 
-&lt;p&gt;TODO&lt;/p&gt;
+&lt;h3 id=&quot;gltf-geometry-pipeline&quot;&gt;glTF geometry pipeline&lt;/h3&gt;
 
-&lt;h4 id=&quot;annotations&quot;&gt;Annotations&lt;/h4&gt;
+&lt;p&gt;We’re using &lt;a href=&quot;https://www.khronos.org/gltf/&quot;&gt;glTF&lt;/a&gt; as the file format for our IFC models.  Within the viewer, we’re 
+loading glTF into the 3D scene using xeogl’s &lt;a href=&quot;http://xeogl.org/docs/classes/GLTFModel.html&quot;&gt;GLTFModel&lt;/a&gt; components.&lt;/p&gt;
 
-&lt;p&gt;Annotations are notes that users pin to the surface of models. These were based on xeogl’s experimental &lt;a href=&quot;&quot;&gt;Annotation&lt;/a&gt; components. 
+&lt;h4 id=&quot;geometry-compression-and-batching&quot;&gt;Geometry compression and batching&lt;/h4&gt;
+
+&lt;p&gt;glTF gives us options for geometry compression, such as Draco and attribute quantization. Quantization 
+is where we compress floating-point geometry arrays into integers, then decompress them on the GPU, within the WebGL shader. 
+This gives us smaller glTF files, plus a smaller memory footprint within the viewer. If the glTF geometry is not 
+compressed, then xeogl’s GLTFModel automatically quantizes it, while also batching it into the same 
+vertex buffer objects (VBOs) to optimize WebGL rendering. This enables us to render models with 200k+ objects.
+&lt;br /&gt;&lt;br /&gt; 
+As soon as WebGL 2 becomes available in enough browsers, xeogl will begin using hardware instancing, which will give 
+us the ability to render even larger models.&lt;/p&gt;
+
+&lt;h3 id=&quot;user-annotations&quot;&gt;User annotations&lt;/h3&gt;
+
+&lt;p&gt;Annotations are notes that users pin to the surface of models. Our annotations are based on xeogl’s experimental 
+&lt;a href=&quot;http://xeogl.org/docs/classes/Annotation.html&quot;&gt;Annotation&lt;/a&gt; components. 
+&lt;br /&gt;&lt;br /&gt;
+These are able to automatically hide themselves whenever something else occludes them in the 3D view. 
 &lt;br /&gt;&lt;br /&gt;
 &lt;img src=&quot;http://xeolabs.com/images/bimdata/annotations.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;cross-section-views&quot;&gt;Cross-section views&lt;/h4&gt;
+&lt;h3 id=&quot;cross-section-views&quot;&gt;Cross-section views&lt;/h3&gt;
 
-&lt;p&gt;The user can create an unlimited number of custom clipping planes, which they can arrange using mouse/touch input. The clip 
- planes use xeogl’s native &lt;a href=&quot;&quot;&gt;Clip&lt;/a&gt; components, which users can interactively arrange using our fancy editing gizmo. This 
- is one of the bits that &lt;a href=&quot;http://www.derschmale.com/&quot;&gt;David Lenaerts&lt;/a&gt; helped out with.
+&lt;p&gt;Our users can create an unlimited number of cross-section planes, which they can arrange using mouse and touch input.
+&lt;br /&gt;&lt;br /&gt;
+Under the hood, our cross-section planes use xeogl’s core &lt;a href=&quot;http://xeogl.org/docs/classes/Clip.html&quot;&gt;Clip&lt;/a&gt; components, 
+which users can interactively arrange using our fancy repositioning gizmo. That was one of the bits 
+that &lt;a href=&quot;http://www.derschmale.com/&quot;&gt;David Lenaerts&lt;/a&gt; helped out with.
 &lt;br /&gt;&lt;br /&gt;
 &lt;img src=&quot;http://xeolabs.com/images/bimdata/clipping.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;viewcube&quot;&gt;ViewCube&lt;/h4&gt;
+&lt;h3 id=&quot;viewcube-camera-controller&quot;&gt;ViewCube camera controller&lt;/h3&gt;
 
-&lt;p&gt;Our ViewCube is a 3D camera orientation indicator and controller. I implemented it to look and work the same as the 
-one by Autodesk Research. Our ViewCube is a 3D object implemented with xeogl, with clickable hotspots that fly the camera 
+&lt;p&gt;Our ViewCube is a 3D camera orientation indicator and controller, which works the same as the 
+one by Autodesk Research. Ours is a 3D gizmo I implemented on xeogl, with clickable hotspots that fly the camera 
 to various vantage points. 
 &lt;br /&gt;&lt;br /&gt;
 &lt;img src=&quot;http://xeolabs.com/images/bimdata/viewCube.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;emphasis-effects&quot;&gt;Emphasis effects&lt;/h4&gt;
+&lt;h3 id=&quot;isolated-object-view&quot;&gt;Isolated object view&lt;/h3&gt;
+
+&lt;h3 id=&quot;emphasis-effects&quot;&gt;Emphasis effects&lt;/h3&gt;
 
 &lt;p&gt;xeogl has some built-in emphasis effects, such as ghosting and wireframe, which we’re using for highlighting and 
 revealing BIM objects. 
@@ -491,54 +681,49 @@ Edge emphasis and ghosting effects for X-ray view:
 &lt;br /&gt;&lt;br /&gt;
 &lt;img src=&quot;http://xeolabs.com/images/bimdata/ghosting.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;measurement-tools&quot;&gt;Measurement tools&lt;/h4&gt;
+&lt;h3 id=&quot;measurement-tools&quot;&gt;Measurement tools&lt;/h3&gt;
 
-&lt;p&gt;TODO&lt;/p&gt;
+&lt;h4 id=&quot;simple-distance&quot;&gt;Simple distance&lt;/h4&gt;
 
-&lt;h4 id=&quot;camera-navigation&quot;&gt;Camera navigation&lt;/h4&gt;
-
-&lt;p&gt;TODO&lt;/p&gt;
-
-&lt;h4 id=&quot;bcf&quot;&gt;BCF&lt;/h4&gt;
-
-&lt;p&gt;The BIM Collaboration Format (BCF) is an open file format that supports workflow communication in BIM processes. Our BCF system 
-captures the complete visual state of the viewer as a JSON BCF record, along with PNG canvas snapshot.&lt;/p&gt;
-
-&lt;p&gt;TODO&lt;/p&gt;
-
-&lt;h4 id=&quot;object-view&quot;&gt;Object view&lt;/h4&gt;
-
-&lt;p&gt;TODO&lt;/p&gt;
-
-&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
-  &lt;header&gt;
-    &lt;h3&gt;Contents&lt;/h3&gt;
-  &lt;/header&gt;
-&lt;div id=&quot;drawer&quot;&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#the-client&quot; id=&quot;markdown-toc-the-client&quot;&gt;The Client&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#requirements&quot; id=&quot;markdown-toc-requirements&quot;&gt;Requirements&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#architecture&quot; id=&quot;markdown-toc-architecture&quot;&gt;Architecture&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#gltf-models&quot; id=&quot;markdown-toc-gltf-models&quot;&gt;glTF models&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#annotations&quot; id=&quot;markdown-toc-annotations&quot;&gt;Annotations&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#cross-section-views&quot; id=&quot;markdown-toc-cross-section-views&quot;&gt;Cross-section views&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#viewcube&quot; id=&quot;markdown-toc-viewcube&quot;&gt;ViewCube&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#emphasis-effects&quot; id=&quot;markdown-toc-emphasis-effects&quot;&gt;Emphasis effects&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#measurement-tools&quot; id=&quot;markdown-toc-measurement-tools&quot;&gt;Measurement tools&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#camera-navigation&quot; id=&quot;markdown-toc-camera-navigation&quot;&gt;Camera navigation&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#bcf&quot; id=&quot;markdown-toc-bcf&quot;&gt;BCF&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#object-view&quot; id=&quot;markdown-toc-object-view&quot;&gt;Object view&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+&lt;ul&gt;
+  &lt;li&gt;uses xeogl 3D surface picking (describe)&lt;/li&gt;
+  &lt;li&gt;xeogl.Pins&lt;/li&gt;
+  &lt;li&gt;custom widget with interactive HTML elements etc&lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;/div&gt;
-&lt;/section&gt;
-&lt;!-- /#table-of-contents --&gt;
+&lt;p&gt;&lt;img src=&quot;http://xeolabs.com/images/bimdata/measureDistance.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;camera-navigation&quot;&gt;Camera navigation&lt;/h3&gt;
+
+&lt;p&gt;TODO&lt;/p&gt;
+
+&lt;h3 id=&quot;bcf&quot;&gt;BCF&lt;/h3&gt;
+
+&lt;p&gt;The BIM Collaboration Format (BCF) is an open file format that supports workflow communication in BIM processes.
+&lt;br /&gt;&lt;br /&gt;
+Our BCF system captures the complete visual state of the viewer as a JSON BCF record, that contains all the 
+relevant viewer state, such as object visibilities and emphasis appearance, camera position, cross-section planes, 
+annotations, as well as PNG snapshot image of the canvas.
+&lt;br /&gt;&lt;br /&gt;
+Users can capture a BCF record of the viewer state, to indicate an issue within a model, then share that with other users, 
+ who can then load that view to see what the problem is.&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+
+&lt;!-- TODO --&gt;
+
+&lt;!-- &lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt; --&gt;
+&lt;p&gt;&lt;!-- &lt;header&gt; --&gt;
+    &lt;!-- &lt;h3&gt;Contents&lt;/h3&gt; --&gt;
+  &lt;!-- &lt;/header&gt; --&gt;
+&lt;!-- &lt;div id=&quot;drawer&quot; markdown=&quot;1&quot;&gt; --&gt;
+&lt;!-- *  Auto generated table of contents --&gt;
+&lt;!-- {:toc} --&gt;
+&lt;!-- &lt;/div&gt; --&gt;
+&lt;!-- &lt;/section&gt;&lt;!--/#table-of-contents--&gt; –&amp;gt;&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/bimdata&quot;&gt;BIMData™ Online BIM Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 26, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/bimdata&quot;&gt;BIMData™ Online 3D BIM Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 26, 2018.&lt;/p&gt;</content>
 </entry>
 
 
@@ -3248,149 +3433,6 @@ into world-space by the inverse view and projection matrices.&lt;/li&gt;
 &lt;/ul&gt;
 
   &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-ray-picking-technique&quot;&gt;Pssst...How Fast Ray Picking Works in SceneJS&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[SceneJS Quick Start]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-quick-start" />
-  <id>http://xeolabs.com/articles/scenejs-quick-start</id>
-  <updated>2013-05-31T00:00:00-00:00</updated>
-  <published>2013-10-28T00:00:00+00:00</published>
-  
-  <author>
-    <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
-    <email>lindsay.kay@xeolabs.com</email>
-  </author>
-  <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
-  &lt;header&gt;
-    &lt;h3&gt;Contents&lt;/h3&gt;
-  &lt;/header&gt;
-&lt;div id=&quot;drawer&quot;&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#first-example&quot; id=&quot;markdown-toc-first-example&quot;&gt;First example&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#download-and-unzip-scenejs-and-plugins&quot; id=&quot;markdown-toc-download-and-unzip-scenejs-and-plugins&quot;&gt;Download and unzip SceneJS and plugins&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#link-to-the-scenejs-library&quot; id=&quot;markdown-toc-link-to-the-scenejs-library&quot;&gt;Link to the SceneJS library&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#point-scenejs-to-the-plugins&quot; id=&quot;markdown-toc-point-scenejs-to-the-plugins&quot;&gt;Point SceneJS to the plugins&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#create-a-scene&quot; id=&quot;markdown-toc-create-a-scene&quot;&gt;Create a scene&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#spin-the-teapot&quot; id=&quot;markdown-toc-spin-the-teapot&quot;&gt;Spin the teapot&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#replace-the-teapot&quot; id=&quot;markdown-toc-replace-the-teapot&quot;&gt;Replace the teapot&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#whats-next&quot; id=&quot;markdown-toc-whats-next&quot;&gt;What’s next?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-  &lt;/div&gt;
-&lt;/section&gt;
-&lt;!-- /#table-of-contents --&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://scenejs.org&quot;&gt;SceneJS&lt;/a&gt; is an extensible WebGL-based engine for doing high-performance 3D visualisation in the browser
-without using plugins.
-&lt;br /&gt;&lt;br /&gt;Let’s start easy, with an example that shows the essential concepts of this engine.&lt;/p&gt;
-
-&lt;h1 id=&quot;first-example&quot;&gt;First example&lt;/h1&gt;
-&lt;p&gt;We’re going to render this spinning Utah teapot:
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=firstExample&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/firstExample.png&quot; alt=&quot;SceneJS First Example&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=firstExample&quot;&gt;Run this example&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;download-and-unzip-scenejs-and-plugins&quot;&gt;Download and unzip SceneJS and plugins&lt;/h3&gt;
-
-&lt;p&gt;Download and unzip the &lt;a href=&quot;http://scenejs.org/api/latest/scenejs.zip&quot;&gt;SceneJS ZIP archive&lt;/a&gt;. Then we’ll have these files:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;.
-├── scenejs.js
-├── plugins
-└── firstExample.html&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;We have the SceneJS library, the SceneJS plugins bundle, and an example HTML page which renders our teapot.
-  &lt;br /&gt;&lt;br /&gt;
-Now let’s look at the essential bits of that &lt;code class=&quot;highlighter-rouge&quot;&gt;firstExample.html&lt;/code&gt; page.&lt;/p&gt;
-
-&lt;h3 id=&quot;link-to-the-scenejs-library&quot;&gt;Link to the SceneJS library&lt;/h3&gt;
-
-&lt;p&gt;Within the &amp;lt;head&amp;gt; tag of the page, we link to the SceneJS library:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;./scenejs.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;point-scenejs-to-the-plugins&quot;&gt;Point SceneJS to the plugins&lt;/h3&gt;
-
-&lt;p&gt;Within the &amp;lt;script&amp;gt; tag, the first thing we do is configure SceneJS to find those plugins:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setConfigs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;pluginPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;./plugins&quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;create-a-scene&quot;&gt;Create a scene&lt;/h3&gt;
-
-&lt;p&gt;Then we go wild and create our spinning blue teapot:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SceneJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;material&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-
-            &lt;span class=&quot;na&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;rotate&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;myRotate&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;na&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-
-                    &lt;span class=&quot;na&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-
-                        &lt;span class=&quot;c1&quot;&gt;// Teapot primitive, implemented by plugin file&lt;/span&gt;
-                        &lt;span class=&quot;c1&quot;&gt;// ./plugins/node/geometry/teapot.js&lt;/span&gt;
-                        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                            &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;geometry/teapot&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                            &lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;myTeapot&quot;&lt;/span&gt;
-                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;spin-the-teapot&quot;&gt;Spin the teapot&lt;/h3&gt;
-
-&lt;p&gt;Finally, we start the teapot spinning:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;myRotate&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;angle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tick&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;myRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setAngle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;angle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;replace-the-teapot&quot;&gt;Replace the teapot&lt;/h3&gt;
-
-&lt;p&gt;Scenes can be built incrementally. Let’s add another teapot&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;myTeapot&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myTeapot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;nx&quot;&gt;myTeapot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;destroy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-
-    &lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;myRotate&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;myRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;geometry/torus&quot;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h1 id=&quot;whats-next&quot;&gt;What’s next?&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/articles/scenejs-creating-a-scene-and-adding-nodes&quot;&gt;Adding and Removing Nodes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-quick-start&quot;&gt;SceneJS Quick Start&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 </feed>

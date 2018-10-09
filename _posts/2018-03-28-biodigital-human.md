@@ -2,7 +2,7 @@
 layout: biodigital
 title: The BioDigital Human™
 client: BioDigital, NYC, USA
-description: Built the core WebGL rendering technology for the <b>BioDigital Human</b> anatomy visualization platform, which now serves over 3 million users. 
+description: Built the core WebGL rendering technology for the <b>BioDigital Human</b> anatomy visualization platform, which now serves over 3 million users. Lead 3D software development from 2009-2015.
 thumbnail: human/biodigital-human-platform-thumb.png
 modified: 2018-23-03
 category: portfolio
@@ -15,34 +15,46 @@ website: http://scenejs.org
 websiteReadible: http://scenejs.org
 ---
 
-Since 2009, I've worked remotely from Berlin, Germany with the team at [BioDigital Systems](http://biodigital.com) in Manhattan, New York, to help develop 
-the [BioDigital Human](http://biodigitalhuman.com) and its developer API.
+From 2009 to 2018 I worked remotely from Berlin, Germany with the team at [BioDigital Systems](http://biodigital.com) in Manhattan, New York, to help develop 
+and maintain the [BioDigital Human](http://biodigitalhuman.com) anatomy visualization platform and its public developer API.
 <br><br>
-We developed the Human on **[SceneJS](http://scenejs.org)**, an open source (MIT) JavaScript library I created for developing 3D graphics applications 
+We developed the Human on **[SceneJS](http://scenejs.org)**, an open source WebGL library I created for developing 3D graphics applications 
 in Web browsers without using plugins. One of the first WebGL engines, SceneJS evolved alongside the WebGL specification, before 
 we eventually made a private version which we adapted specifically for the Human. 
 <br><br>
 In this article, I'm going to describe SceneJS' journey from a weekend side  project to how we applied it within BioDigital's 
 Web-based anatomy visualization platform. Ten years down the track, the platform now has over three million 
 registered users and continues to develop, with a growing library of models of anatomy and physical conditions.
-
-<hr>
-
-<h5>Quick links:</h5>
-* [scenejs.org](http://scenejs.org)
-* [biodigitalhuman.com](http://biodigitalhuman.com)
-* [Slides from my talk at the Berlin WebGL Meetup](http://slides.com/xeolabs/deck)
-* [SceneJS in OpenGL Insights 2012](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf)
-<hr>
-
-<!-- a bunch of awards including a Webby, and has been featured in [WIRED](https://www.wired.com/2012/04/biodigital-human/),  -->
-<!-- the [New York Times](https://www.nytimes.com/2012/01/08/business/the-human-anatomy-animated-with-3-d-technology.html), [ABC News](https://abcnews.go.com/Health/virtual-reality-body-transforming-innovations/story?id=16134453) and TED.  -->
 <br><br>
 <figure>
 	<a href="http://biodigitalhuman.com"><img src="{{ site.url }}/images/human/biodigital-human-platform.png"></a>
 </figure>
 
-## 2005: SceneJS Origins
+# Contents
+
+- [2005: SceneJS Origins](#2005--scenejs-origins)
+- [2006: Experiments with Canvas3D](#2006--experiments-with-canvas3d)
+- [2008: SceneJS Open Sourced](#2008--scenejs-open-sourced)
+- [2009: SceneJS Powering the BioDigital Human](#2009--scenejs-powering-the-biodigital-human)
+  * [Human Content Pipeline Origins](#human-content-pipeline-origins)
+  * [Human Developer API Origins](#human-developer-api-origins)
+  * [Using the Developer API](#using-the-developer-api)
+  * [API Demo: Lockheed-Martin ICE STORM Integration](#api-demo--lockheed-martin-ice-storm-integration)
+  * [Smiletrain Virtual Surgery Simulator](#smiletrain-virtual-surgery-simulator)
+- [2015: SceneJS Private Fork](#2015--scenejs-private-fork)
+- [SceneJS Presentations](#scenejs-presentations)
+- [Next Steps: xeogl](#next-steps--xeogl)
+- [Acknowledgements](#acknowledgements)
+
+
+<!-- > * [scenejs.org](http://scenejs.org) -->
+<!-- > * [biodigitalhuman.com](http://biodigitalhuman.com) -->
+<!-- > * [Slides from my talk at the Berlin WebGL Meetup](http://slides.com/xeolabs/deck) -->
+<!-- > * [SceneJS in OpenGL Insights 2012](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf) -->
+
+<br>
+
+# 2005: SceneJS Origins
 
 I started SceneJS as a weekend experiment, somewhere around late 2005. Back then, JavaScript wasn't so fast and friends 
 like [@ohunt](https://twitter.com/ohunt?lang=en) were busy writing raytracers on JavaScript that took forever, 
@@ -53,7 +65,7 @@ that to be particularly interactive.
 That early version was even written in completely functional-style JavaScript, and did a ton of garbage collection and scope traversal. I was 
 inspired at the time by LISP and CLOJURE and so perhaps took my fascination with terse scene definitions a little too far!     
   
-## 2006: Experiments with Canvas3D
+# 2006: Experiments with Canvas3D
   
 Web-based 3D without plugins actually started to look viable in 2006, however, with the Canvas 3D experiments started by [Vladimir Vukićević](https://en.wikipedia.org/wiki/Vladimir_Vuki%C4%87evi%C4%87) at Mozilla, and by the end of 
 2007, both Mozilla and Opera had made their own separate implementations. Suddenly, interactive 3D in the browser didn't 
@@ -90,7 +102,7 @@ I loved the idea of a 3D world defined declaratively, as pure data. At this poin
 of [VRML](https://en.wikipedia.org/wiki/VRML), which I'd used as a student to visualize data, and by the terse, declarative 
 syntax of [JavaFX](https://en.wikipedia.org/wiki/JavaFX).
 
-## 2008: SceneJS Open Sourced
+# 2008: SceneJS Open Sourced
 
 My day job back in 2008 (in a cubicle, maintaining a Java-based spam-scrubbing platform) just wasn't firing my creative circuits. I needed to get back in
  touch with the creative culture that drew me into programming in the first place: 3D graphics, SIGGRAPH journals, cyberpunk 
@@ -99,7 +111,7 @@ My day job back in 2008 (in a cubicle, maintaining a Java-based spam-scrubbing p
 So I quit my job, [put SceneJS on GitHub](https://github.com/xeolabs/scenejs), and devoted my time to getting 
  back into 3D programming, using WebGL.   
 
-## 2009: SceneJS Powering the BioDigital Human
+# 2009: SceneJS Powering the BioDigital Human
  
 A little while later, I signed up with BioDigital Systems and we began developing the [BioDigital Human](http://biodigitalhuman.com) on SceneJS. 
 
@@ -136,7 +148,7 @@ IFRAME embedded in a 3rd-party container page.
 <br><br>
 One of my inspirations for JSON-RPC was the messaging system that [Paul Brunt](https://twitter.com/super_eggbert) had built into his WebGL-based [GLGE](http://www.glge.org) engine.
  
-#### Using the Developer API
+### Using the Developer API
 
 To use the API, start by embeding the Human Widget in your page. In the example below, we'll use the cochlear implant model:
 {% highlight html %}
@@ -165,7 +177,7 @@ human.send("camera.orbit", { yaw: 90 });
 
 For more info on what's possible with the API, sign up with Human and check out the tutorials at [developer.biodigital.com](https://developer.biodigital.com/).
 
-#### API Demo: Lockheed-Martin ICE STORM Integration
+### API Demo: Lockheed-Martin ICE STORM Integration
 We used the API for various presentations. For one presentation, we used it to interface the Human with the Lockheed Martin 
 ICE STORM ICU Simulator, so that changes to the patient's heartbeat and respiration within the simulator were rendered as 
 morph animations within the Human:
@@ -176,7 +188,7 @@ morph animations within the Human:
 	heart and lungs using morph targets, synchronized via JSON-RPC with changes to the patient's condition in the ICE STORM ICU simulator (on the left).</figcaption>
 </figure> 
 
-#### Smiletrain Virtual Surgery Simulator
+### Smiletrain Virtual Surgery Simulator
 
 The Human is a platform on which we can build applications. One of the most rewarding of those was the WebGL-based SmileTrain 
 Surgical Cleft Repair Simulator.
@@ -192,7 +204,7 @@ earlier C++ version, which he implemented on OpenSceneGraph.
 <br><br>
 That slick Darth Vader Approved UI you're seeing in Human and Smiletrain is the work of BioDigital front-end engineers Kathia Yau and Avinash Chan. 
 
-## 2015: SceneJS Private Fork 
+### 2015: SceneJS Private Fork 
 
 In 2015, with the company expanding, [Tarek Sherif](https://twitter.com/thsherif) took over my role as 3D programming lead, since it made 
  sense for that job to be a performed on-site by a non-virtual person who could chase people around the office, instead of 
@@ -203,14 +215,14 @@ server, physically-based rendering (PBR), geometry and texture compression, part
 <br><br>
 For the post-effects support, Tarek built an extensible plugin-based architecture based off his own open source WebGL engine, [PicoGL](https://tsherif.github.io/picogl.js/).  
 
-## SceneJS Presentations
+# SceneJS Presentations
 
 Along the way, I got to write about SceneJS and present it to fellow graphics nerds:
 
 * Wrote a chapter about SceneJS in *OpenGL Insights* 2012, which you can now [download for free](http://127.0.0.1:4000/pdfs/OpenGLInsights.pdf).
 * Talked about SceneJS at the 2015 Berlin WebGL Meetup - [here are the slides](http://slides.com/xeolabs/deck) from that talk, with a few embedded live demos.
 
-## Next Steps: xeogl
+# Next Steps: xeogl
 
 I'm going to keep making more of these WebGL engines, because there's never a one-size-fit-all solution (and well, it is a 
 bit of a creative compulsion).
@@ -218,7 +230,7 @@ bit of a creative compulsion).
 The public fork of SceneJS is now archived and no longer under development. However, if you're looking for a production-proven 
 WebGL-based 3D engine which is currently used in several commercial IFC and CAD viewers, you might find my latest engine useful: [http://xeogl.org](http://xeogl.org).
 
-## Acknowledgements
+# Acknowledgements
 
  * [Vladimir Vukevic](https://en.wikipedia.org/wiki/Vladimir_Vuki%C4%87evi%C4%87) for kicking WebGL off with his Canvas3D experiments,
  * the [Khronos WebGL Working Group](https://www.khronos.org/) for overseeing the development of the WebGL specification,
@@ -234,15 +246,7 @@ as [Jacqueline Chu](https://www.linkedin.com/in/jacqueline-chu-7a532558) and [Sh
 who came in fresh from academia and added many valuable rendering features. 
 <br><br>
 
-<section id="table-of-contents" class="toc">
-  <header>
-    <h3>Contents</h3>
-  </header>
-<div id="drawer" markdown="1">
-*  Auto generated table of contents
-{:toc}
-</div>
-</section><!-- /#table-of-contents -->
+
 
 
 

@@ -12,18 +12,16 @@ image:
 ---
 
 ![Email](../images/email2.png)
+ 
+<br>I'm a software engineer developing WebGL-based solutions for visualizing nerdy things on the Web.<br><br>
+Originally from Christchurch, New Zealand, I've lived in Berlin, Germany since 2011. I graduated with a degree in computer science from the University of Canterbury in 2005. Before that, I studied electronic engineering at the Christchurch Polytechnic.<br><br>
+Some things I've been working on:
 
-<br>I'm a software engineer developing WebGL-based solutions for product visualization, MedViz, BIM and CAD.<br><br>
-Originally from Christchurch, New Zealand, I've lived in Berlin, Germany since 2011.<br><br>
-I graduated with a degree in computer science from the University of Canterbury in 2005. Before that, I studied electronic engineering at the Christchurch Polytechnic.<br><br>
-Some things I've done:
-
-* Built the core WebGL rendering technology for the **[BioDigital Human](./portfolio/biodigital-human)** anatomy visualization platform, which now serves over 3 million users  
-* Developed the WebGL-based 3D viewers used within **[BIMData](./portfolio/bimdata)**,  **[BIMSurfer](http://bimsurfer.org/)** and **[SolidComponents](./portfolio/solidcomponents-viewer)** 
-* Created two open source WebGL engines: **[SceneJS](http://scenejs.org)**, one of the first widely-used WebGL engines, and **[xeogl](http://xeogl.org)**, which is used in several commercial IFC and CAD viewers
+* Built the WebGL rendering tech for **[BioDigital Human](./portfolio/biodigital-human)**, **[BIMData](./portfolio/bimdata)**, **[BIMSurfer](http://bimsurfer.org/)** and **[SolidComponents](./portfolio/solidcomponents-viewer)** 
+* Created two open source WebGL engines: **[xeogl](http://xeogl.org)** and **[SceneJS](http://scenejs.org)**
 * Contributing author on **[OpenGL Insights](http://openglinsights.com/)**
 
-For more info, check out my **[portfolio]({{ site.url }}/portfolio/)** and **[resume](http://linkedin.com/in/lindsaystanleykay)**.<br><br>
+For more info, please check out my **[portfolio]({{ site.url }}/portfolio/)** and **[resume](http://linkedin.com/in/lindsaystanleykay)**.<br><br>
 
 <br>
 
