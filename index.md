@@ -13,7 +13,7 @@ image:
 
 ![Email](../images/email2.png)
  
-<br>I'm a software engineer developing WebGL-based apps for visualizing nerdy things in 3D on the Web.<br><br>
+<br>I'm a software engineer developing WebGL-based libraries and apps for visualizing nerdy things in 3D on the Web.<br><br>
 Originally from Christchurch, New Zealand, I've lived in Berlin, Germany since 2011.<br><br>
 I graduated with a degree in computer science from the University of Canterbury in 2005. Before that, I studied electronic engineering at the Christchurch Polytechnic.<br><br>
 Some things I've been up to:
