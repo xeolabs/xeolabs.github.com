@@ -19,7 +19,6 @@ Some things I've done:
 
 * Built the WebGL-based 3D rendering tech for the **[BioDigital Human](./portfolio/biodigital-human)**, **[BIMData](./portfolio/bimdata)**, **[BIMSurfer](http://bimsurfer.org/)** and **[SolidComponents](./portfolio/solidcomponents-viewer)** platforms 
 * Created two open source WebGL 3D engines: **[xeogl](http://xeogl.org)** and **[SceneJS](http://scenejs.org)**
-* Tutored programming and algorithms at the **[University of Canturbury](https://www.canterbury.ac.nz/engineering/schools/csse/)**
 * Contributing author on **[OpenGL Insights](http://openglinsights.com/)**
 
 For more info, please check out my **[portfolio]({{ site.url }}/portfolio/)** and **[resume](http://linkedin.com/in/lindsaystanleykay)**.<br><br>
