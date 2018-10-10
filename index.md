@@ -15,10 +15,11 @@ image:
  
 <br>I'm a software engineer developing WebGL-based apps for visualizing nerdy things in 3D on the Web.<br><br>
 Originally from Christchurch, New Zealand, I've lived in Berlin, Germany since 2011. I graduated with a degree in computer science from the University of Canterbury in 2005. Before that, I studied electronic engineering at the Christchurch Polytechnic.<br><br>
-Some things I've been working on:
+Some things I've done:
 
-* Built the WebGL-based 3D rendering tech for **[BioDigital Human](./portfolio/biodigital-human)**, **[BIMData](./portfolio/bimdata)**, **[BIMSurfer](http://bimsurfer.org/)** and **[SolidComponents](./portfolio/solidcomponents-viewer)** 
+* Built the WebGL-based 3D rendering tech for the **[BioDigital Human](./portfolio/biodigital-human)**, **[BIMData](./portfolio/bimdata)**, **[BIMSurfer](http://bimsurfer.org/)** and **[SolidComponents](./portfolio/solidcomponents-viewer)** platforms 
 * Created two open source WebGL 3D engines: **[xeogl](http://xeogl.org)** and **[SceneJS](http://scenejs.org)**
+* Tutored programming and algorithms at the **[University of Canturbury](https://www.canterbury.ac.nz/engineering/schools/csse/)**
 * Contributing author on **[OpenGL Insights](http://openglinsights.com/)**
 
 For more info, please check out my **[portfolio]({{ site.url }}/portfolio/)** and **[resume](http://linkedin.com/in/lindsaystanleykay)**.<br><br>
