@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-10-27T19:56:17+00:00</updated>
+<updated>2018-10-27T20:52:51+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -694,7 +694,7 @@ Edge emphasis and ghosting effects for X-ray view:
 
 &lt;h3 id=&quot;camera-navigation&quot;&gt;Camera navigation&lt;/h3&gt;
 
-&lt;p&gt;TODO&lt;/p&gt;
+&lt;p&gt;WIP&lt;/p&gt;
 
 &lt;h3 id=&quot;bcf&quot;&gt;BCF&lt;/h3&gt;
 
@@ -709,7 +709,7 @@ Users can capture a BCF record of the viewer state, to indicate an issue within 
 
 &lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
 
-&lt;!-- TODO --&gt;
+&lt;p&gt;WIP&lt;/p&gt;
 
 &lt;!-- &lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt; --&gt;
 &lt;p&gt;&lt;!-- &lt;header&gt; --&gt;
