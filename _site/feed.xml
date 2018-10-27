@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-10-10T21:36:41+00:00</updated>
+<updated>2018-10-27T19:56:17+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -531,7 +531,7 @@ component of their online building information modeling (BIM) platform.
 We developed the viewer on &lt;strong&gt;&lt;a href=&quot;http://xeogl.org&quot;&gt;xeogl&lt;/a&gt;&lt;/strong&gt;, an open source WebGL library I created for developing 
 3D model visualization applications in Web browsers without using plugins.
 &lt;br /&gt;&lt;br /&gt;
-In this article, I’ll describe how we (TODO)
+In this article, I’ll describe how we (WIP!)
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.bimdata.io/en/bim-data-en/&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/bimdata/bimdata.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -576,8 +576,7 @@ things so that work at scale within the browser. WIP!&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://www.bimdata.io/en/bim-data-en/&quot;&gt;BIMData&lt;/a&gt;&lt;/strong&gt; is a company in Lyon, France that provides a cutting-edge online 
 BIM platform to manage your construction projects, including an all-in-one solution to visualize, check, edit and share 
 building information. 
-&lt;br /&gt;&lt;br /&gt;
-Our development team included about eighteen developers, mostly in Lyon, but also&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;requirements&quot;&gt;Requirements&lt;/h1&gt;
 
@@ -615,14 +614,14 @@ Being geared to engineering visualization, xeogl supports many of this project�
 the math for 3D gizmo interactions. This was the first time I ever subcontracted anyone, and I’d recommend David to any developer 
 who needs help with their WebGL projects.&lt;/p&gt;
 
-&lt;h3 id=&quot;aplication-architecture&quot;&gt;Aplication architecture&lt;/h3&gt;
+&lt;h3 id=&quot;application-architecture&quot;&gt;Application architecture&lt;/h3&gt;
 
 &lt;p&gt;Our viewer is a facade class that wraps xeogl in a set of application-specific functions, with a plugin architecture 
  into which we can add tools and gizmos.
  &lt;br /&gt;&lt;br /&gt;
- &lt;img src=&quot;http://xeolabs.com/images/bimdata/uml.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This plugin architecture enabled us to deploy the core functionality of the viewer as soon as it was ready, then deploy 
+ &lt;img src=&quot;http://xeolabs.com/images/bimdata/uml.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;br /&gt;
+This plugin architecture enabled us to deploy the core functionality of the viewer as soon as it was ready, then deploy 
  various tools and gizmos incrementally, as we developed them.&lt;/p&gt;
 
 &lt;h3 id=&quot;gltf-geometry-pipeline&quot;&gt;glTF geometry pipeline&lt;/h3&gt;
