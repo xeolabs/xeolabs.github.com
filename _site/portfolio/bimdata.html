@@ -132,27 +132,35 @@ In this article, I’ll describe how we (WIP!)
 <h1 id="contents">Contents</h1>
 
 <ul>
+  <li><a href="#contents">Contents</a></li>
   <li><a href="#background">Background</a></li>
   <li><a href="#the-client">The Client</a></li>
   <li><a href="#requirements">Requirements</a></li>
   <li><a href="#solution">Solution</a>
     <ul>
-      <li><a href="#architecture">Architecture</a></li>
-      <li><a href="#gltf-models">glTF models</a>
+      <li><a href="#using-xeogl">Using xeogl</a></li>
+      <li><a href="#sub-contracting">Sub-contracting</a></li>
+      <li><a href="#application-architecture">Application architecture</a></li>
+      <li><a href="#gltf-geometry-pipeline">glTF geometry pipeline</a>
         <ul>
           <li><a href="#geometry-compression-and-batching">Geometry compression and batching</a></li>
         </ul>
       </li>
-      <li><a href="#annotations">Annotations</a></li>
+      <li><a href="#user-annotations">User annotations</a></li>
       <li><a href="#cross-section-views">Cross-section views</a></li>
-      <li><a href="#viewcube">ViewCube</a></li>
+      <li><a href="#viewcube-camera-controller">ViewCube camera controller</a></li>
+      <li><a href="#isolated-object-view">Isolated object view</a></li>
       <li><a href="#emphasis-effects">Emphasis effects</a></li>
-      <li><a href="#measurement-tools">Measurement tools</a></li>
+      <li><a href="#measurement-tools">Measurement tools</a>
+        <ul>
+          <li><a href="#simple-distance">Simple distance</a></li>
+        </ul>
+      </li>
       <li><a href="#camera-navigation">Camera navigation</a></li>
       <li><a href="#bcf">BCF</a></li>
-      <li><a href="#isolated-object-view">Isolated object view</a></li>
     </ul>
   </li>
+  <li><a href="#conclusion">Conclusion</a></li>
 </ul>
 
 <h1 id="background">Background</h1>
@@ -161,12 +169,12 @@ In this article, I’ll describe how we (WIP!)
 of buildings, usually while constructing them.
 <br /><br /> 
 <strong>WebGL</strong> is is a JavaScript API for rendering interactive 2D and 3D graphics within any compatible web browser, without 
-the use of plug-ins. While IFC viewers are typically written as desktop applications using OpenGL or DirectX, writing them
+the use of plug-ins. While IFC viewers are typically written as desktop applications, using the likes of OpenGL or DirectX, writing them
  on WebGL gives us the advantage of being able to view them on the web. 
  <br /><br />
- With IFC visualization, the challenge is how to engineer a WebGL-based viewer so as to be able to render large quantities 
- of objects within the memory and execution constraints of the browser, since models typically contain very large quantities of 
- elements (think: an individual element for every single fire sprinkler, electrical fitting, light panel etc!).</p>
+ With IFC visualization, the main challenge is how to engineer a WebGL-based viewer that’s able to render huge quantities 
+ of objects within the memory and execution constraints of the browser. After all, IFC models often contain an individual 
+ element for every single fire sprinkler, electrical fitting, light panel, and so on.</p>
 
 <h1 id="the-client">The Client</h1>
 

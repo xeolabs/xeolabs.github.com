@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-10-30T15:02:07+00:00</updated>
+<updated>2018-10-30T16:58:12+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -539,27 +539,35 @@ In this article, I’ll describe how we (WIP!)
 &lt;h1 id=&quot;contents&quot;&gt;Contents&lt;/h1&gt;
 
 &lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#contents&quot;&gt;Contents&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#background&quot;&gt;Background&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#the-client&quot;&gt;The Client&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#requirements&quot;&gt;Requirements&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#solution&quot;&gt;Solution&lt;/a&gt;
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#architecture&quot;&gt;Architecture&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#gltf-models&quot;&gt;glTF models&lt;/a&gt;
+      &lt;li&gt;&lt;a href=&quot;#using-xeogl&quot;&gt;Using xeogl&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#sub-contracting&quot;&gt;Sub-contracting&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#application-architecture&quot;&gt;Application architecture&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#gltf-geometry-pipeline&quot;&gt;glTF geometry pipeline&lt;/a&gt;
         &lt;ul&gt;
           &lt;li&gt;&lt;a href=&quot;#geometry-compression-and-batching&quot;&gt;Geometry compression and batching&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#annotations&quot;&gt;Annotations&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#user-annotations&quot;&gt;User annotations&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#cross-section-views&quot;&gt;Cross-section views&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#viewcube&quot;&gt;ViewCube&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#viewcube-camera-controller&quot;&gt;ViewCube camera controller&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#isolated-object-view&quot;&gt;Isolated object view&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#emphasis-effects&quot;&gt;Emphasis effects&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#measurement-tools&quot;&gt;Measurement tools&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#measurement-tools&quot;&gt;Measurement tools&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#simple-distance&quot;&gt;Simple distance&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#camera-navigation&quot;&gt;Camera navigation&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#bcf&quot;&gt;BCF&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#isolated-object-view&quot;&gt;Isolated object view&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;background&quot;&gt;Background&lt;/h1&gt;
