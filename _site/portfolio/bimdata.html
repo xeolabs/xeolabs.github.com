@@ -160,9 +160,13 @@ In this article, I’ll describe how we (WIP!)
 <p><strong>BIM</strong> is a process involving the generation and management of digital representations of physical and functional characteristics 
 of buildings, usually while constructing them.
 <br /><br /> 
-<strong>WebGL</strong> is (TODO) and allows BIM models to be viewed online. IFC viewers are typically written as desktop apps, which allow 
-them efficiently render huge models via OpenGL/DirectX etc. The browser however (TODO) The challenge is how to engineer 
-things so that work at scale within the browser. WIP!</p>
+<strong>WebGL</strong> is is a JavaScript API for rendering interactive 2D and 3D graphics within any compatible web browser, without 
+the use of plug-ins. While IFC viewers are typically written as desktop applications using OpenGL or DirectX, writing them
+ on WebGL gives us the advantage of being able to view them on the web. 
+ <br /><br />
+ With IFC visualization, the challenge is how to engineer a WebGL-based viewer so as to be able to render large quantities 
+ of objects within the memory and execution constraints of the browser, since models typically contain very large quantities of 
+ elements (think: an individual element for every single fire sprinkler, electrical fitting, light panel etc!).</p>
 
 <h1 id="the-client">The Client</h1>
 
@@ -193,9 +197,8 @@ building information.
 <p>I implemented the BIMData viewer as a wrapper around <strong><a href="http://xeogl.org">xeogl</a></strong>, which is an open source (MIT) 
  library I created for WebGL-based visualization.
  <br /><br />
- xeogl is also used in other commercial projects and is 
- starting to receive contributions from other developers. This means that improvements and optimizations that we 
- make to xeogl for those projects will also benefit the BIMData platform.
+ xeogl is also used in other commercial projects and is starting to receive contributions from other developers. This means 
+ that improvements and optimizations that we make to xeogl for those projects will also benefit the BIMData platform.
  <br /><br />
 Being geared to engineering visualization, xeogl supports many of this project’s requirements out-of-the-box. For the more 
   application-specific requirements, I extended it with proprietary components, for things like custom camera 
