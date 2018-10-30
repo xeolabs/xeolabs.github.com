@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-10-30T17:47:57+00:00</updated>
+<updated>2018-10-30T20:22:59+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -609,8 +609,7 @@ building information.
 
 &lt;h3 id=&quot;using-xeogl&quot;&gt;Using xeogl&lt;/h3&gt;
 
-&lt;p&gt;I implemented the BIMData viewer as a wrapper around &lt;strong&gt;&lt;a href=&quot;http://xeogl.org&quot;&gt;xeogl&lt;/a&gt;&lt;/strong&gt;, which is an open source (MIT) 
- library I created for WebGL-based visualization.
+&lt;p&gt;I implemented the BIMData viewer as a wrapper around &lt;strong&gt;&lt;a href=&quot;http://xeogl.org&quot;&gt;xeogl&lt;/a&gt;&lt;/strong&gt;, which is an open source library I created for WebGL-based visualization.
  &lt;br /&gt;&lt;br /&gt;
  xeogl is also used in other commercial projects and is starting to receive contributions from other developers. This means 
  that improvements and optimizations that we make to xeogl for those projects will also benefit the BIMData platform.
@@ -621,14 +620,13 @@ Being geared to engineering visualization, xeogl supports many of this project�
 
 &lt;h3 id=&quot;sub-contracting&quot;&gt;Sub-contracting&lt;/h3&gt;
 
-&lt;p&gt;For this job, I sub-contracted &lt;a href=&quot;http://www.derschmale.com/&quot;&gt;David Lenaerts&lt;/a&gt;, a freelance graphics programmer, to help out with 
-the math for 3D gizmo interactions. This was the first time I ever subcontracted anyone, and I’d recommend David to any developer 
-who needs help with their WebGL projects.&lt;/p&gt;
+&lt;p&gt;For this job I sub-contracted &lt;a href=&quot;http://www.derschmale.com/&quot;&gt;David Lenaerts&lt;/a&gt;, a freelance graphics programmer, to help out with 
+the math for 3D gizmo interactions. I’d recommend David to any developer who needs help with their WebGL projects.&lt;/p&gt;
 
 &lt;h3 id=&quot;application-architecture&quot;&gt;Application architecture&lt;/h3&gt;
 
 &lt;p&gt;Our viewer is a facade class that wraps xeogl in a set of application-specific functions, with a plugin architecture 
- into which we can add tools and gizmos.
+ into which we can incrementally add tools and gizmos.
  &lt;br /&gt;&lt;br /&gt;
  &lt;img src=&quot;http://xeolabs.com/images/bimdata/uml.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;br /&gt;
@@ -644,14 +642,16 @@ loading glTF into the 3D scene using xeogl’s &lt;a href=&quot;http://xeogl.org
 
 &lt;p&gt;glTF gives us options for geometry compression, such as attribute quantization, in which floating-point geometry arrays are 
 compressed into integers, then decompressed on-the-fly within the WebGL vertex shader. This gives us smaller glTF files, a smaller 
-viewer memory footprint, and reduced usage of GPU bandwidth. 
+viewer memory footprint and reduced usage of GPU bandwidth. 
 &lt;br /&gt;&lt;br /&gt;
-When the glTF geometry is not quantized, then xeogl’s GLTFModel automatically quantizes it while loading. At the same time, xeogl also 
+When the glTF geometry is not quantized, then xeogl automatically quantizes it while loading. At the same time, xeogl also 
 automatically combines geometries from multiple objects into the same vertex buffer objects (VBOs), in order to reduce the number of 
-VBO bind operations performed per frame. This currently enables us to render models up to around 200k+ objects.
-&lt;br /&gt;&lt;br /&gt; 
-For the next version of xeogl (v0.9), I’m currently adding geometry batching in combination with 
+VBO binds per frame. This enables us to render models up to around 200k+ objects.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;For the next version of xeogl (v0.9), I’m currently adding geometry batching in combination with 
 instancing (using the ANGLE_instanced_arrays extension), which will enable BIMData to load millions of objects.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h3 id=&quot;user-annotations&quot;&gt;User annotations&lt;/h3&gt;
 
@@ -666,7 +666,7 @@ These are able to automatically hide themselves whenever something else occludes
 
 &lt;p&gt;Our users can create an unlimited number of cross-section planes, which they can arrange using mouse and touch input.
 &lt;br /&gt;&lt;br /&gt;
-Under the hood, our cross-section planes use xeogl’s core &lt;a href=&quot;http://xeogl.org/docs/classes/Clip.html&quot;&gt;Clip&lt;/a&gt; components, 
+Under the hood, our cross-section planes use xeogl’s &lt;a href=&quot;http://xeogl.org/docs/classes/Clip.html&quot;&gt;Clip&lt;/a&gt; components, 
 which users can interactively arrange using our fancy repositioning gizmo. That was one of the bits 
 that &lt;a href=&quot;http://www.derschmale.com/&quot;&gt;David Lenaerts&lt;/a&gt; helped out with.
 &lt;br /&gt;&lt;br /&gt;
@@ -674,7 +674,7 @@ that &lt;a href=&quot;http://www.derschmale.com/&quot;&gt;David Lenaerts&lt;/a&g
 
 &lt;h3 id=&quot;viewcube-camera-controller&quot;&gt;ViewCube camera controller&lt;/h3&gt;
 
-&lt;p&gt;Our ViewCube is a 3D camera orientation indicator and controller, which works the same as the 
+&lt;p&gt;Our &lt;em&gt;ViewCube&lt;/em&gt; is a 3D camera orientation indicator and controller, which works the same as the 
 one by Autodesk Research. Ours is a 3D gizmo I implemented on xeogl, with clickable hotspots that fly the camera 
 to various vantage points. 
 &lt;br /&gt;&lt;br /&gt;
@@ -697,21 +697,23 @@ Edge emphasis and ghosting effects for X-ray view:
 
 &lt;h3 id=&quot;measurement-tools&quot;&gt;Measurement tools&lt;/h3&gt;
 
-&lt;p&gt;WIP&lt;/p&gt;
+&lt;p&gt;Our viewer has a bunch of tools to measure distances, angles and areas.&lt;/p&gt;
 
 &lt;h4 id=&quot;simple-distance&quot;&gt;Simple distance&lt;/h4&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;uses xeogl 3D surface picking (describe)&lt;/li&gt;
-  &lt;li&gt;xeogl.Pins&lt;/li&gt;
-  &lt;li&gt;custom widget with interactive HTML elements etc&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Using the distance measurement tool, users can select a pair of points on the surfaces of objects and get the direct 
+distance between them, as well as the distance on each of the X,Y and Z axis individually. Under the hood, this tool 
+uses xeogl’s 3D picking mechanism, while the distance tool itself is rendered using HTML elements layered over the WebGL canvas.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://xeolabs.com/images/bimdata/measureDistance.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;camera-navigation&quot;&gt;Camera navigation&lt;/h3&gt;
 
-&lt;p&gt;WIP&lt;/p&gt;
+&lt;p&gt;Camera navigation uses a custom xeogl component that allows users to control the camera with mouse and touch input. With our 
+ navigation component, users can orbit a point-of-interest, fly to selected objects, navigate in first-person mode, and “walk” 
+ to a point that they click on.&lt;/p&gt;
+
+&lt;p&gt;TODO: animated gif&lt;/p&gt;
 
 &lt;h3 id=&quot;bcf&quot;&gt;BCF&lt;/h3&gt;
 

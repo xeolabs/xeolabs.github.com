@@ -383,8 +383,8 @@ blockquote {
     padding-left: 20px;
     margin-left: -28px;
     font-family: 'PT Serif', serif;
-    font-size: 24px;
-    font-size: 1.5rem;
+    /*font-size: 24px;*/
+    /*font-size: 1.5rem;*/
     font-style: italic;
     border-left: 8px solid #333332
 }

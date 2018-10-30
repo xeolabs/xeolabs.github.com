@@ -202,8 +202,7 @@ building information.
 
 <h3 id="using-xeogl">Using xeogl</h3>
 
-<p>I implemented the BIMData viewer as a wrapper around <strong><a href="http://xeogl.org">xeogl</a></strong>, which is an open source (MIT) 
- library I created for WebGL-based visualization.
+<p>I implemented the BIMData viewer as a wrapper around <strong><a href="http://xeogl.org">xeogl</a></strong>, which is an open source library I created for WebGL-based visualization.
  <br /><br />
  xeogl is also used in other commercial projects and is starting to receive contributions from other developers. This means 
  that improvements and optimizations that we make to xeogl for those projects will also benefit the BIMData platform.
@@ -214,14 +213,13 @@ Being geared to engineering visualization, xeogl supports many of this project�
 
 <h3 id="sub-contracting">Sub-contracting</h3>
 
-<p>For this job, I sub-contracted <a href="http://www.derschmale.com/">David Lenaerts</a>, a freelance graphics programmer, to help out with 
-the math for 3D gizmo interactions. This was the first time I ever subcontracted anyone, and I’d recommend David to any developer 
-who needs help with their WebGL projects.</p>
+<p>For this job I sub-contracted <a href="http://www.derschmale.com/">David Lenaerts</a>, a freelance graphics programmer, to help out with 
+the math for 3D gizmo interactions. I’d recommend David to any developer who needs help with their WebGL projects.</p>
 
 <h3 id="application-architecture">Application architecture</h3>
 
 <p>Our viewer is a facade class that wraps xeogl in a set of application-specific functions, with a plugin architecture 
- into which we can add tools and gizmos.
+ into which we can incrementally add tools and gizmos.
  <br /><br />
  <img src="http://xeolabs.com/images/bimdata/uml.png" alt="" />
 <br /><br />
@@ -235,14 +233,18 @@ loading glTF into the 3D scene using xeogl’s <a href="http://xeogl.org/docs/cl
 
 <h4 id="geometry-compression-and-batching">Geometry compression and batching</h4>
 
-<p>glTF gives us options for geometry compression, such as Draco and attribute quantization. Quantization 
-is where we compress floating-point geometry arrays into integers, then decompress them on the GPU, within the WebGL shader. 
-This gives us smaller glTF files, plus a smaller memory footprint within the viewer. If the glTF geometry is not 
-compressed, then xeogl’s GLTFModel automatically quantizes it, while also batching it into the same 
-vertex buffer objects (VBOs) to optimize WebGL rendering. This enables us to render models with 200k+ objects.
-<br /><br /> 
-As soon as WebGL 2 becomes available in enough browsers, xeogl will begin using hardware instancing, which will give 
-us the ability to render even larger models.</p>
+<p>glTF gives us options for geometry compression, such as attribute quantization, in which floating-point geometry arrays are 
+compressed into integers, then decompressed on-the-fly within the WebGL vertex shader. This gives us smaller glTF files, a smaller 
+viewer memory footprint and reduced usage of GPU bandwidth. 
+<br /><br />
+When the glTF geometry is not quantized, then xeogl automatically quantizes it while loading. At the same time, xeogl also 
+automatically combines geometries from multiple objects into the same vertex buffer objects (VBOs), in order to reduce the number of 
+VBO binds per frame. This enables us to render models up to around 200k+ objects.</p>
+
+<blockquote>
+  <p>For the next version of xeogl (v0.9), I’m currently adding geometry batching in combination with 
+instancing (using the ANGLE_instanced_arrays extension), which will enable BIMData to load millions of objects.</p>
+</blockquote>
 
 <h3 id="user-annotations">User annotations</h3>
 
@@ -257,7 +259,7 @@ These are able to automatically hide themselves whenever something else occludes
 
 <p>Our users can create an unlimited number of cross-section planes, which they can arrange using mouse and touch input.
 <br /><br />
-Under the hood, our cross-section planes use xeogl’s core <a href="http://xeogl.org/docs/classes/Clip.html">Clip</a> components, 
+Under the hood, our cross-section planes use xeogl’s <a href="http://xeogl.org/docs/classes/Clip.html">Clip</a> components, 
 which users can interactively arrange using our fancy repositioning gizmo. That was one of the bits 
 that <a href="http://www.derschmale.com/">David Lenaerts</a> helped out with.
 <br /><br />
@@ -265,13 +267,15 @@ that <a href="http://www.derschmale.com/">David Lenaerts</a> helped out with.
 
 <h3 id="viewcube-camera-controller">ViewCube camera controller</h3>
 
-<p>Our ViewCube is a 3D camera orientation indicator and controller, which works the same as the 
+<p>Our <em>ViewCube</em> is a 3D camera orientation indicator and controller, which works the same as the 
 one by Autodesk Research. Ours is a 3D gizmo I implemented on xeogl, with clickable hotspots that fly the camera 
 to various vantage points. 
 <br /><br />
 <img src="http://xeolabs.com/images/bimdata/viewCube.gif" alt="" /></p>
 
 <h3 id="isolated-object-view">Isolated object view</h3>
+
+<p>WIP</p>
 
 <h3 id="emphasis-effects">Emphasis effects</h3>
 
@@ -286,19 +290,23 @@ Edge emphasis and ghosting effects for X-ray view:
 
 <h3 id="measurement-tools">Measurement tools</h3>
 
+<p>Our viewer has a bunch of tools to measure distances, angles and areas.</p>
+
 <h4 id="simple-distance">Simple distance</h4>
 
-<ul>
-  <li>uses xeogl 3D surface picking (describe)</li>
-  <li>xeogl.Pins</li>
-  <li>custom widget with interactive HTML elements etc</li>
-</ul>
+<p>Using the distance measurement tool, users can select a pair of points on the surfaces of objects and get the direct 
+distance between them, as well as the distance on each of the X,Y and Z axis individually. Under the hood, this tool 
+uses xeogl’s 3D picking mechanism, while the distance tool itself is rendered using HTML elements layered over the WebGL canvas.</p>
 
 <p><img src="http://xeolabs.com/images/bimdata/measureDistance.gif" alt="" /></p>
 
 <h3 id="camera-navigation">Camera navigation</h3>
 
-<p>WIP</p>
+<p>Camera navigation uses a custom xeogl component that allows users to control the camera with mouse and touch input. With our 
+ navigation component, users can orbit a point-of-interest, fly to selected objects, navigate in first-person mode, and “walk” 
+ to a point that they click on.</p>
+
+<p>TODO: animated gif</p>
 
 <h3 id="bcf">BCF</h3>
 
