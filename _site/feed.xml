@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-10-29T11:49:32+00:00</updated>
+<updated>2018-10-30T12:56:04+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -567,9 +567,12 @@ In this article, I’ll describe how we (WIP!)
 &lt;p&gt;&lt;strong&gt;BIM&lt;/strong&gt; is a process involving the generation and management of digital representations of physical and functional characteristics 
 of buildings, usually while constructing them.
 &lt;br /&gt;&lt;br /&gt; 
-&lt;strong&gt;WebGL&lt;/strong&gt; is (TODO) and allows BIM models to be viewed online. IFC viewers are typically written as desktop apps, which allow 
-them efficiently render huge models via OpenGL/DirectX etc. The browser however (TODO) The challenge is how to engineer 
-things so that work at scale within the browser. WIP!&lt;/p&gt;
+&lt;strong&gt;WebGL&lt;/strong&gt; is is a JavaScript API for rendering interactive 2D and 3D graphics within any compatible web browser, without 
+the use of plug-ins. While IFC viewers are typically written as desktop applications using OpenGL or DirectX, writing them
+ on WebGL gives us the advantage of being able to view them on the web. 
+ &lt;br /&gt;&lt;br /&gt;
+ The challenge is how to engineer the viewer so as to be able to render large quantities of objects within the memory and 
+ execution constraints of the browser.&lt;/p&gt;
 
 &lt;h1 id=&quot;the-client&quot;&gt;The Client&lt;/h1&gt;
 
