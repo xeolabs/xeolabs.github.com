@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-10-31T19:08:17+00:00</updated>
+<updated>2018-10-31T19:10:38+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -176,7 +176,7 @@ In this article, I’ll describe some of the features that I implemented within 
 
 &lt;h1 id=&quot;the-client&quot;&gt;The Client&lt;/h1&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://www.solidcomponents.com&quot;&gt;SolidComponents™&lt;/a&gt;&lt;/strong&gt;, based in Halmstad, Sweden, provides an online catalog of 
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://www.solidcomponents.com&quot;&gt;SolidComponents™&lt;/a&gt;&lt;/strong&gt; is a company based in Halmstad, Sweden that provides an online catalog of 
 engineering components. For each component, the catalog provides an image, a table of attributes, and a downloadable 
 &lt;a href=&quot;https://en.wikipedia.org/wiki/3DXML&quot;&gt;3DXML&lt;/a&gt; CAD model that was originally created in SolidWorks.&lt;/p&gt;
 
