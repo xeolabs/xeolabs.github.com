@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-10-31T19:10:38+00:00</updated>
+<updated>2018-10-31T19:20:05+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -177,13 +177,13 @@ In this article, I’ll describe some of the features that I implemented within 
 &lt;h1 id=&quot;the-client&quot;&gt;The Client&lt;/h1&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://www.solidcomponents.com&quot;&gt;SolidComponents™&lt;/a&gt;&lt;/strong&gt; is a company based in Halmstad, Sweden that provides an online catalog of 
-engineering components. For each component, the catalog provides an image, a table of attributes, and a downloadable 
+engineering components. For each component, the catalog provides a static image, a table of attributes, and a downloadable 
 &lt;a href=&quot;https://en.wikipedia.org/wiki/3DXML&quot;&gt;3DXML&lt;/a&gt; CAD model that was originally created in SolidWorks.&lt;/p&gt;
 
 &lt;h1 id=&quot;requirements&quot;&gt;Requirements&lt;/h1&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Create a WebGL-based viewer for users to interactively view the 3D CAD model of each product in the catalog&lt;/li&gt;
+  &lt;li&gt;Create a WebGL-based viewer for users to interactively view the 3D model of each product in the catalog&lt;/li&gt;
   &lt;li&gt;Render using realistic, physically-based materials&lt;/li&gt;
   &lt;li&gt;Render wireframe and transparent views&lt;/li&gt;
 &lt;/ul&gt;
@@ -540,7 +540,7 @@ who came in fresh from academia and added many valuable rendering features.
     <email>lindsay.kay@xeolabs.com</email>
   </author>
   <content type="html">&lt;p&gt;In 2018, I worked remotely with &lt;strong&gt;&lt;a href=&quot;http://www.bimdata.io/en/bim-data-en/&quot;&gt;BIMData&lt;/a&gt;&lt;/strong&gt; in Lyon, France, to develop the WebGL-based 3D viewer 
-component of their online building information modeling (BIM) platform.
+within their online building information modeling (BIM) platform.
 &lt;br /&gt;&lt;br /&gt;
 We developed the viewer on &lt;strong&gt;&lt;a href=&quot;http://xeogl.org&quot;&gt;xeogl&lt;/a&gt;&lt;/strong&gt;, an open source WebGL library I created for developing 
 3D model visualization applications in Web browsers without using plugins.

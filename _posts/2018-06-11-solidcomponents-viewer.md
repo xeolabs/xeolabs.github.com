@@ -35,12 +35,12 @@ In this article, I'll describe some of the features that I implemented within th
 # The Client
 
 **[SolidComponents™](https://www.solidcomponents.com)** is a company based in Halmstad, Sweden that provides an online catalog of 
-engineering components. For each component, the catalog provides an image, a table of attributes, and a downloadable 
+engineering components. For each component, the catalog provides a static image, a table of attributes, and a downloadable 
 [3DXML](https://en.wikipedia.org/wiki/3DXML) CAD model that was originally created in SolidWorks.
 
 # Requirements
  
-- Create a WebGL-based viewer for users to interactively view the 3D CAD model of each product in the catalog
+- Create a WebGL-based viewer for users to interactively view the 3D model of each product in the catalog
 - Render using realistic, physically-based materials
 - Render wireframe and transparent views 
 
