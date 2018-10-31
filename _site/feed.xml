@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-10-31T05:08:05+00:00</updated>
+<updated>2018-10-31T19:08:17+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -151,20 +151,41 @@
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
-  <content type="html">&lt;p&gt;&lt;img src=&quot;http://xeolabs.com/images/gear.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  <content type="html">&lt;p&gt;In 2018, I worked remotely with &lt;strong&gt;&lt;a href=&quot;https://www.solidcomponents.com&quot;&gt;SolidComponents™&lt;/a&gt;&lt;/strong&gt; in Halmstad, Sweden, to develop 
+the WebGL-based 3D CAD viewer within their online engineering components catalog.
+&lt;br /&gt;&lt;br /&gt;
+We developed the CAD viewer on &lt;strong&gt;&lt;a href=&quot;http://xeogl.org&quot;&gt;xeogl&lt;/a&gt;&lt;/strong&gt;, an open source WebGL library I created for developing 
+3D model visualization applications in Web browsers without using plugins.
+&lt;br /&gt;&lt;br /&gt;
+In this article, I’ll describe some of the features that I implemented within the CAD viewer.&lt;/p&gt;
 
-&lt;h2 id=&quot;the-client&quot;&gt;The Client&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;http://xeolabs.com/images/gear.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://www.solidcomponents.com&quot;&gt;SolidComponents™&lt;/a&gt;&lt;/strong&gt;, based in Halmstad, Sweden, provides an online catalog of 
-engineering components.&lt;/p&gt;
-
-&lt;h2 id=&quot;requirements&quot;&gt;Requirements&lt;/h2&gt;
+&lt;h1 id=&quot;contents&quot;&gt;Contents&lt;/h1&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Create a WebGL-based viewer for users to interactively view 3D CAD models of products from the client’s online catalog&lt;/li&gt;
-  &lt;li&gt;Load files exported from &lt;strong&gt;&lt;a href=&quot;https://www.solidworks.com/&quot;&gt;SolidWorks&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;Realistic, physically-based materials&lt;/li&gt;
-  &lt;li&gt;Wireframe and transparent viewing modes&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#the-client&quot;&gt;The Client&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#requirements&quot;&gt;Requirements&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#solution&quot;&gt;Solution&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#3dxml&quot;&gt;3DXML&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#wireframe&quot;&gt;Wireframe&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;the-client&quot;&gt;The Client&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://www.solidcomponents.com&quot;&gt;SolidComponents™&lt;/a&gt;&lt;/strong&gt;, based in Halmstad, Sweden, provides an online catalog of 
+engineering components. For each component, the catalog provides an image, a table of attributes, and a downloadable 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/3DXML&quot;&gt;3DXML&lt;/a&gt; CAD model that was originally created in SolidWorks.&lt;/p&gt;
+
+&lt;h1 id=&quot;requirements&quot;&gt;Requirements&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create a WebGL-based viewer for users to interactively view the 3D CAD model of each product in the catalog&lt;/li&gt;
+  &lt;li&gt;Render using realistic, physically-based materials&lt;/li&gt;
+  &lt;li&gt;Render wireframe and transparent views&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!-- SolidComponents had already made some experimental viewers on THREE.js to load STL and OBJ files exported from SolidWorks, but  --&gt;
@@ -173,25 +194,37 @@ engineering components.&lt;/p&gt;
 &lt;!-- was correctly smooth shading the models, since the face-aligned STL normals are useless for smooth shading, and the  --&gt;
 &lt;!-- vertex-aligned OBJ normals often caused hard edges to appear incorrectly smooth.   --&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+&lt;h1 id=&quot;solution&quot;&gt;Solution&lt;/h1&gt;
+
+&lt;h3 id=&quot;using-xeogl&quot;&gt;Using xeogl&lt;/h3&gt;
 
 &lt;p&gt;I implemented the SolidComponents CAD viewer as a wrapper class around &lt;strong&gt;&lt;a href=&quot;http://xeogl.org&quot;&gt;xeogl&lt;/a&gt;&lt;/strong&gt;, an open source 
 WebGL library I created for 3D visualization.
 &lt;br /&gt;&lt;br /&gt;
 &lt;img src=&quot;http://xeolabs.com/images/solidcomponents/uml.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;dxml&quot;&gt;3DXML&lt;/h4&gt;
+&lt;h3 id=&quot;dxml&quot;&gt;3DXML&lt;/h3&gt;
 
-&lt;p&gt;I chose &lt;strong&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/3DXML&quot;&gt;3DXML&lt;/a&gt;&lt;/strong&gt; as the viewer’s file format, since it’s the native SolidWorks format and represents the model exactly 
-as it appears in SolidWorks.&lt;/p&gt;
+&lt;p&gt;I chose to make the viewer load the downloadable 3DXML model itself, rather than load some other format from SolidWorks, such 
+as STL or OBJ. This way, we’re guaranteed to have a rendition that closely matches the way the 3DXML model looks in 
+SolidWorks. Also, STL and OBJ were not able to express the same materials that we would see in the 3DXML. 
+&lt;br /&gt;&lt;br /&gt;
+A nice feature of 3DXML is that all the files that comprise the model (ie. scene, geometry and material descriptors) are 
+packed into a single ZIP archive that can be loaded in a single HTTP request. Internally, the viewer then unpacks the files within 
+the ZIP archive, converts the XML to JSON, and then parses the JSON using a recursive descent parser, to create the various 
+3D objects within the xeogl scene graph.&lt;/p&gt;
 
-&lt;h4 id=&quot;wireframe&quot;&gt;Wireframe&lt;/h4&gt;
+&lt;h3 id=&quot;wireframe&quot;&gt;Wireframe&lt;/h3&gt;
 
-&lt;p&gt;For wireframe views, I’m relying on xeogl to auto-generate wireframe meshes from 3DXML’s triangle meshes.&lt;/p&gt;
+&lt;p&gt;Often, a 3DXML file contains multiple representations of a model, such as solid-shaded and wireframe. In this 
+case, however, we could only rely on it to contain a solid triangle mesh representation. Therefore, for wireframe views, 
+I’m relying on xeogl to auto-generate the wireframe representation from the triangle mesh.&lt;/p&gt;
 
-&lt;p&gt;For each geometry, xeogl creates a second wireframe mesh that contains the edges between adjacent triangles whose surface 
+&lt;blockquote&gt;
+  &lt;p&gt;For each geometry, xeogl creates a second wireframe mesh that contains the edges between adjacent triangles whose surface 
 normals deviate from each other by a given threshold, ie. the “hard” edges. This technique eliminates the “inner” edges, 
 which are edges shared by triangles that are part of the same faces.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -235,25 +268,6 @@ which are edges shared by triangles that are part of the same faces.&lt;/p&gt;
 &lt;!-- crease. --&gt;
 &lt;!-- &lt;br&gt;&lt;br&gt; --&gt;
 &lt;p&gt;&lt;!--  --&gt;&lt;/p&gt;
-
-&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
-  &lt;header&gt;
-    &lt;h3&gt;Contents&lt;/h3&gt;
-  &lt;/header&gt;
-&lt;div id=&quot;drawer&quot;&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#the-client&quot; id=&quot;markdown-toc-the-client&quot;&gt;The Client&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#requirements&quot; id=&quot;markdown-toc-requirements&quot;&gt;Requirements&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#dxml&quot; id=&quot;markdown-toc-dxml&quot;&gt;3DXML&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#wireframe&quot; id=&quot;markdown-toc-wireframe&quot;&gt;Wireframe&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-  &lt;/div&gt;
-&lt;/section&gt;
-&lt;!-- /#table-of-contents --&gt;
 
 
   &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/solidcomponents-viewer&quot;&gt;SolidComponents™ Online CAD Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on June 11, 2018.&lt;/p&gt;</content>
@@ -539,7 +553,6 @@ In this article, I’ll describe some of the features that I implemented within 
 &lt;h1 id=&quot;contents&quot;&gt;Contents&lt;/h1&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#contents&quot;&gt;Contents&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#background&quot;&gt;Background&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#the-client&quot;&gt;The Client&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#requirements&quot;&gt;Requirements&lt;/a&gt;&lt;/li&gt;
@@ -686,7 +699,7 @@ to various vantage points.
 
 &lt;h3 id=&quot;emphasis-effects&quot;&gt;Emphasis effects&lt;/h3&gt;
 
-&lt;p&gt;xeogl has some built-in emphasis effects, such as ghosting and wireframe, which we’re using for highlighting and 
+&lt;p&gt;xeogl has some built-in emphasis effects, such as ghosting and wireframe. We’re using those for highlighting and 
 revealing BIM objects. 
 &lt;br /&gt;&lt;br /&gt;
 &lt;img src=&quot;http://xeolabs.com/images/bimdata/highlight.gif&quot; alt=&quot;&quot; /&gt;

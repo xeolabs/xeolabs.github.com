@@ -14,19 +14,35 @@ websiteReadible: https://solidcomponents.com
 tags: [webgl, 3DXML, SolidWorks, CAD, xeogl]
 ---
 
+In 2018, I worked remotely with **[SolidComponents™](https://www.solidcomponents.com)** in Halmstad, Sweden, to develop 
+the WebGL-based 3D CAD viewer within their online engineering components catalog.
+<br><br>
+We developed the CAD viewer on **[xeogl](http://xeogl.org)**, an open source WebGL library I created for developing 
+3D model visualization applications in Web browsers without using plugins.
+<br><br>
+In this article, I'll describe some of the features that I implemented within the CAD viewer.
+
  ![]({{ site.url }}/images/gear.gif)
  
-## The Client
+# Contents
+
+  * [The Client](#the-client)
+  * [Requirements](#requirements)
+  * [Solution](#solution)
+      - [3DXML](#3dxml)
+      - [Wireframe](#wireframe)
+ 
+# The Client
 
 **[SolidComponents™](https://www.solidcomponents.com)**, based in Halmstad, Sweden, provides an online catalog of 
-engineering components.   
+engineering components. For each component, the catalog provides an image, a table of attributes, and a downloadable 
+[3DXML](https://en.wikipedia.org/wiki/3DXML) CAD model that was originally created in SolidWorks.
 
-## Requirements
+# Requirements
  
-- Create a WebGL-based viewer for users to interactively view 3D CAD models of products from the client's online catalog
-- Load files exported from **[SolidWorks](https://www.solidworks.com/)**
-- Realistic, physically-based materials
-- Wireframe and transparent viewing modes 
+- Create a WebGL-based viewer for users to interactively view the 3D CAD model of each product in the catalog
+- Render using realistic, physically-based materials
+- Render wireframe and transparent views 
 
 <!-- SolidComponents had already made some experimental viewers on THREE.js to load STL and OBJ files exported from SolidWorks, but  -->
 <!-- was having difficulty getting the final appearance of the models right using those file formats. -->
@@ -34,23 +50,33 @@ engineering components.
 <!-- was correctly smooth shading the models, since the face-aligned STL normals are useless for smooth shading, and the  -->
 <!-- vertex-aligned OBJ normals often caused hard edges to appear incorrectly smooth.   -->
 
-## Solution
+# Solution
+
+### Using xeogl
 
 I implemented the SolidComponents CAD viewer as a wrapper class around **[xeogl](http://xeogl.org)**, an open source 
 WebGL library I created for 3D visualization.
 <br><br>
 ![]({{ site.url }}/images/solidcomponents/uml.png)
 
-#### 3DXML
+### 3DXML
 
-I chose **[3DXML](https://en.wikipedia.org/wiki/3DXML)** as the viewer's file format, since it's the native SolidWorks format and represents the model exactly 
-as it appears in SolidWorks.    
+I chose to make the viewer load the downloadable 3DXML model itself, rather than load some other format from SolidWorks, such 
+as STL or OBJ. This way, we're guaranteed to have a rendition that closely matches the way the 3DXML model looks in 
+SolidWorks. Also, STL and OBJ were not able to express the same materials that we would see in the 3DXML. 
+<br><br>
+A nice feature of 3DXML is that all the files that comprise the model (ie. scene, geometry and material descriptors) are 
+packed into a single ZIP archive that can be loaded in a single HTTP request. Internally, the viewer then unpacks the files within 
+the ZIP archive, converts the XML to JSON, and then parses the JSON using a recursive descent parser, to create the various 
+3D objects within the xeogl scene graph.
 
-#### Wireframe
+### Wireframe
 
-For wireframe views, I'm relying on xeogl to auto-generate wireframe meshes from 3DXML's triangle meshes. 
+Often, a 3DXML file contains multiple representations of a model, such as solid-shaded and wireframe. In this 
+case, however, we could only rely on it to contain a solid triangle mesh representation. Therefore, for wireframe views, 
+I'm relying on xeogl to auto-generate the wireframe representation from the triangle mesh. 
 
-For each geometry, xeogl creates a second wireframe mesh that contains the edges between adjacent triangles whose surface 
+ > For each geometry, xeogl creates a second wireframe mesh that contains the edges between adjacent triangles whose surface 
 normals deviate from each other by a given threshold, ie. the "hard" edges. This technique eliminates the "inner" edges, 
 which are edges shared by triangles that are part of the same faces. 
 
@@ -87,15 +113,5 @@ Wireframe with inner edges | Inner edges eliminated
 <!-- <br><br> -->
   <!--  -->
 
-
-<section id="table-of-contents" class="toc">
-  <header>
-    <h3>Contents</h3>
-  </header>
-<div id="drawer" markdown="1">
-*  Auto generated table of contents
-{:toc}
-</div>
-</section><!-- /#table-of-contents -->
 
 

@@ -118,20 +118,41 @@
         <p style="font-weight:bold; font-style:italic;"><time datetime="2018-06-11T00:00:00+00:00" itemprop="datePublished">June 11, 2018</time></p>
     </div><!--/ .headline-wrap -->
     <div class="article-wrap" itemprop="text">
-      <p><img src="http://xeolabs.com/images/gear.gif" alt="" /></p>
+      <p>In 2018, I worked remotely with <strong><a href="https://www.solidcomponents.com">SolidComponents™</a></strong> in Halmstad, Sweden, to develop 
+the WebGL-based 3D CAD viewer within their online engineering components catalog.
+<br /><br />
+We developed the CAD viewer on <strong><a href="http://xeogl.org">xeogl</a></strong>, an open source WebGL library I created for developing 
+3D model visualization applications in Web browsers without using plugins.
+<br /><br />
+In this article, I’ll describe some of the features that I implemented within the CAD viewer.</p>
 
-<h2 id="the-client">The Client</h2>
+<p><img src="http://xeolabs.com/images/gear.gif" alt="" /></p>
 
-<p><strong><a href="https://www.solidcomponents.com">SolidComponents™</a></strong>, based in Halmstad, Sweden, provides an online catalog of 
-engineering components.</p>
-
-<h2 id="requirements">Requirements</h2>
+<h1 id="contents">Contents</h1>
 
 <ul>
-  <li>Create a WebGL-based viewer for users to interactively view 3D CAD models of products from the client’s online catalog</li>
-  <li>Load files exported from <strong><a href="https://www.solidworks.com/">SolidWorks</a></strong></li>
-  <li>Realistic, physically-based materials</li>
-  <li>Wireframe and transparent viewing modes</li>
+  <li><a href="#the-client">The Client</a></li>
+  <li><a href="#requirements">Requirements</a></li>
+  <li><a href="#solution">Solution</a>
+    <ul>
+      <li><a href="#3dxml">3DXML</a></li>
+      <li><a href="#wireframe">Wireframe</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="the-client">The Client</h1>
+
+<p><strong><a href="https://www.solidcomponents.com">SolidComponents™</a></strong>, based in Halmstad, Sweden, provides an online catalog of 
+engineering components. For each component, the catalog provides an image, a table of attributes, and a downloadable 
+<a href="https://en.wikipedia.org/wiki/3DXML">3DXML</a> CAD model that was originally created in SolidWorks.</p>
+
+<h1 id="requirements">Requirements</h1>
+
+<ul>
+  <li>Create a WebGL-based viewer for users to interactively view the 3D CAD model of each product in the catalog</li>
+  <li>Render using realistic, physically-based materials</li>
+  <li>Render wireframe and transparent views</li>
 </ul>
 
 <!-- SolidComponents had already made some experimental viewers on THREE.js to load STL and OBJ files exported from SolidWorks, but  -->
@@ -140,25 +161,37 @@ engineering components.</p>
 <!-- was correctly smooth shading the models, since the face-aligned STL normals are useless for smooth shading, and the  -->
 <!-- vertex-aligned OBJ normals often caused hard edges to appear incorrectly smooth.   --></p>
 
-<h2 id="solution">Solution</h2>
+<h1 id="solution">Solution</h1>
+
+<h3 id="using-xeogl">Using xeogl</h3>
 
 <p>I implemented the SolidComponents CAD viewer as a wrapper class around <strong><a href="http://xeogl.org">xeogl</a></strong>, an open source 
 WebGL library I created for 3D visualization.
 <br /><br />
 <img src="http://xeolabs.com/images/solidcomponents/uml.png" alt="" /></p>
 
-<h4 id="dxml">3DXML</h4>
+<h3 id="dxml">3DXML</h3>
 
-<p>I chose <strong><a href="https://en.wikipedia.org/wiki/3DXML">3DXML</a></strong> as the viewer’s file format, since it’s the native SolidWorks format and represents the model exactly 
-as it appears in SolidWorks.</p>
+<p>I chose to make the viewer load the downloadable 3DXML model itself, rather than load some other format from SolidWorks, such 
+as STL or OBJ. This way, we’re guaranteed to have a rendition that closely matches the way the 3DXML model looks in 
+SolidWorks. Also, STL and OBJ were not able to express the same materials that we would see in the 3DXML. 
+<br /><br />
+A nice feature of 3DXML is that all the files that comprise the model (ie. scene, geometry and material descriptors) are 
+packed into a single ZIP archive that can be loaded in a single HTTP request. Internally, the viewer then unpacks the files within 
+the ZIP archive, converts the XML to JSON, and then parses the JSON using a recursive descent parser, to create the various 
+3D objects within the xeogl scene graph.</p>
 
-<h4 id="wireframe">Wireframe</h4>
+<h3 id="wireframe">Wireframe</h3>
 
-<p>For wireframe views, I’m relying on xeogl to auto-generate wireframe meshes from 3DXML’s triangle meshes.</p>
+<p>Often, a 3DXML file contains multiple representations of a model, such as solid-shaded and wireframe. In this 
+case, however, we could only rely on it to contain a solid triangle mesh representation. Therefore, for wireframe views, 
+I’m relying on xeogl to auto-generate the wireframe representation from the triangle mesh.</p>
 
-<p>For each geometry, xeogl creates a second wireframe mesh that contains the edges between adjacent triangles whose surface 
+<blockquote>
+  <p>For each geometry, xeogl creates a second wireframe mesh that contains the edges between adjacent triangles whose surface 
 normals deviate from each other by a given threshold, ie. the “hard” edges. This technique eliminates the “inner” edges, 
 which are edges shared by triangles that are part of the same faces.</p>
+</blockquote>
 
 <table>
   <thead>
@@ -202,25 +235,6 @@ which are edges shared by triangles that are part of the same faces.</p>
 <!-- crease. -->
 <!-- <br><br> -->
 <p><!--  --></p>
-
-<section id="table-of-contents" class="toc">
-  <header>
-    <h3>Contents</h3>
-  </header>
-<div id="drawer">
-<ul id="markdown-toc">
-  <li><a href="#the-client" id="markdown-toc-the-client">The Client</a></li>
-  <li><a href="#requirements" id="markdown-toc-requirements">Requirements</a></li>
-  <li><a href="#solution" id="markdown-toc-solution">Solution</a>    <ul>
-      <li><a href="#dxml" id="markdown-toc-dxml">3DXML</a></li>
-      <li><a href="#wireframe" id="markdown-toc-wireframe">Wireframe</a></li>
-    </ul>
-  </li>
-</ul>
-
-  </div>
-</section>
-<!-- /#table-of-contents -->
 
 
       <hr />
