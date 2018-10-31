@@ -13,7 +13,7 @@ image:
 
 ![Email](../images/email2.png)
  
-<br>I'm a software engineer developing WebGL-based 3D libraries and apps for visualizing BIM, MedViz and CAD on the Web.<br><br>
+<br>I'm a freelance software engineer developing WebGL-based 3D libraries and apps for visualizing BIM, MedViz and CAD on the Web.<br><br>
 Originally from Christchurch, New Zealand, I've lived in Berlin, Germany since 2011.<br><br>
 I graduated with a degree in computer science from the University of Canterbury in 2005. Before that, I studied electronic engineering at the Christchurch Polytechnic.<br><br>
 Some things I've been up to:
