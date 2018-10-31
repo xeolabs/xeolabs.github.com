@@ -1,7 +1,7 @@
 ---
 layout: page
 description: "xeolabs - Front-End 3D Development"
-title: Lindsay Kay / Front-End 3D Developer
+title: Lindsay Kay / 3D Web Developer
 tagline: On the other side of the screen it all looked so easy.
 tags: [about, xeolabs, webgl]
 modified: 27-3-2018
