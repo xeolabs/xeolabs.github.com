@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2018-10-31T19:20:05+00:00</updated>
+<updated>2018-10-31T19:29:36+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -140,146 +140,11 @@
 
 
 <entry>
-  <title type="html"><![CDATA[SolidComponents™ Online CAD Viewer]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/solidcomponents-viewer" />
-  <id>http://xeolabs.com/portfolio/solidcomponents-viewer</id>
-  <updated>2018-07-31T00:00:00-00:00</updated>
-  <published>2018-06-11T00:00:00+00:00</published>
-  
-  <author>
-    <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
-    <email>lindsay.kay@xeolabs.com</email>
-  </author>
-  <content type="html">&lt;p&gt;In 2018, I worked remotely with &lt;strong&gt;&lt;a href=&quot;https://www.solidcomponents.com&quot;&gt;SolidComponents™&lt;/a&gt;&lt;/strong&gt; in Halmstad, Sweden, to develop 
-the WebGL-based 3D CAD viewer within their online engineering components catalog.
-&lt;br /&gt;&lt;br /&gt;
-We developed the CAD viewer on &lt;strong&gt;&lt;a href=&quot;http://xeogl.org&quot;&gt;xeogl&lt;/a&gt;&lt;/strong&gt;, an open source WebGL library I created for developing 
-3D model visualization applications in Web browsers without using plugins.
-&lt;br /&gt;&lt;br /&gt;
-In this article, I’ll describe some of the features that I implemented within the CAD viewer.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://xeolabs.com/images/gear.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;contents&quot;&gt;Contents&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#the-client&quot;&gt;The Client&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#requirements&quot;&gt;Requirements&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#solution&quot;&gt;Solution&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#3dxml&quot;&gt;3DXML&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#wireframe&quot;&gt;Wireframe&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;the-client&quot;&gt;The Client&lt;/h1&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://www.solidcomponents.com&quot;&gt;SolidComponents™&lt;/a&gt;&lt;/strong&gt; is a company based in Halmstad, Sweden that provides an online catalog of 
-engineering components. For each component, the catalog provides a static image, a table of attributes, and a downloadable 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/3DXML&quot;&gt;3DXML&lt;/a&gt; CAD model that was originally created in SolidWorks.&lt;/p&gt;
-
-&lt;h1 id=&quot;requirements&quot;&gt;Requirements&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Create a WebGL-based viewer for users to interactively view the 3D model of each product in the catalog&lt;/li&gt;
-  &lt;li&gt;Render using realistic, physically-based materials&lt;/li&gt;
-  &lt;li&gt;Render wireframe and transparent views&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;!-- SolidComponents had already made some experimental viewers on THREE.js to load STL and OBJ files exported from SolidWorks, but  --&gt;
-&lt;!-- was having difficulty getting the final appearance of the models right using those file formats. --&gt;
-&lt;p&gt;&lt;!-- &lt;br&gt;&lt;br&gt;One of the the trickiest things  --&gt;
-&lt;!-- was correctly smooth shading the models, since the face-aligned STL normals are useless for smooth shading, and the  --&gt;
-&lt;!-- vertex-aligned OBJ normals often caused hard edges to appear incorrectly smooth.   --&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;solution&quot;&gt;Solution&lt;/h1&gt;
-
-&lt;h3 id=&quot;using-xeogl&quot;&gt;Using xeogl&lt;/h3&gt;
-
-&lt;p&gt;I implemented the SolidComponents CAD viewer as a wrapper class around &lt;strong&gt;&lt;a href=&quot;http://xeogl.org&quot;&gt;xeogl&lt;/a&gt;&lt;/strong&gt;, an open source 
-WebGL library I created for 3D visualization.
-&lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;http://xeolabs.com/images/solidcomponents/uml.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;dxml&quot;&gt;3DXML&lt;/h3&gt;
-
-&lt;p&gt;I chose to make the viewer load the downloadable 3DXML model itself, rather than load some other format from SolidWorks, such 
-as STL or OBJ. This way, we’re guaranteed to have a rendition that closely matches the way the 3DXML model looks in 
-SolidWorks. Also, STL and OBJ were not able to express the same materials that we would see in the 3DXML. 
-&lt;br /&gt;&lt;br /&gt;
-A nice feature of 3DXML is that all the files that comprise the model (ie. scene, geometry and material descriptors) are 
-packed into a single ZIP archive that can be loaded in a single HTTP request. Internally, the viewer then unpacks the files within 
-the ZIP archive, converts the XML to JSON, and then parses the JSON using a recursive descent parser, to create the various 
-3D objects within the xeogl scene graph.&lt;/p&gt;
-
-&lt;h3 id=&quot;wireframe&quot;&gt;Wireframe&lt;/h3&gt;
-
-&lt;p&gt;Often, a 3DXML file contains multiple representations of a model, such as solid-shaded and wireframe. In this 
-case, however, we could only rely on it to contain a solid triangle mesh representation. Therefore, for wireframe views, 
-I’m relying on xeogl to auto-generate the wireframe representation from the triangle mesh.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;For each geometry, xeogl creates a second wireframe mesh that contains the edges between adjacent triangles whose surface 
-normals deviate from each other by a given threshold, ie. the “hard” edges. This technique eliminates the “inner” edges, 
-which are edges shared by triangles that are part of the same faces.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;img src=&quot;http://xeolabs.com/images/solidcomponents/innerEdges.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;img src=&quot;http://xeolabs.com/images/solidcomponents/innerEdgesRemoved.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Wireframe with inner edges&lt;/td&gt;
-      &lt;td&gt;Inner edges eliminated&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;(work-in-progress)&lt;/p&gt;
-
-&lt;!-- #### STL models --&gt;
-
-&lt;!-- Initially, I experimented with loading the **[STL](https://en.wikipedia.org/wiki/STL_(file_format))** format, which is also exported by SolidWorks. --&gt;
-&lt;!-- &lt;br&gt;&lt;br&gt; --&gt;
-&lt;!-- ![](http://xeolabs.com/images/solidcomponents/gearWhiteBG.png) --&gt;
-
-&lt;!-- Triangles in STL are disjoint, where each triangle has its own separate vertex positions, normals and  --&gt;
-&lt;!-- (optionally) colors. This means that you can have gaps between triangles. Normals for each triangle are perpendicular to the triangle&#39;s surface, which gives the model a  --&gt;
-&lt;!-- faceted appearance by default. The smoothNormals flag causes the STLModel to recalculate its normals, so that each normal&#39;s  --&gt;
-&lt;!-- direction is the average of the orientations of the triangles adjacent to its vertex. When smoothing, each vertex normal  --&gt;
-&lt;!-- is set to the average of the orientations of all other triangles that have a vertex at the same position, excluding those  --&gt;
-&lt;!-- triangles whose direction deviates from the direction of the vertice&#39;s triangle by a threshold given in smoothNormalsAngleThreshold.  --&gt;
-&lt;!-- This makes smoothing robust for hard edges.  --&gt;
-
-&lt;!-- Normals in STL are face-aligned for a  --&gt;
-&lt;!-- flat-shaded appearance, so I ignored them and relied on xeogl to auto-generate them per-vertex. To handle hard edges  --&gt;
-&lt;!-- correctly, I extended xeogl&#39;s auto-generation to --&gt;
-
-&lt;!-- #### OBJ Models --&gt;
-
-&lt;!-- The client had previously made an experimental viewer on THREE.js that loaded OBJ exported by SolidWorks. However, OBJ contained  --&gt;
-&lt;!-- vertex normals that rendered every edge as smooth-shaded, even when it was &quot;hard&quot; and should have rendered with a  --&gt;
-&lt;!-- crease. --&gt;
-&lt;!-- &lt;br&gt;&lt;br&gt; --&gt;
-&lt;p&gt;&lt;!--  --&gt;&lt;/p&gt;
-
-
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/solidcomponents-viewer&quot;&gt;SolidComponents™ Online CAD Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on June 11, 2018.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
   <title type="html"><![CDATA[The BioDigital Human™]]></title>
   <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/biodigital-human" />
   <id>http://xeolabs.com/portfolio/biodigital-human</id>
   <updated>2018-23-03T00:00:00-00:00</updated>
-  <published>2018-03-28T00:00:00+00:00</published>
+  <published>2018-06-29T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
@@ -523,7 +388,7 @@ who came in fresh from academia and added many valuable rendering features.
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/biodigital-human&quot;&gt;The BioDigital Human™&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 28, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/biodigital-human&quot;&gt;The BioDigital Human™&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on June 29, 2018.&lt;/p&gt;</content>
 </entry>
 
 
@@ -532,7 +397,7 @@ who came in fresh from academia and added many valuable rendering features.
   <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/bimdata" />
   <id>http://xeolabs.com/portfolio/bimdata</id>
   <updated>2018-19-09T00:00:00-00:00</updated>
-  <published>2018-03-26T00:00:00+00:00</published>
+  <published>2018-06-28T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
@@ -742,7 +607,7 @@ Users can capture a BCF record of the viewer state, to indicate an issue within 
 &lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/bimdata&quot;&gt;BIMData™ Online 3D BIM Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 26, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/bimdata&quot;&gt;BIMData™ Online 3D BIM Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on June 28, 2018.&lt;/p&gt;</content>
 </entry>
 
 
@@ -751,7 +616,7 @@ Users can capture a BCF record of the viewer state, to indicate an issue within 
   <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/xeogl-in-bimsurfer" />
   <id>http://xeolabs.com/portfolio/xeogl-in-bimsurfer</id>
   <updated>2018-23-03T00:00:00-00:00</updated>
-  <published>2018-03-25T00:00:00+00:00</published>
+  <published>2018-06-27T00:00:00+00:00</published>
   
   <author>
     <name>xeolabs</name>
@@ -874,7 +739,142 @@ We will review your code and commit it into the official BIM Surfer code base. A
 into our &lt;a href=&quot;https://github.com/opensourcebim/BIMsurfer/issues&quot;&gt;issue tracker&lt;/a&gt;.&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeogl-in-bimsurfer&quot;&gt;BIMSurfer Online BIM Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on March 25, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeogl-in-bimsurfer&quot;&gt;BIMSurfer Online BIM Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on June 27, 2018.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[SolidComponents™ Online CAD Viewer]]></title>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/solidcomponents-viewer" />
+  <id>http://xeolabs.com/portfolio/solidcomponents-viewer</id>
+  <updated>2018-07-31T00:00:00-00:00</updated>
+  <published>2018-06-11T00:00:00+00:00</published>
+  
+  <author>
+    <name>xeolabs</name>
+    <uri>http://xeolabs.com</uri>
+    <email>lindsay.kay@xeolabs.com</email>
+  </author>
+  <content type="html">&lt;p&gt;In 2018, I worked remotely with &lt;strong&gt;&lt;a href=&quot;https://www.solidcomponents.com&quot;&gt;SolidComponents™&lt;/a&gt;&lt;/strong&gt; in Halmstad, Sweden, to develop 
+the WebGL-based 3D CAD viewer within their online engineering components catalog.
+&lt;br /&gt;&lt;br /&gt;
+We developed the CAD viewer on &lt;strong&gt;&lt;a href=&quot;http://xeogl.org&quot;&gt;xeogl&lt;/a&gt;&lt;/strong&gt;, an open source WebGL library I created for developing 
+3D model visualization applications in Web browsers without using plugins.
+&lt;br /&gt;&lt;br /&gt;
+In this article, I’ll describe some of the features that I implemented within the CAD viewer.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://xeolabs.com/images/gear.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;contents&quot;&gt;Contents&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#the-client&quot;&gt;The Client&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#requirements&quot;&gt;Requirements&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#solution&quot;&gt;Solution&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#3dxml&quot;&gt;3DXML&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#wireframe&quot;&gt;Wireframe&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;the-client&quot;&gt;The Client&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://www.solidcomponents.com&quot;&gt;SolidComponents™&lt;/a&gt;&lt;/strong&gt; is a company based in Halmstad, Sweden that provides an online catalog of 
+engineering components. For each component, the catalog provides a static image, a table of attributes, and a downloadable 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/3DXML&quot;&gt;3DXML&lt;/a&gt; CAD model that was originally created in SolidWorks.&lt;/p&gt;
+
+&lt;h1 id=&quot;requirements&quot;&gt;Requirements&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create a WebGL-based viewer for users to interactively view the 3D model of each product in the catalog&lt;/li&gt;
+  &lt;li&gt;Render using realistic, physically-based materials&lt;/li&gt;
+  &lt;li&gt;Render wireframe and transparent views&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- SolidComponents had already made some experimental viewers on THREE.js to load STL and OBJ files exported from SolidWorks, but  --&gt;
+&lt;!-- was having difficulty getting the final appearance of the models right using those file formats. --&gt;
+&lt;p&gt;&lt;!-- &lt;br&gt;&lt;br&gt;One of the the trickiest things  --&gt;
+&lt;!-- was correctly smooth shading the models, since the face-aligned STL normals are useless for smooth shading, and the  --&gt;
+&lt;!-- vertex-aligned OBJ normals often caused hard edges to appear incorrectly smooth.   --&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;solution&quot;&gt;Solution&lt;/h1&gt;
+
+&lt;h3 id=&quot;using-xeogl&quot;&gt;Using xeogl&lt;/h3&gt;
+
+&lt;p&gt;I implemented the SolidComponents CAD viewer as a wrapper class around &lt;strong&gt;&lt;a href=&quot;http://xeogl.org&quot;&gt;xeogl&lt;/a&gt;&lt;/strong&gt;, an open source 
+WebGL library I created for 3D visualization.
+&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;http://xeolabs.com/images/solidcomponents/uml.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;dxml&quot;&gt;3DXML&lt;/h3&gt;
+
+&lt;p&gt;I chose to make the viewer load the downloadable 3DXML model itself, rather than load some other format from SolidWorks, such 
+as STL or OBJ. This way, we’re guaranteed to have a rendition that closely matches the way the 3DXML model looks in 
+SolidWorks. Also, STL and OBJ were not able to express the same materials that we would see in the 3DXML. 
+&lt;br /&gt;&lt;br /&gt;
+A nice feature of 3DXML is that all the files that comprise the model (ie. scene, geometry and material descriptors) are 
+packed into a single ZIP archive that can be loaded in a single HTTP request. Internally, the viewer then unpacks the files within 
+the ZIP archive, converts the XML to JSON, and then parses the JSON using a recursive descent parser, to create the various 
+3D objects within the xeogl scene graph.&lt;/p&gt;
+
+&lt;h3 id=&quot;wireframe&quot;&gt;Wireframe&lt;/h3&gt;
+
+&lt;p&gt;Often, a 3DXML file contains multiple representations of a model, such as solid-shaded and wireframe. In this 
+case, however, we could only rely on it to contain a solid triangle mesh representation. Therefore, for wireframe views, 
+I’m relying on xeogl to auto-generate the wireframe representation from the triangle mesh.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;For each geometry, xeogl creates a second wireframe mesh that contains the edges between adjacent triangles whose surface 
+normals deviate from each other by a given threshold, ie. the “hard” edges. This technique eliminates the “inner” edges, 
+which are edges shared by triangles that are part of the same faces.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;img src=&quot;http://xeolabs.com/images/solidcomponents/innerEdges.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;img src=&quot;http://xeolabs.com/images/solidcomponents/innerEdgesRemoved.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Wireframe with inner edges&lt;/td&gt;
+      &lt;td&gt;Inner edges eliminated&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;(work-in-progress)&lt;/p&gt;
+
+&lt;!-- #### STL models --&gt;
+
+&lt;!-- Initially, I experimented with loading the **[STL](https://en.wikipedia.org/wiki/STL_(file_format))** format, which is also exported by SolidWorks. --&gt;
+&lt;!-- &lt;br&gt;&lt;br&gt; --&gt;
+&lt;!-- ![](http://xeolabs.com/images/solidcomponents/gearWhiteBG.png) --&gt;
+
+&lt;!-- Triangles in STL are disjoint, where each triangle has its own separate vertex positions, normals and  --&gt;
+&lt;!-- (optionally) colors. This means that you can have gaps between triangles. Normals for each triangle are perpendicular to the triangle&#39;s surface, which gives the model a  --&gt;
+&lt;!-- faceted appearance by default. The smoothNormals flag causes the STLModel to recalculate its normals, so that each normal&#39;s  --&gt;
+&lt;!-- direction is the average of the orientations of the triangles adjacent to its vertex. When smoothing, each vertex normal  --&gt;
+&lt;!-- is set to the average of the orientations of all other triangles that have a vertex at the same position, excluding those  --&gt;
+&lt;!-- triangles whose direction deviates from the direction of the vertice&#39;s triangle by a threshold given in smoothNormalsAngleThreshold.  --&gt;
+&lt;!-- This makes smoothing robust for hard edges.  --&gt;
+
+&lt;!-- Normals in STL are face-aligned for a  --&gt;
+&lt;!-- flat-shaded appearance, so I ignored them and relied on xeogl to auto-generate them per-vertex. To handle hard edges  --&gt;
+&lt;!-- correctly, I extended xeogl&#39;s auto-generation to --&gt;
+
+&lt;!-- #### OBJ Models --&gt;
+
+&lt;!-- The client had previously made an experimental viewer on THREE.js that loaded OBJ exported by SolidWorks. However, OBJ contained  --&gt;
+&lt;!-- vertex normals that rendered every edge as smooth-shaded, even when it was &quot;hard&quot; and should have rendered with a  --&gt;
+&lt;!-- crease. --&gt;
+&lt;!-- &lt;br&gt;&lt;br&gt; --&gt;
+&lt;p&gt;&lt;!--  --&gt;&lt;/p&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/solidcomponents-viewer&quot;&gt;SolidComponents™ Online CAD Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on June 11, 2018.&lt;/p&gt;</content>
 </entry>
 
 
