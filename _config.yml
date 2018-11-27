@@ -27,10 +27,12 @@ bing_verify:
 links:
   - title: About
     url: /index
-  - title: Articles
+  - title: Blog
     url: /articles
   - title: Portfolio
     url: /portfolio
+  - title: Testimonials
+    url: /happyclients
   - title: LinkedIn
     url: http://linkedin.com/in/lindsaystanleykay
     external: true
