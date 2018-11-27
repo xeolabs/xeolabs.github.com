@@ -13,16 +13,15 @@ image:
 
 ![Email](../images/email2.png)
  
-<br>I'm a freelance software engineer developing WebGL-based 3D libraries and apps for visualizing BIM, MedViz and CAD on the Web.<br><br>
-Originally from Christchurch, New Zealand, I've lived in Berlin, Germany since 2011.<br><br>
-I graduated with a degree in computer science from the University of Canterbury in 2005. Before that, I studied electronic engineering at the Christchurch Polytechnic.<br><br>
-Some things I've been up to:
+<br>I'm a freelance software engineer developing WebGL-based 3D libraries and apps for BIM, CAD and medical visualization on the Web.<br><br>
+Originally from Christchurch, New Zealand, I've lived in Berlin, Germany since 2011. I graduated with a degree in computer science from the University of Canterbury in 2005. Before that, I studied electronic engineering at the Christchurch Polytechnic.<br><br>
+Some projects I've worked on:
 
 * Built the WebGL-based 3D viewers within the **[BioDigital Human](./portfolio/biodigital-human)**, **[BIMData](./portfolio/bimdata)**, **[BIMSurfer](http://bimsurfer.org/)** and **[SolidComponents](./portfolio/solidcomponents-viewer)** platforms 
 * Created two open source WebGL 3D engines: **[xeogl](http://xeogl.org)** and **[SceneJS](http://scenejs.org)**
 * Contributing author on **[OpenGL Insights](http://openglinsights.com/)**
 
-For more info, please check out my **[portfolio]({{ site.url }}/portfolio/)** and **[resume](http://linkedin.com/in/lindsaystanleykay)**.<br><br>
+For more info, please check out my **[portfolio]({{ site.url }}/portfolio/)** and **[resume](http://linkedin.com/in/lindsaystanleykay)**, or read some **[testimonials]({{ site.url }}/testimonials/)** from happy clients.<br><br>
 
 <!-- ### Client Testimonials -->
 <!-- *"A talented and experienced 3D graphics developer. A -->
