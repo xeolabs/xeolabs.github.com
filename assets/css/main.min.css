@@ -432,21 +432,38 @@ pre {
 }
 
 .testimonial-quote {
+    font-size: 16px;
     font-style: italic;
-    color: #999;
-    padding-bottom: 15px;
+    color: black;
+
+    padding-top: 2px;
+    margin-top:2px;
+
+    padding-bottom: 2px;
+    margin-bottom:2px;
 }
 
 .testimonial-source {
+    font-size: 16px;
     font-style: italic;
-    color: black;
+    color: #444444;
     /*margin-bottom: 5px;*/
     padding-top: 10px;
 }
 
 .testimonial-source a {
     font-style: italic;
-    color: black;
+    color: #444499;
+}
+
+.testimonial-source a:visited {
+    font-style: italic;
+    color: #444499;
+}
+
+.testimonial-source a:hover {
+    font-style: italic;
+    color: #444499;
 }
 
 .highlight {
