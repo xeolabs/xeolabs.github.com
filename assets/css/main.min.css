@@ -431,6 +431,24 @@ pre {
     line-height: 1.5
 }
 
+.testimonial-quote {
+    font-style: italic;
+    color: #999;
+    padding-bottom: 15px;
+}
+
+.testimonial-source {
+    font-style: italic;
+    color: black;
+    /*margin-bottom: 5px;*/
+    padding-top: 10px;
+}
+
+.testimonial-source a {
+    font-style: italic;
+    color: black;
+}
+
 .highlight {
     margin-bottom: 1.5em;
     font-family: Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
