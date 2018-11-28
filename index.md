@@ -21,7 +21,7 @@ Some projects I've worked on:
 * Created two open source WebGL 3D engines: **[xeogl](http://xeogl.org)** and **[SceneJS](http://scenejs.org)**
 * Contributing author on **[OpenGL Insights](http://openglinsights.com/)**
 
-For more info, please check out my **[portfolio]({{ site.url }}/portfolio/)**, **[resume](http://xeolabs.com/pdfs/lindsaykay_resume_2018.pdf)**, **[LinkedIn](http://linkedin.com/in/lindsaystanleykay)** and **[testimonials]({{ site.url }}/happyclients/)**.<br><br>
+For more info, please check out my **[portfolio]({{ site.url }}/portfolio/)**, **[resume](http://xeolabs.com/pdfs/lindsaykay_resume_2018.pdf)**, **[LinkedIn](http://linkedin.com/in/lindsaystanleykay)** profile and **[testimonials]({{ site.url }}/happyclients/)**.<br><br>
 
 <!-- ### Client Testimonials -->
 <!-- *"A talented and experienced 3D graphics developer. A -->
