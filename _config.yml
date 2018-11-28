@@ -33,11 +33,13 @@ links:
     url: /portfolio
   - title: Testimonials
     url: /happyclients
+  - title: Resume
+    url: /pdfs/lindsaykay_resume_2018.pdf
   - title: LinkedIn
     url: http://linkedin.com/in/lindsaystanleykay
     external: true
-  - title: Hire me
-    url: /index
+#  - title: Hire me
+#    url: /hireme
   - title: xeogl
     url: http://xeogl.org
     external: true
