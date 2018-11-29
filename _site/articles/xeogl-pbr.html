@@ -10,7 +10,7 @@
 <meta name="keywords" content="xeogl, pbr, gltf, webgl">
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://xeolabs.com/images/">
+<meta name="twitter:image" content="/images/">
 <meta name="twitter:title" content="Adding Physically Based Rendering to xeogl">
 <meta name="twitter:description" content="Physically based rendering or PBR is a shading model in computer graphics that seeks to render graphics in a way that more accurately models the flow of light in the real world. In this article, I describe how I extended the WebGL-based xeogl engine to support both <i>metallic-roughness</i> and <i>specular-glossiness</i> PBR workflows.">
 <meta name="twitter:creator" content="@xeolabs">
@@ -20,15 +20,15 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Adding Physically Based Rendering to xeogl">
 <meta property="og:description" content="Physically based rendering or PBR is a shading model in computer graphics that seeks to render graphics in a way that more accurately models the flow of light in the real world. In this article, I describe how I extended the WebGL-based xeogl engine to support both <i>metallic-roughness</i> and <i>specular-glossiness</i> PBR workflows.">
-<meta property="og:url" content="http://xeolabs.com/articles/xeogl-pbr">
+<meta property="og:url" content="/articles/xeogl-pbr">
 <meta property="og:site_name" content="xeolabs">
 
 
 
 
 
-<link rel="canonical" href="http://xeolabs.com/articles/xeogl-pbr">
-<link href="http://xeolabs.com/feed.xml" type="application/atom+xml" rel="alternate" title="xeolabs Feed">
+<link rel="canonical" href="/articles/xeogl-pbr">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="xeolabs Feed">
 
 
 <!-- http://t.co/dKP3o1e -->
@@ -39,30 +39,30 @@
 <!-- Google Webfonts -->
 <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
 <!-- For all browsers -->
-<link rel="stylesheet" href="http://xeolabs.com/assets/css/main.min.css">
+<link rel="stylesheet" href="/assets/css/main.min.css">
 
 <!--[if (lt IE 9) & (!IEMobile)]>
-<link rel="stylesheet" href="http://xeolabs.com/assets/css/ie.min.css">
+<link rel="stylesheet" href="/assets/css/ie.min.css">
 <![endif]-->
 
 <meta http-equiv="cleartype" content="on">
 
 <!-- Load Modernizr -->
-<script src="http://xeolabs.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
 
 <!-- Icons -->
 <!-- 16x16 -->
-<link rel="shortcut icon" href="http://xeolabs.com/favicon.ico">
+<link rel="shortcut icon" href="/favicon.ico">
 <!-- 32x32 -->
-<link rel="shortcut icon" href="http://xeolabs.com/favicon-32x32.png">
+<link rel="shortcut icon" href="/favicon-32x32.png">
 <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="http://xeolabs.com/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
 <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://xeolabs.com/images/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
 <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://xeolabs.com/images/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://xeolabs.com/images/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
 
 </head>
 
@@ -72,23 +72,23 @@
 
 <div class="navigation-wrapper">
 	<div class="site-name">
-		<a href="http://xeolabs.com/">xeolabs</a>
+		<a href="/">xeolabs</a>
 	</div><!-- /.site-name -->
 	<div class="top-navigation">
 		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 		    <ul>
 		        
-				<li><a href="http://xeolabs.com/index" >About</a></li>
+				<li><a href="/index" >About</a></li>
 		        
-				<li><a href="http://xeolabs.com/articles" >Blog</a></li>
+				<li><a href="/articles" >Blog</a></li>
 		        
-				<li><a href="http://xeolabs.com/portfolio" >Portfolio</a></li>
+				<li><a href="/portfolio" >Portfolio</a></li>
 		        
-				<li><a href="http://xeolabs.com/pdfs/lindsaykay_resume_2018.pdf" >Resume</a></li>
+				<li><a href="/pdfs/lindsaykay_resume_2018.pdf" >Resume</a></li>
 		        
 				<li><a href="http://linkedin.com/in/lindsaystanleykay" target="_blank">LinkedIn</a></li>
 		        
-				<li><a href="http://xeolabs.com/happyclients" >Testimonials</a></li>
+				<li><a href="/happyclients" >Testimonials</a></li>
 		        
 				<li><a href="http://xeogl.org" target="_blank">xeogl</a></li>
 		        
@@ -102,16 +102,16 @@
 
 <div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
   <div class="article-author-top">
-    <img src="http://xeolabs.com/images/avatar.jpg" class="bio-photo" alt="xeolabs bio photo"></a>
-<h3><a href="http://xeolabs.com/about/">xeolabs</a></h3>
+    <img src="/images/avatar.jpg" class="bio-photo" alt="xeolabs bio photo"></a>
+<h3><a href="/about/">xeolabs</a></h3>
 <p><b>Lindsay Kay</b><br><br><i>3D software engineer / WebGL developer</i></p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
 <a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
 <a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
 <br>
 <hr>
-<p style="text-align: center;"><a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf"><img style="text-align: center; width: 80%;" src="http://xeolabs.com/images/scenejs/OpenGLInsights2.jpg"></a><br>
-    <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now <a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf">free to download!</a></i></p>
+<p style="text-align: center;"><a href="/pdfs/OpenGLInsights.pdf"><img style="text-align: center; width: 80%;" src="/images/scenejs/OpenGLInsights2.jpg"></a><br>
+    <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now <a href="/pdfs/OpenGLInsights.pdf">free to download!</a></i></p>
 
   </div>
   <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
@@ -159,11 +159,11 @@ For an introduction to PBR concepts, check out the <a href="https://www.allegori
 <table>
   <tbody>
     <tr>
-      <td><a href="http://xeogl.org/examples/#importing_gltf_pbr_metallic_helmet"><img src="http://xeolabs.com/images/xeogl/MetallicMaterial/helmet.png" alt="" /></a></td>
-      <td><a href="http://xeogl.org/examples/#materials_metallic_fireHydrant"><img src="http://xeolabs.com/images/xeogl/MetallicMaterial/hydrant0.png" alt="" /></a></td>
-      <td><a href="http://xeogl.org/examples/#importing_gltf_pbr_specular_saw"><img src="http://xeolabs.com/images/xeogl/SpecularMaterial/reciprocatingSaw.png" alt="" /></a></td>
-      <td><a href="http://xeogl.org/examples/importing_scenejs_tronTank.html"><img src="http://xeolabs.com/images/xeogl/MetallicMaterial/scenejsTronTank.png" alt="" /></a></td>
-      <td><a href="http://xeogl.org/examples/#importing_gltf_pbr_metallic_telephone"><img src="http://xeolabs.com/images/xeogl/MetallicMaterial/telephone.png" alt="" /></a></td>
+      <td><a href="http://xeogl.org/examples/#importing_gltf_pbr_metallic_helmet"><img src="/images/xeogl/MetallicMaterial/helmet.png" alt="" /></a></td>
+      <td><a href="http://xeogl.org/examples/#materials_metallic_fireHydrant"><img src="/images/xeogl/MetallicMaterial/hydrant0.png" alt="" /></a></td>
+      <td><a href="http://xeogl.org/examples/#importing_gltf_pbr_specular_saw"><img src="/images/xeogl/SpecularMaterial/reciprocatingSaw.png" alt="" /></a></td>
+      <td><a href="http://xeogl.org/examples/importing_scenejs_tronTank.html"><img src="/images/xeogl/MetallicMaterial/scenejsTronTank.png" alt="" /></a></td>
+      <td><a href="http://xeogl.org/examples/#importing_gltf_pbr_metallic_telephone"><img src="/images/xeogl/MetallicMaterial/telephone.png" alt="" /></a></td>
     </tr>
   </tbody>
 </table>
@@ -231,19 +231,19 @@ texture’s R component and <em>roughness</em> in its G component.</p>
       <hr />
       <footer role="contentinfo">
         <div class="article-author-bottom">
-          <img src="http://xeolabs.com/images/avatar.jpg" class="bio-photo" alt="xeolabs bio photo"></a>
-<h3><a href="http://xeolabs.com/about/">xeolabs</a></h3>
+          <img src="/images/avatar.jpg" class="bio-photo" alt="xeolabs bio photo"></a>
+<h3><a href="/about/">xeolabs</a></h3>
 <p><b>Lindsay Kay</b><br><br><i>3D software engineer / WebGL developer</i></p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
 <a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
 <a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
 <br>
 <hr>
-<p style="text-align: center;"><a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf"><img style="text-align: center; width: 80%;" src="http://xeolabs.com/images/scenejs/OpenGLInsights2.jpg"></a><br>
-    <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now <a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf">free to download!</a></i></p>
+<p style="text-align: center;"><a href="/pdfs/OpenGLInsights.pdf"><img style="text-align: center; width: 80%;" src="/images/scenejs/OpenGLInsights2.jpg"></a><br>
+    <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now <a href="/pdfs/OpenGLInsights.pdf">free to download!</a></i></p>
 
         </div>
-        <p class="byline"><strong>Adding Physically Based Rendering to xeogl</strong> was published on <time datetime="2017-02-16T00:00:00+00:00" itemprop="datePublished">February 16, 2017</time> and last modified on <time datetime="2017-14-02" itemprop="dateModified">2017-14-02</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://xeolabs.com/about" title="About xeolabs" itemprop="url">xeolabs</a></span></span>.</p>
+        <p class="byline"><strong>Adding Physically Based Rendering to xeogl</strong> was published on <time datetime="2017-02-16T00:00:00+00:00" itemprop="datePublished">February 16, 2017</time> and last modified on <time datetime="2017-14-02" itemprop="dateModified">2017-14-02</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="/about" title="About xeolabs" itemprop="url">xeolabs</a></span></span>.</p>
       </footer>
 
         <!---->
@@ -271,7 +271,7 @@ texture’s R component and <em>roughness</em> in its G component.</p>
 
 <div class="footer-wrap">
   <div class="related-articles">
-  <h4>You might also enjoy <small class="pull-right">(<a href="http://xeolabs.com/articles">View all articles</a>)</small></h4>
+  <h4>You might also enjoy <small class="pull-right">(<a href="/articles">View all articles</a>)</small></h4>
     <ul>
     
       
@@ -296,10 +296,10 @@ texture’s R component and <em>roughness</em> in its G component.</p>
 </div><!-- /.footer-wrap -->
 
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
-<!--<script src="http://xeolabs.com/assets/js/vendor/jquery-1.9.1.min.js"></script>-->
-<!--<script src="http://xeolabs.com/assets/js/vendor/jquery.gifplayer.js"></script>-->
-<!--<link rel="stylesheet" href="http://xeolabs.com/assets/css/gifplayer.css" />-->
-<!--<script src="http://xeolabs.com/assets/js/scripts.min.js"></script>-->
+<!--<script src="/assets/js/vendor/jquery-1.9.1.min.js"></script>-->
+<!--<script src="/assets/js/vendor/jquery.gifplayer.js"></script>-->
+<!--<link rel="stylesheet" href="/assets/css/gifplayer.css" />-->
+<!--<script src="/assets/js/scripts.min.js"></script>-->
 
 
 <!--<script>-->
