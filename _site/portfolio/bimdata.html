@@ -120,8 +120,8 @@
         <p style="font-weight:bold; font-style:italic;"><time datetime="2018-06-28T00:00:00+00:00" itemprop="datePublished">June 28, 2018</time></p>
     </div><!--/ .headline-wrap -->
     <div class="article-wrap" itemprop="text">
-      <p>In 2018, I worked remotely with <strong><a href="http://www.bimdata.io/en/bim-data-en/">BIMData</a></strong> in Lyon, France, to develop the WebGL-based 3D viewer 
-within their online building information modeling (BIM) platform.
+      <p>In 2018, I worked remotely with the <strong><a href="https://www.bimdata.io/fr/la-team/">BIMData development team</a></strong> in Lyon, France, to develop the WebGL-based 3D viewer
+component of the BIMData online building information modeling (BIM) platform.
 <br /><br />
 We developed the viewer on <strong><a href="http://xeogl.org">xeogl</a></strong>, an open source WebGL library I created for developing 
 3D model visualization applications in Web browsers without using plugins.
@@ -181,8 +181,10 @@ the use of plug-ins. While IFC viewers are typically written as desktop applicat
 
 <p><strong><a href="http://www.bimdata.io/en/bim-data-en/">BIMData</a></strong> is a company in Lyon, France that provides a cutting-edge online 
 BIM platform to manage your construction projects, including an all-in-one solution to visualize, check, edit and share 
-building information. 
-<br /><br /></p>
+building information.
+<br /><br />
+One of the coolest things about this platform is that it’s continuously up-to-date with the latest
+version of IFC (IFC2x3, IFC4 and IFC4.1).</p>
 
 <h1 id="requirements">Requirements</h1>
 
@@ -246,6 +248,17 @@ VBO binds per frame. This enables us to render models up to around 200k+ objects
   <p>For the next version of xeogl (v0.9), I’m currently adding geometry batching in combination with 
 instancing (using the ANGLE_instanced_arrays extension), which will enable BIMData to load millions of objects.</p>
 </blockquote>
+
+<h3 id="information-manager">Information Manager</h3>
+
+<p>The BIMData platform is a complete information management platform that’s able to provide specific
+information about any model elements that you select within the 3D view.
+<br /><br />
+Within the viewer, I integrated xeogl’s picking mechanism to get the ID of any object that you click on,
+which the information manager UI then uses to populate itself from the model’s IFC data.</p>
+
+<p><br /><br />
+<img src="/images/bimdata/infoManager.png" alt="" /></p>
 
 <h3 id="user-annotations">User annotations</h3>
 
@@ -320,7 +333,9 @@ annotations, as well as PNG snapshot image of the canvas.
 Users can capture a BCF record of the viewer state, to indicate an issue within a model, then share that with other users, 
  who can then load that view to see what the problem is.
 <br /><br />
- <img src="/images/bimdata/bcf.jpg" alt="" /></p>
+ <img src="/images/bimdata/bcf.gif" alt="" /></p>
+
+<p><!-- La Cali sponsored the aquatic centre project in Libourne, France. 50 people worked on the BIMData platform to view and collaborate on their several models. --></p>
 
 <h1 id="conclusion">Conclusion</h1>
 

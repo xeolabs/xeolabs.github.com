@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2018-11-29T14:22:30+00:00</updated>
+<updated>2018-11-29T15:19:46+00:00</updated>
 <id>/</id>
 <author>
   <name>xeolabs</name>
@@ -279,8 +279,8 @@ who came in fresh from academia and added many valuable rendering features.
     <uri></uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
-  <content type="html">&lt;p&gt;In 2018, I worked remotely with &lt;strong&gt;&lt;a href=&quot;http://www.bimdata.io/en/bim-data-en/&quot;&gt;BIMData&lt;/a&gt;&lt;/strong&gt; in Lyon, France, to develop the WebGL-based 3D viewer 
-within their online building information modeling (BIM) platform.
+  <content type="html">&lt;p&gt;In 2018, I worked remotely with the &lt;strong&gt;&lt;a href=&quot;https://www.bimdata.io/fr/la-team/&quot;&gt;BIMData development team&lt;/a&gt;&lt;/strong&gt; in Lyon, France, to develop the WebGL-based 3D viewer
+component of the BIMData online building information modeling (BIM) platform.
 &lt;br /&gt;&lt;br /&gt;
 We developed the viewer on &lt;strong&gt;&lt;a href=&quot;http://xeogl.org&quot;&gt;xeogl&lt;/a&gt;&lt;/strong&gt;, an open source WebGL library I created for developing 
 3D model visualization applications in Web browsers without using plugins.
@@ -340,8 +340,10 @@ the use of plug-ins. While IFC viewers are typically written as desktop applicat
 
 &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://www.bimdata.io/en/bim-data-en/&quot;&gt;BIMData&lt;/a&gt;&lt;/strong&gt; is a company in Lyon, France that provides a cutting-edge online 
 BIM platform to manage your construction projects, including an all-in-one solution to visualize, check, edit and share 
-building information. 
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+building information.
+&lt;br /&gt;&lt;br /&gt;
+One of the coolest things about this platform is that it’s continuously up-to-date with the latest
+version of IFC (IFC2x3, IFC4 and IFC4.1).&lt;/p&gt;
 
 &lt;h1 id=&quot;requirements&quot;&gt;Requirements&lt;/h1&gt;
 
@@ -405,6 +407,17 @@ VBO binds per frame. This enables us to render models up to around 200k+ objects
   &lt;p&gt;For the next version of xeogl (v0.9), I’m currently adding geometry batching in combination with 
 instancing (using the ANGLE_instanced_arrays extension), which will enable BIMData to load millions of objects.&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;h3 id=&quot;information-manager&quot;&gt;Information Manager&lt;/h3&gt;
+
+&lt;p&gt;The BIMData platform is a complete information management platform that’s able to provide specific
+information about any model elements that you select within the 3D view.
+&lt;br /&gt;&lt;br /&gt;
+Within the viewer, I integrated xeogl’s picking mechanism to get the ID of any object that you click on,
+which the information manager UI then uses to populate itself from the model’s IFC data.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;/images/bimdata/infoManager.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;user-annotations&quot;&gt;User annotations&lt;/h3&gt;
 
@@ -479,7 +492,9 @@ annotations, as well as PNG snapshot image of the canvas.
 Users can capture a BCF record of the viewer state, to indicate an issue within a model, then share that with other users, 
  who can then load that view to see what the problem is.
 &lt;br /&gt;&lt;br /&gt;
- &lt;img src=&quot;/images/bimdata/bcf.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+ &lt;img src=&quot;/images/bimdata/bcf.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;!-- La Cali sponsored the aquatic centre project in Libourne, France. 50 people worked on the BIMData platform to view and collaborate on their several models. --&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
 
