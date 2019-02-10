@@ -10,7 +10,7 @@
 <meta name="keywords" content="scenejs, tutorial, culling, optimisation">
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="/images/">
+<meta name="twitter:image" content="http://xeolabs.com/images/">
 <meta name="twitter:title" content="SceneJS Visibility and Detail Culling">
 <meta name="twitter:description" content="Optimising your scenes with frustum culling">
 <meta name="twitter:creator" content="@xeolabs">
@@ -20,15 +20,15 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="SceneJS Visibility and Detail Culling">
 <meta property="og:description" content="Optimising your scenes with frustum culling">
-<meta property="og:url" content="/articles/scenejs-detail-culling">
+<meta property="og:url" content="http://xeolabs.com/articles/scenejs-detail-culling">
 <meta property="og:site_name" content="xeolabs">
 
 
 
 
 
-<link rel="canonical" href="/articles/scenejs-detail-culling">
-<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="xeolabs Feed">
+<link rel="canonical" href="http://xeolabs.com/articles/scenejs-detail-culling">
+<link href="http://xeolabs.com/feed.xml" type="application/atom+xml" rel="alternate" title="xeolabs Feed">
 
 
 <!-- http://t.co/dKP3o1e -->
@@ -39,30 +39,30 @@
 <!-- Google Webfonts -->
 <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
 <!-- For all browsers -->
-<link rel="stylesheet" href="/assets/css/main.min.css">
+<link rel="stylesheet" href="http://xeolabs.com/assets/css/main.min.css">
 
 <!--[if (lt IE 9) & (!IEMobile)]>
-<link rel="stylesheet" href="/assets/css/ie.min.css">
+<link rel="stylesheet" href="http://xeolabs.com/assets/css/ie.min.css">
 <![endif]-->
 
 <meta http-equiv="cleartype" content="on">
 
 <!-- Load Modernizr -->
-<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+<script src="http://xeolabs.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
 
 <!-- Icons -->
 <!-- 16x16 -->
-<link rel="shortcut icon" href="/favicon.ico">
+<link rel="shortcut icon" href="http://xeolabs.com/favicon.ico">
 <!-- 32x32 -->
-<link rel="shortcut icon" href="/favicon-32x32.png">
+<link rel="shortcut icon" href="http://xeolabs.com/favicon-32x32.png">
 <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="http://xeolabs.com/images/apple-touch-icon-precomposed.png">
 <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://xeolabs.com/images/apple-touch-icon-72x72-precomposed.png">
 <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://xeolabs.com/images/apple-touch-icon-114x114-precomposed.png">
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://xeolabs.com/images/apple-touch-icon-144x144-precomposed.png">
 
 </head>
 
@@ -72,25 +72,27 @@
 
 <div class="navigation-wrapper">
 	<div class="site-name">
-		<a href="/">xeolabs</a>
+		<a href="http://xeolabs.com/">xeolabs</a>
 	</div><!-- /.site-name -->
 	<div class="top-navigation">
 		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 		    <ul>
 		        
-				<li><a href="/index" >About</a></li>
+				<li><a href="http://xeolabs.com/index" >About</a></li>
 		        
-				<li><a href="/articles" >Blog</a></li>
+				<li><a href="http://xeolabs.com/articles" >Blog</a></li>
 		        
-				<li><a href="/portfolio" >Portfolio</a></li>
+				<li><a href="http://xeolabs.com/portfolio" >Portfolio</a></li>
 		        
-				<li><a href="/pdfs/lindsaykay_resume_2018.pdf" >Resume</a></li>
+				<li><a href="http://xeolabs.com/pdfs/lindsaykay_resume_2018.pdf" >Resume</a></li>
 		        
 				<li><a href="http://linkedin.com/in/lindsaystanleykay" target="_blank">LinkedIn</a></li>
 		        
-				<li><a href="/happyclients" >Testimonials</a></li>
+				<li><a href="http://xeolabs.com/contact" >Contact</a></li>
 		        
 				<li><a href="http://xeogl.org" target="_blank">xeogl</a></li>
+		        
+				<li><a href="http://xeokit.io" target="_blank">xeokit</a></li>
 		        
 
 		    </ul>
@@ -102,16 +104,16 @@
 
 <div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
   <div class="article-author-top">
-    <img src="/images/avatar.jpg" class="bio-photo" alt="xeolabs bio photo"></a>
-<h3><a href="/about/">xeolabs</a></h3>
+    <img src="http://xeolabs.com/images/avatar.jpg" class="bio-photo" alt="xeolabs bio photo"></a>
+<h3><a href="http://xeolabs.com/about/">xeolabs</a></h3>
 <p><b>Lindsay Kay</b><br><br><i>3D software engineer / WebGL developer</i></p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
 <a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
 <a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
 <br>
 <hr>
-<p style="text-align: center;"><a href="/pdfs/OpenGLInsights.pdf"><img style="text-align: center; width: 80%;" src="/images/scenejs/OpenGLInsights2.jpg"></a><br>
-    <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now <a href="/pdfs/OpenGLInsights.pdf">free to download!</a></i></p>
+<p style="text-align: center;"><a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf"><img style="text-align: center; width: 80%;" src="http://xeolabs.com/images/scenejs/OpenGLInsights2.jpg"></a><br>
+    <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now <a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf">free to download!</a></i></p>
 
   </div>
   <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
@@ -127,10 +129,7 @@
 <div id="drawer">
 <ul id="markdown-toc">
   <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
-  <li><a href="#creating-a-detail-switched-object" id="markdown-toc-creating-a-detail-switched-object">Creating a detail-switched object</a>    <ul>
-      <li><a href="#example" id="markdown-toc-example">Example:</a></li>
-    </ul>
-  </li>
+  <li><a href="#creating-a-detail-switched-object" id="markdown-toc-creating-a-detail-switched-object">Creating a detail-switched object</a></li>
   <li><a href="#limitations" id="markdown-toc-limitations">Limitations</a></li>
   <li><a href="#implementation" id="markdown-toc-implementation">Implementation</a></li>
   <li><a href="#roadmap" id="markdown-toc-roadmap">Roadmap</a></li>
@@ -143,8 +142,8 @@
 <table>
   <thead>
     <tr>
-      <th><a href="http://scenejs.org/examples.html?page=frustumDetailCulling"><img src="/images/scenejs/frustumCulling.jpg" alt="" /></a></th>
-      <th><a href="http://scenejs.org/examples.html?page=frustumVisibilityCulling"><img src="/images/scenejs/visibilityCulling.png" alt="" /></a></th>
+      <th><a href="http://scenejs.org/examples.html?page=frustumDetailCulling"><img src="http://xeolabs.com/images/scenejs/frustumCulling.jpg" alt="" /></a></th>
+      <th><a href="http://scenejs.org/examples.html?page=frustumVisibilityCulling"><img src="http://xeolabs.com/images/scenejs/visibilityCulling.png" alt="" /></a></th>
     </tr>
   </thead>
   <tbody>
@@ -156,23 +155,23 @@
 </table>
 
 <h1 id="overview">Overview</h1>
-<p>SceneJS supports detail culling via the <code class="highlighter-rouge">cull/detail</code> node, which sets up an axis-aligned bounding box around its child nodes. Each child provides a different level of detail for the object within the boundary, and the <code class="highlighter-rouge">cull/detail</code> enables one of its children at any instant in order to show the appropriate detail level for the current projected 2D canvas size of the boundary.</p>
+<p>SceneJS supports detail culling via the <code>cull/detail</code> node, which sets up an axis-aligned bounding box around its child nodes. Each child provides a different level of detail for the object within the boundary, and the <code>cull/detail</code> enables one of its children at any instant in order to show the appropriate detail level for the current projected 2D canvas size of the boundary.</p>
 
-<p>The <code class="highlighter-rouge">cull/body</code> node can be configured to disable all its children when the boundary falls outside the view frustum. This is an optional configuration because the node might potentially be used to switch detail for non-visible objects, such as sound sources, which could influence the scene even when they fall outside the frustum. Note that the node disables all children at the lowest level of detail, effectively working as a sort of distance culling.</p>
+<p>The <code>cull/body</code> node can be configured to disable all its children when the boundary falls outside the view frustum. This is an optional configuration because the node might potentially be used to switch detail for non-visible objects, such as sound sources, which could influence the scene even when they fall outside the frustum. Note that the node disables all children at the lowest level of detail, effectively working as a sort of distance culling.</p>
 
 <p>Internally, culling is distributed across multiple culling engines, each running in its own web worker. This attempts to make culling responsive, while preventing it from starving the main rendering thread.</p>
 
 <h1 id="creating-a-detail-switched-object">Creating a detail-switched object</h1>
 
-<p>The <code class="highlighter-rouge">cull/detail</code> node encloses its child nodes in an axis-aligned  World-space bounding box and enables the appropriate child for the box’s current projected 2D canvas size.</p>
+<p>The <code>cull/detail</code> node encloses its child nodes in an axis-aligned  World-space bounding box and enables the appropriate child for the box’s current projected 2D canvas size.</p>
 
-<p>As shown in the example below, we configure the node with a 2D size threshold for each child node, given in property <code class="highlighter-rouge">sizes</code>. When the boundary’s projected size falls below the first of these thresholds, then no child will be enabled. When the projected size is between the first and second thresholds, the first child is enabled, then when between the second and third thresholds, the second child is enabled, and so on.</p>
+<p>As shown in the example below, we configure the node with a 2D size threshold for each child node, given in property <code>sizes</code>. When the boundary’s projected size falls below the first of these thresholds, then no child will be enabled. When the projected size is between the first and second thresholds, the first child is enabled, then when between the second and third thresholds, the second child is enabled, and so on.</p>
 
 <p>You can have an unlimited number of child nodes and size thresholds.</p>
 
-<p>By default, all of the children are disabled when the bounding box falls outside the view frustum, but as mentioned above, we can use the optional <code class="highlighter-rouge">frustumCull</code> property to disable that behaviour and cull the children solely on the projected box size, which actually works regardless of which direction the box is in with regard to the viewing direction. This is useful for disabling distant sound effects etc.</p>
+<p>By default, all of the children are disabled when the bounding box falls outside the view frustum, but as mentioned above, we can use the optional <code>frustumCull</code> property to disable that behaviour and cull the children solely on the projected box size, which actually works regardless of which direction the box is in with regard to the viewing direction. This is useful for disabling distant sound effects etc.</p>
 
-<h2 id="example">Example:</h2>
+<p>##Example:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">someNode</span><span class="p">.</span><span class="nx">addNode</span><span class="p">({</span>
    <span class="na">type</span><span class="p">:</span> <span class="s2">"cull/detail"</span><span class="p">,</span>
@@ -327,15 +326,15 @@ keep track of the boundaries of things, which seemed a reasonable tradeoff to re
 <img src="http://scenejs.org/images/frustumCulling.png" alt="" /></p>
 
 <ul>
-  <li>The <code class="highlighter-rouge">cull/detail</code> node is implementated by this <a href="http://scenejs.org/api/latest/plugins/node/cull/detail.js">custom node plugin</a>.</li>
-  <li>For performance, culling is distributed across multiple <a href="http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullEngine.js">culling engines</a>, each running within its own <a href="http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullWorker.js">worker thread</a>. Each of those workers is proxied by a <a href="http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullSystem.js">system</a> in which the <code class="highlighter-rouge">cull/detail</code> nodes create frustum collision bodies, and those systems are managed in a load-balanced <a href="http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullSystemPool.js">pool</a>.</li>
-  <li>The <code class="highlighter-rouge">cull/detail</code> node actually wraps a more basic <a href="http://scenejs.org/api/latest/plugins/node/cull/body.js"><code class="highlighter-rouge">cull/body</code></a> node type, which creates the collision body and subscribes to its frustum intersection status and projected 2D boundary size. The <code class="highlighter-rouge">cull/detail</code> node does the job of translating those updates into child node enables/disables. This strategy allows us to reuse the <code class="highlighter-rouge">cull/body</code> for internal workings of new types of culling node in future.</li>
+  <li>The <code>cull/detail</code> node is implementated by this <a href="http://scenejs.org/api/latest/plugins/node/cull/detail.js">custom node plugin</a>.</li>
+  <li>For performance, culling is distributed across multiple <a href="http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullEngine.js">culling engines</a>, each running within its own <a href="http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullWorker.js">worker thread</a>. Each of those workers is proxied by a <a href="http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullSystem.js">system</a> in which the <code>cull/detail</code> nodes create frustum collision bodies, and those systems are managed in a load-balanced <a href="http://scenejs.org/api/latest/plugins/lib/frustum/frustumCullSystemPool.js">pool</a>.</li>
+  <li>The <code>cull/detail</code> node actually wraps a more basic <a href="http://scenejs.org/api/latest/plugins/node/cull/body.js"><code>cull/body</code></a> node type, which creates the collision body and subscribes to its frustum intersection status and projected 2D boundary size. The <code>cull/detail</code> node does the job of translating those updates into child node enables/disables. This strategy allows us to reuse the <code>cull/body</code> for internal workings of new types of culling node in future.</li>
 </ul>
 
 <h1 id="roadmap">Roadmap</h1>
 
 <ul>
-  <li>Allow <code class="highlighter-rouge">cull/visibility</code> boundaries to be defined in Model-space, where they are transformed by parent transform nodes</li>
+  <li>Allow <code>cull/visibility</code> boundaries to be defined in Model-space, where they are transformed by parent transform nodes</li>
   <li>Other types of boundary shape, such as spherical</li>
   <li>Each culling engine simply iterates over a list of bodies - improve their performance by organising the bodies in KD-trees</li>
   <li><a href="https://github.com/xeolabs/scenejs/issues?direction=desc&amp;labels=Culling&amp;page=1&amp;sort=created&amp;state=open">Issues tagged ‘culling’</a></li>
@@ -344,19 +343,19 @@ keep track of the boundaries of things, which seemed a reasonable tradeoff to re
       <hr />
       <footer role="contentinfo">
         <div class="article-author-bottom">
-          <img src="/images/avatar.jpg" class="bio-photo" alt="xeolabs bio photo"></a>
-<h3><a href="/about/">xeolabs</a></h3>
+          <img src="http://xeolabs.com/images/avatar.jpg" class="bio-photo" alt="xeolabs bio photo"></a>
+<h3><a href="http://xeolabs.com/about/">xeolabs</a></h3>
 <p><b>Lindsay Kay</b><br><br><i>3D software engineer / WebGL developer</i></p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
 <a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
 <a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
 <br>
 <hr>
-<p style="text-align: center;"><a href="/pdfs/OpenGLInsights.pdf"><img style="text-align: center; width: 80%;" src="/images/scenejs/OpenGLInsights2.jpg"></a><br>
-    <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now <a href="/pdfs/OpenGLInsights.pdf">free to download!</a></i></p>
+<p style="text-align: center;"><a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf"><img style="text-align: center; width: 80%;" src="http://xeolabs.com/images/scenejs/OpenGLInsights2.jpg"></a><br>
+    <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now <a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf">free to download!</a></i></p>
 
         </div>
-        <p class="byline"><strong>SceneJS Visibility and Detail Culling</strong> was published on <time datetime="2013-10-28T00:00:00+00:00" itemprop="datePublished">October 28, 2013</time> and last modified on <time datetime="2013-05-31" itemprop="dateModified">May 31, 2013</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="/about" title="About xeolabs" itemprop="url">xeolabs</a></span></span>.</p>
+        <p class="byline"><strong>SceneJS Visibility and Detail Culling</strong> was published on <time datetime="2013-10-28T00:00:00+00:00" itemprop="datePublished">October 28, 2013</time> and last modified on <time datetime="2013-05-31" itemprop="dateModified">May 31, 2013</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://xeolabs.com/about" title="About xeolabs" itemprop="url">xeolabs</a></span></span>.</p>
       </footer>
 
         <!---->
@@ -384,7 +383,7 @@ keep track of the boundaries of things, which seemed a reasonable tradeoff to re
 
 <div class="footer-wrap">
   <div class="related-articles">
-  <h4>You might also enjoy <small class="pull-right">(<a href="/articles">View all articles</a>)</small></h4>
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://xeolabs.com/articles">View all articles</a>)</small></h4>
     <ul>
     
       
@@ -403,16 +402,16 @@ keep track of the boundaries of things, which seemed a reasonable tradeoff to re
     <hr />
   </div><!-- /.related-articles -->
   <footer>
-    <span>&copy; 2018 xeolabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+    <span>&copy; 2019 xeolabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->
 
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
-<!--<script src="/assets/js/vendor/jquery-1.9.1.min.js"></script>-->
-<!--<script src="/assets/js/vendor/jquery.gifplayer.js"></script>-->
-<!--<link rel="stylesheet" href="/assets/css/gifplayer.css" />-->
-<!--<script src="/assets/js/scripts.min.js"></script>-->
+<!--<script src="http://xeolabs.com/assets/js/vendor/jquery-1.9.1.min.js"></script>-->
+<!--<script src="http://xeolabs.com/assets/js/vendor/jquery.gifplayer.js"></script>-->
+<!--<link rel="stylesheet" href="http://xeolabs.com/assets/css/gifplayer.css" />-->
+<!--<script src="http://xeolabs.com/assets/js/scripts.min.js"></script>-->
 
 
 <!--<script>-->

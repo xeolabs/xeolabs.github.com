@@ -36,12 +36,13 @@ links:
   - title: LinkedIn
     url: http://linkedin.com/in/lindsaystanleykay
     external: true
-  - title: Testimonials
-    url: /happyclients
-#  - title: Hire me
-#    url: /hireme
+  - title: Contact
+    url: /contact
   - title: xeogl
     url: http://xeogl.org
+    external: true
+  - title: xeokit
+    url: http://xeokit.io
     external: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones

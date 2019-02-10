@@ -10,7 +10,7 @@
 <meta name="keywords" content="scenejs, tutorial, migrating">
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="/images/">
+<meta name="twitter:image" content="http://xeolabs.com/images/">
 <meta name="twitter:title" content="Migrating from SceneJS 2.0 to 3.1">
 <meta name="twitter:description" content="Updating your apps to the V3.1 API">
 <meta name="twitter:creator" content="@xeolabs">
@@ -20,15 +20,15 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Migrating from SceneJS 2.0 to 3.1">
 <meta property="og:description" content="Updating your apps to the V3.1 API">
-<meta property="og:url" content="/articles/migrating-scenejs-2-to-3">
+<meta property="og:url" content="http://xeolabs.com/articles/migrating-scenejs-2-to-3">
 <meta property="og:site_name" content="xeolabs">
 
 
 
 
 
-<link rel="canonical" href="/articles/migrating-scenejs-2-to-3">
-<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="xeolabs Feed">
+<link rel="canonical" href="http://xeolabs.com/articles/migrating-scenejs-2-to-3">
+<link href="http://xeolabs.com/feed.xml" type="application/atom+xml" rel="alternate" title="xeolabs Feed">
 
 
 <!-- http://t.co/dKP3o1e -->
@@ -39,30 +39,30 @@
 <!-- Google Webfonts -->
 <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
 <!-- For all browsers -->
-<link rel="stylesheet" href="/assets/css/main.min.css">
+<link rel="stylesheet" href="http://xeolabs.com/assets/css/main.min.css">
 
 <!--[if (lt IE 9) & (!IEMobile)]>
-<link rel="stylesheet" href="/assets/css/ie.min.css">
+<link rel="stylesheet" href="http://xeolabs.com/assets/css/ie.min.css">
 <![endif]-->
 
 <meta http-equiv="cleartype" content="on">
 
 <!-- Load Modernizr -->
-<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+<script src="http://xeolabs.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
 
 <!-- Icons -->
 <!-- 16x16 -->
-<link rel="shortcut icon" href="/favicon.ico">
+<link rel="shortcut icon" href="http://xeolabs.com/favicon.ico">
 <!-- 32x32 -->
-<link rel="shortcut icon" href="/favicon-32x32.png">
+<link rel="shortcut icon" href="http://xeolabs.com/favicon-32x32.png">
 <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="http://xeolabs.com/images/apple-touch-icon-precomposed.png">
 <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://xeolabs.com/images/apple-touch-icon-72x72-precomposed.png">
 <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://xeolabs.com/images/apple-touch-icon-114x114-precomposed.png">
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://xeolabs.com/images/apple-touch-icon-144x144-precomposed.png">
 
 </head>
 
@@ -72,25 +72,27 @@
 
 <div class="navigation-wrapper">
 	<div class="site-name">
-		<a href="/">xeolabs</a>
+		<a href="http://xeolabs.com/">xeolabs</a>
 	</div><!-- /.site-name -->
 	<div class="top-navigation">
 		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 		    <ul>
 		        
-				<li><a href="/index" >About</a></li>
+				<li><a href="http://xeolabs.com/index" >About</a></li>
 		        
-				<li><a href="/articles" >Blog</a></li>
+				<li><a href="http://xeolabs.com/articles" >Blog</a></li>
 		        
-				<li><a href="/portfolio" >Portfolio</a></li>
+				<li><a href="http://xeolabs.com/portfolio" >Portfolio</a></li>
 		        
-				<li><a href="/pdfs/lindsaykay_resume_2018.pdf" >Resume</a></li>
+				<li><a href="http://xeolabs.com/pdfs/lindsaykay_resume_2018.pdf" >Resume</a></li>
 		        
 				<li><a href="http://linkedin.com/in/lindsaystanleykay" target="_blank">LinkedIn</a></li>
 		        
-				<li><a href="/happyclients" >Testimonials</a></li>
+				<li><a href="http://xeolabs.com/contact" >Contact</a></li>
 		        
 				<li><a href="http://xeogl.org" target="_blank">xeogl</a></li>
+		        
+				<li><a href="http://xeokit.io" target="_blank">xeokit</a></li>
 		        
 
 		    </ul>
@@ -102,16 +104,16 @@
 
 <div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
   <div class="article-author-top">
-    <img src="/images/avatar.jpg" class="bio-photo" alt="xeolabs bio photo"></a>
-<h3><a href="/about/">xeolabs</a></h3>
+    <img src="http://xeolabs.com/images/avatar.jpg" class="bio-photo" alt="xeolabs bio photo"></a>
+<h3><a href="http://xeolabs.com/about/">xeolabs</a></h3>
 <p><b>Lindsay Kay</b><br><br><i>3D software engineer / WebGL developer</i></p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
 <a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
 <a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
 <br>
 <hr>
-<p style="text-align: center;"><a href="/pdfs/OpenGLInsights.pdf"><img style="text-align: center; width: 80%;" src="/images/scenejs/OpenGLInsights2.jpg"></a><br>
-    <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now <a href="/pdfs/OpenGLInsights.pdf">free to download!</a></i></p>
+<p style="text-align: center;"><a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf"><img style="text-align: center; width: 80%;" src="http://xeolabs.com/images/scenejs/OpenGLInsights2.jpg"></a><br>
+    <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now <a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf">free to download!</a></i></p>
 
   </div>
   <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
@@ -165,14 +167,14 @@ their IFC viewer over to the latest SceneJS API. When it’s done, we should hav
 <span class="p">});</span></code></pre></figure>
 
 <ul>
-  <li>The scene starts immediately - no need to call <code class="highlighter-rouge">myScene.start()</code>.</li>
-  <li><code class="highlighter-rouge">canvasId</code> is optional - when you omit it, SceneJS will create a canvas for the scene, expanded to fit the browser window</li>
+  <li>The scene starts immediately - no need to call <code>myScene.start()</code>.</li>
+  <li><code>canvasId</code> is optional - when you omit it, SceneJS will create a canvas for the scene, expanded to fit the browser window</li>
   <li><a href="http://scenejs.org/examples.html?page=firstExample">Basic scene example</a></li>
 </ul>
 
 <h1 id="materials">Materials</h1>
 
-<p>The <code class="highlighter-rouge">material</code> node’s <code class="highlighter-rouge">baseColor</code> attribute has been deprecated - now use <code class="highlighter-rouge">color</code> instead, ie:</p>
+<p>The <code>material</code> node’s <code>baseColor</code> attribute has been deprecated - now use <code>color</code> instead, ie:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">myMaterial</span> <span class="o">=</span> <span class="nx">myScene</span><span class="p">.</span><span class="nx">addNode</span><span class="p">({</span>
     <span class="na">type</span><span class="p">:</span> <span class="s2">"material"</span><span class="p">,</span>
@@ -242,11 +244,11 @@ their IFC viewer over to the latest SceneJS API. When it’s done, we should hav
 <span class="p">});</span></code></pre></figure>
 
 <h3 id="now-in-v3x">Now in V3.X</h3>
-<p>In V3.X, light nodes have been simplified as shown below, where a single <code class="highlighter-rouge">lights</code> node defines multiple light
-sources for its subgraph. The <code class="highlighter-rouge">lights</code> node:</p>
+<p>In V3.X, light nodes have been simplified as shown below, where a single <code>lights</code> node defines multiple light
+sources for its subgraph. The <code>lights</code> node:</p>
 
 <ul>
-  <li>cannot be nested - a child <code class="highlighter-rouge">lights</code> node overrides the effect of parent <code class="highlighter-rouge">lights</code></li>
+  <li>cannot be nested - a child <code>lights</code> node overrides the effect of parent <code>lights</code></li>
   <li>wrapping in modelling transforms has no effect</li>
 </ul>
 
@@ -310,14 +312,14 @@ sources for its subgraph. The <code class="highlighter-rouge">lights</code> node
 <span class="p">});</span></code></pre></figure>
 
 <ul>
-  <li><a href="/articles/scenejs-node-types">Read more about the plugin API here</a></li>
+  <li><a href="http://xeolabs.com/articles/scenejs-node-types">Read more about the plugin API here</a></li>
   <li><a href="http://scenejs.org/examples.html?tags=prims">Live examples tagged “prims”</a></li>
 </ul>
 
 <h1 id="defaults">Defaults</h1>
 <p>V3.X provides many more defaults and training wheelss You can leave out just about any kind of non-content node, such
-as <code class="highlighter-rouge">lookAt</code>, <code class="highlighter-rouge">camera</code>, <code class="highlighter-rouge">lights</code>, <code class="highlighter-rouge">material</code> etc. and it will provide internal defaults for those.
-This means that you can create a scene containing nothing but a <code class="highlighter-rouge">geometry</code> node and that appear nicely aligned in the
+as <code>lookAt</code>, <code>camera</code>, <code>lights</code>, <code>material</code> etc. and it will provide internal defaults for those.
+This means that you can create a scene containing nothing but a <code>geometry</code> node and that appear nicely aligned in the
  view volume, with perspective projection, illuminated with default light source and coloured white. This is good for examples,
     allowing us to specify only the nodes we want to demonstrate in those example scenes.</p>
 
@@ -327,32 +329,32 @@ This means that you can create a scene containing nothing but a <code class="hig
 <h1 id="removed-nodes">Removed nodes</h1>
 
 <ul>
-  <li><code class="highlighter-rouge">billboard</code></li>
+  <li><code>billboard</code></li>
   <li>TODO</li>
 </ul>
 
 <h1 id="deprecations">Deprecations</h1>
 
 <h3 id="the-renderer-node">The ‘renderer’ node</h3>
-<p>The <code class="highlighter-rouge">renderer</code> node configures misceleaneous WebGL capabilities for its subgraph, such as line width, color buffer, depth buffer etc.
-  It will be replaced by a collection of more specific nodes, eg. <code class="highlighter-rouge">depthBuf</code> and <code class="highlighter-rouge">colorbuf</code>.</p>
+<p>The <code>renderer</code> node configures misceleaneous WebGL capabilities for its subgraph, such as line width, color buffer, depth buffer etc.
+  It will be replaced by a collection of more specific nodes, eg. <code>depthBuf</code> and <code>colorbuf</code>.</p>
 
       <hr />
       <footer role="contentinfo">
         <div class="article-author-bottom">
-          <img src="/images/avatar.jpg" class="bio-photo" alt="xeolabs bio photo"></a>
-<h3><a href="/about/">xeolabs</a></h3>
+          <img src="http://xeolabs.com/images/avatar.jpg" class="bio-photo" alt="xeolabs bio photo"></a>
+<h3><a href="http://xeolabs.com/about/">xeolabs</a></h3>
 <p><b>Lindsay Kay</b><br><br><i>3D software engineer / WebGL developer</i></p>
 <a href="http://twitter.com/xeolabs" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
 <a href="http://linkedin.com/in/lindsaystanleykay" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
 <a href="http://github.com/xeolabs" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
 <br>
 <hr>
-<p style="text-align: center;"><a href="/pdfs/OpenGLInsights.pdf"><img style="text-align: center; width: 80%;" src="/images/scenejs/OpenGLInsights2.jpg"></a><br>
-    <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now <a href="/pdfs/OpenGLInsights.pdf">free to download!</a></i></p>
+<p style="text-align: center;"><a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf"><img style="text-align: center; width: 80%;" src="http://xeolabs.com/images/scenejs/OpenGLInsights2.jpg"></a><br>
+    <i>My chapter on <a href="http://scenejs.org">SceneJS</a> for OpenGL Insights is now <a href="http://xeolabs.com/pdfs/OpenGLInsights.pdf">free to download!</a></i></p>
 
         </div>
-        <p class="byline"><strong>Migrating from SceneJS 2.0 to 3.1</strong> was published on <time datetime="2013-10-28T00:00:00+00:00" itemprop="datePublished">October 28, 2013</time> and last modified on <time datetime="2013-05-31" itemprop="dateModified">May 31, 2013</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="/about" title="About xeolabs" itemprop="url">xeolabs</a></span></span>.</p>
+        <p class="byline"><strong>Migrating from SceneJS 2.0 to 3.1</strong> was published on <time datetime="2013-10-28T00:00:00+00:00" itemprop="datePublished">October 28, 2013</time> and last modified on <time datetime="2013-05-31" itemprop="dateModified">May 31, 2013</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://xeolabs.com/about" title="About xeolabs" itemprop="url">xeolabs</a></span></span>.</p>
       </footer>
 
         <!---->
@@ -380,7 +382,7 @@ This means that you can create a scene containing nothing but a <code class="hig
 
 <div class="footer-wrap">
   <div class="related-articles">
-  <h4>You might also enjoy <small class="pull-right">(<a href="/articles">View all articles</a>)</small></h4>
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://xeolabs.com/articles">View all articles</a>)</small></h4>
     <ul>
     
       
@@ -399,16 +401,16 @@ This means that you can create a scene containing nothing but a <code class="hig
     <hr />
   </div><!-- /.related-articles -->
   <footer>
-    <span>&copy; 2018 xeolabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+    <span>&copy; 2019 xeolabs. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->
 
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
-<!--<script src="/assets/js/vendor/jquery-1.9.1.min.js"></script>-->
-<!--<script src="/assets/js/vendor/jquery.gifplayer.js"></script>-->
-<!--<link rel="stylesheet" href="/assets/css/gifplayer.css" />-->
-<!--<script src="/assets/js/scripts.min.js"></script>-->
+<!--<script src="http://xeolabs.com/assets/js/vendor/jquery-1.9.1.min.js"></script>-->
+<!--<script src="http://xeolabs.com/assets/js/vendor/jquery.gifplayer.js"></script>-->
+<!--<link rel="stylesheet" href="http://xeolabs.com/assets/css/gifplayer.css" />-->
+<!--<script src="http://xeolabs.com/assets/js/scripts.min.js"></script>-->
 
 
 <!--<script>-->

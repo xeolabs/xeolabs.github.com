@@ -13,15 +13,15 @@ image:
 
 ![Email](../images/email2.png)
  
-<br>I'm a freelance software engineer developing WebGL-based 3D graphics solutions for BIM, CAD and medical visualization on the Web.<br><br>
-Originally from Christchurch, New Zealand, I've lived in Berlin, Germany since 2011. I graduated with a degree in computer science from the University of Canterbury in 2005. Before that, I studied electronic engineering at the Christchurch Polytechnic.<br><br>
+<br>I'm a freelance software engineer developing Web-based 3D graphics solutions for BIM, CAD and medical visualization.<br><br>
+Originally from Christchurch, New Zealand, I've lived in Berlin, Germany since 2011. I graduated with a degree in computer science from the University of Canterbury in 2005.<br><br>
 Some projects I've worked on:
 
-* Built the WebGL-based 3D viewers within the **[BioDigital Human](./portfolio/biodigital-human)**, **[BIMData](./portfolio/bimdata)**, **[BIMSurfer](http://bimsurfer.org/)** and **[SolidComponents](./portfolio/solidcomponents-viewer)** platforms 
-* Created two open source WebGL 3D engines: **[xeogl](http://xeogl.org)** and **[SceneJS](http://scenejs.org)**
+* WebGL-based 3D viewers within the **[BioDigital Human](./portfolio/biodigital-human)**, **[BIMData](./portfolio/bimdata)**, **[BIMSurfer](http://bimsurfer.org/)** and **[SolidComponents](./portfolio/solidcomponents-viewer)** platforms
+* Three open source WebGL 3D engines: **[xeokit](http://xeokit.io)**, **[xeogl](http://xeogl.org)** and **[SceneJS](http://scenejs.org)**
 * Contributing author on **[OpenGL Insights](http://openglinsights.com/)**
 
-For more info, please check out my **[portfolio]({{ site.url }}/portfolio/)**, **[resume](http://xeolabs.com/pdfs/lindsaykay_resume_2018.pdf)**, **[LinkedIn](http://linkedin.com/in/lindsaystanleykay)** profile and client **[testimonials]({{ site.url }}/happyclients/)**.<br><br>
+For more info, please check out my **[portfolio]({{ site.url }}/portfolio/)**, **[resume](http://xeolabs.com/pdfs/lindsaykay_resume_2018.pdf)** and **[LinkedIn](http://linkedin.com/in/lindsaystanleykay)** profile.<br><br>
 
 <!-- ### Client Testimonials -->
 <!-- *"A talented and experienced 3D graphics developer. A -->
