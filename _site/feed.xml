@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2019-02-14T08:02:05+00:00</updated>
+<updated>2019-03-16T20:35:24+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -44,7 +44,7 @@
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
-  <content type="html">&lt;p&gt;From 2009 to 2018 I worked remotely from Berlin, Germany with the team at &lt;a href=&quot;http://biodigital.com&quot;&gt;BioDigital Systems&lt;/a&gt; in Manhattan, New York, to help develop 
+  <content type="html">&lt;p&gt;Since 2009 I’ve worked remotely from Berlin, Germany with the team at &lt;a href=&quot;http://biodigital.com&quot;&gt;BioDigital Systems&lt;/a&gt; in Manhattan, New York, to help develop
 and maintain the &lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;BioDigital Human&lt;/a&gt; anatomy visualization platform and its public developer API.
 &lt;br /&gt;&lt;br /&gt;
 We developed the Human on &lt;strong&gt;&lt;a href=&quot;http://scenejs.org&quot;&gt;SceneJS&lt;/a&gt;&lt;/strong&gt;, an open source WebGL library I created for developing 3D graphics applications 
