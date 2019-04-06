@@ -13,7 +13,7 @@ image:
 
 ![Email](../images/email2.png)
  
-<br>I'm a freelance software engineer providing Web-based 3D graphics solutions for BIM, CAD and medical visualization..<br><br>
+<br>I'm a freelance software engineer providing Web-based 3D graphics solutions for BIM, CAD and medical visualization.<br><br>
 Originally from Christchurch, New Zealand, I've lived in Berlin, Germany since 2011. I graduated with a degree in computer science from the University of Canterbury in 2005.<br><br>
 Some projects I've worked on:
 
