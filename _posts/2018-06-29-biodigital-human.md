@@ -15,7 +15,7 @@ website: http://scenejs.org
 websiteReadible: http://scenejs.org
 ---
 
-From 2009 to 2018 I worked remotely from Berlin, Germany with the team at [BioDigital Systems](http://biodigital.com) in Manhattan, New York, to help develop 
+Since 2009 I've worked remotely from Berlin, Germany with the team at [BioDigital Systems](http://biodigital.com) in Manhattan, New York, to help develop
 and maintain the [BioDigital Human](http://biodigitalhuman.com) anatomy visualization platform and its public developer API.
 <br><br>
 We developed the Human on **[SceneJS](http://scenejs.org)**, an open source WebGL library I created for developing 3D graphics applications 
