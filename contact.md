@@ -7,7 +7,7 @@ tags: [contact]
 modified: 27-3-2018
 ---
 
-Lindsay Kay - freelance software engineer crafting Web-based 3D graphics solutions.
+Lindsay Kay - freelance software engineer providing Web-based solutions for BIM, CAD and medical visualization.
 
 * Email: ![Email](../images/email2.png)
 * Zoom: 363-018-7900
