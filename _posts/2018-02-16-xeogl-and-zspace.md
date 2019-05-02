@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Creating WebGL Demos for zSpace using xeogl 
-description: Partnered with <b>zSpace</b> to develop WebGL-based demos on the <b>zSpace 300</b> system using <b>xeogl</b>, an open source library I created for 3D visualization in the browser.
+description: Partnered with <b>zSpace</b> to develop WebGL-based demos for the <b>zSpace 300</b> system using the <b>xeogl</b> library.
 thumbnail: xeogl/zspace/zSpaceDeviceThumb.jpg
 tech: "WebGL, WebVR, xeogl"
 modified: 2017-19-03
