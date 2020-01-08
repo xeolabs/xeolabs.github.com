@@ -128,7 +128,7 @@ Originally from Christchurch, New Zealand, I now live in Berlin, Germany.<br><br
 I graduated with a degree in computer science from the University of Canterbury in 2005. Before that, I studied electronic engineering at the Christchurch Polytechnic.<br><br>
 Some things I've done recently:
 
-* Built the core WebGL rendering technology from scratch for the **BioDigital Human** anatomy visualization platform, which now serves over 3 million users
+* Built the core WebGL rendering technology from scratch for the **BioDigital Human** anatomy visualization platform, which now serves over 4 million users
 * Developed two major open-source WebGL engines, including **SceneJS**, one of the first widely-used WebGL engines, and **xeogl**, which is used in several commercial IFC and CAD viewers  
 * Built the WebGL-based **BimData** and **BIMSurfer** 3D BIM viewers
 * Contributing author on **OpenGL Insights**
