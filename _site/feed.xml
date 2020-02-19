@@ -5,13 +5,31 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2019-09-07T06:43:32+00:00</updated>
+<updated>2020-02-19T09:32:17+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
   <uri>http://xeolabs.com/</uri>
   <email>lindsay.kay@xeolabs.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[OpenProject BIM Viewer]]></title>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/openproject" />
+  <id>http://xeolabs.com/portfolio/openproject</id>
+  <updated>2020-19-09T00:00:00-00:00</updated>
+  <published>2020-01-22T00:00:00+00:00</published>
+  
+  <author>
+    <name>xeolabs</name>
+    <uri>http://xeolabs.com</uri>
+    <email>lindsay.kay@xeolabs.com</email>
+  </author>
+  <content type="html">
+
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/openproject&quot;&gt;OpenProject BIM Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on January 22, 2020.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -33,7 +51,7 @@
 
 
 <entry>
-  <title type="html"><![CDATA[The BioDigital Human™]]></title>
+  <title type="html"><![CDATA[The BioDigital Human]]></title>
   <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/biodigital-human" />
   <id>http://xeolabs.com/portfolio/biodigital-human</id>
   <updated>2018-23-03T00:00:00-00:00</updated>
@@ -44,7 +62,7 @@
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
-  <content type="html">&lt;p&gt;Since 2009 I’ve worked remotely from Berlin, Germany with the team at &lt;a href=&quot;http://biodigital.com&quot;&gt;BioDigital Systems&lt;/a&gt; in Manhattan, New York, to help develop
+  <content type="html">&lt;p&gt;From 2009-2019 I worked remotely from Berlin, Germany with the team at &lt;a href=&quot;http://biodigital.com&quot;&gt;BioDigital Systems&lt;/a&gt; in Manhattan, New York, to develop
 and maintain the &lt;a href=&quot;http://biodigitalhuman.com&quot;&gt;BioDigital Human&lt;/a&gt; anatomy visualization platform and its public developer API.
 &lt;br /&gt;&lt;br /&gt;
 We developed the Human on &lt;strong&gt;&lt;a href=&quot;http://scenejs.org&quot;&gt;SceneJS&lt;/a&gt;&lt;/strong&gt;, an open source WebGL library I created for developing 3D graphics applications 
@@ -281,12 +299,12 @@ who came in fresh from academia and added many valuable rendering features.
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/biodigital-human&quot;&gt;The BioDigital Human™&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on June 29, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/biodigital-human&quot;&gt;The BioDigital Human&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on June 29, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
-  <title type="html"><![CDATA[BIMData™ Online 3D BIM Viewer]]></title>
+  <title type="html"><![CDATA[BIMData.IO Online 3D BIM Viewer]]></title>
   <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/bimdata" />
   <id>http://xeolabs.com/portfolio/bimdata</id>
   <updated>2018-19-09T00:00:00-00:00</updated>
@@ -513,7 +531,7 @@ Users can capture a BCF record of the viewer state, to indicate an issue within 
  &lt;img src=&quot;http://xeolabs.com/images/bimdata/bcf.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/bimdata&quot;&gt;BIMData™ Online 3D BIM Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on June 28, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/bimdata&quot;&gt;BIMData.IO Online 3D BIM Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on June 28, 2018.&lt;/p&gt;</content>
 </entry>
 
 
@@ -646,6 +664,24 @@ into our &lt;a href=&quot;https://github.com/opensourcebim/BIMsurfer/issues&quot
 
 
   &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeogl-in-bimsurfer&quot;&gt;BIMSurfer Online BIM Viewer&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on June 27, 2018.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[SmileTrain Surgical Cleft Repair Simulator]]></title>
+  <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/smiletrain" />
+  <id>http://xeolabs.com/portfolio/smiletrain</id>
+  <updated>2020-19-09T00:00:00-00:00</updated>
+  <published>2018-06-27T00:00:00+00:00</published>
+  
+  <author>
+    <name>xeolabs</name>
+    <uri>http://xeolabs.com</uri>
+    <email>lindsay.kay@xeolabs.com</email>
+  </author>
+  <content type="html">
+
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/smiletrain&quot;&gt;SmileTrain Surgical Cleft Repair Simulator&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on June 27, 2018.&lt;/p&gt;</content>
 </entry>
 
 
@@ -3166,191 +3202,6 @@ SceneJS retains all state and assets, such as matrices, geoemtry and textures et
 is recovered after loss, it simply reallocates those assets on the new context.&lt;/p&gt;
 
   &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-webgl-context-lost&quot;&gt;Automatic WebGLContestLost Recovery in SceneJS&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Fast Ray Picking in SceneJS]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-ray-picking" />
-  <id>http://xeolabs.com/articles/scenejs-ray-picking</id>
-  <updated>2013-05-31T00:00:00-00:00</updated>
-  <published>2013-10-28T00:00:00+00:00</published>
-  
-  <author>
-    <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
-    <email>lindsay.kay@xeolabs.com</email>
-  </author>
-  <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
-  &lt;header&gt;
-    &lt;h3&gt;Contents&lt;/h3&gt;
-  &lt;/header&gt;
-&lt;div id=&quot;drawer&quot;&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#usage&quot; id=&quot;markdown-toc-usage&quot;&gt;Usage&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-  &lt;/div&gt;
-&lt;/section&gt;
-&lt;!-- /#table-of-contents --&gt;
-
-&lt;p&gt;SceneJS ray-picking lets you pick a point on the canves and get the precise 3D World-space coordinates of whatever that
-intersects within the 3D view.
-&lt;br /&gt;&lt;br /&gt;
-It’s very fast, even for really large numbers of objects. While it uses the standard &lt;a href=&quot;http://antongerdelan.net/opengl/colourpicking.html&quot;&gt;colour coding approach&lt;/a&gt; to find the picked
-object, it also uses the depth buffer to help it find the 3D intersection coordinates, thus managing to avoid expensive
-ray-intersect computations. If you’re curious how it works, I did &lt;a href=&quot;/articles/scenejs-ray-picking-technique&quot;&gt;a writeup on the technique here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=rayPicking&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/rayPicking.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples/pages/demos/pickFlyOrbitCity.html&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/pickFlyOrbitCity.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;a href=&quot;http://scenejs.org/examples/pages/demos/pickFlyOrbitTerrain.html&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/scenejs/pickFlyOrbitTerrain.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;http://scenejs.org/examples.html?page=rayPicking&quot;&gt;Ray pick performance demo&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;http://scenejs.org/examples/pages/demos/pickFlyOrbitCity.html&quot;&gt;Pick-fly-orbit demo #1&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;http://scenejs.org/examples/pages/demos/pickFlyOrbitTerrain.html&quot;&gt;Pick-fly-orbit demo #2&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-
-&lt;p&gt;I’ll assume that you know all about &lt;a href=&quot;http://xeolabs.com/articles/scenejs-picking&quot;&gt;basic 2D picking&lt;/a&gt; in SceneJS. Ray picking
-is done in pretty much the same way, except that you supply an additional &lt;code&gt;rayPick&lt;/code&gt; flag when you do the pick, and get
-back an additional &lt;code&gt;worldPos&lt;/code&gt; property in the result, which gives you the intersection coordinates:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Register a pick handler&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;myScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;pick&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// The &#39;name&#39; property on the first name node on the path&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// from the picked teapot up to the scene root, eg &quot;blueTeapot&quot;&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Name path, a &#39;.&#39; delimited concatenation of the &#39;name&#39; properties&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// of all name nodes on the path down from teh scene root to the&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// picked teapot.&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Two-element array containing the X,Y canvas coordinates at which we picked&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;canvasPos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;canvasPos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Three-element array containing the X,Y,Z World-space coordinates at which we picked&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;worldPos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;worldPos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;And here’s the ray-pick call:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;myScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;150&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rayPick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Note the rayPick flag&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-ray-picking&quot;&gt;Fast Ray Picking in SceneJS&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Pssst...How Fast Ray Picking Works in SceneJS]]></title>
-  <link rel="alternate" type="text/html" href="http://xeolabs.com/articles/scenejs-ray-picking-technique" />
-  <id>http://xeolabs.com/articles/scenejs-ray-picking-technique</id>
-  <updated>2013-05-31T00:00:00-00:00</updated>
-  <published>2013-10-28T00:00:00+00:00</published>
-  
-  <author>
-    <name>xeolabs</name>
-    <uri>http://xeolabs.com</uri>
-    <email>lindsay.kay@xeolabs.com</email>
-  </author>
-  <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
-  &lt;header&gt;
-    &lt;h3&gt;Contents&lt;/h3&gt;
-  &lt;/header&gt;
-&lt;div id=&quot;drawer&quot;&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#the-technique&quot; id=&quot;markdown-toc-the-technique&quot;&gt;The technique&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#packing-clip-space-z-in-glsl&quot; id=&quot;markdown-toc-packing-clip-space-z-in-glsl&quot;&gt;Packing clip-space Z in GLSL&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#unpacking-clip-space-z-in-javascript&quot; id=&quot;markdown-toc-unpacking-clip-space-z-in-javascript&quot;&gt;Unpacking clip-space Z in JavaScript&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#calculating-clip-space-z-in-the-fragment-shader&quot; id=&quot;markdown-toc-calculating-clip-space-z-in-the-fragment-shader&quot;&gt;Calculating clip-space Z in the fragment shader&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#drawbacks-to-this-technique&quot; id=&quot;markdown-toc-drawbacks-to-this-technique&quot;&gt;Drawbacks to this technique&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-  &lt;/div&gt;
-&lt;/section&gt;
-&lt;!-- /#table-of-contents --&gt;
-
-&lt;p&gt;Normally a ray-pick is done with expensive computations to find intersections of rays with meshes and so forth.
-SceneJS, however, uses a fast GPU-assisted technique that employs the colour buffer to help find the ray-intersection point, which
- avoids those sorts of computations altogether.
- &lt;br /&gt;&lt;br /&gt;
-I couldn’t find anybody else doing this in WebGL or OpenGL ES (maybe I should have looked harder?), so at first I thought
-it must be too good to be true. However, despite a small amount of numeric inaccuracy when the front and back clip planes
-are far apart, it seems work well enough, so I went with it.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-technique&quot;&gt;The technique&lt;/h2&gt;
-&lt;p&gt;I’ll assume that you’ve read about &lt;a href=&quot;http://xeolabs.com/articles/scenejs-picking&quot;&gt;2D picking&lt;/a&gt;
-and &lt;a href=&quot;http://xeolabs.com/articles/scenejs-ray-picking&quot;&gt;ray picking&lt;/a&gt;, which describe how you can wrap your objects with &lt;code&gt;name&lt;/code&gt;
-nodes to assign them logical pick names.
-&lt;br /&gt;&lt;br /&gt;
-The steps of my technique are:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;User ray-picks canvas at coordinates (X, Y).&lt;/li&gt;
-  &lt;li&gt;Do a render pass to a hidden frame buffer, in which the objects within each &lt;code&gt;name&lt;/code&gt; are rendered in a colour that
-uniquely maps to that &lt;code&gt;name&lt;/code&gt;’s value.&lt;/li&gt;
-  &lt;li&gt;Read the colour from the framebuffer at the canvas coordinates, map the colour back to the name value. Now we have the pick name.&lt;/li&gt;
-  &lt;li&gt;Do a second render pass to another hidden frame buffer, this time rendering just the picked geometry, with each pixel
-colour being the clip-space Z-value packed into an RGBA value.&lt;/li&gt;
-  &lt;li&gt;Read the colour from the framebuffer at the canvas coordinates and unpack it to the clip-space Z value. Now we have the
-clip-space Z, which will be in the range of [0..1], with near clip plane at 0 and far clip plane at 1.&lt;/li&gt;
-  &lt;li&gt;Transform the canvas coordinates to clip-space. Make a ray from clip space (X,Y,0) to (X,Y,1) and transform that ray
-into world-space by the inverse view and projection matrices.&lt;/li&gt;
-  &lt;li&gt;Linearly interpolate along ray by the value of our clip-space Z, to find the world-space coordinate (X,Y,Z).&lt;/li&gt;
-  &lt;li&gt;Voila, we have the picked name, canvas (X,Y) and world-space (X,Y,Z) for the pick hit.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;packing-clip-space-z-in-glsl&quot;&gt;Packing clip-space Z in GLSL&lt;/h4&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-glsl&quot; data-lang=&quot;glsl&quot;&gt;&lt;span class=&quot;kt&quot;&gt;vec4&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;packDepth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;vec4&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bitShift&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;vec4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;vec4&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bitMask&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;vec4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;vec4&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bitShift&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xxyz&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bitMask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h4 id=&quot;unpacking-clip-space-z-in-javascript&quot;&gt;Unpacking clip-space Z in JavaScript&lt;/h4&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;unpackDepth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;depthZ&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;vec&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;depthZ&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;256.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;depthZ&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;256.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;depthZ&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;256.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;depthZ&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;256.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bitShift&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;256.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;256.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;256.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;256.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;256.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;256.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SceneJS_math_dotVector4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;vec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bitShift&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h4 id=&quot;calculating-clip-space-z-in-the-fragment-shader&quot;&gt;Calculating clip-space Z in the fragment shader&lt;/h4&gt;
-&lt;p&gt;Step (4) requires that we have the view-space position in the fragment shader, which we pass through from the vertex shader. It also requires us to feed the locations of the near and far clipping planes into the fragment shader (which we take from the scene’s camera node). Using these, we calculate the clip-space depth like so:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-glsl&quot; data-lang=&quot;glsl&quot;&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uZNear&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vViewVertex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uZFar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;uZNear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;gl_FragColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;packDepth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;SceneJS internally caches the hidden frame buffers to avoid re-rendering them. This means that when we do a subsequent pick, as long as a re-render is not neccessary after objects have moved or changed appearance, we just re-read the buffers without repeating any rendering passes.&lt;/li&gt;
-  &lt;li&gt;For picking, many WebGL frameworks will save time by doing a picking render of only a 1x1 viewport at the canvas coordinates. SceneJS renders the entire view for picking so that it can cache the pick framebuffers as just mentioned. This is an optimisation geared towards fast mouse-over picking effects in model viewing apps, such as highlighting and tooltips.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;drawbacks-to-this-technique&quot;&gt;Drawbacks to this technique&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The technique described here trades accuracy for speed. Packing and unpacking the clip-space Z to and from a colour value is lossy. Hopefully in future it will be possible to instead read the WebGL depth buffer, which will preserve much more precision.&lt;/li&gt;
-  &lt;li&gt;Another limitation is that this technique does not find any topological information on the pick hit: it only finds the name and a world-space coordinate. When picking a mesh for example, it does not report the actual face that was picked.&lt;/li&gt;
-&lt;/ul&gt;
-
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/articles/scenejs-ray-picking-technique&quot;&gt;Pssst...How Fast Ray Picking Works in SceneJS&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on October 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 </feed>
