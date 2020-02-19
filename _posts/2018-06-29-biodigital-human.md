@@ -1,8 +1,8 @@
 ---
 layout: biodigital
-title: The BioDigital Human™
+title: The BioDigital Human
 client: BioDigital, NYC, USA
-description: Built the core WebGL rendering technology for the <b>BioDigital Human</b> anatomy visualization platform, which now serves over 4 million users. Contracted since 2009 to help maintain the platform.
+description: Built the core WebGL rendering technology for the <b>BioDigital Human</b> anatomy visualization platform, which now serves over 4 million users.<br><br>Lead 3D development from 2009-2015.  
 thumbnail: human/biodigital-human-platform-thumb.png
 modified: 2018-23-03
 category: portfolio
@@ -11,11 +11,11 @@ tags: [scenejs, human, biodigital, webgl]
 tech: "WebGL, SceneJS"
 article: true
 location: "Manhattan, New York"
-website: http://scenejs.org
-websiteReadible: http://scenejs.org
+website: http://biodigital.com
+websiteReadible: http://biodigital.com
 ---
 
-Since 2009 I've worked remotely from Berlin, Germany with the team at [BioDigital Systems](http://biodigital.com) in Manhattan, New York, to help develop
+From 2009-2019 I worked remotely from Berlin, Germany with the team at [BioDigital Systems](http://biodigital.com) in Manhattan, New York, to develop
 and maintain the [BioDigital Human](http://biodigitalhuman.com) anatomy visualization platform and its public developer API.
 <br><br>
 We developed the Human on **[SceneJS](http://scenejs.org)**, an open source WebGL library I created for developing 3D graphics applications 
