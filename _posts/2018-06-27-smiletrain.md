@@ -2,7 +2,7 @@
 layout: post
 title: SmileTrain Surgical Cleft Repair Simulator 
 description: The Smiletrain Surgical Simulator assists healthcare professionals in developing countries with learning cleft repair procedures.<br><br>Used by surgeons in 1100+ hospitals in 150 countries.
-thumbnail: openproject/xeokit-viewer.png
+thumbnail: human/smiletrain-mac.png
 tech: "WebGL, JavaScript, SceneJS"
 modified: 2020-19-09
 category: portfolio
