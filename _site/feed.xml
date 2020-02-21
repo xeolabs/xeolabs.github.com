@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2020-02-21T15:46:01+00:00</updated>
+<updated>2020-02-21T15:52:28+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -33,7 +33,7 @@
 
 
 <entry>
-  <title type="html"><![CDATA[xeokit - 3D Web SDK for BIM and CAD]]></title>
+  <title type="html"><![CDATA[xeokit - 3D Web SDK for BIM and Engineering]]></title>
   <link rel="alternate" type="text/html" href="http://xeolabs.com/portfolio/xeokit" />
   <id>http://xeolabs.com/portfolio/xeokit</id>
   <updated>2019-08-02T00:00:00-00:00</updated>
@@ -46,7 +46,7 @@
   </author>
   <content type="html">
 
-  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeokit&quot;&gt;xeokit - 3D Web SDK for BIM and CAD&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on February 08, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://xeolabs.com/portfolio/xeokit&quot;&gt;xeokit - 3D Web SDK for BIM and Engineering&lt;/a&gt; was originally published by xeolabs at &lt;a href=&quot;http://xeolabs.com&quot;&gt;xeolabs&lt;/a&gt; on February 08, 2019.&lt;/p&gt;</content>
 </entry>
 
 
