@@ -13,7 +13,7 @@ image:
 
 ![Email](../images/email2.png)
 
-<br>I'm a 3D graphics software engineer providing Web browser-based solutions for BIM, CAD, architectural and medical visualization.<br><br>
+<br>I'm a 3D graphics software engineer providing browser-based visualization solutions for engineering, BIM, architecture and medicine.<br><br>
 Originally from Christchurch, New Zealand, I've lived in Berlin, Germany since 2011. I graduated with a degree in computer science from the University of Canterbury in 2005.<br><br>
 Some projects I've worked on:
 
