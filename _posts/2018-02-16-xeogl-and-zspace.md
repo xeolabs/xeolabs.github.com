@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Creating WebGL Demos for zSpace using xeogl 
+title: WebGL Demos for zSpace AR using xeogl 
 description: Partnered with <b>zSpace</b> to develop WebGL-based demos for the <b>zSpace 300</b> system using the <b>xeogl</b> library.
 thumbnail: xeogl/zspace/zSpaceDeviceThumb.jpg
 tech: "WebGL, WebVR, xeogl"

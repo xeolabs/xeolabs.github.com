@@ -11,7 +11,7 @@ image:
   creditlink: http://xeolabs.com
 ---
 
-I'm a freelance software engineer providing WebGL-based 3D graphics solutions for product visualization, engineering, medicine and BIM.
+I'm a 3D graphics software engineer and independent open source developer delivering Web browser-based solutions for BIM, CAD, architectural and medical visualization.
 
 ### Background
 
