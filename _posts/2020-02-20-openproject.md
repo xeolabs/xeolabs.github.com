@@ -10,7 +10,7 @@ comments: false
 location: "Berlin, Germany"
 article: false
 tags: [xeokit, BIM, IFC, webgl]
-tech: "WebGL, BIM, JavaScript, xeokit"
+tech: "BIM, IFC, WebGL, JavaScript, xeokit"
 website: https://www.openproject.org/openproject-bim-10-4/
 websiteReadible: http://openproject.org
 ---
