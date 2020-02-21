@@ -17,8 +17,8 @@ image:
 Originally from Christchurch, New Zealand, I've lived in Berlin, Germany since 2011. I graduated with a degree in computer science from the University of Canterbury in 2005.<br><br>
 Some projects I've worked on:
 
-* WebGL-based 3D tech within the **[BioDigital Human](./portfolio/biodigital-human)**, **[OpenProject](https://openproject.org)**, **[BIMData](./portfolio/bimdata)**, **[BIMSurfer](http://bimsurfer.org/)** and **[SolidComponents](./portfolio/solidcomponents-viewer)** platforms
-* Three open source WebGL 3D engines: **[xeokit](http://xeokit.io)**, **[xeogl](http://xeogl.org)** and **[SceneJS](http://scenejs.org)**
+* WebGL-based 3D tech within **[BioDigital Human](./portfolio/biodigital-human)**, **[OpenProject](https://openproject.org)**, **[BIMData](./portfolio/bimdata)**, <strong><a href="https://www.planradar.com/de/">PlanRadar</a>, **[BIMSurfer](http://bimsurfer.org/)** and **[SolidComponents](./portfolio/solidcomponents-viewer)**
+* Open source 3D Web SDKs: **[xeokit](http://xeokit.io)**, **[xeogl](http://xeogl.org)** and **[SceneJS](http://scenejs.org)**
 * Contributing author on **[OpenGL Insights](http://openglinsights.com/)**
 
 For more info, please check out my **[portfolio]({{ site.url }}/portfolio/)**, **[resume](http://xeolabs.com/pdfs/lindsaykay_resume_2019.pdf)** and **[LinkedIn](http://linkedin.com/in/lindsaystanleykay)** profile.<br><br>
