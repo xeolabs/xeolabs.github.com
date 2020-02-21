@@ -21,7 +21,12 @@ Some projects I've worked on:
 * Open source 3D Web programming toolkits: **[xeokit](http://xeokit.io)**, **[xeogl](http://xeogl.org)** and **[SceneJS](http://scenejs.org)**
 * Contributing author on **[OpenGL Insights](http://openglinsights.com/)**
 
-For more info, please check out my **[portfolio]({{ site.url }}/portfolio/)**, **[resume](http://xeolabs.com/pdfs/lindsaykay_resume_2019.pdf)** and **[LinkedIn](http://linkedin.com/in/lindsaystanleykay)** profile.<br><br>
+Some clients I've worked with:
+
+*  [OpenProject](https://www.openproject.org/), [BIMData](https://bimdata.io/), [PlanRadar](https://www.planradar.com/de/), [HOK](https://www.hok.com/), [uniZite](https://unizite.info/), [BioDigital](https://www.biodigital.com/), [Systhema](https://systhema.nl/systhema/), [WindFlow](https://www.windflow.co.nz/), [SolidComponents](https://www.solidcomponents.com/), [TNO](https://www.tno.nl/en/) and [D-Studio](http://dstudio.be/). 
+
+
+For more projects, please check out my **[portfolio]({{ site.url }}/portfolio/)**, **[resume](http://xeolabs.com/pdfs/lindsaykay_resume_2019.pdf)** and **[LinkedIn](http://linkedin.com/in/lindsaystanleykay)** profile.<br><br>
 
 <!-- ### Client Testimonials -->
 <!-- *"A talented and experienced 3D graphics developer. A -->
