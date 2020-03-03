@@ -135,7 +135,7 @@ in Web browsers without needing plugins. One of the first WebGL engines, SceneJS
 various features such as posteffects, physics, LoD, culling, plus various GL performance optimizations. 
 <br><br>
 In this article, I'm going to describe SceneJS' journey from a weekend experiment to how we applied it within BioDigital's 
-Web-based anatomy visualization platform. Ten years down the track, the platform now has over three million 
+Web-based anatomy visualization platform. Ten years down the track, the platform now has over four million
 registered users and continues to develop, with a growing library of models of anatomy and physical conditions.
 
 <!-- a bunch of awards including a Webby, and has been featured in [WIRED](https://www.wired.com/2012/04/biodigital-human/),  -->
