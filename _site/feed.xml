@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://xeolabs.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://xeolabs.com" />
-<updated>2020-02-21T17:11:30+00:00</updated>
+<updated>2020-03-03T00:30:50+00:00</updated>
 <id>http://xeolabs.com/</id>
 <author>
   <name>xeolabs</name>
@@ -315,14 +315,18 @@ who came in fresh from academia and added many valuable rendering features.
     <uri>http://xeolabs.com</uri>
     <email>lindsay.kay@xeolabs.com</email>
   </author>
-  <content type="html">&lt;p&gt;In 2018, I worked remotely with the &lt;strong&gt;&lt;a href=&quot;https://www.bimdata.io/fr/la-team/&quot;&gt;BIMData development team&lt;/a&gt;&lt;/strong&gt; in Lyon, France, to develop the WebGL-based 3D viewer
-component of the BIMData online building information modeling (BIM) platform.
+  <content type="html">&lt;p&gt;In 2018, I worked with &lt;strong&gt;&lt;a href=&quot;https://www.bimdata.io&quot;&gt;BIMData&lt;/a&gt;&lt;/strong&gt; in Lyon, France, to develop the WebGL-based 3D viewer within their browser-based building information modeling (BIM) platform.
 &lt;br /&gt;&lt;br /&gt;
 We developed the viewer on &lt;strong&gt;&lt;a href=&quot;http://xeogl.org&quot;&gt;xeogl&lt;/a&gt;&lt;/strong&gt;, an open source WebGL library I created for developing 
-3D model visualization applications in Web browsers without using plugins.
+browser-based 3D model viewers.
 &lt;br /&gt;&lt;br /&gt;
-In this article, I’ll describe some of the features that I implemented within the viewer.
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+In this article, I’ll describe some of the features that we created in BIMData’s viewer.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Update January 2019:&lt;/strong&gt; BIMData have since migrated from xeogl to the &lt;strong&gt;&lt;a href=&quot;http://xeokit.io&quot;&gt;xeokit SDK&lt;/a&gt;&lt;/strong&gt;, an dual-licensed WebGL library I created more recently, which has more support for BIM and CAD, plus higher performance for large models. Check it out if you need a low-cost, high-performance way to get your IFC models on the Web, that allows you the freedom to convert and host your models on your own server or GitHub repository: &lt;strong&gt;&lt;a href=&quot;http://xeokit.io&quot;&gt;http://xeokit.io&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.bimdata.io/en/bim-data-en/&quot;&gt;&lt;img src=&quot;http://xeolabs.com/images/bimdata/bimdata.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 

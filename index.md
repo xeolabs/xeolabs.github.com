@@ -13,11 +13,12 @@ image:
 
 ![Email](../images/email2.png)
 
-<br>I'm a 3D graphics software engineer providing browser-based visualization solutions for engineering, BIM, architecture and medicine.<br><br>
+<br>I'm a 3D graphics software engineer developing browser-based visualization solutions for engineering, BIM, architecture and medicine.<br><br>
 Originally from Christchurch, New Zealand, I've lived in Berlin, Germany since 2011. I graduated with a degree in computer science from the University of Canterbury in 2005.<br><br>
 Some projects I've worked on:
 
-* WebGL-based 3D tech within **[BioDigital Human](./portfolio/biodigital-human)**, **[OpenProject](https://openproject.org)**, **[BIMData](./portfolio/bimdata)**, <strong><a href="https://www.planradar.com/de/">PlanRadar</a>, **[BIMSurfer](http://bimsurfer.org/)** and **[SolidComponents](./portfolio/solidcomponents-viewer)**
+
+* Browser-based 3D tech within **[BioDigital Human](./portfolio/biodigital-human)**, **[OpenProject 10.4](https://www.openproject.org/openproject-bim-10-4/)**, **[BIMData](./portfolio/bimdata)**, plus a **[few others](./portfolio/)**
 * Open source 3D Web programming toolkits: **[xeokit](http://xeokit.io)**, **[xeogl](http://xeogl.org)** and **[SceneJS](http://scenejs.org)**
 * Contributing author on **[OpenGL Insights](http://openglinsights.com/)**
 
